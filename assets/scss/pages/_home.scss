@@ -1,0 +1,13 @@
+.modal-login{
+    .btn-theme{
+        padding: 10px 0.75rem !important;
+        font-weight: bold;
+        font-size: 13px;
+        width: 100%;
+        &.theme-blue{
+            background-color: #209cd7;
+            color: white;
+            text-transform: uppercase;
+        }
+    }
+}
