@@ -1,13 +1,48 @@
 .modal-login{
+    padding: 24px;
+    padding-top: 0;
     .btn-theme{
         padding: 10px 0.75rem !important;
         font-weight: bold;
         font-size: 13px;
         width: 100%;
+        text-transform: uppercase;
         &.theme-blue{
             background-color: #209cd7;
             color: white;
-            text-transform: uppercase;
+        }
+        &.theme-gg{
+            border: 1px solid #999 ;
+            color: black;
+            background-color: white;
+        }
+        &.theme-fb{
+            background-color: #3a71c5;
+            color: white;
+        }
+        img{
+            width: 35px;
+            margin-top: -3px;
+        }
+    }
+    .option{
+        position: relative;
+        .child{
+            position: absolute;
+            top: -10px;
+            padding: 0 10px;
+            span{
+                background-color: white;
+                width: 10px;
+                margin: 0 auto;
+                z-index: 10;
+                padding: 0 14px;
+            }
+        }
+    }
+    p{
+        span{
+            color: $main-color;
         }
     }
 }

@@ -6,11 +6,14 @@
         <div class="col-md-6 content-left">
           <Modal ref="modal">
             <template v-slot:content>
-              <div class="modal-login p-4">
+              <div class="modal-login">
+                <div class="text-center w-100">
+                  <img src="@/assets/img/black-logo.png"  style="height:52px"/>
+                </div>
                 <form>
                   <div class="form-group mb-3 mt-5">
-                    <label for="exampleInputEmail1"
-                      >Email hoặc Số điện thoại <span>*</span></label
+                    <label class="f-13" for="exampleInputEmail1"
+                      >Email hoặc Số điện thoại <span style="color:red">*</span></label
                     >
                     <input
                       type="email"
@@ -22,14 +25,30 @@
                   <div class="w-100 text-center">
                     <button class="btn btn-theme theme-blue">Đăng nhập</button>
                   </div>
-                   <div class="w-100 text-center mt-4">
-                    <button class="btn btn-theme theme-blue">Đăng nhập với google</button>
-                  </div>
-                   <div class="w-100 text-center mt-4">
-                    <button class="btn btn-theme theme-blue">Đăng nhập với facebook</button>
-                  </div>
                 </form>
-
+                <div class="mt-4 w-100 option">
+                  <hr />
+                  <div
+                    class="child w-100 text-center">
+                    <span class="f-13">Hoặc</span>
+                  </div>
+                </div>
+                <div class="w-100 text-center mt-4">
+                  <button class="btn btn-theme theme-gg">
+                    Đăng nhập với google
+                    <img src="@/assets/img/gg.png" />
+                  </button>
+                </div>
+                <div class="w-100 text-center mt-4">
+                  <button class="btn btn-theme theme-fb">
+                    Đăng nhập với facebook
+                    <img src="@/assets/img/fb.png" style="width:28px" />
+                  </button>
+                </div>
+                <p class="text-center w-100 mt-4 f-13">
+                  Chưa có tài khoản?
+                  <span>Đăng ký ngay</span>
+                </p>
               </div>
             </template>
           </Modal>
