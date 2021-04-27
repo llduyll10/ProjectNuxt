@@ -1,6 +1,14 @@
 .modal-login{
     padding: 24px;
     padding-top: 0;
+    .form-group{
+        input{
+            &::placeholder{
+                font-size: 13px;
+                opacity: 0.3;
+            }
+        }
+    }
     .btn-theme{
         padding: 10px 0.75rem !important;
         font-weight: bold;

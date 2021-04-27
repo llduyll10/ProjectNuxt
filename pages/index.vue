@@ -19,7 +19,7 @@
                       type="email"
                       class="form-control"
                       aria-describedby="emailHelp"
-                      placeholder="Enter email"
+                      placeholder="Nhập email hoặc số điện thoại của bạn"
                     />
                   </div>
                   <div class="w-100 text-center">
