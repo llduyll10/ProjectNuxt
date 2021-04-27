@@ -1,6 +1,6 @@
 <template>
     <div class="cover-header">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col-md-8 ct-left">
                     <div class="d-flex">
@@ -58,7 +58,7 @@ export default {
             cursor: pointer;
             width: 150px;
             height: 25px;
-            margin-right: 10px;
+            margin: 0 5px;
             text-align: center;
             border-right:1px solid rgba(130, 130, 130, 0.5);
             &:last-child{

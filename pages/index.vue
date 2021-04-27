@@ -5,12 +5,12 @@
     <div class="banner"></div>
     <!-- End Banner -->
     <!-- Start Categories  -->
-    <div class="category mt-5">
-      <div class="category-title mb-4">
+    <div class="category pt-40px">
+      <div class="category-title mb-40px">
         <p class="f-24">HẠNG MỤC DỰ ÁN</p>
         <div class="line"></div>
       </div>
-      <div class="container-fluid caterogry-list pd-45">
+      <div class="container caterogry-list">
         <div class="row">
           <div class="col-md-4 col-sm-12 cat-item">
               <div class="content item-1">
@@ -46,8 +46,8 @@
       </div>
     </div>
     <!-- Start Categories  -->
-    <div class="describe mt-3">
-      <div class="content-describe">
+    <div class="describe pt-40px mt-40px">
+      <div class="content-describe container">
         <div class="row">
           <!-- Describe LEFT -->
           <div class="col-md-6 col-sm-12 describe-left">
