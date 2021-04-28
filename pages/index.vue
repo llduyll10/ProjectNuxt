@@ -5,7 +5,7 @@
     <div class="banner"></div>
     <!-- End Banner -->
     <!-- Start Categories  -->
-    <div class="category pt-40px">
+    <section class="category pt-40px">
       <div class="category-title mb-40px">
         <p class="f-24">HẠNG MỤC DỰ ÁN</p>
         <div class="line"></div>
@@ -44,9 +44,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
     <!-- Start Categories  -->
-    <div class="describe pt-40px mt-40px">
+    <section class="describe pt-40px mt-40px">
       <div class="content-describe container">
         <div class="row">
           <!-- Describe LEFT -->
@@ -120,7 +120,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <Modal ref="modal">
       <template v-slot:content>

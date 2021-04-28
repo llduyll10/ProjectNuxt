@@ -7,7 +7,7 @@
                         <img src="@/assets/img/black-logo.png"/>
                         <div class="menu d-flex">
                             <template v-for="(item, index) in objMenu">
-                                <div :key="index" class="sub-menu">
+                                <div :key="index" class="sub-menu px-36px">
                                    <span class="f-13">{{item.name}}</span>
                                 </div>
                             </template>
@@ -18,7 +18,7 @@
                     <div class="d-flex">
                         <div class="menu d-flex">
                             <template v-for="(item, index) in objBtn">
-                                <div :key="index" class="sub-menu">
+                                <div :key="index" class="sub-menu px-20px">
                                    <span class="f-13">{{item.name}}</span>
                                 </div>
                             </template>
@@ -56,9 +56,7 @@ export default {
         padding-top: 10px;
         .sub-menu{
             cursor: pointer;
-            width: 150px;
             height: 25px;
-            margin: 0 5px;
             text-align: center;
             border-right:1px solid rgba(130, 130, 130, 0.5);
             &:last-child{
@@ -84,8 +82,6 @@ export default {
         display: flex;
         justify-content: flex-end;
         .sub-menu{
-            width: 80px;
-            margin-right: 5px;
             &:nth-child(2){
                 border-right: 0 !important;
             }
