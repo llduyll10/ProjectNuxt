@@ -5,7 +5,7 @@
     <div class="banner"></div>
     <!-- End Banner -->
     <!-- Start Categories  -->
-    <section class="category pt-40px">
+    <section class="category pt-40px ">
       <div class="category-title mb-40px">
         <p class="f-24">HẠNG MỤC DỰ ÁN</p>
         <div class="line"></div>
@@ -13,17 +13,20 @@
       <div class="container caterogry-list">
         <div class="row">
           <div class="col-md-4 col-sm-12 cat-item">
-              <div class="content item-1">
-                <div class="item-detail d-flex">
-                  <img src="@/assets/img/icon-house.png" style="margin-bottom:3px" />
-                  <p>
-                   THI CÔNG XÂY DỰNG
-                  </p>
-                </div>
+            <div class="content item-1">
+              <div class="item-detail d-flex">
+                <img
+                  src="@/assets/img/icon-house.png"
+                  style="margin-bottom:3px"
+                />
+                <p>
+                  THI CÔNG XÂY DỰNG
+                </p>
               </div>
+            </div>
           </div>
           <div class="col-md-4 col-sm-12 cat-item">
-             <div class="content item-2">
+            <div class="content item-2">
               <div class="item-detail d-flex">
                 <img src="@/assets/img/icon-decoration.png" />
                 <p>
@@ -46,75 +49,78 @@
       </div>
     </section>
     <!-- Start Categories  -->
-    <section class="describe pt-40px mt-40px">
+    <section class="describe pt-40px pb-40px mt-40px">
       <div class="content-describe container">
         <div class="row">
-          <!-- Describe LEFT -->
-          <div class="col-md-6 col-sm-12 describe-left">
+          <div class="col-md-5 col-sm-12 describe-left pr-0">
             <p class="slogan">
-              <span>Kết nối</span> bạn với nhà thầu <span>uy tín</span> và <span>chuyên nghiệp</span> nhất
+              <span>Kết nối</span> bạn với nhà thầu <span>uy tín</span> và
+              <span>chuyên nghiệp</span> nhất
             </p>
             <!-- Block 1 -->
-            <div class="block-content">
+            <div class="block-content mt-40px">
               <div class="block-title d-flex">
-                <img src="@/assets/img/icon-chart.png" />
+                <img src="@/assets/img/icon-people.png" />
                 <p>Nhận ngay báo giá & hồ sơ từ nhiều đơn vị uy tín</p>
               </div>
-              <div class="content">
+              <div class="content mt-15px">
                 <p>
-                  Chỉ cần bỏ ra <span> 5 phút</span> đăng yêu cầu dự án của bạn. Các nhà thầu của chúng tôi sẽ gửi ngay <span> hồ sơ năng lực, báo giá tạm tính </span> và <span> đề xuất giải pháp </span> ban đầu phù hợp cho công trình của bạn.
+                  Chỉ cần bỏ ra <span> 5 phút</span> đăng yêu cầu dự án của bạn.
+                  Các nhà thầu của chúng tôi sẽ gửi ngay
+                  <span> hồ sơ năng lực, báo giá tạm tính </span> và
+                  <span> đề xuất giải pháp </span> ban đầu phù hợp cho công
+                  trình của bạn.
                 </p>
               </div>
             </div>
-            <!-- Block 2 -->
-            <div class="block-content">
+             <!-- Block 2 -->
+            <div class="block-content mt-40px">
               <div class="block-title d-flex">
-                <img src="@/assets/img/icon-chart.png" />
-                <p>Nhận ngay báo giá & hồ sơ từ nhiều đơn vị uy tín</p>
+                <img src="@/assets/img/icon-labyrinth.png" />
+                <p>Giá cả cạnh tranh & giải pháp tối ưu</p>
               </div>
-              <div class="content">
+              <div class="content mt-15px">
                 <p>
-                  Chỉ cần bỏ ra <span> 5 phút</span> đăng yêu cầu dự án của bạn. Các nhà thầu của chúng tôi sẽ gửi ngay <span> hồ sơ năng lực, báo giá tạm tính </span> và <span> đề xuất giải pháp </span> ban đầu phù hợp cho công trình của bạn.
+                  Các đơn vị cùng <span> cạnh tranh báo giá </span> và đề xuất nhiều giải pháp khác nhau, giúp bạn <span> tiết kiệm vài chục </span> đến <span> vài trăm triệu đồng.</span>
                 </p>
               </div>
             </div>
-            <!-- Block 3 -->
-            <div class="block-content">
+             <!-- Block 3 -->
+            <div class="block-content mt-40px">
               <div class="block-title d-flex">
                 <img src="@/assets/img/icon-chart.png" />
-                <p>Nhận ngay báo giá & hồ sơ từ nhiều đơn vị uy tín</p>
+                <p>Đánh giá năng lực & tương tác trực tiếp</p>
               </div>
-              <div class="content">
+              <div class="content mt-15px">
                 <p>
-                  Chỉ cần bỏ ra <span> 5 phút</span> đăng yêu cầu dự án của bạn. Các nhà thầu của chúng tôi sẽ gửi ngay <span> hồ sơ năng lực, báo giá tạm tính </span> và <span> đề xuất giải pháp </span> ban đầu phù hợp cho công trình của bạn.
+                  Năng lực của nhà thầu được<span> đánh giá minh bạch</span> từ chủ đầu tư các dự án trước. Ngoài ra, bạn sẽ được chọn<span> tương tác trực tiếp </span>với <span>2-3</span> đơn vị & nhận báo giá chính xác nhất trước khi đưa ra quyết định cuối cùng.
                 </p>
               </div>
             </div>
-            <!-- Block 4 -->
-            <div class="block-content">
+             <!-- Block 4 -->
+            <div class="block-content mt-40px">
               <div class="block-title d-flex">
-                <img src="@/assets/img/icon-chart.png" />
-                <p>Nhận ngay báo giá & hồ sơ từ nhiều đơn vị uy tín</p>
+                <img src="@/assets/img/icon-contract.png" />
+                <p>Chúng tôi hỗ trợ xuyên suốt dự án</p>
               </div>
-              <div class="content">
+              <div class="content mt-15px">
                 <p>
-                  Chỉ cần bỏ ra <span> 5 phút</span> đăng yêu cầu dự án của bạn. Các nhà thầu của chúng tôi sẽ gửi ngay <span> hồ sơ năng lực, báo giá tạm tính </span> và <span> đề xuất giải pháp </span> ban đầu phù hợp cho công trình của bạn.
+                  <span>Ký hợp đồng</span> và <span>thanh toán</span> cho nhà thầu trực tiếp qua hệ thống của Econs. <span>Theo dõi tiến độ</span> và nhận <span>báo cáo thi công</span> hằng ngày.
                 </p>
               </div>
             </div>
-            <!-- Btn  -->
-            <div class="btn-registration mt-4 mb-2">
+            <!-- btn register -->
+            <div class="btn-registration mt-30px mb-2">
               <span>ĐĂNG DỰ ÁN NGAY</span>
             </div>
           </div>
-          <!-- Describe RIGHT -->
-          <div class="col-md-6 col-sm-12 describe-right">
+          <div class="col-md-7 col-sm-12 describe-right">
             <div class="row">
-              <div class="col-12 mb-5">
-                <img src="@/assets/img/describe-1.png" />
+              <div class="col-12 mb-50px">
+                <img class="pl-15px" src="@/assets/img/describe-1.png" />
               </div>
               <div class="col-12">
-                 <img src="@/assets/img/describe-2.png" />
+                <img class="pl-15px" src="@/assets/img/describe-2.png" />
               </div>
             </div>
           </div>
@@ -174,7 +180,7 @@
 </template>
 
 <script>
-import Header from '@/components/Header';
+import Header from "@/components/Header";
 import Modal from "@/components/Modal";
 export default {
   watch: {
@@ -191,7 +197,7 @@ export default {
   },
   components: {
     Modal,
-    Header
+    Header,
   },
   methods: {
     openModal() {

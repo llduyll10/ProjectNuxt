@@ -45,8 +45,8 @@
                             margin-bottom: 0;
                         }
                         img{
-                            width: 17px;
-                            height: 17px;
+                            width: 24px;
+                            height: 21px;
                             margin-right: 10px;
                         }
 
@@ -75,12 +75,12 @@
                     font-size: 30px;
                     font-weight: 400;
                     color: $main-color;
+                    margin-bottom: 0;
                     span{
                         font-weight: 700;
                     }
                 }
                 .block-content{
-                    margin-top: 20px;
                     .block-title{
                         img{
                             width: 34px;
@@ -95,7 +95,6 @@
                         }
                     }
                     .content{
-                        margin-top: 10px;
                         p{
                             margin-bottom: 0;
                             font-size: 15px;
