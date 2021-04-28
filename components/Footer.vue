@@ -4,7 +4,7 @@
             <div class="row links">
                 <div class="col-lg-3 col-md-3 link ">
                     <img class="mb-12px" src="@/assets/img/Econslogobluewhite.png" alt="">
-                    <div class="wrap mt-15px">
+                    <div class="wrap mt-10px">
                         <div class="content f-13">
                             Về chúng tôi
                         </div>
@@ -27,7 +27,7 @@
                 </div>
                 <div class="col-lg-3 col-md-3 link">
                     <div class="title">
-                        <img class="user-icon" src="@/assets/img/footer-1.png">
+                        <img class="user-icon" src="@/assets/svg/f1.svg">
                         <div class="link f-14">
                             HẠNG MỤC
                         </div>
@@ -49,7 +49,7 @@
                             Thiết kế đồ hoạ
                         </div>
                         <div class="content f-13">
-                            Tư vẫn giám sát
+                            Tư vấn giám sát
                         </div>
                         <div class="content f-13">
                             Hạng mục khác
@@ -58,7 +58,7 @@
                 </div>
                 <div class="col-lg-3 col-md-3 link">
                     <div class="title">
-                        <img class="user-icon" src="@/assets/img/footer-2.png">
+                        <img class="user-icon" src="@/assets/svg/f2.svg">
                         <div class="link f-14">
                             Hướng dẫn sử dụng
                         </div>
@@ -71,7 +71,7 @@
                         Hướng dẫn đăng dự án
                         </div>
                         <div class="content f-13">
-                            Hướng dẫn hồ sơ và chào giá
+                            Hướng dẫn chọn hồ sơ và chào giá
                         </div>
                         <div class="content f-13">
                             Hướng dẫn quản lí dự án
@@ -89,7 +89,7 @@
                 </div>
                 <div class="col-lg-3 col-md-3 link">
                     <div class="title">
-                        <img class="user-icon" src="@/assets/img/footer-3.png">
+                        <img class="user-icon" src="@/assets/svg/f3.svg">
                         <div class="link f-14">
                             Đăng kí chào giá
                         </div>
@@ -132,23 +132,77 @@
                 <div class="col-lg-4 net-2">
                     <div class="contact">
                         <!-- <img src="@/assets/svg/icon-face.svg" class="icon" alt=""> -->
-                        <img src="@/assets/svg/icon-p.svg" class="icon" alt="">
-                        <img src="@/assets/svg/icon-likedin.svg" class="icon" alt="">
-                        <img src="@/assets/svg/icon-google.svg" class="icon" alt="">
-                        <img src="@/assets/svg/icon-youtobe.svg" class="icon" alt="">
+                        <img src="@/assets/svg/icon-p.svg" alt="">
+                        <img src="@/assets/svg/icon-likedin.svg" alt="">
+                        <img src="@/assets/svg/icon-google.svg" alt="">
+                        <img src="@/assets/svg/icon-youtobe.svg" alt="">
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="d-flex justify-content-end">
-                        <span class="title f-14">Tải ứng dụng</span>
+                <div class="col-lg-6 net-3">
+                    <div class="d-flex justify-content-end align-items-end">
+                        <span class="title f-14 mr-20px">Tải ứng dụng</span>
                         <div class="download-icon">
-                            <img src="@/assets/svg/icon-apple.svg" class="icon" alt="">
-                            <img src="@/assets/svg/icon-robo.svg" class="icon" alt="">
+                            <img src="@/assets/svg/icon-apple.svg" class="mr-15px" alt="">
+                            <img src="@/assets/svg/icon-robo.svg" alt="">
                         </div>
                     </div>
                 </div>
             </div>
             <div class="line"></div>
+            <div class="introduce">
+                <div class="in-top">
+                    <div class="name">
+                        CÔNG TY CỔ PHẦN EPOINT 
+                    </div>
+                    <div class="icon">
+                        <img src="@/assets/svg/Card.svg" alt="">
+                        <img src="@/assets/svg/visa.svg" alt="">
+                        <img src="@/assets/svg/pay.svg" alt="">
+                    </div>
+                </div>
+                <div class="in-center row pt-14px">
+                    <div class="col-lg-3 in1">
+                        <div class="content">
+                            <img class="big1" src="@/assets/svg/big1.svg" alt="">
+                            <div class="text">
+                                <p>Mã số thuế: 0313806334
+                                </p>
+                                <p> Nơi cấp: Sở kế hoạch & đầu tư TP. HCM.</p>
+                                <p>Cấp ngày 14/05/2016</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 in1">
+                        <div class="content">
+                                <img class="big2" src="@/assets/svg/big2.svg" alt="">
+                                <div class="text">
+                                    <p>D46 KDC Nam Long Phú Thuận</p>
+                                    <p>P. Phú Thuận, Q7, TP.HCM</p>
+                                    <p>support@epoint.vn</p>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-lg-6 in3 d-flex justify-content-end">
+                        <img class="big3" src="@/assets/svg/big3.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="list mt-60px pb-25px">
+                <ul class="list-item">
+                    <li>Điều khoản sử dụng</li>
+                    <li>Điều khoản thanh toán</li>
+                    <li>Điều khoản khách hàng</li>
+                    <li>Điều khoản chào giá</li>
+                    <li>Điều khoản thanh toán</li>
+                    <li>Chính sách bảo mật</li>
+                    <li>Quy chế hoạt động</li>
+                </ul>
+            </div>
         </div>
+        <div class="copyright">
+                <div class="container">
+                    <div class="text">© Copyright 2021 Epoint. All rights reserved.</div>
+                </div>
+            </div>
     </footer>
 </template>
