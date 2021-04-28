@@ -222,7 +222,7 @@
                             margin-bottom: 0;
                             margin-top: 2px;
                             font-weight: 400;
-                            font-size: 12px ;
+                            font-size: 14px ;
                             span{
                                 font-size: 14px;
                                 color: #F2C94C;
@@ -233,9 +233,8 @@
             }
         }
         .seemore{
-            span{
-                color: $main-color;
-            }
+            color: $main-color;
+            cursor: pointer;
         }
     }
 

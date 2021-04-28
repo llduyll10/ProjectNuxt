@@ -274,9 +274,9 @@
         </div>
         <div class="row">
           <div class="col-12">
-            <p class="mb-0 text-right mt-36px">
+            <p class="mb-0 text-right mt-36px f-13 seemore">
               Xem thêm dự án
-              <img src="@/assets/img/icon-right.png">
+              <img class="ml-5px" src="@/assets/img/icon-right.png">
             </p>
           </div>
         </div>
