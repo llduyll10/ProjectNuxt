@@ -49,7 +49,7 @@
       </div>
     </section>
     <!-- Start Categories  -->
-    <section class="describe pt-40px pb-40px mt-40px">
+    <section class="describe pt-50px pb-50px mt-40px">
       <div class="content-describe container">
         <div class="row">
           <div class="col-md-5 col-sm-12 describe-left pr-0">
@@ -73,7 +73,7 @@
                 </p>
               </div>
             </div>
-             <!-- Block 2 -->
+            <!-- Block 2 -->
             <div class="block-content mt-40px">
               <div class="block-title d-flex">
                 <img src="@/assets/img/icon-labyrinth.png" />
@@ -81,11 +81,14 @@
               </div>
               <div class="content mt-15px">
                 <p>
-                  Các đơn vị cùng <span> cạnh tranh báo giá </span> và đề xuất nhiều giải pháp khác nhau, giúp bạn <span> tiết kiệm vài chục </span> đến <span> vài trăm triệu đồng.</span>
+                  Các đơn vị cùng <span> cạnh tranh báo giá </span> và đề xuất
+                  nhiều giải pháp khác nhau, giúp bạn
+                  <span> tiết kiệm vài chục </span> đến
+                  <span> vài trăm triệu đồng.</span>
                 </p>
               </div>
             </div>
-             <!-- Block 3 -->
+            <!-- Block 3 -->
             <div class="block-content mt-40px">
               <div class="block-title d-flex">
                 <img src="@/assets/img/icon-chart.png" />
@@ -93,11 +96,15 @@
               </div>
               <div class="content mt-15px">
                 <p>
-                  Năng lực của nhà thầu được<span> đánh giá minh bạch</span> từ chủ đầu tư các dự án trước. Ngoài ra, bạn sẽ được chọn<span> tương tác trực tiếp </span>với <span>2-3</span> đơn vị & nhận báo giá chính xác nhất trước khi đưa ra quyết định cuối cùng.
+                  Năng lực của nhà thầu được<span> đánh giá minh bạch</span> từ
+                  chủ đầu tư các dự án trước. Ngoài ra, bạn sẽ được chọn<span>
+                    tương tác trực tiếp </span
+                  >với <span>2-3</span> đơn vị & nhận báo giá chính xác nhất
+                  trước khi đưa ra quyết định cuối cùng.
                 </p>
               </div>
             </div>
-             <!-- Block 4 -->
+            <!-- Block 4 -->
             <div class="block-content mt-40px">
               <div class="block-title d-flex">
                 <img src="@/assets/img/icon-contract.png" />
@@ -105,7 +112,10 @@
               </div>
               <div class="content mt-15px">
                 <p>
-                  <span>Ký hợp đồng</span> và <span>thanh toán</span> cho nhà thầu trực tiếp qua hệ thống của Econs. <span>Theo dõi tiến độ</span> và nhận <span>báo cáo thi công</span> hằng ngày.
+                  <span>Ký hợp đồng</span> và <span>thanh toán</span> cho nhà
+                  thầu trực tiếp qua hệ thống của Econs.
+                  <span>Theo dõi tiến độ</span> và nhận
+                  <span>báo cáo thi công</span> hằng ngày.
                 </p>
               </div>
             </div>
@@ -127,7 +137,152 @@
         </div>
       </div>
     </section>
-
+    <!-- End Categories -->
+    <!-- Start Special Prodcut-->
+    <section id="special-product" class="mt-40px pb-50px">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 title mb-40px">
+            <p class="f-24">DỰ ÁN NỔI BẬT</p>
+            <div class="line"></div>
+          </div>
+        </div>
+        <div class="row list-item">
+          <div class="col-md-4 card-item">
+            <div class="item">
+              <!-- Content 1 -->
+              <div class="show-img">
+                <div class="type-product">
+                  <span>
+                    XÂY DỰNG
+                  </span>
+                </div>
+                <div class="location">
+                  <img src="@/assets/img/icon-area.png" />
+                  <span>
+                    Quận 7, TP. Hồ Chí Minh
+                  </span>
+                </div>
+              </div>
+              <!-- Content 2 -->
+              <div class="item-infor">
+                <p class="mb-0 f-14">
+                  Tìm nhà thầu XD thi công cặp nhà phố 3 tầng (5x16m/lô)
+                </p>
+                <div class="d-flex group-infor">
+                  <div class="left">
+                    <img src="@/assets/img/icon-human.png" />
+                    <span>Bùi Kim Long </span>
+                  </div>
+                  <div class="right">
+                    <span> Ngân sách</span> - <span>3 Tỷ</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Content 3 -->
+              <div class="audiance d-flex">
+                <p>01/04/2021</p>
+                <p>
+                  <span>4</span>
+                  Chào Giá
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 card-item">
+            <div class="item">
+              <!-- Content 1 -->
+              <div class="show-img">
+                <div class="type-product">
+                  <span>
+                    XÂY DỰNG
+                  </span>
+                </div>
+                <div class="location">
+                  <img src="@/assets/img/icon-area.png" />
+                  <span>
+                    Quận 7, TP. Hồ Chí Minh
+                  </span>
+                </div>
+              </div>
+              <!-- Content 2 -->
+              <div class="item-infor">
+                <p class="mb-0 f-14">
+                  Tìm nhà thầu XD thi công cặp nhà phố 3 tầng (5x16m/lô)
+                </p>
+                <div class="d-flex group-infor">
+                  <div class="left">
+                    <img src="@/assets/img/icon-human.png" />
+                    <span>Bùi Kim Long </span>
+                  </div>
+                  <div class="right">
+                    <span> Ngân sách</span> - <span>3 Tỷ</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Content 3 -->
+              <div class="audiance d-flex">
+                <p>01/04/2021</p>
+                <p>
+                  <span>4</span>
+                  Chào Giá
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 card-item">
+            <div class="item">
+              <!-- Content 1 -->
+              <div class="show-img">
+                <div class="type-product">
+                  <span>
+                    XÂY DỰNG
+                  </span>
+                </div>
+                <div class="location">
+                  <img src="@/assets/img/icon-area.png" />
+                  <span>
+                    Quận 7, TP. Hồ Chí Minh
+                  </span>
+                </div>
+              </div>
+              <!-- Content 2 -->
+              <div class="item-infor">
+                <p class="mb-0 f-14">
+                  Tìm nhà thầu XD thi công cặp nhà phố 3 tầng (5x16m/lô)
+                </p>
+                <div class="d-flex group-infor">
+                  <div class="left">
+                    <img src="@/assets/img/icon-human.png" />
+                    <span>Bùi Kim Long </span>
+                  </div>
+                  <div class="right">
+                    <span> Ngân sách</span> - <span>3 Tỷ</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Content 3 -->
+              <div class="audiance d-flex">
+                <p>01/04/2021</p>
+                <p>
+                  <span>4</span>
+                  Chào Giá
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <p class="mb-0 text-right mt-36px">
+              Xem thêm dự án
+              <img src="@/assets/img/icon-right.png">
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Special Prodcut-->
     <Modal ref="modal">
       <template v-slot:content>
         <div class="modal-login">
