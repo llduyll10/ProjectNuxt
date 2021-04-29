@@ -1,0 +1,100 @@
+#market {
+    background-color: #f2f2f2;
+    .container {
+        padding: 0;
+        .title {
+            font-weight: 700;
+            font-size: 27px;
+            line-height: 35px;
+            text-align: center;
+            color: #198AC6;
+        }
+        .line {
+            border-top: 3px solid #F2C94C;
+            margin-top: 19px;
+            width: 10%;
+            margin: 0 auto
+        }
+        .nav {
+            ul {
+                display: flex;
+                justify-content: space-between;
+                padding-left: 0;
+                list-style: none;
+                margin-left: 18px;
+                li {
+                    font-size: 14px;
+                    font-weight: 700;
+                    line-height: 18px;
+                    color: #828282;
+                    margin-right: 23px;
+                    height: 24px;
+                }
+                .b-active {
+                    color: #4F4F4F;
+                    border-bottom: 2px solid #198AC6;
+                }
+            }
+        }
+        .box {
+            h3 {
+                font-size: 14px;
+                font-weight: 700;
+                line-height: 24px;
+                color: #198AC6;
+            }
+            img {
+                width: 100%;
+            }
+            .evaluate {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .left {
+                    display: flex;
+                    align-items: center;
+                    .text {
+                        line-height: 11px;
+                        font-size: 11px;
+                        font-weight: 400;
+                        margin-left: 9px;
+                        color: #4F4F4F;
+                        span {
+                            color: #198AC6;
+                        }
+                    }
+                    img {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+                .right {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    .one {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        img {
+                            width: 16px;
+                            height: 13px;
+                        }
+                        p {
+                            margin: 0;
+                            line-height: 11px;
+                            font-size: 11px;
+                            font-weight: 400;
+                            margin-left: 9px;
+                            color: #828288;
+                        }
+                    }
+                }
+            }
+        }
+        .next {
+            color: #198AC6;
+            cursor: pointer;
+        }
+    }
+}

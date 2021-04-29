@@ -331,6 +331,7 @@
         </div>
       </template>
     </Modal>
+    <Market />
     <Block1 />
     <Block2 />
     <Footer />
@@ -343,6 +344,8 @@ import Modal from "@/components/Modal";
 import Footer from "@/components/Footer";
 import Block1 from "@/components/Block1";
 import Block2 from "@/components/Block2";
+import Market from "@/components/Market";
+
 
 export default {
   watch: {
@@ -360,6 +363,7 @@ export default {
   components: {
     Modal,
     Header,
+    Market,
     Block1,
     Block2,
     Footer,
