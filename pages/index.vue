@@ -331,12 +331,14 @@
         </div>
       </template>
     </Modal>
+    <Footer />
   </div>
 </template>
 
 <script>
 import Header from "@/components/Header";
 import Modal from "@/components/Modal";
+import Footer from "@/components/Footer";
 export default {
   watch: {
     "$route.query": "$fetch",
@@ -353,6 +355,7 @@ export default {
   components: {
     Modal,
     Header,
+    Footer
   },
   methods: {
     openModal() {
@@ -362,7 +365,6 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~/assets/scss/main.scss";
 .content-left {
   height: 100%;
 }
