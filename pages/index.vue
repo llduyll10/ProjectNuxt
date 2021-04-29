@@ -331,6 +331,8 @@
         </div>
       </template>
     </Modal>
+    <Block1 />
+    <Block2 />
     <Footer />
   </div>
 </template>
@@ -339,6 +341,9 @@
 import Header from "@/components/Header";
 import Modal from "@/components/Modal";
 import Footer from "@/components/Footer";
+import Block1 from "@/components/Block1";
+import Block2 from "@/components/Block2";
+
 export default {
   watch: {
     "$route.query": "$fetch",
@@ -355,7 +360,9 @@ export default {
   components: {
     Modal,
     Header,
-    Footer
+    Block1,
+    Block2,
+    Footer,
   },
   methods: {
     openModal() {
