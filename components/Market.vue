@@ -46,7 +46,7 @@
                         <div class="left">
                             <img src="@/assets/svg/market2.svg" alt="">
                             <div class="text">
-                                Bởi <span>Longb04</span>
+                                Bởi <span>NhungL24</span>
                             </div>
                         </div>
                         <div class="right">
@@ -66,9 +66,9 @@
                     <h3 class="mt-25px">Phong cách thiết kế văn phòng làm hài lòng bất cứ khách hàng nào</h3>
                     <div class="evaluate mt-28px">
                         <div class="left">
-                            <img src="@/assets/svg/market1.svg" alt="">
+                            <img src="@/assets/svg/market3.svg" alt="">
                             <div class="text">
-                                Bởi <span>Longb04</span>
+                                Bởi <span>KarenC02</span>
                             </div>
                         </div>
                         <div class="right">

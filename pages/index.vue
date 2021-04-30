@@ -331,6 +331,7 @@
         </div>
       </template>
     </Modal>
+    <Company />
     <Market />
     <Block1 />
     <Block2 />
@@ -345,6 +346,8 @@ import Footer from "@/components/Footer";
 import Block1 from "@/components/Block1";
 import Block2 from "@/components/Block2";
 import Market from "@/components/Market";
+import Company from "@/components/Company";
+
 
 
 export default {
@@ -363,6 +366,7 @@ export default {
   components: {
     Modal,
     Header,
+    Company,
     Market,
     Block1,
     Block2,
