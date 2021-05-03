@@ -7,6 +7,23 @@
                 height: 450px;
             }
         }
+        .slick-dots{
+            bottom: 22px !important;
+            button{
+                &::before{
+                    font-size: 15px;
+                    color: #E5E5E5;
+                    opacity: 0.5;
+                }
+            }
+            .slick-active{
+                button{
+                    &::before{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
     }
     // Start Category
     .category{
