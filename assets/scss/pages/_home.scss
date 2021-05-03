@@ -2,8 +2,11 @@
     // Start banner
     .banner{
         width: 100%;
-        height: 450px;
-        background-color: red;
+        .cover-img{
+            .img-slider{
+                height: 450px;
+            }
+        }
     }
     // Start Category
     .category{

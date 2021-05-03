@@ -16,12 +16,16 @@
         width: 10%;
         margin: 0 auto
     }
-    ul {
-        padding-left: 0;
-        display: flex;
-        justify-content: space-between;
-        li {
-            list-style: none;
+    .all{
+        width: 100%;
+        .cover-img{
+            .img-slider{
+                height: 150px;
+                width: 100%;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+            }
         }
     }
 }
