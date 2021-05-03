@@ -57,7 +57,6 @@ export default {
   .sub-menu{
     cursor: pointer;
     height: 25px;
-    text-align: center;
     border-right: 1px solid rgba(130, 130, 130, 0.5);
     &:last-child {
         border-right: 0;
@@ -83,4 +82,68 @@ export default {
     outline: none;
   }
 }
+
+
+
+
+// LG
+@media screen and (min-width:1200px) {
+
+}
+//lg -> xl
+@media screen and (min-width:992px) and (max-width:1199px){
+  .cover-header{
+    .sub-menu{
+      border-right: none;
+      padding: 0 10px !important;
+    }
+    .btn-findjob{
+      margin-left: 0 !important;
+    }
+  }
+
+}
+// md -> lg
+@media screen and (min-width:768px) and (max-width:991px) {
+  .cover-header{
+    .sub-menu{
+      padding: 0 !important;
+      border-right: none;
+      padding: 0 !important;
+    }
+    .btn-findjob{
+      margin-left: 0 !important;
+    }
+  }
+
+}
+// sm -> md
+@media screen and (min-width:576px) and (max-width:767px) {
+  .cover-header{
+    .sub-menu{
+      padding: 0 !important;
+      border-right: none;
+      padding: 0 !important;
+    }
+    .btn-findjob{
+      margin-left: 0 !important;
+    }
+  }
+
+}
+@media screen and (max-width:575px)  {
+  .cover-header{
+    .sub-menu{
+      padding: 0 !important;
+      border-right: none;
+      padding: 0 !important;
+    }
+    .btn-findjob{
+      margin-left: 0 !important;
+    }
+  }
+
+}
+
+
 </style>
