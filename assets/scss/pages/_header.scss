@@ -71,64 +71,8 @@
 }
 // sm -> md
 @media screen and (min-width:576px) and (max-width:767px) {
-.cover-header{
-    .sub-menu{
-        padding: 0 !important;
-        border-right: none;
-        margin-top: 0 !important;
-    }
-    .btn-findjob{
-        margin-left: 0 !important;
-    }
-    #nav-collapse{
-        position: fixed;
-        top: 0;
-        display: block;
-        text-align: right;
-        height: 100vh;
-        width: 100%;
-        background-color: white;
-        z-index: 100;
-        overflow: hidden;
-        .navbar-nav{
-            padding-right: 60px !important;
-            .cover-btn{
-                display: flex;
-                justify-content: flex-end;
-            }
-        }
-    }
-}
 
 }
 @media screen and (max-width:575px)  {
-    .cover-header{
-        .sub-menu{
-            padding: 0 !important;
-            border-right: none;
-            margin-top: 0 !important;
-        }
-        .btn-findjob{
-            margin-left: 0 !important;
-        }
-        #nav-collapse{
-            position: fixed;
-            top: 68px;
-            display: block;
-            text-align: right;
-            height: 100vh;
-            width: 100%;
-            background-color: white;
-            z-index: 100;
-            overflow: hidden;
-            .navbar-nav{
-                padding-right: 60px !important;
-                .cover-btn{
-                    display: flex;
-                    justify-content: flex-end;
-                }
-            }
-        }
-    }
-
+   
 }
