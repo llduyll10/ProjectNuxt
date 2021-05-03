@@ -2,7 +2,9 @@
   <div id="homepage">
     <Header />
     <!-- Start Banner -->
-    <div class="banner"></div>
+    <div class="banner">
+
+    </div>
     <!-- End Banner -->
     <!-- Start Categories  -->
     <section class="category pt-40px ">
@@ -283,6 +285,18 @@
       </div>
     </section>
     <!-- End Special Prodcut-->
+    <!-- Start  Typical Unit-->
+    <section id="typical-unit" class="mt-40px pb-50px">
+      <div class="container">
+        <div class="row">
+            <div class="col-12 title mb-40px">
+              <p class="f-24">ĐƠN VỊ TIÊU BIỂU</p>
+              <div class="line"></div>
+            </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Typical Unit -->
     <Modal ref="modal">
       <template v-slot:content>
         <div class="modal-login">
@@ -343,12 +357,14 @@
 import Header from "@/components/Header";
 import Modal from "@/components/Modal";
 import Footer from "@/components/Footer";
+
 import Block1 from "@/components/Block1";
 import Block2 from "@/components/Block2";
 import Market from "@/components/Market";
 import Company from "@/components/Company";
 
-
+import Carousel from '@/components/Carousel'
+import Img from '@/assets/img/black-logo.png'
 
 export default {
   watch: {
@@ -363,6 +379,11 @@ export default {
       this.$fetch();
     }
   },
+  data(){
+    return{
+      testImg: Img
+    }
+  },
   components: {
     Modal,
     Header,
@@ -371,6 +392,8 @@ export default {
     Block1,
     Block2,
     Footer,
+    Footer,
+    Carousel
   },
   methods: {
     openModal() {
@@ -380,7 +403,4 @@ export default {
 };
 </script>
 <style lang="scss">
-.content-left {
-  height: 100%;
-}
 </style>
