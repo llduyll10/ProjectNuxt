@@ -70,7 +70,7 @@
         </div>
       </div>
     </section>
-    <!-- Start Categories  -->
+    <!-- Start describe  -->
     <section class="describe pt-50px pb-50px mt-40px">
       <div class="content-describe container">
         <div class="row">
@@ -142,7 +142,7 @@
               </div>
             </div>
             <!-- btn register -->
-            <div class="btn-registration mt-30px mb-2">
+            <div class="btn-registration mt-30px">
               <span>ĐĂNG DỰ ÁN NGAY</span>
             </div>
           </div>
@@ -159,7 +159,7 @@
         </div>
       </div>
     </section>
-    <!-- End Categories -->
+    <!-- End describe -->
 
     <!-- Start Special Prodcut-->
     <section id="special-product" class="mt-40px pb-50px">
@@ -177,7 +177,7 @@
             :slidesToShow="3"
             :slidesToScroll="3"
             :infinite="true"
-            :numberShow="2"
+            :numberShow="1"
           >
             <template v-slot:content>
               <template v-for="(item, idx) in 6">
@@ -214,7 +214,7 @@
                     </div>
                     <!-- Content 3 -->
                     <div class="audiance d-flex">
-                      <p>01/04/2021</p>
+                      <p class="f-12">01/04/2021</p>
                       <p>
                         <span>4</span>
                         Chào Giá
@@ -356,7 +356,7 @@
     <Market />
     <Block1 />
     <Block2 />
-    <Footer />
+    <!-- <Footer /> -->
     <Modal ref="modal">
       <template v-slot:content>
         <div class="modal-login">

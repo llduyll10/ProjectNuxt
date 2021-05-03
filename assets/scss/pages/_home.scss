@@ -237,6 +237,7 @@
             }
             .slick-arrow{
                 &.slick-prev{
+                  margin-left: 5px;
                   &::before{
                     content: '';
                     border-top: 10px solid transparent;
@@ -246,6 +247,7 @@
                   }
                 }
                 &.slick-next{
+                    margin-right: 5px;
                     &::before{
                         content: '';
                         border-top: 10px solid transparent;
@@ -274,7 +276,33 @@
 
 
 @media only screen and (max-width: 768px) {
-
+    #homepage{
+        .banner{
+            width: 100%;
+            .cover-img{
+                .img-slider{
+                    height: 250px;
+                }
+            }
+        }
+        .category{
+            .cat-item{
+                margin-top: 16px;
+            }
+        }
+        .describe{
+            .describe-left{
+                margin-bottom: 30px;
+                .block-content{
+                    padding-right: 15px;
+                }
+            }
+            .describe-right{
+                padding: 0;
+                padding-right: 15px !important;
+            }
+        }
+    }
 }
 
 

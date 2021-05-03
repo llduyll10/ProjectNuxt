@@ -19,6 +19,7 @@
     .all{
         width: 100%;
         .cover-img{
+            padding: 0 15px;
             .img-slider{
                 height: 150px;
                 width: 100%;
@@ -30,6 +31,7 @@
     }
     .slick-arrow{
         &.slick-prev{
+          margin-left: 5px;
           &::before{
             content: '';
             border-top: 10px solid transparent;
@@ -39,6 +41,7 @@
           }
         }
         &.slick-next{
+            margin-right: 5px;
             &::before{
                 content: '';
                 border-top: 10px solid transparent;
