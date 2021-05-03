@@ -1,0 +1,13 @@
+{
+    "folders": [
+		{
+			"path": "../../myshop"
+		},
+		{
+			"path": ".."
+		}
+	],
+    "settings": {
+        "liveServer.settings.multiRootWorkspaceName": "projetcss"
+    }
+}
