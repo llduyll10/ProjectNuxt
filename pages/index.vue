@@ -225,120 +225,6 @@
               </template>
             </template>
           </Carousel>
-          <!-- <div class="col-md-4 card-item">
-            <div class="item">
-              <div class="show-img">
-                <div class="type-product">
-                  <span>
-                    XÂY DỰNG
-                  </span>
-                </div>
-                <div class="location">
-                  <img src="@/assets/img/icon-area.png" />
-                  <span>
-                    Quận 7, TP. Hồ Chí Minh
-                  </span>
-                </div>
-              </div>
-              <div class="item-infor">
-                <p class="mb-0 f-14">
-                  Tìm nhà thầu XD thi công cặp nhà phố 3 tầng (5x16m/lô)
-                </p>
-                <div class="d-flex group-infor">
-                  <div class="left">
-                    <img src="@/assets/img/icon-human.png" />
-                    <span>Bùi Kim Long </span>
-                  </div>
-                  <div class="right">
-                    <span> Ngân sách</span> - <span>3 Tỷ</span>
-                  </div>
-                </div>
-              </div>
-              <div class="audiance d-flex">
-                <p>01/04/2021</p>
-                <p>
-                  <span>4</span>
-                  Chào Giá
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 card-item">
-            <div class="item">
-              <div class="show-img">
-                <div class="type-product">
-                  <span>
-                    XÂY DỰNG
-                  </span>
-                </div>
-                <div class="location">
-                  <img src="@/assets/img/icon-area.png" />
-                  <span>
-                    Quận 7, TP. Hồ Chí Minh
-                  </span>
-                </div>
-              </div>
-              <div class="item-infor">
-                <p class="mb-0 f-14">
-                  Tìm nhà thầu XD thi công cặp nhà phố 3 tầng (5x16m/lô)
-                </p>
-                <div class="d-flex group-infor">
-                  <div class="left">
-                    <img src="@/assets/img/icon-human.png" />
-                    <span>Bùi Kim Long </span>
-                  </div>
-                  <div class="right">
-                    <span> Ngân sách</span> - <span>3 Tỷ</span>
-                  </div>
-                </div>
-              </div>
-              <div class="audiance d-flex">
-                <p>01/04/2021</p>
-                <p>
-                  <span>4</span>
-                  Chào Giá
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 card-item">
-            <div class="item">
-              <div class="show-img">
-                <div class="type-product">
-                  <span>
-                    XÂY DỰNG
-                  </span>
-                </div>
-                <div class="location">
-                  <img src="@/assets/img/icon-area.png" />
-                  <span>
-                    Quận 7, TP. Hồ Chí Minh
-                  </span>
-                </div>
-              </div>
-              <div class="item-infor">
-                <p class="mb-0 f-14">
-                  Tìm nhà thầu XD thi công cặp nhà phố 3 tầng (5x16m/lô)
-                </p>
-                <div class="d-flex group-infor">
-                  <div class="left">
-                    <img src="@/assets/img/icon-human.png" />
-                    <span>Bùi Kim Long </span>
-                  </div>
-                  <div class="right">
-                    <span> Ngân sách</span> - <span>3 Tỷ</span>
-                  </div>
-                </div>
-              </div>
-              <div class="audiance d-flex">
-                <p>01/04/2021</p>
-                <p>
-                  <span>4</span>
-                  Chào Giá
-                </p>
-              </div>
-            </div>
-          </div> -->
         </div>
         <div class="row">
           <div class="col-12">
@@ -357,54 +243,7 @@
     <Block1 />
     <Block2 />
     <!-- <Footer /> -->
-    <Modal ref="modal">
-      <template v-slot:content>
-        <div class="modal-login">
-          <div class="text-center w-100">
-            <img src="@/assets/img/black-logo.png" style="height:52px" />
-          </div>
-          <form>
-            <div class="form-group mb-3 mt-5">
-              <label class="f-13" for="exampleInputEmail1"
-                >Email hoặc Số điện thoại
-                <span style="color:red">*</span></label
-              >
-              <input
-                type="email"
-                class="form-control"
-                aria-describedby="emailHelp"
-                placeholder="Nhập email hoặc số điện thoại của bạn"
-              />
-            </div>
-            <div class="w-100 text-center">
-              <button class="btn btn-theme theme-blue">Đăng nhập</button>
-            </div>
-          </form>
-          <div class="mt-4 w-100 option">
-            <hr />
-            <div class="child w-100 text-center">
-              <span class="f-13">Hoặc</span>
-            </div>
-          </div>
-          <div class="w-100 text-center mt-4">
-            <button class="btn btn-theme theme-gg">
-              Đăng nhập với google
-              <img src="@/assets/img/gg.png" />
-            </button>
-          </div>
-          <div class="w-100 text-center mt-4">
-            <button class="btn btn-theme theme-fb">
-              Đăng nhập với facebook
-              <img src="@/assets/img/fb.png" style="width:28px" />
-            </button>
-          </div>
-          <p class="text-center w-100 mt-4 f-13">
-            Chưa có tài khoản?
-            <span>Đăng ký ngay</span>
-          </p>
-        </div>
-      </template>
-    </Modal>
+
   </div>
 </template>
 
@@ -451,9 +290,7 @@ export default {
     Carousel,
   },
   methods: {
-    openModal() {
-      this.$refs.modal.showModal();
-    },
+
   },
 };
 </script>
