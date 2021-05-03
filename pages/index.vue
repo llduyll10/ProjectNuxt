@@ -285,18 +285,6 @@
       </div>
     </section>
     <!-- End Special Prodcut-->
-    <!-- Start  Typical Unit-->
-    <section id="typical-unit" class="mt-40px pb-50px">
-      <div class="container">
-        <div class="row">
-            <div class="col-12 title mb-40px">
-              <p class="f-24">ĐƠN VỊ TIÊU BIỂU</p>
-              <div class="line"></div>
-            </div>
-        </div>
-      </div>
-    </section>
-    <!-- End Typical Unit -->
     <Modal ref="modal">
       <template v-slot:content>
         <div class="modal-login">
@@ -345,11 +333,11 @@
         </div>
       </template>
     </Modal>
-    <Company />
+    <!-- <Company /> -->
     <Market />
     <Block1 />
     <Block2 />
-    <Footer />
+    <!-- <Footer /> -->
   </div>
 </template>
 
@@ -402,5 +390,4 @@ export default {
   },
 };
 </script>
-<style lang="scss">
-</style>
+
