@@ -2,7 +2,9 @@
   <div id="homepage">
     <Header />
     <!-- Start Banner -->
-    <div class="banner"></div>
+    <div class="banner">
+
+    </div>
     <!-- End Banner -->
     <!-- Start Categories  -->
     <section class="category pt-40px ">
@@ -339,6 +341,8 @@
 import Header from "@/components/Header";
 import Modal from "@/components/Modal";
 import Footer from "@/components/Footer";
+import Carousel from '@/components/Carousel'
+import Img from '@/assets/img/black-logo.png'
 export default {
   watch: {
     "$route.query": "$fetch",
@@ -352,10 +356,16 @@ export default {
       this.$fetch();
     }
   },
+  data(){
+    return{
+      testImg: Img
+    }
+  },
   components: {
     Modal,
     Header,
-    Footer
+    Footer,
+    Carousel
   },
   methods: {
     openModal() {
@@ -365,7 +375,4 @@ export default {
 };
 </script>
 <style lang="scss">
-.content-left {
-  height: 100%;
-}
 </style>
