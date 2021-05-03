@@ -51,9 +51,7 @@ export default {
 </script>
 <style scoped lang="scss">
 .cover-header {
-  padding: 15px 65px;
   .logo{
-      width: 128px;
       height: 42px;
   }
   .sub-menu{
