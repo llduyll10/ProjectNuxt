@@ -9,7 +9,6 @@
                 </div>
             </div>
             <div class="all mt-40px">
-                <!-- <ul class="mt-40px"> -->
                 <Carousel
                     :arrows="true"
                     :dots="false"
@@ -34,14 +33,6 @@
                         </template>
                     </template>
                 </Carousel>
-
-                    <!-- <li><img src="@/assets/svg/company1.svg" alt=""></li>
-                    <li><img src="@/assets/svg/company2.svg" alt=""></li>
-                    <li><img src="@/assets/svg/company3.svg" alt=""></li>
-                    <li><img src="@/assets/svg/company1.svg" alt=""></li>
-                    <li><img src="@/assets/svg/company2.svg" alt=""></li>
-                    <li><img src="@/assets/svg/company3.svg" alt=""></li>
-                </ul> -->
             </div>
         </div>
     </section>
@@ -72,6 +63,6 @@ export default {
     }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 
 </style>

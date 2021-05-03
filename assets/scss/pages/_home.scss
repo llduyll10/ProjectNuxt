@@ -145,6 +145,7 @@
         .list-item{
             .card-item{
                 min-height: 330px;
+                padding: 15px;
                 .item{
                     width: 100%;
                     height: 100%;
@@ -231,6 +232,26 @@
                                 color: #F2C94C;
                             }
                         }
+                    }
+                }
+            }
+            .slick-arrow{
+                &.slick-prev{
+                  &::before{
+                    content: '';
+                    border-top: 10px solid transparent;
+                    border-bottom: 10px solid transparent;
+                    border-right:10px solid #4F4F4F;
+                    font-size: 0;
+                  }
+                }
+                &.slick-next{
+                    &::before{
+                        content: '';
+                        border-top: 10px solid transparent;
+                        border-bottom: 10px solid transparent;
+                        border-left: 10px solid #4F4F4F;
+                        font-size: 0;
                     }
                 }
             }
