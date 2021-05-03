@@ -8,7 +8,7 @@
           </template>
         </b-navbar-brand>
 
-        <b-navbar-toggle target="nav-collapse" ref="btnToggle"></b-navbar-toggle>
+        <b-navbar-toggle class="actionMenu" target='null' @click="showMenuMobile"></b-navbar-toggle>
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
                <template v-for="(item, index) in objMenu">
@@ -34,12 +34,27 @@
         </b-collapse>
       </b-navbar>
     </div>
+
+    <div class="mobileMenu" v-if="isShowMobile">
+        
+        <div class="menuItem">
+          <div class="menuItemBar">
+            <div class="close" @click="isShowMobile=false">close</div>
+          </div>
+          <ul>
+            <li  v-for="(item, index) in objMenu">
+              <span class="f-13">{{item.name}}</span>
+            </li>
+          </ul>
+        </div>
+    </div>
   </div>
 </template>
 <script>
 export default {
   data() {
     return {
+      isShowMobile:false,
       objMenu: [
         { name: "Thuê Nhà Thầu" },
         { name: "Tìm Dự Án" },
@@ -49,7 +64,8 @@ export default {
     };
   },
   methods:{
-    hideMenu(){
+    showMenuMobile(){
+      this.isShowMobile = true;
     }
   }
 };

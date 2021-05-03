@@ -1,0 +1,35 @@
+
+
+
+.mobileMenu {
+    width: 100%;
+    background-color: rgba(24, 24, 24, 0.5);
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    .menuItem {
+        height: 100%;
+        background: white;
+        float: right;
+    }
+   
+}
+
+@media screen and (max-width:768px)  {
+    .mobileMenu {
+       .menuItem {
+         width: 85%;
+       }
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+    .mobileMenu {
+        .menuItem {
+            width: 50%;
+        }
+    }
+}
+
+
