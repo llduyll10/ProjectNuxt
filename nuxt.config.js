@@ -30,6 +30,11 @@ export default {
   plugins: [
     '~/plugins/base-services.js'
   ],
+
+  router: {
+    middleware: 'auth'
+  },
+
   server:{
     port:8000
   },

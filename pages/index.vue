@@ -274,7 +274,7 @@ export default {
   },
   async asyncData(context) {},
   async fetch() {
-    console.log("haha fetch", this.$store);
+    // console.log("haha fetch", this.$store);
   },
   activated() {
     if (this.$fetchState.timestamp <= Date.now() - 10000) {

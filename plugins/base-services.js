@@ -7,8 +7,11 @@ const instance = axios.create({
   }),
 });
 
-const setHeader = () => {
-  var token = localStorage.getItem("token");
+const setHeader = (context) => {
+  var token = process.server
+      ? 'context.req.headers.cookies.token'
+      : localStorage.getItem("token");
+  console.log('token',token)
   instance.defaults.headers.common.Authorization = `Token ${token}`;
 };
 
@@ -23,7 +26,7 @@ const setUrl = (url) => {
 
 export default (context, inject) =>{
   const getAPI = (url, config) => {
-    setHeader();
+    setHeader(context);
     url = setUrl(url);
     return instance
       .get(url, config)
@@ -33,7 +36,7 @@ export default (context, inject) =>{
       });
   };
   const postAPI = (url, data, config) => {
-    setHeader();
+    setHeader(context);
     url = setUrl(url);
     return instance
       .post(url, data, config)
@@ -43,7 +46,7 @@ export default (context, inject) =>{
       });
   };
   const deleteAPI = (url, config) => {
-    setHeader();
+    setHeader(context);
     url = setUrl(url);
     return instance
       .delete(url, config)

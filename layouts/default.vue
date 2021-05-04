@@ -16,13 +16,22 @@ Vue.prototype.$checkDragDrop = (classSelector) => {
       drag = true
     })
     item.addEventListener('mouseup', () =>{
-      console.log('drag', drag)
+      // console.log('drag', drag)
       return drag
     })
   })
 }
 export default {
+  async asyncData(context) {
+    const data = await context.get('search?q=apollo 11&page=1',{abc:'haha'});
+    const companies = data.data;
 
+    console.log('companies',companies);
+    
+  },
+  mounted(){
+    
+  }
 }
 </script>
 

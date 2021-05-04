@@ -1,5 +1,6 @@
 <template>
   <div class="cover-header">
+    
     <div class="container">
       <b-navbar toggleable="lg" >
         <b-navbar-brand href="#">
@@ -7,19 +8,26 @@
             <img src="@/assets/img/black-logo.png" alt="Logo" class="logo" />
           </template>
         </b-navbar-brand>
+        
 
         <b-navbar-toggle class="actionMenu" target='null' @click="showMenuMobile"></b-navbar-toggle>
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
                <template v-for="(item, index) in objMenu">
                     <b-nav-item :key="index" class="sub-menu px-36px">
-                        <span class="f-13">{{item.name}}</span>
+                        <span @click="$router.push('/'+item.link)" class="f-13">{{item.name}}</span>
                     </b-nav-item>
                 </template>
           </b-navbar-nav>
 
           <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto">
+
+                <template v-if="$store.state.isLogin">
+                  dang login
+                </template>
+
+                <template v-else>
                 <template v-for="(item, index) in objBtn">
                     <b-nav-item :key="index" class="sub-menu px-20px mt-10px" @click="item.methods">
                         <span class="f-13" >{{item.name}}</span>
@@ -30,6 +38,7 @@
                       <span class="f-13">Đăng Việc</span>
                   </div>
                 </b-nav-item>
+                 </template>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
@@ -209,29 +218,29 @@ export default {
     return {
       isShowMobile:false,
       objMenu: [
-        { name: "Thuê Nhà Thầu" },
+        { name: "Thuê Nhà Thầu", link:'thue' },
         { name: "Tìm Dự Án" },
         { name: "Hướng Dẫn" },
       ],
       objBtn: [{ name: "Đăng Ký ",methods:this.openModalRegister }, { name: "Đăng Nhập ",methods:this.openModalLogin }],
       objUser:{},
-      objLogin:{}
+      objLogin:{},
     };
   },
+  
+  created(){
+    
+  },
   mounted(){
+    
   },
   methods:{
     createUser(){
-      console.log(this.objUser)
+      // console.log(this.objUser)
     },
     login(){
-      console.log(this.objLogin)
-      this.$del('search?q=apollo 11&page=1',{abc:'haha'}).then(res =>{
-        console.log(res)
-      })
-      .catch(err =>{
-        console.log(err)
-      })
+      // console.log(this.objLogin)
+      return this.$get('search?q=apollo 11&page=1',{abc:'haha'});
     },
     showMenuMobile(){
       this.isShowMobile = true;
