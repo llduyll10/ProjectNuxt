@@ -8,7 +8,7 @@ const instance = axios.create({
 });
 
 const setHeader = () => {
-  var token = localStorage.getItem("token") || 'abc';
+  var token = localStorage.getItem("token");
   instance.defaults.headers.common.Authorization = `Token ${token}`;
 };
 
@@ -20,38 +20,6 @@ const setUrl = (url) => {
   }
 };
 
-export const getAPI = (url, config) => {
-  setHeader();
-  url = setUrl(url);
-  return instance
-    .get(url, config)
-    .then((res) => res)
-    .catch((error) => {
-      throw error;
-    });
-};
-
-export const postAPI = (url, data, config) => {
-  setHeader();
-  url = setUrl(url);
-  return instance
-    .post(url, data, config)
-    .then((res) => res)
-    .catch((error) => {
-      throw error;
-    });
-};
-
-export const deleteAPI = (url, config) => {
-  setHeader();
-  url = setUrl(url);
-  return instance
-    .delete(url, config)
-    .then((res) => res)
-    .catch((error) => {
-      throw error;
-    });
-};
 
 export default (context, inject) =>{
   const getAPI = (url, config) => {
@@ -64,5 +32,27 @@ export default (context, inject) =>{
         throw error;
       });
   };
-  inject('getAPI', getAPI)
+  const postAPI = (url, data, config) => {
+    setHeader();
+    url = setUrl(url);
+    return instance
+      .post(url, data, config)
+      .then((res) => res)
+      .catch((error) => {
+        throw error;
+      });
+  };
+  const deleteAPI = (url, config) => {
+    setHeader();
+    url = setUrl(url);
+    return instance
+      .delete(url, config)
+      .then((res) => res)
+      .catch((error) => {
+        throw error;
+      });
+  };
+  inject('get', getAPI)
+  inject('post',postAPI)
+  inject('del',deleteAPI)
 }

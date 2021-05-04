@@ -219,7 +219,6 @@ export default {
     };
   },
   mounted(){
-    this.login()
   },
   methods:{
     createUser(){
@@ -227,7 +226,7 @@ export default {
     },
     login(){
       console.log(this.objLogin)
-      this.$getAPI('search?q=apollo 11&page=1').then(res =>{
+      this.$del('search?q=apollo 11&page=1',{abc:'haha'}).then(res =>{
         console.log(res)
       })
       .catch(err =>{
