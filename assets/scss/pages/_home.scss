@@ -317,6 +317,15 @@
             .describe-right{
                 padding: 0;
                 padding-right: 15px !important;
+                .col-12{
+                    margin-bottom: 30px !important;
+                    img{
+                        height: auto !important;
+                    }
+                    &:last-child{
+                        margin-bottom: 0 !important;
+                    }
+                }
             }
         }
     }
