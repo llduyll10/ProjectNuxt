@@ -41,8 +41,8 @@
             <div class="col-12 d-flex px-50px py-16px">
               <img src="@/assets/img/black-logo.png" alt="Logo" class="logo" />
               <div class="menuItemBar ml-auto">
-                <div class="close" @click="isShowMobile=false">
-                  x
+                <div class="mt-10px" @click="isShowMobile=false">
+                  <i class="fas fa-times"></i>
                 </div>
               </div>
             </div>
