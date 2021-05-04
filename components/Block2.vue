@@ -10,10 +10,11 @@
       >
         <template v-slot:content>
           <template v-for="(item, idx) in 5">
-            <div class="row" :key="idx">
-              <div class="col-lg-10 offset-lg-1 d-flex boxinfo">
+              <div :key="idx">
+              <div class="boxinfo d-lg-flex">
+                
                 <img src="@/assets/svg/longb.svg" alt="" />
-                <div class="text ml-40px">
+                <div class="text">
                   <div class="info">
                     Anh Bùi Kim Long
                     <span>- công trình biệt thự Phú Mỹ, Q.7 </span>
@@ -24,9 +25,9 @@
                     độ, và không bị phát sinh. Lần sau chắc chắn sẽ sử dụng dịch
                     vụ của công ty.”
                   </p>
-                </div>
               </div>
-            </div>
+              </div>
+              </div>
           </template>
         </template>
       </Carousel>
