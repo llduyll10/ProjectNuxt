@@ -203,7 +203,7 @@
 
 </template>
 <script>
-import {getAPI} from '@/services/base-services.js'
+
 export default {
   data() {
     return {
@@ -218,13 +218,16 @@ export default {
       objLogin:{}
     };
   },
+  mounted(){
+    this.login()
+  },
   methods:{
     createUser(){
       console.log(this.objUser)
     },
     login(){
       console.log(this.objLogin)
-      getAPI('search?q=apollo 11&page=1').then(res =>{
+      this.$getAPI('search?q=apollo 11&page=1').then(res =>{
         console.log(res)
       })
       .catch(err =>{

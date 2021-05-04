@@ -19,7 +19,11 @@
                 :style="{
                   'background-image': 'url(' + `${bannerImg}` + ')',
                 }"
-              ></div>
+              >
+                <div class="content-banner">
+
+                </div>
+              </div>
             </div>
           </template>
         </template>
