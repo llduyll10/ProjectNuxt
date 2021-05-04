@@ -150,7 +150,10 @@
               <span>ĐĂNG DỰ ÁN NGAY</span>
             </div>
           </div>
-          <div class="col-md-7 col-sm-12 describe-right">
+          <div class="col-md-1">
+
+          </div>
+          <div class="col-md-6 col-sm-12 describe-right">
             <div class="row">
               <div class="col-12 mb-50px">
                 <img class="pl-15px" src="@/assets/img/describe-1.png" />
