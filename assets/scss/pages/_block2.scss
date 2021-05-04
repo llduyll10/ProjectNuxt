@@ -8,6 +8,8 @@
         width: 80%;
         margin: 0 auto;
         border-radius: 5px;
+        height: auto;
+        overflow: hidden;
         .text {
             margin-left: 40px;
             .info {
@@ -26,6 +28,7 @@
                 line-height: 26px;
                 font-style: italic;
                 margin-top: 11px;
+                margin-right: 20px;
             }
         }
     }
