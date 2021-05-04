@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-modal ref="my-modal" centered hide-footer title="">
+    <b-modal ref="my-modal" centered hide-footer title="" :id='id'> 
         <slot name="content"></slot>
     </b-modal>
   </div>
@@ -8,7 +8,7 @@
 
 <script>
   export default {
-    props:[],
+    props:['id'],
     methods: {
       showModal() {
         this.$refs['my-modal'].show()
@@ -24,9 +24,3 @@
     }
   }
 </script>
-<style  lang="scss">
-.modal-header{
-    border-bottom: 0 !important;
-    padding-bottom: 0;
-}
-</style>

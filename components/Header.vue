@@ -72,13 +72,13 @@
           </div>
         </div>
     </div>
-    <Modal ref="modal">
+    <Modal ref="modal" id="modal-custom-form-login">
       <template v-slot:content>
         <div class="modal-login">
           <div class="text-center w-100">
             <img src="@/assets/img/black-logo.png" style="height:52px" />
           </div>
-          <form>
+          <form @submit="">
             <div class="form-group mb-3 mt-5">
               <label class="f-13" for="exampleInputEmail1"
                 >Email hoặc Số điện thoại
@@ -87,7 +87,7 @@
               <input
                 type="email"
                 class="form-control"
-                aria-describedby="emailHelp"
+                required
                 placeholder="Nhập email hoặc số điện thoại của bạn"
               />
             </div>
