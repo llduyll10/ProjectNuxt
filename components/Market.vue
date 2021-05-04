@@ -18,11 +18,11 @@
             </div>
             <div class="row box mt-10px">
                 <div class="col-lg-4">
-                    <img src="@/assets/svg/marketbig1.svg" alt="">
+                    <img src="@/assets/img/product-1.png" alt="">
                     <h3 class="mt-25px">Bỏ túi ngay bí quyết trang trí phòng khách hiện đại với Phố Xinh </h3>
                     <div class="evaluate mt-20px">
                         <div class="left">
-                            <img src="@/assets/svg/market1.svg" alt="">
+                            <img src="@/assets/img/market1.png" alt="">
                             <div class="text">
                                 Bởi <span>Longb04</span>
                             </div>
@@ -40,11 +40,12 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <img src="@/assets/svg/marketbig2.svg" alt="">
+                    <img src="@/assets/img/product-1.png" alt="">
+                    
                     <h3 class="mt-25px">Trước khi xây nhà, cần nắm rõ những nguyên tắc cơ bản khi làm việc với kiến trúc sư</h3>
                     <div class="evaluate mt-20px">
                         <div class="left">
-                            <img src="@/assets/svg/market2.svg" alt="">
+                            <img src="@/assets/img/market1.png" alt="">
                             <div class="text">
                                 Bởi <span>NhungL24</span>
                             </div>
@@ -62,11 +63,11 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <img src="@/assets/svg/marketbig1.svg" alt="">
+                    <img src="@/assets/img/product-1.png" alt="">
                     <h3 class="mt-25px">Phong cách thiết kế văn phòng làm hài lòng bất cứ khách hàng nào</h3>
                     <div class="evaluate mt-20px">
                         <div class="left">
-                            <img src="@/assets/svg/market2.svg" alt="">
+                            <img src="@/assets/img/market1.png" alt="">
                             <div class="text">
                                 Bởi <span>KarenC02</span>
                             </div>
