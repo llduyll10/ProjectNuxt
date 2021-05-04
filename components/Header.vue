@@ -203,6 +203,7 @@
 
 </template>
 <script>
+import {getAPI} from '@/services/base-services.js'
 export default {
   data() {
     return {
@@ -223,6 +224,12 @@ export default {
     },
     login(){
       console.log(this.objLogin)
+      getAPI('search?q=apollo 11&page=1').then(res =>{
+        console.log(res)
+      })
+      .catch(err =>{
+        console.log(err)
+      })
     },
     showMenuMobile(){
       this.isShowMobile = true;
