@@ -57,16 +57,16 @@
 }
 // md -> lg
 @media screen and (min-width:768px) and (max-width:991px) {
-.cover-header{
-    .sub-menu{
-        padding: 0 !important;
-        border-right: none;
-        padding: 0 !important;
+    .cover-header{
+        .sub-menu{
+            padding: 0 !important;
+            border-right: none;
+            padding: 0 !important;
+        }
+        .btn-findjob{
+            margin-left: 0 !important;
+        }
     }
-    .btn-findjob{
-        margin-left: 0 !important;
-    }
-}
 
 }
 // sm -> md

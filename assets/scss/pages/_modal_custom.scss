@@ -1,6 +1,6 @@
 #modal-custom-form-login {
     .modal-md {
-        width:360px;
+        width:380px;
     }
 
     .modal-header{
@@ -9,3 +9,10 @@
     }
 }
   
+@media screen and (max-width:768px) {
+    #modal-custom-form-login {
+        .modal-md {
+            width:100%;
+        }
+    }
+}
