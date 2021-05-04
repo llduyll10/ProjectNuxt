@@ -50,10 +50,10 @@
           <div class="row">
             <div class="col-12">
               <div class="group-btn d-flex p-16px">
-                <div class="btn-register">
+                <div class="btn-register" @click="openModalLogin">
                     <span class="f-13">Đăng Nhập</span>
                 </div>
-                <div class="btn-register signin">
+                <div class="btn-register signin" @click="openModalLogin">
                   <span class="f-13">Đăng Ký</span>
               </div>
               </div>
@@ -72,27 +72,29 @@
           </div>
         </div>
     </div>
-    <Modal ref="modal" id="modal-custom-form-login">
+    <!--  -->
+    <Modal ref="modalLogin" id="modal-custom-form-login">
       <template v-slot:content>
         <div class="modal-login">
           <div class="text-center w-100">
             <img src="@/assets/img/black-logo.png" style="height:52px" />
           </div>
-          <form @submit="">
+          <form @submit.prevent="login" >
             <div class="form-group mb-3 mt-5">
-              <label class="f-13" for="exampleInputEmail1"
+              <label class="f-13"
                 >Email hoặc Số điện thoại
                 <span style="color:red">*</span></label
               >
               <input
-                type="email"
+                type="text"
                 class="form-control"
                 required
                 placeholder="Nhập email hoặc số điện thoại của bạn"
+                v-model="objLogin.name"
               />
             </div>
             <div class="w-100 text-center">
-              <button class="btn btn-theme theme-blue">Đăng nhập</button>
+              <button type="submit" class="btn btn-theme theme-blue">Đăng nhập</button>
             </div>
           </form>
           <div class="mt-4 w-100 option">
@@ -115,7 +117,84 @@
           </div>
           <p class="text-center w-100 mt-4 f-13">
             Chưa có tài khoản?
-            <span>Đăng ký ngay</span>
+            <span @click="hideModalLogin(),openModalRegister()">Đăng ký ngay</span>
+          </p>
+        </div>
+      </template>
+    </Modal>
+    <!-- Modal Register -->
+    <Modal ref="modalRegister" id="modal-custom-form-login">
+      <template v-slot:content>
+        <div class="modal-login">
+          <div class="w-100">
+            <h5>TẠO TÀI KHOẢN</h5>
+          </div>
+          <form @submit.prevent="createUser">
+            <div class="form-group">
+              <label class="f-13" for="exampleInputEmail1"
+                >Họ và tên
+                <span style="color:red">*</span></label
+              >
+              <input
+                type="text"
+                class="form-control"
+                required
+                placeholder="Nhập họ tên của bạn"
+                v-model="objUser.name"
+              />
+            </div>
+            <div class="form-group">
+              <label class="f-13"
+                >Số điện thoại
+                <span style="color:red">*</span></label
+              >
+              <input
+                type="tel"
+                class="form-control"
+                required
+                placeholder="Nhập số điện thoại của bạn"
+                v-model="objUser.phone"
+                pattern="(84|0[3|5|7|8|9])+([0-9]{8})\b"
+              />
+            </div>
+            <div class="form-group">
+              <label class="f-13"
+                >Email
+                <span style="color:red">*</span></label
+              >
+              <input
+                type="email"
+                class="form-control"
+                required
+                placeholder="Nhập email của bạn"
+                v-model="objUser.email"
+              />
+            </div>
+            <div class="w-100 text-center">
+              <button type="submit" class="btn btn-theme theme-blue">Đăng ký</button>
+            </div>
+          </form>
+          <div class="mt-4 w-100 option">
+            <hr />
+            <div class="child w-100 text-center">
+              <span class="f-13">Hoặc</span>
+            </div>
+          </div>
+          <div class="w-100 text-center mt-4">
+            <button class="btn btn-theme theme-gg">
+              Đăng nhập với google
+              <img src="@/assets/img/gg.png" />
+            </button>
+          </div>
+          <div class="w-100 text-center mt-4">
+            <button class="btn btn-theme theme-fb">
+              Đăng nhập với facebook
+              <img src="@/assets/img/fb.png" style="width:28px" />
+            </button>
+          </div>
+          <p class="text-center w-100 mt-4 f-13">
+            Đã có tài khoản?
+            <span @click="hideModalRegister(),openModalLogin()">Đăng nhập ngay</span>
           </p>
         </div>
       </template>
@@ -133,16 +212,34 @@ export default {
         { name: "Tìm Dự Án" },
         { name: "Hướng Dẫn" },
       ],
-      objBtn: [{ name: "Đăng Ký ",methods:this.openModal }, { name: "Đăng Nhập ",methods:this.openModal }],
+      objBtn: [{ name: "Đăng Ký ",methods:this.openModalRegister }, { name: "Đăng Nhập ",methods:this.openModalLogin }],
+      objUser:{},
+      objLogin:{}
     };
   },
   methods:{
+    createUser(){
+      console.log(this.objUser)
+    },
+    login(){
+      console.log(this.objLogin)
+    },
     showMenuMobile(){
       this.isShowMobile = true;
     },
-    openModal() {
-      this.$refs.modal.showModal();
+    openModalLogin() {
+      this.$refs.modalLogin.showModal();
     },
+    hideModalLogin(){
+      this.$refs.modalLogin.hideModal()
+    },
+    openModalRegister() {
+      this.$refs.modalRegister.showModal();
+    },
+    hideModalRegister(){
+      this.$refs.modalRegister.hideModal()
+    }
+
   }
 };
 </script>
