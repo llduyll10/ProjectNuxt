@@ -31,7 +31,6 @@
     }
     .slick-arrow{
         &.slick-prev{
-          margin-left: 5px;
           &::before{
             content: '';
             border-top: 10px solid transparent;
@@ -41,7 +40,6 @@
           }
         }
         &.slick-next{
-            margin-right: 5px;
             &::before{
                 content: '';
                 border-top: 10px solid transparent;
@@ -55,5 +53,13 @@
 @media only screen and (max-width: 768px) {
     #company{
         padding-bottom: 0 !important;
+        .slick-arrow{
+            &.slick-prev{
+                left: -5px;
+            }
+            &.slick-next{
+                right: -5px;
+            }
+        }
     }
 }

@@ -28,11 +28,20 @@ export default {
     'slidesToShow',
     'infinite',
     'numberShow',
-    'slidesToScroll'
+    'numberShowMd',
+    'slidesToScroll',
+
   ],
   data() {
     return {
       responsive: [
+        {
+          breakpoint: 991,
+          settings: {
+            slidesToShow: this.numberShowMd || 1,
+            slidesToScroll: 1
+          }
+        },
         {
           breakpoint: 480,
           settings: {

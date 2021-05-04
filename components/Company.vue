@@ -16,6 +16,7 @@
                     :slidesToScroll="3"
                     :infinite="true"
                     :numberShow="2"
+                    :numberShowMd="3"
                 >
                     <template v-slot:content>
                         <template v-for="(item,idx) in listImg">

@@ -31,7 +31,6 @@
     }
     .slick-arrow{
         &.slick-prev{
-          margin-left: 5px;
           &::before{
             content: '';
             border-top: 10px solid transparent;
@@ -41,7 +40,6 @@
           }
         }
         &.slick-next{
-            margin-right: 5px;
             &::before{
                 content: '';
                 border-top: 10px solid transparent;
@@ -59,5 +57,15 @@
     }
     #block2 .boxinfo img {
         width: 100%;
+    }
+    #block2{
+        .slick-arrow{
+            &.slick-prev{
+                left: -5px;
+            }
+            &.slick-next{
+                right: -5px;
+            }
+        }
     }
 }

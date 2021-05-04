@@ -178,6 +178,7 @@
             :slidesToScroll="3"
             :infinite="true"
             :numberShow="1"
+            :numberShowMd="2"
           >
             <template v-slot:content>
               <template v-for="(item, idx) in 6">
