@@ -31,7 +31,7 @@
                       <div class="group-right ml-13px">
                         <b-dropdown id="dropdown-infor" variant="link" toggle-class="text-decoration-none" class="custom-infor pb-5px" no-caret>
                           <template #button-content>
-                            Long Bui  <i class="fas fa-caret-down ml-13px"></i>
+                            Long Bui  <i class="fas fa-caret-down ml-13px f-16"></i>
                           </template>
                            <b-dropdown-text class="verify">
                             <span class="f-16">Long Bui</span>
