@@ -96,7 +96,7 @@
             Hộp Thư <span>(1)</span>
           </p>
           <div class="btn-findjob" >
-            <span class="f-13">Đăng Việc</span>
+            <span class="f-13 font-weight-bold">Đăng Việc</span>
           </div>
         </div>
       </div>
