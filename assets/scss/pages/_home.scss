@@ -8,6 +8,58 @@
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-position: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                position: relative;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    left: 0; right: 0;
+                    top: 0; bottom: 0;
+                    background: rgba(45, 44, 44, 0.1);
+                }
+                .content-banner{
+                    text-align: center;
+                    p{
+                        margin-bottom: 0;
+                        &:first-child{
+                            font-size: 25px;
+                            color: #F2F2F2;
+                            span{
+                                color: #F2C94C;
+                                font-weight: 700;
+                            }
+                        }
+                        &:nth-child(2){
+                            font-size: 29px;
+                            color: #F2F2F2;
+                            font-weight: 400;
+                            span{
+                                &:first-child{
+                                    font-weight: 400;
+                                }
+                                font-weight: 700;
+                            }
+                        }
+                    }
+                    .group-btn-banner{
+                        justify-content: center;
+                        .btn-project{
+                            cursor: pointer;
+                            box-sizing: border-box;
+                            background-color: $main-color;
+                            padding: 10px 30px;
+                            color: #F2F2F2;
+                            font-size: 17px;
+                            border-radius: 5px;
+                            &.quote{
+                                background-color: #4F4F4F;
+                            }
+                        }
+                    }
+                }
             }
         }
         .slick-dots{
@@ -300,6 +352,24 @@
             .cover-img{
                 .img-slider{
                     height: 250px;
+                    .content-banner{
+                        p{
+                            &:first-child{
+                                font-size: 14px;
+                                margin-bottom: 15px !important;
+                            }
+                            &:nth-child(2){
+                                font-size: 16px;
+                                margin-bottom: 15px !important;
+                            }
+                        }
+                        .group-btn-banner{
+                            .btn-project{
+                                padding: 5px 10px;
+                                font-size: 14px;
+                            }
+                        }
+                    }
                 }
             }
         }

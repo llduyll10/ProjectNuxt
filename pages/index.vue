@@ -21,7 +21,16 @@
                 }"
               >
                 <div class="content-banner">
-
+                  <p class="mb-15px">Bạn cần tìm công ty <span>Xây Dựng</span> hoặc <span>Thiết Kế?</span></p>
+                  <p class="mb-50px"><span>Nhận ngay</span> <span>báo giá & giải pháp</span> từ những đơn vị hàng đầu</p>
+                  <div class="group-btn-banner d-flex">
+                    <div class="btn-project mr-18px">
+                      ĐĂNG DỰ ÁN NGAY
+                    </div>
+                    <div class="btn-project quote">
+                      ĐĂNG KÝ BÁO GIÁ
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
