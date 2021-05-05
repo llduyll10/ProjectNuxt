@@ -25,6 +25,8 @@
           
         </b-collapse>
 
+        <b-navbar-toggle class="actionMenu" target='null' @click="showMenuMobile"></b-navbar-toggle>
+
         <b-navbar-nav class="ml-auto">
                 <!-- IS LOGIN -->
                 <template v-if="isLogin">
@@ -85,7 +87,7 @@
                  </template>
         </b-navbar-nav>
 
-        <b-navbar-toggle class="actionMenu" target='null' @click="showMenuMobile"></b-navbar-toggle>
+        
       </b-navbar>
     </div>
     <!-- Subnavbar if login -->
