@@ -1,6 +1,6 @@
 <template>
   <div class="cover-header">
-    
+
     <div class="container">
       <b-navbar toggleable="lg" >
         <b-navbar-brand href="#">
@@ -8,7 +8,7 @@
             <img src="@/assets/img/black-logo.png" alt="Logo" class="logo" />
           </template>
         </b-navbar-brand>
-        
+
 
         <b-navbar-toggle class="actionMenu" target='null' @click="showMenuMobile"></b-navbar-toggle>
         <b-collapse id="nav-collapse" is-nav>
@@ -22,22 +22,62 @@
 
           <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto">
-
+                <!-- IS LOGIN -->
                 <template v-if="$store.state.isLogin">
-                  dang login
-                </template>
+                  <div class="isLogin mt-7px mb-7px">
+                    <img class="mt-15px" src="@/assets/img/notify.png" />
+                    <div class="group-infor">
+                      <img class="mt-5px" src="@/assets/img/user-logo.png" />
+                      <div class="group-right ml-13px">
+                        <b-dropdown id="dropdown-infor" variant="link" toggle-class="text-decoration-none" class="custom-infor pb-5px" no-caret>
+                          <template #button-content>
+                            Long Bui  <i class="fas fa-caret-down ml-13px"></i>
+                          </template>
+                           <b-dropdown-text class="verify">
+                            <span class="f-16">Long Bui</span>
+                            <br>
+                            <img src="@/assets/img/check.png" alt="">
+                            <span class="f-13">Đã xác thực</span>
+                          </b-dropdown-text>
+                          <b-dropdown-text class="title pt-16px">
+                             <span class="f-13">Tài khoản</span>
+                          </b-dropdown-text>
+                          <b-dropdown-item>Hồ sơ cá nhân </b-dropdown-item>
+                          <b-dropdown-item>Hồ sơ làm việc</b-dropdown-item>
+                          <b-dropdown-item>Xác thực thông tin</b-dropdown-item>
+                          <b-dropdown-divider class="divider"></b-dropdown-divider>
 
-                <template v-else>
-                <template v-for="(item, index) in objBtn">
-                    <b-nav-item :key="index" class="sub-menu px-20px mt-10px" @click="item.methods">
-                        <span class="f-13" >{{item.name}}</span>
-                    </b-nav-item>
-                </template>
-                <b-nav-item class="cover-btn">
-                  <div class="btn-findjob ml-4" >
-                      <span class="f-13">Đăng Việc</span>
+                          <b-dropdown-text class="title">
+                            <span class="f-13">Quản lý tài chính</span>
+                          </b-dropdown-text>
+                          <b-dropdown-item>Nạp thêm Token</b-dropdown-item>
+                          <b-dropdown-item>Lịch sử giao dịch</b-dropdown-item>
+                          <b-dropdown-item>Yêu cầu rút tiền</b-dropdown-item>
+                          <b-dropdown-divider class="divider"></b-dropdown-divider>
+
+                          <b-dropdown-item>Hỗ trợ</b-dropdown-item>
+                          <b-dropdown-item class="mb-30px">Đăng xuất</b-dropdown-item>
+                        </b-dropdown>
+                        <div class="d-flex cover-infor">
+                          <p class="f-13">ID. 123456</p>
+                          <p class="f-13"><span>100</span> Tokens</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </b-nav-item>
+                </template>
+                <!-- NOT LOGIN -->
+                <template v-else>
+                  <template v-for="(item, index) in objBtn">
+                      <b-nav-item :key="index" class="sub-menu px-20px mt-10px" @click="item.methods">
+                          <span class="f-13" >{{item.name}}</span>
+                      </b-nav-item>
+                  </template>
+                  <b-nav-item class="cover-btn">
+                    <div class="btn-findjob ml-4" >
+                        <span class="f-13">Đăng Việc</span>
+                    </div>
+                  </b-nav-item>
                  </template>
           </b-navbar-nav>
         </b-collapse>
@@ -227,12 +267,12 @@ export default {
       objLogin:{},
     };
   },
-  
+
   created(){
-    
+
   },
   mounted(){
-    
+
   },
   methods:{
     createUser(){
