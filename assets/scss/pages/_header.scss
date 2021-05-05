@@ -87,7 +87,7 @@
                     }
                 }
                 .divider{
-                    padding: 14px 25px;
+                    padding: 10px 25px;
                     hr{
                         margin: 0;
                     }
@@ -123,6 +123,29 @@
                         }
                     }
                 }
+            }
+        }
+    }
+    // Sub navbar
+    .navbar-login{
+        background-color: #22375C;
+        .cover-navbar-login{
+            display: flex;
+            p{
+                color: #E5E5E5;
+                margin-top: 5px;
+                margin-bottom: 0;
+                img{
+                    width: 16px;
+                    height: 16px;
+                    margin-right: 5px;
+                    margin-bottom: 2px;
+                }
+            }
+            .icon-email{
+                width: 22px;
+                height: 20px;
+                margin-bottom: 5px;
             }
         }
     }

@@ -23,7 +23,7 @@
           <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto">
                 <!-- IS LOGIN -->
-                <template v-if="$store.state.isLogin">
+                <template v-if="isLogin">
                   <div class="isLogin mt-7px mb-7px">
                     <img class="mt-15px" src="@/assets/img/notify.png" />
                     <div class="group-infor">
@@ -83,6 +83,24 @@
         </b-collapse>
       </b-navbar>
     </div>
+    <!-- Subnavbar if login -->
+    <div v-if="isLogin" class="navbar-login">
+      <div class="container">
+        <div class="cover-navbar-login pl-16px pt-13px pb-13px">
+          <p class="f-13 mr-30px">
+            <img src="@/assets/img/my-project.png" alt="">
+            Dự Án Của Tôi
+          </p>
+          <p class="f-13">
+            <img class="icon-email" src="@/assets/img/email.png" alt="">
+            Hộp Thư <span>(1)</span>
+          </p>
+          <div class="btn-findjob ml-40px" >
+            <span class="f-13">Đăng Việc</span>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="mobileMenu" v-if="isShowMobile">
         <div class="menuItem">
@@ -121,7 +139,7 @@
           </div>
         </div>
     </div>
-    <!--  -->
+    <!-- Modal Login -->
     <Modal ref="modalLogin" id="modal-custom-form-login">
       <template v-slot:content>
         <div class="modal-login">
@@ -267,7 +285,11 @@ export default {
       objLogin:{},
     };
   },
-
+  computed:{
+    isLogin(){
+      return this.$store.state.isLogin
+    }
+  },
   created(){
 
   },
