@@ -5,18 +5,25 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
+    "deploy": "nuxt build && sls deploy --stage dev",
     "start": "nuxt start",
     "generate": "nuxt generate"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.1",
+    "aws-serverless-express": "^3.4.0",
     "axios": "^0.21.1",
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.9.1",
+    "express": "^4.17.1",
     "nuxt": "^2.15.3",
     "sass": "^1.32.11",
     "sass-loader": "^10.1.1",
+    "serverless-http": "^2.7.0",
     "vue-slick-carousel": "^1.0.6"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "serverless": "^2.39.2",
+    "serverless-offline": "^7.0.0"
+  }
 }
