@@ -10,7 +10,8 @@
         </b-navbar-brand>
 
 
-        <b-navbar-toggle class="actionMenu" target='null' @click="showMenuMobile"></b-navbar-toggle>
+        
+
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
                <template v-for="(item, index) in objMenu">
@@ -21,7 +22,10 @@
           </b-navbar-nav>
 
           <!-- Right aligned nav items -->
-          <b-navbar-nav class="ml-auto">
+          
+        </b-collapse>
+
+        <b-navbar-nav class="ml-auto">
                 <!-- IS LOGIN -->
                 <template v-if="isLogin">
                   <div class="isLogin mt-7px mb-7px">
@@ -79,8 +83,9 @@
                     </div>
                   </b-nav-item>
                  </template>
-          </b-navbar-nav>
-        </b-collapse>
+        </b-navbar-nav>
+
+        <b-navbar-toggle class="actionMenu" target='null' @click="showMenuMobile"></b-navbar-toggle>
       </b-navbar>
     </div>
     <!-- Subnavbar if login -->
