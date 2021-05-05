@@ -91,11 +91,11 @@
             <img src="@/assets/img/my-project.png" alt="">
             Dự Án Của Tôi
           </p>
-          <p class="f-13">
+          <p class="f-13 mr-40px">
             <img class="icon-email" src="@/assets/img/email.png" alt="">
             Hộp Thư <span>(1)</span>
           </p>
-          <div class="btn-findjob ml-40px" >
+          <div class="btn-findjob" >
             <span class="f-13">Đăng Việc</span>
           </div>
         </div>
