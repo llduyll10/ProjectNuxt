@@ -32,6 +32,7 @@
       color: #f2f2f2;
       border-radius: 5px;
       outline: none;
+      min-width: 100px;
     }
     .isLogin{
         padding: 0 21px;
@@ -191,14 +192,64 @@
         .btn-findjob{
             margin-left: 0 !important;
         }
+        .navbar-login{
+            overflow-x: scroll;
+            overflow-y: hidden;
+            .cover-navbar-login{
+                p{
+                    margin-right: 15px !important;
+                    min-width: 130px;
+                }
+            }
+        }
     }
 
 }
 // sm -> md
 @media screen and (min-width:576px) and (max-width:767px) {
+    .cover-header{
+        .navbar-nav{
+            margin-left: 0 !important;
+            .isLogin{
+                padding-left: 0 !important;
+            }
+        }
+        .navbar-login{
+            overflow-x: scroll;
+            overflow-y: hidden;
+            .cover-navbar-login{
+                p{
+                    margin-right: 15px !important;
+                    min-width: 130px;
+                }
+            }
+        }
 
+    }
 }
 @media screen and (max-width:575px)  {
+    .cover-header{
+        .navbar-nav{
+            margin-left: 0 !important;
+            .isLogin{
+                padding-left: 0 !important;
+            }
+        }
+        .navbar-login{
+            overflow-x: scroll;
+            overflow-y: hidden;
+            .cover-navbar-login{
+                p{
+                    margin-right: 15px !important;
+                    min-width: 130px;
+                    &:nth-child(3){
+                        margin-right: 0 !important;
+                    }
+                }
+            }
+        }
+
+    }
 
 }
 .modal-login{
