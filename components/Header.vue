@@ -42,21 +42,21 @@
                           <b-dropdown-text class="title pt-16px">
                              <span class="f-13">Tài khoản</span>
                           </b-dropdown-text>
-                          <b-dropdown-item>Hồ sơ cá nhân </b-dropdown-item>
-                          <b-dropdown-item>Hồ sơ làm việc</b-dropdown-item>
-                          <b-dropdown-item>Xác thực thông tin</b-dropdown-item>
+                          <b-dropdown-item class="f-12">Hồ sơ cá nhân </b-dropdown-item>
+                          <b-dropdown-item class="f-12">Hồ sơ làm việc</b-dropdown-item>
+                          <b-dropdown-item class="f-12">Xác thực thông tin</b-dropdown-item>
                           <b-dropdown-divider class="divider"></b-dropdown-divider>
 
                           <b-dropdown-text class="title">
                             <span class="f-13">Quản lý tài chính</span>
                           </b-dropdown-text>
-                          <b-dropdown-item>Nạp thêm Token</b-dropdown-item>
-                          <b-dropdown-item>Lịch sử giao dịch</b-dropdown-item>
-                          <b-dropdown-item>Yêu cầu rút tiền</b-dropdown-item>
+                          <b-dropdown-item class="f-12">Nạp thêm Token</b-dropdown-item>
+                          <b-dropdown-item class="f-12">Lịch sử giao dịch</b-dropdown-item>
+                          <b-dropdown-item class="f-12">Yêu cầu rút tiền</b-dropdown-item>
                           <b-dropdown-divider class="divider"></b-dropdown-divider>
 
-                          <b-dropdown-item>Hỗ trợ</b-dropdown-item>
-                          <b-dropdown-item class="mb-30px">Đăng xuất</b-dropdown-item>
+                          <b-dropdown-item class="f-12">Hỗ trợ</b-dropdown-item>
+                          <b-dropdown-item class="mb-30px f-12">Đăng xuất</b-dropdown-item>
                         </b-dropdown>
                         <div class="d-flex cover-infor">
                           <p class="f-13">ID. 123456</p>
