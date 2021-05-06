@@ -3,9 +3,9 @@
 
     <div class="container">
       <b-navbar toggleable="lg" >
-        <b-navbar-brand href="#">
+        <b-navbar-brand :to="'/'">
           <template>
-            <b-link :to="'/'"><img src="@/assets/img/black-logo.png" alt="Logo" class="logo" /></b-link> 
+            <img src="@/assets/img/black-logo.png" alt="Logo" class="logo" />
           </template>
         </b-navbar-brand>
 
