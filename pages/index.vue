@@ -259,7 +259,7 @@
     <Market />
     <Block1 />
     <Block2 />
-    <!-- <Footer /> -->
+    <Footer />
 
   </div>
 </template>

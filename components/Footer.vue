@@ -119,7 +119,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="line"></div>
 
             <div class="row network">
@@ -152,7 +152,7 @@
             <div class="introduce">
                 <div class="in-top">
                     <div class="name">
-                        CÔNG TY CỔ PHẦN EPOINT 
+                        CÔNG TY CỔ PHẦN EPOINT
                     </div>
                     <div class="icon">
                         <img src="@/assets/svg/Card.svg" alt="">

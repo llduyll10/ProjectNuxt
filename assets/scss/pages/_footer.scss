@@ -118,6 +118,7 @@
             display: flex;
             justify-content: space-between;
             padding-left: 14px;
+            overflow-x: scroll;
             li {
                 list-style: none;
                 line-height: 17px;
@@ -147,6 +148,63 @@
             line-height: 17px;
             color: #ADABAB;
             margin: 0;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #footer{
+        padding-top: 15px !important;
+        .links{
+            padding-bottom: 15px !important;
+            .wrap{
+                margin-top: 0 !important;
+            }
+        }
+        .list{
+            .list-item{
+                overflow-x: scroll;
+                padding-bottom: 10px;
+                li{
+                    min-width: 190px !important;
+                    padding-bottom: 20px;
+                }
+            }
+        }
+        .network{
+            padding: 15px 0 !important;
+            .net-2{
+                padding-top: 15px;
+                padding-bottom: 15px;
+            }
+            .net-3{
+                >div{
+                    justify-content: flex-start !important;
+                }
+            }
+        }
+        .introduce{
+            padding: 15px 0 !important;
+            .in-top{
+                .name{
+                    font-size: 14px;
+                }
+                .icon{
+                    margin-top: 10px;
+                }
+            }
+        }
+        .in-center {
+            .in1{
+                padding-bottom: 15px;
+                img{
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+            .in3{
+                justify-content: flex-start !important;
+            }
         }
     }
 }
