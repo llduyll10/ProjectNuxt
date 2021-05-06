@@ -32,8 +32,33 @@ module.exports = {
   ],
 
   router: {
-    middleware: 'auth'
+   
   },
+
+  auth: {
+    strategies: {
+        local: {
+          token: {
+            property: 'token',
+          },
+          user: {
+            property: 'user',
+          },
+          endpoints: {
+            login: { url: '/api/auth/login', method: 'post' },
+            logout: { url: '/api/auth/logout', method: 'post' },
+            user: { url: '/api/auth/user', method: 'get' }
+          }
+        },
+    },
+    redirect: {
+      login: '/',
+      logout: '/',
+      callback: '/',
+      home: '/'
+    }
+  },
+  
 
   server: {
     port: 8000
@@ -47,6 +72,7 @@ module.exports = {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/auth-next',
     "bootstrap-vue/nuxt",
     '@nuxtjs/axios'
   ],

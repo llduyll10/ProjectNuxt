@@ -311,9 +311,16 @@ export default {
     createUser(){
       // console.log(this.objUser)
     },
-    login(){
+    async login(){
       // console.log(this.objLogin)
-      return this.$get('search?q=apollo 11&page=1',{abc:'haha'});
+      // return this.$get('search?q=apollo 11&page=1',{abc:'haha'});
+
+      try {
+        let response = await this.$auth.loginWith('local', { data: this.objLogin})
+        console.log(response)
+      } catch (err) {
+        console.log(err)
+      }
     },
     showMenuMobile(){
       this.isShowMobile = true;
