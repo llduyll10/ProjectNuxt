@@ -290,12 +290,8 @@ export default {
       objBtn: [{ name: "Đăng Ký ",methods:this.openModalRegister }, { name: "Đăng Nhập ",methods:this.openModalLogin }],
       objUser:{},
       objLogin:{},
+      isLogin:this.$store.state.isLogin
     };
-  },
-  computed:{
-    isLogin(){
-      return this.$store.state.isLogin
-    }
   },
   created(){
 
@@ -309,8 +305,9 @@ export default {
     },
     async login(){
       // console.log(this.objLogin)
+      this.isLogin = true;
       // return this.$get('search?q=apollo 11&page=1',{abc:'haha'});
-
+      this.$store.commit('checkLogin',true);
       try {
         let response = await this.$auth.loginWith('local', { data: this.objLogin})
         console.log(response)
