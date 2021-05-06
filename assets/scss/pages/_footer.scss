@@ -160,8 +160,16 @@
             .wrap{
                 margin-top: 0 !important;
             }
+            .link{
+                .title{
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+                }
+            }
         }
         .list{
+            margin-top: 15px !important;
+            padding-bottom: 15px !important;
             .list-item{
                 overflow-x: scroll;
                 padding-bottom: 10px;
