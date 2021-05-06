@@ -43,10 +43,10 @@
                             ></textarea>
                         </div>
                         <div class="form-group row">
-                             <label class="f-13 col-md-3 col-sm-12 ">
+                             <label class="f-13  col-md-3 col-sm-12 ">
                                 Hình ảnh đính kèm
                             </label>
-                            <div class="col-md-9 col-sm-12 d-flex">
+                            <div class="custom-btn col-md-9 col-sm-12 d-flex">
                                 <div class="btn-upload">
                                     <img  src="@/assets/img/icon-upload.png"/>
                                     <span>Thêm tài liệu</span>
@@ -55,10 +55,10 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                             <label class="f-13 col-md-3 col-sm-12 ">
+                             <label class="f-13  col-md-3 col-sm-12 ">
                                 Tài liêu đính kèm
                             </label>
-                            <div class="col-md-9 col-sm-12 d-flex">
+                            <div class="custom-btn col-md-9 col-sm-12 d-flex">
                                 <div class="btn-upload">
                                     <img  src="@/assets/img/icon-upload.png"/>
                                     <span>Thêm tài liệu</span>
@@ -102,7 +102,7 @@
                                 placeholder="Ví dụ:  30/05/2021"
                             />
                         </div>
-                        <div class="form-group mb-50px">
+                        <div class="form-group mb-50px group-checkbox">
                             <b-form-checkbox
                                 v-model="objResearch.status"
                                 name="checkbox-agree"
@@ -117,7 +117,7 @@
                                 ĐĂNG NGAY
                                 </button>
                             </div>
-                            <div class="col-md-6 col-sm-12 pr-0">
+                            <div class="col-md-6 col-sm-12 pr-0 cutom-sm">
                                 <button type="button" class="btn-now save">
                                     LƯU BẢN NHÁP
                                 </button>
