@@ -1,0 +1,16 @@
+.wrapSection {
+    background-color: #EDF6FA;
+}
+
+.wrapCenter {
+    margin: 0 auto;
+    width: 850px;
+    min-height: 500px;
+    background-color: red;
+}
+// md -> lg
+@media screen and (max-width:768px) {
+    .wrapCenter {
+        width: 90%;
+    }
+}
