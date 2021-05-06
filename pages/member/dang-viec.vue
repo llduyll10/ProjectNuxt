@@ -102,10 +102,10 @@
                                 placeholder="Ví dụ:  30/05/2021"
                             />
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mb-50px">
                             <b-form-checkbox
                                 v-model="objResearch.status"
-                                name="checkbox-1"
+                                name="checkbox-agree"
                                 required
                                 >
                                 Tôi đồng ý với <span>điều khoản</span> của Econs <span style="color:red">*</span>

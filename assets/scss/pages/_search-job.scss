@@ -25,12 +25,24 @@
                         font-size: 12px;
                     }
                 }
+                .custom-checkbox{
+                    label{
+                        font-size: 12px;
+                        font-weight: 500;
+                        padding-top: 3px;
+                        color: $main-black;
+                        span{
+                            color: $main-color;
+                        }
+                    }
+                }
                 label{
                     font-size: 13px;
                     color: $main-black;
                     font-weight: bold;
                 }
                 .btn-upload{
+                    cursor: pointer;
                     padding: 5px 13px;
                     background-color: $main-color;
                     color: white;
