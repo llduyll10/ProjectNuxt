@@ -5,7 +5,7 @@
       <b-navbar toggleable="lg" >
         <b-navbar-brand href="#">
           <template>
-            <img src="@/assets/img/black-logo.png" alt="Logo" class="logo" />
+            <b-link :to="'/'"><img src="@/assets/img/black-logo.png" alt="Logo" class="logo" /></b-link> 
           </template>
         </b-navbar-brand>
 
@@ -15,8 +15,8 @@
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
                <template v-for="(item, index) in objMenu">
-                    <b-nav-item :key="index" class="sub-menu px-36px">
-                        <span @click="$router.push('/'+item.link)" class="f-13">{{item.name}}</span>
+                    <b-nav-item :to="'/'+item.link" :key="index" class="sub-menu px-36px">
+                        <span  class="f-13">{{item.name}}</span>
                     </b-nav-item>
                 </template>
           </b-navbar-nav>
