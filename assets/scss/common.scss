@@ -29,7 +29,9 @@ $dimensions: 0,
 50,
 54,
 60,
-70;
+70,
+80;
+
 @each $dimension in $dimensions {
     // font-size
     .f-#{$dimension} {

@@ -38,7 +38,7 @@
             content: '';
             border-top: 10px solid transparent;
             border-bottom: 10px solid transparent;
-            border-right:10px solid #4F4F4F;
+            border-right:10px solid $main-black;
             font-size: 0;
           }
         }
@@ -47,7 +47,7 @@
                 content: '';
                 border-top: 10px solid transparent;
                 border-bottom: 10px solid transparent;
-                border-left: 10px solid #4F4F4F;
+                border-left: 10px solid $main-black;
                 font-size: 0;
             }
         }
