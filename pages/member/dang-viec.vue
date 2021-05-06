@@ -95,12 +95,8 @@
                                 Thời gian kết thúc nhận chào giá
                                 <span style="color:red">*</span>
                             </label>
-                            <input
-                                type="text"
-                                class="form-control col-md-9 col-sm-12"
-                                required
-                                placeholder="Ví dụ:  30/05/2021"
-                            />
+                            <Calendar />
+
                         </div>
                         <div class="form-group mb-50px group-checkbox">
                             <b-form-checkbox
@@ -137,11 +133,13 @@
 <script>
 import Header from "@/components/Header";
 import Footer from "@/components/Footer"
+import Calendar from "@/components/Calendar"
 export default {
     // middleware: 'auth',
     components:{
         Header,
-        Footer
+        Footer,
+        Calendar
     },
     data(){
         return{
