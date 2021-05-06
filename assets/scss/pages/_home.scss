@@ -57,7 +57,7 @@
                             font-size: 17px;
                             border-radius: 5px;
                             &.quote{
-                                background-color: #4F4F4F;
+                                background-color: $main-black;
                             }
                         }
                     }
@@ -167,7 +167,7 @@
                             margin-bottom: 0;
                             margin-left: 15px;
                             font-size: 19px;
-                            color: #4F4F4F;
+                            color: $main-black;
                             font-weight: bold;
                         }
                     }
@@ -175,7 +175,7 @@
                         p{
                             margin-bottom: 0;
                             font-size: 15px;
-                            color:#4F4F4F;
+                            color:$main-black;
                             span{
                                 font-weight: bold;
                             }
@@ -274,7 +274,7 @@
                                 span{
                                     font-weight: 400;
                                     font-size: 12px;
-                                    color: #4F4F4F;
+                                    color: $main-black;
                                     margin-left: 5px;
                                 }
                             }
@@ -283,7 +283,7 @@
                                     &:first-child{
                                         font-weight: 400;
                                         font-size: 14px;
-                                        color: #4F4F4F;
+                                        color: $main-black;
                                     }
                                     &:last-child{
                                         color: $main-color;
@@ -318,7 +318,7 @@
                     content: '';
                     border-top: 10px solid transparent;
                     border-bottom: 10px solid transparent;
-                    border-right:10px solid #4F4F4F;
+                    border-right:10px solid $main-black;
                     font-size: 0;
                   }
                 }
@@ -327,7 +327,7 @@
                         content: '';
                         border-top: 10px solid transparent;
                         border-bottom: 10px solid transparent;
-                        border-left: 10px solid #4F4F4F;
+                        border-left: 10px solid $main-black;
                         font-size: 0;
                     }
                 }
