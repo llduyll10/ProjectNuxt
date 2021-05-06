@@ -50,6 +50,7 @@
                     border-radius: 5px;
                     min-width: 100px;
                     margin-right: 10px;
+                    font-size: 11px;
                     img{
                         margin-bottom: 5px;
                         width: 16px;
@@ -80,5 +81,43 @@
     }
 }
 @media only screen and (max-width: 768px){
-
+    #search-job{
+        .content{
+            padding: 30px;
+            .group-content{
+                margin-top: 15px !important;
+                .form-group{
+                    padding: 0 15px;
+                    label{
+                        padding-left: 0;
+                    }
+                    .custom-btn{
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+                    .btn-upload{
+                        max-height: 30px;
+                        min-width: 115px;
+                    }
+                    .type-upload{
+                        margin-top: -5px;
+                    }
+                    &.group-checkbox{
+                        padding-left: 0 !important;
+                        margin-bottom: 25px !important;
+                    }
+                }
+            }
+            .cutom-sm{
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+            }
+            .btn-now{
+                margin-bottom: 25px;
+                &.save{
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
 }
