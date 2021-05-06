@@ -102,10 +102,6 @@
             <img class="icon-email" src="@/assets/img/email.png" alt="">
             Hộp Thư <span>(1)</span>
           </p>
-          <p class="f-13 mr-40px">
-            <img class="icon-email"  src="@/assets/img/star.png" alt="">
-            Đánh giá
-          </p>
           <div class="btn-findjob" >
             <span class="f-13 font-weight-bold">Đăng Việc</span>
           </div>
