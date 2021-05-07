@@ -90,7 +90,22 @@
                                 Thời gian kết thúc nhận chào giá
                                 <span style="color:red">*</span>
                             </label>
-                            <Calendar @dateSelected="getDate" />
+                            <!-- <Calendar @dateSelected="getDate" /> -->
+                            <v-date-picker v-model="date" :masks="{input: 'DD/MM/YYYY'}">
+                                <template v-slot="{ inputValue, inputEvents }">
+
+                                    <div class="input-group mb-3">
+                                        <input type="text"
+                                                class="form-control"
+                                                :value="inputValue"
+                                                v-on="inputEvents"
+                                                required>
+                                        <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-calendar-day"></i></span>
+                                        </div>
+                                    </div>
+                                                                    </template>
+                            </v-date-picker>
 
                         </div>
                         <div class="form-group mb-50px group-checkbox">
@@ -146,7 +161,8 @@ export default {
                 { value: 1, text: 'Thi công xây dựng' },
                 { value: 2, text: 'Thi công/trang trí nội thất' },
                 { value: 3, text: 'Thiết kế kiến trúc/nội ' },
-            ]
+            ],
+             date: new Date(),
         }
     },
     mounted(){

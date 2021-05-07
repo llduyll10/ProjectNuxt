@@ -10,7 +10,6 @@
         :initial-date="min"
         :date-disabled-fn="dateDisabled"
         :date-format-options="{ year: 'numeric', month: 'numeric', day: 'numeric' }"
-        :right=false
         :required=true
         :aria-required=true
         @input="handleValue"
