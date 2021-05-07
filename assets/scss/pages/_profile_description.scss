@@ -87,6 +87,12 @@
         .content{
             color: $main-black;
             line-height: 25px;
+            ul{
+                li{
+                    font-size: 13px;
+                    line-height: 25px;
+                }
+            }
         }
     }
 }
