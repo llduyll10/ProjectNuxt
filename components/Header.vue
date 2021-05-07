@@ -10,7 +10,7 @@
         </b-navbar-brand>
 
 
-        
+
 
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
@@ -22,7 +22,7 @@
           </b-navbar-nav>
 
           <!-- Right aligned nav items -->
-          
+
         </b-collapse>
 
         <b-navbar-toggle class="actionMenu" target='null' @click="showMenuMobile"></b-navbar-toggle>
@@ -81,13 +81,13 @@
                   </template>
                   <b-nav-item class="cover-btn">
                     <div class="btn-findjob ml-4" >
-                        <span class="f-13">Đăng Việc</span>
+                        <b-link :to="'/member/dang-viec'"> <span class="f-13">Đăng Việc</span></b-link>
                     </div>
                   </b-nav-item>
                  </template>
         </b-navbar-nav>
 
-        
+
       </b-navbar>
     </div>
     <!-- Subnavbar if login -->
