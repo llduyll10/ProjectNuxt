@@ -13,6 +13,8 @@
 
                            <div class="col-right">
                                <Description />
+                               <div class="line"></div>
+                               <Project />
                            </div>
                         </div>
                     </div>
