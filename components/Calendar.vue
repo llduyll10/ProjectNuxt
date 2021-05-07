@@ -1,6 +1,19 @@
 <template>
   <div>
-    <b-form-datepicker v-model="value" :min="min" :max="max" locale="vn" :date-disabled-fn="dateDisabled"></b-form-datepicker>
+    <b-form-datepicker
+        v-model="value"
+        :min="min"
+        :max="max"
+        locale="vi"
+        placeholder="Chọn ngày"
+        :initial-date="min"
+        :date-disabled-fn="dateDisabled"
+        :date-format-options="{ year: 'numeric', month: 'numeric', day: 'numeric' }"
+        :right=false
+        :required=true
+        @input="handleValue"
+        >
+    </b-form-datepicker>
   </div>
 </template>
 
@@ -10,8 +23,11 @@
       return {
         value: '',
         min: null,
-        max: null
+        max: null,
+        placeholder:''
       }
+    },
+    computed:{
     },
     mounted(){
         const now = new Date()
@@ -35,6 +51,9 @@
         // Return `true` if the date should be disabled
         return weekday === 0 || weekday === 6
       },
+      handleValue(value){
+          this.$emit('dateSelected',value)
+      }
     }
   }
 </script>

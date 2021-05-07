@@ -95,7 +95,7 @@
                                 Thời gian kết thúc nhận chào giá
                                 <span style="color:red">*</span>
                             </label>
-                            <Calendar />
+                            <Calendar @dateSelected="getDate" />
 
                         </div>
                         <div class="form-group mb-50px group-checkbox">
@@ -155,7 +155,9 @@ export default {
         });
     },
     methods:{
-
+        getDate(date){
+            console.log('parent',date)
+        }
     }
 }
 </script>
