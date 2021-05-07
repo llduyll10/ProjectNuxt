@@ -2,7 +2,7 @@
   <div class="cover-header">
 
     <div class="container">
-      <b-navbar toggleable="lg" >
+      <b-navbar toggleable="lg" class="px-0" >
         <b-navbar-brand :to="'/'">
           <template>
             <img src="@/assets/img/black-logo.png" alt="Logo" class="logo" />
@@ -93,7 +93,7 @@
     <!-- Subnavbar if login -->
     <div v-if="isLogin" class="navbar-login">
       <div class="container">
-        <div class="cover-navbar-login pl-16px pt-13px pb-13px">
+        <div class="cover-navbar-login  pt-13px pb-13px">
           <p class="f-13 mr-30px">
             <img src="@/assets/img/my-project.png" alt="">
             Dự Án Của Tôi
