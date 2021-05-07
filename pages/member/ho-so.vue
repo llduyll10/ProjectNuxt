@@ -1,9 +1,9 @@
 <template>
     <div>
         <Header />
-        <section id="search-job" class="wrapSection pt-30px pb-80px">
+        <section id="profileMember" class="wrapSection pt-30px pb-80px">
             <div class="wrapBanner hosoWrap"></div>
-            <div class="wrapCenter">
+            <div class="wrapCenter w-auto container">
               
             </div>
 
