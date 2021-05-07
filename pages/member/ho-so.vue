@@ -31,16 +31,18 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer"
 import Profile from "@/components/profile/profile"
-import Description from "@/components/profile/Description"
-import Project from "@/components/Profile/Project"
-import Rating from "@/components/Profile/Rating"
+import Description from "@/components/profile/description"
+import Project from "@/components/profile/project"
+import Rating from "@/components/profile/rating"
 export default {
     // middleware: 'auth',
     components:{
         Header,
         Footer,
         Profile,
-        Description
+        Description,
+        Project,
+        Rating
     },
     data(){
         return{

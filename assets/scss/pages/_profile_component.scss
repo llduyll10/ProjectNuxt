@@ -1,6 +1,52 @@
-#infor{
-    img{
+#infor-component{
+    .cover-img{
+        height: 160px;
         width: 100%;
+        border-radius: 3px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        .stt{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            text-align: center;
+            background: rgba(45, 44, 44, 0.81);
+            width: 100%;
+            p{
+                text-align: center;
+                margin-bottom: 0;
+                padding: 7px 0;
+                color: white;
+                font-weight: bold;
+                span{
+                    color: #F2C94C;
+                }
+            }
+        }
+    }
+    .group-star{
+        .star-number{
+            height: 15px;
+            width: 20px;
+            margin-top: 5px;
+            background: #F2C94C;
+            border-radius: 2px;
+            p{
+                text-align: center;
+                color: white;
+                font-weight: bold;
+                margin-bottom: 0;
+            }
+        }
+        .evaluate{
+            color: $main-black;
+            span{
+                color: #F2C94C;;
+                font-weight: bold;
+            }
+        }
     }
     .btn-contact{
         cursor: pointer;
@@ -12,12 +58,17 @@
         border-radius: 5px;
         outline: none;
         margin-bottom: 12px;
+        &.email{
+            background-color: #3A3A3A;;
+        }
         &:hover{
             text-decoration: none;
         }
         img{
             width: 15px;
             height: 15px;
+            margin-bottom: 3px;
+            margin-right: 3px;
         }
     }
 }
