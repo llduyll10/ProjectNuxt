@@ -7,18 +7,13 @@
                     <p class="title f-20 mb-10px">Thông tin dự án</p>
                     <p class="f-13 description">Vui lòng điền vào thông tin dưới đây. Bạn sẽ nhận được <span>8-10</span>  chào giá tạm tính từ những công ty xây dựng/đơn vị thiết kế uy tín trong khu vực. Bạn thoà sức <span>
                         yêu cầu tư vấn</span>  và <span>chọn lựa</span> đơn vị phù hợp nhất cho dự án</p>
-                    <form class="group-content mt-36px">
+                    <form @submit.prevent="getForm()" class="group-content mt-36px">
                         <div class="form-group row">
                              <label class="f-13 col-md-3 col-sm-12 ">
                                 Dịch vụ yêu cầu
                                 <span style="color:red">*</span>
                             </label>
-                            <input
-                                type="text"
-                                class="form-control col-md-9 col-sm-12"
-                                required
-                                placeholder=""
-                            />
+                            <b-form-select class="form-control col-md-9 col-sm-12" v-model="objResearch.requireName" :options="options"></b-form-select>
                         </div>
                         <div class="form-group row">
                              <label class="f-13 col-md-3 col-sm-12 ">
@@ -37,7 +32,7 @@
                                 Mô tả Yêu Cầu Về Công Việc
                                 <span style="color:red">*</span>
                             </label>
-                            <textarea id="customPlaceholder" class="form-control col-md-9 col-sm-12" rows="5"
+                            <textarea required id="customPlaceholder" class="form-control col-md-9 col-sm-12" rows="5"
                                 placeholder=
                                 " 1. Mô tả chi tiết về dự án xây dựng hoặc yêu cầu thiết kế của bạn \n \n 2. Vui lòng đính kèm sổ đỏ, bản vẽ, thiết kế hoặc hình ảnh minh hoạ để nhận được tư vấn/dự toán tốt nhất. \n \n 3. Yêu cầu năng lực của đơn vị báo giá hoặc những yêu cầu khác"
                             ></textarea>
@@ -87,7 +82,7 @@
                                 type="text"
                                 class="form-control col-md-9 col-sm-12"
                                 required
-                                placeholder=""
+                                placeholder="200,000,000"
                             />
                         </div>
                         <div class="form-group row">
@@ -144,8 +139,14 @@ export default {
     data(){
         return{
             objResearch:{
+                requireName:1,
                 status:false
-            }
+            },
+            options: [
+                { value: 1, text: 'Thi công xây dựng' },
+                { value: 2, text: 'Thi công/trang trí nội thất' },
+                { value: 3, text: 'Thiết kế kiến trúc/nội ' },
+            ]
         }
     },
     mounted(){
@@ -157,7 +158,8 @@ export default {
     methods:{
         getDate(date){
             console.log('parent',date)
-        }
+        },
+        getForm(){}
     }
 }
 </script>

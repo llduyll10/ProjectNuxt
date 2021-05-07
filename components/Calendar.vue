@@ -5,12 +5,14 @@
         :min="min"
         :max="max"
         locale="vi"
+        class="custom-calendar"
         placeholder="Chọn ngày"
         :initial-date="min"
         :date-disabled-fn="dateDisabled"
         :date-format-options="{ year: 'numeric', month: 'numeric', day: 'numeric' }"
         :right=false
         :required=true
+        :aria-required=true
         @input="handleValue"
         >
     </b-form-datepicker>
