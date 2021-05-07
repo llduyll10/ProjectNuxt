@@ -1,0 +1,102 @@
+#rating-component{
+    .type-field{
+        p{
+            margin-bottom: 0;
+        }
+        .group-title{
+            display: flex;
+            justify-content: space-between;
+            .title{
+                font-size: 16px;
+                font-weight: bold;
+                color: $main-black;
+            }
+        }
+    }
+    .card-rating{
+        width: 80%;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        border-bottom: 2px solid #F2F2F2;
+        &:nth-child(3){
+            border: 0;
+        }
+        .customer-rate{
+            .group-star{
+                .star-number{
+                    height: 15px;
+                    width: 20px;
+                    margin-top: 5px;
+                    background: #F2C94C;
+                    border-radius: 2px;
+                    p{
+                        text-align: center;
+                        color: white;
+                        font-weight: bold;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+            .title{
+                justify-content: space-between;
+                margin-bottom: 10px;
+                p{
+                    margin-bottom: 0;
+                    color: $main-black;
+                    font-size: 13px;
+                    font-weight: bold;
+                    &.price{
+                        color: $main-color;
+                    }
+                }
+            }
+            .content{
+                color: $main-black;
+                margin-bottom: 0;
+                width: 80%;
+            }
+            .user-rate{
+                display: flex;
+                p{
+                    margin-bottom: 0;
+                    margin-top: 6px;
+                    span{
+                        color: $main-color;
+                    }
+                }
+                span{
+                    color: $main-color;
+                }
+                .b-avatar{
+                    width: 30px !important;
+                    height: 30px !important;
+                    margin-right: 10px;
+                }
+                .height{
+                    width: 1px;
+                    height: 20px;
+                    background-color: $main-color;
+                    margin-top: 5px;
+                    margin-left: 10px;
+                    margin-right: 10px;
+                }
+                .datetime {
+                    span{
+                        color: #D80027;
+                    }
+                }
+            }
+        }
+    }
+    .seemore{
+        cursor: pointer;
+        p{
+            margin-bottom: 0;
+            width: 100%;
+            color: $main-color;
+            i{
+                font-size: 16px;
+            }
+        }
+    }
+}

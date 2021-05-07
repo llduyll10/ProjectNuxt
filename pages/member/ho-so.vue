@@ -15,6 +15,8 @@
                                <Description />
                                <div class="line"></div>
                                <Project />
+                               <div class="line"></div>
+                               <Rating />
                            </div>
                         </div>
                     </div>
