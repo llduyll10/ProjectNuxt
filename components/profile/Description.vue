@@ -74,7 +74,20 @@
             <div class="group-title mb-10px">
                 <p class="title">Chứng chỉ năng lực</p>
             </div>
-            <div class="group-certificate"></div>
+            <div class="group-certificate">
+                <div class="item">
+                    <img src="@/assets/svg/icon-pdf-color.svg" alt="">
+                    <span>Chứng chỉ xây dựng</span>
+                </div>
+                <div class="item">
+                    <img src="@/assets/svg/icon-pdf.svg" alt="">
+                    <span>Chứng chỉ giám sát</span>
+                </div>
+                <div class="item">
+                    <img src="@/assets/svg/icon-pdf.svg" alt="">
+                    <span>GPĐKKD_Bản gốc</span>
+                </div>
+            </div>
         </div>
 
 

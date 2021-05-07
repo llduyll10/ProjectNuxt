@@ -94,5 +94,22 @@
                 }
             }
         }
+        .group-certificate{
+            display: flex;
+            img{
+                margin-right: 7px;
+            }
+            .item{
+                margin-right: 36px;
+                cursor: pointer;
+                &:last-child{
+                    margin-right: 0;
+                }
+                span{
+                    font-size: 11px;
+                    color: $main-color;
+                }
+            }
+        }
     }
 }
