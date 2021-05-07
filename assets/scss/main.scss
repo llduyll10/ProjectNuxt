@@ -19,6 +19,10 @@ body {
     border-radius: 0px;
 }
 
+.form-control {
+    font-size: 13px;
+}
+
 @media (min-width: 1200px) {
     .container {
         max-width: 1240px !important;
