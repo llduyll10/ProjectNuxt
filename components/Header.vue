@@ -79,9 +79,9 @@
                           <span class="f-13" >{{item.name}}</span>
                       </b-nav-item>
                   </template>
-                  <b-nav-item class="cover-btn">
-                    <div class="btn-findjob ml-4" >
-                        <b-link :to="'/member/dang-viec'"> <span class="f-13">Đăng Việc</span></b-link>
+                  <b-nav-item class="cover-btn" :to="'/member/dang-viec'">
+                    <div  class="btn-findjob ml-4" >
+                         <span class="f-13">Đăng Việc</span>
                     </div>
                   </b-nav-item>
                  </template>
@@ -102,9 +102,9 @@
             <img class="icon-email" src="@/assets/img/email.png" alt="">
             Hộp Thư <span>(1)</span>
           </p>
-          <div class="btn-findjob" >
+          <b-link class="btn-findjob" :to="'/member/dang-viec'">
             <span class="f-13 font-weight-bold">Đăng Việc</span>
-          </div>
+          </b-link>
         </div>
       </div>
     </div>
