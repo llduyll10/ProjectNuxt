@@ -90,10 +90,8 @@
                                 Thời gian kết thúc nhận chào giá
                                 <span style="color:red">*</span>
                             </label>
-                            <!-- <Calendar @dateSelected="getDate" /> -->
                             <v-date-picker v-model="date" :masks="{input: 'DD/MM/YYYY'}">
                                 <template v-slot="{ inputValue, inputEvents }">
-
                                     <div class="input-group mb-3">
                                         <input type="text"
                                                 class="form-control"
@@ -101,10 +99,10 @@
                                                 v-on="inputEvents"
                                                 required>
                                         <div class="input-group-append">
-                                        <span class="input-group-text"><i class="fas fa-calendar-day"></i></span>
+                                            <span class="input-group-text"><i class="fas fa-calendar-day"></i></span>
                                         </div>
                                     </div>
-                                                                    </template>
+                                </template>
                             </v-date-picker>
 
                         </div>
@@ -143,13 +141,11 @@
 <script>
 import Header from "@/components/Header";
 import Footer from "@/components/Footer"
-import Calendar from "@/components/Calendar"
 export default {
     // middleware: 'auth',
     components:{
         Header,
         Footer,
-        Calendar
     },
     data(){
         return{
