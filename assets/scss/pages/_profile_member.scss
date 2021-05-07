@@ -3,5 +3,18 @@
         min-height: 600px;
         background: white;
         position: relative;
+        display: flex;
+
+        .col-left {
+            width: 220px;
+            padding: 10px;
+            min-height: 600px;
+        }
+
+        .col-right {
+            flex: 1;
+            padding: 10px;
+            min-height: 600px;
+        }
     }
 }
