@@ -30,7 +30,7 @@
 <script>
 import Header from "@/components/Header";
 import Footer from "@/components/Footer"
-import Profile from "@/components/Profile/Profile"
+import Profile from "@/components/profile/profile"
 import Description from "@/components/profile/Description"
 import Project from "@/components/Profile/Project"
 import Rating from "@/components/Profile/Rating"
