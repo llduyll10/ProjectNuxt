@@ -1,0 +1,23 @@
+#infor{
+    img{
+        width: 100%;
+    }
+    .btn-contact{
+        cursor: pointer;
+        height: 30px;
+        padding: 2px 15px 0 16px;
+        text-align: center;
+        background: #198ac6;
+        color: #f2f2f2;
+        border-radius: 5px;
+        outline: none;
+        margin-bottom: 12px;
+        &:hover{
+            text-decoration: none;
+        }
+        img{
+            width: 15px;
+            height: 15px;
+        }
+    }
+}
