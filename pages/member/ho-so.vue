@@ -3,10 +3,17 @@
         <Header />
         <section id="profileMember" class="wrapSection pt-30px pb-80px">
             <div class="wrapBanner hosoWrap"></div>
-            <div class="wrapCenter w-auto container">
-              
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="profileSection z3">
+                        
+                        </div>
+                    </div>
+                </div>
+                
             </div>
-
+            
         </section>
         <Footer />
     </div>

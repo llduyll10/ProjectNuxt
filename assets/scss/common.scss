@@ -37,6 +37,10 @@ $dimensions: 0,
     .f-#{$dimension} {
         font-size:#{$dimension}px!important
     }
+
+    .z#{$dimension} {
+        z-index:#{$dimension}!important
+    }
     // position
     .top-#{$dimension}px {
         top: #{$dimension}px!important;
