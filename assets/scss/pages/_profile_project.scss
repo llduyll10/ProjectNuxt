@@ -33,6 +33,10 @@
         }
     }
     .group-item{
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: 0;
         .cover-item{
             height: 150px;
             width: 100%;

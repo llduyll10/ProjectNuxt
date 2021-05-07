@@ -11,9 +11,9 @@
                 </div>
             </div>
         </div>
-        <div class="row group-item">
+        <div class="group-item">
             <template v-for="(item,idx) in 8">
-                <div :key="idx" class="col-md-3 col-sm-6 cover-item">
+                <div :key="idx" class="col-md-3 col-md-4 col-sm-6 cover-item">
                     <div
                         class="item"
                         :style="{

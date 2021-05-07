@@ -1,6 +1,6 @@
 <template>
     <section id="description-component">
-        <div class="title">
+        <div class="title f-20">
             <p class="name">Long Bùi</p>
             <div class="height"></div>
             <p class="name-company">
@@ -8,11 +8,11 @@
                 <img class="ml-10px mb-5px" src="@/assets/svg/icon-verify-company.svg" alt="">
             </p>
         </div>
-        <div class="group-bage mt-20px">
+        <div class="group-bage mt-10px">
             <div class="cover-bage d-flex mb-15px">
-                <h5><span class="badge badge-secondary">Nội thất căn hộ</span></h5>
-                <h5><span class="badge badge-secondary">Nội thất căn hộ</span></h5>
-                <h5><span class="badge badge-secondary">Nội thất căn hộ</span></h5>
+                <h5 class="mb-0px"><span class="badge badge-secondary f-12">Nội thất căn hộ</span></h5>
+                <h5 class="mb-0px"><span class="badge badge-secondary f-12">Nội thất căn hộ</span></h5>
+                <h5 class="mb-0px"><span class="badge badge-secondary f-12">Nội thất căn hộ</span></h5>
             </div>
             <div class="d-flex cover-type-location">
                 <div class="type">
