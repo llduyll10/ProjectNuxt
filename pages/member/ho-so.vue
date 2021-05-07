@@ -12,7 +12,7 @@
                            </div>
 
                            <div class="col-right">
-                               b
+                               <Description />
                            </div>
                         </div>
                     </div>
@@ -31,7 +31,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer"
 import Profile from "@/components/Profile/Profile"
-import Description from "@/components/Profile/Description"
+import Description from "@/components/profile/Description"
 import Project from "@/components/Profile/Project"
 import Rating from "@/components/Profile/Rating"
 export default {
@@ -39,7 +39,8 @@ export default {
     components:{
         Header,
         Footer,
-        Profile
+        Profile,
+        Description
     },
     data(){
         return{
