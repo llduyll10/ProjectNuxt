@@ -50,14 +50,16 @@
     }
     .btn-contact{
         cursor: pointer;
-        height: 30px;
-        padding: 2px 15px 0 16px;
+        min-height: 25px;
+        padding: 7px 0;
         text-align: center;
         background: #198ac6;
         color: #f2f2f2;
+        font-weight: bold;
         border-radius: 5px;
         outline: none;
         margin-bottom: 12px;
+        font-size: 13px;
         &.email{
             background-color: #3A3A3A;;
         }
