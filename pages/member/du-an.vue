@@ -115,7 +115,7 @@
                                                     <div class="title">
                                                         <div class="sub f-14">Công ty cổ phần Epoint</div>
                                                         <div class="icon">
-                                                            <img src="@/assets/svg/addr.png" alt="">
+                                                            <img src="@/assets/svg/icon-location.svg" alt="">
                                                             <span class="name f-11">Hồ Chí Minh</span>
                                                         </div>
                                                     </div>
@@ -161,7 +161,7 @@
                                                     <div class="title">
                                                         <div class="sub f-14">Công ty cổ phần Epoint</div>
                                                         <div class="icon">
-                                                            <img src="@/assets/svg/addr.png" alt="">
+                                                            <img src="@/assets/svg/icon-location.svg" alt="">
                                                             <span class="name f-11">Hồ Chí Minh</span>
                                                         </div>
                                                     </div>
@@ -207,7 +207,7 @@
                                                     <div class="title">
                                                         <div class="sub f-14">Công ty cổ phần Epoint</div>
                                                         <div class="icon">
-                                                            <img src="@/assets/svg/addr.png" alt="">
+                                                            <img src="@/assets/svg/icon-location.svg" alt="">
                                                             <span class="name f-11">Hồ Chí Minh</span>
                                                         </div>
                                                     </div>
@@ -253,7 +253,7 @@
                                                     <div class="title">
                                                         <div class="sub f-14">Công ty cổ phần Epoint</div>
                                                         <div class="icon">
-                                                            <img src="@/assets/svg/addr.png" alt="">
+                                                            <img src="@/assets/svg/icon-location.svg" alt="">
                                                             <span class="name f-11">Hồ Chí Minh</span>
                                                         </div>
                                                     </div>
@@ -299,7 +299,7 @@
                                                     <div class="title">
                                                         <div class="sub f-14">Công ty cổ phần Epoint</div>
                                                         <div class="icon">
-                                                            <img src="@/assets/svg/addr.png" alt="">
+                                                            <img src="@/assets/svg/icon-location.svg" alt="">
                                                             <span class="name f-11">Hồ Chí Minh</span>
                                                         </div>
                                                     </div>
@@ -345,7 +345,7 @@
                                                     <div class="title">
                                                         <div class="sub f-14">Công ty cổ phần Epoint</div>
                                                         <div class="icon">
-                                                            <img src="@/assets/svg/addr.png" alt="">
+                                                            <img src="@/assets/svg/icon-location.svg" alt="">
                                                             <span class="name f-11">Hồ Chí Minh</span>
                                                         </div>
                                                     </div>
@@ -391,7 +391,7 @@
                                                     <div class="title">
                                                         <div class="sub f-14">Công ty cổ phần Epoint</div>
                                                         <div class="icon">
-                                                            <img src="@/assets/svg/addr.png" alt="">
+                                                            <img src="@/assets/svg/icon-location.svg" alt="">
                                                             <span class="name f-11">Hồ Chí Minh</span>
                                                         </div>
                                                     </div>
@@ -437,7 +437,7 @@
                                                     <div class="title">
                                                         <div class="sub f-14">Công ty cổ phần Epoint</div>
                                                         <div class="icon">
-                                                            <img src="@/assets/svg/addr.png" alt="">
+                                                            <img src="@/assets/svg/icon-location.svg" alt="">
                                                             <span class="name f-11">Hồ Chí Minh</span>
                                                         </div>
                                                     </div>
@@ -472,7 +472,7 @@
                                     </div>
                                 </div>
                                 <div class="line"></div>
-                            </div>    
+                            </div>
                         </div>      
                     </div>
                 </div>
