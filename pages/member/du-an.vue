@@ -133,7 +133,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-3 col-sm-12">
+                                        <div class="col-md-3 col-sm-12 ml-5">
                                             <div class="rate">
                                                 <div class="star">
                                                     <div class="limit f-10">5.0</div>

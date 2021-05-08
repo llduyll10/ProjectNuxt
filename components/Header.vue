@@ -31,7 +31,7 @@
                 <!-- IS LOGIN -->
                 <template v-if="isLogin">
                   <div class="isLogin mt-7px mb-7px">
-                    <img class="mt-15px" src="@/assets/img/notify.png" />
+                    <img class="mt-15px" src="@/assets/svg/bell.svg" />
                     <div class="group-infor">
                       <img class="mt-5px" src="@/assets/img/user-logo.png" />
                       <div class="group-right ml-13px">
