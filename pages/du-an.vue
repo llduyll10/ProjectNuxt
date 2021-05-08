@@ -146,7 +146,7 @@
                                                         <span>Liên hệ trực tiếp</span>
                                                     </div>
                                                     <div class="email">
-                                                        <img src="@/assets/svg/phone.svg" alt="">
+                                                        <img src="@/assets/svg/email.svg" alt="">
                                                         <span>Gửi tin nhắn</span>
                                                     </div>
                                                 </div>
