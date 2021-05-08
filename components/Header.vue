@@ -284,7 +284,7 @@ export default {
       isShowMobile:false,
       objMenu: [
         { name: "Thuê Nhà Thầu", link:'thue' },
-        { name: "Tìm Dự Án" },
+        { name: "Tìm Dự Án", link:'du-an'},
         { name: "Hướng Dẫn" },
       ],
       objBtn: [{ name: "Đăng Ký ",methods:this.openModalRegister }, { name: "Đăng Nhập ",methods:this.openModalLogin }],
