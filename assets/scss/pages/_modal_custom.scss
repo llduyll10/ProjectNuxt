@@ -1,18 +1,122 @@
 #modal-custom-form-login {
     .modal-md {
-        width:380px;
+        width: 380px;
     }
-
-    .modal-header{
+    .modal-header {
         border-bottom: 0 !important;
         padding-bottom: 0;
     }
 }
-  
+
+#modal-custom-form-cotact {
+    .modal-body {
+        padding-top: 0!important;
+        padding: 0 60px;
+        padding-bottom: 40px;
+    }
+    .modal-content {
+        min-width: 567px !important;
+        border-radius: 5px;
+    }
+    .modal-header {
+        border-bottom: 0 !important;
+        padding: 6px 15px;
+        padding-bottom: 0;
+    }
+    .modal-contact {
+        color: $main-black;
+        .top {
+            padding-bottom: 12px;
+            border-bottom: 1.5px solid #f2f2f2;
+            .title {
+                font-weight: 700;
+                line-height: 36px;
+                span {
+                    color: $main-color;
+                }
+            }
+            .sub {
+                line-height: 22px;
+                margin-top: 9px;
+                span {
+                    color: $main-color;
+                    font-weight: 700;
+                }
+            }
+        }
+        .center {
+            padding: 18px 0;
+            border-bottom: 1.5px solid #f2f2f2;
+            .name-line {
+                display: flex;
+                align-items: baseline;
+                margin-bottom: 15px;
+                .label {
+                    width: 180px;
+                    font-size: 13px;
+                    font-weight: 700;
+                }
+                .name {
+                    flex-grow: 1;
+                    font-weight: 700;
+                    font-size: 14px;
+                    color: #D80027;
+                }
+            }
+            .phone-line {
+                display: flex;
+                align-items: baseline;
+                margin-bottom: 15px;
+                .label {
+                    width: 180px;
+                    font-size: 13px;
+                    font-weight: 700;
+                }
+                .phone {
+                    flex-grow: 1;
+                    font-weight: 700;
+                    font-size: 14px;
+                    color: $main-color;
+                }
+            }
+            .email-line {
+                display: flex;
+                align-items: baseline;
+                .label {
+                    width: 180px;
+                    font-size: 13px;
+                    font-weight: 700;
+                }
+                .email {
+                    flex-grow: 1;
+                    font-weight: 700;
+                    font-size: 14px;
+                    color: $main-color;
+                }
+            }
+        }
+        .bottom {
+            padding-top: 36px;
+            .submit {
+                font-weight: 700;
+                background-color: $main-color;
+                width: 100%;
+                height: 40px;
+                border-radius: 5px;
+                color: #fff;
+                justify-content: center;
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+}
+
 @media screen and (max-width:768px) {
-    #modal-custom-form-login {
+    #modal-custom-form-login,
+    #modal-custom-form-cotact {
         .modal-md {
-            width:auto !important;
+            width: auto !important;
         }
     }
 }
