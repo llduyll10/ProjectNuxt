@@ -1,6 +1,6 @@
 <template>
   <section id="block2">
-    <div class="container">
+    <div class="container-fluid">
       <Carousel
         :arrows="true"
         :dots="false"

@@ -1,6 +1,6 @@
 <template>
     <footer id="footer" class="pt-60px">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row links">
                 <div class="col-lg-3 col-md-3 link ">
                     <img class="mb-12px" src="@/assets/img/Econslogobluewhite.png" alt="">
@@ -200,7 +200,7 @@
             </div>
         </div>
         <div class="copyright">
-                <div class="container">
+                <div class="container-fluid">
                     <div class="text">© Copyright 2021 Epoint. All rights reserved.</div>
                 </div>
             </div>

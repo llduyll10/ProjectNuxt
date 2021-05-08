@@ -2,7 +2,7 @@
     <div>
         <Header />
         <section id="project" class="pt-30px pb-80px">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-3 col-md-4 col-sm-12">
                         <div class="left">

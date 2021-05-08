@@ -1,7 +1,7 @@
 <template>
   <div class="cover-header">
 
-    <div class="container">
+    <div class="container-fluid">
       <b-navbar toggleable="lg" class="px-0" >
         <b-navbar-brand :to="'/'">
           <template>
@@ -92,7 +92,7 @@
     </div>
     <!-- Subnavbar if login -->
     <div v-if="isLogin" class="navbar-login">
-      <div class="container">
+      <div class="container-fluid">
         <div class="cover-navbar-login  pt-13px pb-13px">
           <p class="f-13 mr-30px">
             <img src="@/assets/img/my-project.png" alt="">

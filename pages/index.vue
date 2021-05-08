@@ -179,7 +179,7 @@
 
     <!-- Start Special Prodcut-->
     <section id="special-product" class="mt-40px pb-50px">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
           <div class="col-12 title mb-40px">
             <p class="f-24">DỰ ÁN NỔI BẬT</p>

@@ -3,7 +3,7 @@
         <Header />
         <section id="profileMember" class="wrapSection pt-30px pb-80px">
             <div class="wrapBanner hosoWrap"></div>
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
                         <div class="profileSection z3">

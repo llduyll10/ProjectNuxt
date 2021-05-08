@@ -1,6 +1,6 @@
 <template>
     <section id="market" class="pb-50px mt-40px pt-45px">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
                     <p class="title f-24">TIN TỨC & THỊ TRƯỜNG</p>

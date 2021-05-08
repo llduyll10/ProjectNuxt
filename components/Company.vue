@@ -1,7 +1,7 @@
 <template>
     <section id="company" class="pb-50px">
         <div class="linepage mb-40px"></div>
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
                     <p class="title f-24">ĐƠN VỊ TIÊU BIỂU</p>
