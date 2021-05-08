@@ -91,7 +91,7 @@
             height: 67px;
             display: flex;
             align-items: center;
-            padding-left: 32px;
+            padding: 0px 22px;
             .search-top {
                 height: 30px;
                 width: 415px;
@@ -121,7 +121,7 @@
         }
         .center {
             .boxinfo {
-                padding: 12px 0 22px 32px;
+                padding: 22px;
                 .introduce {
                     display: flex;
                     align-content: flex-start;
@@ -137,7 +137,6 @@
                         margin-top: 5px;
                     }
                     .content {
-                        padding-right: 47px;
                         flex: 1;
                         .title {
                             line-height: 24px;
@@ -241,4 +240,10 @@
             }
         }
     }
+}
+
+
+
+@media screen and (max-width:768px)  {
+
 }

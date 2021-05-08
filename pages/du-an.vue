@@ -105,10 +105,10 @@
                             </div>
                             <div class="line"></div>
                             <!-- list off member -->
-                            <div class="center" v-for="(item, j) in dataFake" :key="j">
+                            <div class="center" v-for="(item, j) in 3" :key="j">
                                 <div class="boxinfo">
                                     <div class="row">
-                                        <div class="col-md-8 col-sm-12">
+                                        <div class="col-lg-9 col-md-12 col-sm-12">
                                             <div class="introduce">
                                                 <div  class="cover-img"
                                                     :style="{
@@ -133,7 +133,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-3 col-sm-12 ml-5">
+                                        <div class="col-lg-3 col-md-12 col-sm-12">
                                             <div class="rate">
                                                 <div class="star">
                                                     <div class="limit f-10">5.0</div>
