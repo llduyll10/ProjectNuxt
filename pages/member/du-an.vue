@@ -77,11 +77,11 @@
                                     </div>
                                     <div class="gr-check">
                                         <input style="background-color:red!important" type="checkbox" class="">
-                                        <label>Toàn quốc</label>
+                                        <label>Hà Nội</label>
                                     </div>
                                     <div class="gr-check">
                                         <input type="checkbox" class="">
-                                        <label>Toàn quốc</label>
+                                        <label>Tp. Hồ Chí Minh</label>
                                     </div>
                                 </div>
                                 <div class="seemore f-12">
