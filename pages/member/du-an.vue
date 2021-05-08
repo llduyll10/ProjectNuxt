@@ -77,11 +77,11 @@
                                     </div>
                                     <div class="gr-check">
                                         <input style="background-color:red!important" type="checkbox" class="">
-                                        <label>Toàn quốc</label>
+                                        <label>Hà Nội</label>
                                     </div>
                                     <div class="gr-check">
                                         <input type="checkbox" class="">
-                                        <label>Toàn quốc</label>
+                                        <label>Tp. Hồ Chí Minh</label>
                                     </div>
                                 </div>
                                 <div class="seemore f-12">
@@ -110,12 +110,68 @@
                                     <div class="row">
                                         <div class="col-md-8 col-sm-12">
                                             <div class="introduce">
-                                                <img src="@/assets/svg/long1.svg" class="thubnail" alt="">
+                                                <div  class="cover-img"
+                                                    :style="{
+                                                        'background-image': 'url(' + `${imgProfile}` + ')',
+                                                    }"
+                                                >
+                                                </div>
                                                 <div class="content">
                                                     <div class="title">
                                                         <div class="sub f-14">Công ty cổ phần Epoint</div>
                                                         <div class="icon">
-                                                            <img src="@/assets/svg/addr.png" alt="">
+                                                            <img src="@/assets/svg/icon-location.svg" alt="">
+                                                            <span class="name f-11">Hồ Chí Minh</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="description f-13">Econs được thành lập và phát triển suốt 8 năm qua theo mô hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội thất...</div>
+                                                    <div class="group">
+                                                        <div class="choose active">Nội thất căn hộ</div>
+                                                        <div class="choose">Thiết kế kiến trúc</div>
+                                                        <div class="choose">Thiết kế nội thất</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-12 ml-5">
+                                            <div class="rate">
+                                                <div class="star">
+                                                    <div class="limit f-10">5.0</div>
+                                                    <img src="@/assets/svg/star.svg" alt="">
+                                                    <div class="st f-13">(<span>4</span> đánh giá)</div>
+                                                </div>
+                                                <div class="contact">
+                                                    <div class="phone">
+                                                        <img src="@/assets/svg/phone.svg" alt="">
+                                                        <span>Liên hệ trực tiếp</span>
+                                                    </div>
+                                                    <div class="email">
+                                                        <img src="@/assets/svg/phone.svg" alt="">
+                                                        <span>Gửi tin nhắn</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="line"></div>
+                            </div>
+                            <div class="center">
+                                <div class="boxinfo">
+                                    <div class="row">
+                                        <div class="col-md-8 col-sm-12">
+                                            <div class="introduce">
+                                                <div  class="cover-img"
+                                                    :style="{
+                                                        'background-image': 'url(' + `${logoDuan}` + ')',
+                                                    }"
+                                                >
+                                                </div>
+                                                <div class="content">
+                                                    <div class="title">
+                                                        <div class="sub f-14">Công ty cổ phần Epoint</div>
+                                                        <div class="icon">
+                                                            <img src="@/assets/svg/icon-location.svg" alt="">
                                                             <span class="name f-11">Hồ Chí Minh</span>
                                                         </div>
                                                     </div>
@@ -156,12 +212,17 @@
                                     <div class="row">
                                         <div class="col-md-8 col-sm-12">
                                             <div class="introduce">
-                                                <img src="@/assets/svg/logo-duan.svg" class="thubnail" alt="">
+                                                <div  class="cover-img"
+                                                    :style="{
+                                                        'background-image': 'url(' + `${imgProfile}` + ')',
+                                                    }"
+                                                >
+                                                </div>
                                                 <div class="content">
                                                     <div class="title">
                                                         <div class="sub f-14">Công ty cổ phần Epoint</div>
                                                         <div class="icon">
-                                                            <img src="@/assets/svg/addr.png" alt="">
+                                                            <img src="@/assets/svg/icon-location.svg" alt="">
                                                             <span class="name f-11">Hồ Chí Minh</span>
                                                         </div>
                                                     </div>
@@ -202,12 +263,17 @@
                                     <div class="row">
                                         <div class="col-md-8 col-sm-12">
                                             <div class="introduce">
-                                                <img src="@/assets/svg/long1.svg" class="thubnail" alt="">
+                                                <div  class="cover-img"
+                                                    :style="{
+                                                        'background-image': 'url(' + `${logoDuan}` + ')',
+                                                    }"
+                                                >
+                                                </div>
                                                 <div class="content">
                                                     <div class="title">
                                                         <div class="sub f-14">Công ty cổ phần Epoint</div>
                                                         <div class="icon">
-                                                            <img src="@/assets/svg/addr.png" alt="">
+                                                            <img src="@/assets/svg/icon-location.svg" alt="">
                                                             <span class="name f-11">Hồ Chí Minh</span>
                                                         </div>
                                                     </div>
@@ -248,12 +314,17 @@
                                     <div class="row">
                                         <div class="col-md-8 col-sm-12">
                                             <div class="introduce">
-                                                <img src="@/assets/svg/logo-duan.svg" class="thubnail" alt="">
+                                                <div  class="cover-img"
+                                                    :style="{
+                                                        'background-image': 'url(' + `${imgProfile}` + ')',
+                                                    }"
+                                                >
+                                                </div>
                                                 <div class="content">
                                                     <div class="title">
                                                         <div class="sub f-14">Công ty cổ phần Epoint</div>
                                                         <div class="icon">
-                                                            <img src="@/assets/svg/addr.png" alt="">
+                                                            <img src="@/assets/svg/icon-location.svg" alt="">
                                                             <span class="name f-11">Hồ Chí Minh</span>
                                                         </div>
                                                     </div>
@@ -294,12 +365,17 @@
                                     <div class="row">
                                         <div class="col-md-8 col-sm-12">
                                             <div class="introduce">
-                                                <img src="@/assets/svg/long1.svg" class="thubnail" alt="">
+                                                <div  class="cover-img"
+                                                    :style="{
+                                                        'background-image': 'url(' + `${logoDuan}` + ')',
+                                                    }"
+                                                >
+                                                </div>
                                                 <div class="content">
                                                     <div class="title">
                                                         <div class="sub f-14">Công ty cổ phần Epoint</div>
                                                         <div class="icon">
-                                                            <img src="@/assets/svg/addr.png" alt="">
+                                                            <img src="@/assets/svg/icon-location.svg" alt="">
                                                             <span class="name f-11">Hồ Chí Minh</span>
                                                         </div>
                                                     </div>
@@ -340,12 +416,17 @@
                                     <div class="row">
                                         <div class="col-md-8 col-sm-12">
                                             <div class="introduce">
-                                                <img src="@/assets/svg/logo-duan.svg" class="thubnail" alt="">
+                                                <div  class="cover-img"
+                                                    :style="{
+                                                        'background-image': 'url(' + `${imgProfile}` + ')',
+                                                    }"
+                                                >
+                                                </div>
                                                 <div class="content">
                                                     <div class="title">
                                                         <div class="sub f-14">Công ty cổ phần Epoint</div>
                                                         <div class="icon">
-                                                            <img src="@/assets/svg/addr.png" alt="">
+                                                            <img src="@/assets/svg/icon-location.svg" alt="">
                                                             <span class="name f-11">Hồ Chí Minh</span>
                                                         </div>
                                                     </div>
@@ -386,12 +467,17 @@
                                     <div class="row">
                                         <div class="col-md-8 col-sm-12">
                                             <div class="introduce">
-                                                <img src="@/assets/svg/long1.svg" class="thubnail" alt="">
+                                                <div  class="cover-img"
+                                                    :style="{
+                                                        'background-image': 'url(' + `${logoDuan}` + ')',
+                                                    }"
+                                                >
+                                                </div>
                                                 <div class="content">
                                                     <div class="title">
                                                         <div class="sub f-14">Công ty cổ phần Epoint</div>
                                                         <div class="icon">
-                                                            <img src="@/assets/svg/addr.png" alt="">
+                                                            <img src="@/assets/svg/icon-location.svg" alt="">
                                                             <span class="name f-11">Hồ Chí Minh</span>
                                                         </div>
                                                     </div>
@@ -427,52 +513,6 @@
                                 </div>
                                 <div class="line"></div>
                             </div>
-                            <div class="center">
-                                <div class="boxinfo">
-                                    <div class="row">
-                                        <div class="col-md-8 col-sm-12">
-                                            <div class="introduce">
-                                                <img src="@/assets/svg/logo-duan.svg" class="thubnail" alt="">
-                                                <div class="content">
-                                                    <div class="title">
-                                                        <div class="sub f-14">Công ty cổ phần Epoint</div>
-                                                        <div class="icon">
-                                                            <img src="@/assets/svg/addr.png" alt="">
-                                                            <span class="name f-11">Hồ Chí Minh</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="description f-13">Econs được thành lập và phát triển suốt 8 năm qua theo mô hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội thất...</div>
-                                                    <div class="group">
-                                                        <div class="choose active">Nội thất căn hộ</div>
-                                                        <div class="choose">Thiết kế kiến trúc</div>
-                                                        <div class="choose">Thiết kế nội thất</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 col-sm-12">
-                                            <div class="rate">
-                                                <div class="star">
-                                                    <div class="limit f-10">5.0</div>
-                                                    <img src="@/assets/svg/star.svg" alt="">
-                                                    <div class="st f-13">(<span>4</span> đánh giá)</div>
-                                                </div>
-                                                <div class="contact">
-                                                    <div class="phone">
-                                                        <img src="@/assets/svg/phone.svg" alt="">
-                                                        <span>Liên hệ trực tiếp</span>
-                                                    </div>
-                                                    <div class="email">
-                                                        <img src="@/assets/svg/phone.svg" alt="">
-                                                        <span>Gửi tin nhắn</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="line"></div>
-                            </div>    
                         </div>      
                     </div>
                 </div>
@@ -485,6 +525,8 @@
 
 
 <script>
+import ImgProfile from '@/assets/svg/longb.svg'
+import logoDuan from '@/assets/svg/logo-duan.svg'
 import Header from "@/components/Header";
 import Footer from "@/components/Footer"
 export default {
@@ -495,7 +537,8 @@ export default {
     },
     data(){
         return{
-
+            imgProfile: ImgProfile,
+            logoDuan :logoDuan
         }
     },
     mounted(){
