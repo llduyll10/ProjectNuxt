@@ -105,7 +105,7 @@
                             </div>
                             <div class="line"></div>
                             <!-- list off member -->
-                            <div class="center" v-for="(item, j) in 3" :key="j">
+                            <div class="center" v-for="(item, j) in 1" :key="j">
                                 <div class="boxinfo">
                                     <div class="row">
                                         <div class="col-lg-9 col-md-12 col-sm-12">
@@ -136,8 +136,10 @@
                                         <div class="col-lg-3 col-md-12 col-sm-12">
                                             <div class="rate">
                                                 <div class="star">
-                                                    <div class="limit f-10">5.0</div>
-                                                    <img src="@/assets/svg/star.svg" alt="">
+                                                    <div class="d-flex">
+                                                        <div class="limit f-10">5.0</div>
+                                                        <img src="@/assets/svg/star.svg" alt="">
+                                                    </div>
                                                     <div class="st f-13">(<span>4</span> đánh giá)</div>
                                                 </div>
                                                 <div class="contact">

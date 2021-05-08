@@ -138,6 +138,7 @@
                     }
                     .content {
                         flex: 1;
+                        padding-right: 107px;
                         .title {
                             line-height: 24px;
                             display: flex;
@@ -215,11 +216,10 @@
                         }
                     }
                     .contact {
-                        text-align: right;
                         margin-top: 27px;
                         .phone,
                         .email {
-                            width: 157px;
+                            max-width: 157px;
                             height: 27px;
                             border-radius: 5px;
                             text-align: center;
@@ -242,8 +242,57 @@
     }
 }
 
+@media screen and (max-width:768px) {}
 
-
-@media screen and (max-width:768px)  {
-
+@media screen and (max-width:1200px) {
+    #project {
+        .center {
+            .boxinfo {
+                .introduce {
+                    display: flex;
+                    align-content: flex-start;
+                    .cover-img {}
+                    .content {
+                        padding-right: 0px !important;
+                        .title {
+                            .sub {}
+                            .icon {
+                                .name {}
+                                img {}
+                            }
+                        }
+                        .description {}
+                        .group {
+                            .choose {
+                                &.active {}
+                            }
+                        }
+                    }
+                }
+                .rate {
+                    .star {
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+                        .limit {}
+                        .st {
+                            margin-top: 3px;
+                            span {}
+                        }
+                    }
+                    .contact {
+                        color: red;
+                        margin-top: 13px !important;
+                        .phone,
+                        .email {
+                            span {}
+                        }
+                        .email {
+                            margin-top: 6px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
