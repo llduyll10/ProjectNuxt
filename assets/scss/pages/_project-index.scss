@@ -51,17 +51,14 @@
                 align-content: center;
                 margin-bottom: 10px;
                 input {
-                    width: 20px;
-                    height: 20px;
-                    border-radius: 5px;
-                    box-sizing: border-box;
+                    width: 15px;
+                    height: 15px;
                     margin-right: 8px;
-                    border: 1px solid #ADABAB;
                 }
                 label {
                     font-size: 13px;
                     font-weight: 500;
-                    line-height: 20px;
+                    line-height: 15px;
                     margin-bottom: 0;
                     color: $main-black;
                 }
@@ -130,7 +127,7 @@
                     align-content: flex-start;
                     .cover-img {
                         height: 110px;
-                        width: 192px;
+                        width: 100px;
                         border-radius: 5px;
                         background-size: cover;
                         background-position: center;
@@ -141,6 +138,7 @@
                     }
                     .content {
                         padding-right: 47px;
+                        flex: 1;
                         .title {
                             line-height: 24px;
                             display: flex;
@@ -170,6 +168,11 @@
                         }
                         .description {
                             line-height: 25px;
+                            height: 50px;
+                            overflow: hidden;
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            -webkit-line-clamp: 2;
                         }
                         .group {
                             display: flex;
