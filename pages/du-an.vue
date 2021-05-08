@@ -141,7 +141,7 @@
                                                     <div class="st f-13">(<span>4</span> đánh giá)</div>
                                                 </div>
                                                 <div class="contact">
-                                                    <div class="phone">
+                                                    <div class="phone" @click="openLienHe">
                                                         <img src="@/assets/svg/phone.svg" alt="">
                                                         <span>Liên hệ trực tiếp</span>
                                                     </div>
@@ -162,6 +162,7 @@
                 </div>
             </div>
         </section>
+        <LienHePop ref="refLienHe"/>
         <Footer />
     </div>
 
@@ -173,11 +174,13 @@ import ImgProfile from '@/assets/svg/longb.svg'
 import logoDuan from '@/assets/svg/logo-duan.svg'
 import Header from "@/components/Header";
 import Footer from "@/components/Footer"
+import LienHePop from "@/components/popup/lien-he"
 export default {
     // middleware: 'auth',
     components:{
         Header,
         Footer,
+        LienHePop
     },
     data(){
         return{
@@ -190,7 +193,9 @@ export default {
 
     },
     methods:{
-
+        openLienHe(){
+            this.$refs.refLienHe.show();
+        }
     }
 }
 </script>
