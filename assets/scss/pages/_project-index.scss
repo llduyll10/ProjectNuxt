@@ -125,13 +125,19 @@
         .center {
             .boxinfo {
                 padding: 12px 0 22px 32px;
-                // padding-right: ;
                 .introduce {
                     display: flex;
                     align-content: flex-start;
-                    img {
+                    .cover-img {
+                        height: 110px;
+                        width: 192px;
+                        border-radius: 3px;
+                        background-size: cover;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        position: relative;
                         margin-right: 16px;
-                        margin-top: 4px;
+                        margin-top: 5px;
                     }
                     .content {
                         padding-right: 47px;
@@ -167,7 +173,7 @@
                         }
                         .group {
                             display: flex;
-                            margin-top: 19px;
+                            margin-top: 21px;
                             .choose {
                                 font-size: 12px;
                                 font-weight: 700;
@@ -207,7 +213,7 @@
                         }
                     }
                     .contact {
-                        margin-top: 25px;
+                        margin-top: 27px;
                         .phone,
                         .email {
                             width: 157px;

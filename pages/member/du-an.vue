@@ -110,7 +110,12 @@
                                     <div class="row">
                                         <div class="col-md-8 col-sm-12">
                                             <div class="introduce">
-                                                <img src="@/assets/svg/long1.svg" class="thubnail" alt="">
+                                                <div  class="cover-img"
+                                                    :style="{
+                                                        'background-image': 'url(' + `${imgProfile}` + ')',
+                                                    }"
+                                                >
+                                                </div>
                                                 <div class="content">
                                                     <div class="title">
                                                         <div class="sub f-14">Công ty cổ phần Epoint</div>
@@ -156,7 +161,12 @@
                                     <div class="row">
                                         <div class="col-md-8 col-sm-12">
                                             <div class="introduce">
-                                                <img src="@/assets/svg/logo-duan.svg" class="thubnail" alt="">
+                                                <div  class="cover-img"
+                                                    :style="{
+                                                        'background-image': 'url(' + `${logoDuan}` + ')',
+                                                    }"
+                                                >
+                                                </div>
                                                 <div class="content">
                                                     <div class="title">
                                                         <div class="sub f-14">Công ty cổ phần Epoint</div>
@@ -202,7 +212,12 @@
                                     <div class="row">
                                         <div class="col-md-8 col-sm-12">
                                             <div class="introduce">
-                                                <img src="@/assets/svg/long1.svg" class="thubnail" alt="">
+                                                <div  class="cover-img"
+                                                    :style="{
+                                                        'background-image': 'url(' + `${imgProfile}` + ')',
+                                                    }"
+                                                >
+                                                </div>
                                                 <div class="content">
                                                     <div class="title">
                                                         <div class="sub f-14">Công ty cổ phần Epoint</div>
@@ -248,7 +263,12 @@
                                     <div class="row">
                                         <div class="col-md-8 col-sm-12">
                                             <div class="introduce">
-                                                <img src="@/assets/svg/logo-duan.svg" class="thubnail" alt="">
+                                                <div  class="cover-img"
+                                                    :style="{
+                                                        'background-image': 'url(' + `${logoDuan}` + ')',
+                                                    }"
+                                                >
+                                                </div>
                                                 <div class="content">
                                                     <div class="title">
                                                         <div class="sub f-14">Công ty cổ phần Epoint</div>
@@ -294,7 +314,12 @@
                                     <div class="row">
                                         <div class="col-md-8 col-sm-12">
                                             <div class="introduce">
-                                                <img src="@/assets/svg/long1.svg" class="thubnail" alt="">
+                                                <div  class="cover-img"
+                                                    :style="{
+                                                        'background-image': 'url(' + `${imgProfile}` + ')',
+                                                    }"
+                                                >
+                                                </div>
                                                 <div class="content">
                                                     <div class="title">
                                                         <div class="sub f-14">Công ty cổ phần Epoint</div>
@@ -340,7 +365,12 @@
                                     <div class="row">
                                         <div class="col-md-8 col-sm-12">
                                             <div class="introduce">
-                                                <img src="@/assets/svg/logo-duan.svg" class="thubnail" alt="">
+                                                <div  class="cover-img"
+                                                    :style="{
+                                                        'background-image': 'url(' + `${logoDuan}` + ')',
+                                                    }"
+                                                >
+                                                </div>
                                                 <div class="content">
                                                     <div class="title">
                                                         <div class="sub f-14">Công ty cổ phần Epoint</div>
@@ -386,7 +416,12 @@
                                     <div class="row">
                                         <div class="col-md-8 col-sm-12">
                                             <div class="introduce">
-                                                <img src="@/assets/svg/long1.svg" class="thubnail" alt="">
+                                                <div  class="cover-img"
+                                                    :style="{
+                                                        'background-image': 'url(' + `${imgProfile}` + ')',
+                                                    }"
+                                                >
+                                                </div>
                                                 <div class="content">
                                                     <div class="title">
                                                         <div class="sub f-14">Công ty cổ phần Epoint</div>
@@ -432,7 +467,12 @@
                                     <div class="row">
                                         <div class="col-md-8 col-sm-12">
                                             <div class="introduce">
-                                                <img src="@/assets/svg/logo-duan.svg" class="thubnail" alt="">
+                                                <div  class="cover-img"
+                                                    :style="{
+                                                        'background-image': 'url(' + `${logoDuan}` + ')',
+                                                    }"
+                                                >
+                                                </div>
                                                 <div class="content">
                                                     <div class="title">
                                                         <div class="sub f-14">Công ty cổ phần Epoint</div>
@@ -485,6 +525,8 @@
 
 
 <script>
+import ImgProfile from '@/assets/svg/longb.svg'
+import logoDuan from '@/assets/svg/logo-duan.svg'
 import Header from "@/components/Header";
 import Footer from "@/components/Footer"
 export default {
@@ -495,7 +537,8 @@ export default {
     },
     data(){
         return{
-
+            imgProfile: ImgProfile,
+            logoDuan :logoDuan
         }
     },
     mounted(){
