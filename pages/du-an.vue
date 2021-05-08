@@ -4,7 +4,7 @@
         <section id="project" class="pt-30px pb-80px">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3 col-sm-12">
+                    <div class="col-lg-3 col-md-4 col-sm-12">
                         <div class="left">
                             <div class="top">
                                 <div class="title f-16">
@@ -91,7 +91,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-9 col-sm-12">
+                    <div class="col-lg-9 col-md-8 col-sm-12">
                         <div class="right">
                             <!-- search -->
                             <div class="top">
@@ -105,7 +105,7 @@
                             </div>
                             <div class="line"></div>
                             <!-- list off member -->
-                            <div class="center" v-for="(item, j) in 1" :key="j">
+                            <div class="center" v-for="(item, j) in 2" :key="j">
                                 <div class="boxinfo">
                                     <div class="row">
                                         <div class="col-lg-9 col-md-12 col-sm-12">

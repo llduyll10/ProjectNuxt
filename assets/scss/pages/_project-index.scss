@@ -296,3 +296,107 @@
         }
     }
 }
+
+@media screen and (max-width:991px) {
+    #project {
+        .center {
+            .boxinfo {
+                .introduce {
+                    .cover-img {}
+                    .content {
+                        .title {
+                            .sub {}
+                            .icon {
+                                .name {}
+                                img {}
+                            }
+                        }
+                        .description {}
+                        .group {
+                            margin-top: 5px !important;
+                            .choose {
+                                &.active {}
+                            }
+                        }
+                    }
+                }
+                .rate {
+                    margin-top: 22px !important;
+                    .star {
+                        flex-direction: row;
+                        .limit {}
+                        .st {
+                            span {}
+                        }
+                    }
+                    .contact {
+                        display: flex;
+                        .phone,
+                        .email {
+                            width: 140px;
+                            span {}
+                        }
+                        .email {
+                            margin-top: 0 !important;
+                            margin-left: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    #project {
+        .right {
+            .top {
+                .search-top {
+                    width: 292px !important;
+                    input {}
+                }
+                .button {}
+            }
+            .center {
+                .boxinfo {
+                    .introduce {
+                        .cover-img {}
+                        .content {
+                            .title {
+                                .sub {}
+                                .icon {
+                                    .name {}
+                                    img {}
+                                }
+                            }
+                            .description {}
+                            .group {
+                                margin-top: 21px !important;
+                                .choose {
+                                    &.active {}
+                                }
+                            }
+                        }
+                    }
+                    .rate {
+                        margin-top: 22px !important;
+                        .star {
+                            .limit {}
+                            .st {
+                                span {}
+                            }
+                        }
+                        .contact {
+                            display: flex;
+                            .phone,
+                            .email {
+                                span {}
+                            }
+                            .email {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
