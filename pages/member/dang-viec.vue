@@ -51,7 +51,7 @@
                         </div>
                         <div class="form-group row">
                              <label class="f-13  col-md-3 col-sm-12 ">
-                                Tài liêu đính kèm
+                                Tài liệu đính kèm
                             </label>
                             <div class="custom-btn col-md-9 col-sm-12 d-flex">
                                 <div class="btn-upload">
