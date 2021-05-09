@@ -14,9 +14,8 @@
         padding: 0 60px;
         padding-bottom: 40px;
     }
-    .modal-content {
-        min-width: 567px !important;
-        border-radius: 5px;
+    .modal-md {
+        width: 567px;
     }
     .modal-header {
         border-bottom: 0 !important;
@@ -119,4 +118,13 @@
             width: auto !important;
         }
     }
+
+
+
+    #modal-custom-form-cotact{
+        .modal-body {
+            padding: 1rem;
+        }
+    }
+    
 }
