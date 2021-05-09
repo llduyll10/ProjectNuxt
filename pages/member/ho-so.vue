@@ -35,7 +35,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer"
 import Profile from "@/components/profile/profile"
-import Description from "@/components/profile/description"
+import Description from "@/components/profile/des"
 import Project from "@/components/profile/project"
 import Rating from "@/components/profile/rating"
 export default {
