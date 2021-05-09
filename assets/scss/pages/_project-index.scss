@@ -15,7 +15,7 @@
             margin-top: 18px;
         }
         .title {
-            padding: 20px 0 10px 21px;
+            padding: 20px 20px 10px 21px;
             font-weight: 700;
             color: $main-color;
         }
@@ -33,6 +33,7 @@
             }
             .list-item {
                 margin-left: 43px;
+                padding-right: 15px;
                 ul {
                     padding-left: 0;
                     margin-bottom: 0;
@@ -242,8 +243,6 @@
     }
 }
 
-@media screen and (max-width:768px) {}
-
 @media screen and (max-width:1200px) {
     #project {
         .center {
@@ -302,7 +301,7 @@
         .right {
             .top {
                 .search-top {
-                    width: 292px !important;
+                    width: 322px !important;
                     input {}
                 }
                 .button {}
@@ -321,7 +320,6 @@
                             }
                             .description {}
                             .group {
-                                margin-top: 5px !important;
                                 .choose {
                                     &.active {}
                                 }
@@ -414,7 +412,7 @@
     }
 }
 
-@media screen and (max-width:556px) {
+@media screen and (max-width:555px) {
     #project {
         .left {
             &:nth-child(2) {
