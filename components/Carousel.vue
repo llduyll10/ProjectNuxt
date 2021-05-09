@@ -43,7 +43,7 @@ export default {
           }
         },
         {
-          breakpoint: 480,
+          breakpoint: 580,
           settings: {
             slidesToShow: this.numberShow || 1,
             slidesToScroll: 1
