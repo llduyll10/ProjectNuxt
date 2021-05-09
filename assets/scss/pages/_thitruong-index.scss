@@ -1,0 +1,156 @@
+//block thi truong
+#block {
+    background: #fff;
+    .title {
+        text-align: center;
+        font-weight: bold;
+        line-height: 31px;
+        color: #198AC6;
+    }
+    .line {
+        height: 3px;
+        width: 10%;
+        margin: 0 auto;
+        background-color: #F2C94C;
+    }
+    .blockinfo {
+        .left {
+            .box {
+                display: flex;
+                justify-content: space-between;
+                padding: 25px 0;
+                border-bottom: 1px solid #F2F2F2;
+                img {
+                    margin-right: 25px;
+                }
+                .content {
+                    .name {
+                        font-weight: 700;
+                        line-height: 28px;
+                        color: $main-black;
+                    }
+                    .general {
+                        margin-top: 2px;
+                        display: flex;
+                        .see {
+                            color: $main-color;
+                        }
+                        ul {
+                            display: flex;
+                            align-items: center;
+                            li {
+                                margin-left: 30px;
+                                font-size: 13px;
+                                color: #828282;
+                            }
+                        }
+                    }
+                    .sub {
+                        line-height: 26px;
+                        color: $main-black;
+                    }
+                }
+                &:first-child {
+                    padding-top: 0;
+                }
+            }
+        }
+        .right {
+            .register {
+                img.contact {
+                    border: 1px solid #F2F2F2;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    padding: 20px 13px;
+                }
+                .sub-title {
+                    font-weight: 700;
+                    line-height: 20px;
+                    color: $main-color;
+                    margin-top: 37px;
+                }
+                .line {
+                    width: 100px;
+                    margin: 0;
+                    margin-top: 4px;
+                }
+                .list {
+                    .boxsmall {
+                        display: flex;
+                        margin: 25px 0;
+                        .text {
+                            display: flex;
+                            justify-content: baseline;
+                            flex-direction: column;
+                            .top {
+                                line-height: 26px;
+                                color: $main-black;
+                                font-weight: 700;
+                                position: relative;
+                                top: -7px;
+                            }
+                            .bot {
+                                line-height: 20px;
+                                font-size: 500;
+                                color: #828282;
+                                position: relative;
+                                top: 4px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// block nhan thong tin
+#receiveInfo {
+    background: #EDF6FA;
+    .box {
+        max-width: 630px;
+        margin: 0 auto;
+        .info {
+            text-align: center;
+            padding: 0 28px;
+            .title {
+                font-weight: 700;
+                line-height: 40px;
+                color: $main-black;
+            }
+            .sub {
+                line-height: 26px;
+                color: $main-black;
+            }
+            .search {
+                width: 100%;
+                height: 35px;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                border-radius: 5px;
+                border: 0.75px solid #ADABAB;
+                margin-top: 18px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 16px;
+                background: #fff;
+                input {
+                    width: 400px;
+                    height: 25px;
+                    border: none;
+                    font-size: 13px;
+                    line-height: 26px;
+                }
+                .button {
+                    font-weight: 700;
+                    line-height: 17px;
+                    width: 102px;
+                    height: 25px;
+                    color: #f2f2f2;
+                    background-color: $main-color;
+                    border-radius: 5px;
+                    padding-top: 4px;
+                }
+            }
+        }
+    }
+}

@@ -1,6 +1,5 @@
 @import './variables';
 @import './common';
-
 * {
     margin: 0;
     padding: 0;
@@ -48,5 +47,8 @@ body {
 @import './pages/calendar';
 @import './pages/search-job';
 @import './pages/edit_profile_member';
+@import './pages/chi_tiet_du_an';
 // project 
-@import './pages/project-index'
+@import './pages/project-index';
+// thi-truong 
+@import './pages/thitruong-index';

@@ -1,0 +1,119 @@
+<template>
+    <div>
+        <Header />
+        <section id="block" class="pt-45px pb-50px">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 title mb-40px">
+                        <p class="f-24">THÔNG TIN THỊ TRƯỜNG</p>
+                        <div class="line"></div>
+                    </div>
+                    <div class="col-12">
+                        <div class="blockinfo">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="left">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="box" v-for="(item , i) in 6" :key="i">
+                                                    <img src="@/assets/svg/house1.svg" alt="">
+                                                    <div class="content">
+                                                        <div class="name f-16">
+                                                            Bỏ túi ngay bí quyết trang trí phòng khách hiện đại với Phố Xinh 
+                                                        </div>
+                                                        <div class="general">
+                                                            <div class="see f-13">
+                                                                Thị Trường 
+                                                            </div>
+                                                            <ul class="list">
+                                                                <li>20/04/2021</li>
+                                                                <li>Bùi Kim Long</li>
+                                                            </ul>
+                                                        </div>
+                                                            <div class="sub f-13">Econs được thành lập và phát triển suốt 8 năm qua theo mô hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội thất...Econs được thành lập và phát triển suốt 8 năm</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="right">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="register">
+                                                    <img class="contact" src="@/assets/svg/bigletter.svg" alt="">
+                                                    <div class="sub-title f-16">BÀI VIẾT NỔI BẬT</div>
+                                                    <div class="line"></div>
+                                                    <div class="list">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="boxsmall" v-for="(item , i) in 4" :key="i">
+                                                                    <img src="@/assets/svg/house2.svg" class="mr-13px" alt="">
+                                                                    <div class="text">
+                                                                        <div class="top f-13">Bỏ túi ngay bí quyết trang trí phòng khách hiện đại với Phố Xinh </div>
+                                                                        <div class="bot f-12">20/04/2021</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="receiveInfo" class="pt-24px pb-40px">
+            <div class="container-fluid">
+                <div class="box">
+                    <div class="row">
+                    <div class="col-12">
+                        <div class="info">
+                            <div class="title f-20">ĐĂNG KÍ NHẬN THÔNG TIN</div>
+                            <div class="sub f-13 mt-2">Đăng ký nhận thông tin mới nhất về thị trường xây dựng và những mẫu thiết kế đẹp và chất qua email của bạn hàng tuần</div>
+                            <div class="search">
+                                <input type="text" placeholder="Longb@econs.vn">
+                                <div class="button f-13">Đăng ký</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+        <Footer />
+    </div>
+
+</template>
+
+
+<script>
+import Header from "@/components/Header";
+import Footer from "@/components/Footer"
+
+
+export default {
+    // middleware: 'auth',
+    components:{
+        Header,
+        Footer,
+    },
+    data(){
+        return{
+            
+        }
+    },
+    mounted(){
+
+    },
+    methods:{
+        
+    }
+}
+</script>
