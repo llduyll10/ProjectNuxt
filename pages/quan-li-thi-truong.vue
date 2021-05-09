@@ -42,17 +42,23 @@
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="register">
-                                                    <img class="contact" src="@/assets/svg/bigletter.svg" alt="">
-                                                    <div class="sub-title f-16">BÀI VIẾT NỔI BẬT</div>
-                                                    <div class="line"></div>
-                                                    <div class="list">
-                                                        <div class="row">
-                                                            <div class="col-12">
-                                                                <div class="boxsmall" v-for="(item , i) in 4" :key="i">
-                                                                    <img src="@/assets/svg/house2.svg" class="mr-13px" alt="">
-                                                                    <div class="text">
-                                                                        <div class="top f-13">Bỏ túi ngay bí quyết trang trí phòng khách hiện đại với Phố Xinh </div>
-                                                                        <div class="bot f-12">20/04/2021</div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-5">
+                                                            <img class="contact" src="@/assets/svg/bigletter.svg" alt="">
+                                                        </div>
+                                                        <div class="col-lg-12 col-md-7">
+                                                            <div class="sub-title f-16">BÀI VIẾT NỔI BẬT</div>
+                                                            <div class="line"></div>
+                                                            <div class="list">
+                                                                <div class="row">
+                                                                    <div class="col-lg-12">
+                                                                        <div class="boxsmall" v-for="(item , i) in 4" :key="i">
+                                                                            <img src="@/assets/svg/house2.svg" class="mr-13px" alt="">
+                                                                            <div class="text">
+                                                                                <div class="top f-13">Bỏ túi ngay bí quyết trang trí phòng khách hiện đại với Phố Xinh </div>
+                                                                                <div class="bot f-12">20/04/2021</div>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>

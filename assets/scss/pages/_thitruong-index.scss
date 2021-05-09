@@ -48,6 +48,11 @@
                     .sub {
                         line-height: 26px;
                         color: $main-black;
+                        height: 78px;
+                        overflow: hidden;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 3;
                     }
                 }
                 &:first-child {
@@ -87,6 +92,11 @@
                                 font-weight: 700;
                                 position: relative;
                                 top: -7px;
+                                height: 52px;
+                                overflow: hidden;
+                                display: -webkit-box;
+                                -webkit-box-orient: vertical;
+                                -webkit-line-clamp: 3;
                             }
                             .bot {
                                 line-height: 20px;
@@ -149,6 +159,90 @@
                     background-color: $main-color;
                     border-radius: 5px;
                     padding-top: 4px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    #block {
+        .title {}
+        .line {}
+        .blockinfo {
+            .left {
+                .box {
+                    img {
+                        width: 250px;
+                    }
+                    .content {
+                        .name {}
+                        .general {
+                            .see {}
+                            ul {
+                                li {}
+                            }
+                        }
+                        .sub {}
+                    }
+                    &:first-child {}
+                }
+            }
+            .right {
+                .register {
+                    img.contact {}
+                    .sub-title {}
+                    .line {}
+                    .list {
+                        .boxsmall {
+                            .text {
+                                .top {}
+                                .bot {}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:556px) {
+    #block {
+        .title {}
+        .line {}
+        .blockinfo {
+            .left {
+                .box {
+                    img {
+                        width: 50px;
+                    }
+                    .content {
+                        .name {}
+                        .general {
+                            .see {}
+                            ul {
+                                li {}
+                            }
+                        }
+                        .sub {}
+                    }
+                    &:first-child {}
+                }
+            }
+            .right {
+                .register {
+                    img.contact {}
+                    .sub-title {}
+                    .line {}
+                    .list {
+                        .boxsmall {
+                            .text {
+                                .top {}
+                                .bot {}
+                            }
+                        }
+                    }
                 }
             }
         }
