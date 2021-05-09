@@ -1,4 +1,4 @@
-#search-job{
+.formCore {
     .content{
         padding: 36px 60px 90px 60px;
         .title{
@@ -82,7 +82,7 @@
     }
 }
 @media only screen and (max-width: 768px){
-    #search-job{
+    .formCore {
         .content{
             padding: 30px;
             .group-content{

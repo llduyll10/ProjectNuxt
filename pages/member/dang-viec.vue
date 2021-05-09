@@ -2,7 +2,7 @@
     <div>
         <Header />
         <section id="search-job" class="wrapSection pt-30px pb-80px">
-            <div class="wrapCenterSmall">
+            <div class="wrapCenterSmall formCore">
                 <div class="content">
                     <p class="title f-20 mb-10px">Thông tin dự án</p>
                     <p class="f-13 description">Vui lòng điền vào thông tin dưới đây. Bạn sẽ nhận được <span>8-10</span>  chào giá tạm tính từ những công ty xây dựng/đơn vị thiết kế uy tín trong khu vực. Bạn thoà sức <span>
