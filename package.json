@@ -5,14 +5,12 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "deploy": "nuxt build && sudo sls deploy --stage dev",
     "start": "nuxt start",
     "generate": "nuxt generate"
   },
   "dependencies": {
     "@nuxtjs/auth-next": "^5.0.0-1620155494.96c1b50",
     "@nuxtjs/axios": "^5.13.1",
-    "aws-serverless-express": "^3.4.0",
     "axios": "^0.21.1",
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.9.1",
@@ -24,9 +22,5 @@
     "serverless-http": "^2.7.0",
     "v-calendar": "^2.3.0",
     "vue-slick-carousel": "^1.0.6"
-  },
-  "devDependencies": {
-    "serverless": "^2.39.2",
-    "serverless-offline": "^7.0.0"
   }
 }
