@@ -1,7 +1,7 @@
 module.exports = {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'FENuxt',
+    title: 'Econs',
     htmlAttrs: {
       lang: 'en'
     },
