@@ -5,6 +5,8 @@
 </template>
 <script>
 import Vue from 'vue'
+import mixins from '../mixins';
+Vue.mixin(mixins);
 Vue.prototype.$checkDragDrop = (classSelector) => {
   let arrImg = Array.from(document.querySelectorAll(classSelector))
   arrImg.forEach(item => {

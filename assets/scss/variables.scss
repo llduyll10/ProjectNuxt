@@ -1,3 +1,27 @@
 $red:red;
 $main-color:#198AC6;
 $main-black:#4F4F4F;
+$text-white: #F2F2F2;
+$white: #fff;
+
+.bg-white {
+    background:$white !important;
+}
+
+
+.text-white {
+    color: $text-white !important;
+}
+.text-main {
+    color: $main-color !important;
+}
+.text-gray {
+   color: $main-black !important;
+}
+.text-red {
+    color: $red !important;
+}
+
+.bg-main {
+    background: $main-color !important;
+}
