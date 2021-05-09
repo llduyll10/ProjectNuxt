@@ -429,6 +429,7 @@
             .center {
                 .boxinfo {
                     .introduce {
+                       
                         .cover-img {}
                         .content {
                             .title {
@@ -440,8 +441,12 @@
                             }
                             .description {}
                             .group {
+                                display: block;
                                 margin-top: 5px !important;
                                 .choose {
+                                    margin-top: 8px;
+                                    width: fit-content;
+                                    float: left;
                                     &.active {}
                                 }
                             }
