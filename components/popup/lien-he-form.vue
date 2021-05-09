@@ -3,9 +3,8 @@
       <template v-slot:content>
         <div class="modal-contact formCore">
           <div class="content">
-            <p class="title f-20 mb-10px">Thông tin dự án</p>
-            <p class="f-13 description">Vui lòng điền vào thông tin dưới đây. Bạn sẽ nhận được <span>8-10</span>  chào giá tạm tính từ những công ty xây dựng/đơn vị thiết kế uy tín trong khu vực. Bạn thoà sức <span>
-                yêu cầu tư vấn</span>  và <span>chọn lựa</span> đơn vị phù hợp nhất cho dự án</p>
+            <p class="title f-20 mb-10px">Gửi tin nhắn cho <span>Công ty cổ phần Epoint</span> </p>
+            <p class="f-13 description">Vui lòng điền vào thông tin dưới đây. Bạn sẽ tốn <span>3 Tokens</span> khi gửi tin nhắn cho <span>Công ty cổ phần Epoint</span> </p>
             <form @submit.prevent="getForm()" class="group-content mt-36px">
               <div class="form-group row">
                     <label class="f-13 col-md-3 col-sm-12 ">
@@ -13,18 +12,6 @@
                       <span style="color:red">*</span>
                   </label>
                   <b-form-select class="form-control col-md-9 col-sm-12" v-model="objResearch.requireName" :options="options"></b-form-select>
-              </div>
-              <div class="form-group row">
-                    <label class="f-13 col-md-3 col-sm-12 ">
-                      Tên Dự Án
-                      <span style="color:red">*</span>
-                  </label>
-                  <input
-                      type="text"
-                      class="form-control col-md-9 col-sm-12"
-                      required
-                      placeholder="Nhập tên dự án của bạn"
-                  />
               </div>
               <div class="form-group row">
                     <label class="f-13 col-md-3 col-sm-12 ">
@@ -37,19 +24,7 @@
                   ></textarea>
               </div>
               <div class="form-group row">
-                    <label class="f-13  col-md-3 col-sm-12 ">
-                      Hình ảnh đính kèm
-                  </label>
-                  <div class="custom-btn col-md-9 col-sm-12 d-flex">
-                      <div class="btn-upload">
-                          <img  src="@/assets/img/icon-upload.png"/>
-                          <span>Thêm tài liệu</span>
-                      </div>
-                      <span class="type-upload">png, jpg, tiff</span>
-                  </div>
-              </div>
-              <div class="form-group row">
-                    <label class="f-13  col-md-3 col-sm-12 ">
+                  <label class="f-13  col-md-3 col-sm-12 mt-1">
                       Tài liêu đính kèm
                   </label>
                   <div class="custom-btn col-md-9 col-sm-12 d-flex">
@@ -60,50 +35,6 @@
                       <span class="type-upload">png, jpg, tiff, pdf, xls, doc, ppt, zip, rar</span>
                   </div>
               </div>
-              <div class="form-group row">
-                    <label class="f-13 col-md-3 col-sm-12 ">
-                      Địa điểm dự án
-                      <span style="color:red">*</span>
-                  </label>
-                  <input
-                      type="text"
-                      class="form-control col-md-9 col-sm-12"
-                      required
-                      placeholder="Tỉnh Thành"
-                  />
-              </div>
-              <div class="form-group row">
-                    <label class="f-13 col-md-3 col-sm-12 ">
-                      Ngân sách dự trù
-                      <span style="color:red">*</span>
-                  </label>
-                  <input
-                      type="text"
-                      class="form-control col-md-9 col-sm-12"
-                      required
-                      placeholder="200,000,000"
-                  />
-              </div>
-              <div class="form-group row">
-                    <label class="f-13 col-md-3 col-sm-12 ">
-                      Thời gian kết thúc nhận chào giá
-                      <span style="color:red">*</span>
-                  </label>
-                  <v-date-picker v-model="date" :masks="{input: 'DD/MM/YYYY'}">
-                      <template v-slot="{ inputValue, inputEvents }">
-                          <div class="input-group mb-3">
-                              <input type="text"
-                                      class="form-control"
-                                      :value="inputValue"
-                                      v-on="inputEvents"
-                                      required>
-                              <div class="input-group-append">
-                                  <span class="input-group-text"><i class="fas fa-calendar-day"></i></span>
-                              </div>
-                          </div>
-                      </template>
-                  </v-date-picker>
-                </div>
                 <div class="form-group mb-50px group-checkbox">
                     <b-form-checkbox
                         v-model="objResearch.status"
@@ -114,14 +45,9 @@
                     </b-form-checkbox>
                 </div>
                 <div class="group-btn row">
-                    <div class="col-md-6 col-sm-12">
+                    <div class="col-md-12">
                         <button type="submit" class="btn-now">
-                        ĐĂNG NGAY
-                        </button>
-                    </div>
-                    <div class="col-md-6 col-sm-12 pr-0 cutom-sm">
-                        <button type="button" class="btn-now save">
-                            LƯU BẢN NHÁP
+                        GỬI TIN NHẮN
                         </button>
                     </div>
                 </div>
