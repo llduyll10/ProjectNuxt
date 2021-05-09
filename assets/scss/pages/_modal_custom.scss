@@ -111,20 +111,39 @@
     }
 }
 
+#modal-cotact-form-submit {
+    .modal-body {
+        padding-top: 0!important;
+        padding: 0 60px;
+        padding-bottom: 40px;
+    }
+    .modal-content {
+        width: 850px !important;
+    }
+    .modal-header {
+        border-bottom: 0 !important;
+        padding: 6px 15px;
+        padding-bottom: 0;
+    }
+    .formCore {
+        .content {
+            padding: 0;
+        }
+    }
+}
+
 @media screen and (max-width:768px) {
     #modal-custom-form-login,
-    #modal-custom-form-cotact {
+    #modal-custom-form-cotact,
+    .modal-cotact-form-submit {
         .modal-md {
             width: auto !important;
         }
     }
-
-
-
-    #modal-custom-form-cotact{
+    #modal-custom-form-cotact,
+    .modal-cotact-form-submit {
         .modal-body {
             padding: 1rem;
         }
     }
-    
 }

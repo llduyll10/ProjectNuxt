@@ -147,7 +147,7 @@
                                                         <img src="@/assets/svg/phone.svg" alt="">
                                                         <span>Liên hệ trực tiếp</span>
                                                     </div>
-                                                    <div class="email">
+                                                    <div class="email" @click="openLienHeMail">
                                                         <img src="@/assets/svg/email.svg" alt="">
                                                         <span>Gửi tin nhắn</span>
                                                     </div>
@@ -165,6 +165,7 @@
             </div>
         </section>
         <LienHePop ref="refLienHe"/>
+        <LienHeFormPop ref="LienHeFormPop"/>
         <Footer />
     </div>
 
@@ -177,12 +178,15 @@ import logoDuan from '@/assets/svg/logo-duan.svg'
 import Header from "@/components/Header";
 import Footer from "@/components/Footer"
 import LienHePop from "@/components/popup/lien-he"
+import LienHeFormPop from "@/components/popup/lien-he-form"
+
 export default {
     // middleware: 'auth',
     components:{
         Header,
         Footer,
-        LienHePop
+        LienHePop,
+        LienHeFormPop
     },
     data(){
         return{
@@ -197,6 +201,10 @@ export default {
     methods:{
         openLienHe(){
             this.$refs.refLienHe.show();
+        },
+        openLienHeMail(){
+            this.$refs.LienHeFormPop.show();
+
         }
     }
 }
