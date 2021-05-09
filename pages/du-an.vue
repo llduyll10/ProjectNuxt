@@ -4,7 +4,7 @@
         <section id="project" class="pt-30px pb-80px">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-3 col-md-4 col-sm-12">
+                    <div class="col-lg-3 col-md-3 col-sm-12">
                         <div class="left">
                             <div class="top">
                                 <div class="title f-16">
@@ -91,7 +91,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-9 col-md-8 col-sm-12">
+                    <div class="col-lg-9 col-md-9 col-sm-12">
                         <div class="right">
                             <!-- search -->
                             <div class="top">
