@@ -208,7 +208,7 @@
                         </span>
                       </div>
                       <div class="location">
-                        <img src="@/assets/img/icon-area.png" />
+                        <img src="@/assets/svg/area.svg" />
                         <span>
                           Quận 7, TP. Hồ Chí Minh
                         </span>
@@ -221,7 +221,7 @@
                       </p>
                       <div class="d-flex group-infor">
                         <div class="left">
-                          <img src="@/assets/img/icon-human.png" />
+                          <img src="@/assets/svg/human.svg" />
                           <span>Bùi Kim Long </span>
                         </div>
                         <div class="right">
