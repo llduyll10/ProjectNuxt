@@ -8,14 +8,15 @@
     }
 }
 
-#modal-custom-form-cotact {
+#modal-custom-form-contact {
     .modal-body {
         padding-top: 0!important;
         padding: 0 60px;
         padding-bottom: 40px;
     }
     .modal-md {
-        min-width: 567px;
+        width: 567px;
+        max-width: 567px;
     }
     .modal-header {
         border-bottom: 0 !important;
@@ -118,7 +119,8 @@
         padding-bottom: 60px;
     }
     .modal-md {
-        min-width: 850px !important;
+        width: 850px;
+        max-width: 850px;
     }
     .modal-header {
         border-bottom: 0 !important;
@@ -165,14 +167,14 @@
 
 @media screen and (max-width:768px) {
     #modal-custom-form-login,
-    #modal-custom-form-cotact,
-    .modal-cotact-form-submit {
+    #modal-custom-form-contact,
+    #modal-cotact-form-submit {
         .modal-md {
             width: auto !important;
         }
     }
-    #modal-custom-form-cotact,
-    .modal-cotact-form-submit {
+    #modal-custom-form-contact,
+    #modal-cotact-form-submit {
         .modal-body {
             padding: 1rem;
         }

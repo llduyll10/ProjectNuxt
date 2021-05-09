@@ -1,5 +1,5 @@
 <template>
-    <Modal ref="modalLien" id="modal-custom-form-cotact">
+    <Modal ref="modalLien" id="modal-custom-form-contact">
       <template v-slot:content>
         <div class="modal-contact">
            <div class="top">
