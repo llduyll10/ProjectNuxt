@@ -9,12 +9,12 @@
                     Hình ảnh đại diện <span class="info">(Dưới 1MB)</span>
                 </div>
                 <div class="fieldInput">
-                    <div>
+                    <div class="mb-5px">
                         <img class="uploadReview" src="@/assets/img/longb.png" alt=""/>
                     </div>
                     <div>
                         <button type="button" class="btn btn-main f-11">
-                            <img src="@/assets/svg/upload.svg" alt=""/>
+                            <img class="mr-4px h-13px" src="@/assets/svg/icon-upload.svg" alt=""/>
                             Choose file
                         </button>
 
