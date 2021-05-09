@@ -1,6 +1,5 @@
 @import './variables';
 @import './common';
-
 * {
     margin: 0;
     padding: 0;
@@ -48,4 +47,6 @@ body {
 @import './pages/calendar';
 @import './pages/search-job';
 // project 
-@import './pages/project-index'
+@import './pages/project-index';
+// thi-truong 
+@import './pages/thitruong-index';
