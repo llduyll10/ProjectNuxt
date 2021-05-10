@@ -39,6 +39,10 @@
                 list-style: none;
                 padding: 10px 30px;
                 border-bottom: 1px solid #dee2e6;
+
+                &:first-child {
+                    border-top: 1px solid #dee2e6;
+                }
                 span{
                     font-weight: 700;
                     color:#444 ;

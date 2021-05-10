@@ -198,9 +198,7 @@
         }
         .navbar-nav{
             margin-left: 0 !important;
-            &:not(.isLogin){
-                display: none;
-            }
+            
             .isLogin{
                 padding-left: 0 !important;
             }
@@ -223,9 +221,6 @@
     .cover-header{
         .navbar-nav{
             margin-left: 0 !important;
-            &:not(.isLogin){
-                display: none;
-            }
             .isLogin{
                 padding-left: 0 !important;
             }
@@ -247,9 +242,7 @@
     .cover-header{
         .navbar-nav{
             margin-left: 0 !important;
-            &:not(.isLogin){
-                display: none;
-            }
+            
             .isLogin{
                 padding-left: 0 !important;
             }

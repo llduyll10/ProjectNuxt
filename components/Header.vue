@@ -33,14 +33,14 @@
                   <div class="isLogin mt-7px mb-7px">
                     <img class="mt-15px" src="@/assets/svg/bell.svg" />
                     <div class="group-infor">
-                      <img class="mt-5px" src="@/assets/img/user-logo.png" />
+                      <img class="mt-5px border" :src="$auth.user.photo" />
                       <div class="group-right ml-13px">
                         <b-dropdown id="dropdown-infor" variant="link" toggle-class="text-decoration-none" class="custom-infor pb-5px" no-caret>
                           <template #button-content>
-                            Long Bui  <i class="fas fa-caret-down ml-13px f-16"></i>
+                            {{$auth.user.name}}  <i class="fas fa-caret-down ml-13px f-16"></i>
                           </template>
                            <b-dropdown-text class="verify">
-                            <span class="f-16">Long Bui</span>
+                            <span class="f-16">{{$auth.user.name}}</span>
                             <br>
                             <img src="@/assets/img/check.png" alt="">
                             <span class="f-13">Đã xác thực</span>
@@ -65,8 +65,8 @@
                           <b-dropdown-item class="mb-30px f-12" @click="logout()">Đăng xuất</b-dropdown-item>
                         </b-dropdown>
                         <div class="d-flex cover-infor">
-                          <p class="f-13">ID. 123456</p>
-                          <p class="f-13"><span>100</span> Tokens</p>
+                          <p class="f-13">ID. {{$auth.user.number}}</p>
+                          <p class="f-13"><span>{{$auth.user.coin || 0}}</span> Tokens</p>
                         </div>
                       </div>
                     </div>
@@ -121,7 +121,7 @@
               </div>
             </div>
           </div>
-          <div class="row">
+          <div class="row" v-if="!$auth.loggedIn">
             <div class="col-12">
               <div class="group-btn d-flex p-16px">
                 <div class="btn-register" @click="openModalLogin">
