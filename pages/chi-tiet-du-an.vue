@@ -14,7 +14,7 @@
                 Tìm nhà thầu xây dựng nhà phố 5x20m tại Biên Hoà
               </h2>
               <span
-                class="px-8px badge badge-primary main-bg-color py-2px text-12"
+                class="px-8px badge badge-primary main-bg-color py-2px text-12 custom-bage"
                 >Thi công phần thô</span
               >
               <hr class="hr" />
@@ -39,19 +39,19 @@
               <div class="d-flex main-color mt-4 text-11">
                 <div class="mr-3">
                   <span class="pr-1">
-                    <img class="icon-red" src="@/assets/svg/icon-pdf-color.svg" />
+                    <img class="icon-red" src="@/assets/svg/icon-pdf-border.svg" />
                   </span>
                   Photo sổ nhà Gò Vấp
                 </div>
                 <div class="px-3">
                   <span class="pr-1">
-                    <img src="@/assets/svg/icon-jpg.svg" />
+                    <img src="@/assets/svg/icon-jpeg.svg" />
                   </span>
                   Ảnh tham khảo_01
                 </div>
                 <div class="px-3">
                   <span class="pr-1">
-                    <img src="@/assets/svg/icon-jpg.svg" />
+                    <img src="@/assets/svg/icon-jpeg.svg" />
                   </span>
                   Ảnh tham khảo_02
                 </div>
@@ -69,19 +69,19 @@
               </h3>
               <hr class="hr" />
               <div class="d-flex flex-wrap main-black">
-                <div class="d-flex w-100 my-2">
+                <div class="d-flex w-100 mb-25px">
                   <div class="col-md-3 col-12 text-13 font-weight-bold">
                     Chi phí ước tính <span class="red">*</span>
                   </div>
                   <div class="col-md-9 col-12 text-12">
                     <input type="text" class="form-control w-100" />
-                    <p>
+                    <p class="mb-0">
                       Phí hoa hồng nếu trúng thầu -
                       <span class="main-color font-weight-bold">500</span> <span class="font-weight-bold">Tokens</span>
                     </p>
                   </div>
                 </div>
-                <div class="d-flex w-100 my-2">
+                <div class="d-flex w-100 mb-25px">
                   <div class="col-md-3 col-12 text-13 font-weight-bold">
                     Kinh nghiệm, Năng lực và giải pháp đề xuất<span class="red"
                       >*</span
@@ -94,7 +94,7 @@
                             ></textarea>
                   </div>
                 </div>
-                <div class="d-flex w-100 my-2">
+                <div class="d-flex w-100 mb-25px">
                   <div class="col-md-3 col-12 text-13 font-weight-bold">
                     Thời gian thi công dự trù<span class="red">*</span>
                   </div>
@@ -106,7 +106,7 @@
                     />
                   </div>
                 </div>
-                <div class="d-flex w-100 my-2">
+                <div class="d-flex w-100 mb-25px">
                   <div class="col-md-3 col-12 text-13 font-weight-bold">
                     Tài liệu đính kèm
                   </div>
@@ -123,7 +123,7 @@
                     >
                   </div>
                 </div>
-                <div class="d-flex w-100 my-2">
+                <div class="d-flex w-100 mb-25px">
                   <div class="col-12 text-12 d-flex align-items-center">
                     <img src="@/assets/svg/icon-radio.svg" />
                     <span class="ml-2">
@@ -134,14 +134,14 @@
                   </div>
                 </div>
               </div>
-              <div class="d-flex mt-4 justify-content-xl-around">
+              <div class="d-flex mt-25px justify-content-xl-around">
                 <button
-                  class="btn btn-primary main-bg-color radius-5 w-100 mx-1 text-16"
+                  class="btn btn-primary main-bg-color radius-5 w-100  text-16 ml-15px mr-15px"
                 >
                   GỬI CHÀO GIÁ NGAY
                 </button>
                 <button
-                  class="btn btn-primary main-bg-color radius-5 w-100 mx-1 btn-brown text-16"
+                  class="btn btn-primary main-bg-color radius-5 w-100  btn-brown text-16 ml-15px mr-15px"
                 >
                   LƯU BẢN NHÁP
                 </button>
