@@ -307,8 +307,8 @@
                       src="@/assets/img/du-an-tuong-tu-demo.png"
                     />
                     <span
-                      class="mt-20px end-0 position-absolute bg-yellow-8 text-light px-3 text-12 py-6px font-weight-bold"
-                      >Nội thất</span
+                      class="mt-20px end-0 position-absolute bg-yellow-8 text-light text-12 pl-30px pr-16px py-5px line-height-15 font-weight-bold"
+                      >NỘI THẤT</span
                     >
                   </div>
                   <div class="bg-white px-15px py-18px">
