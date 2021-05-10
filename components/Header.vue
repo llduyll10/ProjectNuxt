@@ -79,7 +79,7 @@
                           <span class="f-13" >{{item.name}}</span>
                       </b-nav-item>
                   </template>
-                  <b-nav-item class="cover-btn" :to="'/member/dang-viec'">
+                  <b-nav-item class="cover-btn" @click="openModalLogin">
                     <div  class="btn-findjob ml-4" >
                          <span class="f-13">Đăng Việc</span>
                     </div>
