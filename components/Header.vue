@@ -157,9 +157,9 @@
               Chúng tôi đã gửi cho bạn qua <span class="typeOtp">{{confirmObj.username}}</span>  với mã xác minh OTP. Vui lòng kiểm tra {{confirmObj.isPhone?'số điện thoại':'email'}} và nhập mã xác nhận
             </p>
             <div class="mb-25px">
-              <input v-on:keyup="$event.target.nextElementSibling.focus()" v-model="codeObj.code1" type="text" class="form-control verifyOTP" required maxlength="1">
-              <input v-on:keyup="$event.target.nextElementSibling.focus()" v-model="codeObj.code2" type="text" class="form-control verifyOTP" required maxlength="1">
-              <input v-on:keyup="$event.target.nextElementSibling.focus()" v-model="codeObj.code3" type="text" class="form-control verifyOTP" required maxlength="1">
+              <input v-on:keyup="nextCode($event)" v-model="codeObj.code1" type="text" class="form-control verifyOTP" required maxlength="1">
+              <input v-on:keyup="nextCode($event)" v-model="codeObj.code2" type="text" class="form-control verifyOTP" required maxlength="1">
+              <input v-on:keyup="nextCode($event)" v-model="codeObj.code3" type="text" class="form-control verifyOTP" required maxlength="1">
               <input v-model="codeObj.code4" type="text" class="form-control verifyOTP" required maxlength="1">
               <div class="w-100 text-center mt-16px">
                 <button @click="login" class="btn btn-theme theme-blue">XÁC NHẬN</button>
@@ -323,6 +323,9 @@ export default {
 
   },
   methods:{
+    nextCode($event){
+      $event.target.nextElementSibling.focus()
+    },
     logout(){
       this.$auth.logout();
     },
