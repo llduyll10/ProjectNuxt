@@ -48,10 +48,15 @@
                                             <div class="col-12">
                                                 <div class="register">
                                                     <div class="row">
-                                                        <div class="col-lg-12 col-md-5 col-12">
-                                                            <img class="contact" src="@/assets/svg/bigletter.svg" alt="">
+                                                        <div class="col-lg-12 col-sm-5 col-12">
+                                                            <div  class="cover-letter"
+                                                                :style="{
+                                                                    'background-image': 'url(' + `${letter}` + ')',
+                                                                }"
+                                                            >
+                                                            </div>
                                                         </div>
-                                                        <div class="col-lg-12 col-md-7 col-12">
+                                                        <div class="col-lg-12 col-sm-7 col-12">
                                                             <div class="sub-title f-16">BÀI VIẾT NỔI BẬT</div>
                                                             <div class="line"></div>
                                                             <div class="list mt-13px">
@@ -113,6 +118,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer"
 import house from "@/assets/svg/house1.svg"
+import letter from "@/assets/svg/bigletter.svg"
+
 
 export default {
     // middleware: 'auth',
@@ -122,7 +129,8 @@ export default {
     },
     data(){
         return{
-            house : house
+            house : house,
+            letter : letter
         }
     },
     mounted(){
