@@ -29,11 +29,14 @@ export default {
     const companies = data.data;
 
     console.log('companies',companies);
-    
+
   },
   mounted(){
-    
-  }
+        var textAreas = document.getElementsByTagName('textarea');
+        Array.prototype.forEach.call(textAreas, function(elem) {
+            elem.placeholder = elem.placeholder.replace(/\\n/g, '\n');
+        });
+    },
 }
 </script>
 

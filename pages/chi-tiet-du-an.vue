@@ -10,7 +10,7 @@
             <div
               class="left inner-content-section px-36px pt-25px pb-50px mb-20px"
             >
-              <h2 class="main-color text-20">
+              <h2 class="main-color f-20 font-weight-bold mb-15px">
                 Tìm nhà thầu xây dựng nhà phố 5x20m tại Biên Hoà
               </h2>
               <span
@@ -20,6 +20,7 @@
               <hr class="hr" />
               <div class="main-black text-13">
                 <p class="text-16 font-weight-bold">Yêu cầu công việc</p>
+                <p class="f-13 mb-0">
                 Econs được thành lập và phát triển suốt 8 năm qua theo mô hình
                 dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội
                 thất...Econs được thành lập và phát triển suốt 8 năm qua theo mô
@@ -31,13 +32,14 @@
                 thất...Econs được thành lập và phát triển suốt 8 năm qua theo mô
                 hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội
                 thất...
+                </p>
               </div>
               <hr class="hr" />
               <h3 class="font-bold text-16">Tài liệu đính kèm</h3>
               <div class="d-flex main-color mt-4 text-11">
                 <div class="mr-3">
                   <span class="pr-1">
-                    <img class="icon-red" src="@/assets/svg/icon-pdf.svg" />
+                    <img class="icon-red" src="@/assets/svg/icon-pdf-color.svg" />
                   </span>
                   Photo sổ nhà Gò Vấp
                 </div>
@@ -61,41 +63,39 @@
             <div
               class="left inner-content-section px-36px pt-25px pb-50px mb-20px"
             >
-              <h3 class="h5 main-black">
+              <h3 class="h5 main-black f-14 fw-700">
                 Gửi chào giá cho dự án - Bạn sẽ tốn
                 <span class="main-color">3 Tokens</span> khi tham gia chào giá
               </h3>
               <hr class="hr" />
               <div class="d-flex flex-wrap main-black">
                 <div class="d-flex w-100 my-2">
-                  <div class="col-md-3 col-12 text-13">
+                  <div class="col-md-3 col-12 text-13 font-weight-bold">
                     Chi phí ước tính <span class="red">*</span>
                   </div>
                   <div class="col-md-9 col-12 text-12">
                     <input type="text" class="form-control w-100" />
                     <p>
                       Phí hoa hồng nếu trúng thầu -
-                      <span class="main-color">500</span> Tokens
+                      <span class="main-color font-weight-bold">500</span> <span class="font-weight-bold">Tokens</span>
                     </p>
                   </div>
                 </div>
                 <div class="d-flex w-100 my-2">
-                  <div class="col-md-3 col-12 text-13">
+                  <div class="col-md-3 col-12 text-13 font-weight-bold">
                     Kinh nghiệm, Năng lực và giải pháp đề xuất<span class="red"
                       >*</span
                     >
                   </div>
                   <div class="col-md-9 col-12 text-12">
-                    <textarea class="form-control main-black" rows="6">
-1. Mô tả kinh nghiệm & năng lực của bạn
-2. Tại sao chủ đầu tư phải chọn bạn thi công công trình này?
-3. Đề xuất giải pháp thi công của bạn sau khi xem xét yêu cầu 
-của chủ đầu tư
-                    </textarea>
+                    <textarea required id="customPlaceholder" class="form-control main-black" rows="5"
+                                placeholder=
+                                " 1. Mô tả kinh nghiệm & năng lực của bạn \n 2. Tại sao chủ đầu tư phải chọn bạn thi công công trình này? \n 3. Đề xuất giải pháp thi công của bạn sau khi xem xét yêu cầu của chủ đầu tư"
+                            ></textarea>
                   </div>
                 </div>
                 <div class="d-flex w-100 my-2">
-                  <div class="col-md-3 col-12 text-13">
+                  <div class="col-md-3 col-12 text-13 font-weight-bold">
                     Thời gian thi công dự trù<span class="red">*</span>
                   </div>
                   <div class="col-md-9 col-12 text-12">
@@ -107,7 +107,7 @@ của chủ đầu tư
                   </div>
                 </div>
                 <div class="d-flex w-100 my-2">
-                  <div class="col-md-3 col-12 text-13">
+                  <div class="col-md-3 col-12 text-13 font-weight-bold">
                     Tài liệu đính kèm
                   </div>
                   <div class="col-md-9 col-12 text-12">
@@ -153,20 +153,21 @@ của chủ đầu tư
             <div
               class="left inner-content-section px-36px pt-25px pb-50px mb-20px"
             >
-              <h3 class="h5 main-black">
+              <h3 class="h5 main-black f-16 font-weight-bold">
                 Gửi chào giá cho dự án - Bạn sẽ tốn
                 <span class="main-color">3 Tokens</span> khi tham gia chào giá
               </h3>
               <hr class="hr" />
               <template v-for="id in 3">
-                <div class="d-flex flex-wrap" :key="id">
-                  <div class="col-12 d-flex  px-0 justify-content-between">
+                <div class="d-flex flex-wrap " :key="id">
+                  <div class="col-12 d-flex pb-20px  px-0 justify-content-between">
                     <div class="col-7 d-flex align-items-center">
                       <div>
                         <img src="@/assets/img/logo-econs-black.png" />
                       </div>
-                      <div class="ml-1">
-                        <div class="d-inline-flex main-black">
+                      <div class="ml-1 ml-16px">
+                        <p class="mb-0 f-14 font-weight-bold main-black">Công ty cổ phần Econs</p>
+                        <div class="d-inline-flex main-black py-11px">
                           <div
                             class="badge badge-warning d-inline-flex align-items-center text-white py-3px text-10 mr-1"
                           >
@@ -183,7 +184,7 @@ của chủ đầu tư
                             (<span class="main-yellow">4</span> đánh giá)
                           </span>
                         </div>
-                        <div class="text-11">
+                        <div class="text-11 color-grey">
                           <span
                             >Chi phí ước tính -
                             <span class="font-weight-bold main-color text-13"
@@ -193,7 +194,7 @@ của chủ đầu tư
                           <span> | </span>
                           <span
                             >Thời gian thi công -
-                            <span class="main-color text-13"
+                            <span class="font-weight-bold main-color text-13"
                               >90 ngày</span
                             ></span
                           >
@@ -213,7 +214,7 @@ của chủ đầu tư
                     </div>
                   </div>
                 </div>
-                <hr class="hr" :key="idx" />
+                <hr class="hr" :key="id" />
               </template>
             </div>
             <!--  Danh sách chào giá -->
@@ -224,57 +225,57 @@ của chủ đầu tư
           <div class="col-3 right">
             <!-- Thông tin dự án -->
             <div
-              class="left inner-content-section px-24px pt-25px pb-50px mb-20px thongTinDuAnWrapper main-black"
+              class="left inner-content-section p-25px mb-20px thongTinDuAnWrapper main-black"
             >
               <h3 class="text-16 main-black mb-2">
                 Thông tin dự án
               </h3>
-              <hr class="hr" />
-              <div class="box d-flex py-1">
-                <div class="text-12 col-6 px-0">
+              <hr class="hr my-15px" />
+              <div class="box d-flex pb-12px">
+                <div class="text-12 col-6 px-0 color-grey">
                   ID dự án
                 </div>
-                <div class="text-12 main-color col-6 px-0">
+                <div class="text-13 main-color col-6 px-0 font-weight-bold">
                   123456
                 </div>
               </div>
-              <div class="box d-flex py-1">
-                <div class="text-12 col-6 px-0">
+              <div class="box d-flex pb-12px pt-8px">
+                <div class="text-12 col-6 px-0 color-grey">
                   Ngân sách
                 </div>
-                <div class="text-12 col-6 px-0 ">
+                <div class="text-13 col-6 px-0 ">
                   Thương lượng
                 </div>
               </div>
-              <div class="box d-flex py-1">
-                <div class="text-12 col-6 px-0">
+              <div class="box d-flex pb-12px pt-8px">
+                <div class="text-12 col-6 px-0 color-grey">
                   Ngày đăng
                 </div>
-                <div class="text-12 col-6 px-0 ">
+                <div class="text-13 col-6 px-0 ">
                   01/04/2021
                 </div>
               </div>
-              <div class="box d-flex py-1">
-                <div class="text-12 col-6 px-0">
+              <div class="box d-flex pb-12px pt-8px">
+                <div class="text-12 col-6 px-0 color-grey">
                   Hạn chót chào giá
                 </div>
-                <div class="text-12 main-color px-0 font-weight-bold">
+                <div class="text-13 main-color px-0 font-weight-bold">
                   15 ngày
                 </div>
               </div>
-              <div class="box d-flex py-1">
-                <div class="text-12 col-6 px-0">
+              <div class="box d-flex pb-12px pt-8px">
+                <div class="text-12 col-6 px-0 color-grey">
                   Địa điểm
                 </div>
-                <div class="text-12 px-0 ">
+                <div class="text-13 px-0 ">
                   Biên Hoà, Đồng Nai
                 </div>
               </div>
-              <div class="box d-flex py-1">
-                <div class="text-12 col-6 px-0">
+              <div class="box d-flex pb-12px pt-8px">
+                <div class="text-12 col-6 px-0 color-grey">
                   Phí chào giá
                 </div>
-                <div class="text-12 main-color px-0 font-weight-bold">
+                <div class="text-13 main-color px-0 font-weight-bold">
                   3 Tokens
                 </div>
               </div>
@@ -291,8 +292,9 @@ của chủ đầu tư
             <!-- Thông tin khách hàng -->
 
             <!-- Dự án tương tự -->
-            <div>
-              <h3>DỰ ÁN TƯƠNG TỰ</h3>
+            <div class="text-center">
+              <h3 class=" font-weight-bold f-16 main-color mb-5px">DỰ ÁN TƯƠNG TỰ</h3>
+              <div class="line mb-15px"></div>
               <template v-for="(item, idx) in 3">
                 <div
                   class="d-flex flex-column w-100 item-related mb-22px"
@@ -309,7 +311,7 @@ của chủ đầu tư
                     >
                   </div>
                   <div class="bg-white px-15px py-18px">
-                    <h3 class="text-14 main-color">
+                    <h3 class="text-14 main-color font-weight-bold mb-25px">
                       Tìm đơn vị thi công nội thất chung cư Hà Đô Centrosa
                       (60m2/2pn)
                     </h3>
