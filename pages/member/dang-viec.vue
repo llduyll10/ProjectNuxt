@@ -25,6 +25,7 @@
                                 class="form-control col-md-9 col-sm-12"
                                 required
                                 placeholder="Nhập tên dự án của bạn"
+                                v-model="objResearch.name"
                             />
                         </div>
                         <div class="form-group row">
@@ -32,7 +33,7 @@
                                 Mô tả Yêu Cầu Về Công Việc
                                 <span style="color:red">*</span>
                             </label>
-                            <textarea required id="customPlaceholder" class="form-control col-md-9 col-sm-12" rows="5"
+                            <textarea v-model="objResearch.description" required id="customPlaceholder" class="form-control col-md-9 col-sm-12" rows="5"
                                 placeholder=
                                 " 1. Mô tả chi tiết về dự án xây dựng hoặc yêu cầu thiết kế của bạn \n \n 2. Vui lòng đính kèm sổ đỏ, bản vẽ, thiết kế hoặc hình ảnh minh hoạ để nhận được tư vấn/dự toán tốt nhất. \n \n 3. Yêu cầu năng lực của đơn vị báo giá hoặc những yêu cầu khác"
                             ></textarea>
@@ -41,7 +42,7 @@
                              <label class="f-13  col-md-3 col-sm-12 ">
                                 Hình ảnh đính kèm
                             </label>
-                            <div class="custom-btn col-md-9 col-sm-12 d-flex">
+                            <div class="custom-btn col-md-9 col-sm-12 d-flex pl-0">
                                 <div class="btn-upload">
                                     <img  src="@/assets/img/icon-upload.png"/>
                                     <span>Thêm tài liệu</span>
@@ -53,7 +54,7 @@
                              <label class="f-13  col-md-3 col-sm-12 ">
                                 Tài liệu đính kèm
                             </label>
-                            <div class="custom-btn col-md-9 col-sm-12 d-flex">
+                            <div class="custom-btn col-md-9 col-sm-12 d-flex pl-0">
                                 <div class="btn-upload">
                                     <img  src="@/assets/img/icon-upload.png"/>
                                     <span>Thêm tài liệu</span>
@@ -71,6 +72,7 @@
                                 class="form-control col-md-9 col-sm-12"
                                 required
                                 placeholder="Tỉnh Thành"
+                                v-model="objResearch.address"
                             />
                         </div>
                         <div class="form-group row">
@@ -78,11 +80,12 @@
                                 Ngân sách dự trù
                                 <span style="color:red">*</span>
                             </label>
-                            <input
+                            <currency-input
                                 type="text"
                                 class="form-control col-md-9 col-sm-12"
                                 required
                                 placeholder="200,000,000"
+                                v-model="objResearch.budget"
                             />
                         </div>
                         <div class="form-group row">
@@ -90,7 +93,7 @@
                                 Thời gian kết thúc nhận chào giá
                                 <span style="color:red">*</span>
                             </label>
-                            <v-date-picker v-model="date" :masks="{input: 'DD/MM/YYYY'}">
+                            <v-date-picker v-model="objResearch.dueDate" :masks="{input: 'DD/MM/YYYY'}">
                                 <template v-slot="{ inputValue, inputEvents }">
                                     <div class="input-group mb-3">
                                         <input type="text"
@@ -108,7 +111,7 @@
                         </div>
                         <div class="form-group mb-50px group-checkbox">
                             <b-form-checkbox
-                                v-model="objResearch.status"
+                                v-model="objResearch.agree"
                                 name="checkbox-agree"
                                 required
                                 >
@@ -151,19 +154,19 @@ export default {
         return{
             objResearch:{
                 requireName:1,
-                status:false
+                dueDate: new Date(),
+                agree:false,
             },
             options: this.getCategory(),
-            date: new Date(),
+
         }
     },
     mounted(){
     },
     methods:{
-        getDate(date){
-            console.log('parent',date)
-        },
-        getForm(){}
+        getForm(){
+            console.log(this.objResearch)
+        }
     }
 }
 </script>
