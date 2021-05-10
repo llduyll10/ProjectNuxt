@@ -327,7 +327,7 @@ export default {
     async createUser(){
       // console.log(this.objUser)
       try{
-        let res = await this.$post('/signup', this.objUser)
+        let res =  await this.$post('/signup', this.objUser)
         console.log(res)
         if(res.data.status === true){
           this.hideModalRegister()
