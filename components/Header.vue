@@ -306,8 +306,8 @@ export default {
       confirmObj: null,
       isShowMobile:false,
       objMenu: [
-        { name: "Thuê Nhà Thầu", link:'thue' },
-        { name: "Tìm Dự Án", link:'du-an'},
+        { name: "Thuê Nhà Thầu", link:'thue-nha-thau' },
+        { name: "Tìm Dự Án", link:'tim-du-an'},
         { name: "Hướng Dẫn" },
       ],
       objBtn: [{ name: "Đăng Ký ",methods:this.openModalRegister }, { name: "Đăng Nhập ",methods:this.openModalLogin }],
