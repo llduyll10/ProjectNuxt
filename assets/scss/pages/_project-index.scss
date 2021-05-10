@@ -390,8 +390,17 @@
         .right {
             .top {
                 .search-top {
+                    margin-right: 12px !important;
                     width: 322px !important;
-                    input {}
+                    input {
+                        width: 87%;
+                    }
+                }
+                .short-input {
+                    width: 242px !important;
+                }
+                .search-center {
+                    margin-right: 12px !important;
                 }
                 .button {}
             }
@@ -429,7 +438,6 @@
                                     .two,
                                     .three,
                                     .four {
-                                        font-size: 12px;
                                         span {}
                                     }
                                     .one {
@@ -485,7 +493,7 @@
     }
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:767px) {
     #project {
         .left {
             &:nth-child(2) {
@@ -493,9 +501,17 @@
             }
         }
         .right {
-            .top {
+            .top-change {
+                min-height: 160px;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 26px 22px;
                 .search-top {
+                    margin-bottom: 13px !important;
                     input {}
+                }
+                .search-center {
+                    margin-bottom: 13px !important;
                 }
                 .button {}
             }

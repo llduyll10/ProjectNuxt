@@ -94,14 +94,14 @@
                     <div class="col-lg-9 col-md-9 col-sm-12">
                         <div class="right">
                             <!-- search -->
-                            <div class="top">
+                            <div class="top top-change">
                                 <div class="search-top short-input">
                                     <label>
                                         <img src="@/assets/svg/search-top.svg" alt="">
                                     </label>
                                     <input type="text" class="f-12" placeholder="Tìm kiếm đơn vị thi công/thiết kế">
                                 </div>
-                                <div class="search-center short-input">
+                                <div class="search-center">
                                     <label>
                                         <img class="iconsearch" src="@/assets/svg/search-logo.svg"  alt="">
                                     </label>
