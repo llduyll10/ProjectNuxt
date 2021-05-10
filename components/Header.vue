@@ -25,7 +25,7 @@
 
         </b-collapse>
 
-        <b-navbar-toggle class="actionMenu" target='null' @click="showMenuMobile"></b-navbar-toggle>
+        <b-navbar-toggle class="actionMenu ml-auto" target='null' @click="showMenuMobile"></b-navbar-toggle>
 
         <b-navbar-nav class="ml-auto">
                 <!-- IS LOGIN -->
@@ -75,11 +75,11 @@
                 <!-- NOT LOGIN -->
                 <template v-else>
                   <template v-for="(item, index) in objBtn">
-                      <b-nav-item :key="index" class="sub-menu px-20px mt-10px" @click="item.methods">
+                      <b-nav-item :key="index" class="sub-menu px-20px mt-10px d-none d-lg-block" @click="item.methods">
                           <span class="f-13" >{{item.name}}</span>
                       </b-nav-item>
                   </template>
-                  <b-nav-item class="cover-btn" @click="openModalLogin">
+                  <b-nav-item class="cover-btn d-none d-lg-block" @click="openModalLogin">
                     <div  class="btn-findjob ml-4" >
                          <span class="f-13">Đăng Việc</span>
                     </div>
