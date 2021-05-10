@@ -99,7 +99,7 @@
                 border: 0.75px solid #B7B5B5;
                 box-sizing: border-box;
                 border-radius: 5px;
-                padding-left: 20px;
+                padding-left: 18px;
                 margin-right: 15px;
                 input {
                     border: none;
@@ -107,7 +107,29 @@
                     margin-left: 3px;
                     font-weight: 500;
                     line-height: 15px;
+                    &::placeholder {
+                        color: #adabab;
+                    }
+                }
+                &.short-input {
+                    width: 282px;
+                }
+            }
+            .search-center {
+                height: 30px;
+                width: 137px;
+                border: 0.75px solid #B7B5B5;
+                box-sizing: border-box;
+                border-radius: 5px;
+                padding-left: 18px;
+                margin-right: 15px;
+                .select {
+                    margin-left: 3px;
+                    width: 100px;
+                    font-weight: 500;
+                    line-height: 15px;
                     color: #ADABAB;
+                    display: initial;
                 }
             }
             .button {
@@ -145,8 +167,14 @@
                             display: flex;
                             justify-content: space-between;
                             align-items: center;
+                            .title-icon {
+                                align-items: baseline;
+                                img {
+                                    position: relative;
+                                    top: 3px;
+                                }
+                            }
                             .sub {
-                                font-weight: 400;
                                 color: $main-black;
                                 font-weight: 700;
                                 line-height: 24px;
@@ -175,6 +203,9 @@
                             -webkit-box-orient: vertical;
                             -webkit-line-clamp: 2;
                         }
+                        .padding-right {
+                            padding-right: 170px;
+                        }
                         .group {
                             display: flex;
                             margin-top: 21px;
@@ -193,6 +224,62 @@
                                 }
                             }
                         }
+                        .group-bot {
+                            align-items: baseline;
+                            justify-content: space-between;
+                            .group-2 {
+                                flex-wrap: wrap;
+                                align-items: center;
+                                margin-top: 21px;
+                                .two,
+                                .three,
+                                .four {
+                                    font-size: 12px;
+                                    span {
+                                        color: $main-color;
+                                        font-weight: 700;
+                                        font-size: 13px;
+                                    }
+                                }
+                                .one {
+                                    padding-left: 0 !important;
+                                    .human-name {
+                                        display: initial;
+                                    }
+                                    img {
+                                        width: 15px;
+                                        height: 15px;
+                                    }
+                                }
+                                .one,
+                                .two,
+                                .three,
+                                .four {
+                                    border-right: 1px solid #828282;
+                                    height: 15px;
+                                    line-height: 17px;
+                                    padding: 0 12px;
+                                }
+                                .four {
+                                    border: none;
+                                    padding-right: 0;
+                                }
+                            }
+                            .like {
+                                position: relative;
+                                top: -2px;
+                                font-weight: 700;
+                                color: #F2C94C;
+                                span {
+                                    color: $main-black;
+                                    font-weight: 400;
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                    .nopadding {
+                        padding-right: 0 !important;
                     }
                 }
                 .rate {
