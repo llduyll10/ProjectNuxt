@@ -153,6 +153,7 @@
            <h4>XÁC NHẬN</h4>
            <p>Chúng tôi đã gửi cho bạn qua {{confirmObj.username}} với mã xác minh OTP. Vui lòng kiểm tra {{confirmObj.isPhone?'số điện thoại':'email'}} và nhập mã xác nhận</p>
 
+          <a @click="resetLogin" >Đăng nhập bằng tài khoản khác</a>
          </div>
         <div class="modal-login" v-else>
           <div class="text-center w-100">
@@ -288,7 +289,7 @@ export default {
   data() {
     return {
       error:null,
-      confirmObj:null,
+      confirmObj: {username:'009028121',isPhone:true},
       isShowMobile:false,
       objMenu: [
         { name: "Thuê Nhà Thầu", link:'thue' },
@@ -311,9 +312,12 @@ export default {
     createUser(){
       // console.log(this.objUser)
     },
-    async loginPre(){
+    resetLogin(){
       this.error = null;
       this.confirmObj = null;
+    },
+    async loginPre(){
+      this.resetLogin();
       try {
         let res = await this.$post('/auth/login/pre',this.objLogin);
         if(res.data.status){
@@ -341,11 +345,10 @@ export default {
       this.isShowMobile = true;
     },
     openModalLogin() {
-      this.error = null;
-      this.confirmObj = null;
       this.$refs.modalLogin.showModal();
     },
     hideModalLogin(){
+      this.resetLogin();
       this.$refs.modalLogin.hideModal()
     },
     openModalRegister() {
