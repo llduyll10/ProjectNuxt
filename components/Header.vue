@@ -79,7 +79,7 @@
                           <span class="f-13" >{{item.name}}</span>
                       </b-nav-item>
                   </template>
-                  <b-nav-item class="cover-btn" :to="'/member/dang-viec'">
+                  <b-nav-item class="cover-btn" @click="openModalLogin">
                     <div  class="btn-findjob ml-4" >
                          <span class="f-13">Đăng Việc</span>
                     </div>
@@ -306,8 +306,8 @@ export default {
       confirmObj: null,
       isShowMobile:false,
       objMenu: [
-        { name: "Thuê Nhà Thầu", link:'thue' },
-        { name: "Tìm Dự Án", link:'du-an'},
+        { name: "Thuê Nhà Thầu", link:'thue-nha-thau' },
+        { name: "Tìm Dự Án", link:'tim-du-an'},
         { name: "Hướng Dẫn" },
       ],
       objBtn: [{ name: "Đăng Ký ",methods:this.openModalRegister }, { name: "Đăng Nhập ",methods:this.openModalLogin }],
