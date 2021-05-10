@@ -13,7 +13,7 @@
                                 Dịch vụ yêu cầu
                                 <span style="color:red">*</span>
                             </label>
-                            <b-form-select class="form-control col-md-9 col-sm-12" v-model="objResearch.requireName" :options="options"></b-form-select>
+                            <b-form-select class="form-control col-md-9 col-sm-12" v-model="objResearch.category" :options="options"></b-form-select>
                         </div>
                         <div class="form-group row">
                              <label class="f-13 col-md-3 col-sm-12 ">
@@ -153,7 +153,7 @@ export default {
     data(){
         return{
             objResearch:{
-                requireName:1,
+                category:1,
                 dueDate: new Date(),
                 agree:false,
             },

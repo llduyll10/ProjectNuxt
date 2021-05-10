@@ -43,7 +43,7 @@
                 }
                 .btn-upload{
                     cursor: pointer;
-                    padding: 5px 13px;
+                    padding: 0 13px;
                     background-color: $main-color;
                     color: white;
                     font-weight: 600;
@@ -51,6 +51,7 @@
                     min-width: 100px;
                     margin-right: 10px;
                     font-size: 11px;
+                    line-height: 31px;
                     img{
                         margin-bottom: 5px;
                         width: 16px;
