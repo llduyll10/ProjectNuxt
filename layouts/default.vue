@@ -6,7 +6,13 @@
 <script>
 import Vue from 'vue'
 import mixins from '../mixins';
+import VueCurrencyInput from 'vue-currency-input'
 Vue.mixin(mixins);
+
+const pluginOptions = {
+  globalOptions: { currency: 'VND' }
+}
+Vue.use(VueCurrencyInput, pluginOptions)
 Vue.prototype.$checkDragDrop = (classSelector) => {
   let arrImg = Array.from(document.querySelectorAll(classSelector))
   arrImg.forEach(item => {
