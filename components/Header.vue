@@ -324,12 +324,25 @@ export default {
 
   },
   methods:{
-    createUser(){
+    async createUser(){
       // console.log(this.objUser)
+      try{
+        let res = await this.$post('/signup', this.objUser)
+        console.log(res)
+        if(res.data.status === true){
+          this.hideModalRegister()
+          this.openModalLogin()
+        }
+      }
+      catch(err){
+        console.log(err)
+      }
     },
     resetLogin(){
       this.error = null;
       this.confirmObj = null;
+      this.codeObj = {}
+      this.objLogin = {}
     },
     async loginPre(){
       this.resetLogin();
@@ -364,6 +377,8 @@ export default {
         var data = response.data;
         this.$auth.setUser(data.user);
         this.$auth.setUserToken(data.token, data.token);
+        this.codeObj = {}
+        this.hideModalLogin()
       } catch (err) {
         console.log(err)
       }
