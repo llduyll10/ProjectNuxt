@@ -76,7 +76,7 @@
                     </label>
                     <div class="col-md-9 col-sm-12">
                       <input type="text" class="form-control " />
-                      <p class="mb-0 f-12 main-black">
+                      <p class="mb-0 mt-5px f-12 main-black">
                         Phí hoa hồng nếu trúng thầu -
                         <span class="main-color font-weight-bold">500</span> <span class="font-weight-bold">Tokens</span>
                       </p>
