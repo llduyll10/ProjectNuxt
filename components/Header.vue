@@ -153,7 +153,7 @@
           <div class="text-center w-100">
             <img src="@/assets/img/black-logo.png" style="height:52px" />
           </div>
-          <form @submit.prevent="login" >
+          <form @submit.prevent="loginPre" >
             <div class="form-group mb-3 mt-5">
               <label class="f-13"
                 >Email hoặc Số điện thoại
@@ -164,12 +164,13 @@
                 class="form-control"
                 required
                 placeholder="Nhập email hoặc số điện thoại của bạn"
-                v-model="objLogin.name"
+                v-model="objLogin.username"
               />
             </div>
             <div class="w-100 text-center">
               <button type="submit" class="btn btn-theme theme-blue">Đăng nhập</button>
             </div>
+            <small class="text-danger" v-if="error">{{error}}</small>
           </form>
           <div class="mt-4 w-100 option">
             <hr />
@@ -281,6 +282,8 @@
 export default {
   data() {
     return {
+      error:null,
+      confirmObj:null,
       isShowMobile:false,
       objMenu: [
         { name: "Thuê Nhà Thầu", link:'thue' },
@@ -303,13 +306,27 @@ export default {
     createUser(){
       // console.log(this.objUser)
     },
-    async login(){
-      // console.log(this.objLogin)
-      this.isLogin = true;
-      // return this.$get('search?q=apollo 11&page=1',{abc:'haha'});
-      this.$store.commit('checkLogin',true);
+    async loginPre(){
+      this.error = null;
+      this.confirmObj = null;
       try {
-        let response = await this.$auth.loginWith('local', { data: this.objLogin})
+        let res = await this.$post('/auth/login/pre',this.objLogin);
+        if(res.data.status){
+           this.confirmObj = res.data.data;
+        }else{
+            this.error = res.data.msg;
+        }
+      } catch (err) {
+        console.log(err)
+      }
+    },
+    async login(){
+      var data = {
+         loginCode : this.confirmObj.loginCode,
+         username : this.confirmObj.username
+      }
+      try {
+        let response = await this.$auth.loginWith('local', { data: data})
         console.log(response)
       } catch (err) {
         console.log(err)
@@ -319,6 +336,8 @@ export default {
       this.isShowMobile = true;
     },
     openModalLogin() {
+      this.error = null;
+      this.confirmObj = null;
       this.$refs.modalLogin.showModal();
     },
     hideModalLogin(){

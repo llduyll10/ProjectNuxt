@@ -50,7 +50,7 @@ module.exports = {
             property: 'user',
           },
           endpoints: {
-            login: { url: '/api/auth/login', method: 'post' },
+            login: { url: 'http://localhost:8001/auth/login', method: 'post' },
             logout: { url: '/api/auth/logout', method: 'post' },
             user: { url: '/api/auth/user', method: 'get' }
           }

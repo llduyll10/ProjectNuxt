@@ -1,6 +1,6 @@
 import axios from "axios";
 import https from "https";
-
+var API = "http://localhost:8001";
 const instance = axios.create({
   httpsAgent: new https.Agent({
     rejectUnauthorized: false,
@@ -19,7 +19,7 @@ const setUrl = (url) => {
   if (url.indexOf("http") > -1) {
     return url;
   } else {
-    return process.env.API + url;
+    return API + url;
   }
 };
 
