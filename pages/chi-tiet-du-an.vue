@@ -191,7 +191,7 @@
                               >1 Tỷ</span
                             >
                           </span>
-                          <span> | </span>
+                          <span class="px-11px"> | </span>
                           <span
                             >Thời gian thi công -
                             <span class="font-weight-bold main-color text-13"
@@ -297,7 +297,7 @@
               <div class="line mb-15px"></div>
               <template v-for="(item, idx) in 3">
                 <div
-                  class="d-flex flex-column w-100 item-related mb-22px"
+                  class="d-flex flex-column w-100 item-related mb-20px"
                   :key="idx"
                 >
                   <div class="position-relative ">
@@ -306,7 +306,7 @@
                       src="@/assets/img/du-an-tuong-tu-demo.png"
                     />
                     <span
-                      class="mt-20px end-0 position-absolute bg-yellow-8 text-light px-3 text-12 py-6px"
+                      class="mt-20px end-0 position-absolute bg-yellow-8 text-light px-3 text-12 py-6px font-weight-bold"
                       >Nội thất</span
                     >
                   </div>
@@ -322,7 +322,7 @@
                       </span>
                       <span class="text-12">
                         Ngân sách -
-                        <span class="text-13 main-color">300 Triệu</span>
+                        <span class="text-13 main-color font-weight-bold">300 Triệu</span>
                       </span>
                     </div>
                   </div>
@@ -334,6 +334,7 @@
                   </div>
                 </div>
               </template>
+              <p class="f-12 main-color mb-0 text-right">Xem thêm dự án <i class="fas fa-caret-down ml-5px f-14"></i></p>
             </div>
             <!-- Dự án tương tự -->
           </div>
