@@ -157,10 +157,10 @@
               Chúng tôi đã gửi cho bạn qua <span class="typeOtp">{{confirmObj.username}}</span>  với mã xác minh OTP. Vui lòng kiểm tra {{confirmObj.isPhone?'số điện thoại':'email'}} và nhập mã xác nhận
             </p>
             <div class="mb-25px">
-              <input v-on:keyup="nextCode($event)" v-model="codeObj.code1" type="text" class="form-control verifyOTP" required maxlength="1">
-              <input v-on:keyup="nextCode($event)" v-model="codeObj.code2" type="text" class="form-control verifyOTP" required maxlength="1">
-              <input v-on:keyup="nextCode($event)" v-model="codeObj.code3" type="text" class="form-control verifyOTP" required maxlength="1">
-              <input v-model="codeObj.code4" type="text" class="form-control verifyOTP" required maxlength="1">
+              <input v-on:keyup="nextCode($event)" @keypress="isNumber($event)" v-model="codeObj.code1" type="text" class="form-control verifyOTP" required maxlength="1">
+              <input v-on:keyup="nextCode($event)" @keypress="isNumber($event)" v-model="codeObj.code2" type="text" class="form-control verifyOTP" required maxlength="1">
+              <input v-on:keyup="nextCode($event)" @keypress="isNumber($event)" v-model="codeObj.code3" type="text" class="form-control verifyOTP" required maxlength="1">
+              <input v-model="codeObj.code4" @keypress="isNumber($event)" type="text" class="form-control verifyOTP" required maxlength="1">
               <div class="w-100 text-center mt-16px">
                 <button @click="login" class="btn btn-theme theme-blue">XÁC NHẬN</button>
               </div>
@@ -323,8 +323,37 @@ export default {
 
   },
   methods:{
-    nextCode($event){
-      $event.target.nextElementSibling.focus()
+    nextCode(evt){
+      const keysAllowed = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+      const keyPressed = evt.key;
+      if (!keysAllowed.includes(keyPressed)){
+        return
+      }
+      evt.target.nextElementSibling.focus()
+    },
+    isNumber(evt) {
+      const keysAllowed = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+      const keyPressed = evt.key;
+
+      if (evt.keyCode == 69) {
+        evt.preventDefault();
+      }
+
+      if (!keysAllowed.includes(keyPressed)) {
+        if (
+          evt.keyCode != 8 && //Backspace
+          evt.keyCode != 46 && //Delete
+          evt.keyCode != 37 && //Arrow left
+          evt.keyCode != 38 && //Arrow up
+          evt.keyCode != 39 && //Arrow right
+          evt.keyCode != 40 && //Arrow down
+          evt.keyCode != 9 //Tab
+        ) {
+          evt.preventDefault();
+        }
+      }
+
+
     },
     logout(){
       this.$auth.logout();
