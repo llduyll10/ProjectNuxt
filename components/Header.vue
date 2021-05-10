@@ -25,7 +25,7 @@
 
         </b-collapse>
 
-        <b-navbar-toggle class="actionMenu ml-auto" target='null' @click="showMenuMobile"></b-navbar-toggle>
+        <b-navbar-toggle  v-if="!$auth.loggedIn" class="actionMenu ml-auto" target='null' @click="showMenuMobile"></b-navbar-toggle>
 
         <b-navbar-nav class="ml-auto">
                 <!-- IS LOGIN -->
@@ -70,7 +70,12 @@
                         </div>
                       </div>
                     </div>
+
+                    
                   </div>
+
+                
+
                 </template>
                 <!-- NOT LOGIN -->
                 <template v-else>
@@ -86,6 +91,9 @@
                   </b-nav-item>
                  </template>
         </b-navbar-nav>
+
+        <b-navbar-toggle  v-if="$auth.loggedIn" class="actionMenu ml-auto" target='null' @click="showMenuMobile"></b-navbar-toggle>
+
 
 
       </b-navbar>
