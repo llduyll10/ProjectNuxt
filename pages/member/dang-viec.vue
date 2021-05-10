@@ -142,7 +142,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer"
 export default {
-    // middleware: 'auth',
+    middleware: 'auth',
     components:{
         Header,
         Footer,
@@ -153,12 +153,8 @@ export default {
                 requireName:1,
                 status:false
             },
-            options: [
-                { value: 1, text: 'Thi công xây dựng' },
-                { value: 2, text: 'Thi công/trang trí nội thất' },
-                { value: 3, text: 'Thiết kế kiến trúc/nội ' },
-            ],
-             date: new Date(),
+            options: this.getCategory(),
+            date: new Date(),
         }
     },
     mounted(){

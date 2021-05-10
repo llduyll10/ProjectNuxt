@@ -29,7 +29,7 @@
 
         <b-navbar-nav class="ml-auto">
                 <!-- IS LOGIN -->
-                <template v-if="isLogin">
+                <template v-if="$auth.loggedIn">
                   <div class="isLogin mt-7px mb-7px">
                     <img class="mt-15px" src="@/assets/svg/bell.svg" />
                     <div class="group-infor">
@@ -62,7 +62,7 @@
                           <b-dropdown-divider class="divider"></b-dropdown-divider>
 
                           <b-dropdown-item class="f-12">Hỗ trợ</b-dropdown-item>
-                          <b-dropdown-item class="mb-30px f-12">Đăng xuất</b-dropdown-item>
+                          <b-dropdown-item class="mb-30px f-12" @click="logout()">Đăng xuất</b-dropdown-item>
                         </b-dropdown>
                         <div class="d-flex cover-infor">
                           <p class="f-13">ID. 123456</p>
@@ -91,7 +91,7 @@
       </b-navbar>
     </div>
     <!-- Subnavbar if login -->
-    <div v-if="isLogin" class="navbar-login">
+    <div v-if="$auth.loggedIn" class="navbar-login">
       <div class="container-fluid">
         <div class="cover-navbar-login  pt-13px pb-13px">
           <p class="f-13 mr-30px">
@@ -314,7 +314,6 @@ export default {
       objUser:{},
       objLogin:{},
       codeObj:{},
-      isLogin:this.$store.state.isLogin
     };
   },
   created(){
@@ -324,6 +323,9 @@ export default {
 
   },
   methods:{
+    logout(){
+      this.$auth.logout();
+    },
     async createUser(){
       // console.log(this.objUser)
       try{
