@@ -17,7 +17,7 @@
                 </div>
             </div>
             <div class="row box mt-10px">
-                <div class="col-lg-4">
+                <div class="col-lg-4 col-md-4 col-sm-12">
                     <img src="@/assets/img/product-1.png" alt="">
                     <h3 class="mt-25px">Bỏ túi ngay bí quyết trang trí phòng khách hiện đại với Phố Xinh </h3>
                     <div class="evaluate mt-20px">
@@ -39,7 +39,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-4 col-md-4 col-sm-12">
                     <img src="@/assets/img/product-1.png" alt="">
                     
                     <h3 class="mt-25px">Trước khi xây nhà, cần nắm rõ những nguyên tắc cơ bản khi làm việc với kiến trúc sư</h3>
@@ -62,7 +62,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-4 col-md-4 col-sm-12">
                     <img src="@/assets/img/product-1.png" alt="">
                     <h3 class="mt-25px">Phong cách thiết kế văn phòng làm hài lòng bất cứ khách hàng nào</h3>
                     <div class="evaluate mt-20px">
