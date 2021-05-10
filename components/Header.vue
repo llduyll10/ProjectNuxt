@@ -342,7 +342,6 @@ export default {
       this.error = null;
       this.confirmObj = null;
       this.codeObj = {}
-      this.objLogin = {}
     },
     async loginPre(){
       this.resetLogin();
@@ -377,7 +376,6 @@ export default {
         var data = response.data;
         this.$auth.setUser(data.user);
         this.$auth.setUserToken(data.token, data.token);
-        this.codeObj = {}
         this.hideModalLogin()
       } catch (err) {
         console.log(err)
