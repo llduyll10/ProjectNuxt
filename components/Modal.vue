@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-modal ref="my-modal" centered hide-footer title="" :id='id'> 
+    <b-modal ref="my-modal" :no-close-on-backdrop="true" centered hide-footer title="" :id='id'>
         <slot name="content"></slot>
     </b-modal>
   </div>
