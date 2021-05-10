@@ -70,7 +70,7 @@
               <hr class="hr" />
               <div class="d-flex flex-wrap main-black">
                 <div class="d-flex w-100 mb-25px">
-                  <div class="col-md-3 col-12 text-13 font-weight-bold">
+                  <div class="col-md-3 col-12 text-13 font-weight-bold pl-0">
                     Chi phí ước tính <span class="red">*</span>
                   </div>
                   <div class="col-md-9 col-12 text-12">
@@ -82,7 +82,7 @@
                   </div>
                 </div>
                 <div class="d-flex w-100 mb-25px">
-                  <div class="col-md-3 col-12 text-13 font-weight-bold">
+                  <div class="col-md-3 col-12 text-13 font-weight-bold pl-0">
                     Kinh nghiệm, Năng lực và giải pháp đề xuất<span class="red"
                       >*</span
                     >
@@ -95,7 +95,7 @@
                   </div>
                 </div>
                 <div class="d-flex w-100 mb-25px">
-                  <div class="col-md-3 col-12 text-13 font-weight-bold">
+                  <div class="col-md-3 col-12 text-13 font-weight-bold pl-0">
                     Thời gian thi công dự trù<span class="red">*</span>
                   </div>
                   <div class="col-md-9 col-12 text-12">
@@ -107,7 +107,7 @@
                   </div>
                 </div>
                 <div class="d-flex w-100 mb-25px">
-                  <div class="col-md-3 col-12 text-13 font-weight-bold">
+                  <div class="col-md-3 col-12 text-13 font-weight-bold pl-0">
                     Tài liệu đính kèm
                   </div>
                   <div class="col-md-9 col-12 text-12">
@@ -124,7 +124,7 @@
                   </div>
                 </div>
                 <div class="d-flex w-100 mb-25px">
-                  <div class="col-12 text-12 d-flex align-items-center">
+                  <div class="col-12 text-12 d-flex align-items-center pl-0">
                     <img src="@/assets/svg/icon-radio.svg" />
                     <span class="ml-2">
                       Tôi đồng ý với
@@ -136,7 +136,7 @@
               </div>
               <div class="d-flex mt-25px justify-content-xl-around">
                 <button
-                  class="btn btn-primary main-bg-color radius-5 w-100  text-16 ml-15px mr-15px"
+                  class="btn btn-primary main-bg-color radius-5 w-100  text-16  mr-15px"
                 >
                   GỬI CHÀO GIÁ NGAY
                 </button>
