@@ -8,15 +8,14 @@ const instance = axios.create({
 });
 
 const setHeader = (context) => {
-  var token = process.server
-      ? 'context.req.headers.cookies.token'
-      : localStorage.getItem("token");
-  console.log('token',token)
-  instance.defaults.headers.common.Authorization = `Token ${token}`;
+  var token = context.$auth.strategy.token.get();
+  if(token){
+      instance.defaults.headers.common.Authorization = token;
+  }
 };
 
 const setUrl = (url) => {
-  if (url.indexOf("http") > -1) {
+  if (url.indexOf("http") > -1 || url.indexOf("https") > -1) {
     return url;
   } else {
     return API + url;

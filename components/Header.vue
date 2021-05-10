@@ -156,15 +156,15 @@
             <p class="f-13 ">
               Chúng tôi đã gửi cho bạn qua <span class="typeOtp">{{confirmObj.username}}</span>  với mã xác minh OTP. Vui lòng kiểm tra {{confirmObj.isPhone?'số điện thoại':'email'}} và nhập mã xác nhận
             </p>
-            <form action="" class="mb-25px">
+            <div class="mb-25px">
               <input type="text" class="form-control verifyOTP" required maxlength="1">
               <input type="text" class="form-control verifyOTP" required maxlength="1">
               <input type="text" class="form-control verifyOTP" required maxlength="1">
               <input type="text" class="form-control verifyOTP" required maxlength="1">
               <div class="w-100 text-center mt-16px">
-                <button type="submit" class="btn btn-theme theme-blue">XÁC NHẬN</button>
+                <button @click="login" class="btn btn-theme theme-blue">XÁC NHẬN</button>
               </div>
-            </form>
+            </div>
             <a class="anotherAccount" @click="resetLogin" >Đăng nhập bằng tài khoản khác</a>
           </div>
          </div>
@@ -303,11 +303,7 @@ export default {
   data() {
     return {
       error:null,
-      confirmObj: {
-        "username": "phamyenbk@gmail.com",
-        "loginCode": 7829,
-        "isPhone": false
-    },
+      confirmObj: null,
       isShowMobile:false,
       objMenu: [
         { name: "Thuê Nhà Thầu", link:'thue' },
@@ -324,7 +320,7 @@ export default {
 
   },
   mounted(){
-    console.log(this.$auth.loggedIn)
+
   },
   methods:{
     createUser(){
@@ -354,7 +350,9 @@ export default {
       }
       try {
         let response = await this.$auth.loginWith('local', { data: data})
-        console.log(response)
+        var data = response.data;
+        this.$auth.setUser(data.user);
+        this.$auth.setUserToken(data.token, data.token);
       } catch (err) {
         console.log(err)
       }
