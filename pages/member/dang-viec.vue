@@ -142,7 +142,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer"
 export default {
-    // middleware: 'auth',
+    middleware: 'auth',
     components:{
         Header,
         Footer,
