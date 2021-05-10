@@ -157,10 +157,10 @@
               Chúng tôi đã gửi cho bạn qua <span class="typeOtp">{{confirmObj.username}}</span>  với mã xác minh OTP. Vui lòng kiểm tra {{confirmObj.isPhone?'số điện thoại':'email'}} và nhập mã xác nhận
             </p>
             <div class="mb-25px">
-              <input type="text" class="form-control verifyOTP" required maxlength="1">
-              <input type="text" class="form-control verifyOTP" required maxlength="1">
-              <input type="text" class="form-control verifyOTP" required maxlength="1">
-              <input type="text" class="form-control verifyOTP" required maxlength="1">
+              <input v-model="codeObj.code1" type="text" class="form-control verifyOTP" required maxlength="1">
+              <input v-model="codeObj.code2" type="text" class="form-control verifyOTP" required maxlength="1">
+              <input v-model="codeObj.code3" type="text" class="form-control verifyOTP" required maxlength="1">
+              <input v-model="codeObj.code4" type="text" class="form-control verifyOTP" required maxlength="1">
               <div class="w-100 text-center mt-16px">
                 <button @click="login" class="btn btn-theme theme-blue">XÁC NHẬN</button>
               </div>
@@ -313,6 +313,7 @@ export default {
       objBtn: [{ name: "Đăng Ký ",methods:this.openModalRegister }, { name: "Đăng Nhập ",methods:this.openModalLogin }],
       objUser:{},
       objLogin:{},
+      codeObj:{},
       isLogin:this.$store.state.isLogin
     };
   },
@@ -343,9 +344,19 @@ export default {
         console.log(err)
       }
     },
+    getCodeObj(){
+       var code = '';
+       var object = this.codeObj;
+        for (const key in object) {
+          if (Object.hasOwnProperty.call(object, key)) {
+            code = code + object[key]+'';
+          }
+        }
+        return code;
+    },
     async login(){
       var data = {
-         loginCode : this.confirmObj.loginCode,
+         loginCode : this.getCodeObj(),
          username : this.confirmObj.username
       }
       try {
