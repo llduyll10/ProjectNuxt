@@ -149,7 +149,12 @@
     <!-- Modal Login -->
     <Modal ref="modalLogin" id="modal-custom-form-login">
       <template v-slot:content>
-        <div class="modal-login">
+         <div class="modal-login" v-if="confirmObj">
+           <h4>XÁC NHẬN</h4>
+           <p>Chúng tôi đã gửi cho bạn qua {{confirmObj.username}} với mã xác minh OTP. Vui lòng kiểm tra {{confirmObj.isPhone?'số điện thoại':'email'}} và nhập mã xác nhận</p>
+
+         </div>
+        <div class="modal-login" v-else>
           <div class="text-center w-100">
             <img src="@/assets/img/black-logo.png" style="height:52px" />
           </div>
