@@ -149,12 +149,26 @@
     <!-- Modal Login -->
     <Modal ref="modalLogin" id="modal-custom-form-login">
       <template v-slot:content>
-         <div class="modal-login" v-if="confirmObj">
-           <h4>XÁC NHẬN</h4>
-           <p>Chúng tôi đã gửi cho bạn qua {{confirmObj.username}} với mã xác minh OTP. Vui lòng kiểm tra {{confirmObj.isPhone?'số điện thoại':'email'}} và nhập mã xác nhận</p>
-
-          <a @click="resetLogin" >Đăng nhập bằng tài khoản khác</a>
+        <!-- Confirm OTP -->
+         <div class="modal-login text-center" v-if="confirmObj">
+          <div class="wrapperPhoneOTP">
+            <h5 class="font-weight-bold">XÁC NHẬN</h5>
+            <p class="f-13 ">
+              Chúng tôi đã gửi cho bạn qua <span class="typeOtp">{{confirmObj.username}}</span>  với mã xác minh OTP. Vui lòng kiểm tra {{confirmObj.isPhone?'số điện thoại':'email'}} và nhập mã xác nhận
+            </p>
+            <form action="" class="mb-25px">
+              <input type="text" class="form-control verifyOTP" required maxlength="1">
+              <input type="text" class="form-control verifyOTP" required maxlength="1">
+              <input type="text" class="form-control verifyOTP" required maxlength="1">
+              <input type="text" class="form-control verifyOTP" required maxlength="1">
+              <div class="w-100 text-center mt-16px">
+                <button type="submit" class="btn btn-theme theme-blue">XÁC NHẬN</button>
+              </div>
+            </form>
+            <a class="anotherAccount" @click="resetLogin" >Đăng nhập bằng tài khoản khác</a>
+          </div>
          </div>
+        <!-- End confirm OTP -->
         <div class="modal-login" v-else>
           <div class="text-center w-100">
             <img src="@/assets/img/black-logo.png" style="height:52px" />

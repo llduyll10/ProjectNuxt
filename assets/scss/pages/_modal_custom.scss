@@ -6,6 +6,23 @@
         border-bottom: 0 !important;
         padding-bottom: 0;
     }
+    .wrapperPhoneOTP{
+        .verifyOTP{
+            display: inline;
+            width: 20%;
+            border-radius: 0 !important;
+        }
+        .typeOtp{
+            color: $main-black;
+            font-weight: bold;
+        }
+        .anotherAccount{
+            font-size: 13px;
+            text-decoration: none;
+            color: $main-color;
+            cursor: pointer;
+        }
+    }
 }
 
 #modal-custom-form-contact {
