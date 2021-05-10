@@ -115,19 +115,18 @@
                         <img src="@/assets/svg/icon-upload.svg" />
                         <span>Thêm tài liệu</span>
                       </button>
-                      <span class="main-color ml-1">png, jpg, tiff, pdf, xls, doc, ppt, zip, rar</span>
+                      <span class="main-color ml-1 f-11">png, jpg, tiff, pdf, xls, doc, ppt, zip, rar</span>
                     </div>
 
                 </div>
-                <div class="form-group d-flex w-100 mb-50px">
-                  <div class="col-12 text-12 d-flex align-items-center pl-0">
-                    <img src="@/assets/svg/icon-radio.svg" />
-                    <span class="ml-2">
-                      Tôi đồng ý với
-                      <span class="main-color">điều khoản</span> của Econs
-                      <span class="red">*</span>
-                    </span>
-                  </div>
+                <div class="form-group mb-50px group-checkbox">
+                    <b-form-checkbox
+                        v-model="objForm.status"
+                        name="checkbox-agree"
+                        required
+                        >
+                        Tôi đồng ý với <span class="main-color">điều khoản</span> của Econs <span style="color:red">*</span>
+                    </b-form-checkbox>
                 </div>
                 <div class="group-btn">
                   <div class="d-flex mt-25px justify-content-xl-around row">
@@ -366,7 +365,11 @@ export default {
     Rating,
   },
   data() {
-    return {};
+    return {
+      objForm:{
+        status:false
+      }
+    };
   },
   mounted() {},
   methods: {},
