@@ -68,62 +68,58 @@
                 <span class="main-color">3 Tokens</span> khi tham gia chào giá
               </h3>
               <hr class="hr" />
-              <div class="d-flex flex-wrap main-black">
-                <div class="d-flex w-100 mb-25px">
-                  <div class="col-md-3 col-12 text-13 font-weight-bold pl-0">
-                    Chi phí ước tính <span class="red">*</span>
-                  </div>
-                  <div class="col-md-9 col-12 text-12">
-                    <input type="text" class="form-control w-100" />
-                    <p class="mb-0">
-                      Phí hoa hồng nếu trúng thầu -
-                      <span class="main-color font-weight-bold">500</span> <span class="font-weight-bold">Tokens</span>
-                    </p>
-                  </div>
+               <form @submit.prevent="getForm()" class="group-content">
+                 <div class="form-group row mb-25px">
+                      <label class="f-13 col-md-3 col-sm-12 font-weight-bold">
+                        Chi phí ước tính
+                        <span style="color:red">*</span>
+                    </label>
+                    <div class="col-md-9 col-sm-12">
+                      <input type="text" class="form-control " />
+                      <p class="mb-0 f-12 main-black">
+                        Phí hoa hồng nếu trúng thầu -
+                        <span class="main-color font-weight-bold">500</span> <span class="font-weight-bold">Tokens</span>
+                      </p>
+                    </div>
                 </div>
-                <div class="d-flex w-100 mb-25px">
-                  <div class="col-md-3 col-12 text-13 font-weight-bold pl-0">
-                    Kinh nghiệm, Năng lực và giải pháp đề xuất<span class="red"
-                      >*</span
-                    >
+                 <div class="form-group row mb-25px">
+                   <label class="f-13 col-md-3 col-sm-12 font-weight-bold">
+                      Kinh nghiệm, Năng lực và giải pháp đề xuất
+                      <span style="color:red">*</span>
+                  </label>
+                  <div class="col-md-9 col-sm-12">
+                    <textarea required id="customPlaceholder" class="form-control main-black " rows="5"
+                              placeholder=
+                              " 1. Mô tả kinh nghiệm & năng lực của bạn \n 2. Tại sao chủ đầu tư phải chọn bạn thi công công trình này? \n 3. Đề xuất giải pháp thi công của bạn sau khi xem xét yêu cầu của chủ đầu tư"
+                          ></textarea>
                   </div>
-                  <div class="col-md-9 col-12 text-12">
-                    <textarea required id="customPlaceholder" class="form-control main-black" rows="5"
-                                placeholder=
-                                " 1. Mô tả kinh nghiệm & năng lực của bạn \n 2. Tại sao chủ đầu tư phải chọn bạn thi công công trình này? \n 3. Đề xuất giải pháp thi công của bạn sau khi xem xét yêu cầu của chủ đầu tư"
-                            ></textarea>
-                  </div>
+                 </div>
+                 <div class="form-group row mb-25px">
+                      <label class="f-13 col-md-3 col-sm-12 font-weight-bold">
+                        Thời gian thi công dự trù
+                        <span style="color:red">*</span>
+                    </label>
+                    <div class="col-md-3 col-sm-12">
+                      <input type="text" class="form-control " placeholder="Ví dụ:  3 tháng"/>
+                    </div>
                 </div>
-                <div class="d-flex w-100 mb-25px">
-                  <div class="col-md-3 col-12 text-13 font-weight-bold pl-0">
-                    Thời gian thi công dự trù<span class="red">*</span>
-                  </div>
-                  <div class="col-md-9 col-12 text-12">
-                    <input
-                      type="text"
-                      class="form-control w-100"
-                      placeholder="Ví dụ:  3 tháng"
-                    />
-                  </div>
-                </div>
-                <div class="d-flex w-100 mb-25px">
-                  <div class="col-md-3 col-12 text-13 font-weight-bold pl-0">
-                    Tài liệu đính kèm
-                  </div>
-                  <div class="col-md-9 col-12 text-12">
-                    <button
-                      class="btn btn-primary main-bg-color radius-5 py-5px px-16px text-11"
-                    >
-                      <img src="@/assets/svg/icon-upload.svg" />
-                      <span>Thêm tài liệu</span>
-                    </button>
+                 <div class="form-group row mb-25px">
+                      <label class="f-13 col-md-3 col-sm-12 font-weight-bold">
+                        Tài liệu đính kèm
+                        <span style="color:red">*</span>
+                    </label>
+                    <div class="col-md-9 col-sm-12">
+                      <button
+                        class="btn btn-primary main-bg-color radius-5 py-5px px-16px text-11"
+                      >
+                        <img src="@/assets/svg/icon-upload.svg" />
+                        <span>Thêm tài liệu</span>
+                      </button>
+                      <span class="main-color ml-1">png, jpg, tiff, pdf, xls, doc, ppt, zip, rar</span>
+                    </div>
 
-                    <span class="main-color ml-1"
-                      >png, jpg, tiff, pdf, xls, doc, ppt, zip, rar</span
-                    >
-                  </div>
                 </div>
-                <div class="d-flex w-100 mb-25px">
+                <div class="form-group d-flex w-100 mb-50px">
                   <div class="col-12 text-12 d-flex align-items-center pl-0">
                     <img src="@/assets/svg/icon-radio.svg" />
                     <span class="ml-2">
@@ -133,19 +129,25 @@
                     </span>
                   </div>
                 </div>
-              </div>
-              <div class="d-flex mt-25px justify-content-xl-around">
-                <button
-                  class="btn btn-primary main-bg-color radius-5 w-100  text-16  mr-15px"
-                >
-                  GỬI CHÀO GIÁ NGAY
-                </button>
-                <button
-                  class="btn btn-primary main-bg-color radius-5 w-100  btn-brown text-16 ml-15px mr-15px"
-                >
-                  LƯU BẢN NHÁP
-                </button>
-              </div>
+                <div class="group-btn">
+                  <div class="d-flex mt-25px justify-content-xl-around row">
+                    <div class="col-md-6 col-sm-12">
+                      <button
+                        class=" btn btn-primary main-bg-color radius-5 w-100  text-16  "
+                      >
+                        GỬI CHÀO GIÁ NGAY
+                      </button>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                      <button
+                        class=" btn btn-primary main-bg-color radius-5 w-100  btn-brown text-16 pr-0"
+                      >
+                        LƯU BẢN NHÁP
+                      </button>
+                    </div>
+                    </div>
+                </div>
+               </form>
             </div>
             <!--  Form chào giá -->
 
