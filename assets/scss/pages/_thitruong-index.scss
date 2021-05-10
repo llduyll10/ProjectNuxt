@@ -20,17 +20,26 @@
                 justify-content: space-between;
                 padding: 25px 0;
                 border-bottom: 1px solid #F2F2F2;
-                img {
+                .cover-img {
+                    height: 168px;
+                    width: 301px;
+                    border-radius: 5px;
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    position: relative;
                     margin-right: 25px;
+                    margin-top: 5px;
                 }
                 .content {
+                    flex: 1;
                     .name {
                         font-weight: 700;
                         line-height: 28px;
                         color: $main-black;
                     }
                     .general {
-                        margin-top: 2px;
+                        margin-top: 10px;
                         display: flex;
                         .see {
                             color: $main-color;
@@ -82,7 +91,17 @@
                     .boxsmall {
                         display: flex;
                         margin: 25px 0;
+                        .small-img {
+                            height: 76px;
+                            width: 128px;
+                            background-size: cover;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            position: relative;
+                            margin-right: 13px;
+                        }
                         .text {
+                            flex: 1;
                             display: flex;
                             justify-content: baseline;
                             flex-direction: column;
@@ -165,7 +184,7 @@
     }
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:992px) {
     #block {
         .title {}
         .line {}
@@ -173,7 +192,53 @@
             .left {
                 .box {
                     img {
-                        width: 250px;
+                        width: 50px;
+                    }
+                    .content {
+                        .name {}
+                        .general {
+                            .see {}
+                            ul {
+                                li {}
+                            }
+                        }
+                        .sub {}
+                    }
+                    &:first-child {}
+                }
+            }
+            .right {
+                .register {
+                    img.contact {}
+                    .sub-title {}
+                    .line {}
+                    .list {
+                        .boxsmall {
+                            .text {
+                                .top {}
+                                .bot {}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    #block {
+        .title {}
+        .line {}
+        .blockinfo {
+            .left {
+                .box {
+                    .cover-img {
+                        width: 208px;
+                        margin-right: 22px;
+                    }
+                    img {
+                        width: 209px;
                     }
                     .content {
                         .name {}
@@ -214,10 +279,14 @@
         .blockinfo {
             .left {
                 .box {
-                    img {
-                        width: 50px;
+                    flex-direction: column;
+                    .cover-img {
+                        width: 100%;
+                        height: 250px;
+                        margin-right: 22px;
                     }
                     .content {
+                        margin-top: 23px;
                         .name {}
                         .general {
                             .see {}
@@ -231,6 +300,7 @@
                 }
             }
             .right {
+                margin-top: 36px;
                 .register {
                     img.contact {}
                     .sub-title {}

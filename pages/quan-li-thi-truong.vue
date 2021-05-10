@@ -16,7 +16,12 @@
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="box" v-for="(item , i) in 6" :key="i">
-                                                    <img src="@/assets/svg/house1.svg" alt="">
+                                                    <div  class="cover-img"
+                                                        :style="{
+                                                            'background-image': 'url(' + `${house}` + ')',
+                                                        }"
+                                                    >
+                                                    </div>
                                                     <div class="content">
                                                         <div class="name f-16">
                                                             Bỏ túi ngay bí quyết trang trí phòng khách hiện đại với Phố Xinh 
@@ -53,7 +58,12 @@
                                                                 <div class="row">
                                                                     <div class="col-lg-12">
                                                                         <div class="boxsmall" v-for="(item , i) in 4" :key="i">
-                                                                            <img src="@/assets/svg/house2.svg" class="mr-13px" alt="">
+                                                                            <div  class="small-img"
+                                                                                :style="{
+                                                                                    'background-image': 'url(' + `${house}` + ')',
+                                                                                }"
+                                                                            >
+                                                                            </div>
                                                                             <div class="text">
                                                                                 <div class="top f-13">Bỏ túi ngay bí quyết trang trí phòng khách hiện đại với Phố Xinh </div>
                                                                                 <div class="bot f-12">20/04/2021</div>
@@ -102,7 +112,7 @@
 <script>
 import Header from "@/components/Header";
 import Footer from "@/components/Footer"
-
+import house from "@/assets/svg/house1.svg"
 
 export default {
     // middleware: 'auth',
@@ -112,7 +122,7 @@ export default {
     },
     data(){
         return{
-            
+            house : house
         }
     },
     mounted(){
