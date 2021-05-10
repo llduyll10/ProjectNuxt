@@ -90,7 +90,7 @@
                 .list {
                     .boxsmall {
                         display: flex;
-                        margin: 25px 0;
+                        margin: 13px 0;
                         .small-img {
                             height: 76px;
                             width: 128px;
@@ -209,8 +209,11 @@
             }
             .right {
                 .register {
+                    margin-top: 36px;
                     img.contact {}
-                    .sub-title {}
+                    .sub-title {
+                        margin-top: 0;
+                    }
                     .line {}
                     .list {
                         .boxsmall {
@@ -255,7 +258,9 @@
             }
             .right {
                 .register {
-                    img.contact {}
+                    img.contact {
+                        margin-bottom: 36px;
+                    }
                     .sub-title {}
                     .line {}
                     .list {
@@ -300,10 +305,11 @@
                 }
             }
             .right {
-                margin-top: 36px;
                 .register {
                     img.contact {}
-                    .sub-title {}
+                    .sub-title {
+                        margin-top: 36px;
+                    }
                     .line {}
                     .list {
                         .boxsmall {

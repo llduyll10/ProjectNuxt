@@ -48,16 +48,16 @@
                                             <div class="col-12">
                                                 <div class="register">
                                                     <div class="row">
-                                                        <div class="col-lg-12 col-md-5">
+                                                        <div class="col-lg-12 col-md-5 col-12">
                                                             <img class="contact" src="@/assets/svg/bigletter.svg" alt="">
                                                         </div>
-                                                        <div class="col-lg-12 col-md-7">
+                                                        <div class="col-lg-12 col-md-7 col-12">
                                                             <div class="sub-title f-16">BÀI VIẾT NỔI BẬT</div>
                                                             <div class="line"></div>
-                                                            <div class="list">
+                                                            <div class="list mt-13px">
                                                                 <div class="row">
-                                                                    <div class="col-lg-12">
-                                                                        <div class="boxsmall" v-for="(item , i) in 4" :key="i">
+                                                                    <div class="col-12" v-for="(item , i) in 4" :key="i">
+                                                                        <div class="boxsmall">
                                                                             <div  class="small-img"
                                                                                 :style="{
                                                                                     'background-image': 'url(' + `${house}` + ')',
