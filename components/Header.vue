@@ -289,7 +289,11 @@ export default {
   data() {
     return {
       error:null,
-      confirmObj: {username:'009028121',isPhone:true},
+      confirmObj: {
+        "username": "phamyenbk@gmail.com",
+        "loginCode": 7829,
+        "isPhone": false
+    },
       isShowMobile:false,
       objMenu: [
         { name: "Thuê Nhà Thầu", link:'thue' },
@@ -306,7 +310,7 @@ export default {
 
   },
   mounted(){
-
+    console.log(this.$auth.loggedIn)
   },
   methods:{
     createUser(){

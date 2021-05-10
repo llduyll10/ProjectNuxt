@@ -1,3 +1,5 @@
+var API = "http://localhost:8001";
+
 module.exports = {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -45,14 +47,15 @@ module.exports = {
         local: {
           token: {
             property: 'token',
+            type: 'Token'
           },
           user: {
             property: 'user',
           },
           endpoints: {
-            login: { url: 'http://localhost:8001/auth/login', method: 'post' },
-            logout: { url: '/api/auth/logout', method: 'post' },
-            user: { url: '/api/auth/user', method: 'get' }
+            login: { url: API+'/auth/login', method: 'post' },
+            logout: { url: API+'/auth/logout', method: 'post' },
+            user: { url: API+'/auth/user', method: 'get' }
           }
         },
     },
