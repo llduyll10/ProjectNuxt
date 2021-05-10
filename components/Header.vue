@@ -157,10 +157,10 @@
               Chúng tôi đã gửi cho bạn qua <span class="typeOtp">{{confirmObj.username}}</span>  với mã xác minh OTP. Vui lòng kiểm tra {{confirmObj.isPhone?'số điện thoại':'email'}} và nhập mã xác nhận
             </p>
             <form action="" class="mb-25px">
-              <input type="text" class="form-control verifyOTP" required>
-              <input type="text" class="form-control verifyOTP" required>
-              <input type="text" class="form-control verifyOTP" required>
-              <input type="text" class="form-control verifyOTP" required>
+              <input type="text" class="form-control verifyOTP" required maxlength="1">
+              <input type="text" class="form-control verifyOTP" required maxlength="1">
+              <input type="text" class="form-control verifyOTP" required maxlength="1">
+              <input type="text" class="form-control verifyOTP" required maxlength="1">
               <div class="w-100 text-center mt-16px">
                 <button type="submit" class="btn btn-theme theme-blue">XÁC NHẬN</button>
               </div>
