@@ -1,5 +1,4 @@
-var API = "http://localhost:8001";
-
+var apiUrl = 'http://localhost:8001';
 module.exports = {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -24,8 +23,8 @@ module.exports = {
   env: {
     API:
       process.env.NODE_ENV === "dev"
-        ? "https://images-api.nasa.gov/"
-        : "https://images-api.nasa.gov/"
+        ? apiUrl
+        : apiUrl
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
@@ -53,9 +52,9 @@ module.exports = {
             property: 'user',
           },
           endpoints: {
-            login: { url: API+'/auth/login', method: 'post' },
-            logout: { url: API+'/auth/logout', method: 'post' },
-            user: { url: API+'/auth/user', method: 'get' }
+            login: { url: apiUrl+'/auth/login', method: 'post' },
+            logout: { url: apiUrl+'/auth/logout', method: 'post' },
+            user: { url: apiUrl+'/auth/user', method: 'get' }
           }
         },
     },
