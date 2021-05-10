@@ -15,6 +15,7 @@
                                     <div class="left">
                                         <div class="row">
                                             <div class="col-lg-12">
+                                                <!-- list off info -->
                                                 <div class="box" v-for="(item , i) in 6" :key="i">
                                                     <div  class="cover-img"
                                                         :style="{
@@ -38,6 +39,7 @@
                                                             <div class="sub f-13">Econs được thành lập và phát triển suốt 8 năm qua theo mô hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội thất...Econs được thành lập và phát triển suốt 8 năm</div>
                                                     </div>
                                                 </div>
+                                                <!-- end list info -->
                                             </div>
                                         </div>
                                     </div>
@@ -49,6 +51,7 @@
                                                 <div class="register">
                                                     <div class="row">
                                                         <div class="col-lg-12 col-sm-5 col-12">
+                                                            <!-- letter -->
                                                             <div  class="cover-letter">
                                                                 <div class="icon mt-24px">
                                                                     <div  class="letter-img"
@@ -67,8 +70,10 @@
                                                                     <div class="letter-search f-12 mt-14px d-flex">TÌM NGAY</div>
                                                                 </div>
                                                             </div>
+                                                            <!-- end letter -->
                                                         </div>
                                                         <div class="col-lg-12 col-sm-7 col-12">
+                                                            <!-- post top  -->
                                                             <div class="sub-title f-16">BÀI VIẾT NỔI BẬT</div>
                                                             <div class="line"></div>
                                                             <div class="list mt-13px">
@@ -89,6 +94,7 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                            <!-- end post top -->
                                                         </div>
                                                     </div>
                                                 </div>
@@ -102,6 +108,7 @@
                 </div>
             </div>
         </section>
+        <!-- input register -->
         <section id="receiveInfo" class="pt-24px pb-40px">
             <div class="container-fluid">
                 <div class="box">
@@ -120,6 +127,7 @@
                 </div>
             </div>
         </section>
+        <!-- end input register -->
         <Footer />
     </div>
 
