@@ -7,7 +7,7 @@
                     <p class="title f-20 mb-10px">Thông tin dự án</p>
                     <p class="f-13 description">Vui lòng điền vào thông tin dưới đây. Bạn sẽ nhận được <span>8-10</span>  chào giá tạm tính từ những công ty xây dựng/đơn vị thiết kế uy tín trong khu vực. Bạn thoà sức <span>
                         yêu cầu tư vấn</span>  và <span>chọn lựa</span> đơn vị phù hợp nhất cho dự án</p>
-                    <form @submit.prevent="createJob()" class="group-content mt-36px">
+                    <form @submit.prevent="createJob('ACTIVE')" class="group-content mt-36px">
                         <div class="form-group row">
                              <label class="f-13 col-md-3 col-sm-12 ">
                                 Dịch vụ yêu cầu
@@ -18,8 +18,8 @@
                                 class="pl-0 pr-0 col-md-9 col-sm-12"
                                 :options="options"
                                 :disable-branch-nodes="true"
-                                :value="objResearch.category"
-                                v-model="objResearch.category"
+                                :value="objProject.category"
+                                v-model="objProject.category"
                                 :multiple="true"
                                 placeholder="Select"
                             />
@@ -35,7 +35,7 @@
                                 class="form-control col-md-9 col-sm-12"
                                 required
                                 placeholder="Nhập tên dự án của bạn"
-                                v-model="objResearch.name"
+                                v-model="objProject.name"
                             />
                         </div>
                         <div class="form-group row">
@@ -43,7 +43,7 @@
                                 Mô tả Yêu Cầu Về Công Việc
                                 <span style="color:red">*</span>
                             </label>
-                            <textarea v-model="objResearch.description" required id="customPlaceholder" class="form-control col-md-9 col-sm-12" rows="5"
+                            <textarea v-model="objProject.description" required id="customPlaceholder" class="form-control col-md-9 col-sm-12" rows="5"
                                 :placeholder="place"
                             ></textarea>
                         </div>
@@ -79,8 +79,8 @@
                              <treeselect
                                 class="pl-0 pr-0 col-md-9 col-sm-12"
                                 :options="optionsProvince"
-                                :value="objResearch.address"
-                                v-model="objResearch.address"
+                                :value="objProject.address"
+                                v-model="objProject.address"
                                 placeholder="Tỉnh thành"
                             />
                         </div>
@@ -94,7 +94,7 @@
                                 class="form-control col-md-9 col-sm-12"
                                 required
                                 placeholder="200,000,000"
-                                v-model="objResearch.budget"
+                                v-model="objProject.budget"
                             />
                         </div>
                         <div class="form-group row">
@@ -103,7 +103,7 @@
                                 <span style="color:red">*</span>
                             </label>
                             <v-date-picker
-                                    v-model="objResearch.dueDate"
+                                    v-model="objProject.dueDate"
                                     :masks="{input: 'DD/MM/YYYY'}"
                                     :model-config="{type: 'number',}
                             ">
@@ -124,7 +124,7 @@
                         </div>
                         <div class="form-group mb-50px group-checkbox">
                             <b-form-checkbox
-                                v-model="objResearch.agree"
+                                v-model="objProject.agree"
                                 name="checkbox-agree"
                                 required
                                 >
@@ -138,7 +138,7 @@
                                 </button>
                             </div>
                             <div class="col-md-6 col-sm-12 pr-0 cutom-sm">
-                                <button type="button" class="btn-now save">
+                                <button @click="createJob('DRAFT')" type="button" class="btn-now save">
                                     LƯU BẢN NHÁP
                                 </button>
                             </div>
@@ -166,7 +166,7 @@ export default {
     },
     data(){
         return{
-            objResearch:{
+            objProject:{
                 category:[],
                 dueDate: new Date().getTime(),
                 agree:false,
@@ -180,28 +180,29 @@ export default {
         this.getProjectDraft()
     },
     methods:{
-        async createJob(){
+        async createJob(status){
             this.loading()
             try{
-                console.log(this.objResearch)
-                let res = await this.$post('/member/projects', this.objResearch)
+                console.log(this.objProject)
+                let res = await this.$post('/member/projects', {...this.objProject,status})
                 this.loading(0)
             }
             catch(err){
                 this.loading(0)
             }
         },
-        async getProjectDraft(){
-            this.loading()
-            try{
-                let res = await this.$get('/member/projects/draft')
-                console.log('getProjectDraft',res)
-                this.loading(0)
-            }
-            catch(err){
-                this.loading(0)
-                console.log(err)
-            }
+        getProjectDraft(){
+            this.$get('/member/projects/draft')
+            .then(res =>{
+                console.log('resss',res)
+                if(res.data.status){
+                    this.objProject = res.data.project
+                }
+            })
+            .catch(err=>{
+                console.log('getProjectDraft',err)
+            })
+
         }
     }
 }
