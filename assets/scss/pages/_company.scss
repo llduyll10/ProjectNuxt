@@ -50,6 +50,19 @@
         }
     }
 }
+@media only screen and (max-width: 1300px) {
+    #company{
+        padding-bottom: 0 !important;
+        .slick-arrow{
+            &.slick-prev{
+                left: -5px;
+            }
+            &.slick-next{
+                right: -5px;
+            }
+        }
+    }
+}
 @media only screen and (max-width: 768px) {
     #company{
         padding-bottom: 0 !important;

@@ -347,8 +347,21 @@
 }
 
 
-@media only screen and (max-width: 991px) {
-
+@media only screen and (max-width: 1300px) {
+    #homepage{
+        #special-product{
+            .list-item{
+                .slick-arrow{
+                    &.slick-prev{
+                        left: -5px;
+                    }
+                    &.slick-next{
+                        right: -5px;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 768px) {
