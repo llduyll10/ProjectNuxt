@@ -597,6 +597,19 @@
                                     &.active {}
                                 }
                             }
+                            .group-bot {
+                                flex-direction: column;
+                                .group-2 {
+                                    padding-right: 0 !important;
+                                    .one {
+                                        padding-right: 0 !important;
+                                        .human-name {}
+                                    }
+                                }
+                                .like {
+                                    margin-top: 18px;
+                                }
+                            }
                         }
                     }
                     .rate {
