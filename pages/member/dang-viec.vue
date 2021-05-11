@@ -167,7 +167,7 @@ export default {
     data(){
         return{
             objResearch:{
-                category:[1],
+                category:[],
                 dueDate: new Date().getTime(),
                 agree:false,
             },
