@@ -10,6 +10,15 @@ module.exports = {
       },
       isMobile: function() {
       },
+      getTypeAccount(){
+        return[
+            {label:'Công Ty Xây Dựng', id:'Công Ty Xây Dựng'},
+            {label:'Công Ty Nội Thất',id:'Công Ty Nội Thất'},
+            {label:'Kiến trúc sư',id:'Kiến trúc sư'},
+            {label:'Kỹ sư giám sát',id:'Kỹ sư giám sát'},
+            {label:'Khách hàng',id:'Khách hàng'},
+        ]
+      },
       getCategory(){
         return [
             {

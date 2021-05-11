@@ -3,19 +3,20 @@
         <div class="f-20 f-bold text-main mb-24px">
             Hồ sơ làm việc
         </div>
-        <form>
+        <form @submit.prevent="updateWorking">
             <div class="editRow mb-15px">
                 <div class="fieldLabel">
                     Loại tài khoản<span class="dot">*</span>
                 </div>
                 <div class="fieldInput">
                     <div class="form-group mb-0">
-                        <select class="form-control">
-                            <option selected>Loại tài khoản</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
+                        <treeselect
+                            class=""
+                            :options="optionsType"
+                            :value="objWorking.address"
+                            v-model="objWorking.address"
+                            placeholder="Loại tài khoản"
+                        />
                     </div>
                 </div>
             </div>
@@ -28,12 +29,15 @@
                 </div>
                 <div class="fieldInput">
                     <div class="form-group mb-0">
-                        <select class="form-control">
-                            <option selected>Lĩnh vực hoạt động</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
+                        <treeselect
+                            class=""
+                            :options="optionsCategory"
+                            :disable-branch-nodes="true"
+                            :value="objWorking.category"
+                            v-model="objWorking.category"
+                            :multiple="true"
+                            placeholder="Lĩnh vực hoạt động"
+                        />
                     </div>
                 </div>
             </div>
@@ -48,6 +52,7 @@
                             class="form-control"
                             placeholder="Giới thiệu về công ty/tổ chức của bạn. Nếu là Freelancer, mô tả về quá trình làm việc của bạn"
                             rows="12"
+                            v-model="objWorking.introduce"
                         />
                     </div>
                 </div>
@@ -63,6 +68,7 @@
                             rows="8"
                             class="form-control"
                             placeholder="Mô tả năng lực của bạn/công ty bạn và tại sao chủ đầu tư nên chọn bạn"
+                            v-model="objWorking.ability"
                         />
                     </div>
                 </div>
@@ -85,7 +91,7 @@
             </div>
 
             <div class="w-100 my-40px">
-                <button type="button" class="btn btn-main w-100 btn-lg">
+                <button type="submit" class="btn btn-main w-100 btn-lg">
                     CẬP NHẬT THÔNG TIN
                 </button>
             </div>
@@ -99,7 +105,15 @@ export default {
     },
     data(){
         return{
+            objWorking:{},
+            optionsType:this.getTypeAccount(),
+            optionsCategory: this.getCategory()
         }
     },
+    methods:{
+        updateWorking(){
+            console.log(this.objWorking)
+        }
+    }
 }
 </script>

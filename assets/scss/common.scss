@@ -132,3 +132,9 @@ $dimensions: 0,
     background-repeat: no-repeat;
     background-position: center center;
 }
+.vue-treeselect__control{
+    .vue-treeselect__placeholder{
+        color: #ADABAB;
+        font-size: 13px;
+    }
+}
