@@ -1,5 +1,5 @@
 <template>
-     <div class="cover-edit-create">
+     <div >
       <div v-if="objProject._id" class="f-20 f-bold text-main mb-24px">
         Chỉnh sửa dự án
       </div>
@@ -7,9 +7,9 @@
         Thêm dự án
       </div>
       <form @click.prevent="createProject">
-        <div class="editRow mb-15px">
-          <div class="fieldLabel font-weight-bold f-13">Tên dự án<span style="color:red">*</span></div>
-          <div class="fieldInput">
+        <div class="editRow mb-15px form-group row">
+          <div class="fieldLabel font-weight-bold f-13 col-md-3 col-sm-12">Tên dự án<span style="color:red">*</span></div>
+          <div class="fieldInput col-md-9 col-sm-12">
             <div class="form-group mb-0">
               <input
                 type="text"
@@ -22,9 +22,9 @@
           </div>
         </div>
 
-        <div class="editRow mb-15px">
-          <div class="fieldLabel font-weight-bold f-13">Dịch vụ<span style="color:red">*</span></div>
-          <div class="fieldInput">
+        <div class="editRow mb-15px form-group row">
+          <div class="fieldLabel font-weight-bold f-13 col-md-3 col-sm-12">Dịch vụ<span style="color:red">*</span></div>
+          <div class="fieldInput col-md-9 col-sm-12">
             <div class=" mb-0">
               <treeselect
                 :options="optionsCategory"
@@ -38,9 +38,9 @@
           </div>
         </div>
 
-        <div class="editRow mb-15px">
-          <div class="fieldLabel font-weight-bold f-13">Mô tả chi tiết<span style="color:red">*</span></div>
-          <div class="fieldInput">
+        <div class="editRow mb-15px form-group row">
+          <div class="fieldLabel font-weight-bold f-13 col-md-3 col-sm-12">Mô tả chi tiết<span style="color:red">*</span></div>
+          <div class="fieldInput col-md-9 col-sm-12">
             <div class="form-group mb-0">
               <textarea
                 class="form-control"
@@ -53,11 +53,29 @@
           </div>
         </div>
 
-        <div class="editRow mb-15px">
-          <div class="fieldLabel font-weight-bold f-13">
+        <div class="editRow mb-15px form-group row">
+          <div class="fieldLabel font-weight-bold f-13 col-md-3 col-sm-12">Hình ảnh dự án<span style="color:red">*</span></div>
+          <div class="fieldInput col-md-9 col-sm-12">
+              <div class="row">
+                  <template v-for="(item,idx) in 4">
+                      <div class="col-sm-6" :key="idx">
+                          <div
+                                class="item"
+                                :style="{
+                                    'background-image': 'url(' + `${demoHouse}` + ')',
+                                }"
+                            >
+                            </div>
+                      </div>
+                  </template>
+              </div>
+          </div>
+        </div>
+        <div class="editRow mb-15px form-group row">
+          <div class="fieldLabel font-weight-bold f-13 col-md-3 col-sm-12">
             Hình ảnh đính kèm
           </div>
-          <div class="fieldInput">
+          <div class="fieldInput col-md-9 col-sm-12">
             <div>
               <button type="button" class="btn btn-main f-11">
                 <img
@@ -91,10 +109,12 @@
     </div>
 </template>
 <script>
+import DemoHouse from '@/assets/img/demo-house.png'
 export default {
     props:['project'],
     data(){
         return{
+            demoHouse:DemoHouse,
             objProject:{},
             optionsCategory: this.getCategory()
         }

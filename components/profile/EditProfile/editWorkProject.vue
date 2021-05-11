@@ -35,7 +35,7 @@
         </div>
     </div>
     <CreateEditProject :project=demoProject />
-    <Modal ref="modalEditProject">
+    <Modal ref="modalEditProject" id="modal-create-update-project">
       <template v-slot:content>
         <CreateEditProject :project=demoProject />
       </template>
