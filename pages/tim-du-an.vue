@@ -94,28 +94,32 @@
                             <p class="title f-16">TIN TỨC & THỊ TRƯỜNG</p>
                             <div class="line"></div>
                         </div>
-                        <div class="left mt-24px" v-for="(item , i ) in 2" :key="i">
-                            <div class="boxs">
-                                <img src="@/assets/img/product-1.png" alt="">
-                                <h3 class="mt-15px">Bỏ túi ngay bí quyết trang trí phòng khách hiện đại với Phố Xinh </h3>
-                                <div class="evaluate mt-15px">
-                                    <div class="lefts">
-                                        <img src="@/assets/img/market1.png" alt="">
-                                        <div class="text">
-                                            Bởi <span>Longb04</span>
+                        <div class="row">
+                            <div class="col-md-12 col-sm-6" v-for="(item , i ) in 2" :key="i">
+                                <div class="left mt-24px" >
+                                <div class="boxs">
+                                    <img src="@/assets/img/product-1.png" alt="">
+                                    <h3 class="mt-15px">Bỏ túi ngay bí quyết trang trí phòng khách hiện đại với Phố Xinh </h3>
+                                    <div class="evaluate mt-15px">
+                                        <div class="lefts">
+                                            <img src="@/assets/img/market1.png" alt="">
+                                            <div class="text">
+                                                Bởi <span>Longb04</span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="rights">
-                                        <div class="one mr-15px">
-                                            <img src="@/assets/svg/see.svg" alt="">
-                                            <p class="ml-6px">290</p>
-                                        </div>
-                                        <div class="one">
-                                            <img class="mb-4px" src="@/assets/svg/like.svg" alt="">
-                                            <p class="ml-6px">20</p>
+                                        <div class="rights">
+                                            <div class="one mr-15px">
+                                                <img src="@/assets/svg/see.svg" alt="">
+                                                <p class="ml-6px">290</p>
+                                            </div>
+                                            <div class="one">
+                                                <img class="mb-4px" src="@/assets/svg/like.svg" alt="">
+                                                <p class="ml-6px">20</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                             </div>
                         </div>
                     </div>
