@@ -90,9 +90,37 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="box-title">
+                            <p class="title f-16">TIN TỨC & THỊ TRƯỜNG</p>
+                            <div class="line"></div>
+                        </div>
+                        <div class="left mt-24px" v-for="(item , i ) in 2" :key="i">
+                            <div class="boxs">
+                                <img src="@/assets/img/product-1.png" alt="">
+                                <h3 class="mt-15px">Bỏ túi ngay bí quyết trang trí phòng khách hiện đại với Phố Xinh </h3>
+                                <div class="evaluate mt-15px">
+                                    <div class="lefts">
+                                        <img src="@/assets/img/market1.png" alt="">
+                                        <div class="text">
+                                            Bởi <span>Longb04</span>
+                                        </div>
+                                    </div>
+                                    <div class="rights">
+                                        <div class="one mr-15px">
+                                            <img src="@/assets/svg/see.svg" alt="">
+                                            <p class="ml-6px">290</p>
+                                        </div>
+                                        <div class="one">
+                                            <img class="mb-4px" src="@/assets/svg/like.svg" alt="">
+                                            <p class="ml-6px">20</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-12">
-                        <div class="right">
+                        <div class="right margin-top">
                             <!-- search -->
                             <div class="top top-change">
                                 <div class="search-top short-input">
@@ -179,6 +207,7 @@
 
 <script>
 import ImgProfile from '@/assets/svg/longb.svg'
+import avatar from '@/assets/svg/market3.svg'
 import logoDuan from '@/assets/svg/logo-duan.svg'
 import Header from "@/components/Header";
 import Footer from "@/components/Footer"
@@ -197,6 +226,7 @@ export default {
         return{
             imgProfile: ImgProfile,
             logoDuan :logoDuan,
+            avatar : avatar,
             dataFake:[1,2,3,4,5,6,7]
         }
     },
