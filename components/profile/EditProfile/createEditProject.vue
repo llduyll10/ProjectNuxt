@@ -56,9 +56,9 @@
         <div class="editRow mb-15px form-group row">
           <div class="fieldLabel font-weight-bold f-13 col-md-3 col-sm-12">Hình ảnh dự án<span style="color:red">*</span></div>
           <div class="fieldInput col-md-9 col-sm-12">
-              <div class="row">
+              <div class="row pl-15px">
                   <template v-for="(item,idx) in 4">
-                      <div class="col-sm-6" :key="idx">
+                      <div class="col-sm-6 pl-0" :key="idx">
                           <div
                                 class="item"
                                 :style="{
