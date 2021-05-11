@@ -3,7 +3,7 @@
         <div class="f-20 f-bold text-main mb-24px">
             Thông tin cá nhân
         </div>
-        <form>
+        <form @submit.prevent="updateInfor()">
             <div class="editRow mb-15px">
                 <div class="fieldLabel">
                     Hình ảnh đại diện <span class="info">(Dưới 1MB)</span>
@@ -34,6 +34,7 @@
                             class="form-control"
                             required
                             placeholder="Họ và Tên"
+                            v-model="objInfor.name"
                         />
                     </div>
                 </div>
@@ -50,6 +51,7 @@
                             class="form-control"
                             required
                             placeholder="Tên công ty"
+                            v-model="objInfor.company"
                         />
                     </div>
                 </div>
@@ -66,6 +68,7 @@
                             class="form-control"
                             required
                             placeholder="Số điện thoại"
+                            v-model="objInfor.phone"
                         />
                     </div>
                 </div>
@@ -82,6 +85,7 @@
                             class="form-control"
                             required
                             placeholder="Email"
+                            v-model="objInfor.email"
                         />
                     </div>
                 </div>
@@ -97,7 +101,8 @@
                             type="text"
                             class="form-control"
                             required
-                            placeholder="Họ và Tên"
+                            placeholder="Địa chỉ"
+                            v-model="objInfor.address"
                         />
                     </div>
                 </div>
@@ -109,12 +114,13 @@
                 </div>
                 <div class="fieldInput">
                     <div class="form-group mb-0">
-                        <select class="form-control">
-                            <option selected>Tỉnh thành</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
+                        <treeselect
+                            class=""
+                            :options="optionsProvince"
+                            :value="objInfor.province"
+                            v-model="objInfor.province"
+                            placeholder="Tỉnh thành"
+                        />
                     </div>
                 </div>
             </div>
@@ -129,13 +135,14 @@
                             type="text"
                             class="form-control"
                             placeholder="Website/Link portfolio"
+                            v-model="objInfor.website"
                         />
                     </div>
                 </div>
             </div>
 
             <div class="w-100 my-40px">
-                <button type="button" class="btn btn-main w-100 btn-lg">
+                <button type="submit" class="btn btn-main w-100 btn-lg">
                     CẬP NHẬT THÔNG TIN
                 </button>
             </div>
@@ -149,7 +156,14 @@ export default {
     },
     data(){
         return{
+            objInfor:{},
+            optionsProvince: this.getProvince(),
         }
     },
+    methods:{
+        updateInfor(){
+            console.log(this.objInfor)
+        }
+    }
 }
 </script>
