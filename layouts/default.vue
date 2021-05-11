@@ -10,7 +10,7 @@ import VueCurrencyInput from 'vue-currency-input'
 Vue.mixin(mixins);
 
 const pluginOptions = {
-  globalOptions: { currency: 'VND' }
+  globalOptions: { currency: {},precision:0}
 }
 Vue.use(VueCurrencyInput, pluginOptions)
 Vue.prototype.$checkDragDrop = (classSelector) => {
