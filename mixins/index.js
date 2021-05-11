@@ -417,7 +417,7 @@ module.exports = {
               name_with_type: "Tỉnh Yên Bái",
               code: "15"
           }].map(function(e){
-            return {id:e.code, label:e.name_with_type}
+            return {id:e.name, label:e.name}
           })
       }
     }
