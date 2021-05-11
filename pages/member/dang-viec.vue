@@ -188,7 +188,16 @@ export default {
                 this.loading(0)
             }
         },
-
+        async getJob(){
+            this.loading()
+            try{
+                let res = await this.$get('/member/projects')
+                console.log(res)
+            }
+            catch(err){
+                console.log(err)
+            }
+        }
     }
 }
 </script>
