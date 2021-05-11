@@ -328,7 +328,7 @@ export default {
 
   },
   mounted(){
-
+    
   },
   methods:{
     nextCode(evt){
@@ -387,6 +387,7 @@ export default {
     },
     async loginPre(){
       this.resetLogin();
+      this.loading()
       try {
         let res = await this.$post('/auth/login/pre',this.objLogin);
         if(res.data.status){
@@ -394,8 +395,10 @@ export default {
         }else{
             this.error = res.data.msg;
         }
+        this.loading(0)
       } catch (err) {
         console.log(err)
+        this.loading(0)
       }
     },
     getCodeObj(){
@@ -413,14 +416,22 @@ export default {
          loginCode : this.getCodeObj(),
          username : this.confirmObj.username
       }
+
+      this.loading()
       try {
         let response = await this.$auth.loginWith('local', { data: data})
         var data = response.data;
-        this.$auth.setUser(data.user);
-        this.$auth.setUserToken(data.token, data.token);
-        this.hideModalLogin()
+        if(data.status){
+          this.$auth.setUser(data.user);
+          this.$auth.setUserToken(data.token, data.token);
+          this.hideModalLogin()
+        }else{
+           
+        }
+        this.loading(0)
       } catch (err) {
         console.log(err)
+         this.loading(0)
       }
     },
     showMenuMobile(){

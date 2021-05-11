@@ -77,6 +77,8 @@ module.exports = {
   buildModules: [
   ],
 
+  loading: '~/components/Loading.vue',
+
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/auth-next',

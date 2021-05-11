@@ -1,6 +1,13 @@
 
 module.exports = {
     methods: {
+      loading(off){
+        if(off===0){
+          this.$nuxt.$loading.finish();
+        }else{
+          this.$nuxt.$loading.start();
+        }
+      },
       isMobile: function() {
       },
       getCategory(){
