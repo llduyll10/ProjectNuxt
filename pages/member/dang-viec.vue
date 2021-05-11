@@ -70,6 +70,7 @@
                                 class="pl-0 pr-0 col-md-9 col-sm-12"
                                 :options="optionsProvince"
                                 :value="objResearch.address"
+                                v-model="objResearch.address"
                             />
                         </div>
                         <div class="form-group row">
@@ -90,7 +91,11 @@
                                 Thời gian kết thúc nhận chào giá
                                 <span style="color:red">*</span>
                             </label>
-                            <v-date-picker v-model="objResearch.dueDate" :masks="{input: 'DD/MM/YYYY'}">
+                            <v-date-picker
+                                    v-model="objResearch.dueDate"
+                                    :masks="{input: 'DD/MM/YYYY'}"
+                                    :model-config="{type: 'number',}
+                            ">
                                 <template v-slot="{ inputValue, inputEvents }">
                                     <div class="input-group mb-3">
                                         <input type="text"
@@ -164,8 +169,16 @@ export default {
     mounted(){
     },
     methods:{
-        getForm(){
-            console.log(this.objResearch)
+        async getForm(){
+            this.loading()
+            try{
+                console.log(this.objResearch)
+                let res = await this.$post('/member/projects', this.objResearch)
+                this.loading(0)
+            }
+            catch(err){
+                this.loading(0)
+            }
         },
 
     }
