@@ -125,6 +125,7 @@
                         <div class="form-group mb-50px group-checkbox">
                             <b-form-checkbox
                                 v-model="objProject.agree"
+                                :checked="objProject.agree"
                                 name="checkbox-agree"
                                 required
                                 >
@@ -166,11 +167,7 @@ export default {
     },
     data(){
         return{
-            objProject:{
-                category:[],
-                dueDate: new Date().getTime(),
-                agree:false,
-            },
+            objProject:this.restForm(),
             options: this.getCategory(),
             optionsProvince: this.getProvince(),
             place: `1. Mô tả chi tiết về dự án xây dựng hoặc yêu cầu thiết kế của bạn \n2. Vui lòng đính kèm sổ đỏ, bản vẽ, thiết kế hoặc hình ảnh minh hoạ để nhận được tư vấn/dự toán tốt nhất. \n3. Yêu cầu năng lực của đơn vị báo giá hoặc những yêu cầu khác`
@@ -180,11 +177,24 @@ export default {
         this.getProjectDraft()
     },
     methods:{
+        restForm(){
+            return {
+                category:[],
+                dueDate: new Date().getTime(),
+                agree:false,
+            }
+        },
         async createJob(status){
             this.loading()
             try{
                 console.log(this.objProject)
-                let res = await this.$post('/member/projects', {...this.objProject,status})
+                let res = await this.$post('/member/projects', {...this.objProject,status});
+                if(status==='ACTIVE'){
+                    this.objProject = this.restForm();
+                }
+                if(status==='DRAFT'){
+                    this.objProject._id = res.data.project._id;
+                }
                 this.loading(0)
             }
             catch(err){
