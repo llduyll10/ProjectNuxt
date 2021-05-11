@@ -12,28 +12,39 @@ module.exports = {
       },
       getCategory(){
         return [
-            {label:"Thi công xây dựng", id:1},
-            {label:"Thi công phần thô", id: 11},
-            {label:"Thi công hoàn thiện", id: 12},
-            {label:"Sửa chữa cải tạo", id: 13},
-            {label:"Thi công trọn gọi", id: 14},
-            {label:"Thi công nhà tiền chế", id: 15},
-            {label:"Thi công toà nhà", id: 16},
-            {label:"Hạng mục thi công khác", id: 17},
-            {label:"Trang trí nội thất",id:2},
-            {label:"Nội thất căn hộ/nhà phố", id: 21},
-            {label:"Nội thất biệt thự", id: 22},
-            {label:"Nội thất văn phòng", id: 23},
-            {label:"Nội thất nhà hàng", id: 24},
-            {label:"Nội thất quan bar/karaoke", id: 25},
-            {label:"Hạng mục nội thất khác", id: 26},
-            {label:"Thiết kế",id:3},
-            {label:"Thiết kế kiến trúc", id: 31},
-            {label:"Thiết kế nội thất", id: 32},
-            {label:"Bản vẽ kỹ thuật", id: 33},
-            {label:"Thiết kế kết cấu", id:34},
-            {label:"Lập hồ sơ dự toán/hoàn công", id: 35},
-            {label:"Hạng mục thiết kế khác", id: 36}
+            {
+                label: "Thi công xây dựng", id: 1, children: [
+                    { label: "Thi công phần thô", id: 11 },
+                    { label: "Thi công hoàn thiện", id: 12 },
+                    { label: "Sửa chữa cải tạo", id: 13 },
+                    { label: "Thi công trọn gọi", id: 14 },
+                    { label: "Thi công nhà tiền chế", id: 15 },
+                    { label: "Thi công toà nhà", id: 16 },
+                    { label: "Hạng mục thi công khác", id: 17 }
+                ]
+            },
+
+            {
+                label: "Trang trí nội thất", id: 2, children: [
+                    { label: "Nội thất căn hộ/nhà phố", id: 21 },
+                    { label: "Nội thất biệt thự", id: 22 },
+                    { label: "Nội thất văn phòng", id: 23 },
+                    { label: "Nội thất nhà hàng", id: 24 },
+                    { label: "Nội thất quan bar/karaoke", id: 25 },
+                    { label: "Hạng mục nội thất khác", id: 26 }]
+            },
+
+            {
+                label: "Thiết kế", id: 3, children: [
+                    { label: "Thiết kế kiến trúc", id: 31 },
+                    { label: "Thiết kế nội thất", id: 32 },
+                    { label: "Bản vẽ kỹ thuật", id: 33 },
+                    { label: "Thiết kế kết cấu", id: 34 },
+                    { label: "Lập hồ sơ dự toán/hoàn công", id: 35 },
+                    { label: "Hạng mục thiết kế khác", id: 36 }
+                ]
+            }
+
         ]
       },
       getProvince(){

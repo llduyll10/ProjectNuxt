@@ -13,7 +13,16 @@
                                 Dịch vụ yêu cầu
                                 <span style="color:red">*</span>
                             </label>
-                            <b-form-select class="form-control col-md-9 col-sm-12" v-model="objResearch.category" :options="options"></b-form-select>
+
+                            <treeselect
+                                class="pl-0 pr-0 col-md-9 col-sm-12"
+                                :options="options"
+                                 :disable-branch-nodes="true"
+                                :value="objResearch.category"
+                                v-model="objResearch.category"
+                                :multiple="true"
+                            />
+
                         </div>
                         <div class="form-group row">
                              <label class="f-13 col-md-3 col-sm-12 ">
@@ -152,12 +161,11 @@ export default {
     components:{
         Header,
         Footer,
-        // Treeselect
     },
     data(){
         return{
             objResearch:{
-                category:1,
+                category:[1],
                 dueDate: new Date(),
                 agree:false,
             },
