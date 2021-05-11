@@ -34,8 +34,7 @@
                                 <span style="color:red">*</span>
                             </label>
                             <textarea v-model="objResearch.description" required id="customPlaceholder" class="form-control col-md-9 col-sm-12" rows="5"
-                                placeholder=
-                                " 1. Mô tả chi tiết về dự án xây dựng hoặc yêu cầu thiết kế của bạn \n \n 2. Vui lòng đính kèm sổ đỏ, bản vẽ, thiết kế hoặc hình ảnh minh hoạ để nhận được tư vấn/dự toán tốt nhất. \n \n 3. Yêu cầu năng lực của đơn vị báo giá hoặc những yêu cầu khác"
+                                :placeholder="place"
                             ></textarea>
                         </div>
                         <div class="form-group row">
@@ -158,7 +157,7 @@ export default {
                 agree:false,
             },
             options: this.getCategory(),
-
+            place: `1. Mô tả chi tiết về dự án xây dựng hoặc yêu cầu thiết kế của bạn \n2. Vui lòng đính kèm sổ đỏ, bản vẽ, thiết kế hoặc hình ảnh minh hoạ để nhận được tư vấn/dự toán tốt nhất. \n3. Yêu cầu năng lực của đơn vị báo giá hoặc những yêu cầu khác`
         }
     },
     mounted(){
