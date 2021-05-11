@@ -166,7 +166,7 @@ export default {
         return{
             objResearch:{
                 category:[1],
-                dueDate: new Date(),
+                dueDate: new Date().getTime(),
                 agree:false,
             },
             options: this.getCategory(),
