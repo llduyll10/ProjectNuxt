@@ -7,7 +7,7 @@
                     <p class="title f-20 mb-10px">Thông tin dự án</p>
                     <p class="f-13 description">Vui lòng điền vào thông tin dưới đây. Bạn sẽ nhận được <span>8-10</span>  chào giá tạm tính từ những công ty xây dựng/đơn vị thiết kế uy tín trong khu vực. Bạn thoà sức <span>
                         yêu cầu tư vấn</span>  và <span>chọn lựa</span> đơn vị phù hợp nhất cho dự án</p>
-                    <form @submit.prevent="getForm()" class="group-content mt-36px">
+                    <form @submit.prevent="createJob()" class="group-content mt-36px">
                         <div class="form-group row">
                              <label class="f-13 col-md-3 col-sm-12 ">
                                 Dịch vụ yêu cầu
@@ -17,10 +17,11 @@
                             <treeselect
                                 class="pl-0 pr-0 col-md-9 col-sm-12"
                                 :options="options"
-                                 :disable-branch-nodes="true"
+                                :disable-branch-nodes="true"
                                 :value="objResearch.category"
                                 v-model="objResearch.category"
                                 :multiple="true"
+                                placeholder="Select"
                             />
 
                         </div>
@@ -80,6 +81,7 @@
                                 :options="optionsProvince"
                                 :value="objResearch.address"
                                 v-model="objResearch.address"
+                                placeholder="Tỉnh thành"
                             />
                         </div>
                         <div class="form-group row">
@@ -175,9 +177,10 @@ export default {
         }
     },
     mounted(){
+        this.getProjectDraft()
     },
     methods:{
-        async getForm(){
+        async createJob(){
             this.loading()
             try{
                 console.log(this.objResearch)
@@ -188,13 +191,15 @@ export default {
                 this.loading(0)
             }
         },
-        async getJob(){
+        async getProjectDraft(){
             this.loading()
             try{
-                let res = await this.$get('/member/projects')
-                console.log(res)
+                let res = await this.$get('/member/projects/draft')
+                console.log('getProjectDraft',res)
+                this.loading(0)
             }
             catch(err){
+                this.loading(0)
                 console.log(err)
             }
         }
