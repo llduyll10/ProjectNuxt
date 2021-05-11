@@ -149,7 +149,7 @@
                                                                 Dự trù - <span>1 Tỷ</span>
                                                             </div>
                                                             <div class="four">
-                                                                Hạn chót chào giá - <span>10 ngày</span>
+                                                                Hạn chót chào giá -<span>10 ngày</span>
                                                             </div>
                                                         </div>
                                                         <div class="like f-13">
