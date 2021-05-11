@@ -7,7 +7,11 @@
 import Vue from 'vue'
 import mixins from '../mixins';
 import VueCurrencyInput from 'vue-currency-input'
+  // import the styles
+import '@riophae/vue-treeselect/dist/vue-treeselect.css'
+import Treeselect from '@riophae/vue-treeselect'
 Vue.mixin(mixins);
+Vue.component('treeselect',Treeselect)
 
 const pluginOptions = {
   globalOptions: { currency: {},precision:0}

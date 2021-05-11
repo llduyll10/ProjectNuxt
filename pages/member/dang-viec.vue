@@ -66,12 +66,10 @@
                                 Địa điểm dự án
                                 <span style="color:red">*</span>
                             </label>
-                            <input
-                                type="text"
-                                class="form-control col-md-9 col-sm-12"
-                                required
-                                placeholder="Tỉnh Thành"
-                                v-model="objResearch.address"
+                             <treeselect
+                                class="pl-0 pr-0 col-md-9 col-sm-12"
+                                :options="optionsProvince"
+                                :value="objResearch.address"
                             />
                         </div>
                         <div class="form-group row">
@@ -143,11 +141,13 @@
 <script>
 import Header from "@/components/Header";
 import Footer from "@/components/Footer"
+
 export default {
     middleware: 'auth',
     components:{
         Header,
         Footer,
+        // Treeselect
     },
     data(){
         return{
@@ -157,6 +157,7 @@ export default {
                 agree:false,
             },
             options: this.getCategory(),
+            optionsProvince: this.getProvince(),
             place: `1. Mô tả chi tiết về dự án xây dựng hoặc yêu cầu thiết kế của bạn \n2. Vui lòng đính kèm sổ đỏ, bản vẽ, thiết kế hoặc hình ảnh minh hoạ để nhận được tư vấn/dự toán tốt nhất. \n3. Yêu cầu năng lực của đơn vị báo giá hoặc những yêu cầu khác`
         }
     },
@@ -165,7 +166,8 @@ export default {
     methods:{
         getForm(){
             console.log(this.objResearch)
-        }
+        },
+
     }
 }
 </script>
