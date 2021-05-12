@@ -5,7 +5,7 @@
                 <div>{{tab.text}}</div>
             </div>
         </div>
-        
+
         <div class="editWrap">
             <EditPersonalInfo  v-if="activeTab === '1'" />
 
@@ -48,5 +48,8 @@ export default {
             activeTab: '1'
         }
     },
+    mounted(){
+        this.activeTab = this.$nuxt.$route.query.tab
+    }
 }
 </script>
