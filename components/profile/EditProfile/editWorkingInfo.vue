@@ -155,15 +155,16 @@ export default {
             if(filesCert.length){
                 this.objWorking.filesCert = filesCert;
             }
-            // call api
-            this.$post('/user/working',this.objWorking)
-                .then(res =>{
-                    this.loader(0)
-                    this.$auth.fetchUser()
-                })
-                .catch(err=>{
-                    this.loader(0)
-                })
+
+            this.arrFile = []
+            try{
+                let res = await this.$post('/user/working',this.objWorking)
+                this.$auth.fetchUser()
+                this.loader(0)
+            }
+            catch(err){
+                this.loader(0)
+            }
         },
         getFile(arrFile){
             this.arrFile = this.arrFile.concat(arrFile)

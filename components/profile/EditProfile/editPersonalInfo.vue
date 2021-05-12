@@ -171,23 +171,20 @@ export default {
         },
         async updateInfor(){
             this.loader();
-            
             var photo = this.tempFile ? await this.uploadFile(this.tempFile): '';
 
             if(photo){
                 this.objInfor.photo = photo;
             }
-            this.$post('/user/information',this.objInfor)
-                .then(res=>{
-                    console.log('objInfor',res)
-                    this.loader(0)
-                    this.$auth.fetchUser()
-                    this.avataBase64 = null;
-                })
-                .catch(err =>{
-                    console.log('objInfor',err)
-                    this.loader(0)
-                })
+            try{
+                let res = await this.$post('/user/information',this.objInfor)
+                this.$auth.fetchUser()
+                this.avataBase64 = null;
+                this.loader(0)
+            }
+            catch(err){
+                this.loader(0)
+            }
         },
         async getFile(file){
             this.tempFile = file;
