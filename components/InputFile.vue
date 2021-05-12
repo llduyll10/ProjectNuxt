@@ -1,8 +1,9 @@
 <template>
-    <div  class="form-group">
-        <input type="file" name="file" id="file" ref="file" class="inputfile" @change="onFileChange" />
+    <div class="form-group">
+        <input type="file" name="file" id="file" ref="file" class="inputfile" @change="onFileChange" :multiple="multiple" />
         <label for="file">
-            <img class="mr-4px h-13px mb-2px" src="@/assets/svg/icon-upload.svg" alt=""/>Thêm tài liệu
+            <img class="mr-4px h-13px mb-2px" src="@/assets/svg/icon-upload.svg" alt=""/>
+            {{label || "Thêm tài liệu"}}
         </label>
        <span class="text-main f-11">{{accept}}</span>
           <template v-if="arrFile.length">
@@ -21,7 +22,7 @@
 </template>
 <script>
 export default {
-    props:['accept',],
+    props:['accept','multiple','label'],
     created() {},
     mounted() {},
     data() {
@@ -31,8 +32,10 @@ export default {
     },
     methods:{
         onFileChange(){
-            let file = this.$refs.file.files[0];
-            this.arrFile.push(file)
+            let files = this.$refs.file.files;
+            files.forEach(e => {
+                 this.arrFile.push(e)
+            });
             this.$emit("input",this.arrFile)
         },
         clearFile(file){

@@ -13,7 +13,7 @@
                         <img class="uploadReview" src="@/assets/img/longb.png" alt=""/>
                     </div>
                     <div>
-                        <InputFile :accept="accepFile" @input="getFile" />
+                        <InputFile :accept="accepFile" @input="getFile" :multiple="true" :label="'Thêm tài liệu 1'"/>
                     </div>
                 </div>
             </div>
