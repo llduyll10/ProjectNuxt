@@ -10,6 +10,7 @@
                {{item}} <span :key="idx" v-if="(idx+1) < accept.length">,</span>
            </template>
        </span>
+        <b-alert v-if="showAlert" sm show variant="danger">Sai định dạng</b-alert>
     </div>
 </template>
 <script>
@@ -19,7 +20,8 @@ export default {
     mounted() {},
     data() {
         return{
-            arrFile:[]
+            arrFile:[],
+            showAlert:false
         }
     },
     methods:{
@@ -32,10 +34,12 @@ export default {
                 console.log('accept',accept)
                 if(!accept.includes(typeFile)){
                     console.log('not')
+                    this.showAlert = true
                     return
                 }
                 else{
                     console.log('okok')
+                    this.showAlert = false
                     files.forEach(e => {
                         this.arrFile.push(e)
                     });
