@@ -190,6 +190,7 @@
                     label {}
                     .btn-upload {
                         img {}
+                        padding-top: 0px !important;
                     }
                     .type-upload {}
                 }
@@ -241,6 +242,6 @@
         }
     }
     .btn-now {
-        margin-bottom: 0 !important;
+        margin-bottom: 1.7rem !important;
     }
 }
