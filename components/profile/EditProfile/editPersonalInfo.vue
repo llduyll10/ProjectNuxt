@@ -9,7 +9,7 @@
                     Hình ảnh đại diện <span class="info">(Dưới 1MB)</span>
                 </div>
                 <div class="fieldInput">
-                    <div class="mb-5px">
+                    <div class="mb-5px" v-if="avataBase64 || objInfor.photo">
                         <img class="uploadReview" :src="avataBase64?avataBase64:objInfor.photo" alt=""/>
                     </div>
                     <div>
