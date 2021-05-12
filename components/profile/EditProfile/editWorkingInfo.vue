@@ -127,9 +127,13 @@ export default {
     methods:{
         updateWorking(){
             console.log(this.objWorking)
+            // call api
+
+            // sau khi call
+            this.fetchUser();
         },
         getFile(arrFile){
-            this.arrFile = arrFile
+            this.arrFile = this.arrFile.concat(arrFile)
         },
         clearFile(file){
             this.arrFile = this.arrFile.filter(item => item.name !== file.name)

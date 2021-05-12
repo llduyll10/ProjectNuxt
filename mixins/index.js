@@ -1,14 +1,21 @@
 
 module.exports = {
     methods: {
-      loading(off){
-        if(off===0){
-          this.$nuxt.$loading.finish();
-        }else{
-          this.$nuxt.$loading.start();
-        }
+        loader(off){
+            if(off===0){
+            this.$nuxt.$loading.finish();
+            }else{
+            this.$nuxt.$loading.start();
+            }
       },
       isMobile: function() {
+      },
+      async fetchUser(){
+        let response = await this.$get('/auth/user')
+        var data = response.data;
+        if(data.status){
+          this.$auth.setUser(data.user);
+        }
       },
       getTypeAccount(){
         return[

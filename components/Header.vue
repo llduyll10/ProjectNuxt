@@ -387,7 +387,7 @@ export default {
     },
     async loginPre(){
       this.resetLogin();
-      this.loading()
+      this.loader()
       try {
         let res = await this.$post('/auth/login/pre',this.objLogin);
         if(res.data.status){
@@ -395,10 +395,10 @@ export default {
         }else{
             this.error = res.data.msg;
         }
-        this.loading(0)
+        this.loader(0)
       } catch (err) {
         console.log(err)
-        this.loading(0)
+        this.loader(0)
       }
     },
     getCodeObj(){
@@ -417,7 +417,7 @@ export default {
          username : this.confirmObj.username
       }
 
-      this.loading()
+      this.loader()
       try {
         let response = await this.$auth.loginWith('local', { data: data})
         var data = response.data;
@@ -428,10 +428,10 @@ export default {
         }else{
            
         }
-        this.loading(0)
+        this.loader(0)
       } catch (err) {
         console.log(err)
-         this.loading(0)
+         this.loader(0)
       }
     },
     showMenuMobile(){

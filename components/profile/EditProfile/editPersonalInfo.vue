@@ -153,14 +153,26 @@ export default {
     },
     data(){
         return{
-            objInfor:{},
+            objInfor: {},
             optionsProvince: this.getProvince(),
             accepFile:["png","jpg","tiff","pdf","xls","doc","ppt","zip","rar"],
         }
     },
+    mounted(){
+        this.getUser();
+    },
     methods:{
+        getUser() {
+            var { phone, email, name, photo, address, company, province, website, } = this.$auth.user;
+            this.objInfor = { phone, email, name, photo, address, company, province, website, } ;
+        },
         updateInfor(){
-            console.log(this.objInfor)
+            console.log(this.objInfor);
+            console.log(this.objWorking)
+            // call api
+
+            // sau khi call
+            this.fetchUser();
         },
         getFile(file){
             console.log('arrfile parent',file);

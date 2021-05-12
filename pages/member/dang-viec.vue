@@ -185,7 +185,7 @@ export default {
             }
         },
         async createJob(status){
-            this.loading()
+            this.loader()
             try{
                 console.log(this.objProject)
                 let res = await this.$post('/member/projects', {...this.objProject,status});
@@ -195,10 +195,10 @@ export default {
                 if(status==='DRAFT'){
                     this.objProject._id = res.data.project._id;
                 }
-                this.loading(0)
+                this.loader(0)
             }
             catch(err){
-                this.loading(0)
+                this.loader(0)
             }
         },
         getProjectDraft(){

@@ -3,7 +3,7 @@
         <input type="file" name="file" id="file" ref="file" class="inputfile" @change="onFileChange" :multiple="multiple" />
         <label for="file">
             <img class="mr-4px h-13px mb-2px" src="@/assets/svg/icon-upload.svg" alt=""/>
-            {{label || "Thêm tài liệu"}}
+            {{label}}
         </label>
        <span class="text-main f-11">
            <template v-for="(item,idx) in accept">
@@ -20,12 +20,12 @@ export default {
     mounted() {},
     data() {
         return{
-            arrFile:[],
             showAlert:false
         }
     },
     methods:{
         onFileChange(){
+            var arrFile = [];
             let files = this.$refs.file.files;
             let accept = this.accept
             let typeFile = files[0].name.split('.').pop()
@@ -41,9 +41,10 @@ export default {
                     console.log('okok')
                     this.showAlert = false
                     files.forEach(e => {
-                        this.arrFile.push(e)
+                        arrFile.push(e)
                     });
-                    this.$emit("input",this.multiple?this.arrFile:this.arrFile[0])
+                    this.$emit("input",this.multiple?arrFile:arrFile[0]);
+                    this.$refs.file.value = null;
                 }
             }
 
