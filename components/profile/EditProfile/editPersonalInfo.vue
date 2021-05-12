@@ -10,7 +10,7 @@
                 </div>
                 <div class="fieldInput">
                     <div class="mb-5px">
-                        <img class="uploadReview" src="@/assets/img/longb.png" alt=""/>
+                        <img class="uploadReview" :src="avataBase64?avataBase64:objInfor.photo" alt=""/>
                     </div>
                     <div>
                         <InputFile :accept="accepFile" @input="getFile" :multiple="false" :label="'Chọn hình ảnh'"/>
@@ -156,7 +156,8 @@ export default {
             objInfor: {},
             optionsProvince: this.getProvince(),
             accepFile:["png","jpg",'gif'],
-            tempFile:null
+            tempFile:null,
+            avataBase64:null
         }
     },
     mounted(){
@@ -178,15 +179,17 @@ export default {
                 .then(res=>{
                     console.log('objInfor',res)
                     this.loader(0)
-                    this.fetchUser()
+                    this.fetchUser();
+                    this.avataBase64 = null;
                 })
                 .catch(err =>{
                     console.log('objInfor',err)
                     this.loader(0)
                 })
         },
-        getFile(file){
+        async getFile(file){
             this.tempFile = file;
+            this.avataBase64 = await this._toBase64(file);
             console.log('arrfile parent',file);
         },
     }

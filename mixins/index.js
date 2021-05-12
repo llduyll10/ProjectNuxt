@@ -10,6 +10,14 @@ module.exports = {
         },
         isMobile: function () {
         },
+        _toBase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = (error) => reject(error);
+            });
+        },
         async uploadFile(files) {
             return new Promise((resolve, reject) => {
                 var c = 0;
