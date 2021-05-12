@@ -1,6 +1,6 @@
 <template>
   <div class="editProfileInfoWrap">
-    <div class="mb-24px workedProjectWrap">
+    <div class="mb-24px borderWrap">
         <div class="f-20 f-bold text-main mb-15px">
             Dự án đã thực hiện
         </div>

@@ -8,6 +8,9 @@ module.exports = {
                 this.$nuxt.$loading.start();
             }
         },
+        formatVnd(num) {
+            return new Intl.NumberFormat('vi-VN').format(num || 0);
+        },
         isMobile: function () {
         },
         spliceURLFile(url,symbol){
