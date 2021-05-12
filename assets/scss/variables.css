@@ -1,0 +1,32 @@
+.bg-white {
+  background: #fff !important;
+}
+
+.text-white {
+  color: #F2F2F2 !important;
+}
+
+.text-main {
+  color: #198AC6 !important;
+}
+
+.text-gray {
+  color: #4F4F4F !important;
+}
+
+.text-red {
+  color: red !important;
+}
+
+.bg-main {
+  background: #198AC6 !important;
+}
+
+.bg-red {
+  background: red !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+/*# sourceMappingURL=variables.css.map */

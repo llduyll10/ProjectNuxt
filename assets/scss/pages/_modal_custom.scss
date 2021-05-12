@@ -6,17 +6,17 @@
         border-bottom: 0 !important;
         padding-bottom: 0;
     }
-    .wrapperPhoneOTP{
-        .verifyOTP{
+    .wrapperPhoneOTP {
+        .verifyOTP {
             display: inline;
             width: 20%;
             border-radius: 0 !important;
         }
-        .typeOtp{
+        .typeOtp {
             color: $main-black;
             font-weight: bold;
         }
-        .anotherAccount{
+        .anotherAccount {
             font-size: 13px;
             text-decoration: none;
             color: $main-color;
@@ -129,7 +129,25 @@
     }
 }
 
-#modal-cotact-form-submit {
+#modal-change-phone-form-submit {
+    .modal-header {
+        margin-bottom: 5px !important;
+    }
+    .modal-body {
+        padding-bottom: 50px !important;
+    }
+    .formCore {
+        input {
+            &::placeholder {
+                margin-top: -5px !important;
+                // color: red;
+            }
+        }
+    }
+}
+
+#modal-cotact-form-submit,
+#modal-change-phone-form-submit {
     .modal-body {
         padding-top: 0!important;
         padding: 0 60px;
@@ -181,9 +199,10 @@
         }
     }
 }
-#modal-create-update-project{
-    .modal-body{
-        .item{
+
+#modal-create-update-project {
+    .modal-body {
+        .item {
             width: 100%;
             height: 200px;
             margin-bottom: 15px;
@@ -195,22 +214,25 @@
         max-width: 768px;
     }
 }
+
 @media screen and (max-width:992px) {
     #modal-custom-form-login,
     #modal-custom-form-contact,
-    #modal-cotact-form-submit {
+    #modal-cotact-form-submit,
+    #modal-change-phone-form-submit {
         .modal-md {
             width: auto !important;
         }
     }
     #modal-custom-form-contact,
-    #modal-cotact-form-submit {
+    #modal-cotact-form-submit,
+    #modal-change-phone-form-submit {
         .modal-body {
             padding: 1rem;
         }
     }
-    #modal-create-update-project{
-        .modal-md{
+    #modal-create-update-project {
+        .modal-md {
             width: auto !important;
         }
     }

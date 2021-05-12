@@ -22,7 +22,7 @@
                     </div>
 
                     <div>
-                        <button type="button" class="btn btn-main">
+                        <button type="button" class="btn btn-main" @click="openModalPhone">
                             Xác thực
                         </button>
                     </div>
@@ -44,7 +44,7 @@
                     </div>
 
                     <div>
-                        <button type="button" class="btn btn-main">
+                        <button type="button" class="btn btn-main" @click="openModalTax">
                             Xác thực
                         </button>
                     </div>
@@ -79,16 +79,30 @@
             </div>
 
         </form>
+        <PopupChangePhone  ref="PopupChangePhone" />
+        <PopupChangelTax ref="openModaChangelTax" />
     </div>
 
 </template>
 <script>
+import PopupChangePhone from "@/components/popup/phone-form"
+import PopupChangelTax from "@/components/popup/tax-form"
 export default {
     components: {
+        PopupChangePhone,
+        PopupChangelTax
     },
     data(){
         return{
         }
     },
+    methods:{
+        openModalPhone(){
+            this.$refs.PopupChangePhone.show()
+        },
+        openModalTax(){           
+             this.$refs.openModaChangelTax.show()
+        }
+    }
 }
 </script>
