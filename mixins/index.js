@@ -10,14 +10,6 @@ module.exports = {
         },
         isMobile: function () {
         },
-        _toBase64(file) {
-            return new Promise((resolve, reject) => {
-                const reader = new FileReader();
-                reader.readAsDataURL(file);
-                reader.onload = () => resolve(reader.result);
-                reader.onerror = (error) => reject(error);
-            });
-        },
         async uploadFile(files) {
             return new Promise((resolve, reject) => {
                 var c = 0;
@@ -26,11 +18,12 @@ module.exports = {
                 files = isArray ? files : [files];
                 if (files && files.length) {
                     files.forEach((file) => {
-                        var base64 = this._toBase64(file);
+                        var formData = new FormData();
+                        formData.append("file", file);
                         this.$api
-                            .post("/s3/file/base64", { base64, ...file })
+                            .post("/s3/upload", formData)
                             .then((r) => {
-                                temp.push(r.data.url);
+                                temp.push(r.data.location);
                                 cb();
                             })
                             .catch((err) => {
