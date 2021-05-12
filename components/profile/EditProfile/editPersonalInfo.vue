@@ -19,7 +19,11 @@
                                 <p :key="idx" class="f-11 text-main ">
                                     <img src="@/assets/svg/icon-pdf-border.svg" alt="">
                                     {{item.name}}
+                                    <span class="cursor-pointer" @click="clearFile(item)">
+                                        <i class="fas fa-times text-red"></i>
+                                    </span>
                                 </p>
+
                             </template>
                         </template>
                     </div>
@@ -173,6 +177,9 @@ export default {
         },
         getFile(file){
             this.arrFile.push(file)
+        },
+        clearFile(file){
+            this.arrFile = this.arrFile.filter(item => item.name !== file.name)
         }
     }
 }
