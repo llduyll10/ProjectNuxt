@@ -32,7 +32,7 @@ import ProfileMenu from "@/components/profile/profileMenu";
 import EditProfile from "@/components/profile/EditProfile/editProfile";
 
 export default {
-    // middleware: 'auth',
+    middleware: 'auth',
     components:{
         Header,
         Footer,
