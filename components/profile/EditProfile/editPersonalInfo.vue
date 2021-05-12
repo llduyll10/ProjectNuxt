@@ -171,7 +171,9 @@ export default {
         },
         async updateInfor(){
             this.loader();
+            
             var photo = this.tempFile ? await this.uploadFile(this.tempFile): '';
+
             if(photo){
                 this.objInfor.photo = photo;
             }
@@ -179,7 +181,7 @@ export default {
                 .then(res=>{
                     console.log('objInfor',res)
                     this.loader(0)
-                    this.fetchUser();
+                    this.$auth.fetchUser()
                     this.avataBase64 = null;
                 })
                 .catch(err =>{
@@ -190,7 +192,6 @@ export default {
         async getFile(file){
             this.tempFile = file;
             this.avataBase64 = await this._toBase64(file);
-            console.log('arrfile parent',file);
         },
     }
 }

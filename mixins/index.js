@@ -45,13 +45,6 @@ module.exports = {
                 }
             });
         },
-        async fetchUser() {
-            let response = await this.$get('/auth/user')
-            var data = response.data;
-            if (data.status) {
-                this.$auth.setUser(data.user);
-            }
-        },
         getTypeAccount() {
             return [
                 { label: 'Công Ty Xây Dựng', id: 'Công Ty Xây Dựng' },

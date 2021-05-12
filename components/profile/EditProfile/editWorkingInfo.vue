@@ -85,6 +85,20 @@
                             Thêm tài liệu
                         </button> -->
                         <InputFile :accept="accepFile" @input="getFile" :multiple="true" :label="'Thêm tài liệu'"/>
+
+                        
+                         <template v-if="this.objWorking.filesCert">
+                            <template v-for="(item,idx) in this.objWorking.filesCert">
+                                <p :key="idx" class="f-11 text-main ">
+                                    {{item}}
+                                    <span class="cursor-pointer ml-5px" @click="clearFile(item)">
+                                        <i class="fas fa-times text-red"></i>
+                                    </span>
+                                </p>
+
+                            </template>
+                        </template>
+
                         <template v-if="arrFile.length">
                             <template v-for="(item,idx) in arrFile">
                                 <p :key="idx" class="f-11 text-main ">
@@ -129,11 +143,17 @@ export default {
     },
     methods:{
         getUser(){
-            var {accountType,category,introduce,ability} = this.$auth.user
-            this.objWorking = {accountType,category,introduce,ability}
+            var {accountType,category,introduce,ability, filesCert} = this.$auth.user
+            this.objWorking = {accountType,category,introduce,ability, filesCert}
         },
-        updateWorking(){
+        async updateWorking(){
             this.loader()
+            var filesCertOld = this.objWorking.filesCertOld;
+            var filesCertNew = this.arrFile.length ? await this.uploadFile(this.arrFile) : [];
+
+            if(filesCert.length){
+                this.objWorking.filesCert = filesCert;
+            }
             // call api
             this.$post('/user/working',this.objWorking)
                 .then(res =>{

@@ -2,18 +2,18 @@
     <div>
         <div class="w-100 flex-align-center p-22px">
             <div class="userAvatarMenu mr-13px">
-                <img src="@/assets/img/user-logo.png" />
+                <img width="40px" :src="$auth.user.photo" />
             </div>
 
             <div class="d-flex flex-column f-13 f-bold">
                 <div class="mb-7px">
-                    Long Bui
+                    {{$auth.user.name}}
                 </div>
 
                 <div class="flex-align-center">
-                    <div class="f-bold">ID. <span class="text-red">123456</span></div>
+                    <div class="f-bold">ID. <span class="text-red"> {{$auth.user.number}}</span></div>
                     <div class="split mr-10px ml-10px"></div>
-                    <div class="f-bold"><span class="text-main">100</span> Tokens</div>
+                    <div class="f-bold"><span class="text-main"> {{$auth.user.coin || 0}}</span> Tokens</div>
                 </div>
             </div>
         </div>
