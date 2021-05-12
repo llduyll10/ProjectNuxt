@@ -49,11 +49,11 @@
             <div class="col-12 col-lg-5">
                 <div class="fieldLabel">1. Thông tin khách hàng <span class="dot">*</span></div>
                 <div class="inforBorderWrap">
-                    <div class="d-flex mb-5px">
-                        <div class="mr-20px"><img src="@/assets/svg/icon-user-dark.svg" class="icon mr-3px" alt=""> {{$auth.user.name}}</div>
+                    <div class="flex-align-center mb-5px">
+                        <img src="@/assets/svg/icon-user-dark.svg" class="icon mr-3px" alt=""><div class="mr-20px"> {{$auth.user.name}}</div>
                         <div>ID. <span class="text-red"> {{$auth.user.number}}</span></div>
                     </div>
-                    <div>
+                    <div  class="flex-align-center">
                         <img src="@/assets/svg/icon-email-dark.svg" class="icon mr-3px" alt=""> {{$auth.user.email}}
                     </div>
                 </div>
