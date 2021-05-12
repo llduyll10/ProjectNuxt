@@ -28,7 +28,9 @@ export default {
             var arrFile = [];
             let files = this.$refs.file.files;
             let accept = this.accept
-            let typeFile = files[0].name.split('.').pop()
+            if(files && files.length){
+                var typeFile = files[0].name.split('.').pop()
+            }
             if(accept){
                 console.log('typeFile',typeFile)
                 console.log('accept',accept)
