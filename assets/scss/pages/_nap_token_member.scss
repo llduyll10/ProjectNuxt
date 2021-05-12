@@ -122,7 +122,7 @@
         align-items: center;
         justify-content: space-between;
         flex-direction: column;
-        padding: 5px;
+        padding: 5px 5px 15px;
         width: 100%;
         max-width: 200px;
         height: 166px;
@@ -133,7 +133,7 @@
             font-weight: bold;
             font-size: 13px;
             color: #4F4F4F;
-            padding: 5px;
+            padding: 2px;
             width: 110px;
             text-align: center;
             line-height: 25px;
@@ -145,7 +145,7 @@
             text-align: center;
         }
         .payBtn {
-            padding: 10px;
+            padding: 0px 10px;
             width: 100%;
             button {
                 width: 100%;
