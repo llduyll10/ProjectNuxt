@@ -13,12 +13,8 @@
                         <img class="uploadReview" src="@/assets/img/longb.png" alt=""/>
                     </div>
                     <div>
-                        <button type="button" class="btn btn-main f-11">
-                            <img class="mr-4px h-13px" src="@/assets/svg/icon-upload.svg" alt=""/>
-                            Choose file
-                        </button>
-
-                        <i class="text-main f-11">png, jpg, tiff, pdf, xls, doc, ppt, zip, rar</i>
+                        <InputFile :accept="accepFile" @input="getFile" />
+                        <p>{{urlFile}}</p>
                     </div>
                 </div>
             </div>
@@ -151,18 +147,26 @@
 
 </template>
 <script>
+import InputFile from '@/components/InputFile'
 export default {
     components: {
+        InputFile
     },
     data(){
         return{
             objInfor:{},
             optionsProvince: this.getProvince(),
+            accepFile:'png, jpg, tiff, pdf, xls, doc, ppt, zip, rar',
+            urlFile:''
         }
     },
     methods:{
         updateInfor(){
             console.log(this.objInfor)
+        },
+        getFile(file){
+            console.log('parent',file)
+            this.urlFile = file.name
         }
     }
 }
