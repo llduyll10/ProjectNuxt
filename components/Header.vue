@@ -48,9 +48,9 @@
                           <b-dropdown-text class="title pt-16px">
                              <span class="f-13">Tài khoản</span>
                           </b-dropdown-text>
-                          <b-dropdown-item :to="'/member/chinh-sua-ho-so'" class="f-12">Hồ sơ cá nhân </b-dropdown-item>
-                          <b-dropdown-item class="f-12">Hồ sơ làm việc</b-dropdown-item>
-                          <b-dropdown-item class="f-12">Xác thực thông tin</b-dropdown-item>
+                          <b-dropdown-item :to="'/member/chinh-sua-ho-so?tab=1'" class="f-12">Hồ sơ cá nhân </b-dropdown-item>
+                          <b-dropdown-item :to="'/member/chinh-sua-ho-so?tab=2'" class="f-12">Hồ sơ làm việc</b-dropdown-item>
+                          <b-dropdown-item :to="'/member/chinh-sua-ho-so?tab=4'" class="f-12">Xác thực thông tin</b-dropdown-item>
                           <b-dropdown-divider class="divider"></b-dropdown-divider>
 
                           <b-dropdown-text class="title">
@@ -71,10 +71,10 @@
                       </div>
                     </div>
 
-                    
+
                   </div>
 
-                
+
 
                 </template>
                 <!-- NOT LOGIN -->
@@ -328,7 +328,7 @@ export default {
 
   },
   mounted(){
-    
+
   },
   methods:{
     nextCode(evt){
@@ -426,7 +426,7 @@ export default {
           this.$auth.setUserToken(data.token, data.token);
           this.hideModalLogin()
         }else{
-           
+
         }
         this.loader(0)
       } catch (err) {
