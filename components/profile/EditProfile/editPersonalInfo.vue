@@ -13,7 +13,7 @@
                         <img class="uploadReview" src="@/assets/img/longb.png" alt=""/>
                     </div>
                     <div>
-                        <InputFile :accept="accepFile" @input="getFile" :multiple="true" :label="'Thêm tài liệu 1'"/>
+                        <InputFile :accept="accepFile" @input="getFile" :multiple="false" :label="'Thêm tài liệu 1'"/>
                     </div>
                 </div>
             </div>
@@ -155,7 +155,7 @@ export default {
         return{
             objInfor:{},
             optionsProvince: this.getProvince(),
-            accepFile:'png, jpg, tiff, pdf, xls, doc, ppt, zip, rar',
+            accepFile:["png","jpg","tiff","pdf","xls","doc","ppt","zip","rar"],
         }
     },
     methods:{

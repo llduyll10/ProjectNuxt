@@ -80,12 +80,22 @@
                 </div>
                 <div class="fieldInput">
                     <div>
-                        <button type="button" class="btn btn-main f-11">
+                        <!-- <button type="button" class="btn btn-main f-11">
                             <img class="mr-4px h-13px" src="@/assets/svg/icon-upload.svg" alt=""/>
                             Thêm tài liệu
-                        </button>
+                        </button> -->
+                        <InputFile :accept="accepFile" @input="getFile" :multiple="true" :label="'Thêm tài liệu'"/>
+                        <template v-if="arrFile.length">
+                            <template v-for="(item,idx) in arrFile">
+                                <p :key="idx" class="f-11 text-main ">
+                                    {{item.name}}
+                                    <span class="cursor-pointer ml-5px" @click="clearFile(item)">
+                                        <i class="fas fa-times text-red"></i>
+                                    </span>
+                                </p>
 
-                        <i class="text-main f-11">png, jpg, tiff, pdf, xls, doc, ppt, zip, rar</i>
+                            </template>
+                        </template>
                     </div>
                 </div>
             </div>
@@ -100,19 +110,29 @@
 
 </template>
 <script>
+import InputFile from '@/components/InputFile'
 export default {
     components: {
+        InputFile
     },
     data(){
         return{
             objWorking:{},
             optionsType:this.getTypeAccount(),
-            optionsCategory: this.getCategory()
+            optionsCategory: this.getCategory(),
+            arrFile:[],
+            accepFile:["png","jpg","tiff","pdf","xls","doc","ppt","zip","rar"],
         }
     },
     methods:{
         updateWorking(){
             console.log(this.objWorking)
+        },
+        getFile(arrFile){
+            this.arrFile = arrFile
+        },
+        clearFile(file){
+            this.arrFile = this.arrFile.filter(item => item.name !== file.name)
         }
     }
 }
