@@ -86,11 +86,11 @@
                         </button> -->
                         <InputFile :accept="accepFile" @input="getFile" :multiple="true" :label="'Thêm tài liệu'"/>
 
-                        
+
                          <template v-if="this.objWorking.filesCert">
                             <template v-for="(item,idx) in this.objWorking.filesCert">
-                                <p :key="idx" class="f-11 text-main ">
-                                    {{item}}
+                                <p :key="idx+1" class="f-11 text-main ">
+                                    {{spliceURLFile(item,'--')}}
                                     <span class="cursor-pointer ml-5px" @click="clearFileOld(item)">
                                         <i class="fas fa-times text-red"></i>
                                     </span>
@@ -159,7 +159,7 @@ export default {
             this.$post('/user/working',this.objWorking)
                 .then(res =>{
                     this.loader(0)
-                    this.fetchUser();
+                    this.$auth.fetchUser()
                 })
                 .catch(err=>{
                     this.loader(0)

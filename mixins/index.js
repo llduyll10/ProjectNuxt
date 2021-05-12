@@ -10,6 +10,9 @@ module.exports = {
         },
         isMobile: function () {
         },
+        spliceURLFile(url,symbol){
+            return url.split(symbol).pop()
+        },
         _toBase64(file) {
             return new Promise((resolve, reject) => {
                 const reader = new FileReader();
