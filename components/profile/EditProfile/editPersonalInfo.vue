@@ -164,6 +164,7 @@ export default {
     methods:{
         getUser() {
             var { phone, email, name, photo, address, company, province, website, } = this.$auth.user;
+            province = province || null;
             this.objInfor = { phone, email, name, photo, address, company, province, website, } ;
         },
         updateInfor(){
