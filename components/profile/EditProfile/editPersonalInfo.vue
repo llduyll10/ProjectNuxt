@@ -16,7 +16,10 @@
                         <InputFile :accept="accepFile" @input="getFile" />
                         <template v-if="arrFile.length">
                             <template v-for="(item,idx) in arrFile">
-                                <p :key="idx">{{item.name}}</p>
+                                <p :key="idx" class="f-11 text-main ">
+                                    <img src="@/assets/svg/icon-pdf-border.svg" alt="">
+                                    {{item.name}}
+                                </p>
                             </template>
                         </template>
                     </div>
