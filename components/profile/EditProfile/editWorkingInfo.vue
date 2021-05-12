@@ -13,8 +13,8 @@
                         <treeselect
                             class=""
                             :options="optionsType"
-                            :value="objWorking.address"
-                            v-model="objWorking.address"
+                            :value="objWorking.accountType"
+                            v-model="objWorking.accountType"
                             placeholder="Loại tài khoản"
                         />
                     </div>
