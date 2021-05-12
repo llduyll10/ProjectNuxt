@@ -124,13 +124,25 @@ export default {
             accepFile:["png","jpg","tiff","pdf","xls","doc","ppt","zip","rar"],
         }
     },
+    mounted(){
+        this.getUser()
+    },
     methods:{
+        getUser(){
+            var {accountType,category,introduce,ability} = this.$auth.user
+            this.objWorking = {accountType,category,introduce,ability}
+        },
         updateWorking(){
-            console.log(this.objWorking)
+            this.loader()
             // call api
-
-            // sau khi call
-            this.fetchUser();
+            this.$post('/user/working',this.objWorking)
+                .then(res =>{
+                    this.loader(0)
+                    this.fetchUser();
+                })
+                .catch(err=>{
+                    this.loader(0)
+                })
         },
         getFile(arrFile){
             this.arrFile = this.arrFile.concat(arrFile)
