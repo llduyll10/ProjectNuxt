@@ -14,7 +14,11 @@
                     </div>
                     <div>
                         <InputFile :accept="accepFile" @input="getFile" />
-                        <p>{{urlFile}}</p>
+                        <template v-if="arrFile.length">
+                            <template v-for="(item,idx) in arrFile">
+                                <p :key="idx">{{item.name}}</p>
+                            </template>
+                        </template>
                     </div>
                 </div>
             </div>
@@ -154,10 +158,10 @@ export default {
     },
     data(){
         return{
+            arrFile: [],
             objInfor:{},
             optionsProvince: this.getProvince(),
             accepFile:'png, jpg, tiff, pdf, xls, doc, ppt, zip, rar',
-            urlFile:''
         }
     },
     methods:{
@@ -165,8 +169,7 @@ export default {
             console.log(this.objInfor)
         },
         getFile(file){
-            console.log('parent',file)
-            this.urlFile = file.name
+            this.arrFile.push(file)
         }
     }
 }
