@@ -232,12 +232,15 @@
     #modal-change-phone-form-submit,
     #modal-change-tax-form-submit {
         .modal-body {
-            padding: 1rem;
+            padding: 1rem !important;
         }
     }
     #modal-create-update-project {
         .modal-md {
             width: auto !important;
         }
+    }
+    .btn-now {
+        margin-bottom: 0 !important;
     }
 }

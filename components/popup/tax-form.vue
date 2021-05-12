@@ -3,8 +3,8 @@
       <template v-slot:content>
         <div class="modal-contact formCore">
           <div class="content">
-            <p class="title f-20 mb-10px">Vui lòng nhập mã số thuế công ty của bạn</p>
-            <form @submit.prevent="getForm()" class="group-content mt-36px">
+            <p class="title f-20">Vui lòng nhập mã số thuế công ty của bạn</p>
+            <form @submit.prevent="getForm()" class="group-content mt-28px">
               <div class="form-group row">
                     <label class="f-13 col-md-3 col-sm-12 mt-8px">
                       Mã số thuế
@@ -13,12 +13,11 @@
                   <input class="form-control col-md-9 col-sm-12" placeholder="Nhập mã số thuế cần xác thực">
 
               </div>
-                <div class="åçform-group mb-40px group-checkbox">
+                <div class="form-group mb-40px group-checkbox">
                     <b-form-checkbox
                         v-model="objResearch.status"
                         name="checkbox-agree"
                         required
-                        
                         >
                         Tôi đồng ý với <span>điều khoản</span> của Econs <span style="color:red">*</span>
                     </b-form-checkbox>
