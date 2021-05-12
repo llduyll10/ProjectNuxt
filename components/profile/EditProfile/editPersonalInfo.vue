@@ -14,18 +14,6 @@
                     </div>
                     <div>
                         <InputFile :accept="accepFile" @input="getFile" />
-                        <template v-if="arrFile.length">
-                            <template v-for="(item,idx) in arrFile">
-                                <p :key="idx" class="f-11 text-main ">
-                                    <img src="@/assets/svg/icon-pdf-border.svg" alt="">
-                                    {{item.name}}
-                                    <span class="cursor-pointer" @click="clearFile(item)">
-                                        <i class="fas fa-times text-red"></i>
-                                    </span>
-                                </p>
-
-                            </template>
-                        </template>
                     </div>
                 </div>
             </div>
@@ -165,7 +153,6 @@ export default {
     },
     data(){
         return{
-            arrFile: [],
             objInfor:{},
             optionsProvince: this.getProvince(),
             accepFile:'png, jpg, tiff, pdf, xls, doc, ppt, zip, rar',
@@ -176,11 +163,8 @@ export default {
             console.log(this.objInfor)
         },
         getFile(file){
-            this.arrFile.push(file)
+            console.log('arrfile parent',file);
         },
-        clearFile(file){
-            this.arrFile = this.arrFile.filter(item => item.name !== file.name)
-        }
     }
 }
 </script>
