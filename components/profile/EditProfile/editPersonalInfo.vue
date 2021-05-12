@@ -168,12 +168,18 @@ export default {
             this.objInfor = { phone, email, name, photo, address, company, province, website, } ;
         },
         updateInfor(){
-            console.log(this.objInfor);
-            console.log(this.objWorking)
+            this.loader()
             // call api
-
-            // sau khi call
-            this.fetchUser();
+            this.$post('/user/information',this.objInfor)
+                .then(res=>{
+                    console.log('objInfor',res)
+                    this.loader(0)
+                    this.fetchUser()
+                })
+                .catch(err =>{
+                    console.log('objInfor',err)
+                    this.loader(0)
+                })
         },
         getFile(file){
             console.log('arrfile parent',file);
