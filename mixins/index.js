@@ -20,8 +20,7 @@ module.exports = {
                     files.forEach((file) => {
                         var formData = new FormData();
                         formData.append("file", file);
-                        this.$api
-                            .post("/s3/upload", formData)
+                        this.$post("/s3/upload", formData)
                             .then((r) => {
                                 temp.push(r.data.location);
                                 cb();

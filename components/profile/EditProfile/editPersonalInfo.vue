@@ -13,7 +13,7 @@
                         <img class="uploadReview" src="@/assets/img/longb.png" alt=""/>
                     </div>
                     <div>
-                        <InputFile :accept="accepFile" @input="getFile" :multiple="false" :label="'Thêm tài liệu 1'"/>
+                        <InputFile :accept="accepFile" @input="getFile" :multiple="false" :label="'Chọn hình ảnh'"/>
                     </div>
                 </div>
             </div>
@@ -155,7 +155,8 @@ export default {
         return{
             objInfor: {},
             optionsProvince: this.getProvince(),
-            accepFile:["png","jpg","tiff","pdf","xls","doc","ppt","zip","rar"],
+            accepFile:["png","jpg",'gif'],
+            tempFile:null
         }
     },
     mounted(){
@@ -167,9 +168,12 @@ export default {
             province = province || null;
             this.objInfor = { phone, email, name, photo, address, company, province, website, } ;
         },
-        updateInfor(){
-            this.loader()
-            // call api
+        async updateInfor(){
+            this.loader();
+            var photo = this.tempFile ? await this.uploadFile(this.tempFile): '';
+            if(photo){
+                this.objInfor.photo = photo;
+            }
             this.$post('/user/information',this.objInfor)
                 .then(res=>{
                     console.log('objInfor',res)
@@ -182,6 +186,7 @@ export default {
                 })
         },
         getFile(file){
+            this.tempFile = file;
             console.log('arrfile parent',file);
         },
     }
