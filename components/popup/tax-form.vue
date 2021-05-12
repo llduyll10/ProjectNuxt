@@ -1,5 +1,5 @@
 <template>
-    <Modal ref="modalPhoneForm" id="modal-change-phone-form-submit">
+    <Modal ref="modalPhoneForm" id="modal-change-tax-form-submit">
       <template v-slot:content>
         <div class="modal-contact formCore">
           <div class="content">

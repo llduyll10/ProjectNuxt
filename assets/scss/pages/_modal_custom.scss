@@ -129,7 +129,8 @@
     }
 }
 
-#modal-change-phone-form-submit {
+#modal-change-phone-form-submit,
+#modal-change-tax-form-submit {
     .modal-header {
         margin-bottom: 5px !important;
     }
@@ -147,7 +148,8 @@
 }
 
 #modal-cotact-form-submit,
-#modal-change-phone-form-submit {
+#modal-change-phone-form-submit,
+#modal-change-tax-form-submit {
     .modal-body {
         padding-top: 0!important;
         padding: 0 60px;
@@ -219,14 +221,16 @@
     #modal-custom-form-login,
     #modal-custom-form-contact,
     #modal-cotact-form-submit,
-    #modal-change-phone-form-submit {
+    #modal-change-phone-form-submit,
+    #modal-change-tax-form-submit {
         .modal-md {
             width: auto !important;
         }
     }
     #modal-custom-form-contact,
     #modal-cotact-form-submit,
-    #modal-change-phone-form-submit {
+    #modal-change-phone-form-submit,
+    #modal-change-tax-form-submit {
         .modal-body {
             padding: 1rem;
         }
