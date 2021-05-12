@@ -91,7 +91,7 @@
                             <template v-for="(item,idx) in this.objWorking.filesCert">
                                 <p :key="idx" class="f-11 text-main ">
                                     {{item}}
-                                    <span class="cursor-pointer ml-5px" @click="clearFile(item)">
+                                    <span class="cursor-pointer ml-5px" @click="clearFileOld(item)">
                                         <i class="fas fa-times text-red"></i>
                                     </span>
                                 </p>
@@ -148,9 +148,10 @@ export default {
         },
         async updateWorking(){
             this.loader()
-            var filesCertOld = this.objWorking.filesCertOld;
+            var filesCertOld = this.objWorking.filesCert;
             var filesCertNew = this.arrFile.length ? await this.uploadFile(this.arrFile) : [];
 
+            var filesCert = filesCertOld.concat(filesCertNew);
             if(filesCert.length){
                 this.objWorking.filesCert = filesCert;
             }
@@ -169,6 +170,9 @@ export default {
         },
         clearFile(file){
             this.arrFile = this.arrFile.filter(item => item.name !== file.name)
+        },
+        clearFileOld(file){
+            this.objWorking.filesCert = this.objWorking.filesCert.filter(item => item !== file)
         }
     }
 }
