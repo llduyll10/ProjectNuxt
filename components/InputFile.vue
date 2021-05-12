@@ -36,7 +36,7 @@ export default {
             files.forEach(e => {
                  this.arrFile.push(e)
             });
-            this.$emit("input",this.arrFile)
+            this.$emit("input",this.multiple?this.arrFile:this.arrFile[0])
         },
         clearFile(file){
             this.arrFile = this.arrFile.filter(item => item.name !== file.name)
