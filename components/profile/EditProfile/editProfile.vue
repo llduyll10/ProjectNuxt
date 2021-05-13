@@ -45,11 +45,10 @@ export default {
                 id: '4',
                 text: 'Xác thực tài khoản'
             }],
-            activeTab: '1',
+            activeTab: this.$nuxt.$route.query.tab,
         }
     },
     mounted(){
-        this.activeTab = this.$nuxt.$route.query.tab
     },
     watch:{
         tabUrl(){
