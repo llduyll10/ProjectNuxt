@@ -113,6 +113,7 @@
 @media screen and (max-width: 992px) {
     #bannerInfo {
         .contactLine {
+            padding-bottom: 30px !important;
             .wrapAll {
                 flex-direction: column;
                 align-items: flex-start !important;
@@ -172,6 +173,7 @@
                 .searchWrap {
                     height: 40px !important;
                     width: 290px !important;
+                    overflow: hidden;
                     input {
                         &::placeholder {}
                     }
