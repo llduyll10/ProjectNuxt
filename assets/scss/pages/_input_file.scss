@@ -13,8 +13,12 @@
     background-color: $main-color;
     display: inline-block;
     cursor: pointer;
-    padding: 5px 16px;
+    padding: 5px 10px;
     border-radius: 5px;
+    height: 27px;
+    img {
+        margin-top: -2px;
+    }
 }
 
 .inputfile:focus + label,

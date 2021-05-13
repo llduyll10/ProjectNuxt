@@ -19,9 +19,9 @@
         </div>
 
         <div class="w-100 d-flex flex-column profileMenuList">
-            <div class="profileMenuItem" :class="{'activeMenu': item.id === activeMenu}" v-for="(item) in menus" :key="item.id">
+            <b-link :to="item.url" class="profileMenuItem " :class="item.id === activeMenu ? 'activeMenu' : 'text-gray'" v-for="(item) in menus" :key="item.id">
                 <span class="f-12">{{item.text}}</span>
-            </div>
+            </b-link>
         </div>
 
         <div class="w-100 d-flex flex-column profileActions mt-15px">
@@ -48,13 +48,16 @@ export default {
         return{
             menus: [{
                 id: '1',
-                text: 'Tài khoản của tôi'
+                text: 'Tài khoản của tôi',
+                url: '/member/chinh-sua-ho-so?tab=1'
             }, {
                 id: '2',
-                text: 'Quản lý dự án'
+                text: 'Quản lý dự án',
+                url: '/member/chinh-sua-ho-so?tab=1'
             }, {
                 id: '3',
-                text: 'Quản lý tài chính'
+                text: 'Quản lý tài chính',
+                url: '/member/quan-ly-tai-chinh'
             }],
         }
     },

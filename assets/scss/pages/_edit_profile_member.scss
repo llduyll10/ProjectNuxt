@@ -105,7 +105,7 @@
         }
     }
 
-    .workedProjectWrap {
+    .borderWrap {
         border-bottom: 1px solid $text-white;
     }
 
@@ -201,13 +201,16 @@
 }
 
 button.btn-main {
-    height: 25px;
+    height: 26px;
     background: $main-color;
     border-radius: 5px;
     font-size: 12px;
     font-weight: bold;
     padding: 0 8px;
     color: $text-white;
+    img {
+        margin-top: -3px;
+    }
     &:hover {
         color: $text-white;
         opacity: 0.7;
