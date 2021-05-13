@@ -30,7 +30,7 @@
             </template>
         </div>
 
-        <div class="w-100 text-center">
+        <div v-if="showSeemore" class="w-100 text-center">
             <p class="f-12 text-main cursor-pointer" @click="seemore()">Xem thêm dự án <i class="fas fa-caret-down ml-5px"></i></p>
         </div>
     </div>
@@ -58,6 +58,7 @@ export default {
             listShow:[],
             listTemp:[],
             detailProject:null,
+            showSeemore:false
         }
     },
     mounted(){
@@ -70,9 +71,16 @@ export default {
         this.listProject = res.data
         this.listTemp = JSON.parse(JSON.stringify(this.listProject))
         this.listShow = this.listTemp.splice(0,6)
+        if(this.listProject < 6){
+          this.showSeemore = false
+        }
+        else{
+          this.showSeemore = true
+        }
       },
       seemore(){
         this.listShow = JSON.parse(JSON.stringify(this.listProject))
+        this.showSeemore =false
       },
       async deleteProject(item){
         let confirm = window.confirm('Bạn có muốn xoá dự án?')
