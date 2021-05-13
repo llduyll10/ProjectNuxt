@@ -8,12 +8,12 @@
             Vui lòng cung cấp thêm thông tin các dự án cũ bạn đã từng làm trước đây. Khách hàng thường xem qua hồ sơ năng lực rồi mới quyết định thuê.
         </div>
         <div class="group-project-items">
-            <template v-for="(item,idx) in 6">
+            <template v-for="(item,idx) in listProject">
                 <div :key="idx" class="col-md-3 col-md-4 col-sm-6 cover-item">
                     <div class="d-flex justify-content-end mb-5px">
                         <div class="group-function">
                             <img src="@/assets/svg/icon-edit-file.svg" />
-                            <span @click="openModal">Chỉnh sửa</span>
+                            <span @click="openModal(item)">Chỉnh sửa</span>
                             <div class="height"></div>
                             <span>Xoá bỏ</span>
                         </div>
@@ -21,10 +21,10 @@
                     <div
                         class="item"
                         :style="{
-                            'background-image': 'url(' + `${demoHouse}` + ')',
+                            'background-image': 'url(' + `${item.photos[0]}` + ')',
                         }"
                     >
-                        <p class="location f-11">Biệt thự cổ điển Quận 9</p>
+                        <p class="location f-11">{{item.name}}</p>
                     </div>
                 </div>
             </template>
@@ -34,10 +34,10 @@
             <p class="f-12 text-main">Xem thêm dự án <i class="fas fa-caret-down ml-5px"></i></p>
         </div>
     </div>
-    <CreateEditProject :project=demoProject />
+    <CreateEditProject />
     <Modal ref="modalEditProject" id="modal-create-update-project">
       <template v-slot:content>
-        <CreateEditProject :project=demoProject />
+        <CreateEditProject :project=detailProject />
       </template>
     </Modal>
   </div>
@@ -54,14 +54,22 @@ export default {
     data(){
         return{
             demoHouse:DemoHouse,
-            demoProject:{
-              name:'abc',
-            }
+            listProject:null,
+            detailProject:null
         }
     },
+    mounted(){
+      this.getListProject()
+    },
     methods:{
-      openModal(){
+      async getListProject(){
+        let res = await this.$get('/member/portfolio')
+        this.listProject = res.data
+        console.log('getProject',this.listProject)
+      },
+      openModal(item){
         this.$refs.modalEditProject.showModal()
+        this.detailProject = item
       },
       hideModal(){
         this.$refs.modalEditProject.hideModal()

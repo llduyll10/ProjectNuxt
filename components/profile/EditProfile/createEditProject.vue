@@ -53,20 +53,21 @@
           </div>
         </div>
         <!-- Old file -->
-        <div v-if="objProject.photo || arrFile.length" class="editRow mb-15px form-group row">
+        <div v-if="objProject.photos || arrFile.length" class="editRow mb-15px form-group row">
           <div class="fieldLabel font-weight-bold f-13 col-md-3 col-sm-12">Hình ảnh dự án<span style="color:red">*</span></div>
           <div class="fieldInput col-md-9 col-sm-12">
               <div class="row pl-15px">
                   <!-- OLD FILE -->
-                  <template v-if="objProject.photo">
-                    <template v-for="(item,idx) in objProject.photo">
+                  <template v-if="objProject.photos">
+                    <template v-for="(item,idx) in objProject.photos">
                         <div class="col-sm-6 pl-0" :key="idx">
                             <div
-                                  class="item"
+                                  class="itemComponent"
                                   :style="{
-                                      'background-image': 'url(' + `${demoHouse}` + ')',
+                                      'background-image': 'url(' + `${item}` + ')',
                                   }"
                               >
+                              <i @click="clearOldFile(item)" class="fas fa-times text-red"></i>
                               </div>
                         </div>
                     </template>
@@ -81,7 +82,9 @@
                                       'background-image': 'url(' + `${item}` + ')',
                                   }"
                               >
-                              </div>
+                              <i @click="clearFile(item)" class="fas fa-times text-red"></i>
+                            </div>
+
                         </div>
                     </template>
                   </template>
@@ -136,20 +139,43 @@ export default {
     },
     mounted(){
         this.objProject = {...this.project,...this.objProject}
-        console.log(this.objProject)
+        console.log('this.objProject mounted',this.objProject)
     },
     methods:{
-        createProject(){
-            console.log(this.objProject)
+        async createProject(){
+            this.loader()
+            var fileOld = this.objProject.photo || []
+            var fileNew = this.arrFile.length ? await this.uploadFile(this.arrFile) : []
+            var fileAll = fileOld.concat(fileNew)
+            if(fileAll.length){
+              this.objProject.photos = fileAll
+            }
+            console.log("this.objProject",this.objProject)
+            try{
+              let res = await this.$post('/member/portfolio',this.objProject)
+              console.log('ressss',res);
+              this.loader(0)
+            }
+            catch(err){
+              console.log(err);
+              this.loader(0)
+            }
         },
         async getFile(arrFile){
-           this.arrFile = this.arrFile.concat(arrFile)
-           console.log('arrFile', this.arrFile)
-           this.arrFile.forEach( async item => {
-             var item = await this._toBase64(item);
-             this.arrBase64.push(item)
-             console.log('arrBase64',this.arrBase64)
-           })
+          this.arrFile = this.arrFile.concat(arrFile)
+          var arrBase64 = []
+          this.arrFile.forEach( async item => {
+            var item = await this._toBase64(item);
+            arrBase64.push(item)
+          })
+          this.arrBase64 = arrBase64
+          console.log('arrBase64',this.arrBase64)
+        },
+        clearFile(file){
+          this.arrBase64 = this.arrBase64.filter(item => item !== file)
+        },
+        clearOldFile(file){
+          this.objProject.photo = this.objProject.photo.filter(item => item !== file)
         }
     }
 }

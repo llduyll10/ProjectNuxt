@@ -3,6 +3,13 @@
         height: 150px;
         border-radius: 5px;
         margin-bottom: 15px;
-        @extend .background__img
+        @extend .background__img;
+        position: relative;
+        i{
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            cursor: pointer;
+        }
     }
 }
