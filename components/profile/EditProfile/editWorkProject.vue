@@ -37,7 +37,7 @@
     <CreateEditProject ref="addProject" v-if="!detailProject" />
     <Modal ref="modalEditProject" id="modal-create-update-project">
       <template v-slot:content>
-        <CreateEditProject ref="editProject" :project="detailProject" v-if="detailProject"/>
+        <CreateEditProject ref="editProject" :project="detailProject" v-if="detailProject"  @parentEvent="hideModal" />
       </template>
     </Modal>
   </div>
@@ -67,6 +67,7 @@ export default {
         this.listProject = res.data
         console.log('getProject',this.listProject)
       },
+
       openModal(item){
         this.$refs.modalEditProject.showModal()
         this.detailProject = item
