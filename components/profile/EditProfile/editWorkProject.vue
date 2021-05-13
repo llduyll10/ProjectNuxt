@@ -34,10 +34,10 @@
             <p class="f-12 text-main">Xem thêm dự án <i class="fas fa-caret-down ml-5px"></i></p>
         </div>
     </div>
-    <CreateEditProject ref="addProject" />
+    <CreateEditProject ref="addProject" v-if="!detailProject" />
     <Modal ref="modalEditProject" id="modal-create-update-project">
       <template v-slot:content>
-        <CreateEditProject ref="editProject" :project="detailProject" />
+        <CreateEditProject ref="editProject" :project="detailProject" v-if="detailProject"/>
       </template>
     </Modal>
   </div>
@@ -72,6 +72,7 @@ export default {
         this.detailProject = item
       },
       hideModal(){
+        this.detailProject = null;
         this.$refs.modalEditProject.hideModal()
       }
     }

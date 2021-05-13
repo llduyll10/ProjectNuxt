@@ -72,7 +72,7 @@
                     </template>
                   </template>
                   <!-- NEW FILE -->
-                  <template v-else>
+                  <template>
                     <template v-for="(item,idx) in arrBase64">
                         <div class="col-sm-6 pl-0" :key="idx">
                             <div
@@ -147,9 +147,7 @@ export default {
             var fileOld = this.objProject.photo || []
             var fileNew = this.arrFile.length ? await this.uploadFile(this.arrFile) : []
             var fileAll = fileOld.concat(fileNew)
-            if(fileAll.length){
-              this.objProject.photos = fileAll
-            }
+            this.objProject.photos = fileAll
             console.log("this.objProject",this.objProject)
             try{
               let res = await this.$post('/member/portfolio',this.objProject)
