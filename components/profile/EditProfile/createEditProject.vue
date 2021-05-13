@@ -72,7 +72,7 @@
                     </template>
                   </template>
                   <!-- NEW FILE -->
-                  <template v-else>
+                  <template v-if="arrBase64.length">
                     <template v-for="(item,idx) in arrBase64">
                         <div class="col-sm-6 pl-0" :key="idx">
                             <div
@@ -109,7 +109,7 @@
               </button>
             </div>
             <div class="col-6">
-              <button type="button" class="btn btn-main w-100 btn-lg bg-red">
+              <button @click="cancelPopup()" type="button" class="btn btn-main w-100 btn-lg bg-red">
                 HUỶ BỎ
               </button>
             </div>
@@ -143,6 +143,7 @@ export default {
     },
     methods:{
         async createProject(){
+            console.log('arrFile in createProject',this.arrFile)
             this.loader()
             var fileOld = this.objProject.photo || []
             var fileNew = this.arrFile.length ? await this.uploadFile(this.arrFile) : []
@@ -170,6 +171,10 @@ export default {
           })
           this.arrBase64 = arrBase64
           console.log('arrBase64',this.arrBase64)
+          console.log('arrFile in getFile',this.arrFile)
+        },
+        cancelPopup(){
+          this.$emit('parentEvent')
         },
         clearFile(file){
           this.arrBase64 = this.arrBase64.filter(item => item !== file)
