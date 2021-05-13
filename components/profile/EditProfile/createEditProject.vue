@@ -78,7 +78,7 @@
                             <div
                                   class="itemComponent"
                                   :style="{
-                                      'background-image': 'url(' + `${item}` + ')',
+                                      'background-image': 'url(' + `${item.base64}` + ')',
                                   }"
                               >
                               <i @click="clearFile(item)" class="fas fa-times text-red"></i>
@@ -145,14 +145,14 @@ export default {
         async createProject(){
             console.log('arrFile in createProject',this.arrFile)
             this.loader()
-            var fileOld = this.objProject.photo || []
+            var fileOld = this.objProject.photos || []
             var fileNew = this.arrFile.length ? await this.uploadFile(this.arrFile) : []
             var fileAll = fileOld.concat(fileNew)
             this.objProject.photos = fileAll
-            console.log("this.objProject",this.objProject)
             try{
               let res = await this.$post('/member/portfolio',this.objProject)
-              console.log('ressss',res);
+              this.arrFile = [];
+              this.arrBase64 = [];
               this.loader(0)
             }
             catch(err){
@@ -164,18 +164,17 @@ export default {
           this.arrFile = this.arrFile.concat(arrFile)
           var arrBase64 = []
           this.arrFile.forEach( async item => {
-            var item = await this._toBase64(item);
-            arrBase64.push(item)
+            var base64 = await this._toBase64(item);
+            arrBase64.push({base64,name:item.name})
           })
           this.arrBase64 = arrBase64
-          console.log('arrBase64',this.arrBase64)
-          console.log('arrFile in getFile',this.arrFile)
         },
         cancelPopup(){
           this.$emit('parentEvent')
         },
         clearFile(file){
-          this.arrBase64 = this.arrBase64.filter(item => item !== file)
+          this.arrBase64 = this.arrBase64.filter(item => item.base64 !== file.base64)
+          this.arrFile = this.arrFile.filter(item => item.name !== file.name)
         },
         clearOldFile(file){
           this.objProject.photos = this.objProject.photos.filter(item => item !== file)
