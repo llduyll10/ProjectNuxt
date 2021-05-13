@@ -154,6 +154,9 @@
 
 @media screen and (max-width: 556px) {
     #bannerInfo {
+        .big-title {
+            margin-bottom: 16px !important;
+        }
         .contactLine {
             .wrapAll {
                 .wrapContact {
