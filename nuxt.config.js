@@ -44,6 +44,7 @@ module.exports = {
             local: {
                 token: {
                     property: 'token',
+                    maxAge: 60 * 60 * 24,
                     type: 'Token'
                 },
                 user: {
