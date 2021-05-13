@@ -1,12 +1,12 @@
 <template>
-     <div >
+     <div class="createEditComponent">
       <div v-if="objProject._id" class="f-20 f-bold text-main mb-24px">
         Chỉnh sửa dự án
       </div>
       <div v-else class="f-20 f-bold text-main mb-24px">
         Thêm dự án
       </div>
-      <form @click.prevent="createProject">
+      <form @submit.prevent="createProject">
         <div class="editRow mb-15px form-group row">
           <div class="fieldLabel font-weight-bold f-13 col-md-3 col-sm-12">Tên dự án<span style="color:red">*</span></div>
           <div class="fieldInput col-md-9 col-sm-12">
@@ -16,7 +16,7 @@
                 class="form-control"
                 required
                 placeholder="Tên dự án bạn đã thực hiện"
-                v-model="objProject.nameProject"
+                v-model="objProject.name"
               />
             </div>
           </div>
@@ -32,7 +32,7 @@
                 :value="objProject.category"
                 v-model="objProject.category"
                 :multiple="true"
-                placeholder="Select"
+                placeholder="Chọn dịch vụ"
             />
             </div>
           </div>
@@ -47,27 +47,47 @@
                 required
                 placeholder="Mô tả chi tiết dự án bạn đã thực hiện"
                 rows="8"
-                v-model="objProject.detailProject"
+                v-model="objProject.description"
               />
             </div>
           </div>
         </div>
-
-        <div class="editRow mb-15px form-group row">
+        <div v-if="objProject.photos || arrBase64.length" class="editRow mb-15px form-group row">
           <div class="fieldLabel font-weight-bold f-13 col-md-3 col-sm-12">Hình ảnh dự án<span style="color:red">*</span></div>
           <div class="fieldInput col-md-9 col-sm-12">
               <div class="row pl-15px">
-                  <template v-for="(item,idx) in 4">
-                      <div class="col-sm-6 pl-0" :key="idx">
-                          <div
-                                class="item"
-                                :style="{
-                                    'background-image': 'url(' + `${demoHouse}` + ')',
-                                }"
-                            >
-                            </div>
-                      </div>
+                  <!-- OLD FILE -->
+                  <template v-if="objProject.photos">
+                    <template v-for="(item,idx) in objProject.photos">
+                        <div class="col-sm-6 pl-0" :key="idx">
+                            <div
+                                  class="itemComponent"
+                                  :style="{
+                                      'background-image': 'url(' + `${item}` + ')',
+                                  }"
+                              >
+                              <i @click="clearOldFile(item)" class="fas fa-times text-red"></i>
+                              </div>
+                        </div>
+                    </template>
                   </template>
+                  <!-- NEW FILE -->
+                  <template v-else>
+                    <template v-for="(item,idx) in arrBase64">
+                        <div class="col-sm-6 pl-0" :key="idx">
+                            <div
+                                  class="itemComponent"
+                                  :style="{
+                                      'background-image': 'url(' + `${item}` + ')',
+                                  }"
+                              >
+                              <i @click="clearFile(item)" class="fas fa-times text-red"></i>
+                            </div>
+
+                        </div>
+                    </template>
+                  </template>
+
               </div>
           </div>
         </div>
@@ -76,18 +96,7 @@
             Hình ảnh đính kèm
           </div>
           <div class="fieldInput col-md-9 col-sm-12">
-            <div>
-              <button type="button" class="btn btn-main f-11">
-                <img
-                  class="mr-4px h-13px"
-                  src="@/assets/svg/icon-upload.svg"
-                  alt=""
-                />
-                Thêm hình ảnh
-              </button>
-
-              <i class="text-main f-11">png, jpg, tiff</i>
-            </div>
+              <InputFile :accept="accepFile" @input="getFile" :multiple="true" :label="'Chọn hình ảnh'"/>
           </div>
         </div>
 
@@ -95,7 +104,8 @@
           <div class="row">
             <div class="col-6">
               <button type="submit" class="btn btn-main w-100 btn-lg">
-                THÊM DỰ ÁN
+                <span v-if="objProject._id">CẬP NHẬT DỰ ÁN</span>
+                <span v-else>THÊM DỰ ÁN</span>
               </button>
             </div>
             <div class="col-6">
@@ -110,22 +120,62 @@
 </template>
 <script>
 import DemoHouse from '@/assets/img/demo-house.png'
+import InputFile from '@/components/InputFile'
 export default {
     props:['project'],
+    components:{
+      InputFile
+    },
     data(){
         return{
             demoHouse:DemoHouse,
             objProject:{},
-            optionsCategory: this.getCategory()
+            optionsCategory: this.getCategory(),
+            accepFile:["png", "jpg", "tiff"],
+            tempFile:null,
+            arrFile:[],
+            arrBase64:[]
         }
     },
     mounted(){
-        this.objProject = {...this.project,...this.objProject}
-        console.log(this.objProject)
+        this.objProject = {...this.project}
+        console.log('this.objProject mounted',this.objProject)
     },
     methods:{
-        createProject(){
-            console.log(this.objProject)
+        async createProject(){
+            this.loader()
+            var fileOld = this.objProject.photo || []
+            var fileNew = this.arrFile.length ? await this.uploadFile(this.arrFile) : []
+            var fileAll = fileOld.concat(fileNew)
+            if(fileAll.length){
+              this.objProject.photos = fileAll
+            }
+            console.log("this.objProject",this.objProject)
+            try{
+              let res = await this.$post('/member/portfolio',this.objProject)
+              console.log('ressss',res);
+              this.loader(0)
+            }
+            catch(err){
+              console.log(err);
+              this.loader(0)
+            }
+        },
+        async getFile(arrFile){
+          this.arrFile = this.arrFile.concat(arrFile)
+          var arrBase64 = []
+          this.arrFile.forEach( async item => {
+            var item = await this._toBase64(item);
+            arrBase64.push(item)
+          })
+          this.arrBase64 = arrBase64
+          console.log('arrBase64',this.arrBase64)
+        },
+        clearFile(file){
+          this.arrBase64 = this.arrBase64.filter(item => item !== file)
+        },
+        clearOldFile(file){
+          this.objProject.photos = this.objProject.photos.filter(item => item !== file)
         }
     }
 }
