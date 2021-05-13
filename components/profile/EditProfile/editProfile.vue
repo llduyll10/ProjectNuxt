@@ -49,6 +49,7 @@ export default {
         }
     },
     mounted(){
+        this.activeTab = this.$nuxt.$route.query.tab
     },
     watch:{
         tabUrl(){
