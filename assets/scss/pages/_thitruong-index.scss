@@ -131,12 +131,14 @@
                         .letter-search {
                             width: 100%;
                             height: 30px;
+                            font-weight: bold;
                             border-radius: 4px;
                             background-color: $main-color;
                             color: #fff;
                             align-items: center;
                             justify-content: center;
                         }
+                          
                     }
                 }
                 .sub-title {

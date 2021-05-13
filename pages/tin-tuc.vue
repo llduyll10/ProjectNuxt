@@ -68,7 +68,7 @@
                                                                 </div>
                                                                 <div class="check mt-14px">
                                                                     <input type="text" placeholder="Đăng kí Email">
-                                                                    <div class="letter-search f-12 mt-14px d-flex">TÌM NGAY</div>
+                                                                    <div class="letter-search f-12 mt-14px d-flex">ĐĂNG KÝ</div>
                                                                 </div>
                                                             </div>
                                                             <!-- end letter -->
@@ -119,7 +119,7 @@
                             <div class="title f-20">ĐĂNG KÍ NHẬN THÔNG TIN</div>
                             <div class="sub f-13 mt-2">Đăng ký nhận thông tin mới nhất về thị trường xây dựng và những mẫu thiết kế đẹp và chất qua email của bạn hàng tuần</div>
                             <div class="search">
-                                <input type="text" placeholder="Longb@econs.vn">
+                                <input type="text" placeholder="Đăng kí Email">
                                 <div class="button f-13">Đăng ký</div>
                             </div>
                         </div>
