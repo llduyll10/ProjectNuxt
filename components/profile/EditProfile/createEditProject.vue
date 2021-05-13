@@ -52,8 +52,7 @@
             </div>
           </div>
         </div>
-        <!-- Old file -->
-        <div v-if="objProject.photos || arrFile.length" class="editRow mb-15px form-group row">
+        <div v-if="objProject.photos || arrBase64.length" class="editRow mb-15px form-group row">
           <div class="fieldLabel font-weight-bold f-13 col-md-3 col-sm-12">Hình ảnh dự án<span style="color:red">*</span></div>
           <div class="fieldInput col-md-9 col-sm-12">
               <div class="row pl-15px">
@@ -138,7 +137,7 @@ export default {
         }
     },
     mounted(){
-        this.objProject = {...this.project,...this.objProject}
+        this.objProject = {...this.project}
         console.log('this.objProject mounted',this.objProject)
     },
     methods:{
@@ -175,7 +174,7 @@ export default {
           this.arrBase64 = this.arrBase64.filter(item => item !== file)
         },
         clearOldFile(file){
-          this.objProject.photo = this.objProject.photo.filter(item => item !== file)
+          this.objProject.photos = this.objProject.photos.filter(item => item !== file)
         }
     }
 }
