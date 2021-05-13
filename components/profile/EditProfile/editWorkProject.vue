@@ -34,10 +34,10 @@
             <p class="f-12 text-main">Xem thêm dự án <i class="fas fa-caret-down ml-5px"></i></p>
         </div>
     </div>
-    <CreateEditProject />
+    <CreateEditProject ref="addProject" />
     <Modal ref="modalEditProject" id="modal-create-update-project">
       <template v-slot:content>
-        <CreateEditProject :project=detailProject />
+        <CreateEditProject ref="editProject" :project="detailProject" />
       </template>
     </Modal>
   </div>
