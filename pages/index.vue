@@ -94,7 +94,7 @@
             </p>
             <!-- Block 1 -->
             <div class="block-content mt-40px">
-              <div class="block-title d-flex">
+              <div class="block-title d-flex align-items">
                 <img src="@/assets/svg/iconblock1.svg" />
                 <p>Nhận ngay báo giá & hồ sơ từ nhiều đơn vị uy tín</p>
               </div>
@@ -110,7 +110,7 @@
             </div>
             <!-- Block 2 -->
             <div class="block-content mt-40px">
-              <div class="block-title d-flex">
+              <div class="block-title d-flex align-items">
                <img src="@/assets/svg/iconblock2.svg" />
                 <p>Giá cả cạnh tranh & giải pháp tối ưu</p>
               </div>
@@ -125,7 +125,7 @@
             </div>
             <!-- Block 3 -->
             <div class="block-content mt-40px">
-              <div class="block-title d-flex">
+              <div class="block-title d-flex align-items">
                 <img src="@/assets/svg/iconblock3.svg" />
                 <p>Đánh giá năng lực & tương tác trực tiếp</p>
               </div>
@@ -141,7 +141,7 @@
             </div>
             <!-- Block 4 -->
             <div class="block-content mt-40px">
-              <div class="block-title d-flex">
+              <div class="block-title d-flex align-items">
                 <img src="@/assets/svg/iconblock4.svg" />
                 <p>Chúng tôi hỗ trợ xuyên suốt dự án</p>
               </div>
