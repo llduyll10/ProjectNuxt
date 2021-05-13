@@ -20,8 +20,11 @@ module.exports = {
             if(imgType.includes(type)){
                 return `<i class="fas fa-file-image"></i>`
             }
-            else{
+            else if(type=='pdf'){
                 return `<i class="fas fa-file-pdf"></i>`
+            }
+            else{
+                return `<i class="far fa-file"></i>`
             }
         },
         spliceURLFile(url,symbol){
