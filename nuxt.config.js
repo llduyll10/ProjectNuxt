@@ -1,4 +1,4 @@
-var apiUrl = 'https://api.phamyen.com/';
+var apiUrl = 'http://localhost:8001';
 module.exports = {
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {

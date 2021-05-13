@@ -1,6 +1,14 @@
 <template>
   <div>
     <b-modal ref="my-modal" :no-close-on-backdrop="true" centered hide-footer title="" :id='id'>
+       <template #modal-header="{ close }">
+         <h5 class="modal-title">
+           {{title}}
+         </h5>
+         
+         <button type="button" aria-label="Close" class="close" @click="close();closeEmit()">×</button>
+       </template>
+   
         <slot name="content"></slot>
     </b-modal>
   </div>
@@ -8,8 +16,11 @@
 
 <script>
   export default {
-    props:['id'],
+    props:['id','title'],
     methods: {
+      closeEmit(){
+        this.$emit('close');
+      },
       showModal() {
         this.$refs['my-modal'].show()
       },
