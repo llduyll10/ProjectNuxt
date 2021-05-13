@@ -32,15 +32,11 @@ export default {
                 var typeFile = files[0].name.split('.').pop()
             }
             if(accept){
-                console.log('typeFile',typeFile)
-                console.log('accept',accept)
                 if(!accept.includes(typeFile)){
-                    console.log('not')
                     this.showAlert = true
                     return
                 }
                 else{
-                    console.log('okok')
                     this.showAlert = false
                     files.forEach(e => {
                         arrFile.push(e)

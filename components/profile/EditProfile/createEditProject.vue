@@ -139,11 +139,9 @@ export default {
     },
     mounted(){
         this.objProject = {...this.project}
-        console.log('this.objProject mounted',this.objProject)
     },
     methods:{
         async createProject(){
-            console.log('arrFile in createProject',this.arrFile)
             this.loader()
             var fileOld = this.objProject.photos || []
             var fileNew = this.arrFile.length ? await this.uploadFile(this.arrFile) : []
@@ -153,6 +151,8 @@ export default {
               let res = await this.$post('/member/portfolio',this.objProject)
               this.arrFile = [];
               this.arrBase64 = [];
+              this.objProject = {};
+              this.cancelPopup()
               this.loader(0)
             }
             catch(err){
@@ -171,6 +171,7 @@ export default {
         },
         cancelPopup(){
           this.$emit('parentEvent')
+          this.objProject = {}
         },
         clearFile(file){
           this.arrBase64 = this.arrBase64.filter(item => item.base64 !== file.base64)
