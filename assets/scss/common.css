@@ -2398,6 +2398,102 @@
   height: 32px !important;
 }
 
+.f-35 {
+  font-size: 35px !important;
+}
+
+.z35 {
+  z-index: 35 !important;
+}
+
+.top-35px {
+  top: 35px !important;
+}
+
+.left-35px {
+  left: 35px !important;
+}
+
+.right-35px {
+  right: 35px !important;
+}
+
+.bottom-35px {
+  bottom: 35px !important;
+}
+
+.border-35px {
+  border-width: 35px !important;
+}
+
+.p-35px {
+  padding: 35px !important;
+}
+
+.pt-35px {
+  padding-top: 35px !important;
+}
+
+.pl-35px {
+  padding-left: 35px !important;
+}
+
+.pr-35px {
+  padding-right: 35px !important;
+}
+
+.pb-35px {
+  padding-bottom: 35px !important;
+}
+
+.py-35px {
+  padding-bottom: 35px !important;
+  padding-top: 35px !important;
+}
+
+.px-35px {
+  padding-left: 35px !important;
+  padding-right: 35px !important;
+}
+
+.m-35px {
+  margin: 35px !important;
+}
+
+.mt-35px {
+  margin-top: 35px !important;
+}
+
+.ml-35px {
+  margin-left: 35px !important;
+}
+
+.mr-35px {
+  margin-right: 35px !important;
+}
+
+.mb-35px {
+  margin-bottom: 35px !important;
+}
+
+.my-35px {
+  margin-bottom: 35px !important;
+  margin-top: 35px !important;
+}
+
+.mx-35px {
+  margin-left: 35px !important;
+  margin-right: 35px !important;
+}
+
+.w-35px {
+  width: 35px !important;
+}
+
+.h-35px {
+  height: 35px !important;
+}
+
 .f-36 {
   font-size: 36px !important;
 }
@@ -3365,6 +3461,18 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.flex-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .flex-1 {

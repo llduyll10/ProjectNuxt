@@ -24,7 +24,7 @@
                    <div class="email">LONGB@EPOINT.VN</div>
                </div>
            </div>
-           <div class="bottom">
+           <div class="bottom btn-now">
                <div class="submit f-16">HOÀN TẤT</div>
            </div>
         </div>
