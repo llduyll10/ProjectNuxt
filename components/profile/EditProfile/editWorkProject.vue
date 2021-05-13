@@ -90,9 +90,6 @@ export default {
             this.getListProject()
           }
         }
-        else{
-          console.log('not', confirm)
-        }
       },
       openModal(item){
         this.$refs.modalEditProject.showModal()

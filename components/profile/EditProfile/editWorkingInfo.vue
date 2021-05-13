@@ -86,6 +86,7 @@
                          <template v-if="this.objWorking.filesCert">
                             <template v-for="(item,idx) in this.objWorking.filesCert">
                                 <p :key="idx+1" class="f-11 text-main ">
+                                    <span v-html="returnTypeFile(spliceURLFile(item,'--'))"></span>
                                     {{spliceURLFile(item,'--')}}
                                     <span class="cursor-pointer ml-5px" @click="clearFileOld(item)">
                                         <i class="fas fa-times text-red"></i>
@@ -98,6 +99,7 @@
                         <template v-if="arrFile.length">
                             <template v-for="(item,idx) in arrFile">
                                 <p :key="idx" class="f-11 text-main ">
+                                    <span v-html="returnTypeFile(item.name)"></span>
                                     {{item.name}}
                                     <span class="cursor-pointer ml-5px" @click="clearFile(item)">
                                         <i class="fas fa-times text-red"></i>

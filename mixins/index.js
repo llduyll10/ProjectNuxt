@@ -1,4 +1,5 @@
 
+
 module.exports = {
     methods: {
         loader(off) {
@@ -12,6 +13,16 @@ module.exports = {
             return new Intl.NumberFormat('vi-VN').format(num || 0);
         },
         isMobile: function () {
+        },
+        returnTypeFile(url){
+            var type = url.split('.').pop()
+            var imgType = ["png","jpg","gif","jpeg"]
+            if(imgType.includes(type)){
+                return `<i class="fas fa-file-image"></i>`
+            }
+            else{
+                return `<i class="fas fa-file-pdf"></i>`
+            }
         },
         spliceURLFile(url,symbol){
             return url.split(symbol).pop()
