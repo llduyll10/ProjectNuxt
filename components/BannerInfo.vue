@@ -33,7 +33,7 @@
                         </div>
                         <div class="searchWrap d-flex">
                             <label>
-                                <img src="@/assets/svg/search-top2.svg" class="mr-8px" alt="">
+                                <img src="@/assets/svg/search-top2.svg" class="mt-1px mr-8px" alt="">
                             </label>
                             <input type="text" class="f-12 mr-6px" placeholder="Tìm kiếm">
                             <div class="searchText">Tìm kiếm</div>
