@@ -35,7 +35,7 @@
         </div>
     </div>
     <CreateEditProject ref="addProject" v-if="!detailProject" />
-    <Modal ref="modalEditProject" id="modal-create-update-project">
+    <Modal ref="modalEditProject" id="modal-create-update-project" @close="hideModal">
       <template v-slot:content>
         <CreateEditProject ref="editProject" :project="detailProject" v-if="detailProject"  @parentEvent="hideModal" />
       </template>
