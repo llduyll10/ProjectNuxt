@@ -80,10 +80,6 @@
                 </div>
                 <div class="fieldInput">
                     <div>
-                        <!-- <button type="button" class="btn btn-main f-11">
-                            <img class="mr-4px h-13px" src="@/assets/svg/icon-upload.svg" alt=""/>
-                            Thêm tài liệu
-                        </button> -->
                         <InputFile :accept="accepFile" @input="getFile" :multiple="true" :label="'Thêm tài liệu'"/>
 
 
@@ -159,7 +155,9 @@ export default {
             this.arrFile = []
             try{
                 let res = await this.$post('/user/working',this.objWorking)
-                this.$auth.fetchUser()
+                await this.$auth.fetchUser()
+                this.getUser()
+                this.arrFile = [];
                 this.loader(0)
             }
             catch(err){
