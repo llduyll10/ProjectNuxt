@@ -1,6 +1,7 @@
 <template>
-    <div>
+    <div >
         <Header />
+        <BannerInfo />
         <section id="block" class="pt-45px pb-50px">
             <div class="container-fluid">
                 <div class="row">
@@ -137,8 +138,9 @@
 <script>
 import Header from "@/components/Header";
 import Footer from "@/components/Footer"
+import BannerInfo from "@/components/BannerInfo"
 import house from "@/assets/svg/house1.svg"
-import letter from "@/assets/svg/email.svg"
+import letter from "@/assets/svg/email.svg";
 
 
 export default {
@@ -150,7 +152,7 @@ export default {
     data(){
         return{
             house : house,
-            letter : letter
+            letter : letter,
         }
     },
     mounted(){

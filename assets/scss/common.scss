@@ -23,6 +23,7 @@ $dimensions: 0,
 28,
 30,
 32,
+35,
 36,
 40,
 45,
@@ -33,13 +34,11 @@ $dimensions: 0,
 80,
 100,
 200;
-
 @each $dimension in $dimensions {
     // font-size
     .f-#{$dimension} {
         font-size:#{$dimension}px!important
     }
-
     .z#{$dimension} {
         z-index:#{$dimension}!important
     }
@@ -130,17 +129,20 @@ $dimensions: 0,
 .flex-1 {
     flex: 1;
 }
+
 .f-bold {
     font-weight: bold;
 }
-.background__img{
+
+.background__img {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
 }
-.vue-treeselect__control{
+
+.vue-treeselect__control {
     font-size: 13px;
-    .vue-treeselect__placeholder{
+    .vue-treeselect__placeholder {
         color: #ADABAB;
         font-size: 13px;
     }
