@@ -7,13 +7,13 @@
         </div>
 
         <div class="editWrap">
-            <ProfileEditPersonalinfo  v-if="activeTab === '1'" />
+            <ProfileEditPersonal  v-if="activeTab === '1'" />
 
-            <ProfileEditWorkingInfo  v-if="activeTab === '2'" />
+            <ProfileEditCompany  v-if="activeTab === '2'" />
 
             <ProfileEditWork  v-if="activeTab === '3'" />
 
-            <ProfileEditConfirminfo  v-if="activeTab === '4'" />
+            <ProfileEditConfirm  v-if="activeTab === '4'" />
         </div>
     </div>
 

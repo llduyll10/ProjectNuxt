@@ -34,10 +34,10 @@
             <p class="f-12 text-main cursor-pointer" @click="seemore()">Xem thêm dự án <i class="fas fa-caret-down ml-5px"></i></p>
         </div>
     </div>
-    <ProfileEditCreateproject ref="addProject" v-if="!detailProject" @parentEvent="hideModal" />
+    <ProfileEditProject ref="addProject" v-if="!detailProject" @parentEvent="hideModal" />
     <Modal ref="modalEditProject" id="modal-create-update-project" @close="hideModal">
       <template v-slot:content>
-        <ProfileEditCreateproject ref="editProject" :project="detailProject" v-if="detailProject"  @parentEvent="hideModal" />
+        <ProfileEditProject ref="editProject" :project="detailProject" v-if="detailProject"  @parentEvent="hideModal" />
       </template>
     </Modal>
   </div>
