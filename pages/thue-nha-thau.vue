@@ -177,9 +177,6 @@ import ImgProfile from '@/assets/svg/longb.svg'
 import logoDuan from '@/assets/svg/logo-duan.svg'
 
 export default {
-    // middleware: 'auth',
-    components:{
-    },
     data(){
         return{
             imgProfile: ImgProfile,

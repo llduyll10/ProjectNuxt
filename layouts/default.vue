@@ -35,10 +35,6 @@ Vue.prototype.$checkDragDrop = (classSelector) => {
 }
 export default {
   async asyncData(context) {
-    const data = await context.get('search?q=apollo 11&page=1',{abc:'haha'});
-    const companies = data.data;
-
-    console.log('companies',companies);
 
   },
   mounted(){
