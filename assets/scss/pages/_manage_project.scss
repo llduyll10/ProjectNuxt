@@ -1,0 +1,94 @@
+#manage-project{
+    .wrap{
+        padding: 20px 37px;
+        .title{
+            font-size: 20px;
+            color: $main-color;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .group-function{
+            .input-search{
+                border: 0.75px solid #B7B5B5;
+                height: 30px;
+                max-width: 250px;
+                box-sizing: border-box;
+                border-radius: 8px;
+                margin-right: 15px;
+                &::placeholder{
+                    font-size: 12px;
+                    margin-left: 30px;
+                }
+            }
+            .dropdown-all{
+                margin-right:15px ;
+                .dropdown-toggle{
+                    border: 0.75px solid #B7B5B5;
+                    box-sizing: border-box;
+                    border-radius: 8px;
+                    height: 30px;
+                    .title-dropdown{
+                        font-size: 12px;
+                        color: $main-black;
+                    }
+                }
+
+            }
+            .btn-search{
+                cursor: pointer;
+                background-color:$main-color;
+                color: white;
+                height: 30px;
+                text-align: center;
+                padding: 2px 20px 0 20px;
+                border-radius: 8px;
+            }
+        }
+    }
+    .table-custom{
+        thead{
+            background: rgba(229, 229, 229, 0.8);
+            color: $main-black;
+            font-size: 13px;
+            font-weight: bold;
+            tr{
+                th{
+                    &:first-child{
+                        padding-left: 37px;
+                    }
+                }
+            }
+        }
+        tbody{
+            tr{
+                td{
+                    padding-top: 10px;
+                    padding-bottom: 16px;
+                    &:first-child{
+                        padding-left: 37px;
+                        max-width: 220px;
+                    }
+                }
+            }
+            .name{
+                font-size: 13px;
+                color: $main-color;
+            }
+            .price{
+                font-size: 12px;
+                color: $main-black;
+            }
+            .status{
+                padding-top: 8px;
+                .dropdown-all{
+                    .dropdown-toggle{
+                        padding-top: 0;
+                        .title-dropdown{
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

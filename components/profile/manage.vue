@@ -7,17 +7,26 @@
                 class="tabItem flex-align-center">
                 <div>{{tab.text}}</div>
             </div>
+            <div class="typeOfView ml-auto">
+                <div class="customer">
+                    <span>Khách hàng</span>
+                </div>
+                <div class="contractors">
+                    <span>Nhà thầu</span>
+                </div>
+            </div>
         </div>
 
-        <div class="editWrap">
-            <ProfileProgressQuotes  v-if="activeTab === '1'" />
 
-            <ProfileProgressNegotiate  v-if="activeTab === '2'" />
 
-            <ProfileProgressDeploy  v-if="activeTab === '3'" />
+        <ProfileProgressQuotes  v-if="activeTab === '1'" />
 
-            <ProfileProgressComplete  v-if="activeTab === '4'" />
-        </div>
+        <ProfileProgressNegotiate  v-if="activeTab === '2'" />
+
+        <ProfileProgressDeploy  v-if="activeTab === '3'" />
+
+        <ProfileProgressComplete  v-if="activeTab === '4'" />
+
     </div>
 
 </template>

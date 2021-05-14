@@ -1,3 +1,3 @@
 <template>
-    <h1>complte</h1>
+    <ProfileProgressContent title="Dự án đã hoàn thành" />
 </template>

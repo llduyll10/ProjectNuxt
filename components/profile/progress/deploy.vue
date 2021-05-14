@@ -1,3 +1,3 @@
 <template>
-    <h1>deploy</h1>
+    <ProfileProgressContent title="Dự án đang triển khai" />
 </template>

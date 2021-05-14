@@ -69,6 +69,27 @@
                 }
             }
         }
+        .typeOfView{
+            display: flex;
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
+            .customer{
+                color: #F2F2F2;
+                background: $main-color;
+                padding: 5px 15px;
+                border-top-left-radius: 8px;
+                border-bottom-left-radius: 8px;
+            }
+            .contractors{
+                color: $main-black;
+                background-color: white;
+                padding: 5px 15px;
+                border: 0.5px solid #828282;
+                border-top-right-radius: 8px;
+                border-bottom-right-radius: 8px;
+            }
+        }
     }
 
     .editWrap {

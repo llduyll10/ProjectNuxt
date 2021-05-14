@@ -1,3 +1,5 @@
 <template>
-    <h1>Quotes</h1>
+    <div>
+        <ProfileProgressContent title="Dự án đang chào giá" />
+    </div>
 </template>

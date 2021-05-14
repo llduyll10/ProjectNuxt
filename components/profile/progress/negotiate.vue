@@ -1,3 +1,3 @@
 <template>
-    <h1>Negotiate</h1>
+    <ProfileProgressContent title="Dự án đang thương lượng" />
 </template>
