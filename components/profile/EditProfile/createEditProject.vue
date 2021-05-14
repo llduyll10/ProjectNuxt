@@ -59,7 +59,7 @@
                   <!-- OLD FILE -->
                   <template v-if="objProject.photos">
                     <template v-for="(item,idx) in objProject.photos">
-                        <div class="col-sm-6 pl-0" :key="idx">
+                        <div class="col-sm-6 pl-0" :key="idx+1">
                             <div
                                   class="itemComponent"
                                   :style="{
