@@ -26,17 +26,9 @@
 
 
 <script>
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import ProfileMenu from "@/components/profile/profileMenu";
-
-
 export default {
     middleware: 'auth',
     components:{
-        Header,
-        Footer,
-        ProfileMenu,
     },
     data(){
         return{
