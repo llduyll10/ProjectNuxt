@@ -47,7 +47,8 @@
                                 :placeholder="place"
                             ></textarea>
                         </div>
-                        <div class="form-group row">
+                        <!-- File Img -->
+                        <!-- <div class="form-group row">
                              <label class="f-13  col-md-3 col-sm-12 ">
                                 Hình ảnh đính kèm
                             </label>
@@ -68,25 +69,29 @@
 
                                 </div>
                             </template>
-                        </div>
+                        </div> -->
                         <div class="form-group row">
                              <label class="f-13  col-md-3 col-sm-12 ">
                                 Tài liệu đính kèm
                             </label>
-                            <InputFile :accept="acceptFile" key="file" @input="getFile" :multiple="true" :label="'Thêm tài liệu'" />
-                        </div>
-                        <div class="row" v-if="arrFile.length">
-                            <template v-for="(item,idx) in arrFile">
-                                <p :key="idx" class="f-11 text-main ">
-                                    <span v-html="returnTypeFile(item.name)"></span>
-                                    {{item.name}}
-                                    <span class="cursor-pointer ml-5px" @click="clearFile(item)">
-                                        <i class="fas fa-times text-red"></i>
-                                    </span>
-                                </p>
+                            <div class="col-md-9 pl-0">
+                                <InputFile :accept="acceptFile" key="file" @input="getFile" :multiple="true" :label="'Thêm tài liệu'" />
+                            </div>
 
-                            </template>
+                            <div class="col-md-3" v-if="arrFile.length"></div>
+                            <div class="col-md-9 pl-0" v-if="arrFile.length">
+                                <template v-for="(item,idx) in arrFile">
+                                    <p :key="idx" class="f-11 text-main ">
+                                        <span v-html="returnTypeFile(item.name)"></span>
+                                        {{item.name}}
+                                        <span class="cursor-pointer ml-5px" @click="clearFile(item)">
+                                            <i class="fas fa-times text-red"></i>
+                                        </span>
+                                    </p>
+                                </template>
+                            </div>
                         </div>
+
                         <div class="form-group row">
                              <label class="f-13 col-md-3 col-sm-12 ">
                                 Địa điểm dự án
