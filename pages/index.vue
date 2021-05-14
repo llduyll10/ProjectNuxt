@@ -265,16 +265,7 @@
 </template>
 
 <script>
-import Header from "@/components/Header";
-import Modal from "@/components/Modal";
-import Footer from "@/components/Footer";
 
-import Block1 from "@/components/Block1";
-import Block2 from "@/components/Block2";
-import Market from "@/components/Market";
-import Company from "@/components/Company";
-
-import Carousel from "@/components/Carousel";
 import BannerImg from "@/assets/img/banner.png";
 
 export default {
@@ -294,17 +285,6 @@ export default {
     return {
       bannerImg: BannerImg,
     };
-  },
-  components: {
-    Modal,
-    Header,
-    Company,
-    Market,
-    Block1,
-    Block2,
-    Footer,
-    Footer,
-    Carousel,
   },
   methods: {
 

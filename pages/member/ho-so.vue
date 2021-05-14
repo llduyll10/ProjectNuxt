@@ -8,15 +8,15 @@
                     <div class="col-12">
                         <div class="profileSection z3">
                            <div class="col-left">
-                            <Profile />
+                            <ProfileInfo />
                            </div>
 
                            <div class="col-right">
-                               <Description />
+                               <ProfileDes />
                                <div class="line"></div>
-                               <Project />
+                               <ProfileProject />
                                <div class="line"></div>
-                               <Rating />
+                               <ProfileRating />
                            </div>
                         </div>
                     </div>
@@ -32,22 +32,7 @@
 
 
 <script>
-import Header from "@/components/Header";
-import Footer from "@/components/Footer"
-import Profile from "@/components/profile/profile"
-import Description from "@/components/profile/des"
-import Project from "@/components/profile/project"
-import Rating from "@/components/profile/rating"
 export default {
-    // middleware: 'auth',
-    components:{
-        Header,
-        Footer,
-        Profile,
-        Description,
-        Project,
-        Rating
-    },
     data(){
         return{
 

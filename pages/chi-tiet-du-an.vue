@@ -288,7 +288,7 @@
               class="left inner-content-section px-24px pt-25px pb-50px mb-20px thongTinDuAnWrapper main-black"
             >
               <!-- Hard some css display none for re-using profile component -->
-              <Profile class="profile" />
+              <ProfileInfo class="profile" />
             </div>
             <!-- Thông tin khách hàng -->
 
@@ -348,22 +348,7 @@
 </template>
 
 <script>
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import Profile from "@/components/profile/profile";
-import Description from "@/components/profile/des";
-import Project from "@/components/profile/project";
-import Rating from "@/components/profile/rating";
 export default {
-  // middleware: 'auth',
-  components: {
-    Header,
-    Footer,
-    Profile,
-    Description,
-    Project,
-    Rating,
-  },
   data() {
     return {
       objForm:{
