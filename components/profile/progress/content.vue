@@ -32,7 +32,7 @@
             </thead>
             <tbody>
                 <tr v-for="(idx) in 4" :key="idx">
-                    <td class="name">Tìm đơn vị trang trí nội thất căn hộ Hà Đô Centrosa</td>
+                    <td class="name" :class="idx==1 ? 'active': '' ">Tìm đơn vị trang trí nội thất căn hộ Hà Đô Centrosa</td>
                     <td class="customer text-main f-12">Bùi Kim Long</td>
                     <td class="price">1.500.000.000 VNĐ</td>
                     <td class="status">

@@ -83,6 +83,9 @@
             .name{
                 font-size: 13px;
                 color: $main-color;
+                &.active{
+                    color: #E78F1C;
+                }
             }
             .price{
                 font-size: 12px;
