@@ -10,7 +10,7 @@
                                 <ProfileMenu activeMenu="3" />
                             </div>
                             <div class="flex-1 profileInfoWrap">
-                                <FinanceManage />
+                                <ProfileFinanceManage />
                             </div>
                         </div>
                     </div>
@@ -29,7 +29,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProfileMenu from "@/components/profile/profileMenu";
-import FinanceManage from "@/components/profile/FinanceManage/financeManage";
+
 
 export default {
     middleware: 'auth',
@@ -37,7 +37,6 @@ export default {
         Header,
         Footer,
         ProfileMenu,
-        FinanceManage
     },
     data(){
         return{

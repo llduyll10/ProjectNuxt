@@ -7,7 +7,7 @@
         </div>
 
         <div class="editWrap">
-            <BuyToken  v-if="activeTab === '1'" />
+            <ProfileFinanceBuy  v-if="activeTab === '1'" />
 
         </div>
     </div>
@@ -15,10 +15,8 @@
 </template>
 <script>
 
-import BuyToken from "./buyToken";
 export default {
     components: {
-        BuyToken
     },
     data(){
         return{
