@@ -79,19 +79,14 @@
             </div>
 
         </form>
-        <PopupChangePhone  ref="PopupChangePhone" />
-        <PopupChangelTax ref="openModaChangelTax" />
+        <PopupPhoneform  ref="PopupChangePhone" />
+        <PopupTaxform ref="openModaChangelTax" />
     </div>
 
 </template>
 <script>
-import PopupChangePhone from "@/components/popup/phone-form"
-import PopupChangelTax from "@/components/popup/tax-form"
 export default {
-    components: {
-        PopupChangePhone,
-        PopupChangelTax
-    },
+   
     data(){
         return{
         }

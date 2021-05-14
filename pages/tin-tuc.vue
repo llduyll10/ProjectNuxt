@@ -136,19 +136,9 @@
 
 
 <script>
-import Header from "@/components/Header";
-import Footer from "@/components/Footer"
-import BannerInfo from "@/components/BannerInfo"
 import house from "@/assets/svg/house1.svg"
 import letter from "@/assets/svg/email.svg";
-
-
 export default {
-    // middleware: 'auth',
-    components:{
-        Header,
-        Footer,
-    },
     data(){
         return{
             house : house,
