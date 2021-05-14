@@ -164,8 +164,8 @@
                 </div>
             </div>
         </section>
-        <LienHePop ref="refLienHe"/>
-        <LienHeFormPop ref="LienHeFormPop"/>
+        <PopupLienhe ref="refLienHe"/>
+        <PopupLienheform ref="LienHeFormPop"/>
         <Footer />
     </div>
 
@@ -175,18 +175,10 @@
 <script>
 import ImgProfile from '@/assets/svg/longb.svg'
 import logoDuan from '@/assets/svg/logo-duan.svg'
-import Header from "@/components/Header";
-import Footer from "@/components/Footer"
-import LienHePop from "@/components/popup/lien-he"
-import LienHeFormPop from "@/components/popup/lien-he-form"
 
 export default {
     // middleware: 'auth',
     components:{
-        Header,
-        Footer,
-        LienHePop,
-        LienHeFormPop
     },
     data(){
         return{
