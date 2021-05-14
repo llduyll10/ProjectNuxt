@@ -10,7 +10,7 @@
                                 <ProfileMenu activeMenu="1" />
                             </div>
                             <div class="flex-1 profileInfoWrap">
-                                <ProfileEditProfile />
+                                <ProfileAccount />
                             </div>
                         </div>
                     </div>
