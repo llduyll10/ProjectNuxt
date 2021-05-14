@@ -177,16 +177,8 @@
 
 
 <script>
-import Header from "@/components/Header";
-import Footer from "@/components/Footer"
-import InputFile from '@/components/InputFile'
 export default {
     middleware: 'auth',
-    components:{
-        Header,
-        Footer,
-        InputFile
-    },
     data(){
         return{
             objProject:this.restForm(),
