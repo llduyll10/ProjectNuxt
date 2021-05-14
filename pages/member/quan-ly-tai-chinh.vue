@@ -26,9 +26,6 @@
 
 
 <script>
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import ProfileMenu from "@/components/profile/profileMenu";
 import FinanceManage from "@/components/profile/FinanceManage/financeManage";
 
 export default {
@@ -36,7 +33,6 @@ export default {
     components:{
         Header,
         Footer,
-        ProfileMenu,
         FinanceManage
     },
     data(){
