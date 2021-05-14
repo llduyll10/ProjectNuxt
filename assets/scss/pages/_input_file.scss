@@ -7,9 +7,9 @@
 	z-index: -1;
 }
 .inputfile + label {
-    font-size:11px;
-    font-weight: 700;
-    color: #F2F2F2;;
+    font-size:11px !important;
+    font-weight: 700 !important;
+    color: #F2F2F2 !important;
     background-color: $main-color;
     display: inline-block;
     cursor: pointer;
