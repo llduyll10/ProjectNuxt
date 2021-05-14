@@ -10,7 +10,7 @@
                                 <ProfileMenu activeMenu="1" />
                             </div>
                             <div class="flex-1 profileInfoWrap">
-                                <EditProfile />
+                                <ProfileEditProfile />
                             </div>
                         </div>
                     </div>
@@ -29,7 +29,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProfileMenu from "@/components/profile/profileMenu";
-import EditProfile from "@/components/profile/EditProfile/editProfile";
+
 
 export default {
     middleware: 'auth',
@@ -37,7 +37,6 @@ export default {
         Header,
         Footer,
         ProfileMenu,
-        EditProfile
     },
     data(){
         return{

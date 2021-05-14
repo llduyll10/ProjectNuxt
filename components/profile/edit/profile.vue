@@ -7,28 +7,21 @@
         </div>
 
         <div class="editWrap">
-            <EditPersonalInfo  v-if="activeTab === '1'" />
+            <ProfileEditPersonalinfo  v-if="activeTab === '1'" />
 
-            <EditWorkingInfo  v-if="activeTab === '2'" />
+            <ProfileEditWorkingInfo  v-if="activeTab === '2'" />
 
-            <EditWorkProject  v-if="activeTab === '3'" />
+            <ProfileEditWork  v-if="activeTab === '3'" />
 
-            <ConfirmInfo  v-if="activeTab === '4'" />
+            <ProfileEditConfirminfo  v-if="activeTab === '4'" />
         </div>
     </div>
 
 </template>
 <script>
-import EditPersonalInfo from "./editPersonalInfo";
-import EditWorkingInfo from "./editWorkingInfo";
-import EditWorkProject from "./editWorkProject";
-import ConfirmInfo from "./confirmInfo";
+
 export default {
     components: {
-        EditPersonalInfo,
-        EditWorkingInfo,
-        EditWorkProject,
-        ConfirmInfo
     },
     data(){
         return{

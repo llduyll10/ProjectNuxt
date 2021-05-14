@@ -34,21 +34,19 @@
             <p class="f-12 text-main cursor-pointer" @click="seemore()">Xem thêm dự án <i class="fas fa-caret-down ml-5px"></i></p>
         </div>
     </div>
-    <CreateEditProject ref="addProject" v-if="!detailProject" @parentEvent="hideModal" />
+    <ProfileEditCreateproject ref="addProject" v-if="!detailProject" @parentEvent="hideModal" />
     <Modal ref="modalEditProject" id="modal-create-update-project" @close="hideModal">
       <template v-slot:content>
-        <CreateEditProject ref="editProject" :project="detailProject" v-if="detailProject"  @parentEvent="hideModal" />
+        <ProfileEditCreateproject ref="editProject" :project="detailProject" v-if="detailProject"  @parentEvent="hideModal" />
       </template>
     </Modal>
   </div>
 </template>
 <script>
 import DemoHouse from '@/assets/img/demo-house.png'
-import CreateEditProject from './createEditProject'
 import Modal from "@/components/Modal";
 export default {
     components:{
-      CreateEditProject,
       Modal
     },
     data(){
