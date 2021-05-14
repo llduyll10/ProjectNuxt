@@ -51,25 +51,41 @@
                              <label class="f-13  col-md-3 col-sm-12 ">
                                 Hình ảnh đính kèm
                             </label>
-                            <div class="custom-btn col-md-9 col-sm-12 d-flex pl-0">
-                                <div class="btn-upload">
-                                    <img  src="@/assets/img/icon-upload.png"/>
-                                    <span>Thêm tài liệu</span>
+                            <InputFile :accept="acceptImg" @input="getFileImg" :multiple="true" :label="'Thêm hình ảnh'" />
+                        </div>
+                        <div class="row" v-if="arrBase64.length">
+                            <div class="col-md-3"></div>
+                            <template v-for="(item,idx) in arrBase64">
+                                <div class="col-sm-3 pl-0" :key="idx">
+                                    <div
+                                        class="itemComponent"
+                                        :style="{
+                                            'background-image': 'url(' + `${item.base64}` + ')',
+                                        }"
+                                    >
+                                    <i @click="clearFileImg(item)" class="fas fa-times text-red"></i>
+                                    </div>
+
                                 </div>
-                                <span class="type-upload">png, jpg, tiff</span>
-                            </div>
+                            </template>
                         </div>
                         <div class="form-group row">
                              <label class="f-13  col-md-3 col-sm-12 ">
                                 Tài liệu đính kèm
                             </label>
-                            <div class="custom-btn col-md-9 col-sm-12 d-flex pl-0">
-                                <div class="btn-upload">
-                                    <img  src="@/assets/img/icon-upload.png"/>
-                                    <span>Thêm tài liệu</span>
-                                </div>
-                                <span class="type-upload">png, jpg, tiff, pdf, xls, doc, ppt, zip, rar</span>
-                            </div>
+                            <InputFile :accept="acceptFile" key="file" @input="getFile" :multiple="true" :label="'Thêm tài liệu'" />
+                        </div>
+                        <div class="row" v-if="arrFile.length">
+                            <template v-for="(item,idx) in arrFile">
+                                <p :key="idx" class="f-11 text-main ">
+                                    <span v-html="returnTypeFile(item.name)"></span>
+                                    {{item.name}}
+                                    <span class="cursor-pointer ml-5px" @click="clearFile(item)">
+                                        <i class="fas fa-times text-red"></i>
+                                    </span>
+                                </p>
+
+                            </template>
                         </div>
                         <div class="form-group row">
                              <label class="f-13 col-md-3 col-sm-12 ">
@@ -158,19 +174,25 @@
 <script>
 import Header from "@/components/Header";
 import Footer from "@/components/Footer"
-
+import InputFile from '@/components/InputFile'
 export default {
     middleware: 'auth',
     components:{
         Header,
         Footer,
+        InputFile
     },
     data(){
         return{
             objProject:this.restForm(),
             options: this.getCategory(),
             optionsProvince: this.getProvince(),
-            place: `1. Mô tả chi tiết về dự án xây dựng hoặc yêu cầu thiết kế của bạn \n2. Vui lòng đính kèm sổ đỏ, bản vẽ, thiết kế hoặc hình ảnh minh hoạ để nhận được tư vấn/dự toán tốt nhất. \n3. Yêu cầu năng lực của đơn vị báo giá hoặc những yêu cầu khác`
+            place: `1. Mô tả chi tiết về dự án xây dựng hoặc yêu cầu thiết kế của bạn \n2. Vui lòng đính kèm sổ đỏ, bản vẽ, thiết kế hoặc hình ảnh minh hoạ để nhận được tư vấn/dự toán tốt nhất. \n3. Yêu cầu năng lực của đơn vị báo giá hoặc những yêu cầu khác`,
+            acceptImg:["png", "jpg", "tiff"],
+            acceptFile:["png", "jpg", "tiff", "pdf", "xls", "doc", "ppt", "zip", "rar"],
+            arrFileImg:[],
+            arrBase64:[],
+            arrFile:[]
         }
     },
     mounted(){
@@ -213,7 +235,27 @@ export default {
                 console.log('getProjectDraft',err)
             })
 
-        }
+        },
+        getFile(file){
+            console.log('file',file);
+            this.arrFile = this.arrFile.concat(file)
+        },
+        clearFile(file){
+            this.arrFile = this.arrFile.filter(item => item.name !== file.name)
+        },
+        async getFileImg(arrFile){
+          this.arrFileImg = this.arrFileImg.concat(arrFile)
+          var arrBase64 = []
+          this.arrFileImg.forEach( async item => {
+            var base64 = await this._toBase64(item);
+            arrBase64.push({base64,name:item.name})
+          })
+          this.arrBase64 = arrBase64
+        },
+        clearFileImg(file){
+          this.arrBase64 = this.arrBase64.filter(item => item.base64 !== file.base64)
+          this.arrFileImg = this.arrFileImg.filter(item => item.name !== file.name)
+        },
     }
 }
 </script>
