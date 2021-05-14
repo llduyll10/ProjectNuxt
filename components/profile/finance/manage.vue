@@ -6,10 +6,13 @@
             </div>
         </div>
 
-        <div class="editWrap">
-            <ProfileFinanceBuy  v-if="activeTab === '1'" />
-
+        <div class="editWrap" v-if="activeTab === '1'">
+            <ProfileFinanceBuy />
         </div>
+        <ProfileFinanceHistory  v-if="activeTab === '2'" />
+
+        <ProfileFinanceBankAccount  v-if="activeTab === '3'" />
+
     </div>
 
 </template>
