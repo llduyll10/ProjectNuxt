@@ -100,7 +100,7 @@
                             {{item.subText}}
                         </div>
                     </div>
-                    <div class="payBtn">
+                    <div class="payBtn" @click="clickPayment(item)">
                         <button type="button" class="btn btn-main">
                             Thanh toán
                         </button>
@@ -109,6 +109,8 @@
             </div>
         </div>
     </div>
+    
+    <PopupBankTransferSelect ref="refBankTransferSelect"/>
   </div>
 </template>
 <script>
@@ -149,6 +151,7 @@ export default {
                 subText: 'Ngân hàng Việt Nam phát hành'
             }, {
                 icon: 'bank',
+                type: 'bank',
                 text: 'Chuyển khoản ngân hàng',
                 subText: ''
             }, {
@@ -159,6 +162,11 @@ export default {
         }
     },
     methods:{
+        clickPayment(item) {
+            if (item.type === 'bank') {
+                this.$refs.refBankTransferSelect.show();
+            }
+        }
     }
 }
 </script>

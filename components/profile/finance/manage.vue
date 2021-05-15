@@ -13,6 +13,9 @@
 
         <ProfileFinanceBankAccount  v-if="activeTab === '3'" />
 
+        <div class="editWrap" v-if="activeTab === '4'">
+            <ProfileFinanceRequest  />
+        </div>
     </div>
 
 </template>

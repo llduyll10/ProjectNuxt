@@ -152,6 +152,25 @@
             }
         }
     }
+    .request-money-table {
+        .headWrap {
+            border-top: 1px solid #F2F2F2;
+            border-bottom: 1px solid #F2F2F2;
+        }
+        .headItem {
+            padding: 6px 16px;
+            min-width: 180px;
+        }
+        .bodyItem {
+            padding: 16px 16px 0;
+            font-size: 13px;
+            font-weight: 500;
+            min-width: 180px;
+            .headItem {
+                display: none;
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -175,6 +194,25 @@
         }
         .paymentItem {
             margin: 10px auto;
+        }
+    }
+    .request-money-table {
+        text-align: left !important;
+        .headWrap {
+            display: none;
+        }
+        .bodyWrap {
+            flex-direction: column;
+            .bodyItem {
+                padding-left: 0;
+                .headItem {
+                    padding-left: 0;
+                    display: block;
+                    font-weight: bold;
+                    font-size: 13px;
+                    color: $main-black;
+                }
+            }
         }
     }
 }

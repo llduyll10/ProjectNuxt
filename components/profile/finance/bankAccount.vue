@@ -24,11 +24,12 @@
         </table>
 
         <div class="wrap pt-0">
-            <button type="button" class="btn btn-main">
+            <button type="button" class="btn btn-main" @click="$refs.refAddAccount.show()">
                 <img src="@/assets/svg/credit1.svg" alt="">
                 Thêm tài khoản ngân hàng
             </button>
         </div>
+        <PopupAddBankAccount ref="refAddAccount"/>
     </div>
 </template>
 <script>
