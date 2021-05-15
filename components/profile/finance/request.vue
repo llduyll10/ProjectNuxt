@@ -28,8 +28,8 @@
                 <div class="headItem">Số dư tài khoản</div>
                 {{ formatVnd(50000000) }} VNĐ</div>
             <div class="bodyItem w-200px">
+              <div class="headItem">Số tiền cần rút</div>
               <div class="input-group  f-13 text-gray">
-                <div class="headItem">Số tiền cần rút</div>
                 <input type="text" class="form-control" />
                 <div class="input-group-append">
                   <span class="input-group-text f-13">VNĐ</span>
