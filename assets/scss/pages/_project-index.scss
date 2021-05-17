@@ -181,21 +181,26 @@
             align-items: center;
             padding: 0px 22px;
             .search-top {
-                height: 30px;
+                height: 32px;
                 width: 415px;
                 border: 0.75px solid #B7B5B5;
                 box-sizing: border-box;
                 border-radius: 5px;
                 padding-left: 18px;
-                margin-right: 15px;
+                margin-right: 8px;
                 input {
                     border: none;
                     width: 90%;
                     margin-left: 3px;
                     font-weight: 500;
                     line-height: 15px;
-                    &::placeholder {
-                        color: #adabab;
+                    &::placeholder{
+                        font-size: 12px;
+                        margin-left: 15px;
+                        text-indent: 20px;
+                        background-image: url('@/assets/svg/icon-head.svg');
+                        background-position:left;
+                        background-repeat: no-repeat;
                     }
                 }
                 &.short-input {
@@ -203,29 +208,27 @@
                 }
             }
             .search-center {
-                height: 30px;
-                width: 137px;
-                border: 0.75px solid #B7B5B5;
+                height: 32px;
+                width: 200px;
                 box-sizing: border-box;
                 border-radius: 5px;
-                padding-left: 18px;
-                margin-right: 15px;
-                .select {
-                    margin-left: 3px;
-                    width: 100px;
-                    font-weight: 500;
-                    line-height: 15px;
-                    color: #ADABAB;
-                    display: initial;
+                margin-right: 8px;
+                .vue-treeselect__control{
+                    border: 1px solid #B7B5B5;
+                    height: 32px;
+                    .vue-treeselect__placeholder{
+                        margin-top: -2px;
+                    }
                 }
             }
             .button {
+                cursor: pointer;
                 padding: 4px 20px;
                 background: #198AC6;
                 border-radius: 5px;
                 color: #fff;
                 font-size: 13px;
-                line-height: 17px;
+                line-height: 21px;
                 text-align: center;
             }
         }

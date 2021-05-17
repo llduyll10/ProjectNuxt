@@ -133,20 +133,19 @@
                             <!-- search -->
                             <div class="top top-change">
                                 <div class="search-top short-input">
-                                    <label>
-                                        <img src="@/assets/svg/search-top.svg" alt="">
-                                    </label>
-                                    <input type="text" class="f-12" placeholder="Tìm kiếm đơn vị thi công/thiết kế">
+                                    <input type="text"
+                                        v-model="objProject.searchText" class="f-12"
+                                        placeholder="Tìm kiếm đơn vị thi công/thiết kế"
+                                    >
                                 </div>
-                                <div class="search-center">
-                                    <label>
-                                        <img class="iconsearch" src="@/assets/svg/search-logo.svg"  alt="">
-                                    </label>
-                                    <div class="f-12 select">Tỉnh thành</div>
-                                    <img src="@/assets/svg/icon-dropdown-bot.svg" alt="">
-
-                                </div>
-                                <div class="button">Tìm kiếm</div>
+                                <treeselect
+                                        class="search-center"
+                                        :options="optionsProvince"
+                                        :value="objProject.address"
+                                        v-model="objProject.address"
+                                        placeholder="Tỉnh thành"
+                                    />
+                                <div class="button" @click="searchProject()">Tìm kiếm</div>
                             </div>
                             <div class="line"></div>
                             <!-- list off member -->
@@ -225,13 +224,18 @@ export default {
             logoDuan :logoDuan,
             avatar : avatar,
             dataFake:[1,2,3,4,5,6,7],
+            optionsProvince: this.getProvince(),
             objCategory: this.getCategory(),
-            arrFilter : []
+            arrFilter : [],
+            objProject:{}
         }
     },
     mounted(){
     },
     methods:{
+        searchProject(){
+            console.log('objProject',{...this.objProject, arrFilter:this.arrFilter})
+        },
         openLienHe(){
             this.$refs.refLienHe.show();
         },
