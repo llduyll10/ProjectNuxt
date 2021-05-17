@@ -1,7 +1,7 @@
 <template>
     <div>
-        <input type="file" name="file" id="file" ref="file" class="inputfile" @change="onFileChange" :multiple="multiple" />
-        <label for="file">
+        <input type="file" ref="file" class="inputfile" @change="onFileChange" :multiple="multiple" />
+        <label @click="$refs.file.click()">
             <img class="mr-4px h-13px mb-2px" src="@/assets/svg/icon-upload.svg" alt=""/>
             {{label}}
         </label>

@@ -48,11 +48,11 @@
                             ></textarea>
                         </div>
                         <!-- File Img -->
-                        <!-- <div class="form-group row">
+                        <div class="form-group row">
                              <label class="f-13  col-md-3 col-sm-12 ">
                                 Hình ảnh đính kèm
                             </label>
-                            <InputFile :accept="acceptImg" @input="getFileImg" :multiple="true" :label="'Thêm hình ảnh'" />
+                            <InputFile ref="test" :accept="acceptImg" @input="getFileImg" :multiple="true" :label="'Thêm hình ảnh'" />
                         </div>
                         <div class="row" v-if="arrBase64.length">
                             <div class="col-md-3"></div>
@@ -69,13 +69,13 @@
 
                                 </div>
                             </template>
-                        </div> -->
+                        </div>
                         <div class="form-group row">
                              <label class="f-13  col-md-3 col-sm-12 ">
                                 Tài liệu đính kèm
                             </label>
                             <div class="col-md-9 pl-0">
-                                <InputFile :accept="acceptFile" key="file" @input="getFile" :multiple="true" :label="'Thêm tài liệu'" />
+                                <InputFile ref="akjklak" :accept="acceptFile" key="file" @input="getFile" :multiple="true" :label="'Thêm tài liệu'" />
                             </div>
 
                             <div class="col-md-3" v-if="arrFile.length"></div>
