@@ -12,6 +12,33 @@ module.exports = {
         formatVnd(num) {
             return new Intl.NumberFormat('vi-VN').format(num || 0);
         },
+        checkIsToday(value){
+            var dateCheck = this.$moment(value)
+            var REFERENCE = this.$moment();
+            var TODAY = REFERENCE.clone().startOf('day');
+            var YESTERDAY = REFERENCE.clone().subtract(1, 'days').startOf('day');
+            if(dateCheck.isSame(TODAY,'day')){
+                return 'Hôm nay'
+            }
+            else if(dateCheck.isSame(YESTERDAY,'day')){
+                return 'Hôm qua'
+            }
+            else{
+                return dateCheck.format("DD/MM/YYYY")
+            }
+
+        },
+        checkDueDate(value){
+            var TODAY = this.$moment()
+            var DUEDATE  = this.$moment(value)
+
+            var result = DUEDATE.from(TODAY,true)
+            var find = result.indexOf('n')
+            if(find == -1){
+                return 'Hết hạn'
+            }
+            return DUEDATE.from(TODAY,true)
+        },
         isMobile: function () {
         },
         returnTypeFile(url){

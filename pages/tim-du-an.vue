@@ -156,7 +156,7 @@
                                             <div class="introduce">
                                                 <div  class="cover-img"
                                                     :style="{
-                                                        'background-image': 'url(' + `${imgProfile}` + ')',
+                                                        'background-image': 'url(' + `${item.createBy.photo ? item.createBy.photo : noAvatar}` + ')',
                                                     }"
                                                 >
                                                 </div>
@@ -176,16 +176,16 @@
                                                         <div class="group-2 d-flex">
                                                             <div class="one d-flex f-11">
                                                                 <img src="@/assets/svg/human.svg" alt="">
-                                                                <div class="human-name ml-5px">Bùi Kim Long</div>
+                                                                <div class="human-name ml-5px">{{item.createBy.name}}</div>
                                                             </div>
                                                             <div class="two">
-                                                                Ngày đăng - <span>{{new Date(item.createdDate).toLocaleDateString('vi-VI')}}</span>
+                                                                Ngày đăng - <span>{{checkIsToday(item.createdDate)}}</span>
                                                             </div>
                                                             <div class="three">
                                                                 Dự trù - <span>{{item.budget}}</span>
                                                             </div>
                                                             <div class="four">
-                                                                Hạn chót chào giá - <span>{{new Date(item.dueDate).toLocaleDateString('vi-VI')}}</span>
+                                                                Hạn chót chào giá - <span>{{checkDueDate(item.dueDate)}}</span>
                                                             </div>
                                                         </div>
                                                         <div class="like f-13">
@@ -212,7 +212,7 @@
 
 
 <script>
-import ImgProfile from '@/assets/svg/longb.svg'
+import NoAvatar from '@/assets/img/no-avatar.png'
 import avatar from '@/assets/svg/market3.svg'
 import logoDuan from '@/assets/svg/logo-duan.svg'
 
@@ -220,7 +220,7 @@ export default {
     // middleware: 'auth',
     data(){
         return{
-            imgProfile: ImgProfile,
+            noAvatar: NoAvatar,
             logoDuan :logoDuan,
             avatar : avatar,
             dataFake:[1,2,3,4,5,6,7],
@@ -236,6 +236,7 @@ export default {
     },
     mounted(){
         this.searchProject()
+        this.checkDueDate()
     },
     methods:{
         async searchProject(){

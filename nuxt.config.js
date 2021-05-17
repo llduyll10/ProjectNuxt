@@ -64,7 +64,10 @@ module.exports = {
             home: '/'
         }
     },
-
+    moment: {
+        defaultLocale: 'vi',
+        locales: ['vi']
+    },
 
     server: {
         port: 8000
@@ -81,7 +84,8 @@ module.exports = {
     modules: [
         '@nuxtjs/auth-next',
         "bootstrap-vue/nuxt",
-        '@nuxtjs/axios'
+        '@nuxtjs/axios',
+        '@nuxtjs/moment',
     ],
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
