@@ -52,24 +52,26 @@
                              <label class="f-13  col-md-3 col-sm-12 ">
                                 Hình ảnh đính kèm
                             </label>
-                            <InputFile ref="test" :accept="acceptImg" @input="getFileImg" :multiple="true" :label="'Thêm hình ảnh'" />
-                        </div>
-                        <div class="row" v-if="arrBase64.length">
-                            <div class="col-md-3"></div>
-                            <template v-for="(item,idx) in arrBase64">
-                                <div class="col-sm-3 pl-0" :key="idx">
-                                    <div
-                                        class="itemComponent"
-                                        :style="{
-                                            'background-image': 'url(' + `${item.base64}` + ')',
-                                        }"
-                                    >
-                                    <i @click="clearFileImg(item)" class="fas fa-times text-red"></i>
-                                    </div>
+                            <div class="col-md-9 col-sm-12 pl-0">
+                                <InputFile ref="test" :accept="acceptImg" @input="getFileImg" :multiple="true" :label="'Thêm hình ảnh'" />
+                                <div class="row" v-if="arrBase64.length">
+                                    <template v-for="(item,idx) in arrBase64">
+                                        <div class="col-sm-4 pr-0" :key="idx">
+                                            <div
+                                                class="itemComponent"
+                                                :style="{
+                                                    'background-image': 'url(' + `${item.base64}` + ')',
+                                                }"
+                                            >
+                                            <i @click="clearFileImg(item)" class="fas fa-times text-red"></i>
+                                            </div>
 
+                                        </div>
+                                    </template>
                                 </div>
-                            </template>
+                            </div>
                         </div>
+
                         <div class="form-group row">
                              <label class="f-13  col-md-3 col-sm-12 ">
                                 Tài liệu đính kèm
@@ -206,8 +208,11 @@ export default {
         async createJob(status){
             this.loader()
             try{
-                console.log(this.objProject)
-                let res = await this.$post('/member/projects', {...this.objProject,status});
+                var arrFileImg = this.arrFileImg.length ? await this.uploadFile(this.arrFileImg) : []
+                var arrFile = this.arrFile.length ? await this.uploadFile(this.arrFile) : []
+
+                let res = await this.$post('/member/projects',
+                                {...this.objProject,status,photos:arrFileImg,attachment:arrFile});
                 if(status==='ACTIVE'){
                     this.objProject = this.restForm();
                 }
