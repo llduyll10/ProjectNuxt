@@ -149,7 +149,7 @@
                             </div>
                             <div class="line"></div>
                             <!-- list off member -->
-                            <div class="center" v-for="(item, j) in 3" :key="j">
+                            <div class="center" v-for="(item, idx) in listProject" :key="idx">
                                 <div class="boxinfo">
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12 col-sm-12">
@@ -164,28 +164,28 @@
                                                     <div class="title d-flex">
                                                         <div class="d-flex title-icon">
                                                             <img src="@/assets/svg/chair-timduan.svg" alt="">
-                                                            <div class="ml-10px sub f-14">Tìm nhà thầu xây dựng nhà phố 5x20m tại Biên Hoà {{item}}</div>
+                                                            <div class="ml-10px sub f-14">{{item.name}}</div>
                                                         </div>
                                                         <div class="icon">
                                                             <img src="@/assets/svg/icon-location.svg" alt="">
-                                                            <span class="name f-11">Hồ Chí Minh</span>
+                                                            <span class="name f-11">{{item.address}}</span>
                                                         </div>
                                                     </div>
-                                                    <div class="description padding-right f-13">Econs được thành lập và phát triển suốt 8 năm qua theo mô hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội thất Econs được thành lập và phát triển suốt 8 năm qua theo mô hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội thấtEcons được thành lập và phát triển suốt 8 năm qua theo mô hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội thất</div>
+                                                    <div class="description padding-right f-13">{{item.description}}</div>
                                                     <div class="group-bot d-flex">
                                                         <div class="group-2 d-flex">
                                                             <div class="one d-flex f-11">
                                                                 <img src="@/assets/svg/human.svg" alt="">
-                                                                <div class="human-name ml-5px">Bùvcxvvxcvxcvcxvcxi Kim Long</div>
+                                                                <div class="human-name ml-5px">Bùi Kim Long</div>
                                                             </div>
                                                             <div class="two">
-                                                                Ngày đăng - <span>Hôm nay</span>
+                                                                Ngày đăng - <span>{{new Date(item.createdDate).toLocaleDateString('vi-VI')}}</span>
                                                             </div>
                                                             <div class="three">
-                                                                Dự trù - <span>1 Tỷ</span>
+                                                                Dự trù - <span>{{item.budget}}</span>
                                                             </div>
                                                             <div class="four">
-                                                                Hạn chót chào giá -<span>10 ngày</span>
+                                                                Hạn chót chào giá - <span>{{new Date(item.dueDate).toLocaleDateString('vi-VI')}}</span>
                                                             </div>
                                                         </div>
                                                         <div class="like f-13">
@@ -227,10 +227,15 @@ export default {
             optionsProvince: this.getProvince(),
             objCategory: this.getCategory(),
             arrFilter : [],
-            objProject:{}
+            objProject:{
+                address:null,
+                s:''
+            },
+            listProject:[],
         }
     },
     mounted(){
+        this.searchProject()
     },
     methods:{
         async searchProject(){
@@ -241,7 +246,7 @@ export default {
                     this.objProject.category.push(item.id)
                 })
                 let res = await this.$post('public/projects',{...this.objProject, limit:10, page:1})
-                console.log(res)
+                this.listProject = res.data.projects
                 this.loader(0)
             }
             catch(err){
