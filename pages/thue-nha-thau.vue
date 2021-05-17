@@ -96,9 +96,6 @@
                             <!-- search -->
                             <div class="top">
                                 <div class="search-top">
-                                    <label>
-                                        <img src="@/assets/svg/search-top.svg" alt="">
-                                    </label>
                                     <input type="text" class="f-12" placeholder="Tìm kiếm đơn vị thi công/thiết kế">
                                 </div>
                                 <div class="button">Tìm kiếm</div>
@@ -158,8 +155,8 @@
                                 </div>
                                 <div class="line"></div>
                             </div>
-                            
-                        </div>      
+
+                        </div>
                     </div>
                 </div>
             </div>
