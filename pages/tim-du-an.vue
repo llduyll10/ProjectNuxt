@@ -182,7 +182,7 @@
                                                                 Ngày đăng - <span>{{checkIsToday(item.createdDate)}}</span>
                                                             </div>
                                                             <div class="three">
-                                                                Dự trù - <span>{{item.budget}}</span>
+                                                                Dự trù - <span>{{formatNamePrice(item.budget)}}</span>
                                                             </div>
                                                             <div class="four">
                                                                 Hạn chót chào giá - <span>{{checkDueDate(item.dueDate)}}</span>
@@ -235,8 +235,7 @@ export default {
         }
     },
     mounted(){
-        this.searchProject()
-        this.checkDueDate()
+        this.searchInitPage()
     },
     methods:{
         async searchProject(){
@@ -254,7 +253,16 @@ export default {
                 this.loader(0)
             }
         },
-         getItemSearch(item,idxArray){
+        searchInitPage(){
+           this.$post('public/projects',{...this.objProject, limit:10, page:1})
+            .then(res =>{
+                this.listProject = res.data.projects
+            })
+            .catch(err =>{
+                console.log(err)
+            })
+        },
+        getItemSearch(item,idxArray){
             var arr = JSON.parse(JSON.stringify(this.objCategory[idxArray].children))
             arr.forEach(obj=>{
                 if(obj.id == item.id){
