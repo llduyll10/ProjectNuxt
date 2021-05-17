@@ -225,6 +225,19 @@ export default {
                 this.loader(0)
             }
         },
+        getProjectDraft(){
+            this.$get('/member/projects/draft')
+            .then(res =>{
+                console.log('resss',res)
+                if(res.data.status){
+                    this.objProject = res.data.project
+                }
+            })
+            .catch(err=>{
+                console.log('getProjectDraft',err)
+            })
+
+        },
         getFile(file){
             console.log('file',file);
             this.arrFile = this.arrFile.concat(file)
