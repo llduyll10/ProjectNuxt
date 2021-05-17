@@ -15,49 +15,54 @@
                             <div class="list">
                                 <div class="d-flex item-title f-14">
                                     <img src="@/assets/svg/homeproject.svg" alt="">
-                                    <span>Thi công xây dựng</span>
+                                    <span>{{objCategory[0].label}}</span>
                                 </div>
                                 <div class="list-item f-13">
                                     <ul>
-                                        <li>Thi công phần thô</li>
-                                        <li>Thi công hoàn thiện</li>
-                                        <li>Sửa chữa cải tạo</li>
-                                        <li>Thi công trọn gọi</li>
-                                        <li>Thi công nhà tiền chế</li>
-                                        <li>Thi công toà nhà</li>
-                                        <li>Hạng mục thi công khác</li>
+                                        <li @click="getItemSearch(item,0)"
+                                            v-for="(item) in objCategory[0].children"
+                                            :key="item.id"
+                                            :class="item.active ? 'font-weight-bold' :'' "
+                                            class="cursor-pointer"
+                                        >
+                                            {{item.label}}
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="list">
                                 <div class="d-flex item-title f-14">
                                     <img src="@/assets/svg/sofa.svg" alt="">
-                                    <span>Trang trí nội thất</span>
+                                     <span>{{objCategory[1].label}}</span>
                                 </div>
                                 <div class="list-item f-13">
                                     <ul>
-                                        <li>Nội thất căn hộ/nhà phố</li>
-                                        <li>Nội thất biệt thự</li>
-                                        <li>Nội thất văn phòng
-                                        <li>Nội thất nhà hàng</li>
-                                        <li>Nội thất quan bar/karaoke</li>
-                                        <li>Hạng mục nội thất khác</li>
+                                        <li @click="getItemSearch(item,1)"
+                                            v-for="(item) in objCategory[1].children"
+                                            :key="item.id"
+                                            :class="item.active ? 'font-weight-bold' :'' "
+                                            class="cursor-pointer"
+                                        >
+                                            {{item.label}}
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="list">
                                 <div class="d-flex item-title f-14">
                                     <img src="@/assets/svg/pen.svg" alt="">
-                                    <span>Thiết kế 2D/3D</span>
+                                    <span>{{objCategory[2].label}}</span>
                                 </div>
                                 <div class="list-item f-13">
                                     <ul>
-                                        <li>Thiết kế kiến trúc</li>
-                                        <li>Thiết kế nội thất</li>
-                                        <li>Bản vẽ kỹ thuật</li>
-                                        <li>Thiết kế kết cấu</li>
-                                        <li>Lập hồ sơ dự toán/hoàn công</li>
-                                        <li>Hạng mục thiết kế khác</li>
+                                         <li @click="getItemSearch(item,2)"
+                                            v-for="(item) in objCategory[2].children"
+                                            :key="item.id"
+                                            :class="item.active ? 'font-weight-bold' :'' "
+                                            class="cursor-pointer"
+                                        >
+                                            {{item.label}}
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -195,8 +200,8 @@
                                 </div>
                                 <div class="line"></div>
                             </div>
-                            
-                        </div>      
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -219,11 +224,12 @@ export default {
             imgProfile: ImgProfile,
             logoDuan :logoDuan,
             avatar : avatar,
-            dataFake:[1,2,3,4,5,6,7]
+            dataFake:[1,2,3,4,5,6,7],
+            objCategory: this.getCategory(),
+            arrFilter : []
         }
     },
     mounted(){
-
     },
     methods:{
         openLienHe(){
@@ -231,7 +237,34 @@ export default {
         },
         openLienHeMail(){
             this.$refs.LienHeFormPop.show();
-
+        },
+        getItemSearch(item,idxArray){
+            var arr = JSON.parse(JSON.stringify(this.objCategory[idxArray].children))
+            arr.forEach(obj=>{
+                if(obj.id == item.id){
+                    if(!obj.active){
+                        obj.active = true
+                    }
+                    else{
+                        obj.active = false
+                    }
+                }
+            })
+            this.objCategory[idxArray].children = arr
+            // Filter arr
+            var found = false
+            this.arrFilter.forEach(itemFound => {
+                if(itemFound.id == item.id){
+                    found = true
+                }
+            })
+            if(found){
+                this.arrFilter = this.arrFilter.filter(item2 => item2.id != item.id)
+            }
+            else{
+                this.arrFilter.push(item)
+            }
+            console.log('arrFilter',this.arrFilter)
         }
     }
 }
