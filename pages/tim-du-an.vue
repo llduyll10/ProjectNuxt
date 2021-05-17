@@ -236,13 +236,7 @@ export default {
         searchProject(){
             console.log('objProject',{...this.objProject, arrFilter:this.arrFilter})
         },
-        openLienHe(){
-            this.$refs.refLienHe.show();
-        },
-        openLienHeMail(){
-            this.$refs.LienHeFormPop.show();
-        },
-        getItemSearch(item,idxArray){
+         getItemSearch(item,idxArray){
             var arr = JSON.parse(JSON.stringify(this.objCategory[idxArray].children))
             arr.forEach(obj=>{
                 if(obj.id == item.id){
@@ -269,7 +263,13 @@ export default {
                 this.arrFilter.push(item)
             }
             console.log('arrFilter',this.arrFilter)
-        }
+        },
+        openLienHe(){
+            this.$refs.refLienHe.show();
+        },
+        openLienHeMail(){
+            this.$refs.LienHeFormPop.show();
+        },
     }
 }
 </script>
