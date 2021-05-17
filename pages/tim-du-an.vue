@@ -134,7 +134,7 @@
                             <div class="top top-change">
                                 <div class="search-top short-input">
                                     <input type="text"
-                                        v-model="objProject.searchText" class="f-12"
+                                        v-model="objProject.s" class="f-12"
                                         placeholder="Tìm kiếm đơn vị thi công/thiết kế"
                                     >
                                 </div>
@@ -233,8 +233,20 @@ export default {
     mounted(){
     },
     methods:{
-        searchProject(){
-            console.log('objProject',{...this.objProject, arrFilter:this.arrFilter})
+        async searchProject(){
+            this.loader()
+            try{
+                this.objProject.category = []
+                this.arrFilter.forEach(item => {
+                    this.objProject.category.push(item.id)
+                })
+                let res = await this.$post('public/projects',{...this.objProject, limit:10, page:1})
+                console.log(res)
+                this.loader(0)
+            }
+            catch(err){
+                this.loader(0)
+            }
         },
          getItemSearch(item,idxArray){
             var arr = JSON.parse(JSON.stringify(this.objCategory[idxArray].children))
