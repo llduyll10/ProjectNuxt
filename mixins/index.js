@@ -31,10 +31,7 @@ module.exports = {
         checkDueDate(value){
             var TODAY = this.$moment()
             var DUEDATE  = this.$moment(value)
-
-            var result = DUEDATE.from(TODAY,true)
-            var find = result.indexOf('n')
-            if(find == -1){
+            if(TODAY > DUEDATE){
                 return 'Hết hạn'
             }
             return DUEDATE.from(TODAY,true)
