@@ -72,13 +72,13 @@ module.exports = {
             var type = url.split('.').pop()
             var imgType = ["png","jpg","gif","jpeg"]
             if(imgType.includes(type)){
-                return `<i class="fas fa-file-image"></i>`
+                return `<i class="fas fa-file-image f-16 mr-7px"></i>`
             }
             else if(type=='pdf'){
-                return `<i class="fas fa-file-pdf"></i>`
+                return `<i class="fas fa-file-pdf f-16 mr-7px"></i>`
             }
             else{
-                return `<i class="far fa-file"></i>`
+                return `<i class="far fa-file f-16 mr-7px"></i>`
             }
         },
         spliceURLFile(url,symbol){

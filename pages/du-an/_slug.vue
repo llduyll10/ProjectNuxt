@@ -31,11 +31,11 @@
                 </p>
               </div>
               <hr class="hr" />
-              <h3 class="font-bold text-16">Tài liệu đính kèm</h3>
-              <div class="d-flex main-color mt-4 text-11">
+              <h3 class="font-bold text-16 mb-0">Tài liệu đính kèm</h3>
+              <div class="d-flex main-color mt-20px text-11">
                 <template v-if="detailProject.attachment">
                     <template v-for="(item,idx) in detailProject.attachment">
-                        <p :key="idx+1" class="f-11 text-main cursor-pointer mr-15px"
+                        <p :key="idx+1" class="f-11 mb-0 text-main cursor-pointer mr-15px"
                           @click="downloadFile(item,)"
                         >
                             <span v-html="returnTypeFile(spliceURLFile(item,'--'))"></span>
