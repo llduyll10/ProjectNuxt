@@ -356,7 +356,9 @@ export default {
       }
     };
   },
-  mounted() {},
+  mounted() {
+    console.log('this.$nuxt.params',this.$nuxt.$route.params.slug)
+  },
   methods: {},
 };
 </script>
