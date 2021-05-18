@@ -31,10 +31,11 @@
                 <p class="text-16 font-weight-bold">Yêu cầu công việc</p>
                 <div class="f-13 mb-0 break-line">{{detailProject.description}} </div>
               </div>
+
+              <template v-if="detailProject.attachment && detailProject.attachment.length">
               <hr class="hr" />
               <h3 class="font-bold text-16 mb-0">Tài liệu đính kèm</h3>
               <div class="d-flex main-color mt-20px text-11">
-                <template v-if="detailProject.attachment">
                     <template v-for="(item,idx) in detailProject.attachment">
                         <p :key="idx+1" class="f-11 mb-0 text-main cursor-pointer mr-15px"
                           @click="downloadFile(item,)"
@@ -43,8 +44,8 @@
                             {{spliceURLFile(item,'--')}}
                         </p>
                     </template>
-                </template>
               </div>
+              </template>
             </div>
             <!--  nội dung bài viết -->
 
