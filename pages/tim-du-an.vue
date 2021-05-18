@@ -14,7 +14,7 @@
                             <div class="line"></div>
                             <div class="list">
                                 <div class="d-flex item-title f-14">
-                                    <img src="@/assets/svg/homeproject.svg" alt="">
+                                    <!-- <img src="@/assets/svg/homeproject.svg" alt=""> -->
                                     <span>{{objCategory[0].label}}</span>
                                 </div>
                                 <div class="list-item f-13">
@@ -67,7 +67,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="left">
+                        <!-- <div class="left">
                             <div class="top">
                                 <div class="title f-16">
                                     LĨNH VỰC CÔNG VIỆC
@@ -94,7 +94,7 @@
                                     <div class="circle"></div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="box-title">
                             <p class="title f-16">TIN TỨC & THỊ TRƯỜNG</p>
                             <div class="line"></div>
@@ -163,9 +163,8 @@
                                                 <div class="content nopadding">
                                                     <div class="title d-flex">
                                                         <div class="d-flex title-icon">
-                                                            <img src="@/assets/svg/chair-timduan.svg" alt="">
                                                             <div
-                                                                class="ml-10px sub f-14 text-main cursor-pointer"
+                                                                class="sub f-14 text-main cursor-pointer"
                                                                 @click="$router.push(`du-an/${item.slug}`)"
                                                                 >
                                                                 {{item.name}}
