@@ -225,7 +225,7 @@
                   ID dự án
                 </div>
                 <div class="text-13 main-color col-6 px-0 font-weight-bold">
-                  123456
+                  {{detailProject.number}}
                 </div>
               </div>
               <div class="box d-flex pb-12px pt-8px">
