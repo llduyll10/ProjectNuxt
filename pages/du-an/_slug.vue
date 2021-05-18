@@ -122,14 +122,14 @@
                   <div class="d-flex mt-25px justify-content-xl-around row">
                     <div class="col-md-6 col-sm-12">
                       <button
-                        class=" btn btn-primary main-bg-color radius-5 w-100  text-16  "
+                        class=" btn btn-primary main-bg-color radius-5 w-100  text-16 fw-700"
                       >
                         GỬI CHÀO GIÁ NGAY
                       </button>
                     </div>
                     <div class="col-md-6 col-sm-12">
                       <button
-                        class=" btn btn-primary main-bg-color radius-5 w-100  btn-brown text-16 pr-0"
+                        class=" btn btn-primary main-bg-color radius-5 w-100  btn-brown text-16 pr-0 fw-700"
                       >
                         LƯU BẢN NHÁP
                       </button>
