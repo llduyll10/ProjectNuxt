@@ -216,7 +216,7 @@
             <div
               class="left inner-content-section p-25px mb-20px thongTinDuAnWrapper main-black"
             >
-              <h3 class="text-16 main-black mb-2">
+              <h3 class="text-16 font-weight-bold main-black mb-2">
                 Thông tin dự án
               </h3>
               <hr class="hr my-15px" />
@@ -232,7 +232,7 @@
                 <div class="text-12 col-6 px-0 color-grey">
                   Ngân sách
                 </div>
-                <div v-if="detailProject.budget" class="text-13 col-6 px-0 ">
+                <div v-if="detailProject.budget" class="text-13 col-6 px-0 main-black">
                   {{formatNamePrice(detailProject.budget)}}
                 </div>
               </div>
@@ -240,7 +240,7 @@
                 <div class="text-12 col-6 px-0 color-grey">
                   Ngày đăng
                 </div>
-                <div v-if="detailProject.createdDate" class="text-13 col-6 px-0 ">
+                <div v-if="detailProject.createdDate" class="text-13 col-6 px-0 main-black">
                   {{checkIsToday(detailProject.createdDate)}}
                 </div>
               </div>
@@ -256,7 +256,7 @@
                 <div class="text-12 col-6 px-0 color-grey">
                   Địa điểm
                 </div>
-                <div class="text-13 px-0 ">
+                <div class="text-13 px-0 main-black">
                   {{detailProject.address}}
                 </div>
               </div>
