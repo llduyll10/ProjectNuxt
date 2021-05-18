@@ -59,7 +59,7 @@
               </h3>
               <hr class="hr" />
               <template v-if="detailProject && detailProject._id">
-                <FormQuote :id="detailProject._id"  />
+                <FormQuote :quoteName="detailProject.name"  :id="detailProject._id"  />
               </template>
             </div>
             <!--  Form chào giá -->

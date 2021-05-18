@@ -96,13 +96,18 @@
         </form>
     </div>
     <div v-else>
-        <p>Bạn đã gửi chào giá cho dự án Tìm nhà thầu xây dựng nhà phố 5x20m tại Biên Hoà</p>
+        <div class="text-center">
+            <img src="@/assets/svg/CheckboxBig.svg" />
+            <p class="f-19 main-black font-weight-bold">Bạn đã gửi chào giá cho
+                <span class="text-main">{{quoteName}}</span>
+            </p>
+        </div>
     </div>
 
 </template>
 <script>
 export default {
-    props:['id'],
+    props:['id','quoteName'],
     data(){
         return{
             objForm:{
