@@ -58,7 +58,9 @@
                 <span class="main-color">3 Tokens</span> khi tham gia chào giá
               </h3>
               <hr class="hr" />
-              <FormQuote />
+              <template v-if="detailProject && detailProject._id">
+                <FormQuote :id="detailProject._id"  />
+              </template>
             </div>
             <!--  Form chào giá -->
 
