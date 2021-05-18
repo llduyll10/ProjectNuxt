@@ -274,10 +274,11 @@
 
             <!-- Thông tin khách hàng -->
             <div
-              class="left inner-content-section px-24px pt-25px pb-50px mb-20px thongTinDuAnWrapper main-black"
+              class="left inner-content-section px-24px pt-20px pb-40px mb-20px thongTinDuAnWrapper main-black"
+              v-if="detailProject && detailProject.createBy"
             >
               <!-- Hard some css display none for re-using profile component -->
-              <ProfileInfo class="profile" />
+              <Customer :id="detailProject.createBy._id" class="profile" />
             </div>
             <!-- Thông tin khách hàng -->
 

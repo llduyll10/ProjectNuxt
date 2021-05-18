@@ -24,6 +24,15 @@
                     color: #F2C94C;
                 }
             }
+            &.custom{
+                display: flex;
+                justify-content: space-between;
+                padding: 0 15px;
+                p{
+                    color: white;
+                    font-weight: normal;
+                }
+            }
         }
     }
     .group-star{
