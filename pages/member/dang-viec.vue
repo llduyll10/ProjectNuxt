@@ -199,10 +199,14 @@ export default {
     },
     methods:{
         restForm(){
+            this.arrFileImg=[],
+            this.arrBase64=[],
+            this.arrFile=[]
             return {
                 category:[],
                 dueDate: new Date().getTime(),
                 agree:false,
+
             }
         },
         async createJob(status){

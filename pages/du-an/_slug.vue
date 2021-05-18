@@ -35,7 +35,7 @@
               <div class="d-flex main-color mt-4 text-11">
                 <template v-if="detailProject.attachment">
                     <template v-for="(item,idx) in detailProject.attachment">
-                        <p :key="idx+1" class="f-11 text-main cursor-pointer"
+                        <p :key="idx+1" class="f-11 text-main cursor-pointer mr-15px"
                           @click="downloadFile(item,)"
                         >
                             <span v-html="returnTypeFile(spliceURLFile(item,'--'))"></span>
