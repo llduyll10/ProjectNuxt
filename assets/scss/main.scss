@@ -23,6 +23,11 @@ body {
     font-size: 13px;
 }
 
+.break-line {
+    white-space: break-spaces;
+    line-height: 22px;
+}
+
 @media (min-width: 1200px) {
     .container-fluid {
         max-width: 1240px !important;

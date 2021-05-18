@@ -26,9 +26,7 @@
               <hr class="hr" />
               <div class="main-black text-13">
                 <p class="text-16 font-weight-bold">Yêu cầu công việc</p>
-                <p class="f-13 mb-0">
-                  {{detailProject.description}}
-                </p>
+                <div class="f-13 mb-0 break-line">{{detailProject.description}} </div>
               </div>
               <hr class="hr" />
               <h3 class="font-bold text-16 mb-0">Tài liệu đính kèm</h3>
