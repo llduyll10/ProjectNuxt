@@ -35,7 +35,7 @@
               <div class="d-flex main-color mt-4 text-11">
                 <template v-if="detailProject.attachment">
                     <template v-for="(item,idx) in detailProject.attachment">
-                        <p :key="idx+1" class="f-11 text-main ">
+                        <p :key="idx+1" class="f-11 text-main">
                             <span v-html="returnTypeFile(spliceURLFile(item,'--'))"></span>
                             {{spliceURLFile(item,'--')}}
                         </p>
@@ -238,7 +238,7 @@
                 <div class="text-12 col-6 px-0 color-grey">
                   Ngày đăng
                 </div>
-                <div class="text-13 col-6 px-0 ">
+                <div v-if="detailProject.createdDate" class="text-13 col-6 px-0 ">
                   {{checkIsToday(detailProject.createdDate)}}
                 </div>
               </div>
@@ -246,7 +246,7 @@
                 <div class="text-12 col-6 px-0 color-grey">
                   Hạn chót chào giá
                 </div>
-                <div class="text-13 main-color px-0 font-weight-bold">
+                <div v-if="detailProject.dueDate" class="text-13 main-color px-0 font-weight-bold">
                   {{checkDueDate(detailProject.dueDate)}}
                 </div>
               </div>
