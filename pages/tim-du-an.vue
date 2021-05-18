@@ -67,7 +67,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="left">
+                        <!-- <div class="left">
                             <div class="top">
                                 <div class="title f-16">
                                     LĨNH VỰC CÔNG VIỆC
@@ -94,7 +94,7 @@
                                     <div class="circle"></div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="box-title">
                             <p class="title f-16">TIN TỨC & THỊ TRƯỜNG</p>
                             <div class="line"></div>
