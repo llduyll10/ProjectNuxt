@@ -38,16 +38,29 @@ module.exports = {
         },
         formatNamePrice(value){
             var arr = value.toString().split('')
+            console.log('arr init',arr)
             if(arr.length > 9){
                 var end = arr.length - 9
                 var temp = arr.splice(0,end)
                 var rs = temp.join('')
+
+                // Check unit
+                var unit = arr.shift()
+                if(Number(unit)> 0){
+                    return `${rs},${unit} Tỷ`
+                }
                 return `${rs} Tỷ`
             }
             else if(arr.length>6 && arr.length <= 9){
                 var end = arr.length - 6
                 var temp = arr.splice(0,end)
                 var rs = temp.join('')
+
+                //Check unit
+                var unit = arr.shift()
+                if(Number(unit)> 0){
+                    return `${rs},${unit} Triệu`
+                }
                 return `${rs} Triệu`
             }
         },
