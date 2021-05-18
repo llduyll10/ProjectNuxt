@@ -31,6 +31,9 @@ module.exports = {
         checkDueDate(value){
             var TODAY = this.$moment()
             var DUEDATE  = this.$moment(value)
+            if(TODAY.format('DD/MM/YYYY') == DUEDATE.format('DD/MM/YYYY')){
+                return '1 ngày'
+            }
             if(TODAY > DUEDATE){
                 return 'Hết hạn'
             }
