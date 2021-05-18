@@ -37,8 +37,13 @@
                     Thời gian thi công dự trù
                     <span style="color:red">*</span>
                 </label>
-                <div class="col-md-3 col-sm-12">
-                    <input v-model="objForm.day" @keypress="isNumber($event)" type="text" class="form-control "/>
+                <div class="col-md-3 col-sm-12 ">
+                    <div class="input-group">
+                        <input v-model="objForm.day" @keypress="isNumber($event)" type="text" class="form-control "/>
+                        <div class="input-group-append">
+                            <span class="input-group-text py-0 px-10px">Ngày</span>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="form-group row mb-25px">
@@ -154,6 +159,7 @@ export default {
                         }
                 let res = await this.$post(`member/auction/project/${this.id}`,obj)
                 this.resetForm()
+                this.getQuote()
                 this.loader(0)
             }
             catch(err){
