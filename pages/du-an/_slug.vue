@@ -11,50 +11,36 @@
               class="left inner-content-section px-36px pt-25px pb-50px mb-20px"
             >
               <h2 class="main-color f-20 font-weight-bold mb-15px">
-                Tìm nhà thầu xây dựng nhà phố 5x20m tại Biên Hoà
+                {{detailProject.name}}
               </h2>
-              <span
-                class="px-8px badge badge-primary main-bg-color py-2px text-12 custom-bage"
-                >Thi công phần thô</span
-              >
+              <template v-for="(item) in arrNameCategory">
+                <span
+                  :key="item.id"
+                  class="px-8px badge badge-primary main-bg-color py-2px text-12 custom-bage mr-8px"
+                >
+                  {{item.label}}
+                </span
+                >
+              </template>
+
               <hr class="hr" />
               <div class="main-black text-13">
                 <p class="text-16 font-weight-bold">Yêu cầu công việc</p>
                 <p class="f-13 mb-0">
-                Econs được thành lập và phát triển suốt 8 năm qua theo mô hình
-                dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội
-                thất...Econs được thành lập và phát triển suốt 8 năm qua theo mô
-                hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội
-                thất...Econs được thành lập và phát triển suốt 8 năm qua theo mô
-                hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội
-                thất...Econs được thành lập và phát triển suốt 8 năm qua theo mô
-                hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội
-                thất...Econs được thành lập và phát triển suốt 8 năm qua theo mô
-                hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội
-                thất...
+                  {{detailProject.description}}
                 </p>
               </div>
               <hr class="hr" />
               <h3 class="font-bold text-16">Tài liệu đính kèm</h3>
               <div class="d-flex main-color mt-4 text-11">
-                <div class="mr-3">
-                  <span class="pr-1">
-                    <img class="icon-red" src="@/assets/svg/icon-pdf-border.svg" />
-                  </span>
-                  Photo sổ nhà Gò Vấp
-                </div>
-                <div class="px-3">
-                  <span class="pr-1">
-                    <img src="@/assets/svg/icon-jpeg.svg" />
-                  </span>
-                  Ảnh tham khảo_01
-                </div>
-                <div class="px-3">
-                  <span class="pr-1">
-                    <img src="@/assets/svg/icon-jpeg.svg" />
-                  </span>
-                  Ảnh tham khảo_02
-                </div>
+                <template v-if="detailProject.attachment">
+                    <template v-for="(item,idx) in detailProject.attachment">
+                        <p :key="idx+1" class="f-11 text-main ">
+                            <span v-html="returnTypeFile(spliceURLFile(item,'--'))"></span>
+                            {{spliceURLFile(item,'--')}}
+                        </p>
+                    </template>
+                </template>
               </div>
             </div>
             <!--  nội dung bài viết -->
@@ -159,8 +145,8 @@
                 <span class="main-color">3 Tokens</span> khi tham gia chào giá
               </h3>
               <hr class="hr" />
-              <template v-for="id in 3">
-                <div class="d-flex flex-wrap " :key="id">
+              <template v-for="(id,index) in 3">
+                <div class="d-flex flex-wrap " :key="index+20">
                   <div class="col-12 d-flex pb-20px  px-0 justify-content-between">
                     <div class="col-7 d-flex align-items-center">
                       <div>
@@ -175,7 +161,7 @@
                             5.0
                           </div>
                           <template v-for="(item, idx) in 4">
-                            <div :key="idx">
+                            <div :key="idx+10">
                               <i
                                 class="fas fa-star mr-1px f-13 main-yellow"
                               ></i>
@@ -244,8 +230,8 @@
                 <div class="text-12 col-6 px-0 color-grey">
                   Ngân sách
                 </div>
-                <div class="text-13 col-6 px-0 ">
-                  Thương lượng
+                <div v-if="detailProject.budget" class="text-13 col-6 px-0 ">
+                  {{formatNamePrice(detailProject.budget)}}
                 </div>
               </div>
               <div class="box d-flex pb-12px pt-8px">
@@ -253,7 +239,7 @@
                   Ngày đăng
                 </div>
                 <div class="text-13 col-6 px-0 ">
-                  01/04/2021
+                  {{checkIsToday(detailProject.createdDate)}}
                 </div>
               </div>
               <div class="box d-flex pb-12px pt-8px">
@@ -261,7 +247,7 @@
                   Hạn chót chào giá
                 </div>
                 <div class="text-13 main-color px-0 font-weight-bold">
-                  15 ngày
+                  {{checkDueDate(detailProject.dueDate)}}
                 </div>
               </div>
               <div class="box d-flex pb-12px pt-8px">
@@ -269,7 +255,7 @@
                   Địa điểm
                 </div>
                 <div class="text-13 px-0 ">
-                  Biên Hoà, Đồng Nai
+                  {{detailProject.address}}
                 </div>
               </div>
               <div class="box d-flex pb-12px pt-8px">
@@ -299,7 +285,7 @@
               <template v-for="(item, idx) in 3">
                 <div
                   class="d-flex flex-column w-100 item-related mb-20px"
-                  :key="idx"
+                  :key="idx + 100"
                 >
                   <div class="position-relative ">
                     <img
@@ -352,13 +338,29 @@ export default {
   data() {
     return {
       objForm:{
-        status:false
-      }
+        status:false,
+      },
+      slug:this.$nuxt.$route.params.slug,
+      detailProject:{},
+      listCategory: this.getCategory(),
+      arrNameCategory:[]
     };
   },
   mounted() {
-    console.log('this.$nuxt.params',this.$nuxt.$route.params.slug)
+    this.getDetailProject()
   },
-  methods: {},
+  methods: {
+    getDetailProject(){
+      this.$get(`public/projects/${this.slug}`)
+        .then(res =>{
+          this.detailProject = res.data
+          this.arrNameCategory = this.mapCategory(this.detailProject.category)
+          console.log(this.detailProject)
+        })
+        .catch(err =>{
+          console.log(err)
+        })
+    },
+  },
 };
 </script>

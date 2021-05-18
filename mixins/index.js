@@ -165,6 +165,22 @@ module.exports = {
 
             ]
         },
+        mapCategory(arr){
+            var result = []
+            var arrCategory = this.getCategory()
+            var arrMap = arrCategory[0].children
+                              .concat(arrCategory[1].children)
+                              .concat(arrCategory[2].children)
+
+            arr.forEach(item1 =>{
+              arrMap.forEach(item2 =>{
+                if(item1 == item2.id){
+                    result.push(item2)
+                }
+              })
+            })
+            return result
+        },
         getProvince() {
             return [
                 {

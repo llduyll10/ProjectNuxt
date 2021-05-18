@@ -164,7 +164,12 @@
                                                     <div class="title d-flex">
                                                         <div class="d-flex title-icon">
                                                             <img src="@/assets/svg/chair-timduan.svg" alt="">
-                                                            <div class="ml-10px sub f-14">{{item.name}}</div>
+                                                            <div
+                                                                class="ml-10px sub f-14 text-main cursor-pointer"
+                                                                @click="$router.push(`du-an/${item.slug}`)"
+                                                                >
+                                                                {{item.name}}
+                                                            </div>
                                                         </div>
                                                         <div class="icon">
                                                             <img src="@/assets/svg/icon-location.svg" alt="">
