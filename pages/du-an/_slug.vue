@@ -13,17 +13,20 @@
               <h2 class="main-color f-20 font-weight-bold mb-15px">
                 {{detailProject.name}}
               </h2>
+
+              <div>
               <template v-for="(item) in arrNameCategory">
                 <span
                   :key="item.id"
-                  class="px-8px badge badge-primary main-bg-color py-2px text-12 custom-bage mr-8px"
+                  class="px-8px badge badge-primary main-bg-color py-2px text-12 custom-bage mr-8px mb-8px"
                 >
                   {{item.label}}
                 </span
                 >
               </template>
+              </div>
 
-              <hr class="hr" />
+              <hr class="hr"/>
               <div class="main-black text-13">
                 <p class="text-16 font-weight-bold">Yêu cầu công việc</p>
                 <div class="f-13 mb-0 break-line">{{detailProject.description}} </div>
