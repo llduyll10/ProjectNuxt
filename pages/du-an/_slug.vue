@@ -69,8 +69,7 @@
               class="left inner-content-section px-36px pt-25px pb-50px mb-20px"
             >
               <h3 class="h5 main-black f-16 font-weight-bold">
-                Gửi chào giá cho dự án - Bạn sẽ tốn
-                <span class="main-color">3 Tokens</span> khi tham gia chào giá
+                Danh sách chào giá (3<span class="main-color">3</span> chào giá)
               </h3>
               <hr class="hr" />
               <template v-for="(id,index) in 3">
