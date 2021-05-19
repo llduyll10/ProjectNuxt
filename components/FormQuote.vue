@@ -1,5 +1,5 @@
 <template>
-    <div v-if="!detailQuote ||  detailQuote.status == 'DRAFT'  ">
+    <div v-if="isShowForm">
         <form @submit.prevent="createQuote('ACTIVE')" class="group-content">
             <div class="form-group row mb-25px">
                 <label class="f-13 col-md-3 col-sm-12 font-weight-bold">
@@ -101,10 +101,13 @@
         </form>
     </div>
     <div v-else>
+        
         <div class="text-center">
             <img src="@/assets/svg/CheckboxBig.svg" />
-            <p class="f-19 main-black font-weight-bold">Bạn đã gửi chào giá cho
-                <span class="text-main">{{quoteName}}</span>
+            <p v-if="$auth.loggedIn" class="f-19 main-black font-weight-bold">Bạn đã gửi chào giá cho
+                <span class="text-main">{{quoteName}}</span></p>
+            <p v-else class="f-19 main-black font-weight-bold">
+                Vui lòng đăng nhập để chào giá
             </p>
         </div>
     </div>
@@ -120,7 +123,7 @@ export default {
             },
             accepFile:["png", "jpg", "tiff", "pdf", "xls", "doc", "ppt", "zip", "rar"],
             arrFile:[],
-            detailQuote:null
+            isShowForm:false
         }
     },
     mounted(){
@@ -135,12 +138,11 @@ export default {
         getQuote(){
             this.$get(`member/auction/project/${this.id}`)
                 .then(res =>{
-                    console.log('get quote', res)
-                    if(res.data.auction){
-                        this.detailQuote = res.data.auction
-                        if(this.detailQuote.status == 'DRAFT'){
-                            this.objForm = {...this.detailQuote}
+                    if(res.data.status){
+                        if(res.data.auction && res.data.auction.status == 'DRAFT'){
+                            this.objForm = {...res.data.auction}
                         }
+                        this.isShowForm = true;
                     }
                 })
                 .catch(err => {
