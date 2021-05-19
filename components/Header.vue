@@ -2,7 +2,7 @@
   <div class="cover-header">
 
     <div class="container-fluid">
-      <b-navbar toggleable="lg" class="px-0" >
+      <b-navbar toggleable="lg" class="p-0" >
         <b-navbar-brand :to="'/'">
           <template>
             <img src="@/assets/img/black-logo.png" alt="Logo" class="logo" />

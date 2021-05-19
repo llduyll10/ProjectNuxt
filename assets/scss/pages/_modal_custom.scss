@@ -46,7 +46,7 @@
             padding-bottom: 12px;
             border-bottom: 1.5px solid #f2f2f2;
             .title {
-                font-weight: 700;
+                font-weight: 600;
                 line-height: 36px;
                 span {
                     color: $main-color;
@@ -57,7 +57,7 @@
                 margin-top: 9px;
                 span {
                     color: $main-color;
-                    font-weight: 700;
+                    font-weight: 600;
                 }
             }
         }
@@ -71,11 +71,11 @@
                 .label {
                     width: 180px;
                     font-size: 13px;
-                    font-weight: 700;
+                    font-weight: 600;
                 }
                 .name {
                     flex-grow: 1;
-                    font-weight: 700;
+                    font-weight: 600;
                     font-size: 14px;
                     color: #D80027;
                 }
@@ -87,11 +87,11 @@
                 .label {
                     width: 180px;
                     font-size: 13px;
-                    font-weight: 700;
+                    font-weight: 600;
                 }
                 .phone {
                     flex-grow: 1;
-                    font-weight: 700;
+                    font-weight: 600;
                     font-size: 14px;
                     color: $main-color;
                 }
@@ -102,11 +102,11 @@
                 .label {
                     width: 180px;
                     font-size: 13px;
-                    font-weight: 700;
+                    font-weight: 600;
                 }
                 .email {
                     flex-grow: 1;
-                    font-weight: 700;
+                    font-weight: 600;
                     font-size: 14px;
                     color: $main-color;
                 }
@@ -115,7 +115,7 @@
         .bottom {
             padding-top: 36px;
             .submit {
-                font-weight: 700;
+                font-weight: 600;
                 background-color: $main-color;
                 width: 100%;
                 height: 40px;

@@ -8,7 +8,7 @@
                     <p class="f-13 description">Vui lòng điền vào thông tin dưới đây. Bạn sẽ nhận được <span>8-10</span>  chào giá tạm tính từ những công ty xây dựng/đơn vị thiết kế uy tín trong khu vực. Bạn thoà sức <span>
                         yêu cầu tư vấn</span>  và <span>chọn lựa</span> đơn vị phù hợp nhất cho dự án</p>
                     <form @submit.prevent="createJob('ACTIVE')" class="group-content mt-36px">
-                        <div class="form-group row">
+                        <div class="form-group row align-items-center">
                              <label class="f-13 col-md-3 col-sm-12 ">
                                 Dịch vụ yêu cầu
                                 <span style="color:red">*</span>
@@ -25,7 +25,7 @@
                             />
 
                         </div>
-                        <div class="form-group row">
+                        <div class="form-group row align-items-center">
                              <label class="f-13 col-md-3 col-sm-12 ">
                                 Tên Dự Án
                                 <span style="color:red">*</span>
@@ -38,9 +38,10 @@
                                 v-model="objProject.name"
                             />
                         </div>
-                        <div class="form-group row">
+                        <div class="form-group row align-items-center">
                              <label class="f-13 col-md-3 col-sm-12 ">
                                 Mô tả Yêu Cầu Về Công Việc
+
                                 <span style="color:red">*</span>
                             </label>
                             <textarea v-model="objProject.description" required id="customPlaceholder" class="form-control col-md-9 col-sm-12" rows="5"
@@ -48,7 +49,7 @@
                             ></textarea>
                         </div>
                         <!-- File Img -->
-                        <div class="form-group row">
+                        <div class="form-group row align-items-center">
                              <label class="f-13  col-md-3 col-sm-12 ">
                                 Hình ảnh đính kèm
                             </label>
@@ -72,7 +73,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row align-items-center">
                              <label class="f-13  col-md-3 col-sm-12 ">
                                 Tài liệu đính kèm
                             </label>
@@ -94,7 +95,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row align-items-center">
                              <label class="f-13 col-md-3 col-sm-12 ">
                                 Địa điểm dự án
                                 <span style="color:red">*</span>
@@ -107,7 +108,7 @@
                                 placeholder="Tỉnh thành"
                             />
                         </div>
-                        <div class="form-group row">
+                        <div class="form-group row align-items-center">
                              <label class="f-13 col-md-3 col-sm-12 ">
                                 Ngân sách dự trù
                                 <span style="color:red">*</span>
@@ -120,7 +121,7 @@
                                 v-model="objProject.budget"
                             />
                         </div>
-                        <div class="form-group row">
+                        <div class="form-group row align-items-center">
                              <label class="f-13 col-md-3 col-sm-12 ">
                                 Thời gian kết thúc nhận chào giá
                                 <span style="color:red">*</span>
