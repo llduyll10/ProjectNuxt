@@ -46,9 +46,7 @@
         </div>
         </div>
         <div class="col-12">
-            <div class="main-black text-13 break-line">
-                {{company.description}}
-            </div>
+            <div class="main-black text-13 break-line">{{company.description}}</div>
         </div>
 
     </div>
