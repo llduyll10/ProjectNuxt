@@ -76,12 +76,17 @@
         }
         .wrapMessage {
             padding: 0px 16px;
+            height: 600px;
+            overflow-y: scroll;
             .messageItem {
                 margin-top: 15px;
                 padding: 13px 5px;
                 background: rgba(255, 255, 255, 0.92);
-                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
                 border-radius: 5px;
+                border-bottom: 1px solid #f2f2f2;
+                &:hover {
+                    background-color: #F2F2F2;
+                }
                 img {
                     width: 35px;
                     height: 35px;
@@ -142,6 +147,10 @@
                     }
                 }
                 &.active {
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    .messageItem {
+                        border: none;
+                    }
                     .content {
                         .top {
                             .name {
