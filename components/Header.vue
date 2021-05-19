@@ -80,7 +80,7 @@
                 <!-- NOT LOGIN -->
                 <template v-else>
                   <template v-for="(item, index) in objBtn">
-                      <b-nav-item :key="index" class="sub-menu px-20px mt-10px d-none d-lg-block" @click="item.methods">
+                      <b-nav-item :key="index" class="sub-menu menu-right px-20px mt-10px d-none d-lg-block" @click="item.methods">
                           <span class="f-13" >{{item.name}}</span>
                       </b-nav-item>
                   </template>

@@ -19,6 +19,12 @@
       cursor: pointer;
       height: 25px;
       border-right: 1px solid rgba(130, 130, 130, 0.5);
+      &.menu-right{
+        &:nth-child(2){
+            border-right: 0;
+            padding-right: 0 !important;
+        }
+      }
       &:last-child {
           border-right: 0;
       }
@@ -207,7 +213,7 @@
         }
         .navbar-nav{
             margin-left: 0 !important;
-            
+
             .isLogin{
                 padding-left: 0 !important;
             }
@@ -251,7 +257,7 @@
     .cover-header{
         .navbar-nav{
             margin-left: 0 !important;
-            
+
             .isLogin{
                 padding-left: 0 !important;
             }
