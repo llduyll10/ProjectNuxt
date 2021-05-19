@@ -1,6 +1,12 @@
 <template>
     <section id="infor-component">
-        <div   class="cover-img"
+        <div class="title">
+            <h3 class="text-16 fw-600 main-black mb-0">
+                Thông tin khách hàng
+            </h3>
+            <hr class="hr my-15px" />
+        </div>
+        <div   class="cover-img mt-20px"
                 :style="{
                     'background-image': 'url(' + `${detailAccount.photo}` + ')',
                 }"
