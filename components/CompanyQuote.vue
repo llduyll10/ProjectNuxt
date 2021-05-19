@@ -7,7 +7,7 @@
                 <img :src="company.auctionBy.photo" width="70" height="75" />
                 </div>
                 <div class="ml-1 ml-16px">
-                <p class="mb-0 f-14 font-weight-bold main-black">{{company.auctionBy.company}}</p>
+                <p class="mb-0 f-14 fw-600 main-black">{{company.auctionBy.company}}</p>
                 <div class="d-inline-flex main-black py-11px">
                     <div
                     class="badge badge-warning d-inline-flex align-items-center text-white py-3px text-10 mr-1"
@@ -27,13 +27,13 @@
                 </div>
                 <div class="text-11 color-grey">
                     <span>Chi phí ước tính -
-                        <span class="font-weight-bold main-color text-13">
+                        <span class="fw-600 main-color text-13">
                             {{formatNamePrice(company.price)}}
                         </span>
                     </span>
                     <span class="px-11px"> | </span>
                     <span>Thời gian thi công -
-                        <span class="font-weight-bold main-color text-13">
+                        <span class="fw-600 main-color text-13">
                             {{company.day}} ngày
                         </span>
                     </span>

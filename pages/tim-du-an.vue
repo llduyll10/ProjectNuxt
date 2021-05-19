@@ -22,7 +22,7 @@
                                         <li @click="getItemSearch(item,0)"
                                             v-for="(item) in objCategory[0].children"
                                             :key="item.id"
-                                            :class="item.active ? 'font-weight-bold text-main' :'' "
+                                            :class="item.active ? 'fw-600 text-main' :'' "
                                             class="cursor-pointer"
                                         >
                                             {{item.label}}
@@ -40,7 +40,7 @@
                                         <li @click="getItemSearch(item,1)"
                                             v-for="(item) in objCategory[1].children"
                                             :key="item.id"
-                                            :class="item.active ? 'font-weight-bold text-main' :'' "
+                                            :class="item.active ? 'fw-600 text-main' :'' "
                                             class="cursor-pointer"
                                         >
                                             {{item.label}}
@@ -58,7 +58,7 @@
                                          <li @click="getItemSearch(item,2)"
                                             v-for="(item) in objCategory[2].children"
                                             :key="item.id"
-                                            :class="item.active ? 'font-weight-bold text-main' :'' "
+                                            :class="item.active ? 'fw-600 text-main' :'' "
                                             class="cursor-pointer"
                                         >
                                             {{item.label}}

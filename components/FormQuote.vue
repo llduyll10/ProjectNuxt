@@ -2,7 +2,7 @@
     <div v-if="isShowForm">
         <form @submit.prevent="createQuote('ACTIVE')" class="group-content">
             <div class="form-group row mb-25px align-items-center">
-                <label class="f-13 col-md-3 col-sm-12 font-weight-bold">
+                <label class="f-13 col-md-3 col-sm-12 fw-600">
                     Chi phí ước tính
                     <span style="color:red">*</span>
                 </label>
@@ -16,12 +16,12 @@
                     />
                     <p class="mb-0 mt-5px f-12 main-black">
                     Phí hoa hồng nếu trúng thầu -
-                    <span class="main-color font-weight-bold">500</span> <span class="font-weight-bold">Tokens</span>
+                    <span class="main-color fw-600">500</span> <span class="fw-600">Tokens</span>
                     </p>
                 </div>
             </div>
             <div class="form-group row mb-25px align-items-center">
-                <label class="f-13 col-md-3 col-sm-12 font-weight-bold">
+                <label class="f-13 col-md-3 col-sm-12 fw-600">
                     Kinh nghiệm, Năng lực và giải pháp đề xuất
                     <span style="color:red">*</span>
                 </label>
@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="form-group row mb-25px align-items-center">
-                <label class="f-13 col-md-3 col-sm-12 font-weight-bold">
+                <label class="f-13 col-md-3 col-sm-12 fw-600">
                     Thời gian thi công dự trù
                     <span style="color:red">*</span>
                 </label>
@@ -47,7 +47,7 @@
                 </div>
             </div>
             <div class="form-group row mb-25px align-items-center">
-                <label class="f-13 col-md-3 col-sm-12 font-weight-bold">
+                <label class="f-13 col-md-3 col-sm-12 fw-600">
                     Tài liệu đính kèm
                     <span style="color:red">*</span>
                 </label>
@@ -104,9 +104,9 @@
         
         <div class="text-center">
             <img src="@/assets/svg/CheckboxBig.svg" />
-            <p v-if="$auth.loggedIn" class="f-19 main-black font-weight-bold">Bạn đã gửi chào giá cho
+            <p v-if="$auth.loggedIn" class="f-19 main-black fw-600">Bạn đã gửi chào giá cho
                 <span class="text-main">{{quoteName}}</span></p>
-            <p v-else class="f-19 main-black font-weight-bold">
+            <p v-else class="f-19 main-black fw-600">
                 Vui lòng đăng nhập để chào giá
             </p>
         </div>

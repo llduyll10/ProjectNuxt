@@ -17,7 +17,7 @@
             <div class="d-flex cover-type-location">
                 <div class="type">
                     <img src="@/assets/svg/icon-user-dark.svg" />
-                    <span class="f-11 font-weight-bold">Công Ty Xây Dựng</span>
+                    <span class="f-11 fw-600">Công Ty Xây Dựng</span>
                 </div>
                 <div class="location">
                     <img src="@/assets/svg/icon-location.svg" />

@@ -10,7 +10,7 @@
             <div
               class="left inner-content-section px-36px pt-25px pb-50px mb-20px"
             >
-              <h2 class="main-color f-20 font-weight-bold mb-15px">
+              <h2 class="main-color f-20 fw-600 mb-15px">
                 {{detailProject.name}}
               </h2>
 
@@ -28,7 +28,7 @@
 
               <hr class="hr my-10px"/>
               <div class="main-black text-13">
-                <p class="text-16 font-weight-bold">Yêu cầu công việc</p>
+                <p class="text-16 fw-600">Yêu cầu công việc</p>
                 <div class="f-13 mb-0 break-line">{{detailProject.description}} </div>
               </div>
 
@@ -70,7 +70,7 @@
               class="left inner-content-section px-36px pt-25px pb-50px mb-20px"
             > 
               
-              <h3 class="h5 main-black f-16 font-weight-bold">
+              <h3 class="h5 main-black f-16 fw-600">
                 Danh sách chào giá (<span class="main-color">{{arrQuoteCompany && arrQuoteCompany.length}}</span> chào giá)
               </h3>
               <hr class="hr" />
@@ -96,7 +96,7 @@
             <div
               class="left inner-content-section p-25px mb-20px thongTinDuAnWrapper main-black"
             >
-              <h3 class="text-16 font-weight-bold main-black mb-2">
+              <h3 class="text-16 fw-600 main-black mb-2">
                 Thông tin dự án
               </h3>
               <hr class="hr my-15px" />
@@ -104,7 +104,7 @@
                 <div class="text-12 col-6 px-0 color-grey">
                   ID dự án
                 </div>
-                <div class="text-13 main-color col-6 px-0 font-weight-bold">
+                <div class="text-13 main-color col-6 px-0 fw-600">
                   {{detailProject.number}}
                 </div>
               </div>
@@ -129,7 +129,7 @@
                   Hạn chót chào giá
                 </div>
                 <div v-if="detailProject.dueDate"
-                    class="text-13 main-color px-0 font-weight-bold"
+                    class="text-13 main-color px-0 fw-600"
                     :class="checkStatusDueDate(detailProject.dueDate) ? 'text-red' :'' "
                   >
                   {{checkDueDate(detailProject.dueDate)}}
@@ -147,7 +147,7 @@
                 <div class="text-12 col-6 px-0 color-grey">
                   Phí chào giá
                 </div>
-                <div class="text-13 main-color px-0 font-weight-bold">
+                <div class="text-13 main-color px-0 fw-600">
                   3 Tokens
                 </div>
               </div>
@@ -166,7 +166,7 @@
 
             <!-- Dự án tương tự -->
             <div class="text-center">
-              <h3 class=" font-weight-bold f-16 main-color mb-5px">DỰ ÁN TƯƠNG TỰ</h3>
+              <h3 class=" fw-600 f-16 main-color mb-5px">DỰ ÁN TƯƠNG TỰ</h3>
               <div class="line mb-15px"></div>
               <template v-for="(item, idx) in 3">
                 <div
@@ -179,12 +179,12 @@
                       src="@/assets/img/du-an-tuong-tu-demo.png"
                     />
                     <span
-                      class="mt-20px end-0 position-absolute bg-yellow-8 text-light text-12 pl-30px pr-16px py-5px line-height-15 font-weight-bold"
+                      class="mt-20px end-0 position-absolute bg-yellow-8 text-light text-12 pl-30px pr-16px py-5px line-height-15 fw-600"
                       >NỘI THẤT</span
                     >
                   </div>
                   <div class="bg-white px-15px py-18px">
-                    <h3 class="text-14 main-color font-weight-bold mb-25px">
+                    <h3 class="text-14 main-color fw-600 mb-25px">
                       Tìm đơn vị thi công nội thất chung cư Hà Đô Centrosa
                       (60m2/2pn)
                     </h3>
@@ -195,7 +195,7 @@
                       </span>
                       <span class="text-12">
                         Ngân sách -
-                        <span class="text-13 main-color font-weight-bold">300 Triệu</span>
+                        <span class="text-13 main-color fw-600">300 Triệu</span>
                       </span>
                     </div>
                   </div>

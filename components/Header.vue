@@ -113,7 +113,7 @@
             Hộp Thư <span>(1)</span>
           </p>
           <b-link class="btn-findjob" :to="'/member/dang-viec'">
-            <span class="f-13 font-weight-bold">Đăng Việc</span>
+            <span class="f-13 fw-600">Đăng Việc</span>
           </b-link>
         </div>
       </div>
@@ -162,7 +162,7 @@
         <!-- Confirm OTP -->
          <div class="modal-login text-center" v-if="confirmObj">
           <div class="wrapperPhoneOTP">
-            <h5 class="font-weight-bold">XÁC NHẬN</h5>
+            <h5 class="fw-600">XÁC NHẬN</h5>
             <p class="f-13 ">
               Chúng tôi đã gửi cho bạn qua <span class="typeOtp">{{confirmObj.username}}</span>  với mã xác minh OTP. Vui lòng kiểm tra {{confirmObj.isPhone?'số điện thoại':'email'}} và nhập mã xác nhận
             </p>

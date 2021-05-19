@@ -3,7 +3,7 @@
       
       <form @submit.prevent="createProject">
         <div class="editRow mb-15px form-group row">
-          <div class="fieldLabel font-weight-bold f-13 col-md-3 col-sm-12">Tên dự án<span style="color:red">*</span></div>
+          <div class="fieldLabel fw-600 f-13 col-md-3 col-sm-12">Tên dự án<span style="color:red">*</span></div>
           <div class="fieldInput col-md-9 col-sm-12">
             <div class="form-group mb-0">
               <input
@@ -18,7 +18,7 @@
         </div>
 
         <div class="editRow mb-15px form-group row">
-          <div class="fieldLabel font-weight-bold f-13 col-md-3 col-sm-12">Dịch vụ<span style="color:red">*</span></div>
+          <div class="fieldLabel fw-600 f-13 col-md-3 col-sm-12">Dịch vụ<span style="color:red">*</span></div>
           <div class="fieldInput col-md-9 col-sm-12">
             <div class=" mb-0">
               <treeselect
@@ -35,7 +35,7 @@
         </div>
 
         <div class="editRow mb-15px form-group row">
-          <div class="fieldLabel font-weight-bold f-13 col-md-3 col-sm-12">Mô tả chi tiết<span style="color:red">*</span></div>
+          <div class="fieldLabel fw-600 f-13 col-md-3 col-sm-12">Mô tả chi tiết<span style="color:red">*</span></div>
           <div class="fieldInput col-md-9 col-sm-12">
             <div class="form-group mb-0">
               <textarea
@@ -49,7 +49,7 @@
           </div>
         </div>
         <div v-if="objProject.photos && objProject.photos.length || arrBase64.length" class="editRow mb-15px form-group row">
-          <div class="fieldLabel font-weight-bold f-13 col-md-3 col-sm-12">Hình ảnh dự án<span style="color:red">*</span></div>
+          <div class="fieldLabel fw-600 f-13 col-md-3 col-sm-12">Hình ảnh dự án<span style="color:red">*</span></div>
           <div class="fieldInput col-md-9 col-sm-12">
               <div class="row pl-15px">
                   <!-- OLD FILE -->
@@ -88,7 +88,7 @@
           </div>
         </div>
         <div class="editRow mb-15px form-group row">
-          <div class="fieldLabel font-weight-bold f-13 col-md-3 col-sm-12">
+          <div class="fieldLabel fw-600 f-13 col-md-3 col-sm-12">
             Hình ảnh đính kèm
           </div>
           <div class="fieldInput col-md-9 col-sm-12">
