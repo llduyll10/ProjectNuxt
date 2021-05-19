@@ -121,7 +121,7 @@
                             </div>
                             <div class="line"></div>
                             <!-- list off member -->
-                            <div class="center" v-for="(item, idx) in listProject" :key="idx">
+                            <div class="center mb-20px" v-for="(item, idx) in listProject" :key="idx">
                                 <div class="boxinfo">
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12 col-sm-12">
@@ -178,7 +178,9 @@
                                 </div>
                                 <div class="line"></div>
                             </div>
-                            <Pagination :count="count" :perPage="5" @page="getPaging" />
+                            <template v-if="count>0">
+                                <Pagination :count="count" :perPage="5" @page="getPaging" />
+                            </template>
                         </div>
                     </div>
                 </div>
