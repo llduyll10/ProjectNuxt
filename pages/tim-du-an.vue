@@ -67,34 +67,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="left">
-                            <div class="top">
-                                <div class="title f-16">
-                                    LĨNH VỰC CÔNG VIỆC
-                                </div>
-                            </div>
-                            <div class="line"></div>
-                            <div class="list">
-                                <div class="checkbox">
-                                    <div class="gr-check">
-                                        <input type="checkbox" class="">
-                                        <label>Toàn quốc</label>
-                                    </div>
-                                    <div class="gr-check">
-                                        <input style="background-color:red!important" type="checkbox" class="">
-                                        <label>Hà Nội</label>
-                                    </div>
-                                    <div class="gr-check">
-                                        <input type="checkbox" class="">
-                                        <label>Tp. Hồ Chí Minh</label>
-                                    </div>
-                                </div>
-                                <div class="seemore f-12">
-                                    Xem thêm
-                                    <div class="circle"></div>
-                                </div>
-                            </div>
-                        </div> -->
                         <div class="box-title">
                             <p class="title f-16">TIN TỨC & THỊ TRƯỜNG</p>
                             <div class="line"></div>
@@ -196,7 +168,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="like f-13">
-                                                            4 <span>Chào giá </span>
+                                                            {{item.auctionCount}} <span>Chào giá </span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -206,7 +178,7 @@
                                 </div>
                                 <div class="line"></div>
                             </div>
-
+                            <PaginationCustom :count="count" :perPage="5" @page="getPaging" />
                         </div>
                     </div>
                 </div>
@@ -222,7 +194,6 @@
 import NoAvatar from '@/assets/img/no-avatar.png'
 import avatar from '@/assets/svg/market3.svg'
 import logoDuan from '@/assets/svg/logo-duan.svg'
-
 export default {
     // middleware: 'auth',
     data(){
@@ -236,9 +207,12 @@ export default {
             arrFilter : [],
             objProject:{
                 address:null,
-                s:''
+                s:'',
+                limit:5,
+                page:1
             },
             listProject:[],
+            count:0
         }
     },
     mounted(){
@@ -254,6 +228,7 @@ export default {
                 })
                 let res = await this.$post('public/projects',{...this.objProject, limit:10, page:1})
                 this.listProject = res.data.projects
+                this.count = res.data.count
                 this.loader(0)
             }
             catch(err){
@@ -261,9 +236,10 @@ export default {
             }
         },
         searchInitPage(){
-           this.$post('public/projects',{...this.objProject, limit:10, page:1})
+           this.$post('public/projects',{...this.objProject,})
             .then(res =>{
                 this.listProject = res.data.projects
+                this.count = res.data.count
             })
             .catch(err =>{
                 console.log(err)
@@ -296,6 +272,24 @@ export default {
                 this.arrFilter.push(item)
             }
             console.log('arrFilter',this.arrFilter)
+        },
+        async getPaging(value){
+            this.loader()
+            try{
+                this.objProject.category = []
+                this.arrFilter.forEach(item => {
+                    this.objProject.category.push(item.id)
+                })
+                let res = await this.$post('public/projects',{...this.objProject, ...value})
+                this.listProject = res.data.projects
+                this.count = res.data.count
+                window.scrollTo(0,0)
+                this.loader(0)
+            }
+            catch(err){
+                this.loader(0)
+            }
+
         },
         openLienHe(){
             this.$refs.refLienHe.show();
