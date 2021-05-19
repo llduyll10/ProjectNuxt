@@ -4,6 +4,8 @@
         border-radius: 5px;
         background-color: #fff;
         height: 698px;
+        min-width: 381px;
+        width: 381px;
         box-sizing: border-box;
         padding-bottom: 20px;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -181,6 +183,7 @@
         border-radius: 5px;
         background-color: #fff;
         height: 698px;
+        width: 810px;
         box-sizing: border-box;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         .contentTop {
@@ -246,7 +249,7 @@
         .wrapFill {
             border: 0.75px solid #B7B5B5;
             border-radius: 5px;
-            margin: 14px 81px 0px 66px;
+            margin: 14px 81px 0px 65px;
             height: 60px;
             padding: 22px;
             justify-content: space-between;
@@ -270,6 +273,47 @@
                 position: relative;
                 top: -1px;
             }
+        }
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .wrapFill {
+        margin: 0px !important;
+        margin: 0px 16px !important;
+        input {
+            width: 50%;
+        }
+        .sending {}
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .boxMessage {}
+    .contentWrap {
+        .contentTop {
+            .title {}
+            .wrapDate {
+                span {}
+            }
+        }
+        .message {
+            .dateMessage {}
+            .send {
+                .contentSend {}
+                img {}
+            }
+            .receive {
+                .contentReceive {}
+                img {}
+            }
+        }
+        .wrapFill {
+            margin: 0px 16px !important;
+            input {
+                width: 57% !important;
+            }
+            .sending {}
         }
     }
 }
