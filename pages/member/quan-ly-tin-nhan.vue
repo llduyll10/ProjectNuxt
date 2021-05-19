@@ -74,65 +74,31 @@
                                 </div>
                             </div>
                             <div class="contentWrap">
-                            <div class="contentTop d-flex">
-                                <div class="title">Tìm đơn vị trang trí nội thất căn hộ Hà Đô Centrosa</div>
-                                <div class="wrapDate">
-                                    <img src="@/assets/svg/point-black.svg" alt="">
-                                    <div class="date ml-20px f-12">Đăng ngày  <span>20/04/2021</span></div>
+                                <div class="contentTop d-flex">
+                                    <div class="title">Tìm đơn vị trang trí nội thất căn hộ Hà Đô Centrosa</div>
+                                    <div class="wrapDate">
+                                        <img src="@/assets/svg/point-black.svg" alt="">
+                                        <div class="date ml-20px f-12">Đăng ngày  <span>20/04/2021</span></div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="message">
-                                <div class="dateMessage">20/04/201 - 8:25 PM</div>
-                                    <div class="send d-flex">
-                                        <img src="@/assets/svg/messageLong.svg" alt="">
-                                        <div class="contentSend">Econs được thành lập và phát triển suốt 8 năm qua theo mô hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội thất...Econs được thành lập và phát triển suốt 8 năm qua theo mô hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội thất.</div>
-                                    </div>
-                                    <div class="receive d-flex">
-                                        <div class="contentReceive">Econs được thành lập và phát triển suốt 8 năm qua theo mô hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội thất...Econs được thành lập và phát triển suốt 8 năm qua theo mô hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội thất.</div>
-                                        <img src="@/assets/svg/messageLong.svg" alt="">
-                                    </div>
-                                    <div class="dateMessage">20/04/201 - 8:25 PM</div>
-                                    <div class="send d-flex">
-                                        <img src="@/assets/svg/messageLong.svg" alt="">
-                                        <div class="contentSend">Econs nội thất.</div>
-                                    </div>
-                                    <div class="receive d-flex">
-                                        <div class="contentReceive">Econs nội thất.</div>
-                                        <img src="@/assets/svg/messageLong.svg" alt="">
-                                    </div>
-                                    <div class="dateMessage">20/04/201 - 8:25 PM</div>
-                                    <div class="send d-flex">
-                                        <img src="@/assets/svg/messageLong.svg" alt="">
-                                        <div class="contentSend">Econs nội thất.</div>
-                                    </div>
-                                    <div class="receive d-flex">
-                                        <div class="contentReceive">Econs nội thất.</div>
-                                        <img src="@/assets/svg/messageLong.svg" alt="">
-                                    </div>
-                                    <div class="send d-flex">
-                                        <img src="@/assets/svg/messageLong.svg" alt="">
-                                        <div class="contentSend">Econs nội thất.</div>
-                                    </div>
-                                    <div class="receive d-flex">
-                                        <div class="contentReceive">Econs nội thất.</div>
-                                        <img src="@/assets/svg/messageLong.svg" alt="">
-                                    </div>
-                                    <div class="send d-flex">
-                                        <img src="@/assets/svg/messageLong.svg" alt="">
-                                        <div class="contentSend">Manager.</div>
-                                    </div>
-                                    <div class="receive d-flex">
-                                        <div class="contentReceive">Ban nội thất.</div>
-                                        <img src="@/assets/svg/messageLong.svg" alt="">
-                                    </div>
-                                    <div class="dateMessage">20/04/201 - 8:25 PM</div>
-                                    <div class="send d-flex">
-                                        <img src="@/assets/svg/messageLong.svg" alt="">
-                                        <div class="contentSend">Econs được thành lập và phát triển suốt 8 năm qua theo mô hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội thất...Econs được thành lập và phát triển suốt 8 năm qua theo mô hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội thất.</div>
-                                    </div>
-                                    <div class="receive d-flex">
-                                        <div class="contentReceive">Econs được thành lập và phát triển suốt 8 năm qua theo mô hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội thất...Econs được thành lập và phát triển suốt 8 năm qua theo mô hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội thất.</div>
-                                        <img src="@/assets/svg/messageLong.svg" alt="">
+                                <div class="message">
+                                    <div v-for="(item , i ) in 3" :key="i">
+                                        <div class="dateMessage">20/04/201 - 8:25 PM</div> 
+                                        <div class="send d-flex">
+                                            <img src="@/assets/svg/messageLong.svg" alt="">
+                                            <div class="d-flex flex-column">
+                                                <div class="contentSend">Econs được thành lập và phát triển suốt 8 năm qua theo mô hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội thất...Econs được thành lập và phát triển suốt 8 năm qua theo mô hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội thất.</div>
+                                                <div class="contentSend">How do you feeling?</div>
+                                            </div>
+                                        </div>
+                                        <div class="receive d-flex">
+                                            <div class="d-flex flex-column">
+                                                <div class="contentReceive">Econs được thành lập và phát triển suốt 8 năm qua theo mô hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội thất...Econs được thành lập và phát triển suốt 8 năm qua theo mô hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội thất</div>
+                                                <div class="contentReceive">Econs nội thất.</div>
+                                                <div class="contentReceive">Econs nội thất.</div>
+                                            </div>
+                                            <img src="@/assets/svg/messageLong.svg" alt="">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="wrapFill d-flex">
@@ -145,9 +111,7 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </section>
         <Footer />
     </div>
