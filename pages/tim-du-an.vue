@@ -189,7 +189,10 @@
                                                                 Dự trù - <span>{{formatNamePrice(item.budget)}}</span>
                                                             </div>
                                                             <div class="four">
-                                                                Hạn chót chào giá - <span>{{checkDueDate(item.dueDate)}}</span>
+                                                                Hạn chót chào giá -
+                                                                <span :class="checkStatusDueDate(item.dueDate) ? 'text-red' :'' ">
+                                                                    {{checkDueDate(item.dueDate)}}
+                                                                </span>
                                                             </div>
                                                         </div>
                                                         <div class="like f-13">
