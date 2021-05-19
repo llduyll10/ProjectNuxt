@@ -50,6 +50,14 @@ module.exports = {
             }
 
         },
+        checkStatusDueDate(value){
+            var TODAY = this.$moment()
+            var DUEDATE  = this.$moment(value)
+            if(TODAY > DUEDATE){
+                return true
+            }
+            return false
+        },
         checkDueDate(value){
             var TODAY = this.$moment()
             var DUEDATE  = this.$moment(value)

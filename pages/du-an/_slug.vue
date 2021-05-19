@@ -52,6 +52,7 @@
             <!-- Form chào giá -->
             <div
               class="left inner-content-section px-36px pt-25px pb-50px mb-20px"
+              v-if="!checkStatusDueDate(detailProject.dueDate)"
             >
               <h3 class="h5 main-black f-14 fw-700">
                 Gửi chào giá cho dự án - Bạn sẽ tốn
@@ -64,74 +65,20 @@
             </div>
             <!--  Form chào giá -->
 
-            <!--Danh sách chào giá -->
             <div
+              v-if="arrQuoteCompany && arrQuoteCompany.length"
               class="left inner-content-section px-36px pt-25px pb-50px mb-20px"
             >
               <h3 class="h5 main-black f-16 font-weight-bold">
-                Danh sách chào giá (<span class="main-color">3</span> chào giá)
+                Danh sách chào giá (<span class="main-color">{{arrQuoteCompany.length}}</span> chào giá)
               </h3>
               <hr class="hr" />
-              <template v-for="(id,index) in 3">
-                <div class="d-flex flex-wrap " :key="index+20">
-                  <div class="col-12 d-flex pb-20px  px-0 justify-content-between">
-                    <div class="col-7 d-flex align-items-center">
-                      <div>
-                        <img src="@/assets/img/logo-econs-black.png" />
-                      </div>
-                      <div class="ml-1 ml-16px">
-                        <p class="mb-0 f-14 font-weight-bold main-black">Công ty cổ phần Econs</p>
-                        <div class="d-inline-flex main-black py-11px">
-                          <div
-                            class="badge badge-warning d-inline-flex align-items-center text-white py-3px text-10 mr-1"
-                          >
-                            5.0
-                          </div>
-                          <template v-for="(item, idx) in 4">
-                            <div :key="idx+10">
-                              <i
-                                class="fas fa-star mr-1px f-13 main-yellow"
-                              ></i>
-                            </div>
-                          </template>
-                          <span class="evaluate f-12 mb-0 mt-5px ml-4px">
-                            (<span class="main-yellow">4</span> đánh giá)
-                          </span>
-                        </div>
-                        <div class="text-11 color-grey">
-                          <span
-                            >Chi phí ước tính -
-                            <span class="font-weight-bold main-color text-13"
-                              >1 Tỷ</span
-                            >
-                          </span>
-                          <span class="px-11px"> | </span>
-                          <span
-                            >Thời gian thi công -
-                            <span class="font-weight-bold main-color text-13"
-                              >90 ngày</span
-                            ></span
-                          >
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <img src="@/assets/svg/icon-location.svg" />
-                      <span class="main-color text-11">Hồ Chí Minh</span>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="main-black text-13">
-                      Econs được thành lập và phát triển suốt 8 năm qua theo mô
-                      hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn
-                      thiện nội thất... <span class="main-color">Xem thêm</span>
-                    </div>
-                  </div>
-                </div>
-                <hr class="hr" :key="id" />
-              </template>
+                <template v-if="arrQuoteCompany && arrQuoteCompany.length" >
+                  <template v-for="item in arrQuoteCompany">
+                    <CompanyQuote :key="item._id" :company="item" />
+                  </template>
+                </template>
             </div>
-            <!--  Danh sách chào giá -->
           </div>
           <!--  Col Left -->
 
@@ -173,7 +120,10 @@
                 <div class="text-12 col-6 px-0 color-grey">
                   Hạn chót chào giá
                 </div>
-                <div v-if="detailProject.dueDate" class="text-13 main-color px-0 font-weight-bold">
+                <div v-if="detailProject.dueDate"
+                    class="text-13 main-color px-0 font-weight-bold"
+                    :class="checkStatusDueDate(detailProject.dueDate) ? 'text-red' :'' "
+                  >
                   {{checkDueDate(detailProject.dueDate)}}
                 </div>
               </div>
@@ -267,7 +217,8 @@ export default {
     return {
       slug:this.$nuxt.$route.params.slug,
       detailProject:{},
-      arrNameCategory:[]
+      arrNameCategory:[],
+      arrQuoteCompany:null
     };
   },
   mounted() {
@@ -279,6 +230,9 @@ export default {
         .then(res =>{
           this.detailProject = res.data
           this.arrNameCategory = this.mapCategory(this.detailProject.category)
+          if(this.detailProject._id){
+            this.getCompanyQuote(this.detailProject._id)
+          }
           console.log(this.detailProject)
         })
         .catch(err =>{
@@ -294,6 +248,16 @@ export default {
         link.click()
       }
 
+    },
+    getCompanyQuote(id){
+      this.$get(`public/auction/project/${id}`)
+          .then(res =>{
+              console.log('company quotes',res)
+              this.arrQuoteCompany = res.data
+          })
+          .catch(err =>{
+              console.log(err)
+          })
     }
   },
 };
