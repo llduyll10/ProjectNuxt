@@ -1,9 +1,9 @@
 <template>
   <div>
-    <b-modal ref="my-modal" :no-close-on-backdrop="true" centered hide-footer title="" :id='id'>
+    <b-modal ref="my-modal" :no-close-on-backdrop="true" centered hide-footer :id='id'>
        <template #modal-header="{ close }">
-         <h5 class="modal-title">
-           {{title}}
+         <h5 class="modal-title text-main">
+           <b>{{title}}</b>
          </h5>
          
          <button type="button" aria-label="Close" class="close" @click="close();closeEmit()">×</button>

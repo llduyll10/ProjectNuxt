@@ -19,12 +19,13 @@
                         </div>
                     </div>
                     <div
+                        @click="openModal(item)"
                         class="item"
                         :style="{
                             'background-image': 'url(' + `${item.photos[0]}` + ')',
                         }"
                     >
-                        <p class="location f-11">{{item.name}}</p>
+                        <p class="location f-12">{{item.name}}</p>
                     </div>
                 </div>
             </template>
@@ -34,8 +35,11 @@
             <p class="f-12 text-main cursor-pointer" @click="seemore()">Xem thêm dự án <i class="fas fa-caret-down ml-5px"></i></p>
         </div>
     </div>
+    <div class="f-20 f-bold text-main mb-24px">
+      Thêm dự án
+    </div>
     <ProfileEditProject ref="addProject" v-if="!detailProject" @parentEvent="hideModal" />
-    <Modal ref="modalEditProject" id="modal-create-update-project" @close="hideModal">
+    <Modal ref="modalEditProject" id="modal-create-update-project" @close="hideModal" :title="'Chỉnh sửa dự án'">
       <template v-slot:content>
         <ProfileEditProject ref="editProject" :project="detailProject" v-if="detailProject"  @parentEvent="hideModal" />
       </template>

@@ -103,8 +103,10 @@
       <div class="container-fluid">
         <div class="cover-navbar-login  pt-13px pb-13px">
           <p class="f-13 mr-30px">
+          <b-link :to="'/member/quan-ly-du-an?tab=1'" class="text-white">
             <img src="@/assets/img/my-project.png" alt="">
             Dự Án Của Tôi
+          </b-link>
           </p>
           <p class="f-13 mr-30px">
             <img class="icon-email" src="@/assets/img/email.png" alt="">

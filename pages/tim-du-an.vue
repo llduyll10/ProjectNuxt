@@ -14,7 +14,7 @@
                             <div class="line"></div>
                             <div class="list">
                                 <div class="d-flex item-title f-14">
-                                    <!-- <img src="@/assets/svg/homeproject.svg" alt=""> -->
+                                    <img src="@/assets/svg/homeproject.svg" alt="">
                                     <span>{{objCategory[0].label}}</span>
                                 </div>
                                 <div class="list-item f-13">
@@ -178,9 +178,9 @@
                                                     <div class="description padding-right f-13">{{item.description}}</div>
                                                     <div class="group-bot d-flex">
                                                         <div class="group-2 d-flex">
-                                                            <div class="one d-flex f-11">
+                                                            <div class="one d-flex f-12">
                                                                 <img src="@/assets/svg/human.svg" alt="">
-                                                                <div class="human-name ml-5px">{{item.createBy.name}}</div>
+                                                                <div class="human-name ml-5px f-12">{{item.createBy.name}}</div>
                                                             </div>
                                                             <div class="two">
                                                                 Ngày đăng - <span>{{checkIsToday(item.createdDate)}}</span>

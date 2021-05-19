@@ -22,7 +22,7 @@
                     </div>
 
                     <div>
-                        <button type="button" class="btn btn-main" @click="openModalPhone">
+                        <button type="button" class="btn btn-main px-25px" @click="openModalPhone">
                             Xác thực
                         </button>
                     </div>
@@ -44,7 +44,7 @@
                     </div>
 
                     <div>
-                        <button type="button" class="btn btn-main" @click="openModalTax">
+                        <button type="button" class="btn btn-main px-25px" @click="openModalTax">
                             Xác thực
                         </button>
                     </div>
@@ -71,7 +71,7 @@
                     </div>
 
                     <div>
-                        <button type="button" class="btn btn-main">
+                        <button type="button" class="btn btn-main px-25px">
                             Xác thực
                         </button>
                     </div>

@@ -21,7 +21,7 @@
                                 :value="objProject.category"
                                 v-model="objProject.category"
                                 :multiple="true"
-                                placeholder="Select"
+                                placeholder="Chọn dịch vụ"
                             />
 
                         </div>

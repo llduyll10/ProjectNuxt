@@ -1,11 +1,6 @@
 <template>
      <div class="createEditComponent">
-      <div v-if="objProject._id" class="f-20 f-bold text-main mb-24px">
-        Chỉnh sửa dự án
-      </div>
-      <div v-else class="f-20 f-bold text-main mb-24px">
-        Thêm dự án
-      </div>
+      
       <form @submit.prevent="createProject">
         <div class="editRow mb-15px form-group row">
           <div class="fieldLabel font-weight-bold f-13 col-md-3 col-sm-12">Tên dự án<span style="color:red">*</span></div>
@@ -32,6 +27,7 @@
                 :value="objProject.category"
                 v-model="objProject.category"
                 :multiple="true"
+                :clearable="false"
                 placeholder="Chọn dịch vụ"
             />
             </div>
@@ -52,7 +48,7 @@
             </div>
           </div>
         </div>
-        <div v-if="objProject.photos || arrBase64.length" class="editRow mb-15px form-group row">
+        <div v-if="objProject.photos && objProject.photos.length || arrBase64.length" class="editRow mb-15px form-group row">
           <div class="fieldLabel font-weight-bold f-13 col-md-3 col-sm-12">Hình ảnh dự án<span style="color:red">*</span></div>
           <div class="fieldInput col-md-9 col-sm-12">
               <div class="row pl-15px">

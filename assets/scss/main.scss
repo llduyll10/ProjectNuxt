@@ -18,6 +18,15 @@ textarea.form-control, .f-13 {
     line-height: 175%;
 }
 
+img.hover:hover {
+    opacity: .86;
+}
+
+input, textarea {
+    &::placeholder {
+        color: #adabab !important;
+    }
+}
 // overide
 .modal-content {
     border-radius: 0px;

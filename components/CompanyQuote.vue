@@ -42,7 +42,7 @@
             </div>
         <div class="col-auto">
             <img src="@/assets/svg/icon-location.svg" />
-            <span class="main-color text-11">{{company.auctionBy.address}}</span>
+            <span class="main-color text-11">{{company.auctionBy.province}}</span>
         </div>
         </div>
         <div class="col-12">

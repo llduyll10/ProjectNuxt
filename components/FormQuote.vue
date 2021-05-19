@@ -1,7 +1,7 @@
 <template>
     <div v-if="isShowForm">
         <form @submit.prevent="createQuote('ACTIVE')" class="group-content">
-            <div class="form-group row mb-25px">
+            <div class="form-group row mb-25px align-items-center">
                 <label class="f-13 col-md-3 col-sm-12 font-weight-bold">
                     Chi phí ước tính
                     <span style="color:red">*</span>
@@ -20,7 +20,7 @@
                     </p>
                 </div>
             </div>
-            <div class="form-group row mb-25px">
+            <div class="form-group row mb-25px align-items-center">
                 <label class="f-13 col-md-3 col-sm-12 font-weight-bold">
                     Kinh nghiệm, Năng lực và giải pháp đề xuất
                     <span style="color:red">*</span>
@@ -32,7 +32,7 @@
                         ></textarea>
                 </div>
             </div>
-            <div class="form-group row mb-25px">
+            <div class="form-group row mb-25px align-items-center">
                 <label class="f-13 col-md-3 col-sm-12 font-weight-bold">
                     Thời gian thi công dự trù
                     <span style="color:red">*</span>
@@ -41,12 +41,12 @@
                     <div class="input-group">
                         <input v-model="objForm.day" @keypress="isNumber($event)" type="text" class="form-control "/>
                         <div class="input-group-append">
-                            <span class="input-group-text py-0 px-10px">Ngày</span>
+                            <span class="input-group-text py-0 px-10px f-12">Ngày</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="form-group row mb-25px">
+            <div class="form-group row mb-25px align-items-center">
                 <label class="f-13 col-md-3 col-sm-12 font-weight-bold">
                     Tài liệu đính kèm
                     <span style="color:red">*</span>

@@ -26,7 +26,7 @@
               </template>
               </div>
 
-              <hr class="hr"/>
+              <hr class="hr my-10px"/>
               <div class="main-black text-13">
                 <p class="text-16 font-weight-bold">Yêu cầu công việc</p>
                 <div class="f-13 mb-0 break-line">{{detailProject.description}} </div>
@@ -56,7 +56,7 @@
             >
               <h3 class="h5 main-black f-14 fw-700">
                 Gửi chào giá cho dự án - Bạn sẽ tốn
-                <span class="main-color">3 Tokens</span> khi tham gia chào giá
+                <span class="main-color"><span class="f-20">3</span> Tokens</span> khi tham gia chào giá
               </h3>
               <hr class="hr" />
               <template v-if="detailProject && detailProject._id">
@@ -66,18 +66,26 @@
             <!--  Form chào giá -->
 
             <div
-              v-if="arrQuoteCompany && arrQuoteCompany.length"
+             
               class="left inner-content-section px-36px pt-25px pb-50px mb-20px"
-            >
+            > 
+              
               <h3 class="h5 main-black f-16 font-weight-bold">
-                Danh sách chào giá (<span class="main-color">{{arrQuoteCompany.length}}</span> chào giá)
+                Danh sách chào giá (<span class="main-color">{{arrQuoteCompany && arrQuoteCompany.length}}</span> chào giá)
               </h3>
               <hr class="hr" />
+
                 <template v-if="arrQuoteCompany && arrQuoteCompany.length" >
                   <template v-for="item in arrQuoteCompany">
                     <CompanyQuote :key="item._id" :company="item" />
                   </template>
                 </template>
+
+                <div v-else>
+                  <p class="text-danger"><b>Chưa có chào giá</b></p>
+                </div>
+
+
             </div>
           </div>
           <!--  Col Left -->
@@ -100,7 +108,7 @@
                   {{detailProject.number}}
                 </div>
               </div>
-              <div class="box d-flex pb-12px pt-8px">
+              <div class="box d-flex py-8px">
                 <div class="text-12 col-6 px-0 color-grey">
                   Ngân sách
                 </div>
@@ -108,7 +116,7 @@
                   {{formatNamePrice(detailProject.budget)}}
                 </div>
               </div>
-              <div class="box d-flex pb-12px pt-8px">
+              <div class="box d-flex py-8px">
                 <div class="text-12 col-6 px-0 color-grey">
                   Ngày đăng
                 </div>
@@ -116,7 +124,7 @@
                   {{checkIsToday(detailProject.createdDate)}}
                 </div>
               </div>
-              <div class="box d-flex pb-12px pt-8px">
+              <div class="box d-flex py-8px">
                 <div class="text-12 col-6 px-0 color-grey">
                   Hạn chót chào giá
                 </div>
@@ -127,7 +135,7 @@
                   {{checkDueDate(detailProject.dueDate)}}
                 </div>
               </div>
-              <div class="box d-flex pb-12px pt-8px">
+              <div class="box d-flex py-8px">
                 <div class="text-12 col-6 px-0 color-grey">
                   Địa điểm
                 </div>
@@ -135,7 +143,7 @@
                   {{detailProject.address}}
                 </div>
               </div>
-              <div class="box d-flex pb-12px pt-8px">
+              <div class="box d-flex py-8px">
                 <div class="text-12 col-6 px-0 color-grey">
                   Phí chào giá
                 </div>

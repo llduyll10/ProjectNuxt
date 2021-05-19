@@ -37,14 +37,13 @@
 
             <div class="editRow mb-15px">
                 <div class="fieldLabel">
-                    Tên công ty<span class="dot">*</span>
+                    Tên công ty
                 </div>
                 <div class="fieldInput">
                     <div class="form-group mb-0">
                         <input
                             type="text"
                             class="form-control"
-                            required
                             placeholder="Tên công ty"
                             v-model="objInfor.company"
                         />
@@ -88,14 +87,13 @@
 
             <div class="editRow mb-15px">
                 <div class="fieldLabel">
-                    Địa chỉ<span class="dot">*</span>
+                    Địa chỉ
                 </div>
                 <div class="fieldInput">
                     <div class="form-group mb-0">
                         <input
                             type="text"
                             class="form-control"
-                            required
                             placeholder="Địa chỉ"
                             v-model="objInfor.address"
                         />
@@ -105,7 +103,7 @@
 
             <div class="editRow mb-15px">
                 <div class="fieldLabel">
-                    Tỉnh thành<span class="dot">*</span>
+                    Tỉnh thành
                 </div>
                 <div class="fieldInput">
                     <div class="form-group mb-0">
