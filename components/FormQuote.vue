@@ -139,10 +139,16 @@ export default {
             this.$get(`member/auction/project/${this.id}`)
                 .then(res =>{
                     if(res.data.status){
-                        if(res.data.auction && res.data.auction.status == 'DRAFT'){
-                            this.objForm = {...res.data.auction}
+                        if(res.data.auction){
+                            if(res.data.auction.status == 'DRAFT'){
+                                this.objForm = {...res.data.auction}
+                                this.isShowForm = true;
+                            }else{
+                                this.isShowForm = false;
+                            }
+                        }else{
+                            this.isShowForm = true;
                         }
-                        this.isShowForm = true;
                     }
                 })
                 .catch(err => {
