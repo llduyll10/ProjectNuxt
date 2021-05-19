@@ -26,10 +26,13 @@
                     <span style="color:red">*</span>
                 </label>
                 <div class="col-md-9 col-sm-12">
-                <textarea v-model="objForm.description" required id="customPlaceholder" class="form-control main-black " rows="5"
-                            placeholder=
-                            " 1. Mô tả kinh nghiệm & năng lực của bạn \n 2. Tại sao chủ đầu tư phải chọn bạn thi công công trình này? \n 3. Đề xuất giải pháp thi công của bạn sau khi xem xét yêu cầu của chủ đầu tư"
-                        ></textarea>
+                <textarea v-model="objForm.description"
+                        required id="customPlaceholder"
+                        class="form-control main-black "
+                        rows="5"
+                        :placeholder="place"
+                    >
+                </textarea>
                 </div>
             </div>
             <div class="form-group row mb-25px align-items-center">
@@ -118,6 +121,7 @@ export default {
     props:['id','quoteName'],
     data(){
         return{
+            place: `1. Mô tả chi tiết về dự án xây dựng hoặc yêu cầu thiết kế của bạn \n2. Vui lòng đính kèm sổ đỏ, bản vẽ, thiết kế hoặc hình ảnh minh hoạ để nhận được tư vấn/dự toán tốt nhất. \n3. Yêu cầu năng lực của đơn vị báo giá hoặc những yêu cầu khác`,
             objForm:{
                 agree:false,
             },
@@ -127,11 +131,6 @@ export default {
         }
     },
     mounted(){
-        var textAreas = document.getElementsByTagName('textarea');
-        Array.prototype.forEach.call(textAreas, function(elem) {
-            elem.placeholder = elem.placeholder.replace(/\\n/g, '\n');
-        });
-
         this.getQuote()
     },
     methods:{
