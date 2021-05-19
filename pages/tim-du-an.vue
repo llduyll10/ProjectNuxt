@@ -178,7 +178,7 @@
                                 </div>
                                 <div class="line"></div>
                             </div>
-                            <PaginationCustom :count="count" :perPage="5" @page="getPaging" />
+                            <Pagination :count="count" :perPage="5" @page="getPaging" />
                         </div>
                     </div>
                 </div>
