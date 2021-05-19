@@ -101,7 +101,7 @@
         </form>
     </div>
     <div v-else>
-        
+
         <div class="text-center">
             <img src="@/assets/svg/CheckboxBig.svg" />
             <p v-if="$auth.loggedIn" class="f-19 main-black fw-600">Bạn đã gửi chào giá cho
@@ -169,6 +169,7 @@ export default {
                 this.resetForm()
                 this.getQuote()
                 this.loader(0)
+                this.$emit('callGetList')
             }
             catch(err){
                 console.log(err)

@@ -60,16 +60,16 @@
               </h3>
               <hr class="hr" />
               <template v-if="detailProject && detailProject._id">
-                <FormQuote :quoteName="detailProject.name"  :id="detailProject._id"  />
+                <FormQuote @callGetList="getDetailProject" :quoteName="detailProject.name"  :id="detailProject._id"  />
               </template>
             </div>
             <!--  Form chào giá -->
 
             <div
-             
+
               class="left inner-content-section px-36px pt-25px pb-50px mb-20px"
-            > 
-              
+            >
+
               <h3 class="h5 main-black f-16 fw-600">
                 Danh sách chào giá (<span class="main-color">{{arrQuoteCompany && arrQuoteCompany.length}}</span> chào giá)
               </h3>
