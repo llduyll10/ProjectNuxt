@@ -1,0 +1,38 @@
+.custom-pagination{
+    .page-item{
+        .page-link{
+            font-size: 13px;
+            font-family: 'Lora', serif;
+            background-color: #fff !important;
+            color: $main-color !important;
+            border: 1.5px solid #F2F2F2;
+            &:active{
+                box-shadow: none !important;
+            }
+            &:focus{
+                 box-shadow: none !important;
+            }
+            .custom-pre{
+                font-size: 14px;
+                font-weight: bold;
+                color: $main-black;
+            }
+        }
+
+        &.active{
+            .page-link{
+                color: $main-black !important;
+                background-color: #F2F2F2 !important;
+            }
+        }
+        &.disabled{
+            cursor:not-allowed;
+            .page-link{
+                color: #F2F2F2 !important;
+                .custom-pre{
+                    color: #F2F2F2 ;
+                }
+            }
+        }
+    }
+}

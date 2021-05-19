@@ -3,10 +3,13 @@
         v-model="currentPage"
         :total-rows="rows"
         :per-page="perPage"
+        :hide-goto-end-buttons="true"
         align="center"
         @input="changePaging()"
+        class="custom-pagination"
     >
-
+        <template #prev-text><span class="custom-pre"> <<  </span></template>
+        <template #next-text><span class="custom-pre"> >> </span></template>
     </b-pagination>
 </template>
 <script>
