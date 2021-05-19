@@ -1,0 +1,168 @@
+#managerMessage {
+    color: $main-black;
+    .boxMessage {
+        border-radius: 5px;
+        background-color: #fff;
+        width: 351px;
+        height: 705px;
+        box-sizing: border-box;
+        padding-bottom: 15px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        .wrapGeneral {
+            border-bottom: 1px solid #F2F2F2;
+            height: 97px;
+            padding: 20px 16px;
+            .search-top {
+                height: 32px;
+                width: 100%;
+                box-sizing: border-box;
+                justify-content: space-between;
+                align-items: center;
+                input {
+                    border: 0.75px solid #B7B5B5;
+                    background: #fff;
+                    width: 214px;
+                    font-weight: 500;
+                    line-height: 15px;
+                    border-radius: 5px;
+                    padding: 0 15px;
+                    height: 30px;
+                    &::placeholder {
+                        font-size: 12px;
+                        margin-left: 18px !important;
+                        text-indent: 20px;
+                        background-image: url('@/assets/svg/icon-head.svg');
+                        background-position: left;
+                        background-repeat: no-repeat;
+                    }
+                }
+                &.short-input {
+                    width: 282px;
+                }
+                .button {
+                    cursor: pointer;
+                    width: 97px;
+                    height: 25px;
+                    background: #198AC6;
+                    border-radius: 5px;
+                    color: #fff;
+                    font-size: 13px;
+                    line-height: 25px;
+                    text-align: center;
+                    display: inline;
+                }
+            }
+            .general {
+                margin: 0 -10px;
+                align-items: center;
+                margin-top: 14px;
+                .item {
+                    border-right: 0.5px solid #4F4F4F;
+                    line-height: 16px;
+                    padding: 0 10px;
+                    span {
+                        color: $main-color;
+                        font-weight: 700;
+                    }
+                    &:last-child {
+                        border: none;
+                    }
+                }
+                .active {
+                    color: $main-color;
+                    font-weight: 700;
+                }
+            }
+        }
+        .wrapMessage {
+            padding: 0px 16px;
+            .messageItem {
+                margin-top: 15px;
+                padding: 13px 5px;
+                background: rgba(255, 255, 255, 0.92);
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                border-radius: 5px;
+                img {
+                    width: 35px;
+                    height: 35px;
+                    margin-right: 16px;
+                }
+                .content {
+                    width: 100%;
+                    .top {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        position: relative;
+                        top: -3px;
+                        .name {
+                            font-weight: 700;
+                            color: $main-color;
+                            display: none;
+                        }
+                        .company {
+                            font-weight: 700;
+                        }
+                        .time {
+                            font-weight: 500;
+                        }
+                    }
+                    .bottom {
+                        position: relative;
+                        top: 3px;
+                        justify-content: space-between;
+                        align-items: center;
+                        .content-message {
+                            padding-right: 40px;
+                            line-height: 14px;
+                            height: 14px;
+                            overflow: hidden;
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            -webkit-line-clamp: 1;
+                        }
+                        .isMessage {
+                            img {
+                                width: 2px;
+                                height: 8px;
+                                position: relative;
+                                top: -6px;
+                            }
+                            .notify {
+                                color: #FFFFFF;
+                                width: 15px;
+                                height: 15px;
+                                background-color: #D80027;
+                                border-radius: 5px;
+                                margin-right: 9px;
+                                text-align: center;
+                                display: none;
+                            }
+                        }
+                    }
+                }
+                &.active {
+                    .content {
+                        .top {
+                            .name {
+                                display: block !important;
+                            }
+                            .company {
+                                color: $main-color;
+                                font-weight: 500;
+                            }
+                        }
+                        .isMessage {
+                            img {
+                                display: none;
+                            }
+                            .notify {
+                                display: block !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

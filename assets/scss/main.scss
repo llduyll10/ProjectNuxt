@@ -14,7 +14,8 @@ body {
     }
 }
 
-textarea.form-control, .f-13 {
+textarea.form-control,
+.f-13 {
     line-height: 175%;
 }
 
@@ -22,11 +23,13 @@ img.hover:hover {
     opacity: .86;
 }
 
-input, textarea {
+input,
+textarea {
     &::placeholder {
         color: #adabab !important;
     }
 }
+
 // overide
 .modal-content {
     border-radius: 0px;
@@ -71,9 +74,9 @@ input, textarea {
 @import './pages/createEditComponent';
 @import './pages/manage_project';
 @import './pages/pagination';
-
 // project
 @import './pages/project-index';
 // thi-truong
 @import './pages/thitruong-index';
-@import './pages/bannerInfo'
+@import './pages/bannerInfo';
+@import './pages/message';
