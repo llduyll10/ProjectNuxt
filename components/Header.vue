@@ -109,8 +109,10 @@
           </b-link>
           </p>
           <p class="f-13 mr-30px">
-            <img class="icon-email" src="@/assets/img/email.png" alt="">
-            Hộp Thư <span>(1)</span>
+            <b-link :to="'/member/quan-ly-tin-nhan'" class="text-white">
+              <img class="icon-email" src="@/assets/img/email.png" alt="">
+              Hộp Thư <span>(1)</span>
+            </b-link>
           </p>
           <b-link class="btn-findjob" :to="'/member/dang-viec'">
             <span class="f-13 fw-600">Đăng Việc</span>
