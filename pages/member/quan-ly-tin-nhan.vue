@@ -4,7 +4,7 @@
         <section id="managerMessage" class="wrapSection pt-30px pb-80px">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-lg-4">
                         <div class="boxMessage mr-20"> 
                             <div class="wrapGeneral">
                                 <div class="search-top d-flex">
@@ -47,7 +47,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="messageItem d-flex" v-for="(item , i) in 7" :key="i">
+                                <div class="messageItem d-flex" v-for="(item , i) in 6" :key="i">
                                     <img src="@/assets/svg/messageLong.svg" alt="" class="header__cart-img">
                                     <div class="content">
                                         <div class="top d-flex">
@@ -71,6 +71,11 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="content-message">
+                            fsdfs
                         </div>
                     </div>
                 </div>
