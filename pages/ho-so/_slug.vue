@@ -8,13 +8,13 @@
                     <div class="col-12">
                         <div class="profileSection z3">
                            <div class="col-left">
-                            <ProfileInfo />
+                            <ProfileInfo :profile="objProfile" />
                            </div>
 
                            <div class="col-right">
-                               <ProfileDes />
+                               <ProfileDes :profile="objProfile" :listCategory="listCateMapping" />
                                <div class="line"></div>
-                               <ProfileProject />
+                               <ProfileProject :portfolio="portfolio" />
                                <div class="line"></div>
                                <ProfileRating />
                            </div>
@@ -35,14 +35,28 @@
 export default {
     data(){
         return{
-
+            slug:this.$nuxt.$route.params.slug,
+            objProfile:{},
+            listCateMapping:[],
+            portfolio:[]
         }
     },
     mounted(){
-
+        this.getDataInit()
     },
     methods:{
-
+        getDataInit(){
+            this.$get(`public/user/${this.slug}`)
+                .then(res =>{
+                    console.log(res)
+                    this.objProfile = res.data.user
+                    this.listCateMapping = this.mapCategory(this.objProfile.category)
+                    this.portfolio = this.objProfile.portfolio
+                })
+                .catch(err =>{
+                    console.log(err)
+                })
+        }
     }
 }
 </script>

@@ -150,7 +150,9 @@
                                                     <div class="description padding-right f-13">{{item.description}}</div>
                                                     <div class="group-bot d-flex">
                                                         <div class="group-2 d-flex">
-                                                            <div class="one d-flex f-12">
+                                                            <div class="one d-flex f-12 cursor-pointer"
+                                                                @click="$router.push(`ho-so/${item.createBy.slug}`)"
+                                                            >
                                                                 <img src="@/assets/svg/human.svg" alt="">
                                                                 <div class="human-name ml-5px f-12">{{item.createBy.name}}</div>
                                                             </div>
