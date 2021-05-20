@@ -1,6 +1,7 @@
 $red:#D80027;
 $main-color:#198AC6;
 $main-black:#4F4F4F;
+
 $text-white: #F2F2F2;
 $white: #fff;
 
@@ -8,7 +9,9 @@ $white: #fff;
     background:$white !important;
 }
 
-
+.text-black{
+    color:rgba(0, 0, 0, 0.84); ;
+}
 .text-white {
     color: $text-white !important;
 }

@@ -38,15 +38,15 @@
                         <b-dropdown id="dropdown-infor" variant="link" toggle-class="text-decoration-none" class="custom-infor pb-5px" no-caret>
                           <template #button-content>
                             <div class="d-flex mt-10px">
-                              <span class="text-gray">
+                              <span class="text-black">
                               {{$auth.user.name}}
                               </span>
                               <div class="height"></div>
                               <div class="cover-infor">
                                 <p class="f-13">
                                   <span class="text-main">{{$auth.user.coin || 0}}</span>
-                                  <span class="text-gray">Tokens</span>
-                                  <i class="fas fa-caret-down ml-5px f-16 text-gray"></i>
+                                  <span class="text-black">Tokens</span>
+                                  <i class="fas fa-caret-down ml-5px f-16 text-black"></i>
                                 </p>
                               </div>
                             </div>
