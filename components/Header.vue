@@ -46,8 +46,8 @@
                                 <p class="f-13">
                                   <span class="text-main">{{$auth.user.coin || 0}}</span>
                                   <span class="text-gray">Tokens</span>
-                                  <i class="fas fa-caret-down ml-10px f-16 "></i>
-                                  </p>
+                                  <i class="fas fa-caret-down ml-5px f-16 text-gray"></i>
+                                </p>
                               </div>
                             </div>
                           </template>
