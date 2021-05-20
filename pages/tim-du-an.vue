@@ -128,7 +128,7 @@
                                             <div class="introduce">
                                                 <div  class="cover-img"
                                                     :style="{
-                                                        'background-image': 'url(' + `${item.createBy.photo ? item.createBy.photo : noAvatar}` + ')',
+                                                        'background-image': 'url(' + `${item.photos[0] ? item.photos[0] : noAvatar}` + ')',
                                                     }"
                                                 >
                                                 </div>

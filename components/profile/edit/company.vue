@@ -133,7 +133,7 @@ export default {
             optionsType:this.getTypeAccount(),
             optionsCategory: this.getCategory(),
             arrFile:[],
-            accepFile:["png","jpg","tiff","pdf","xls","doc","ppt","zip","rar"],
+            accepFile:["png","jpg", "jpeg" ,"tiff","pdf","xls","doc","ppt","zip","rar"],
         }
     },
     mounted(){

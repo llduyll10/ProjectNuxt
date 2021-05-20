@@ -85,7 +85,7 @@
                       </b-nav-item>
                   </template>
                   <b-nav-item class="cover-btn d-none d-lg-block" @click="openModalLogin">
-                    <div  class="btn-findjob ml-4" >
+                    <div  class="btn-findjob" >
                          <span class="f-13">Đăng Việc</span>
                     </div>
                   </b-nav-item>
