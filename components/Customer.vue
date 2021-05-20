@@ -13,12 +13,11 @@
                         'background-image': 'url(' + `${detailAccount.photo}` + ')',
                     }"
             >
-                <div class="stt custom">
-                    <p class="f-12">
+                <div class="stt custom fw-500 text-center">
+                    <p class="f-12 w-100">
                         <img class="mb-2px" src="@/assets/svg/human-white.svg" />
                         {{detailAccount.name}}
                     </p>
-                    <p class="f-12"><span>ID.</span> {{detailAccount.number}}</p>
                 </div>
             </div>
             <div class="group-star d-flex mt-20px mb-20px">
