@@ -13,7 +13,7 @@
                             </div>
                             <div class="line"></div>
                             <div class="list">
-                                <div class="d-flex item-title f-14"
+                                <div class="d-flex item-title f-14 cursor-pointer"
                                     @click="getItemSearch({id:1},4)"
                                     :class="activeParent == 1 ? 'fw-600 text-main' :'' "
                                 >
@@ -34,7 +34,7 @@
                                 </div>
                             </div>
                             <div class="list">
-                                <div class="d-flex item-title f-14"
+                                <div class="d-flex item-title f-14 cursor-pointer"
                                     @click="getItemSearch({id:2},4)"
                                     :class="activeParent == 2 ? 'fw-600 text-main' :'' "
                                 >
@@ -55,7 +55,7 @@
                                 </div>
                             </div>
                             <div class="list">
-                                <div class="d-flex item-title f-14"
+                                <div class="d-flex item-title f-14 cursor-pointer"
                                     @click="getItemSearch({id:3},4)"
                                     :class="activeParent == 3 ? 'fw-600 text-main' :'' "
                                 >
