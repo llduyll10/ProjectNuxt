@@ -45,7 +45,7 @@
         <p class="f-24">HẠNG MỤC DỰ ÁN</p>
         <div class="line"></div>
       </div>
-      <div class="container caterogry-list">
+      <div class="container-fluid caterogry-list">
         <div class="row">
           <div class="col-md-4 col-sm-12 cat-item">
             <div class="content item-1">
@@ -85,7 +85,7 @@
     </section>
     <!-- Start describe  -->
     <section class="describe pt-50px pb-50px mt-40px">
-      <div class="content-describe container">
+      <div class="content-describe container-fluid">
         <div class="row">
           <div class="col-md-5 col-sm-12 describe-left pr-0">
             <p class="slogan">
