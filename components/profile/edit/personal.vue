@@ -153,7 +153,7 @@ export default {
         return{
             objInfor: {},
             optionsProvince: this.getProvince(),
-            accepFile:["png","jpg",'gif'],
+            accepFile:["png","jpeg","jpg",'gif'],
             tempFile:null,
             avataBase64:null
         }

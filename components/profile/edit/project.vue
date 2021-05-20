@@ -1,6 +1,6 @@
 <template>
      <div class="createEditComponent">
-      
+
       <form @submit.prevent="createProject">
         <div class="editRow mb-15px form-group row">
           <div class="fieldLabel fw-600 f-13 col-md-3 col-sm-12">Tên dự án<span style="color:red">*</span></div>
@@ -127,7 +127,7 @@ export default {
             demoHouse:DemoHouse,
             objProject:{},
             optionsCategory: this.getCategory(),
-            accepFile:["png", "jpg", "tiff"],
+            accepFile:["png", "jpeg", "jpg", "tiff"],
             tempFile:null,
             arrFile:[],
             arrBase64:[]

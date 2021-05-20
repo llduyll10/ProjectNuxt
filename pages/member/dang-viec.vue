@@ -188,8 +188,8 @@ export default {
             options: this.getCategory(),
             optionsProvince: this.getProvince(),
             place: `1. Mô tả chi tiết về dự án xây dựng hoặc yêu cầu thiết kế của bạn \n2. Vui lòng đính kèm sổ đỏ, bản vẽ, thiết kế hoặc hình ảnh minh hoạ để nhận được tư vấn/dự toán tốt nhất. \n3. Yêu cầu năng lực của đơn vị báo giá hoặc những yêu cầu khác`,
-            acceptImg:["png", "jpg", "tiff"],
-            acceptFile:["png", "jpg", "tiff", "pdf", "xls", "doc", "ppt", "zip", "rar"],
+            acceptImg:["png", "jpg", "jpeg", "tiff"],
+            acceptFile:["png", "jpg", "jpeg", "tiff", "pdf", "xls", "doc", "ppt", "zip", "rar"],
             arrFileImg:[],
             arrBase64:[],
             arrFile:[]
