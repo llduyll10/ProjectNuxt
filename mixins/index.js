@@ -53,7 +53,7 @@ module.exports = {
         checkStatusDueDate(value){
             var TODAY = this.$moment()
             var DUEDATE  = this.$moment(value)
-            if(TODAY > DUEDATE){
+            if(TODAY.format('DD/MM/YYYY') > DUEDATE.format('DD/MM/YYYY')){
                 return true
             }
             return false
@@ -66,6 +66,10 @@ module.exports = {
             }
             if(TODAY > DUEDATE){
                 return 'Hết hạn'
+            }
+            var find = DUEDATE.from(TODAY,true).toString().indexOf('gio')
+            if(find == -1 ){
+                return '1 ngày'
             }
             return DUEDATE.from(TODAY,true)
         },
@@ -220,6 +224,9 @@ module.exports = {
               })
             })
             return result
+        },
+        mapImgFromCategory(arr){
+            console.log(arr);
         },
         getProvince() {
             return [
