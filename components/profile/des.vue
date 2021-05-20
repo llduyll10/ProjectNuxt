@@ -12,7 +12,7 @@
             <div class="cover-bage d-flex mb-15px">
                 <template v-for="(item) in listCategory">
                     <h5 :key="item.id" class="mb-0px">
-                        <span class="badge badge-secondary f-12">
+                        <span class="badge badge-secondary f-12 px-10px py-5px">
                             {{item.label}}
                         </span>
                     </h5>
@@ -20,7 +20,7 @@
             </div>
             <div class="d-flex cover-type-location">
                 <div class="type">
-                    <img src="@/assets/svg/icon-user-dark.svg" />
+                    <img src="@/assets/svg/icon-user-dark.svg" class="mr-0" />
                     <span class="f-11 fw-600">{{profile.accountType}}</span>
                 </div>
                 <div class="location">
