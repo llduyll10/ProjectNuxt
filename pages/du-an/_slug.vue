@@ -94,9 +94,9 @@
           <div class="col-3 right">
             <!-- Thông tin dự án -->
             <div
-              class="left inner-content-section p-25px mb-20px thongTinDuAnWrapper main-black"
+              class="left inner-content-section py-25px  mb-20px thongTinDuAnWrapper main-black"
             >
-              <h3 class="text-16 fw-600 main-black mb-2">
+              <h3 class="text-16 fw-600 main-black mb-2 pl-25px">
                 Thông tin dự án
               </h3>
               <hr class="hr my-15px" />
@@ -156,7 +156,7 @@
 
             <!-- Thông tin khách hàng -->
             <div
-              class="left inner-content-section px-24px pt-20px pb-40px mb-20px thongTinDuAnWrapper main-black"
+              class="left inner-content-section  pt-20px pb-40px mb-20px thongTinDuAnWrapper main-black"
               v-if="detailProject && detailProject.createBy"
             >
               <!-- Hard some css display none for re-using profile component -->
