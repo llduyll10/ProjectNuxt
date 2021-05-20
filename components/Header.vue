@@ -2,7 +2,7 @@
   <div class="cover-header">
 
     <div class="container-fluid">
-      <b-navbar toggleable="lg" class="p-0" >
+      <b-navbar toggleable="lg" class="p-0 my-13px" >
         <b-navbar-brand :to="'/'">
           <template>
             <img src="@/assets/img/black-logo.png" alt="Logo" class="logo" />
@@ -44,8 +44,9 @@
                               <div class="height"></div>
                               <div class="cover-infor">
                                 <p class="f-13">
-                                  <span>{{$auth.user.coin || 0}}</span> Tokens
-                                   <i class="fas fa-caret-down ml-13px f-16"></i>
+                                  <span class="text-main">{{$auth.user.coin || 0}}</span>
+                                  <span class="text-gray">Tokens</span>
+                                  <i class="fas fa-caret-down ml-10px f-16 "></i>
                                   </p>
                               </div>
                             </div>
