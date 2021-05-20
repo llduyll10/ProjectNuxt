@@ -12,6 +12,12 @@
     top: 0;
     z-index: 999;
     background-color: white;
+    nav {
+        min-height: 69px;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
     .logo{
         height: 40px;
     }
@@ -159,6 +165,10 @@
     // Sub navbar
     .navbar-login{
         background-color: #22375C;
+        min-height: 52px;
+        justify-content: center;
+        display: flex;
+        align-items: center;
         .cover-navbar-login{
             display: flex;
             p{

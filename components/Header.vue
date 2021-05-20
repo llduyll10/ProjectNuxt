@@ -2,7 +2,7 @@
   <div class="cover-header">
 
     <div class="container-fluid">
-      <b-navbar toggleable="lg" class="p-0 my-13px" >
+      <b-navbar toggleable="lg" class="p-0" >
         <b-navbar-brand :to="'/'">
           <template>
             <img src="@/assets/img/black-logo.png" alt="Logo" class="logo" />
@@ -110,7 +110,7 @@
     <!-- Subnavbar if login -->
     <div v-if="$auth.loggedIn" class="navbar-login">
       <div class="container-fluid">
-        <div class="cover-navbar-login  pt-13px pb-13px">
+        <div class="cover-navbar-login">
           <p class="f-13 mr-30px">
           <b-link :to="'/member/quan-ly-du-an?tab=1'" class="text-white">
             <img src="@/assets/img/my-project.png" alt="">
