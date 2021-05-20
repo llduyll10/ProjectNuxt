@@ -38,7 +38,7 @@
                         <b-dropdown id="dropdown-infor" variant="link" toggle-class="text-decoration-none" class="custom-infor pb-5px" no-caret>
                           <template #button-content>
                             <div class="d-flex mt-10px">
-                              <span>
+                              <span class="text-gray">
                               {{$auth.user.name}}
                               </span>
                               <div class="height"></div>

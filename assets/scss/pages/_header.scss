@@ -36,13 +36,16 @@
      }
       &.menu-right{
         &:nth-child(2){
-            border-right: 0;
             padding-right: 10px !important;
+            &::after {
+                content: '';
+                position: absolute;
+                width: 0px;
+            }
         }
       }
       &:last-child {
-
-          &::after {
+        &::after {
             content: '';
             position: absolute;
             width: 0px;
