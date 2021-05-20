@@ -226,7 +226,21 @@ module.exports = {
             return result
         },
         mapImgFromCategory(arr){
-            console.log(arr);
+            var arrSort = JSON.parse(JSON.stringify(arr))
+            arrSort.sort(function(a,b){
+                return a-b
+            })
+            var first = arrSort[0].toString()
+            var unit = first.split('')
+            if(unit[0] == 1){
+                return 1
+            }
+            else if(unit[0] == 2){
+                return 2
+            }
+            else{
+                return 3
+            }
         },
         getProvince() {
             return [

@@ -144,8 +144,12 @@
                                                 <div class="content nopadding">
                                                     <div class="title d-flex">
                                                         <div class="d-flex title-icon">
+                                                            <img width="20px" height="20px"
+                                                                :src="getIconImg(mapImgFromCategory(item.category))"
+                                                            />
                                                             <div
                                                                 class="sub f-14 text-main cursor-pointer"
+                                                                :class="getClassCategory(mapImgFromCategory(item.category))"
                                                                 @click="$router.push(`du-an/${item.slug}`)"
                                                                 >
                                                                 {{item.name}}
@@ -207,12 +211,18 @@
 import NoAvatar from '@/assets/img/no-avatar.png'
 import avatar from '@/assets/svg/market3.svg'
 import logoDuan from '@/assets/svg/logo-duan.svg'
+import IconBlueHouse from '@/assets/svg/icon-house-blue.svg'
+import IconDecordOrange from '@/assets/svg/icon-decord-orange.svg'
+import IconPenBlue from '@/assets/svg/icon-pen-green.svg'
 export default {
     // middleware: 'auth',
     data(){
         return{
             noAvatar: NoAvatar,
             logoDuan :logoDuan,
+            iconBlueHouse:IconBlueHouse,
+            iconDecord:IconDecordOrange,
+            iconPenBlue:IconPenBlue,
             avatar : avatar,
             activeParent:0,
             dataFake:[1,2,3,4,5,6,7],
@@ -231,6 +241,9 @@ export default {
     },
     mounted(){
         this.searchInitPage()
+    },
+    watch:{
+
     },
     methods:{
         async searchProject(){
@@ -308,6 +321,24 @@ export default {
                 this.loader(0)
             }
 
+        },
+        getClassCategory(value){
+            return{
+                colorMain:value==1,
+                colorOrange:value==2,
+                colorGreen:value==3,
+            }
+        },
+        getIconImg(value){
+            if(value == 1){
+                return this.iconBlueHouse
+            }
+            else if(value == 2){
+                return this.iconDecord
+            }
+            else{
+                return this.iconPenBlue
+            }
         },
         openLienHe(){
             this.$refs.refLienHe.show();
