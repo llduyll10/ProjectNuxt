@@ -62,7 +62,7 @@
             &:first-child{
                 width: 21px;
                 height: 21px;
-                margin-right: 25px;
+                margin-right: 20px;
             }
         }
         .group-infor{
@@ -74,6 +74,11 @@
                 margin-right: 0;
             }
             #dropdown-infor{
+                .height{
+                    width: 1px;
+                    background-color: #ADABAB;
+                    margin: 0 10px;
+                }
                 .dropdown-toggle{
                     padding: 0;
                     color: rgba(0, 0, 0, 0.84);

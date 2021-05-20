@@ -31,13 +31,24 @@
                 <!-- IS LOGIN -->
                 <template v-if="$auth.loggedIn">
                   <div class="isLogin mt-7px mb-7px">
-                    <img class="mt-15px" src="@/assets/svg/bell.svg" />
+                    <img class="mt-15px" src="@/assets/svg/icon-email-noti.svg" />
                     <div class="group-infor">
                       <img class="mt-5px border" :src="$auth.user.photo" />
-                      <div class="group-right ml-13px">
+                      <div class="group-right ml-13px d-flex">
                         <b-dropdown id="dropdown-infor" variant="link" toggle-class="text-decoration-none" class="custom-infor pb-5px" no-caret>
                           <template #button-content>
-                            {{$auth.user.name}}  <i class="fas fa-caret-down ml-13px f-16"></i>
+                            <div class="d-flex mt-10px">
+                              <span>
+                              {{$auth.user.name}}
+                              </span>
+                              <div class="height"></div>
+                              <div class="cover-infor">
+                                <p class="f-13">
+                                  <span>{{$auth.user.coin || 0}}</span> Tokens
+                                   <i class="fas fa-caret-down ml-13px f-16"></i>
+                                  </p>
+                              </div>
+                            </div>
                           </template>
                            <b-dropdown-text class="verify">
                             <span class="f-16">{{$auth.user.name}}</span>
@@ -64,10 +75,7 @@
                           <b-dropdown-item class="f-12">Hỗ trợ</b-dropdown-item>
                           <b-dropdown-item class="mb-30px f-12" @click="logout()">Đăng xuất</b-dropdown-item>
                         </b-dropdown>
-                        <div class="d-flex cover-infor">
-                          <p class="f-13">ID. {{$auth.user.number}}</p>
-                          <p class="f-13"><span>{{$auth.user.coin || 0}}</span> Tokens</p>
-                        </div>
+
                       </div>
                     </div>
 
