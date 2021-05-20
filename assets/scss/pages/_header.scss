@@ -24,7 +24,16 @@
     .sub-menu{
       cursor: pointer;
       height: 25px;
-      border-right: 1px solid rgba(130, 130, 130, 0.5);
+      position: relative;
+     &::after {
+         content: '';
+         position: absolute;
+         right: 0;
+         top: 5px;
+         width: 1px;
+         height: 14px;
+         background-color:  rgba(130, 130, 130, 0.5);
+     }
       &.menu-right{
         &:nth-child(2){
             border-right: 0;
@@ -32,7 +41,12 @@
         }
       }
       &:last-child {
-          border-right: 0;
+
+          &::after {
+            content: '';
+            position: absolute;
+            width: 0px;
+        }
       }
       span {
           font-weight: bold;
@@ -83,7 +97,8 @@
                 .height{
                     width: 1px;
                     background-color: #ADABAB;
-                    margin: 0 10px;
+                    margin: 2px 10px;
+                    height: 15px;
                 }
                 .dropdown-toggle{
                     padding: 0;
