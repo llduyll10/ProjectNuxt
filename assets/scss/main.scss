@@ -44,9 +44,20 @@ textarea {
     line-height: 22px;
 }
 
-@media (min-width: 1200px) {
+
+
+
+@media (min-width: 1100px) {
     .container-fluid {
         max-width: 1240px !important;
+        width: calc(100% - 120px);
+    }
+}
+
+
+@media (max-width: 760px) {
+    .container-fluid {
+        width: calc(100% - 40px);
     }
 }
 

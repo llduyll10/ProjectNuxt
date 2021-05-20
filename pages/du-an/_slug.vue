@@ -100,7 +100,7 @@
                 Thông tin dự án
               </h3>
               <hr class="hr my-15px" />
-              <div class="box d-flex pb-12px">
+              <div class="box d-flex pb-8px">
                 <div class="text-12 col-6 px-0 color-grey">
                   ID dự án
                 </div>
@@ -143,7 +143,7 @@
                   {{detailProject.address}}
                 </div>
               </div>
-              <div class="box d-flex py-8px">
+              <div class="box d-flex py-8px border-0">
                 <div class="text-12 col-6 px-0 color-grey">
                   Phí chào giá
                 </div>

@@ -5,7 +5,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
-                        <div class="row">
+                        <div class="d-flex">
                             <div class="profileMenuInfoWrap mr-20px">
                                 <ProfileMenu activeMenu="3" />
                             </div>
