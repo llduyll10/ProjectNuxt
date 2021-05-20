@@ -81,7 +81,7 @@
             </div>
             <div class="group-certificate">
                 <template v-for="(item,idx) in profile.filesCert">
-                    <div :key="idx" class="item">
+                    <div @click="downloadFile(item)" :key="idx" class="item cursor-pointer">
                         <span v-html="returnTypeFile(spliceURLFile(item,'--'))"></span>
                         {{spliceURLFile(item,'--')}}
                     </div>

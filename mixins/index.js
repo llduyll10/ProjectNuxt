@@ -98,6 +98,16 @@ module.exports = {
         },
         isMobile: function () {
         },
+        downloadFile(url){
+            var link = document.createElement('a')
+            var name = this.spliceURLFile(url,'--')
+            if(name && name !== ''){
+              link.download = name
+              link.href = url
+              link.click()
+            }
+
+        },
         returnTypeFile(url){
             var type = url.split('.').pop()
             var imgType = ["png","jpg","gif","jpeg"]
