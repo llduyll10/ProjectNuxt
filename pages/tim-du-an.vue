@@ -13,7 +13,10 @@
                             </div>
                             <div class="line"></div>
                             <div class="list">
-                                <div class="d-flex item-title f-14">
+                                <div class="d-flex item-title f-14"
+                                    @click="getItemSearch({id:1},4)"
+                                    :class="activeParent == 1 ? 'fw-600 text-main' :'' "
+                                >
                                     <img src="@/assets/svg/homeproject.svg" alt="">
                                     <span>{{objCategory[0].label}}</span>
                                 </div>
@@ -31,7 +34,10 @@
                                 </div>
                             </div>
                             <div class="list">
-                                <div class="d-flex item-title f-14">
+                                <div class="d-flex item-title f-14"
+                                    @click="getItemSearch({id:2},4)"
+                                    :class="activeParent == 2 ? 'fw-600 text-main' :'' "
+                                >
                                     <img src="@/assets/svg/sofa.svg" alt="">
                                      <span>{{objCategory[1].label}}</span>
                                 </div>
@@ -49,7 +55,10 @@
                                 </div>
                             </div>
                             <div class="list">
-                                <div class="d-flex item-title f-14">
+                                <div class="d-flex item-title f-14"
+                                    @click="getItemSearch({id:3},4)"
+                                    :class="activeParent == 3 ? 'fw-600 text-main' :'' "
+                                >
                                     <img src="@/assets/svg/pen.svg" alt="">
                                     <span>{{objCategory[2].label}}</span>
                                 </div>
@@ -205,6 +214,7 @@ export default {
             noAvatar: NoAvatar,
             logoDuan :logoDuan,
             avatar : avatar,
+            activeParent:0,
             dataFake:[1,2,3,4,5,6,7],
             optionsProvince: this.getProvince(),
             objCategory: this.getCategory(),
@@ -250,32 +260,36 @@ export default {
             })
         },
         getItemSearch(item,idxArray){
-            var arr = JSON.parse(JSON.stringify(this.objCategory[idxArray].children))
-            arr.forEach(obj=>{
-                if(obj.id == item.id){
-                    if(!obj.active){
-                        obj.active = true
-                    }
-                    else{
-                        obj.active = false
-                    }
-                }
-            })
-            this.objCategory[idxArray].children = arr
-            // Filter arr
-            var found = false
-            this.arrFilter.forEach(itemFound => {
-                if(itemFound.id == item.id){
-                    found = true
-                }
-            })
-            if(found){
-                this.arrFilter = this.arrFilter.filter(item2 => item2.id != item.id)
+            //parent
+            if(idxArray == 4){
+                this.activeParent = item.id
+                var arrTmp = JSON.parse(JSON.stringify(this.objCategory))
+                arrTmp.forEach(arr1 => {
+                    arr1.children.forEach(child => {
+                        child.active = false
+                    })
+                })
+                this.objCategory = arrTmp
             }
+            //children
+
             else{
-                this.arrFilter.push(item)
+                this.activeParent = 0
+                var arrTmp = JSON.parse(JSON.stringify(this.objCategory))
+                arrTmp.forEach(arr1 => {
+                    arr1.children.forEach(child => {
+                        child.active = false
+                        if(child.id == item.id){
+                            child.active = true
+                        }
+                    })
+                })
+                this.objCategory = arrTmp
             }
-            console.log('arrFilter',this.arrFilter)
+            if(this.arrFilter.length){
+                this.arrFilter.splice(0,1)
+            }
+            this.arrFilter.push(item)
         },
         async getPaging(value){
             this.loader()
