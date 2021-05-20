@@ -1,12 +1,12 @@
 <template>
-    <section id="infor-component">
+    <section v-if="profile" id="infor-component">
         <div   class="cover-img"
                 :style="{
-                    'background-image': 'url(' + `${imgProfile}` + ')',
+                    'background-image': 'url(' + `${profile.photo}` + ')',
                 }"
         >
             <div class="stt">
-                <p class="f-12"><span>ID.</span> 123456</p>
+                <p class="f-12"><span>ID.</span> {{profile.number}}</p>
             </div>
         </div>
         <div class="group-star d-flex mt-20px mb-20px">
@@ -38,6 +38,7 @@
 <script>
 import ImgProfile from '@/assets/svg/longb.svg'
 export default {
+    props:['profile'],
     data(){
         return {
             imgProfile: ImgProfile

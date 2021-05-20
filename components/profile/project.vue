@@ -12,20 +12,20 @@
             </div>
         </div>
         <div class="group-item">
-            <template v-for="(item,idx) in 8">
+            <template v-for="(item,idx) in listShow">
                 <div :key="idx" class="col-md-3 col-md-4 col-sm-6 cover-item">
                     <div
                         class="item"
                         :style="{
-                            'background-image': 'url(' + `${demoHouse}` + ')',
+                            'background-image': 'url(' + `${item.photos[0]}` + ')',
                         }"
                     >
-                        <p class="location f-11">Biệt thự cổ điển Quận 9</p>
+                        <p class="location f-11">{{item.name}}</p>
                     </div>
                 </div>
             </template>
         </div>
-        <div class="row text-center seemore mt-5px">
+        <div v-if="showSeemore" @click="seemore" class="row text-center seemore mt-5px">
             <p class="f-12">Xem thêm dự án <i class="fas fa-caret-down ml-5px"></i></p>
         </div>
     </section>
@@ -33,9 +33,36 @@
 <script>
 import DemoHouse from '@/assets/img/demo-house.png'
 export default {
+    props:['portfolio'],
     data(){
         return{
-            demoHouse:DemoHouse
+            demoHouse:DemoHouse,
+            listShow:[],
+            listTemp:[],
+            showSeemore:false
+        }
+    },
+    watch:{
+        portfolio(){
+            if(this.portfolio){
+                this.listTemp = JSON.parse(JSON.stringify(this.portfolio))
+                this.listShow = this.listTemp.splice(0,6)
+            if(this.portfolio.length < 6){
+                this.showSeemore = false
+            }
+            else{
+                this.showSeemore = true
+            }
+        }
+        }
+    },
+    mounted(){
+
+    },
+    methods:{
+        seemore(){
+            this.listShow = JSON.parse(JSON.stringify(this.portfolio))
+            this.showSeemore = false
         }
     }
 }
