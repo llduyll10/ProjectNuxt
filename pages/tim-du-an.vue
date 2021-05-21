@@ -125,7 +125,14 @@
                                         :value="objProject.address"
                                         v-model="objProject.address"
                                         placeholder="Tỉnh thành"
-                                    />
+                                />
+                                <treeselect
+                                        class="search-center"
+                                        :options="objDateFilter"
+                                        :value="objProject.rangeDate"
+                                        v-model="objProject.rangeDate"
+                                        placeholder="Thời gian"
+                                />
                                 <div class="button" @click="searchProject()">Tìm kiếm</div>
                             </div>
                             <div class="line"></div>
@@ -228,6 +235,7 @@ export default {
             dataFake:[1,2,3,4,5,6,7],
             optionsProvince: this.getProvince(),
             objCategory: this.getCategory(),
+            objDateFilter:this.getDateFilter(),
             arrFilter : [],
             objProject:{
                 address:null,
@@ -296,6 +304,7 @@ export default {
             }
 
             this.arrFilter.push(item)
+            this.getPaging({limit:10, page:1})
         },
         async getPaging(pageObj){
             this.loader()
