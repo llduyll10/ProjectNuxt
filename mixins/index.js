@@ -241,15 +241,9 @@ module.exports = {
             }
         },
         mapImgFromCategory(arr){
-            console.log('arr',arr)
-            var arrSort = JSON.parse(JSON.stringify(arr))
-            arrSort.sort(function(a,b){
-                return a-b
-            })
-            console.log('arrSort',arrSort[0])
-
-            if(arrSort && arrSort.length){
-                var first = arrSort[0].toString()
+            var min = Math.min(...arr)
+            if(min){
+                var first = min.toString()
                 var unit = first.split('')
                 if(unit[0] == 1){
                     return 1
