@@ -13,7 +13,7 @@
         </div>
         <div class="group-item">
             <template v-for="(item,idx) in listShow">
-                <div :key="idx" class="col-md-3 col-md-4 col-sm-6 cover-item">
+                <div @click="openProjectDetail(item)" :key="idx" class="col-md-3 col-md-4 col-sm-6 cover-item">
                     <div
                         class="item"
                         :style="{
@@ -60,6 +60,11 @@ export default {
 
     },
     methods:{
+        openProjectDetail(project){
+            console.log(project);
+            // project la object data dua vao popup
+            // mo popup
+        },
         seemore(){
             this.listShow = JSON.parse(JSON.stringify(this.portfolio))
             this.showSeemore = false
