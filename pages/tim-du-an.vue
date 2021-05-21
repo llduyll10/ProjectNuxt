@@ -240,10 +240,14 @@ export default {
         }
     },
     mounted(){
-        this.searchInitPage()
     },
     watch:{
 
+    },
+    async fetch(){
+        let res= await this.$post('public/projects',{...this.objProject,})
+        this.listProject = res.data.projects
+        this.count = res.data.count
     },
     methods:{
         async searchProject(){
@@ -261,16 +265,6 @@ export default {
             catch(err){
                 this.loader(0)
             }
-        },
-        searchInitPage(){
-           this.$post('public/projects',{...this.objProject,})
-            .then(res =>{
-                this.listProject = res.data.projects
-                this.count = res.data.count
-            })
-            .catch(err =>{
-                console.log(err)
-            })
         },
         getItemSearch(item,idxArray){
             var isRemove = false
