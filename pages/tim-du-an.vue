@@ -338,13 +338,7 @@ export default {
             }
 
         },
-        getClassCategory(value){
-            return{
-                colorMain:value==1,
-                colorOrange:value==2,
-                colorGreen:value==3,
-            }
-        },
+
         getIconImg(value){
             if(value == 1){
                 return this.iconBlueHouse
