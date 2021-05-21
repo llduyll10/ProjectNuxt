@@ -17,12 +17,14 @@
                             type="text"
                             class="form-control"
                             required
+                            v-model="phone"
+                            :disabled="$auth.user.verified"
                             placeholder="Số điện thoại"
                         />
                     </div>
 
                     <div>
-                        <button type="button" class="btn btn-main px-25px" @click="openModalPhone">
+                        <button type="button" class="btn btn-main px-25px" :disabled="$auth.user.verified" @click="openModalPhone">
                             Xác thực
                         </button>
                     </div>
@@ -79,7 +81,7 @@
             </div>
 
         </form>
-        <PopupPhoneform  ref="PopupChangePhone" />
+        <PopupPhoneform v-if="!$auth.user.verified" ref="PopupChangePhone" :phone="phone" @doneConfirmPhone="doneConfirmPhone"/>
         <PopupTaxform ref="openModaChangelTax" />
     </div>
 
@@ -89,9 +91,13 @@ export default {
    
     data(){
         return{
+            phone: this.$auth.user.phone
         }
     },
     methods:{
+        doneConfirmPhone(){
+            this.$auth.fetchUser();
+        },
         openModalPhone(){
             this.$refs.PopupChangePhone.show()
         },
