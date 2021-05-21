@@ -245,9 +245,17 @@ export default {
 
     },
     async fetch(){
-        let res= await this.$post('public/projects',{...this.objProject,})
-        this.listProject = res.data.projects
-        this.count = res.data.count
+        this.loader()
+        try{
+            let res= await this.$post('public/projects',{...this.objProject,})
+            this.listProject = res.data.projects
+            this.count = res.data.count
+            this.loader(0)
+        }
+        catch(err){
+            this.loader(0)
+        }
+
     },
     methods:{
         async searchProject(){
