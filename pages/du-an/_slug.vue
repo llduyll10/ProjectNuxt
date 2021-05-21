@@ -10,7 +10,9 @@
             <div
               class="left inner-content-section px-36px pt-25px pb-50px mb-20px"
             >
-              <h2 class="main-color f-20 fw-600 mb-15px">
+              <h2 class="main-color f-20 fw-600 mb-15px"
+                  :class="getClassCategory(mapImgFromCategory(rawCategory))"
+              >
                 {{detailProject.name}}
               </h2>
 
@@ -19,7 +21,7 @@
                 <span
                   :key="item.id"
                   class="px-8px badge py-2px text-12 custom-bage mr-8px mb-8px"
-                  :class="getClassBageCategory(mapImgFromCategory(detailProject.category))"
+                  :class="getClassBageCategory(mapValueFromCategory(item.id))"
                 >
                   {{item.label}}
                 </span
@@ -227,6 +229,7 @@ export default {
       slug:this.$nuxt.$route.params.slug,
       detailProject:{},
       arrNameCategory:[],
+      rawCategory:[],
       arrQuoteCompany:null
     };
   },
@@ -238,6 +241,7 @@ export default {
       this.$get(`public/projects/${this.slug}`)
         .then(res =>{
           this.detailProject = res.data
+          this.rawCategory = JSON.parse(JSON.stringify(res.data.category))
           this.arrNameCategory = this.mapCategory(this.detailProject.category)
           if(this.detailProject._id){
             this.getCompanyQuote(this.detailProject._id)
