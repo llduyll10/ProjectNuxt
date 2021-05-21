@@ -225,6 +225,13 @@ module.exports = {
             })
             return result
         },
+        getClassBageCategory(value){
+            return{
+                bageMain:value==1,
+                bageOrange:value==2,
+                bageGreen:value==3,
+            }
+        },
         mapImgFromCategory(arr){
             var arrSort = JSON.parse(JSON.stringify(arr))
             arrSort.sort(function(a,b){
