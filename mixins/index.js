@@ -172,6 +172,12 @@ module.exports = {
                 { label: 'Khách hàng', id: 'Khách hàng' },
             ]
         },
+        getTypeAccountSignup() {
+            return [
+                { label: 'Đăng ký nhận việc', id: 'Công Ty Xây Dựng' },
+                { label: 'Đăng ký khách hàng', id: 'Khách hàng' },
+            ]
+        },
         getCategory() {
             return [
                 {
