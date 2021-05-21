@@ -232,7 +232,7 @@ export default {
             objProject:{
                 address:null,
                 s:'',
-                limit:5,
+                limit:10,
                 page:1
             },
             listProject:[],
@@ -240,39 +240,14 @@ export default {
         }
     },
     mounted(){
+         this.getPaging({limit:10, page:1})
     },
     watch:{
 
     },
-    async fetch(){
-        this.loader()
-        try{
-            let res= await this.$post('public/projects',{...this.objProject,})
-            this.listProject = res.data.projects
-            this.count = res.data.count
-            this.loader(0)
-        }
-        catch(err){
-            this.loader(0)
-        }
-
-    },
     methods:{
         async searchProject(){
-            this.loader()
-            try{
-                this.objProject.category = []
-                this.arrFilter.forEach(item => {
-                    this.objProject.category.push(item.id)
-                })
-                let res = await this.$post('public/projects',{...this.objProject, limit:10, page:1})
-                this.listProject = res.data.projects
-                this.count = res.data.count
-                this.loader(0)
-            }
-            catch(err){
-                this.loader(0)
-            }
+            this.getPaging({limit:10, page:1})
         },
         getItemSearch(item,idxArray){
             var isRemove = false
@@ -322,14 +297,14 @@ export default {
 
             this.arrFilter.push(item)
         },
-        async getPaging(value){
+        async getPaging(pageObj){
             this.loader()
             try{
                 this.objProject.category = []
                 this.arrFilter.forEach(item => {
                     this.objProject.category.push(item.id)
                 })
-                let res = await this.$post('public/projects',{...this.objProject, ...value})
+                let res = await this.$post('public/projects',{...this.objProject, ...pageObj})
                 this.listProject = res.data.projects
                 this.count = res.data.count
                 window.scrollTo(0,0)
@@ -338,9 +313,7 @@ export default {
             catch(err){
                 this.loader(0)
             }
-
         },
-
         getIconImg(value){
             if(value == 1){
                 return this.iconBlueHouse

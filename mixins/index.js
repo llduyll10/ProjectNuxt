@@ -3,10 +3,12 @@
 module.exports = {
     methods: {
         loader(off) {
-            if (off === 0) {
-                this.$nuxt.$loading.finish();
-            } else {
-                this.$nuxt.$loading.start();
+            if(this.$nuxt.$loading.start){
+                if (off === 0) {
+                    this.$nuxt.$loading.finish();
+                } else {
+                    this.$nuxt.$loading.start();
+                }
             }
         },
         formatVnd(num) {
@@ -176,6 +178,14 @@ module.exports = {
             return [
                 { label: 'Đăng ký nhận việc', id: 'Công Ty Xây Dựng' },
                 { label: 'Đăng ký khách hàng', id: 'Khách hàng' },
+            ]
+        },
+        getDateFilter() {
+            return [
+                { label: '1 ngày', id: 1 },
+                { label: '7 tuần', id: 7 },
+                { label: '2 tuần', id: 14 },
+                { label: '4 tuần', id: 28 },
             ]
         },
         getCategory() {
