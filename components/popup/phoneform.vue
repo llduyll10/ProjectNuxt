@@ -4,18 +4,18 @@
         <div class="modal-contact formCore">
           <div class="content">
             <p class="title f-20 mb-10px">Vui lòng nhập số điện thoại của bạn</p>
-            <form @submit.prevent="getForm()" class="group-content mt-28px">
+            <form @submit.prevent="saveConfirm()" class="group-content mt-28px">
               <div class="form-group row">
                     <label class="f-13 col-md-3 col-sm-12 mt-8px">
                       Số điện thoại
                       <span style="color:red">*</span>
                   </label>
-                  <input class="form-control col-md-9 col-sm-12" placeholder="Nhập số điện thoại cần xác thực">
+                  <input required v-model="activePhone" class="form-control col-md-9 col-sm-12" placeholder="Nhập số điện thoại cần xác thực">
 
               </div>
                 <div class="form-group mb-40px group-checkbox">
                     <b-form-checkbox
-                        v-model="objResearch.status"
+                        v-model="agree"
                         name="checkbox-agree"
                         required
                         >
@@ -38,23 +38,23 @@
 
 <script>
 export default {
+  props:['phone'],
   data(){
     return{
-        objResearch:{
-            category:1,
-            status:false
-        },
+        agree:false,
         options: this.getCategory(),
         date: new Date(),
+        activePhone:this.phone
     }
     },
     mounted(){
-        var textAreas = document.getElementsByTagName('textarea');
-        Array.prototype.forEach.call(textAreas, function(elem) {
-            elem.placeholder = elem.placeholder.replace(/\\n/g, '\n');
-        });
+       
     },
     methods:{
+        saveConfirm(){
+            // call api here
+            this.$emit('doneConfirmPhone');
+        },
         show() {
             this.$refs.modalPhoneForm.showModal();
         },
