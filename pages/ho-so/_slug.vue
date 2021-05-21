@@ -42,22 +42,21 @@ export default {
         }
     },
     mounted(){
-        // this.getDataInit()
-    },
-    async fetch(){
-        this.loader()
-        try{
-            let res= await this.$get(`public/user/${this.slug}`)
-            this.objProfile = res.data.user
-            this.listCateMapping = this.mapCategory(this.objProfile.category)
-            this.portfolio = this.objProfile.portfolio
-            this.loader(0)
-        }
-        catch(err){
-            this.loader(0)
-        }
+        this.getDataInit()
     },
     methods:{
-    }
+        getDataInit(){
+            this.$get(`public/user/${this.slug}`)
+                .then(res =>{
+                    this.objProfile = res.data.user
+                    this.listCateMapping = this.mapCategory(this.objProfile.category)
+                    this.portfolio = this.objProfile.portfolio
+                })
+                .catch(err =>{
+                    console.log(err)
+                })
+        }
+
+     }
 }
 </script>
