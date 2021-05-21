@@ -143,7 +143,7 @@
                                                             <span class="name f-11">{{item.province}}</span>
                                                         </div>
                                                     </div>
-                                                    <div class="description f-13">Econs được thành lập và phát triển suốt 8 năm qua theo mô hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội thất Econs được thành lập và phát triển suốt 8 năm qua theo mô hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội thấtEcons được thành lập và phát triển suốt 8 năm qua theo mô hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội thất</div>
+                                                    <div class="description f-13">{{item.introduce}}</div>
                                                     <div class="group">
                                                         <template v-if="item.category">
                                                             <template v-for="cate in mapCategory(item.category)">
