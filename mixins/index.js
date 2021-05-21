@@ -226,7 +226,6 @@ module.exports = {
             return result
         },
         getClassBageCategory(value){
-            console.log(value)
             return{
                 bageMain:value==1,
                 bageOrange:value==2,

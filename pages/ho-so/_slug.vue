@@ -48,7 +48,6 @@ export default {
         getDataInit(){
             this.$get(`public/user/${this.slug}`)
                 .then(res =>{
-                    console.log(res)
                     this.objProfile = res.data.user
                     this.listCateMapping = this.mapCategory(this.objProfile.category)
                     this.portfolio = this.objProfile.portfolio

@@ -233,7 +233,6 @@ export default {
         getProjectDraft(){
             this.$get('/member/projects/draft')
             .then(res =>{
-                console.log('resss',res)
                 if(res.data.status){
                     this.objProject = res.data.project
                 }
@@ -244,7 +243,6 @@ export default {
 
         },
         getFile(file){
-            console.log('file',file);
             this.arrFile = this.arrFile.concat(file)
         },
         clearFile(file){

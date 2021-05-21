@@ -28,7 +28,6 @@ Vue.prototype.$checkDragDrop = (classSelector) => {
       drag = true
     })
     item.addEventListener('mouseup', () =>{
-      // console.log('drag', drag)
       return drag
     })
   })
