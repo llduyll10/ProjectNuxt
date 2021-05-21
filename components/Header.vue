@@ -286,6 +286,20 @@
                 v-model="objUser.email"
               />
             </div>
+            <div class="form-group">
+              <label class="f-13"
+                >Tài khoản đăng ký
+                <span style="color:red">*</span></label
+              >
+               <treeselect
+                    class=""
+                    :options="optionsType"
+                    :value="objUser.accountType"
+                    v-model="objUser.accountType"
+                    placeholder="Loại tài khoản"
+                    required
+                />
+            </div>
             <div class="w-100 text-center">
               <button type="submit" class="btn btn-theme theme-blue">Đăng ký</button>
             </div>
@@ -326,6 +340,7 @@ export default {
       error:null,
       confirmObj: null,
       isShowMobile:false,
+      optionsType:this.getTypeAccountSignup(),
       objMenu: [
         { name: "Thuê Nhà Thầu", link:'thue-nha-thau' },
         { name: "Tìm Dự Án", link:'tim-du-an'},
