@@ -273,9 +273,16 @@ export default {
             })
         },
         getItemSearch(item,idxArray){
+            var isRemove = false
             //parent
             if(idxArray == 4){
-                this.activeParent = item.id
+                if(this.activeParent == item.id){
+                    this.activeParent = 0
+                    isRemove = true
+                }
+                else{
+                    this.activeParent = item.id
+                }
                 var arrTmp = JSON.parse(JSON.stringify(this.objCategory))
                 arrTmp.forEach(arr1 => {
                     arr1.children.forEach(child => {
@@ -284,14 +291,18 @@ export default {
                 })
                 this.objCategory = arrTmp
             }
-            //children
 
+            //children
             else{
                 this.activeParent = 0
                 var arrTmp = JSON.parse(JSON.stringify(this.objCategory))
                 arrTmp.forEach(arr1 => {
                     arr1.children.forEach(child => {
                         child.active = false
+                        if(item.active){
+                            isRemove = true
+                            return
+                        }
                         if(child.id == item.id){
                             child.active = true
                         }
@@ -302,6 +313,11 @@ export default {
             if(this.arrFilter.length){
                 this.arrFilter.splice(0,1)
             }
+            if(isRemove){
+                this.arrFilter = []
+                return
+            }
+
             this.arrFilter.push(item)
         },
         async getPaging(value){
