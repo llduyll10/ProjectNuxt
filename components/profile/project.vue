@@ -13,7 +13,7 @@
         </div>
         <div class="group-item">
             <template v-for="(item,idx) in listShow">
-                <div @click="openProjectDetail(item)" :key="idx" class="col-md-3 col-md-4 col-sm-6 cover-item">
+                <div @click="openProjectDetail(item)" :key="idx" class="col-lg-3 col-md-4 col-sm-6 cover-item">
                     <div
                         class="item"
                         :style="{
@@ -28,10 +28,12 @@
         <div v-if="showSeemore" @click="seemore" class="row text-center seemore mt-5px">
             <p class="f-12">Xem thêm dự án <i class="fas fa-caret-down ml-5px"></i></p>
         </div>
+        <Villa ref="Villa" :itemShow="itemShow" />
     </section>
 </template>
 <script>
 import DemoHouse from '@/assets/img/demo-house.png'
+import Villa from "@/components/popup/Villa"
 export default {
     props:['portfolio'],
     data(){
@@ -39,7 +41,8 @@ export default {
             demoHouse:DemoHouse,
             listShow:[],
             listTemp:[],
-            showSeemore:false
+            showSeemore:false,
+            itemShow : {}
         }
     },
     watch:{
@@ -56,14 +59,17 @@ export default {
         }
         }
     },
+    components:{
+        Villa 
+    },
     mounted(){
 
     },
     methods:{
         openProjectDetail(project){
-            console.log(project);
-            // project la object data dua vao popup
-            // mo popup
+            console.log(project)
+            this.itemShow = project;
+            this.$refs.Villa.show();
         },
         seemore(){
             this.listShow = JSON.parse(JSON.stringify(this.portfolio))
