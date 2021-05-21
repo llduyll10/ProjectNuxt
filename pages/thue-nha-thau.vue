@@ -137,7 +137,11 @@
                                                 </div>
                                                 <div class="content">
                                                     <div class="title">
-                                                        <div class="sub f-14">{{item.company ? item.company : item.name}}</div>
+                                                        <div class="sub f-14 cursor-pointer"
+                                                            @click="$router.push(`ho-so/${item.slug}`)"
+                                                        >
+                                                            {{item.company ? item.company : item.name}}
+                                                        d</div>
                                                         <div class="icon">
                                                             <img src="@/assets/svg/icon-location.svg" alt="">
                                                             <span class="name f-11">{{item.province}}</span>
