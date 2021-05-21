@@ -44,7 +44,8 @@ export default {
     mounted(){
         this.getDataInit()
     },
-    methods:{
+
+methods:{
         getDataInit(){
             this.$get(`public/user/${this.slug}`)
                 .then(res =>{
