@@ -195,6 +195,7 @@
                     font-weight: 500;
                     line-height: 15px;
                     &::placeholder{
+                        margin-top: 10px;
                         font-size: 12px;
                         margin-left: 15px;
                         text-indent: 20px;
@@ -209,15 +210,39 @@
             }
             .search-center {
                 height: 32px;
-                width: 130px;
+                width: 150px;
                 box-sizing: border-box;
                 border-radius: 5px;
                 margin-right: 15px;
+                &.range-time{
+                    .vue-treeselect__control{
+                        .vue-treeselect__placeholder{
+                            &::before{
+                                background-image: url('@/assets/svg/icon-calendar-grey.svg');
+                            }
+                        }
+                    }
+
+                }
                 .vue-treeselect__control{
                     border: 1px solid #B7B5B5;
-                    height: 32px;
+                    height: 31px;
+                    position: relative;
                     .vue-treeselect__placeholder{
                         margin-top: -2px;
+                        text-indent: 25px;
+                        &::before{
+                            position: absolute;
+                            content: ' ';
+                            margin-left: 10px;
+                            background-image: url('@/assets/svg/icon-location-black.svg');
+                            background-size: 15px;
+                            background-repeat: no-repeat;
+                            height:15px;
+                            width: 15px;
+                            left: 0;
+                            top: 9px;
+                        }
                     }
                 }
             }
