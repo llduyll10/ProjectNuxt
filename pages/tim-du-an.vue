@@ -127,7 +127,7 @@
                                         placeholder="Tỉnh thành"
                                 />
                                 <treeselect
-                                        class="search-center"
+                                        class="search-center range-time"
                                         :options="objDateFilter"
                                         :value="objProject.rangeDate"
                                         v-model="objProject.rangeDate"
