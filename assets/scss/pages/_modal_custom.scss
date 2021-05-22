@@ -213,6 +213,7 @@
 }
 
 #modal-show-villa {
+    padding-left: 0px !important;
     .modal-header {
         border-bottom: 1px solid #dee2e6 !important;
     }
@@ -241,7 +242,8 @@
                 margin-bottom: 0;
             }
             .image {
-                margin-right: -23px;
+                margin-right: -9px;
+                margin-left: -7px;
                 .img {
                     padding: 0 8px;
                 }
@@ -290,7 +292,8 @@
     #modal-select-bank,
     #modal-cotact-form-submit,
     #modal-change-phone-form-submit,
-    #modal-change-tax-form-submit {
+    #modal-change-tax-form-submit,
+    #modal-show-villa {
         .modal-md {
             width: auto !important;
         }
@@ -299,9 +302,11 @@
     #modal-select-bank,
     #modal-cotact-form-submit,
     #modal-change-phone-form-submit,
-    #modal-change-tax-form-submit {
+    #modal-change-tax-form-submit,
+    #modal-show-villa {
         .modal-body {
             padding: 1rem !important;
+            height: auto;
         }
     }
     #modal-create-update-project {
@@ -309,6 +314,7 @@
             width: auto !important;
         }
     }
+    #modal-show-villa {}
     .btn-now {
         margin-bottom: 1.7rem !important;
     }

@@ -3,7 +3,7 @@
       <template v-slot:content>
         <div class="modal-villa formCore">
           <div class="content">
-            <form @submit.prevent="getForm()" class="group-content mt-2px">
+            <form @submit.prevent="getForm()" class="mt-2px">
               <div class="form-group row line-bot">
                     <label class="f-13 col-md-3 col-sm-12 ">
                       Dịch vụ yêu cầu
@@ -26,13 +26,13 @@
                   </div>
               </div>
               <div class="form-group row">
-                  <label class="f-13  col-md-3 col-sm-12 mt-1">
+                  <label class="f-13  col-md-3 col-sm-12 mt-1 mb-5px">
                       Tài liệu đính kèm
                   </label>
-                  <div class="col-md-9 col-sm-12 mt-1">
+                  <div class="col-md-9 col-sm-12 mt-1 pr-0px">
                       <div class="row image">
                         <template v-for="(item , idx) in itemShow.photos">
-                            <div class="col-lg-6 img" :key="idx">
+                            <div class="col-6 img" :key="idx">
                                 <div class="imgVilla"
                                 :style="{
                                     'background-image': 'url(' + `${item}` + ')',
@@ -40,7 +40,33 @@
                                 ></div>
                             </div>
                         </template>
-                        
+                        <template v-for="(item , idx) in itemShow.photos">
+                            <div class="col-6 img" :key="idx">
+                                <div class="imgVilla"
+                                :style="{
+                                    'background-image': 'url(' + `${item}` + ')',
+                                }"
+                                ></div>
+                            </div>
+                        </template>
+                        <template v-for="(item , idx) in itemShow.photos">
+                            <div class="col-6 img" :key="idx">
+                                <div class="imgVilla"
+                                :style="{
+                                    'background-image': 'url(' + `${item}` + ')',
+                                }"
+                                ></div>
+                            </div>
+                        </template>
+                        <template v-for="(item , idx) in itemShow.photos">
+                            <div class="col-6 img" :key="idx">
+                                <div class="imgVilla"
+                                :style="{
+                                    'background-image': 'url(' + `${item}` + ')',
+                                }"
+                                ></div>
+                            </div>
+                        </template>
                     </div>
                   </div>
               </div>
