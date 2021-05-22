@@ -22,6 +22,7 @@
         this.$emit('close');
       },
       showModal() {
+        console.log(this.title)
         this.$refs['my-modal'].show()
       },
       hideModal() {

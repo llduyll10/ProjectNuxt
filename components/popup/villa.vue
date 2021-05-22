@@ -1,5 +1,5 @@
 <template>
-    <Modal ref="modalLienForm" id="modal-show-villa">
+    <Modal ref="modalLienForm" id="modal-show-villa" :title="itemShow.name">
       <template v-slot:content>
         <div class="modal-villa formCore">
           <div class="content">

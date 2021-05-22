@@ -214,7 +214,15 @@
 
 #modal-show-villa {
     padding-left: 0px !important;
+    .modal-title {
+        b {
+            color: $main-black;
+            padding: 23px 0 19px;
+            display: inline-block;
+        }
+    }
     .modal-header {
+        padding-left: 60px;
         border-bottom: 1px solid #dee2e6 !important;
     }
     .formCore {
@@ -314,7 +322,11 @@
             width: auto !important;
         }
     }
-    #modal-show-villa {}
+    #modal-show-villa {
+        .modal-header {
+            padding-left: 1rem;
+        }
+    }
     .btn-now {
         margin-bottom: 1.7rem !important;
     }
