@@ -13,7 +13,7 @@
         </div>
         <div class="group-item">
             <template v-for="(item,idx) in listShow">
-                <div @click="openProjectDetail(item)" :key="idx" class="col-lg-3 col-md-4 col-sm-6 cover-item">
+                <div @click="openProjectDetail(item)" :key="idx" class="col-xl-3 col-lg-4 col-md-6 col-sm-12 cover-item">
                     <div
                         class="item"
                         :style="{

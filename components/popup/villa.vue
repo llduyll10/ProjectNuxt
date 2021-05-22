@@ -5,13 +5,13 @@
           <div class="content">
             <form @submit.prevent="getForm()" class="mt-2px">
               <div class="form-group row line-bot">
-                    <label class="f-13 col-md-3 col-sm-12 ">
+                    <label class="f-13 col-md-3 col-sm-12 f-bold">
                       Dịch vụ yêu cầu
                   </label>
                   <div class="service col-md-9 col-sm-12 f-12">{{itemShow.name}}</div>
               </div>
               <div class="form-group row line-bot">
-                    <label class="f-13 col-md-3 col-sm-12 d-flex flex-align-center">
+                    <label class="f-13 col-md-3 col-sm-12 d-flex flex-align-center f-bold">
                       Soạn tin nhắn
                     </label>
                     <div class="col-md-9 col-sm-12 ">
@@ -26,7 +26,7 @@
                   </div>
               </div>
               <div class="form-group row">
-                  <label class="f-13  col-md-3 col-sm-12 mt-1 mb-5px">
+                  <label class="f-13  col-md-3 col-sm-12 mt-1 mb-5px f-bold">
                       Tài liệu đính kèm
                   </label>
                   <div class="col-md-9 col-sm-12 mt-1 pr-0px">
