@@ -40,33 +40,6 @@
                                 ></div>
                             </div>
                         </template>
-                        <template v-for="(item , idx) in itemShow.photos">
-                            <div class="col-6 img" :key="idx">
-                                <div class="imgVilla"
-                                :style="{
-                                    'background-image': 'url(' + `${item}` + ')',
-                                }"
-                                ></div>
-                            </div>
-                        </template>
-                        <template v-for="(item , idx) in itemShow.photos">
-                            <div class="col-6 img" :key="idx">
-                                <div class="imgVilla"
-                                :style="{
-                                    'background-image': 'url(' + `${item}` + ')',
-                                }"
-                                ></div>
-                            </div>
-                        </template>
-                        <template v-for="(item , idx) in itemShow.photos">
-                            <div class="col-6 img" :key="idx">
-                                <div class="imgVilla"
-                                :style="{
-                                    'background-image': 'url(' + `${item}` + ')',
-                                }"
-                                ></div>
-                            </div>
-                        </template>
                     </div>
                   </div>
               </div>
