@@ -188,6 +188,7 @@
                 border-radius: 5px;
                 padding-left: 18px;
                 margin-right: 15px;
+                line-height: 29px;
                 input {
                     border: none;
                     width: 90%;
@@ -228,6 +229,9 @@
                     border: 1px solid #B7B5B5;
                     height: 31px;
                     position: relative;
+                    .vue-treeselect__single-value{
+                        line-height: 29px;
+                    }
                     .vue-treeselect__placeholder{
                         margin-top: -2px;
                         text-indent: 25px;
