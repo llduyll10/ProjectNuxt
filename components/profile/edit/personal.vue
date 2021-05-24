@@ -79,7 +79,11 @@
                             required
                             placeholder="Số điện thoại"
                             v-model="objInfor.phone"
+                            :disabled="objInfor.verified"
                         />
+                        <small class="text-main" v-if="objInfor.verified">
+                            Đã xác thực
+                        </small>
                     </div>
                 </div>
             </div>
@@ -180,9 +184,9 @@ export default {
     },
     methods:{
         getUser() {
-            var { phone, email, name, photo, address, company, province, website, } = this.$auth.user;
+            var { phone, email, name, photo, address, company, province, website,verified} = this.$auth.user;
             province = province || null;
-            this.objInfor = { phone, email, name, photo, address, company, province, website, } ;
+            this.objInfor = { phone, email, name, photo, address, company, province, website, verified} ;
         },
         async updateInfor(){
             this.loader();
