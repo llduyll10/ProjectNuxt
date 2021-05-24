@@ -17,7 +17,7 @@
                   <input v-model="codeObj.code4" @keypress="isNumber($event)" type="text" class="form-control verifyOTP" required maxlength="1">
                 </div>
 
-                 <small class="text-danger" v-if="msg">{{msg}}</small>
+                 
               </div>
               <div v-else class="form-group row">
                     <label class="f-13 col-md-3 col-sm-12 mt-8px">
@@ -25,7 +25,7 @@
                       <span style="color:red">*</span>
                   </label>
                   <input required v-model="activePhone" class="form-control col-md-9 col-sm-12" placeholder="Nhập số điện thoại cần xác thực">
-                  <small class="text-danger" v-if="msg">{{msg}}</small>
+                
               </div>
                 <div class="form-group mb-40px group-checkbox">
                     <b-form-checkbox
@@ -42,7 +42,10 @@
                         <button  type="submit" class="btn-now">
                           {{showStepTwo ? 'Xác nhận' : 'GỬI MÃ OTP XÁC THỰC'}}
                         </button>
+                        <small class="text-danger" v-if="msg">{{msg}}</small>
                     </div>
+
+                    
                 </div>
             </form>
           </div>
