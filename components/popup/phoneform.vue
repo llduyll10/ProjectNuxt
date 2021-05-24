@@ -76,10 +76,10 @@ export default {
                 if(res.data.status == true){
                   this.showStepTwo = true
                   this.agree = false
-                  this.msg = res.data.msg
                 }
                 else{
                   this.showAlert = true
+                  this.msg = res.data.msg
                 }
               })
               .catch(err => {
