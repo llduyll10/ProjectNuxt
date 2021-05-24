@@ -9,12 +9,22 @@
                   <div class="service col-md-12 col-sm-12 f-20">{{itemShow.name}}</div>
               </div>
 
-
               <div class="form-group row line-bot">
                     <label class="f-13 col-md-3 col-sm-12 f-bold">
                       Dịch vụ yêu cầu
                   </label>
-                  <div class="service col-md-9 col-sm-12 f-12">{{itemShow.name}}</div>
+                  <div class="service col-md-9 col-sm-12">
+                    <template v-for="(item) in mapCategory(itemShow.category)">
+                <span
+                  :key="item.id"
+                  class="px-8px badge py-2px text-12 custom-bage mr-8px mb-8px"
+                  :class="getClassBageCategory(mapValueFromCategory(item.id))"
+                >
+                  {{item.label}}
+                </span
+                >
+              </template>
+              </div>
               </div>
               <div class="form-group row line-bot">
                     <label class="f-13 col-md-3 col-sm-12 d-flex flex-align-center f-bold">
