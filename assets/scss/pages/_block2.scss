@@ -10,7 +10,6 @@
         border-radius: 9px;
         overflow: hidden;
         height: auto;
-        width: 95%;
         .top {
             align-items: center;
             background: linear-gradient(94.56deg, rgba(25, 137, 198, 0.94) 36.02%, rgba(231, 144, 29, 0.94) 247.84%);
@@ -34,6 +33,9 @@
                 line-height: 24px;
             }
         }
+    }
+    .slick-list {
+        margin: 0 10px;
     }
     .slick-arrow {
         &.slick-prev {
@@ -73,9 +75,6 @@
 @media screen and (max-width:768px) {
     #block2 .boxinfo .text {
         margin: 20px !important;
-    }
-    #block2 .boxinfo img {
-        width: 100%;
     }
     #block2 {
         .slick-arrow {
