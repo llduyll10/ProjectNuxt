@@ -2,7 +2,7 @@
   <div>
     <b-modal ref="my-modal" :no-close-on-backdrop="true" centered hide-footer :id='id'>
        <template #modal-header="{ close }">
-         <h5 class="modal-title text-main">
+         <h5 class="modal-title">
            <b>{{title}}</b>
          </h5>
          
