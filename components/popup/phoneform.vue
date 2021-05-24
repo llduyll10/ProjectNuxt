@@ -10,12 +10,14 @@
                     Mã code
                     <span style="color:red">*</span>
                 </label>
-                 <div class=" form-group col-md-9 col-sm-12">
+                 <div class="form-group col-md-9 col-sm-12">
                   <input v-on:keyup="nextCode($event)" @keypress="isNumber($event)" v-model="codeObj.code1" type="text" class="form-control verifyOTP" required maxlength="1">
                   <input v-on:keyup="nextCode($event)" @keypress="isNumber($event)" v-model="codeObj.code2" type="text" class="form-control verifyOTP" required maxlength="1">
                   <input v-on:keyup="nextCode($event)" @keypress="isNumber($event)" v-model="codeObj.code3" type="text" class="form-control verifyOTP" required maxlength="1">
                   <input v-model="codeObj.code4" @keypress="isNumber($event)" type="text" class="form-control verifyOTP" required maxlength="1">
                 </div>
+
+                 <small class="text-danger" v-if="msg">{{msg}}</small>
               </div>
               <div v-else class="form-group row">
                     <label class="f-13 col-md-3 col-sm-12 mt-8px">
@@ -23,7 +25,7 @@
                       <span style="color:red">*</span>
                   </label>
                   <input required v-model="activePhone" class="form-control col-md-9 col-sm-12" placeholder="Nhập số điện thoại cần xác thực">
-                  <b-alert v-if="showAlert" sm show variant="danger">{{msg}}</b-alert>
+                  <small class="text-danger" v-if="msg">{{msg}}</small>
               </div>
                 <div class="form-group mb-40px group-checkbox">
                     <b-form-checkbox
@@ -59,7 +61,6 @@ export default {
         date: new Date(),
         activePhone:this.phone,
         showStepTwo:false,
-        showAlert:false,
         msg:'',
         codeObj:{}
     }
@@ -69,6 +70,7 @@ export default {
     },
     methods:{
         saveConfirm(){
+          this.msg = '';
           let obj = {phone: this.activePhone}
           // call api here
           this.$post('user/verify/phone',obj)
@@ -76,18 +78,17 @@ export default {
                 if(res.data.status == true){
                   this.showStepTwo = true
                   this.agree = false
-                }
-                else{
-                  this.showAlert = true
+                }else{
                   this.msg = res.data.msg
                 }
               })
               .catch(err => {
-                console.log(err)
+                  this.msg = 'Có lỗi xảy ra'
+                  console.log(err)
               })
         },
         verifyWithOTP(){
-
+           this.msg = '';
           let obj = {
                       phone:this.activePhone,
                       verifiedCode:this.getCodeObj()
@@ -96,14 +97,12 @@ export default {
               .then(res => {
                 if(res.data.status){
                    this.$emit('doneConfirmPhone');
-                }
-                else{
-                  this.showAlert = true
+                } else{
                   this.msg = res.data.msg
                 }
               })
               .catch(err =>{
-                console.log(err)
+                this.msg = 'Có lỗi xảy ra'
               })
         },
          getCodeObj(){
