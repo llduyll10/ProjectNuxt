@@ -76,35 +76,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="left">
-                            <div class="top">
-                                <div class="title f-16">
-                                    LĨNH VỰC CÔNG VIỆC
-                                </div>
-                            </div>
-                            <div class="line"></div>
-                            <div class="list">
-                                <div class="checkbox">
-                                    <div class="gr-check">
-                                        <input type="checkbox" class="">
-                                        <label>Toàn quốc</label>
-                                    </div>
-                                    <div class="gr-check">
-                                        <input style="background-color:red!important" type="checkbox" class="">
-                                        <label>Hà Nội</label>
-                                    </div>
-                                    <div class="gr-check">
-                                        <input type="checkbox" class="">
-                                        <label>Tp. Hồ Chí Minh</label>
-                                    </div>
-                                </div>
-                                <div class="seemore f-12">
-                                    Xem thêm
-                                    <div class="circle"></div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-12">
                         <div class="right">
