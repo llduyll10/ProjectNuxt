@@ -149,11 +149,11 @@
                                                     <div class="st f-13">(<span>4</span> đánh giá)</div>
                                                 </div>
                                                 <div class="contact">
-                                                    <div class="phone" @click="openLienHe">
-                                                        <img src="@/assets/svg/phone.svg" alt="">
+                                                    <div class="phone cursor-pointer" @click="openLienHe(item)">
+                                                        <img class="pb-3px" src="@/assets/svg/phone.svg" alt="">
                                                         <span>Liên hệ trực tiếp</span>
                                                     </div>
-                                                    <div class="email" @click="openLienHeMail">
+                                                    <div class="email cursor-pointer" @click="openLienHeMail">
                                                         <img src="@/assets/svg/email.svg" alt="">
                                                         <span>Gửi tin nhắn</span>
                                                     </div>
@@ -206,7 +206,7 @@ export default {
                 page:1
             },
             listUsers:[],
-            count:0
+            count:0,
         }
     },
     mounted(){
@@ -305,8 +305,9 @@ export default {
                 return this.iconPenBlue
             }
         },
-        openLienHe(){
+        openLienHe(user){
             this.$refs.refLienHe.show();
+            this.$refs.refLienHe.passIDInfor(user);
         },
         openLienHeMail(){
             this.$refs.LienHeFormPop.show();
