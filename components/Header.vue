@@ -31,7 +31,7 @@
                 <!-- IS LOGIN -->
                 <template v-if="$auth.loggedIn">
                   <div class="isLogin mt-7px mb-7px">
-                    <img class="mt-15px" src="@/assets/svg/icon-email-noti.svg" />
+                    <img class="mt-15px" src="@/assets/svg/bell.svg" />
                     <div class="group-infor">
                       <img class="mt-5px border" :src="$auth.user.photo" />
                       <div class="group-right ml-13px d-flex">
