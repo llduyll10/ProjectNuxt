@@ -90,6 +90,7 @@ export default {
           let res = await this.$del(`member/portfolio/${item._id}`)
           if(res.data.status){
             this.getListProject()
+            this.$auth.fetchUser()
           }
         }
       },
@@ -100,6 +101,7 @@ export default {
       hideModal(){
         this.detailProject = null;
         this.getListProject()
+        this.$auth.fetchUser()
         this.$refs.modalEditProject.hideModal()
       },
 
