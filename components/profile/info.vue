@@ -6,7 +6,7 @@
                 }"
         >
             <div class="stt">
-                <p class="f-12"><span>ID.</span> {{profile.number}}</p>
+                <p class="f-11"><img class="pb-5px" src="@/assets/svg/icon-location-white.svg" /> {{profile.province}}</p>
             </div>
         </div>
         <div class="group-star d-flex mt-20px mb-20px">

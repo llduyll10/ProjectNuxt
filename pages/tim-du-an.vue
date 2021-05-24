@@ -180,7 +180,7 @@
                                                                 Ngày đăng - <span>{{checkIsToday(item.createdDate)}}</span>
                                                             </div>
                                                             <div class="three">
-                                                                Dự trù - <span>{{formatNamePrice(item.budget)}}</span>
+                                                                Ngân sách - <span>{{formatNamePrice(item.budget)}}</span>
                                                             </div>
                                                             <div class="four">
                                                                 Hạn chót chào giá -

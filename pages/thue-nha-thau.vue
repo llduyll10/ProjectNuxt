@@ -76,35 +76,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="left">
-                            <div class="top">
-                                <div class="title f-16">
-                                    LĨNH VỰC CÔNG VIỆC
-                                </div>
-                            </div>
-                            <div class="line"></div>
-                            <div class="list">
-                                <div class="checkbox">
-                                    <div class="gr-check">
-                                        <input type="checkbox" class="">
-                                        <label>Toàn quốc</label>
-                                    </div>
-                                    <div class="gr-check">
-                                        <input style="background-color:red!important" type="checkbox" class="">
-                                        <label>Hà Nội</label>
-                                    </div>
-                                    <div class="gr-check">
-                                        <input type="checkbox" class="">
-                                        <label>Tp. Hồ Chí Minh</label>
-                                    </div>
-                                </div>
-                                <div class="seemore f-12">
-                                    Xem thêm
-                                    <div class="circle"></div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-12">
                         <div class="right">
@@ -153,7 +124,7 @@
                                                             <template v-for="cate in mapCategory(item.category)">
                                                                 <span
                                                                     :key="cate.id"
-                                                                    class="px-8px badge py-2px text-12 custom-bage mr-8px mb-8px"
+                                                                    class="px-8px badge py-5px text-12 custom-bage mr-8px mb-8px"
                                                                     :class="getClassBageCategory(mapValueFromCategory(cate.id))"
                                                                 >
                                                                     {{cate.label}}
@@ -169,7 +140,11 @@
                                                 <div class="star">
                                                     <div class="d-flex">
                                                         <div class="limit f-10">5.0</div>
-                                                        <img src="@/assets/svg/star.svg" alt="">
+                                                        <template v-for="(item,idx) in 5">
+                                                            <div :key="idx">
+                                                                <i class="fas fa-star mr-1px f-13"></i>
+                                                            </div>
+                                                        </template>
                                                     </div>
                                                     <div class="st f-13">(<span>4</span> đánh giá)</div>
                                                 </div>

@@ -5,7 +5,7 @@
             <div class="height"></div>
             <p class="name-company">
                 {{profile.company}}
-                <img class="ml-10px mb-5px" src="@/assets/svg/icon-verify-company.svg" alt="">
+
             </p>
         </div>
         <div class="group-bage mt-10px">
@@ -21,11 +21,11 @@
             <div class="d-flex cover-type-location">
                 <div class="type">
                     <img src="@/assets/svg/icon-user-dark.svg" class="mr-0" />
-                    <span class="f-11 fw-600">{{profile.accountType}}</span>
+                    <span class="f-11">{{profile.accountType}}</span>
                 </div>
                 <div class="location">
-                    <img src="@/assets/svg/icon-location.svg" />
-                    <span class="f-11">{{profile.province}}</span>
+                    <img width="15px" height="15px" src="@/assets/svg/icon-verify-company.svg" alt="">
+                    <span class="f-11">Đã xác thực</span>
                 </div>
             </div>
         </div>
