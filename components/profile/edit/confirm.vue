@@ -9,7 +9,7 @@
         <form>
             <div class="editRow mb-15px">
                 <div class="fieldLabel w-200px">
-                    Xác thực số điện thoại
+                    Xác thực số điện thoại<span class="dot">*</span>
                 </div>
                 <div class="fieldInput flex-align-center">
                     <div class="form-group mb-0 flex-1 mr-15px">
@@ -31,32 +31,10 @@
                 </div>
             </div>
 
-            <div class="editRow mb-15px">
-                <div class="fieldLabel w-200px">
-                    Xác thực mã số thuế
-                </div>
-                <div class="fieldInput flex-align-center">
-                    <div class="form-group mb-0 flex-1 mr-15px">
-                        <input
-                            type="text"
-                            class="form-control"
-                            required
-                            placeholder="MST"
-                        />
-                    </div>
-
-                    <div>
-                        <button type="button" class="btn btn-main px-25px" @click="openModalTax">
-                            Xác thực
-                        </button>
-                    </div>
-                </div>
-            </div>
-
 
             <div class="editRow align-items-start mb-15px">
                 <div class="fieldLabel pt-5px w-200px">
-                    Xác thực CMND/Passport
+                    Xác thực CMND/Passport<span class="dot">*</span>
                     <br>
                     <span class="info">
                         Vui lòng kèm trong file cả mặt trước và mặt sau của thẻ căn cước công dân
@@ -82,7 +60,6 @@
 
         </form>
         <PopupPhoneform v-if="!$auth.user.verified" ref="PopupChangePhone" :phone="phone" @doneConfirmPhone="doneConfirmPhone"/>
-        <PopupTaxform ref="openModaChangelTax" />
     </div>
 
 </template>
@@ -100,9 +77,6 @@ export default {
         },
         openModalPhone(){
             this.$refs.PopupChangePhone.show()
-        },
-        openModalTax(){           
-             this.$refs.openModaChangelTax.show()
         }
     }
 }

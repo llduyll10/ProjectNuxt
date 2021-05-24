@@ -53,6 +53,22 @@
 
             <div class="editRow mb-15px">
                 <div class="fieldLabel">
+                    Mã số thuế
+                </div>
+                <div class="fieldInput">
+                    <div class="form-group mb-0">
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Mã số thuế"
+                            v-model="objInfor.taxCode"
+                        />
+                    </div>
+                </div>
+            </div>
+
+            <div class="editRow mb-15px">
+                <div class="fieldLabel">
                     Số điện thoại<span class="dot">*</span>
                 </div>
                 <div class="fieldInput">
@@ -87,11 +103,12 @@
 
             <div class="editRow mb-15px">
                 <div class="fieldLabel">
-                    Địa chỉ
+                    Địa chỉ<span class="dot">*</span>
                 </div>
                 <div class="fieldInput">
                     <div class="form-group mb-0">
                         <input
+                            required
                             type="text"
                             class="form-control"
                             placeholder="Địa chỉ"
@@ -103,12 +120,12 @@
 
             <div class="editRow mb-15px">
                 <div class="fieldLabel">
-                    Tỉnh thành
+                    Tỉnh thành<span class="dot">*</span>
                 </div>
                 <div class="fieldInput">
                     <div class="form-group mb-0">
                         <treeselect
-                            class=""
+                            required
                             :options="optionsProvince"
                             :value="objInfor.province"
                             v-model="objInfor.province"

@@ -29,6 +29,7 @@
                 :multiple="true"
                 :clearable="false"
                 placeholder="Chọn dịch vụ"
+                required
             />
             </div>
           </div>

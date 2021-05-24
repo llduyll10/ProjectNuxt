@@ -11,7 +11,7 @@
                 <div class="fieldInput">
                     <div class="form-group mb-0">
                         <treeselect
-                            class=""
+                            required
                             :options="optionsType"
                             :value="objWorking.accountType"
                             v-model="objWorking.accountType"
@@ -23,14 +23,14 @@
 
             <div class="editRow mb-15px">
                 <div class="fieldLabel">
-                     Lĩnh vực hoạt động
+                     Lĩnh vực hoạt động <span class="dot">*</span>
                      <br/>
                      <span class="info">(Chọn tối đa 5)</span>
                 </div>
                 <div class="fieldInput">
                     <div class="form-group mb-0">
                         <treeselect
-                            class=""
+                            required
                             :options="optionsCategory"
                             :disable-branch-nodes="true"
                             :value="objWorking.category"
@@ -44,7 +44,7 @@
 
             <div class="editRow mb-15px">
                 <div class="fieldLabel">
-                    Giới thiệu về công ty/cá nhân
+                    Giới thiệu về công ty/cá nhân<span class="dot">*</span>
                 </div>
                 <div class="fieldInput">
                     <div class="form-group mb-0">
@@ -53,6 +53,7 @@
                             placeholder="Giới thiệu về công ty/tổ chức của bạn. Nếu là Freelancer, mô tả về quá trình làm việc của bạn"
                             rows="12"
                             v-model="objWorking.introduce"
+                            required
                         />
                     </div>
                 </div>
@@ -60,7 +61,7 @@
 
             <div class="editRow mb-15px">
                 <div class="fieldLabel">
-                    Giới thiệu về năng lực
+                    Giới thiệu về năng lực<span class="dot">*</span>
                 </div>
                 <div class="fieldInput">
                     <div class="form-group mb-0">
@@ -69,6 +70,7 @@
                             class="form-control"
                             placeholder="Mô tả năng lực của bạn/công ty bạn và tại sao chủ đầu tư nên chọn bạn"
                             v-model="objWorking.ability"
+                            required
                         />
                     </div>
                 </div>
