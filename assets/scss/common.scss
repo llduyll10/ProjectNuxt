@@ -167,3 +167,44 @@ b, strong {
         font-size: 13px;
     }
 }
+.icon{
+	height: 40px;
+	position: relative;
+	&:before{
+		width: 38px;
+		height: 38px;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		content:"";
+	}
+	&.icon-pdf{
+		&:before{
+			content:"";
+			background-image:url('@/assets/svg/icon-pdf-color.svg');
+            background-repeat: no-repeat;
+			width: 24px;
+			height: 24px;
+		}
+	}
+    &.icon-img{
+		&:before{
+			content:"";
+			background-image:url('@/assets/svg/icon-jpeg.svg');
+            background-repeat: no-repeat;
+			width: 24px;
+			height: 24px;
+		}
+	}
+    &.icon-file{
+		&:before{
+			content:"";
+			background-image:url('@/assets/svg/icon-folder.svg');
+            background-repeat: no-repeat;
+			width: 24px;
+			height: 24px;
+		}
+	}
+}
+
+
