@@ -42,22 +42,22 @@ export default {
         }
     },
     mounted(){
-        this.getDataInit()
-    },
-
-methods:{
-        getDataInit(){
+        this.$nextTick(() => {
+            this.loader()
             this.$get(`public/user/${this.slug}`)
                 .then(res =>{
                     this.objProfile = res.data.user
                     this.listCateMapping = this.mapCategory(this.objProfile.category)
                     this.portfolio = this.objProfile.portfolio
+                    this.loader(0)
                 })
                 .catch(err =>{
+                    this.loader(0)
                     console.log(err)
-                })
-        }
+            })
+        })
+    },
 
-     }
+    methods:{}
 }
 </script>
