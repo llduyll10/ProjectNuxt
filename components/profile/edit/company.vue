@@ -31,6 +31,7 @@
                     <div class="form-group mb-0">
                         <treeselect
                             required
+                            v-on:input="limiter"
                             :options="optionsCategory"
                             :disable-branch-nodes="true"
                             :value="objWorking.category"
@@ -142,6 +143,11 @@ export default {
         this.getUser()
     },
     methods:{
+        limiter(e) {
+            if(e.length > 5) {
+                e.pop()
+            }
+        },
         getUser(){
             var {accountType,category,introduce,ability, filesCert} = this.$auth.user
             this.objWorking = {accountType,category,introduce,ability, filesCert}
