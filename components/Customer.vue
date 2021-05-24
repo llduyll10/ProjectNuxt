@@ -32,7 +32,7 @@
                 <p class="evaluate f-12 mb-0 mt-5px ml-4px">(<span>5</span>  đánh giá)</p>
             </div>
             <p class="mb-0 f-13 mb-15px">Bạn sẽ tốn <span class="text-main fw-600">3 Tokens</span> khi liên hệ trực tiếp với khách đăng tin</p>
-            <div class="btn-contact d-block mb-0">
+            <div @click="openLienHe" class="btn-contact d-block mb-0 cursor-pointer">
                 <img src="@/assets/svg/icon-phone.svg" />
                 <span>Liên hệ trực tiếp</span>
             </div>
@@ -45,12 +45,13 @@
                 <span>Cập nhật hồ sơ</span>
             </div>
         </section>
+        <PopupLienhe ref="refLienHe"/>
     </div>
 </template>
 
 <script>
 export default {
-    props:["id"],
+    props:["user"],
     data(){
         return {
             detailAccount: {}
@@ -58,11 +59,10 @@ export default {
     },
     mounted(){
         this.getDetailCustomer()
-        console.log(this.id)
     },
     methods:{
         getDetailCustomer(){
-            this.$get(`public/customer/${this.id}`)
+            this.$get(`public/customer/${this.user._id}`)
                 .then(res =>{
                     console.log(res)
                     this.detailAccount = res.data
@@ -70,7 +70,11 @@ export default {
                 .catch(err =>{
                     console.log(err)
                 })
-        }
+        },
+        openLienHe(){
+            this.$refs.refLienHe.show();
+            this.$refs.refLienHe.passIDInfor(this.user);
+        },
 
     }
 }

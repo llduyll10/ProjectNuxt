@@ -163,7 +163,7 @@
               v-if="detailProject && detailProject.createBy"
             >
               <!-- Hard some css display none for re-using profile component -->
-              <Customer :id="detailProject.createBy._id" class="profile" />
+              <Customer  :user="detailProject.createBy" class="profile" />
             </div>
             <!-- Thông tin khách hàng -->
 
