@@ -247,26 +247,19 @@ export default {
           this.rawCategory = JSON.parse(JSON.stringify(res.data.category))
           this.arrNameCategory = this.mapCategory(this.detailProject.category)
           if(this.detailProject._id){
-            this.getCompanyQuote(this.detailProject._id)
+            return this.$get(`public/auction/project/${this.detailProject._id}`)
           }
-          console.log(this.detailProject)
           this.loader(0)
+        })
+        .then(res2 => {
+            this.arrQuoteCompany = res2.data
+            this.loader(0)
         })
         .catch(err =>{
           console.log(err)
           this.loader(0)
         })
     },
-    getCompanyQuote(id){
-      this.$get(`public/auction/project/${id}`)
-          .then(res =>{
-              console.log('company quotes',res)
-              this.arrQuoteCompany = res.data
-          })
-          .catch(err =>{
-              console.log(err)
-          })
-    }
   },
 };
 </script>
