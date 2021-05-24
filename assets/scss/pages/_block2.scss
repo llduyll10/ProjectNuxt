@@ -87,3 +87,18 @@
         }
     }
 }
+
+@media screen and (max-width:556px) {
+    #block2 {
+        .boxinfo {
+            .top {
+                flex-direction: column;
+                text-align: center;
+                padding: 26px 1rem 4px;
+            }
+            .bot {
+                padding: 23px 20px 20px;
+            }
+        }
+    }
+}
