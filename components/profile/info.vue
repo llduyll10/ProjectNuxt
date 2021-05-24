@@ -20,7 +20,7 @@
             </template>
             <p class="evaluate f-12 mb-0 mt-5px ml-4px">(<span>5</span>  đánh giá)</p>
         </div>
-        <div class="btn-contact">
+        <div @click="openLienHe" class="btn-contact cursor-pointer">
             <img src="@/assets/svg/icon-phone.svg" />
             <span>Liên hệ trực tiếp</span>
         </div>
@@ -32,7 +32,9 @@
             <img src="@/assets/svg/icon-user-light.svg" />
             <span>Cập nhật hồ sơ</span>
         </div>
+        <PopupLienhe ref="refLienHe"/>
     </section>
+
 </template>
 
 <script>
@@ -43,6 +45,12 @@ export default {
         return {
             imgProfile: ImgProfile
         }
+    },
+    methods:{
+        openLienHe(){
+            this.$refs.refLienHe.show();
+            this.$refs.refLienHe.passIDInfor(this.profile);
+        },
     }
 }
 </script>
