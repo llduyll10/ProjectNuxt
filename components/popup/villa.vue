@@ -1,9 +1,15 @@
 <template>
-    <Modal ref="modalLienForm" id="modal-show-villa" :title="itemShow.name">
+    <Modal ref="modalLienForm" id="modal-show-villa">
       <template v-slot:content>
         <div class="modal-villa formCore">
           <div class="content">
-            <form @submit.prevent="getForm()" class="mt-2px">
+            <form  class="mt-2px">
+
+              <div class="form-group row line-bot">
+                  <div class="service col-md-12 col-sm-12 f-20">{{itemShow.name}}</div>
+              </div>
+
+
               <div class="form-group row line-bot">
                     <label class="f-13 col-md-3 col-sm-12 f-bold">
                       Dịch vụ yêu cầu
@@ -12,22 +18,17 @@
               </div>
               <div class="form-group row line-bot">
                     <label class="f-13 col-md-3 col-sm-12 d-flex flex-align-center f-bold">
-                      Soạn tin nhắn
+                      Chi tiết dự án
                     </label>
                     <div class="col-md-9 col-sm-12 ">
                       <div class="content-villa">
-                        <p>Xin chào, mình có xem qua hồ sơ năng lực của công ty. Mình cần công ty tư vấn hỗ trợ xây dựng nhà phố 1 trệt 4 lầu tại Gò Vấp</p>
-                        <ul>
-                            <li>Diện tích đất: 5x20 </li>
-                            <li>Ngân sách dự trù: 3 tỷ</li>
-                        </ul>
-                        <p>Mong nhận được phản hồi sớm từ công ty</p>
+                        {{itemShow.description}}
                     </div>
                   </div>
               </div>
               <div class="form-group row">
                   <label class="f-13  col-md-3 col-sm-12 mt-1 mb-5px f-bold">
-                      Tài liệu đính kèm
+                     Hình ảnh dự án
                   </label>
                   <div class="col-md-9 col-sm-12 mt-1 pr-0px">
                       <div class="row image">
