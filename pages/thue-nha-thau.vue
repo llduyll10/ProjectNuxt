@@ -112,7 +112,7 @@
                                                             @click="$router.push(`ho-so/${item.slug}`)"
                                                         >
                                                             {{item.company ? item.company : item.name}}
-                                                        d</div>
+                                                        </div>
                                                         <div class="icon">
                                                             <img src="@/assets/svg/icon-location.svg" alt="">
                                                             <span class="name f-11">{{item.province}}</span>
