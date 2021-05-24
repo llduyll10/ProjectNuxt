@@ -21,6 +21,7 @@
                                 :value="objProject.category"
                                 v-model="objProject.category"
                                 :multiple="true"
+                                required
                                 placeholder="Chọn dịch vụ"
                             />
 
@@ -106,6 +107,7 @@
                                 :value="objProject.address"
                                 v-model="objProject.address"
                                 placeholder="Tỉnh thành"
+                                required
                             />
                         </div>
                         <div class="form-group row align-items-center">
