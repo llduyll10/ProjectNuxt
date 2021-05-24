@@ -1,5 +1,5 @@
 #block1 {
-    background-color: #5F2121;
+    background: linear-gradient(267.69deg, #198AC6 -32.51%, #5F2121 69.29%);
     .block {
         height: auto;
         .info {
@@ -13,6 +13,7 @@
                 color: #F2F2F2;
                 list-style: 46px;
                 span {
+                    color: #F2C94C;
                     font: {
                         weight: 700;
                         style: italic;

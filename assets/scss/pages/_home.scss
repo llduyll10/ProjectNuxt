@@ -114,7 +114,6 @@
                     background-size: cover;
                     background-position: center center;
                     border-radius: 5px;
-
                     &:hover {
                         box-shadow: 0 5px 7px #ccc;
                     }
@@ -195,7 +194,7 @@
                     cursor: pointer;
                     font-weight: bold;
                     width: 200px;
-                    height: 35px;
+                    height: 34px;
                     padding-top: 5px;
                     text-align: center;
                     background: #198AC6;
@@ -240,7 +239,6 @@
                         background-position: center center;
                         background-image: url('@/assets/img/product-1.png');
                         position: relative;
-
                         &:hover {
                             opacity: 0.86;
                         }

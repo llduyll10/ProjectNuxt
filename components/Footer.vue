@@ -123,13 +123,13 @@
             <div class="line"></div>
 
             <div class="row network">
-                <div class="col-lg-2 net-1">
+                <div class="col-lg-3 net-1">
                     <img src="@/assets/svg/icon-user.svg" class="icon" alt="">
                     <div class="phone">
                         1-800-1234-567
                     </div>
                 </div>
-                <div class="col-lg-4 net-2">
+                <div class="col-lg-3 net-2">
                     <div class="contact">
                         <!-- <img src="@/assets/svg/icon-face.svg" class="icon" alt=""> -->
                         <img src="@/assets/svg/icon-p.svg" alt="">

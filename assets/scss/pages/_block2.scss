@@ -5,45 +5,48 @@
     .boxinfo {
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         background-color: #fff;
-        width: 80%;
+        margin: 0 16px !important;
         margin: 0 auto;
-        border-radius: 5px;
-        height: auto;
+        border-radius: 9px;
         overflow: hidden;
-        .text {
-            margin-left: 40px;
-            .info {
-                margin-top: 42px;
-                font-size: 17px;
-                font-weight: 600;
-                line-height: 30px;
-                color: #198AC6;
-                span {
-                    font-weight: 400;
-                }
+        height: auto;
+        width: 95%;
+        .top {
+            align-items: center;
+            background: linear-gradient(94.56deg, rgba(25, 137, 198, 0.94) 36.02%, rgba(231, 144, 29, 0.94) 247.84%);
+            padding: 27px 37px;
+            width: 100%;
+            .name {
+                font-weight: bold;
+                color: #f2f2f2;
+                margin-bottom: 8px;
             }
+            .company {
+                color: #F2C94C;
+                font-weight: 500;
+            }
+        }
+        .bot {
+            padding: 23px 28px 20px;
             p {
-                font-size: 15px;
-                font-weight: 400;
-                line-height: 26px;
-                font-style: italic;
-                margin-top: 11px;
-                margin-right: 20px;
+                font-weight: 500;
+                color: $main-black;
+                line-height: 24px;
             }
         }
     }
-    .slick-arrow{
-        &.slick-prev{
-          &::before{
-            content: '';
-            border-top: 10px solid transparent;
-            border-bottom: 10px solid transparent;
-            border-right:10px solid $main-black;
-            font-size: 0;
-          }
+    .slick-arrow {
+        &.slick-prev {
+            &::before {
+                content: '';
+                border-top: 10px solid transparent;
+                border-bottom: 10px solid transparent;
+                border-right: 10px solid $main-black;
+                font-size: 0;
+            }
         }
-        &.slick-next{
-            &::before{
+        &.slick-next {
+            &::before {
                 content: '';
                 border-top: 10px solid transparent;
                 border-bottom: 10px solid transparent;
@@ -53,32 +56,33 @@
         }
     }
 }
-@media screen and (max-width:1300px)  {
-    #block2{
-        .slick-arrow{
-            &.slick-prev{
+
+@media screen and (max-width:1300px) {
+    #block2 {
+        .slick-arrow {
+            &.slick-prev {
                 left: -5px;
             }
-            &.slick-next{
+            &.slick-next {
                 right: -5px;
             }
         }
     }
 }
 
-@media screen and (max-width:768px)  {
-    #block2 .boxinfo .text{
+@media screen and (max-width:768px) {
+    #block2 .boxinfo .text {
         margin: 20px !important;
     }
     #block2 .boxinfo img {
         width: 100%;
     }
-    #block2{
-        .slick-arrow{
-            &.slick-prev{
+    #block2 {
+        .slick-arrow {
+            &.slick-prev {
                 left: -5px;
             }
-            &.slick-next{
+            &.slick-next {
                 right: -5px;
             }
         }
