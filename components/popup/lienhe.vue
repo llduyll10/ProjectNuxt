@@ -61,7 +61,7 @@ export default {
         },
         passIDInfor(item){
             this.userInfor = item
-            console.log('passIDInfor',this.userInfor)
+            this.privateInfor = null
         },
         show() {
             this.$refs.modalLien.showModal();
@@ -69,6 +69,6 @@ export default {
         hide(){
             this.$refs.modalLien.hideModal()
         },
-    }
+    },
 }
 </script>
