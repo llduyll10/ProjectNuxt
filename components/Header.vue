@@ -372,7 +372,7 @@ export default {
     },
     async createUser(){
       try{
-        let res =  await this.$post('/signup', this.objUser)
+        let res =  await this.$post('signup', this.objUser)
         if(res.data.status === true){
           this.hideModalRegister()
           this.openModalLogin()
@@ -391,7 +391,7 @@ export default {
       this.resetLogin();
       this.loader()
       try {
-        let res = await this.$post('/auth/login/pre',this.objLogin);
+        let res = await this.$post('auth/login/pre',this.objLogin);
         if(res.data.status){
            this.confirmObj = res.data.data;
         }else{

@@ -192,7 +192,7 @@ export default {
                 this.objInfor.photo = photo;
             }
             try{
-                let res = await this.$post('/user/information',this.objInfor)
+                let res = await this.$post('user/information',this.objInfor)
                 this.$auth.fetchUser()
                 this.avataBase64 = null;
                 this.loader(0)

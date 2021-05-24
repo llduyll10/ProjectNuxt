@@ -145,7 +145,7 @@ export default {
             var fileAll = fileOld.concat(fileNew)
             this.objProject.photos = fileAll
             try{
-              let res = await this.$post('/member/portfolio',this.objProject)
+              let res = await this.$post('member/portfolio',this.objProject)
               this.arrFile = [];
               this.arrBase64 = [];
               this.objProject = {};

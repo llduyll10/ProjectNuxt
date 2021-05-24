@@ -164,7 +164,7 @@ export default {
 
             this.arrFile = []
             try{
-                let res = await this.$post('/user/working',this.objWorking)
+                let res = await this.$post('user/working',this.objWorking)
                 await this.$auth.fetchUser()
                 this.getUser()
                 this.arrFile = [];

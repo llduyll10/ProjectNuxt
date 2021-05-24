@@ -67,7 +67,6 @@ export default {
     },
     methods:{
         openProjectDetail(project){
-            console.log(project)
             this.itemShow = project;
             this.$refs.Villa.show();
         },

@@ -69,7 +69,7 @@ export default {
     },
     methods:{
       async getListProject(){
-        let res = await this.$get('/member/portfolio')
+        let res = await this.$get('member/portfolio')
         this.listProject = res.data
         this.listTemp = JSON.parse(JSON.stringify(this.listProject))
         this.listShow = this.listTemp.splice(0,6)
@@ -87,7 +87,7 @@ export default {
       async deleteProject(item){
         let confirm = window.confirm('Bạn có muốn xoá dự án?')
         if(confirm){
-          let res = await this.$del(`/member/portfolio/${item._id}`)
+          let res = await this.$del(`member/portfolio/${item._id}`)
           if(res.data.status){
             this.getListProject()
           }

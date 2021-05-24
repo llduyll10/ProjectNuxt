@@ -216,7 +216,7 @@ export default {
                 var arrFileImg = this.arrFileImg.length ? await this.uploadFile(this.arrFileImg) : []
                 var arrFile = this.arrFile.length ? await this.uploadFile(this.arrFile) : []
 
-                let res = await this.$post('/member/projects',
+                let res = await this.$post('member/projects',
                                 {...this.objProject,status,photos:arrFileImg,attachment:arrFile});
                 if(status==='ACTIVE'){
                     this.objProject = this.restForm();
@@ -231,7 +231,7 @@ export default {
             }
         },
         getProjectDraft(){
-            this.$get('/member/projects/draft')
+            this.$get('member/projects/draft')
             .then(res =>{
                 if(res.data.status){
                     this.objProject = res.data.project
