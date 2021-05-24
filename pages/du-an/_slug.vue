@@ -234,10 +234,13 @@ export default {
     };
   },
   mounted() {
-    this.getDetailProject()
+    this.$nextTick(() => {
+      this.getDetailProject()
+    })
   },
   methods: {
     getDetailProject(){
+      this.loader()
       this.$get(`public/projects/${this.slug}`)
         .then(res =>{
           this.detailProject = res.data
@@ -247,9 +250,11 @@ export default {
             this.getCompanyQuote(this.detailProject._id)
           }
           console.log(this.detailProject)
+          this.loader(0)
         })
         .catch(err =>{
           console.log(err)
+          this.loader(0)
         })
     },
     getCompanyQuote(id){
