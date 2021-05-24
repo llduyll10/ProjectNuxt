@@ -124,7 +124,7 @@
                                                             <template v-for="cate in mapCategory(item.category)">
                                                                 <span
                                                                     :key="cate.id"
-                                                                    class="px-8px badge py-2px text-12 custom-bage mr-8px mb-8px"
+                                                                    class="px-8px badge py-5px text-12 custom-bage mr-8px mb-8px"
                                                                     :class="getClassBageCategory(mapValueFromCategory(cate.id))"
                                                                 >
                                                                     {{cate.label}}
@@ -140,7 +140,11 @@
                                                 <div class="star">
                                                     <div class="d-flex">
                                                         <div class="limit f-10">5.0</div>
-                                                        <img src="@/assets/svg/star.svg" alt="">
+                                                        <template v-for="(item,idx) in 5">
+                                                            <div :key="idx">
+                                                                <i class="fas fa-star mr-1px f-13"></i>
+                                                            </div>
+                                                        </template>
                                                     </div>
                                                     <div class="st f-13">(<span>4</span> đánh giá)</div>
                                                 </div>
