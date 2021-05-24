@@ -225,7 +225,8 @@ module.exports = {
 
             ]
         },
-        mapCategory(arr){
+        mapCategory(arr1){
+            arr = arr1 || [];
             var result = []
             var arrCategory = this.getCategory()
             var arrMap = arrCategory[0].children
