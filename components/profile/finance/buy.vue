@@ -49,9 +49,9 @@
             <div class="col-12 col-lg-5">
                 <div class="fieldLabel">1. Thông tin khách hàng <span class="dot">*</span></div>
                 <div class="inforBorderWrap">
-                    <div class="flex-align-center mb-5px text-black f-12">
+                    <div class="flex-align-center mb-5px text-black ">
                         <img src="@/assets/svg/icon-user-dark.svg" class=" mr-5px" alt="" width="15px" height="15px">
-                        <div class="mr-20px"> {{$auth.user.name}}</div>
+                        <div class="mr-20px f-12"> {{$auth.user.name}}</div>
                     </div>
                     <div  class="flex-align-center text-black f-12">
                         <img src="@/assets/svg/icon-email-dark.svg" class=" mr-5px" alt="" width="15px" height="15px">
