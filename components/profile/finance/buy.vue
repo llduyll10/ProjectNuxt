@@ -176,7 +176,16 @@ export default {
     },
     methods:{
         payment(){
-            console.log(this.objSelect)
+           this.loader()
+           this.$post(`member/coin`,this.objSelect)
+                .then(res => {
+                   this.$auth.fetchUser()
+                   this.loader(0)
+                })
+                .catch(err => {
+                    this.loader(0)
+                    console.log(err)
+                })
         },
         activePackage(idx){
             this.tokenPacks.forEach(pack => pack.should = false)
