@@ -1,4 +1,10 @@
 #market {
+    .mrin-4 {
+        margin: 0 -18px;
+    }
+    .padding-19 {
+        padding: 0 19px;
+    }
     background-color: #f2f2f2;
     .container-fluid {
         .title {
@@ -40,9 +46,9 @@
                 background: #fff;
                 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
                 border-radius: 5px;
-                img {
+                .imgTop {
                     width: 100%;
-                    height: 240px;
+                    min-height: 240px;
                 }
                 .content {
                     padding: 18px 20px 14px 14px;
@@ -108,8 +114,25 @@
     }
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width: 992px) {
+    .mrin-4 {
+        margin: 0 -10px !important;
+    }
+    .padding-19 {
+        padding: 0 15px !important;
+    }
+}
+
+@media screen and (max-width:767px) {
     #market .container-fluid .box .evaluate {
         margin-bottom: 20px;
+    }
+    #market {
+        .mb {
+            margin-bottom: 35px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
     }
 }

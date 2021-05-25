@@ -16,10 +16,10 @@
                    </ul>
                 </div>
             </div>
-            <div class="row box mt-10px">
-                <div class="col-lg-4 col-md-4 col-sm-12" v-for="(item ,i ) in 3" :key="i">
+            <div class="row box mt-10px mrin-4">
+                <div class="col-lg-4 col-md-4 col-sm-12 padding-19 mb" v-for="(item ,i ) in 3" :key="i">
                     <div class="boxItem">
-                        <img src="@/assets/img/product-1.png" alt="">
+                        <img class="imgTop" src="@/assets/img/product-1.png" alt="">
                         <div class="content">
                             <h3 class="mt-4px">Bỏ túi ngay bí quyết trang trí phòng khách hiện đại với Phố Xinh </h3>
                             <div class="evaluate mt-20px">
