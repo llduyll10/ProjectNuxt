@@ -1,5 +1,6 @@
 <template>
   <div class="editProfileInfoWrap buyTokenPageWrap">
+    <form @submit.prevent="payment()">
     <div class="mb-24px borderWrap">
         <div class="f-20 f-bold text-main mb-15px">
             Nạp thêm Token
@@ -10,7 +11,7 @@
 
         <div class="mb-15px">
             <div class="tokenPacksWrap">
-                <div class="tokenItem" :class="item.should ? 'shouldBuy' : ''" v-for="(item, i) in tokenPacks" :key="i">
+                <div @click="activePackage(i)" class="tokenItem cursor-pointer" :class="item.should ? 'shouldBuy' : ''" v-for="(item, i) in tokenPacks" :key="i">
                     <div class="tokenItemTop">
                         <div v-if="item.should" class="shouldInfo">
                             Gói nên mua
@@ -31,7 +32,7 @@
                             <span v-if="item.save">Tiết kiệm {{item.save}}%</span>
                         </div>
                         <div class="buyBtn">
-                            <button type="button" class="btn btn-main">
+                            <button :disabled="item.should" type="button" class="btn btn-main">
                                 Mua ngay
                             </button>
                         </div>
@@ -72,7 +73,7 @@
                 </div>
                 <div>
                     <div class="gr-check flex-align-center">
-                        <input type="checkbox" class="mr-5px">
+                        <input type="checkbox" class="mr-5px" required>
                         <span>Tôi đồng ý với <span class="text-main">điều khoản</span> của Econs<span class="text-red">*</span></span>
                     </div>
                 </div>
@@ -101,8 +102,8 @@
                             {{item.subText}}
                         </div>
                     </div>
-                    <div class="payBtn" @click="clickPayment(item)">
-                        <button type="button" class="btn btn-main">
+                    <div class="payBtn">
+                        <button @click="objSelect.method = item.text" type="submit" class="btn btn-main">
                             Thanh toán
                         </button>
                     </div>
@@ -113,6 +114,7 @@
             <p class="mb-0 f-12 text-black">Khi thanh toán bạn đồng ý với <span class="text-main">điều khoản của Econs</span></p>
         </div>
     </div>
+    </form>
 
     <PopupBankTransferSelect ref="refBankTransferSelect"/>
   </div>
@@ -127,10 +129,12 @@ export default {
                 token: 10,
                 price: 150000,
                 save:  0,
+                should:false
             }, {
                 token: 25,
                 price: 300000,
                 save:  20,
+                should:false
             }, {
                 token: 70,
                 price: 735000,
@@ -140,10 +144,12 @@ export default {
                 token: 150,
                 price: 1350000,
                 save:  40,
+                should:false
             }, {
                 token: 400,
                 price: 3000000,
                 save:  50,
+                should:false
             }],
             payWays: [{
                 icon: 'card',
@@ -162,7 +168,8 @@ export default {
                 icon: 'momo',
                 text: 'Thanh toán qua MOMO',
                 subText: ''
-            }]
+            }],
+            objSelect:{}
         }
     },
     methods:{
@@ -170,7 +177,18 @@ export default {
             if (item.type === 'bank') {
                 this.$refs.refBankTransferSelect.show();
             }
-        }
+        },
+        payment(){
+            console.log(this.objSelect)
+        },
+        activePackage(idx){
+            this.tokenPacks.forEach(pack => pack.should = false)
+            this.tokenPacks[idx].should = true
+            this.objSelect = {
+                token: this.tokenPacks[idx].token,
+                price: this.tokenPacks[idx].price
+            }
+        },
     }
 }
 </script>
