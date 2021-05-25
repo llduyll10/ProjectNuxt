@@ -17,69 +17,28 @@
                 </div>
             </div>
             <div class="row box mt-10px">
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <img src="@/assets/img/product-1.png" alt="">
-                    <h3 class="mt-25px">Bỏ túi ngay bí quyết trang trí phòng khách hiện đại với Phố Xinh </h3>
-                    <div class="evaluate mt-20px">
-                        <div class="left">
-                            <img src="@/assets/img/market1.png" alt="">
-                            <div class="text">
-                                Bởi <span>Longb04</span>
-                            </div>
-                        </div>
-                        <div class="right">
-                            <div class="one mr-15px">
-                                <img src="@/assets/svg/see.svg" alt="">
-                                <p class="ml-6px">290</p>
-                            </div>
-                            <div class="one">
-                                <img class="mb-4px" src="@/assets/svg/like.svg" alt="">
-                                <p class="ml-6px">20</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <img src="@/assets/img/product-1.png" alt="">
-                    
-                    <h3 class="mt-25px">Trước khi xây nhà, cần nắm rõ những nguyên tắc cơ bản khi làm việc với kiến trúc sư</h3>
-                    <div class="evaluate mt-20px">
-                        <div class="left">
-                            <img src="@/assets/img/market1.png" alt="">
-                            <div class="text">
-                                Bởi <span>NhungL24</span>
-                            </div>
-                        </div>
-                        <div class="right">
-                            <div class="one mr-15px">
-                                <img src="@/assets/svg/see.svg" alt="">
-                                <p class="ml-6px">290</p>
-                            </div>
-                            <div class="one">
-                                <img class="mb-4px" src="@/assets/svg/like.svg" alt="">
-                                <p class="ml-6px">20</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <img src="@/assets/img/product-1.png" alt="">
-                    <h3 class="mt-25px">Phong cách thiết kế văn phòng làm hài lòng bất cứ khách hàng nào</h3>
-                    <div class="evaluate mt-20px">
-                        <div class="left">
-                            <img src="@/assets/img/market1.png" alt="">
-                            <div class="text">
-                                Bởi <span>KarenC02</span>
-                            </div>
-                        </div>
-                        <div class="right">
-                            <div class="one mr-15px">
-                                <img src="@/assets/svg/see.svg" alt="">
-                                <p class="ml-6px">290</p>
-                            </div>
-                            <div class="one">
-                                <img class="mb-4px" src="@/assets/svg/like.svg" alt="">
-                                <p class="ml-6px">20</p>
+                <div class="col-lg-4 col-md-4 col-sm-12" v-for="(item ,i ) in 3" :key="i">
+                    <div class="boxItem">
+                        <img src="@/assets/img/product-1.png" alt="">
+                        <div class="content">
+                            <h3 class="mt-4px">Bỏ túi ngay bí quyết trang trí phòng khách hiện đại với Phố Xinh </h3>
+                            <div class="evaluate mt-20px">
+                                <div class="left">
+                                    <img src="@/assets/img/market1.png" alt="">
+                                    <div class="text">
+                                        Bởi <span>Longb04</span>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <div class="one mr-15px">
+                                        <img src="@/assets/svg/see.svg" alt="">
+                                        <p class="ml-6px">290</p>
+                                    </div>
+                                    <div class="one">
+                                        <img class="mb-4px" src="@/assets/svg/like.svg" alt="">
+                                        <p class="ml-6px">20</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
