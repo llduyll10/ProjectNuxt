@@ -40,6 +40,19 @@
                 }
 
             }
+            .search-date{
+                margin-right:20px ;
+                .vue-treeselect__control{
+                    width: 140px;
+                    height: 30px;
+                    .vue-treeselect__single-value{
+                        line-height: 28px;
+                    }
+                    .vue-treeselect__placeholder{
+                        margin-top: -2px;
+                    }
+                }
+            }
             .btn-search{
                 cursor: pointer;
                 background-color:$main-color;

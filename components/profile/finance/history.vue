@@ -3,32 +3,21 @@
         <div class="wrap">
             <h1 class="title">Lịch sử giao dịch</h1>
              <div class="group-function d-flex">
-                <input class="input-search form-control" placeholder="Tìm kiếm dự án" />
-                <b-dropdown class="dropdown-all"  variant="link" toggle-class="text-decoration-none" no-caret>
-                    <template #button-content>
-                    <div class="title-dropdown">
-                        <span>Tra theo tháng</span>
-                        <i class="fas fa-caret-down ml-13px f-16"></i>
-                    </div>
-                    </template>
-                    <b-dropdown-item class="f-12">AAA</b-dropdown-item>
-                    <b-dropdown-item class="f-12">AAA</b-dropdown-item>
-                    <b-dropdown-item class="f-12">AAA</b-dropdown-item>
-
-                </b-dropdown>
-                <b-dropdown class="dropdown-all"  variant="link" toggle-class="text-decoration-none" no-caret>
-                    <template #button-content>
-                    <div class="title-dropdown">
-                        <span>Tra theo năm</span>
-                        <i class="fas fa-caret-down ml-13px f-16"></i>
-                    </div>
-                    </template>
-                    <b-dropdown-item class="f-12">AAA</b-dropdown-item>
-                    <b-dropdown-item class="f-12">AAA</b-dropdown-item>
-                    <b-dropdown-item class="f-12">AAA</b-dropdown-item>
-
-                </b-dropdown>
-                <div class="btn-search">
+                 <treeselect
+                        class="search-date"
+                        :options="optionsMonth"
+                        :value="objSearch.month"
+                        v-model="objSearch.month"
+                        placeholder="Tra theo tháng"
+                />
+                <treeselect
+                        class="search-date"
+                        :options="optionsYear"
+                        :value="objSearch.year"
+                        v-model="objSearch.year"
+                        placeholder="Tra theo năm"
+                />
+                <div @click="filterItem()" class="btn-search">
                     Tìm kiếm
                 </div>
             </div>
@@ -65,16 +54,41 @@ export default {
     props:['title'],
     data(){
         return{
-            listHistory:[]
+            listHistory:[],
+            objSearch:{
+                month: new Date().getMonth() + 1,
+                year: new Date().getFullYear()
+            },
+            optionsMonth:[
+                { id: 1, label: 'Tháng một' },
+                { id: 2, label: 'Tháng hai' },
+                { id: 3, label: 'Tháng ba' },
+                { id: 4, label: 'Tháng tư' },
+                { id: 5, label: 'Tháng năm' },
+                { id: 6, label: 'Tháng sáu' },
+                { id: 7, label: 'Tháng bảy' },
+                { id: 8, label: 'Tháng tám' },
+                { id: 9, label: 'Tháng chín' },
+                { id: 10, label: 'Tháng mười' },
+                { id: 11, label: 'Tháng mười một' },
+                { id: 12, label: 'Tháng mười hai' },
+            ],
+            optionsYear:[
+                { id: 2021, label: '2021' },
+                { id: 2022, label: '2022' },
+                { id: 2023, label: '2023' },
+                { id: 2024, label: '2024' },
+                { id: 2025, label: '2025' },
+            ]
         }
     },
     mounted(){
-        this.getHistory()
+        this.filterItem()
     },
     methods:{
-        getHistory(){
+        getHistory(query){
             this.loader()
-            this.$get('member/coin')
+            this.$get(`member/coin`+query)
                 .then(res => {
                     this.listHistory = res.data
                     this.loader(0)
@@ -83,6 +97,11 @@ export default {
                     console.log(err)
                     this.loader(0)
                 })
+        },
+        filterItem(){
+            let date = `1/${this.objSearch.month}/${this.objSearch.year}`
+            let query = `?date = ${Date.parse(date)}`
+            this.getHistory(query)
         }
     }
 }
