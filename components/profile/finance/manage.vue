@@ -42,7 +42,7 @@ export default {
             //     text: 'Yêu cầu rút tiền'
             // }
             ],
-            activeTab: '1',
+            activeTab: this.$nuxt.$route.query.tab,
         }
     },
     mounted(){
