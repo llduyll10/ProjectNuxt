@@ -1,7 +1,7 @@
 <template>
     <div class="editProfileInfoWrap">
         <div class="w-100 flex-align-center tabsWrap">
-            <div @click="activeTab=tab.id" v-for="(tab) in tabs" :key="tab.id" :class="{'activeTab': activeTab === tab.id}" class="tabItem flex-align-center">
+            <div @click="addQuery(tab.id)" v-for="(tab) in tabs" :key="tab.id" :class="{'activeTab': activeTab === tab.id}" class="tabItem flex-align-center">
                 <div>{{tab.text}}</div>
             </div>
         </div>
@@ -57,6 +57,11 @@ export default {
             return this.$nuxt.$route.query.tab
         }
     },
+    methods:{
+         addQuery(tab){
+           this.$router.push({path: this.$route.path, query: { tab: tab }})
+        }
+    }
 
 }
 </script>
