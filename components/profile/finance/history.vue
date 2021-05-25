@@ -100,7 +100,7 @@ export default {
         },
         filterItem(){
             let date = `1/${this.objSearch.month}/${this.objSearch.year}`
-            let query = `?date = ${Date.parse(date)}`
+            let query = `?date=${Date.parse(date)}`
             this.getHistory(query)
         }
     }
