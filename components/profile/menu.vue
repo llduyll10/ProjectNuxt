@@ -11,8 +11,6 @@
                 </div>
 
                 <div class="flex-align-center">
-                    <div class="f-bold">ID. <span class="text-red"> {{$auth.user.number}}</span></div>
-                    <div class="split mr-10px ml-10px"></div>
                     <div class="f-bold"><span class="text-main"> {{$auth.user.coin || 0}}</span> Tokens</div>
                 </div>
             </div>
