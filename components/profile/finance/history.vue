@@ -35,7 +35,7 @@
         </div>
 
         <div class="wrap pt-0 pb-15px">
-            <span class="text-red f-bold f-14">Tháng 04/2021</span>
+            <span class="text-red f-bold f-14">Tháng {{new Date().getMonth() + 1}}/{{new Date().getFullYear()}}</span>
         </div>
 
         <table class="table table-custom">
