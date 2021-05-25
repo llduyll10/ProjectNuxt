@@ -89,9 +89,9 @@
                     <div class="flex-center flex-column">
                         <div class="payIcon">
                             <img v-if="item.icon === 'card'" src="@/assets/img/mastercard.png" alt="">
-                            <img v-if="item.icon === 'card'" src="@/assets/img/visa.png" alt="">
+                            <img v-if="item.icon === 'vn_card'" src="@/assets/img/visa.png" alt="">
 
-                            <img v-if="item.icon === 'bank'" src="@/assets/svg/icon-zalopay.svg" alt="">
+                            <img v-if="item.icon === 'zalo'" src="@/assets/svg/icon-zalopay.svg" alt="">
 
                             <img v-if="item.icon === 'momo'" src="@/assets/img/momo.png" alt="">
                         </div>
@@ -103,7 +103,7 @@
                         </div>
                     </div>
                     <div class="payBtn">
-                        <button @click="objSelect.method = item.text" type="submit" class="btn btn-main">
+                        <button @click="objSelect.method = item.icon" type="submit" class="btn btn-main">
                             Thanh toán
                         </button>
                     </div>
@@ -156,12 +156,11 @@ export default {
                 text: 'Thẻ quốc tế',
                 subText: 'Ngân hàng nước ngoài phát hành'
             }, {
-                icon: 'card',
+                icon: 'vn_card',
                 text: 'Thẻ quốc tế',
                 subText: 'Ngân hàng Việt Nam phát hành'
             }, {
-                icon: 'bank',
-                type: 'bank',
+                icon: 'zalo',
                 text: 'Thanh toán qua ZaloPay',
                 subText: ''
             }, {
@@ -172,12 +171,10 @@ export default {
             objSelect:{}
         }
     },
+    mounted(){
+        this.activePackage(2);
+    },
     methods:{
-        clickPayment(item) {
-            if (item.type === 'bank') {
-                this.$refs.refBankTransferSelect.show();
-            }
-        },
         payment(){
             console.log(this.objSelect)
         },
