@@ -124,7 +124,7 @@ module.exports = {
                 return `<i class="icon icon-pdf f-16 mr-10px ml-10px"></i>`
             }
             else{
-                return `<i class="icon icon-file f-16 mr-10px ml-10px"></i>`
+                return `<i class="icon icon-file f-16 mr-20px ml-10px"></i>`
             }
         },
         spliceURLFile(url,symbol){
