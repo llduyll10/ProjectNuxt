@@ -24,7 +24,7 @@
 
         <div class="w-100 d-flex flex-column profileActions mt-15px">
             <div class="btnWrap">
-                <button type="button" class="btn">
+                <button @click="$router.push('/member/quan-ly-tai-chinh?tab=1')" type="button" class="btn">
                     <img class="btn-icon" src="@/assets/svg/credit.svg">
                     Nạp thêm Token
                 </button>
@@ -55,7 +55,7 @@ export default {
             }, {
                 id: '3',
                 text: 'Quản lý tài chính',
-                url: '/member/quan-ly-tai-chinh'
+                url: '/member/quan-ly-tai-chinh?tab=1'
             }],
         }
     },
