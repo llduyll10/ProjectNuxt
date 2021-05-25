@@ -32,13 +32,16 @@ export default {
             }, {
                 id: '2',
                 text: 'Lịch sử giao dịch'
-            }, {
-                id: '3',
-                text: 'Tài khoản ngân hàng'
-            }, {
-                id: '4',
-                text: 'Yêu cầu rút tiền'
-            }],
+            },
+            // {
+            //     id: '3',
+            //     text: 'Tài khoản ngân hàng'
+            // },
+            // {
+            //     id: '4',
+            //     text: 'Yêu cầu rút tiền'
+            // }
+            ],
             activeTab: '1',
         }
     },

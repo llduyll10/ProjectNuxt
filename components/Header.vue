@@ -68,9 +68,9 @@
                           <b-dropdown-text class="title">
                             <span class="f-13">Quản lý tài chính</span>
                           </b-dropdown-text>
-                          <b-dropdown-item class="f-12">Nạp thêm Token</b-dropdown-item>
-                          <b-dropdown-item class="f-12">Lịch sử giao dịch</b-dropdown-item>
-                          <b-dropdown-item class="f-12">Yêu cầu rút tiền</b-dropdown-item>
+                          <b-dropdown-item :to="'/member/quan-ly-tai-chinh?tab=1'" class="f-12">Nạp thêm Token</b-dropdown-item>
+                          <b-dropdown-item :to="'/member/quan-ly-tai-chinh?tab=2'" class="f-12">Lịch sử giao dịch</b-dropdown-item>
+                          <!-- <b-dropdown-item class="f-12">Yêu cầu rút tiền</b-dropdown-item> -->
                           <b-dropdown-divider class="divider"></b-dropdown-divider>
 
                           <b-dropdown-item class="f-12">Hỗ trợ</b-dropdown-item>

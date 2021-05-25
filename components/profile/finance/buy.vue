@@ -49,12 +49,13 @@
             <div class="col-12 col-lg-5">
                 <div class="fieldLabel">1. Thông tin khách hàng <span class="dot">*</span></div>
                 <div class="inforBorderWrap">
-                    <div class="flex-align-center mb-5px">
-                        <img src="@/assets/svg/icon-user-dark.svg" class="icon mr-3px" alt=""><div class="mr-20px"> {{$auth.user.name}}</div>
-                        <div>ID. <span class="text-red"> {{$auth.user.number}}</span></div>
+                    <div class="flex-align-center mb-5px text-black f-12">
+                        <img src="@/assets/svg/icon-user-dark.svg" class=" mr-5px" alt="" width="15px" height="15px">
+                        <div class="mr-20px"> {{$auth.user.name}}</div>
                     </div>
-                    <div  class="flex-align-center">
-                        <img src="@/assets/svg/icon-email-dark.svg" class="icon mr-3px" alt=""> {{$auth.user.email}}
+                    <div  class="flex-align-center text-black f-12">
+                        <img src="@/assets/svg/icon-email-dark.svg" class=" mr-5px" alt="" width="15px" height="15px">
+                        {{$auth.user.email}}
                     </div>
                 </div>
                 <div class="mb-15px">
@@ -67,7 +68,7 @@
             <div class="col-12 col-lg-7">
                 <div class="fieldLabel">2. Điều khoản thanh toán <span class="dot">*</span></div>
                 <div class="inforBorderWrap policyInfoWrap">
-                    <div>Xin vui lòng đọc kỹ các điều khoản sau trước khi sử dụng dịch vụ thanh toán trực tuyến. Với việc truy cập vào phần này của vLance.vn, Bạn đã đồng ý với các điều Xin vui lòng đọc kỹ các điều khoản sau trước khi sử dụng dịch vụ thanh toán trực tuyến. Với việc truy cập vào phần này của vLance.vn, Bạn đã đồng ý với các điều Xin vui lòng đọc kỹ các điều khoản sau trước khi sử dụng dịch vụ thanh toán trực tuyến. Với việc truy cập vào phần này của vLance.vn, Bạn đã đồng ý với các điều Xin vui lòng đọc kỹ các điều khoản sau trước khi sử dụng dịch vụ thanh toán trực tuyến. Với việc truy cập vào phần này của vLance.vn, Bạn đã đồng ý với các điều Xin vui lòng đọc kỹ các điều khoản sau trước khi sử dụng dịch vụ thanh toán trực tuyến. Với việc truy cập vào phần này của vLance.vn, Bạn đã đồng ý với các điều Xin vui lòng đọc kỹ các điều khoản sau trước khi sử dụng dịch vụ thanh toán trực tuyến. Với việc truy cập vào phần này của vLance.vn, Bạn đã đồng ý với các điều Xin vui lòng đọc kỹ các điều khoản sau trước khi sử dụng dịch vụ thanh toán trực tuyến. Với việc truy cập vào phần này của vLance.vn, Bạn đã đồng ý với các điều Xin vui lòng đọc kỹ các điều khoản sau trước khi sử dụng dịch vụ thanh toán trực tuyến. Với việc truy cập vào phần này của vLance.vn, Bạn đã đồng ý với các điều Xin vui lòng đọc kỹ các điều khoản sau trước khi sử dụng dịch vụ thanh toán trực tuyến. Với việc truy cập vào phần này của vLance.vn, Bạn đã đồng ý với các điều </div>
+                    <div>Xin vui lòng đọc kỹ các điều khoản sau trước khi sử dụng dịch vụ thanh toán trực tuyến. Với việc truy cập vào phần này của vLance.vn, Bạn đã đồng ý với các điều </div>
                 </div>
                 <div>
                     <div class="gr-check flex-align-center">
@@ -89,7 +90,7 @@
                             <img v-if="item.icon === 'card'" src="@/assets/img/mastercard.png" alt="">
                             <img v-if="item.icon === 'card'" src="@/assets/img/visa.png" alt="">
 
-                            <img v-if="item.icon === 'bank'" src="@/assets/img/bank.png" alt="">
+                            <img v-if="item.icon === 'bank'" src="@/assets/svg/icon-zalopay.svg" alt="">
 
                             <img v-if="item.icon === 'momo'" src="@/assets/img/momo.png" alt="">
                         </div>
@@ -108,8 +109,11 @@
                 </div>
             </div>
         </div>
+        <div class=" text-center mt-15px">
+            <p class="mb-0 f-12 text-black">Khi thanh toán bạn đồng ý với <span class="text-main">điều khoản của Econs</span></p>
+        </div>
     </div>
-    
+
     <PopupBankTransferSelect ref="refBankTransferSelect"/>
   </div>
 </template>
@@ -152,7 +156,7 @@ export default {
             }, {
                 icon: 'bank',
                 type: 'bank',
-                text: 'Chuyển khoản ngân hàng',
+                text: 'Thanh toán qua ZaloPay',
                 subText: ''
             }, {
                 icon: 'momo',
