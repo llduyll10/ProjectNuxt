@@ -17,7 +17,7 @@
                             Gói nên mua
                         </div>
                         <div class="tokenVal">
-                            <span class="tokenNum">{{item.token}}</span> Token
+                            <span class="tokenNum">{{item.coin}}</span> Token
                         </div>
                         <div class="priceVal">
                             <span class="priceNum">{{formatVnd(item.price)}}</span> VNĐ
@@ -26,7 +26,7 @@
 
                     <div class="tokenItemBot">
                         <div class="tokenPriceVal">
-                            {{formatVnd(item.price / item.token)}} VNĐ/Token
+                            {{formatVnd(item.price / item.coin)}} VNĐ/Token
                         </div>
                         <div class="saveVal">
                             <span v-if="item.save">Tiết kiệm {{item.save}}%</span>
@@ -126,27 +126,27 @@ export default {
     data(){
         return{
             tokenPacks: [{
-                token: 10,
+                coin: 10,
                 price: 150000,
                 save:  0,
                 should:false
             }, {
-                token: 25,
+                coin: 25,
                 price: 300000,
                 save:  20,
                 should:false
             }, {
-                token: 70,
+                coin: 70,
                 price: 735000,
                 save:  30,
                 should: true
             }, {
-                token: 150,
+                coin: 150,
                 price: 1350000,
                 save:  40,
                 should:false
             }, {
-                token: 400,
+                coin: 400,
                 price: 3000000,
                 save:  50,
                 should:false
@@ -182,7 +182,7 @@ export default {
             this.tokenPacks.forEach(pack => pack.should = false)
             this.tokenPacks[idx].should = true
             this.objSelect = {
-                token: this.tokenPacks[idx].token,
+                coin: this.tokenPacks[idx].coin,
                 price: this.tokenPacks[idx].price
             }
         },
