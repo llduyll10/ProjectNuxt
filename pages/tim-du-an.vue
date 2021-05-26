@@ -231,7 +231,7 @@ export default {
             iconDecord:IconDecordOrange,
             iconPenBlue:IconPenBlue,
             avatar : avatar,
-            activeParent:0,
+            activeParent: this.$nuxt.$route.query.active || 0,
             dataFake:[1,2,3,4,5,6,7],
             optionsProvince: this.getProvince(),
             objCategory: this.getCategory(),
@@ -300,6 +300,7 @@ export default {
             }
             if(isRemove){
                 this.arrFilter = []
+                this.getPaging({limit:10, page:1})
                 return
             }
 
@@ -309,6 +310,10 @@ export default {
         async getPaging(pageObj){
             this.loader()
             try{
+                if([1,2,3].includes(Number(this.activeParent))){
+                    this.arrFilter = this.objCategory[this.activeParent - 1].children
+                }
+
                 this.objProject.category = []
                 this.arrFilter.forEach(item => {
                     this.objProject.category.push(item.id)
@@ -316,6 +321,7 @@ export default {
                 let res = await this.$post('public/projects',{...this.objProject, ...pageObj})
                 this.listProject = res.data.projects
                 this.count = res.data.count
+                this.arrFilter = []
                 window.scrollTo(0,0)
                 this.loader(0)
             }
