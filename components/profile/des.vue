@@ -35,12 +35,19 @@
         <div class="type-field">
             <div class="group-title mb-10px">
                 <p class="title">Giới thiệu</p>
-                <div class="group-function">
-                    <img src="@/assets/svg/icon-edit-file.svg" />
-                    <span>Chỉnh sửa</span>
-                    <div class="height"></div>
-                    <span>Xoá bỏ</span>
-                </div>
+                <template v-if="$auth.loggedIn">
+                    <nuxt-link
+                        v-if="$auth.user._id == profile._id"
+                        class="group-function"
+                        :prefetch="false"
+                        to="/member/chinh-sua-ho-so?tab=2"
+                    >
+                        <img src="@/assets/svg/icon-edit-file.svg" />
+                        <span>Chỉnh sửa</span>
+                        <div class="height"></div>
+                        <span>Xoá bỏ</span>
+                    </nuxt-link>
+                </template>
             </div>
             <p class="content f-13">
                 {{profile.introduce}}

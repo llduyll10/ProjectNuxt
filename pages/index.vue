@@ -47,7 +47,7 @@
       </div>
       <div class="container-fluid caterogry-list">
         <div class="row">
-          <div class="col-md-4 col-sm-12 cat-item">
+          <div @click="$router.push('tim-du-an?active=1')" class="col-md-4 col-sm-12 cat-item cursor-pointer">
             <div class="content item-1">
               <div class="item-detail d-flex">
                 <img
@@ -60,7 +60,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4 col-sm-12 cat-item">
+          <div @click="$router.push('tim-du-an?active=2')" class="col-md-4 col-sm-12 cat-item cursor-pointer" >
             <div class="content item-2">
               <div class="item-detail d-flex">
                 <img src="@/assets/img/icon-decoration.png" />
@@ -70,7 +70,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4 col-sm-12 cat-item">
+          <div @click="$router.push('tim-du-an?active=3')" class="col-md-4 col-sm-12 cat-item cursor-pointer">
             <div class="content item-3">
               <div class="item-detail d-flex">
                 <img src="@/assets/img/icon-pen.png" />
@@ -245,7 +245,7 @@
         </div>
         <div class="row">
           <div class="col-12">
-            <p class="mb-0 text-right mt-30px f-13 seemore pr-15px">
+            <p @click="$router.push('tim-du-an')" class="mb-0 text-right mt-30px f-13 seemore pr-15px">
               Xem thêm dự án
               <img class="ml-5px" src="@/assets/img/icon-right.png" />
             </p>

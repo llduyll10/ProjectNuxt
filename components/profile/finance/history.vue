@@ -9,6 +9,7 @@
                         :value="objSearch.month"
                         v-model="objSearch.month"
                         placeholder="Tra theo tháng"
+                        :clearable=false
                 />
                 <treeselect
                         class="search-date"
@@ -16,15 +17,16 @@
                         :value="objSearch.year"
                         v-model="objSearch.year"
                         placeholder="Tra theo năm"
+                        :clearable=false
                 />
-                <div @click="filterItem()" class="btn-search">
+                <div @click="getHistory()" class="btn-search">
                     Tìm kiếm
                 </div>
             </div>
         </div>
 
         <div class="wrap pt-0 pb-15px">
-            <span class="text-red f-bold f-14">Tháng {{new Date().getMonth() + 1}}/{{new Date().getFullYear()}}</span>
+            <span class="text-red f-bold f-14">Tháng {{objSearch.month}}/{{objSearch.year}}</span>
         </div>
 
         <table class="table table-custom">
@@ -60,18 +62,18 @@ export default {
                 year: new Date().getFullYear()
             },
             optionsMonth:[
-                { id: 1, label: 'Tháng một' },
-                { id: 2, label: 'Tháng hai' },
-                { id: 3, label: 'Tháng ba' },
-                { id: 4, label: 'Tháng tư' },
-                { id: 5, label: 'Tháng năm' },
-                { id: 6, label: 'Tháng sáu' },
-                { id: 7, label: 'Tháng bảy' },
-                { id: 8, label: 'Tháng tám' },
-                { id: 9, label: 'Tháng chín' },
-                { id: 10, label: 'Tháng mười' },
-                { id: 11, label: 'Tháng mười một' },
-                { id: 12, label: 'Tháng mười hai' },
+                { id: 1, label: 'Tháng 1' },
+                { id: 2, label: 'Tháng 2' },
+                { id: 3, label: 'Tháng 3' },
+                { id: 4, label: 'Tháng 4' },
+                { id: 5, label: 'Tháng 5' },
+                { id: 6, label: 'Tháng 6' },
+                { id: 7, label: 'Tháng 7' },
+                { id: 8, label: 'Tháng 8' },
+                { id: 9, label: 'Tháng 9' },
+                { id: 10, label: 'Tháng 10' },
+                { id: 11, label: 'Tháng 11' },
+                { id: 12, label: 'Tháng 12' },
             ],
             optionsYear:[
                 { id: 2021, label: '2021' },
@@ -83,11 +85,13 @@ export default {
         }
     },
     mounted(){
-        this.filterItem()
+        this.getHistory()
     },
     methods:{
-        getHistory(query){
+        getHistory(){
             this.loader()
+            let date = `1/${this.objSearch.month}/${this.objSearch.year}`
+            let query = `?date=${Date.parse(date)}`
             this.$get(`member/coin`+query)
                 .then(res => {
                     this.listHistory = res.data
@@ -98,11 +102,6 @@ export default {
                     this.loader(0)
                 })
         },
-        filterItem(){
-            let date = `1/${this.objSearch.month}/${this.objSearch.year}`
-            let query = `?date=${Date.parse(date)}`
-            this.getHistory(query)
-        }
     }
 }
 </script>

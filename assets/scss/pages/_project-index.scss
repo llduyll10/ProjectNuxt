@@ -269,7 +269,7 @@
                     display: flex;
                     align-content: flex-start;
                     .cover-img {
-                        height: 115px;
+                        height: 130px;
                         width: 100px;
                         border-radius: 5px;
                         background-size: cover;
@@ -433,16 +433,20 @@
                         margin-top: 27px;
                         .phone,
                         .email {
-                            width: auto;
-                            height: 27px;
+                            width: 100%;
+                            height: 30px;
                             border-radius: 5px;
                             text-align: center;
                             background-color: $main-color;
+                            border: 0 !important;
                             span {
-                                line-height: 17px;
+                                line-height: 30px;
                                 font-size: 13px;
                                 font-weight: 600;
                                 color: #fff;
+                            }
+                            &:disabled{
+                                cursor:not-allowed;
                             }
                         }
                         .email {

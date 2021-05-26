@@ -33,7 +33,16 @@
                   <div class="isLogin mt-7px mb-7px">
                     <img class="mt-15px" src="@/assets/svg/bell.svg" />
                     <div class="group-infor">
-                      <img class="mt-5px border" :src="$auth.user.photo" />
+                      <template v-if="$auth.user.photo">
+                        <img class="mt-5px border" :src="$auth.user.photo" />
+                      </template>
+                      <template v-else>
+                        <div class="not-avatar">
+                          <span>
+                            {{$auth.user.name.slice(0,1).toUpperCase()}}
+                          </span>
+                        </div>
+                      </template>
                       <div class="group-right ml-13px d-flex">
                         <b-dropdown id="dropdown-infor" variant="link" toggle-class="text-decoration-none" class="custom-infor pb-5px" no-caret>
                           <template #button-content>

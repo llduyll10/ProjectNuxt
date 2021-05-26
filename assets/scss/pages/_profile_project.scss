@@ -11,8 +11,14 @@
                 font-weight: bold;
                 color: $main-black;
             }
+            a{
+                &:hover{
+                    text-decoration: none !important;
+                }
+            }
             .group-function {
                 display: flex;
+
                 img {
                     width: 15px;
                     height: 15px;

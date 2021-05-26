@@ -158,18 +158,25 @@
             <!-- Thông tin dự án -->
 
             <!-- Thông tin khách hàng -->
+            <template v-if="$auth.loggedIn">
             <div
-              class="left inner-content-section  pt-20px pb-40px mb-20px thongTinDuAnWrapper main-black"
-              v-if="detailProject && detailProject.createBy"
+              class="left inner-content-section  pt-20px pb-40px  thongTinDuAnWrapper main-black"
+              v-if="detailProject
+              && detailProject.createBy
+              && $auth.user._id != detailProject.createBy._id
+              "
             >
               <!-- Hard some css display none for re-using profile component -->
               <Customer  :user="detailProject.createBy" class="profile" />
             </div>
+            </template>
             <!-- Thông tin khách hàng -->
 
             <!-- Dự án tương tự -->
-            <div class="text-center">
-              <h3 class=" fw-600 f-16 main-color mb-5px">DỰ ÁN TƯƠNG TỰ</h3>
+            <div v-if="detailProject && detailProject._id"
+                class="text-center"
+            >
+              <h3 class=" fw-600 f-16 main-color mb-5px pt-20px" >DỰ ÁN TƯƠNG TỰ</h3>
               <div class="line mb-15px"></div>
               <template v-for="(item, idx) in 3">
                 <div
@@ -243,6 +250,7 @@ export default {
       this.loader()
       this.$get(`public/projects/${this.slug}`)
         .then(res =>{
+          console.log('auth user', this.$auth.user)
           this.detailProject = res.data
           this.rawCategory = JSON.parse(JSON.stringify(res.data.category))
           this.arrNameCategory = this.mapCategory(this.detailProject.category)

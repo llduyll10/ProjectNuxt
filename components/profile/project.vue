@@ -3,12 +3,17 @@
         <div class="type-field mb-40px">
             <div class="group-title">
                 <p class="title">Dự án đã thực hiện</p>
-                <div class="group-function">
-                    <img src="@/assets/svg/icon-edit-file.svg" />
-                    <span>Chỉnh sửa</span>
-                    <div class="height"></div>
-                    <span>Xoá bỏ</span>
-                </div>
+                <template v-if="$auth.loggedIn">
+                    <nuxt-link  v-if="$auth.user._id == profile._id"
+                                class="group-function"
+                                to="/member/chinh-sua-ho-so?tab=3"
+                    >
+                        <img src="@/assets/svg/icon-edit-file.svg" />
+                        <span>Chỉnh sửa</span>
+                        <div class="height"></div>
+                        <span>Xoá bỏ</span>
+                    </nuxt-link>
+                </template>
             </div>
         </div>
         <div class="group-item">
@@ -35,7 +40,7 @@
 import DemoHouse from '@/assets/img/demo-house.png'
 import Villa from "@/components/popup/Villa"
 export default {
-    props:['portfolio'],
+    props:['portfolio','profile'],
     data(){
         return{
             demoHouse:DemoHouse,
@@ -60,7 +65,7 @@ export default {
         }
     },
     components:{
-        Villa 
+        Villa
     },
     mounted(){
 
