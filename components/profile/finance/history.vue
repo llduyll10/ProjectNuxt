@@ -17,7 +17,7 @@
                         v-model="objSearch.year"
                         placeholder="Tra theo năm"
                 />
-                <div @click="filterItem()" class="btn-search">
+                <div @click="getHistory()" class="btn-search">
                     Tìm kiếm
                 </div>
             </div>
@@ -83,11 +83,13 @@ export default {
         }
     },
     mounted(){
-        this.filterItem()
+        this.getHistory()
     },
     methods:{
-        getHistory(query){
+        getHistory(){
             this.loader()
+            let date = `1/${this.objSearch.month}/${this.objSearch.year}`
+            let query = `?date=${Date.parse(date)}`
             this.$get(`member/coin`+query)
                 .then(res => {
                     this.listHistory = res.data
@@ -98,11 +100,6 @@ export default {
                     this.loader(0)
                 })
         },
-        filterItem(){
-            let date = `1/${this.objSearch.month}/${this.objSearch.year}`
-            let query = `?date=${Date.parse(date)}`
-            this.getHistory(query)
-        }
     }
 }
 </script>
