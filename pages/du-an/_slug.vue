@@ -158,8 +158,9 @@
             <!-- Thông tin dự án -->
 
             <!-- Thông tin khách hàng -->
+            <template v-if="$auth.loggedIn">
             <div
-              class="left inner-content-section  pt-20px pb-40px mb-20px thongTinDuAnWrapper main-black"
+              class="left inner-content-section  pt-20px pb-40px  thongTinDuAnWrapper main-black"
               v-if="detailProject
               && detailProject.createBy
               && $auth.user._id != detailProject.createBy._id
@@ -168,14 +169,14 @@
               <!-- Hard some css display none for re-using profile component -->
               <Customer  :user="detailProject.createBy" class="profile" />
             </div>
+            </template>
             <!-- Thông tin khách hàng -->
 
             <!-- Dự án tương tự -->
             <div v-if="detailProject && detailProject._id"
                 class="text-center"
-                :class="$auth.user._id != detailProject.createBy._id ? '' : 'pt-20px' "
             >
-              <h3 class=" fw-600 f-16 main-color mb-5px">DỰ ÁN TƯƠNG TỰ</h3>
+              <h3 class=" fw-600 f-16 main-color mb-5px pt-20px" >DỰ ÁN TƯƠNG TỰ</h3>
               <div class="line mb-15px"></div>
               <template v-for="(item, idx) in 3">
                 <div
