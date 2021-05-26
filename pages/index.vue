@@ -245,7 +245,7 @@
         </div>
         <div class="row">
           <div class="col-12">
-            <p class="mb-0 text-right mt-30px f-13 seemore pr-15px">
+            <p @click="$router.push('tim-du-an')" class="mb-0 text-right mt-30px f-13 seemore pr-15px">
               Xem thêm dự án
               <img class="ml-5px" src="@/assets/img/icon-right.png" />
             </p>
