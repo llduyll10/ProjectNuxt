@@ -28,10 +28,16 @@
             <img src="@/assets/svg/icon-email.svg" />
             <span>Gửi tin nhắn</span>
         </div>
-        <div class="btn-contact">
+        <template v-if="$auth.loggedIn">
+        <nuxt-link v-if="$auth.user._id == profile._id"
+            :prefetch="false"
+            class="btn-contact"
+            to="/member/chinh-sua-ho-so?tab=1"
+        >
             <img src="@/assets/svg/icon-user-light.svg" />
             <span>Cập nhật hồ sơ</span>
-        </div>
+        </nuxt-link>
+        </template>
         <PopupLienhe ref="refLienHe"/>
     </section>
 
