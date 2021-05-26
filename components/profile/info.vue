@@ -20,25 +20,26 @@
             </template>
             <p class="evaluate f-12 mb-0 mt-5px ml-4px">(<span>5</span>  đánh giá)</p>
         </div>
-        <div @click="openLienHe" class="btn-contact cursor-pointer">
+        <button :disabled="!$auth.loggedIn" @click="openLienHe" class="btn-contact cursor-pointer">
             <img src="@/assets/svg/icon-phone.svg" />
             <span>Liên hệ trực tiếp</span>
-        </div>
-        <div class="btn-contact email">
+        </button>
+        <button :disabled="!$auth.loggedIn" @click="openLienHeMail" class="btn-contact email">
             <img src="@/assets/svg/icon-email.svg" />
             <span>Gửi tin nhắn</span>
-        </div>
+        </button>
         <template v-if="$auth.loggedIn">
-        <nuxt-link v-if="$auth.user._id == profile._id"
-            :prefetch="false"
-            class="btn-contact"
-            to="/member/chinh-sua-ho-so?tab=1"
-        >
-            <img src="@/assets/svg/icon-user-light.svg" />
-            <span>Cập nhật hồ sơ</span>
-        </nuxt-link>
+            <nuxt-link v-if="$auth.user._id == profile._id"
+                :prefetch="false"
+                class="btn-contact"
+                to="/member/chinh-sua-ho-so?tab=1"
+            >
+                <img src="@/assets/svg/icon-user-light.svg" />
+                <span>Cập nhật hồ sơ</span>
+            </nuxt-link>
         </template>
         <PopupLienhe ref="refLienHe"/>
+        <PopupLienheform ref="LienHeFormPop"/>
     </section>
 
 </template>
@@ -57,6 +58,10 @@ export default {
             this.$refs.refLienHe.show();
             this.$refs.refLienHe.passIDInfor(this.profile);
         },
+        openLienHeMail(){
+            this.$refs.LienHeFormPop.show();
+
+        }
     }
 }
 </script>

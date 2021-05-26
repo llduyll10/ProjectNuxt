@@ -14,7 +14,7 @@
                            <div class="col-right">
                                <ProfileDes :profile="objProfile" :listCategory="listCateMapping" />
                                <div class="line"></div>
-                               <ProfileProject :portfolio="portfolio" />
+                               <ProfileProject :profile="objProfile" :portfolio="portfolio" />
                                <div class="line"></div>
                                <ProfileRating />
                            </div>
