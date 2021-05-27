@@ -198,13 +198,14 @@
           >
             <template v-slot:content>
               <template v-for="(item, idx) in listTop">
-                <b-link :to="'/du-an/'+item.slug" :key="idx" >
-                <div class="card-item cursor-pointer item-carousel" >
+                <div class="card-item cursor-pointer item-carousel" :key="idx">
+                   <b-link :to="'/du-an/'+item.slug"  >
                   <div class="item">
                     <!-- Content 1 -->
                     <div class="show-img"
                         :style="{
                       'background-image': 'url(' + `${item.photos[0]}` + ')',
+                      'background-color':'#f2f2f2'
                       }">
                       <div class="type-product" :class="getClassBageCategory(mapImgFromCategory(item.category ))">
                         <span v-if="mapImgFromCategory(item.category) == 1">Thi công xây dựng</span>
@@ -242,8 +243,9 @@
                       </p>
                     </div>
                   </div>
+                   </b-link>
                 </div>
-                </b-link>
+               
               </template>
             </template>
           </Carousel>
