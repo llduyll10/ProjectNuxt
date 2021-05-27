@@ -237,7 +237,7 @@
                     <div class="audiance d-flex">
                       <p class="f-12">01/04/2021</p>
                       <p>
-                        <span>4</span>
+                        <span>{{item.auctionCount}}</span>
                         Chào Giá
                       </p>
                     </div>
