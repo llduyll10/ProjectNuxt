@@ -38,7 +38,7 @@
 </template>
 <script>
 import DemoHouse from '@/assets/img/demo-house.png'
-import Villa from "@/components/popup/Villa"
+import Villa from "@/components/popup/villa"
 export default {
     props:['portfolio','profile'],
     data(){
