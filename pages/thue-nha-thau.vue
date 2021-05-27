@@ -269,6 +269,9 @@ export default {
         async getPaging(pageObj){
             this.loader()
             try{
+                if([1,2,3].includes(Number(this.activeParent))){
+                    this.arrFilter = this.objCategory[this.activeParent - 1].children
+                }
                 this.objProject.category = []
                 this.arrFilter.forEach(item => {
                     this.objProject.category.push(item.id)
