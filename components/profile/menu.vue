@@ -31,7 +31,7 @@
             </div>
 
             <div class="btnWrap">
-                <button type="button" class="btn logoutBtn">
+                <button @click="logout" type="button" class="btn logoutBtn">
                     <img class="btn-icon" src="@/assets/svg/logout.svg">
                     Đăng xuất
                 </button>
@@ -63,6 +63,11 @@ export default {
         activeMenu: {
             default: "1"
         }
+    },
+    methods:{
+        logout(){
+            this.$auth.logout();
+        },
     }
 }
 </script>
