@@ -198,7 +198,8 @@
           >
             <template v-slot:content>
               <template v-for="(item, idx) in listTop">
-                <div @click="goDetail(item)" class="card-item cursor-pointer item-carousel" :key="idx" >
+                <b-link :to="'/du-an/'+item.slug" :key="idx" >
+                <div class="card-item cursor-pointer item-carousel" >
                   <div class="item">
                     <!-- Content 1 -->
                     <div class="show-img"
@@ -242,6 +243,7 @@
                     </div>
                   </div>
                 </div>
+                </b-link>
               </template>
             </template>
           </Carousel>
@@ -293,21 +295,21 @@ export default {
           })
     },
     goDetail(itemSlide) {
-      let arrImg = Array.from(document.querySelectorAll('.item-carousel'));
-      arrImg.forEach(item => {
-        let drag = false;
-        item.addEventListener('mousedown', () => {
-          drag = false;
-        });
-        item.addEventListener('mousemove', () => {
-          drag = true;
-        });
-        item.addEventListener('mouseup', () => {
-          if (!drag) {
-            this.$router.push(`/du-an/${itemSlide.slug}`)
-          }
-        });
-      });
+      // let arrImg = Array.from(document.querySelectorAll('.item-carousel'));
+      // arrImg.forEach(item => {
+      //   let drag = false;
+      //   item.addEventListener('mousedown', () => {
+      //     drag = false;
+      //   });
+      //   item.addEventListener('mousemove', () => {
+      //     drag = true;
+      //   });
+      //   item.addEventListener('mouseup', () => {
+      //     if (!drag) {
+      //       this.$router.push(`/du-an/${itemSlide.slug}`)
+      //     }
+      //   });
+      // });
     },
   },
 };

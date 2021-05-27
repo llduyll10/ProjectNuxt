@@ -9,6 +9,7 @@
       :responsive="responsive"
       :speed="500"
       :autoplay="false"
+      :touchMove="false"
     >
       <slot name="content"></slot>
     </VueSlickCarousel>
