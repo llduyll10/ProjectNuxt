@@ -169,6 +169,7 @@ export default {
                 this.getQuote()
                 this.loader(0)
                 this.$emit('callGetList')
+                this.$auth.fetchUser();
             }
             catch(err){
                 console.log(err)
