@@ -213,6 +213,11 @@
     }
     // Start Special Product
     #special-product {
+        a{
+            &:hover{
+                text-decoration: none;
+            }
+        }
         .title {
             text-align: center;
             font-weight: bold;
