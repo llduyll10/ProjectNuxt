@@ -236,7 +236,7 @@
                     </div>
                     <!-- Content 3 -->
                     <div class="audiance d-flex">
-                      <p class="f-12">01/04/2021</p>
+                      <p class="f-12">{{$moment(item.createdDate).format('DD/MM/YYYY')}}</p>
                       <p>
                         <span>{{item.auctionCount}}</span>
                         Chào Giá
@@ -245,7 +245,7 @@
                   </div>
                    </b-link>
                 </div>
-               
+
               </template>
             </template>
           </Carousel>
