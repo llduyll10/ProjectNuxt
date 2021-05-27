@@ -234,6 +234,9 @@
             .card-item {
                 min-height: 330px;
                 padding: 15px;
+                a:hover {
+                    text-decoration: unset;
+                }
                 .item {
                     width: 100%;
                     height: 100%;
