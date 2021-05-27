@@ -30,7 +30,10 @@
                    <div v-else class="email">XXX XXX XXX</div>
                </div>
            </div>
-           <div class="bottom btn-now">
+           <div v-if="!$auth.loggedIn" class="bottom btn-now">
+            <div  @click="hide()" class="submit f-16 cursor-pointer" >VUI LÒNG ĐĂNG NHẬP</div>
+           </div>
+           <div v-else class="bottom btn-now">
                <div v-if="privateInfor && privateInfor._id" @click="hide()" class="submit f-16 cursor-pointer">HOÀN TẤT</div>
                <div v-else @click="getUserInfor()" class="submit f-16 cursor-pointer" >HIỂN THỊ THÔNG TIN</div>
            </div>

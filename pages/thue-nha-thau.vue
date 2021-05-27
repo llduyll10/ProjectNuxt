@@ -149,11 +149,11 @@
                                                     <div class="st f-13">(<span>4</span> đánh giá)</div>
                                                 </div>
                                                 <div class="contact">
-                                                    <button :disabled="!$auth.loggedIn" class="phone cursor-pointer" @click="openLienHe(item)">
+                                                    <button class="phone cursor-pointer" @click="openLienHe(item)">
                                                         <img class="pb-3px" src="@/assets/svg/phone.svg" alt="">
                                                         <span>Liên hệ trực tiếp</span>
                                                     </button>
-                                                    <button :disabled="!$auth.loggedIn" class="email cursor-pointer" @click="openLienHeMail">
+                                                    <button class="email cursor-pointer" @click="openLienHeMail">
                                                         <img src="@/assets/svg/email.svg" alt="">
                                                         <span>Gửi tin nhắn</span>
                                                     </button>

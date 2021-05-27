@@ -64,7 +64,12 @@
                     </b-form-checkbox>
                 </div>
                 <div class="group-btn row">
-                    <div class="col-md-12">
+                    <div v-if="!$auth.loggedIn"  class="col-md-12">
+                        <button @click="hide()" type="button" class="btn-now">
+                            VUI LÒNG ĐĂNG NHẬP
+                        </button>
+                    </div>
+                    <div v-else class="col-md-12">
                         <button type="submit" class="btn-now">
                             GỬI TIN NHẮN
                         </button>
