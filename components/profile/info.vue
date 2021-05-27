@@ -20,11 +20,11 @@
             </template>
             <p class="evaluate f-12 mb-0 mt-5px ml-4px">(<span>5</span>  đánh giá)</p>
         </div>
-        <button :disabled="!$auth.loggedIn" @click="openLienHe" class="btn-contact cursor-pointer">
+        <button  @click="openLienHe" class="btn-contact cursor-pointer">
             <img src="@/assets/svg/icon-phone.svg" />
             <span>Liên hệ trực tiếp</span>
         </button>
-        <button :disabled="!$auth.loggedIn" @click="openLienHeMail" class="btn-contact email">
+        <button  @click="openLienHeMail" class="btn-contact email">
             <img src="@/assets/svg/icon-email.svg" />
             <span>Gửi tin nhắn</span>
         </button>
