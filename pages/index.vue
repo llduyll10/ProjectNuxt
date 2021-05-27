@@ -12,7 +12,7 @@
       >
         <template v-slot:content>
           <template v-for="(item, idx) in 5">
-            <div :key="idx" ref="all-img" class="cover-img">
+            <div  :key="idx" ref="all-img" class="cover-img" >
               <div
                 :ref="`imgItem_${idx}`"
                 class="img-slider"
@@ -186,7 +186,7 @@
             <div class="line"></div>
           </div>
         </div>
-        <div class="list-item" v-if="listTop">
+        <div  class="list-item" v-if="listTop">
           <Carousel
             :arrows="true"
             :dots="false"
@@ -198,7 +198,7 @@
           >
             <template v-slot:content>
               <template v-for="(item, idx) in listTop">
-                <div class="card-item cursor-pointer" :key="idx" @click="$router.push(`du-an/${item.slug}`)">
+                <div @click="goDetail(item)" class="card-item cursor-pointer item-carousel" :key="idx" >
                   <div class="item">
                     <!-- Content 1 -->
                     <div class="show-img"
@@ -291,7 +291,24 @@ export default {
           .catch(err =>{
             console.log(err)
           })
-    }
+    },
+    goDetail(itemSlide) {
+      let arrImg = Array.from(document.querySelectorAll('.item-carousel'));
+      arrImg.forEach(item => {
+        let drag = false;
+        item.addEventListener('mousedown', () => {
+          drag = false;
+        });
+        item.addEventListener('mousemove', () => {
+          drag = true;
+        });
+        item.addEventListener('mouseup', () => {
+          if (!drag) {
+            this.$router.push(`/du-an/${itemSlide.slug}`)
+          }
+        });
+      });
+    },
   },
 };
 </script>
