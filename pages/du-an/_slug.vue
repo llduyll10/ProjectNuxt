@@ -158,16 +158,12 @@
             <!-- Thông tin dự án -->
 
             <!-- Thông tin khách hàng -->
-            <template v-if="$auth.loggedIn">
+            <template>
             <div
-              class="left inner-content-section  pt-20px pb-40px  thongTinDuAnWrapper main-black"
-              v-if="detailProject
-              && detailProject.createBy
-              && $auth.user._id != detailProject.createBy._id
-              "
+              class="left inner-content-section  pt-20px pb-20px  thongTinDuAnWrapper main-black"
             >
               <!-- Hard some css display none for re-using profile component -->
-              <Customer  :user="detailProject.createBy" class="profile" />
+              <Customer v-if="detailProject.createBy" :user="detailProject.createBy" class="profile" />
             </div>
             </template>
             <!-- Thông tin khách hàng -->
