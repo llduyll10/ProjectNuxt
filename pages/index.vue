@@ -186,7 +186,7 @@
             <div class="line"></div>
           </div>
         </div>
-        <div class="list-item">
+        <div class="list-item" v-if="listTop">
           <Carousel
             :arrows="true"
             :dots="false"
@@ -197,35 +197,38 @@
             :numberShowMd="2"
           >
             <template v-slot:content>
-              <template v-for="(item, idx) in 6">
-                <div class="card-item" :key="idx">
+              <template v-for="(item, idx) in listTop">
+                <div class="card-item cursor-pointer" :key="idx" @click="$router.push(`du-an/${item.slug}`)">
                   <div class="item">
                     <!-- Content 1 -->
-                    <div class="show-img">
-                      <div class="type-product">
-                        <span>
-                          XÂY DỰNG
-                        </span>
+                    <div class="show-img"
+                        :style="{
+                      'background-image': 'url(' + `${item.photos[0]}` + ')',
+                      }">
+                      <div class="type-product" :class="getClassBageCategory(mapImgFromCategory(item.category ))">
+                        <span v-if="mapImgFromCategory(item.category) == 1">Xây dựng</span>
+                        <span v-if="mapImgFromCategory(item.category) == 2">Trang trí</span>
+                        <span v-if="mapImgFromCategory(item.category) == 3">Thiết kế</span>
                       </div>
                       <div class="location">
                         <img src="@/assets/svg/area.svg" />
                         <span>
-                          Quận 7, TP. Hồ Chí Minh
+                            {{item.address}}
                         </span>
                       </div>
                     </div>
                     <!-- Content 2 -->
                     <div class="item-infor">
                       <p class="mb-0 f-14">
-                        Tìm nhà thầu XD thi công cặp nhà phố 3 tầng (5x16m/lô)
+                        {{item.description || 'Dự án'}}
                       </p>
                       <div class="d-flex group-infor">
                         <div class="left">
                           <img src="@/assets/svg/human.svg" />
-                          <span>Bùi Kim Long </span>
+                          <span>{{item.createBy.name}} </span>
                         </div>
                         <div class="right">
-                          <span> Ngân sách</span> - <span>3 Tỷ</span>
+                          <span> Ngân sách</span> - <span>{{formatNamePrice(item.budget)}}</span>
                         </div>
                       </div>
                     </div>
@@ -269,25 +272,26 @@
 import BannerImg from "@/assets/img/banner.png";
 
 export default {
-  watch: {
-    "$route.query": "$fetch",
-  },
-  async asyncData(context) {},
-  async fetch() {
-    // console.log("haha fetch", this.$store);
-  },
-  activated() {
-    if (this.$fetchState.timestamp <= Date.now() - 10000) {
-      this.$fetch();
-    }
-  },
   data() {
     return {
       bannerImg: BannerImg,
+      listTop:null
     };
   },
+  mounted(){
+    this.getHighProject()
+  },
   methods: {
-
+    getHighProject(){
+      this.$get('public/projects-top-6')
+          .then(res => {
+            console.log('res highlight',res)
+            this.listTop = res.data
+          })
+          .catch(err =>{
+            console.log(err)
+          })
+    }
   },
 };
 </script>

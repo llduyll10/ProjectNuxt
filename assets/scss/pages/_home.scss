@@ -237,8 +237,8 @@
                         background-repeat: no-repeat;
                         background-size: cover;
                         background-position: center center;
-                        background-image: url('@/assets/img/product-1.png');
                         position: relative;
+                        object-fit: cover;
                         &:hover {
                             opacity: 0.86;
                         }
