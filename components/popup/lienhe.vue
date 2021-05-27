@@ -54,6 +54,7 @@ export default {
             this.$get(`private/user/${this.userInfor._id}`)
                 .then(res =>{
                     this.privateInfor = res.data
+                    this.$auth.fetchUser();
                 })
                 .catch(err => {
                     console.log(err)
