@@ -206,8 +206,8 @@
                       'background-image': 'url(' + `${item.photos[0]}` + ')',
                       }">
                       <div class="type-product" :class="getClassBageCategory(mapImgFromCategory(item.category ))">
-                        <span v-if="mapImgFromCategory(item.category) == 1">Xây dựng</span>
-                        <span v-if="mapImgFromCategory(item.category) == 2">Trang trí</span>
+                        <span v-if="mapImgFromCategory(item.category) == 1">Thi công xây dựng</span>
+                        <span v-if="mapImgFromCategory(item.category) == 2">Trang trí nội thất</span>
                         <span v-if="mapImgFromCategory(item.category) == 3">Thiết kế</span>
                       </div>
                       <div class="location">
