@@ -99,6 +99,18 @@
                     height: 35px;
                     margin-right: 16px;
                 }
+                .not-avatar{
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    font-weight: bold;
+                    color: $main-color;
+                    align-items: center;
+                    border: 2px solid $main-color;
+                    margin-right: 16px;
+                }
                 .content {
                     width: 100%;
                     .top {

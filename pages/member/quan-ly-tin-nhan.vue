@@ -24,45 +24,25 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="wrapMessage">
-                                    <div class="messageItem d-flex active" v-for="(item , i) in 2" :key="i">
-                                        <img src="@/assets/svg/messageLong.svg" alt="" class="header__cart-img">
-                                        <div class="content">
-                                            <div class="top d-flex">
-                                                <div class="name f-12">
-                                                    Long Bui
-                                                </div>
-                                                <div class="company f-12">
-                                                    Công ty cổ phần Epoint
-                                                </div>
-                                                <div class="time f-11">7:50 PM</div>
-                                            </div>
-                                            <div class="bottom d-flex">
-                                                <div class="content-message f-12">
-                                                    Dear anh, em có chút thắc mắc anh, em có chút thắc mắc
-                                                </div>
-                                                <div class="isMessage f-12">
-                                                    <img src="@/assets/svg/isMessage.svg" alt="">
-                                                    <div class="notify f-10">1</div>
-                                                </div>
-                                            </div>
+                                <div v-if="listMess" class="wrapMessage">
+                                    <div class="messageItem d-flex active" v-for="(item , i) in listMess" :key="i">
+                                        <img v-if="findUserChat(item.users).photo" :src="findUserChat(item.users).photo" alt="" class="header__cart-img">
+                                        <div v-else class="not-avatar">
+                                            <span>{{findUserChat(item.users).name.slice(0,1).toUpperCase()}}</span>
                                         </div>
-                                    </div>
-                                    <div class="messageItem d-flex" v-for="(item , i) in 6" :key="i+10">
-                                        <img src="@/assets/svg/messageLong.svg" alt="" class="header__cart-img">
                                         <div class="content">
                                             <div class="top d-flex">
                                                 <div class="name f-12">
-                                                    Long Bui
+                                                    {{findUserChat(item.users).name}}
                                                 </div>
                                                 <div class="company f-12">
-                                                    Công ty cổ phần Epoint
+                                                    {{item.name}}
                                                 </div>
-                                                <div class="time f-11">7:50 PM</div>
+                                                <div class="time f-11">{{$moment(item.createdDate).format('hh:mm A')}}</div>
                                             </div>
                                             <div class="bottom d-flex">
                                                 <div class="content-message f-12">
-                                                    Dear anh, em có chút thắc mắc anh, em có chút thắc mắc
+                                                   {{item.message}}
                                                 </div>
                                                 <div class="isMessage f-12">
                                                     <img src="@/assets/svg/isMessage.svg" alt="">
@@ -126,7 +106,7 @@ export default {
     },
     data(){
         return{
-
+            listMess:null
         }
     },
     mounted(){
@@ -138,13 +118,18 @@ export default {
             this.loader()
             this.$get('member/rooms')
                 .then(res => {
-                    console.log('messs', res)
+                    this.listMess = res.data
                     this.loader(0)
                 })
                 .catch(err =>{
                     console.log(err)
                     this.loader(0)
-                })
+            })
+        },
+        findUserChat(arr){
+            var res = arr.filter(item => item._id != this.$auth.user._id)
+            console.log(res)
+            return res[0]
         }
     }
 }
