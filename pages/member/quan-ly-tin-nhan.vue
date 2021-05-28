@@ -68,19 +68,20 @@
                                     <div v-for="(item , i ) in listChatDetail" :key="i+20">
                                         <div class="dateMessage">{{$moment(item.createdDate).format('DD/MM/YYYY, hh:mm A')}}</div>
                                         <!-- It me -->
-
-                                        <div v-if="!$auth.user._id == item._id"  class="send d-flex">
-                                            <img :src="item.user.photo" alt="">
-                                            <div class="d-flex flex-column">
-                                                <div class="contentSend">{{item.message}}</div>
+                                        <template v-if="$auth && $auth.user">
+                                            <div v-if="$auth.user._id != item.user._id"  class="send d-flex">
+                                                <img :src="item.user.photo" alt="">
+                                                <div class="d-flex flex-column">
+                                                    <div class="contentSend">{{item.message}}</div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div v-else class="receive d-flex">
-                                            <div class="d-flex flex-column">
-                                                <div class="contentReceive">{{item.message}}</div>
+                                            <div v-else class="receive d-flex">
+                                                <div class="d-flex flex-column">
+                                                    <div class="contentReceive">{{item.message}}</div>
+                                                </div>
+                                                <img :src="item.user.photo" alt="">
                                             </div>
-                                            <img :src="item.user.photo" alt="">
-                                        </div>
+                                        </template>
 
                                     </div>
                                 </div>
