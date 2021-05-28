@@ -26,7 +26,8 @@
                                 </div>
                                 <div v-if="listMess" class="wrapMessage">
                                     <div @click="getDetailMess(item)"
-                                        class="messageItem d-flex active cursor-pointer"
+                                        class="messageItem d-flex  cursor-pointer"
+                                        :class="(currentRoom && currentRoom._id == item._id) ? 'active' :'' "
                                         v-for="(item , i) in listMess" :key="i"
                                     >
                                         <img v-if="findUserChat(item.users).photo" :src="findUserChat(item.users).photo" alt="" class="header__cart-img">
