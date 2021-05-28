@@ -6,7 +6,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="d-flex">
-                            <div class="boxMessage mr-20px"> 
+                            <div class="boxMessage mr-20px">
                                 <div class="wrapGeneral">
                                     <div class="search-top d-flex">
                                         <input type="text" class="f-12" placeholder="Tìm kiếm">
@@ -48,7 +48,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="messageItem d-flex" v-for="(item , i) in 6" :key="i">
+                                    <div class="messageItem d-flex" v-for="(item , i) in 6" :key="i+10">
                                         <img src="@/assets/svg/messageLong.svg" alt="" class="header__cart-img">
                                         <div class="content">
                                             <div class="top d-flex">
@@ -82,8 +82,8 @@
                                     </div>
                                 </div>
                                 <div class="message">
-                                    <div v-for="(item , i ) in 3" :key="i">
-                                        <div class="dateMessage">20/04/201 - 8:25 PM</div> 
+                                    <div v-for="(item , i ) in 3" :key="i+20">
+                                        <div class="dateMessage">20/04/201 - 8:25 PM</div>
                                         <div class="send d-flex">
                                             <img src="@/assets/svg/messageLong.svg" alt="">
                                             <div class="d-flex flex-column">
@@ -130,10 +130,22 @@ export default {
         }
     },
     mounted(){
+        this.getListMess()
 
     },
     methods:{
-
+        getListMess(){
+            this.loader()
+            this.$get('member/rooms')
+                .then(res => {
+                    console.log('messs', res)
+                    this.loader(0)
+                })
+                .catch(err =>{
+                    console.log(err)
+                    this.loader(0)
+                })
+        }
     }
 }
 </script>

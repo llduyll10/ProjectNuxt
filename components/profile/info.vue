@@ -20,14 +20,8 @@
             </template>
             <p class="evaluate f-12 mb-0 mt-5px ml-4px">(<span>5</span>  đánh giá)</p>
         </div>
-        <button  @click="openLienHe" class="btn-contact cursor-pointer">
-            <img src="@/assets/svg/icon-phone.svg" />
-            <span>Liên hệ trực tiếp</span>
-        </button>
-        <button  @click="openLienHeMail" class="btn-contact email">
-            <img src="@/assets/svg/icon-email.svg" />
-            <span>Gửi tin nhắn</span>
-        </button>
+
+        <!-- Login -->
         <template v-if="$auth.loggedIn">
             <nuxt-link v-if="$auth.user._id == profile._id"
                 :prefetch="false"
@@ -37,6 +31,27 @@
                 <img src="@/assets/svg/icon-user-light.svg" />
                 <span>Cập nhật hồ sơ</span>
             </nuxt-link>
+            <template v-else>
+                <button @click="openLienHe" class="btn-contact cursor-pointer">
+                    <img src="@/assets/svg/icon-phone.svg" />
+                    <span>Liên hệ trực tiếp</span>
+                </button>
+                <button @click="openLienHeMail" class="btn-contact email">
+                    <img src="@/assets/svg/icon-email.svg" />
+                    <span>Gửi tin nhắn</span>
+                </button>
+            </template>
+        </template>
+        <!-- Not login -->
+        <template v-else>
+            <button @click="openLienHe" class="btn-contact cursor-pointer">
+                <img src="@/assets/svg/icon-phone.svg" />
+                <span>Liên hệ trực tiếp</span>
+            </button>
+            <button  @click="openLienHeMail" class="btn-contact email">
+                <img src="@/assets/svg/icon-email.svg" />
+                <span>Gửi tin nhắn</span>
+            </button>
         </template>
         <PopupLienhe ref="refLienHe"/>
         <PopupLienheform ref="LienHeFormPop"/>
