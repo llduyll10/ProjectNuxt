@@ -40,7 +40,7 @@
                                                     {{findUserChat(item.users).name}}
                                                 </div>
                                                 <div class="company f-12">
-                                                    {{item.name}}
+                                                    {{item.title}}
                                                 </div>
                                                 <div class="time f-11">{{$moment(item.createdDate).format('hh:mm A')}}</div>
                                             </div>
@@ -59,7 +59,7 @@
                             </div>
                             <div class="contentWrap">
                                 <div  v-if="currentRoom" class="contentTop d-flex">
-                                    <div  class="title">{{currentRoom.name}}</div>
+                                    <div  class="title">{{currentRoom.title}}</div>
                                     <div class="wrapDate">
                                         <img src="@/assets/svg/point-black.svg" alt="">
                                         <div class="date ml-20px f-12">Đăng ngày  <span>{{$moment(currentRoom.createdDate).format('DD/MM/YYYY')}}</span></div>

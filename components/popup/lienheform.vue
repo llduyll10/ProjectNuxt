@@ -108,7 +108,7 @@ export default {
                             ...this.objResearch,
                             attachments:arrFile,
                             to: this.objInfor._id,
-                            name: this.objInfor.company ? this.objInfor.company : this.objInfor.name
+                            title: this.objInfor.company ? this.objInfor.company : this.objInfor.name
                         }
                 let res = await this.$post(`/member/rooms`,obj)
                 console.log('res message',res)
