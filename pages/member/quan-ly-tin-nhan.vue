@@ -25,7 +25,7 @@
                                     </div>
                                 </div>
                                 <div v-if="listMess" class="wrapMessage">
-                                    <div @click="getDetailMess(item._id)"
+                                    <div @click="getDetailMess(item)"
                                         class="messageItem d-flex active cursor-pointer"
                                         v-for="(item , i) in listMess" :key="i"
                                     >
@@ -47,21 +47,21 @@
                                                 <div class="content-message f-12">
                                                    {{item.message}}
                                                 </div>
-                                                <div class="isMessage f-12">
+                                                <!-- <div class="isMessage f-12">
                                                     <img src="@/assets/svg/isMessage.svg" alt="">
                                                     <div class="notify f-10">1</div>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="contentWrap">
-                                <div class="contentTop d-flex">
-                                    <div class="title">Tìm đơn vị trang trí nội thất căn hộ Hà Đô Centrosa</div>
+                                <div  v-if="currentRoom" class="contentTop d-flex">
+                                    <div  class="title">{{currentRoom.name}}</div>
                                     <div class="wrapDate">
                                         <img src="@/assets/svg/point-black.svg" alt="">
-                                        <div class="date ml-20px f-12">Đăng ngày  <span>20/04/2021</span></div>
+                                        <div class="date ml-20px f-12">Đăng ngày  <span>{{$moment(currentRoom.createdDate).format('DD/MM/YYYY')}}</span></div>
                                     </div>
                                 </div>
                                 <div class="message" v-if="listChatDetail">
@@ -137,7 +137,8 @@ export default {
         },
         getDetailMess(room){
             this.currentRoom = room
-            this.$get(`member/room/${room}`)
+            console.log('currentRoom',this.currentRoom)
+            this.$get(`member/room/${room._id}`)
                 .then(res => {
                     this.listChatDetail = res.data
                 })
@@ -146,7 +147,7 @@ export default {
                 })
         },
         sendMessage(){
-            var obj = {...this.objMessage,room:this.currentRoom}
+            var obj = {...this.objMessage,room:this.currentRoom._id}
             this.$post(`member/message`,obj)
                 .then(res =>{
                     console.log('up mess',res)
