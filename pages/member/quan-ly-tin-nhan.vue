@@ -25,7 +25,10 @@
                                     </div>
                                 </div>
                                 <div v-if="listMess" class="wrapMessage">
-                                    <div class="messageItem d-flex active" v-for="(item , i) in listMess" :key="i">
+                                    <div @click="getDetailMess(item._id)"
+                                        class="messageItem d-flex active cursor-pointer"
+                                        v-for="(item , i) in listMess" :key="i"
+                                    >
                                         <img v-if="findUserChat(item.users).photo" :src="findUserChat(item.users).photo" alt="" class="header__cart-img">
                                         <div v-else class="not-avatar">
                                             <span>{{findUserChat(item.users).name.slice(0,1).toUpperCase()}}</span>
@@ -61,32 +64,32 @@
                                         <div class="date ml-20px f-12">Đăng ngày  <span>20/04/2021</span></div>
                                     </div>
                                 </div>
-                                <div class="message">
-                                    <div v-for="(item , i ) in 3" :key="i+20">
-                                        <div class="dateMessage">20/04/201 - 8:25 PM</div>
-                                        <div class="send d-flex">
-                                            <img src="@/assets/svg/messageLong.svg" alt="">
+                                <div class="message" v-if="listChatDetail">
+                                    <div v-for="(item , i ) in listChatDetail" :key="i+20">
+                                        <div class="dateMessage">{{$moment(item.createdDate).format('DD/MM/YYYY, hh:mm A')}}</div>
+                                        <!-- It me -->
+
+                                        <div v-if="!$auth.user._id == item._id"  class="send d-flex">
+                                            <img :src="item.user.photo" alt="">
                                             <div class="d-flex flex-column">
-                                                <div class="contentSend">Econs được thành lập và phát triển suốt 8 năm qua theo mô hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội thất...Econs được thành lập và phát triển suốt 8 năm qua theo mô hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội thất.</div>
-                                                <div class="contentSend">How do you feeling?</div>
+                                                <div class="contentSend">{{item.message}}</div>
                                             </div>
                                         </div>
-                                        <div class="receive d-flex">
+                                        <div v-else class="receive d-flex">
                                             <div class="d-flex flex-column">
-                                                <div class="contentReceive">Econs được thành lập và phát triển suốt 8 năm qua theo mô hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội thất...Econs được thành lập và phát triển suốt 8 năm qua theo mô hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội thất</div>
-                                                <div class="contentReceive">Econs nội thất.</div>
-                                                <div class="contentReceive">Econs nội thất.</div>
+                                                <div class="contentReceive">{{item.message}}</div>
                                             </div>
-                                            <img src="@/assets/svg/messageLong.svg" alt="">
+                                            <img :src="item.user.photo" alt="">
                                         </div>
+
                                     </div>
                                 </div>
-                                <div class="wrapFill d-flex">
-                                    <input type="text" placeholder="Soạn tin nhắn...">
+                                <form @submit.prevent="sendMessage" class="wrapFill d-flex">
+                                    <input v-model="objMessage.message" type="text" placeholder="Soạn tin nhắn...">
                                     <img src="@/assets/svg/happy.svg" alt="">
                                     <img src="@/assets/svg/file.svg" alt="">
-                                    <div class="sending">Gửi tin nhắn</div>
-                                </div>
+                                    <button  class="sending" type="submit">Gửi tin nhắn</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -106,7 +109,13 @@ export default {
     },
     data(){
         return{
-            listMess:null
+            objMessage:{
+                category:[],
+                attachments:[]
+            },
+            currentRoom:null,
+            listMess:null,
+            listChatDetail:null
         }
     },
     mounted(){
@@ -122,13 +131,34 @@ export default {
                     this.loader(0)
                 })
                 .catch(err =>{
-                    console.log(err)
                     this.loader(0)
             })
         },
+        getDetailMess(room){
+            this.currentRoom = room
+            this.$get(`member/room/${room}`)
+                .then(res => {
+                    this.listChatDetail = res.data
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+        },
+        sendMessage(){
+            var obj = {...this.objMessage,room:this.currentRoom}
+            this.$post(`member/message`,obj)
+                .then(res =>{
+                    console.log('up mess',res)
+                    this.objMessage.message = null
+                    this.getListMess()
+                    this.getDetailMess(this.currentRoom)
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+        },
         findUserChat(arr){
             var res = arr.filter(item => item._id != this.$auth.user._id)
-            console.log(res)
             return res[0]
         }
     }
