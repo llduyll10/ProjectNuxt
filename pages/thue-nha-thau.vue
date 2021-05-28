@@ -153,7 +153,7 @@
                                                         <img class="pb-3px" src="@/assets/svg/phone.svg" alt="">
                                                         <span>Liên hệ trực tiếp</span>
                                                     </button>
-                                                    <button class="email cursor-pointer" @click="openLienHeMail">
+                                                    <button class="email cursor-pointer" @click="openLienHeMail(item)">
                                                         <img src="@/assets/svg/email.svg" alt="">
                                                         <span>Gửi tin nhắn</span>
                                                     </button>
@@ -312,9 +312,9 @@ export default {
             this.$refs.refLienHe.show();
             this.$refs.refLienHe.passIDInfor(user);
         },
-        openLienHeMail(){
+        openLienHeMail(user){
             this.$refs.LienHeFormPop.show();
-
+            this.$refs.LienHeFormPop.getInforPerchant(user);
         }
     }
 }

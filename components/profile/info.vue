@@ -60,7 +60,7 @@ export default {
         },
         openLienHeMail(){
             this.$refs.LienHeFormPop.show();
-
+            this.$refs.LienHeFormPop.getInforPerchant(this.profile);
         }
     }
 }

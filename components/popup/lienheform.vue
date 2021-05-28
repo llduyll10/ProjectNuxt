@@ -89,6 +89,7 @@ export default {
         objResearch:{
             agree:false
         },
+        objInfor:null,
         arrFile:[],
         accepFile:["png", "jpg", "jpeg" , "tiff", "pdf", "xls", "doc", "ppt", "zip", "rar"],
         options: this.getCategory(),
@@ -100,17 +101,34 @@ export default {
     },
     methods:{
         async sendMessage(){
-            var arrFile = this.arrFile.length ? await this.uploadFile(this.arrFile) : []
-            var obj = {
-                        ...this.objResearch,
-                        attachments:arrFile,
-                    }
-            console.log('obj form',obj)
-            this.resetForm()
+            try{
+                this.loader()
+                var arrFile = this.arrFile.length ? await this.uploadFile(this.arrFile) : []
+                var obj = {
+                            ...this.objResearch,
+                            attachments:arrFile,
+                            to: this.objInfor._id,
+                            name: this.objInfor.company ? this.objInfor.company : this.objInfor.name
+                        }
+                let res = await this.$post(`/member/rooms`,obj)
+                console.log('res message',res)
+                this.loader(0)
+                this.resetForm()
+                this.hide()
+            }
+            catch(err){
+                console.log(err)
+                this.loader(0)
+            }
+
         },
         resetForm(){
             this.objResearch = {}
             this.arrFile = []
+            this.objInfor = null
+        },
+        getInforPerchant(infor){
+            this.objInfor = infor
         },
         getFile(file){
             this.arrFile = this.arrFile.concat(file)
