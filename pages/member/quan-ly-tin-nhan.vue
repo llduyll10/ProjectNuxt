@@ -76,12 +76,34 @@
                                                     <span>{{item.user.name.slice(0,1).toUpperCase()}}</span>
                                                 </div>
                                                 <div class="d-flex flex-column">
-                                                    <div class="contentSend">{{item.message}}</div>
+                                                    <div class="contentSend">
+                                                        {{item.message}}
+                                                        <br/>
+                                                        <template v-if="item.attachments">
+                                                            <template v-for="(file,idx) in item.attachments">
+                                                                <div :key="idx+101" class="mt-5px">
+                                                                    <span  v-html="returnTypeFile(spliceURLFile(file,'--'))"></span>
+                                                                    <span class="f-11">{{spliceURLFile(file,'--')}}</span>
+                                                                </div>
+                                                            </template>
+                                                        </template>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div v-else class="receive d-flex">
                                                 <div class="d-flex flex-column">
-                                                    <div class="contentReceive">{{item.message}}</div>
+                                                    <div class="contentReceive">
+                                                        {{item.message}}
+                                                        <br />
+                                                        <template v-if="item.attachments">
+                                                            <template v-for="(file,idx) in item.attachments">
+                                                                 <div :key="idx+11" class="mt-5px">
+                                                                    <span  v-html="returnTypeFile(spliceURLFile(file,'--'))"></span>
+                                                                    <span class="f-11">{{spliceURLFile(file,'--')}}</span>
+                                                                </div>
+                                                            </template>
+                                                        </template>
+                                                    </div>
                                                 </div>
                                                 <img v-if="item.user.photo" :src="item.user.photo" alt="">
                                                 <div v-else class="not-avatar ml-15px">
