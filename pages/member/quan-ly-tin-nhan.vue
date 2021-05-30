@@ -57,21 +57,24 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="contentWrap">
-                                <div  v-if="currentRoom" class="contentTop d-flex">
+                            <div v-if="currentRoom" class="contentWrap">
+                                <div  class="contentTop d-flex">
                                     <div  class="title">{{currentRoom.title}}</div>
                                     <div class="wrapDate">
                                         <img src="@/assets/svg/point-black.svg" alt="">
                                         <div class="date ml-20px f-12">Đăng ngày  <span>{{$moment(currentRoom.createdDate).format('DD/MM/YYYY')}}</span></div>
                                     </div>
                                 </div>
-                                <div class="message" v-if="listChatDetail">
+                                <div class="message mt-25px" v-if="listChatDetail">
                                     <div v-for="(item , i ) in listChatDetail" :key="i+20">
                                         <div class="dateMessage">{{$moment(item.createdDate).format('DD/MM/YYYY, hh:mm A')}}</div>
                                         <!-- It me -->
                                         <template v-if="$auth && $auth.user">
                                             <div v-if="$auth.user._id != item.user._id"  class="send d-flex">
-                                                <img :src="item.user.photo" alt="">
+                                                <img v-if="item.user.photo" :src="item.user.photo" alt="">
+                                                <div v-else class="not-avatar mr-15px">
+                                                    <span>{{item.user.name.slice(0,1).toUpperCase()}}</span>
+                                                </div>
                                                 <div class="d-flex flex-column">
                                                     <div class="contentSend">{{item.message}}</div>
                                                 </div>
@@ -80,7 +83,10 @@
                                                 <div class="d-flex flex-column">
                                                     <div class="contentReceive">{{item.message}}</div>
                                                 </div>
-                                                <img :src="item.user.photo" alt="">
+                                                <img v-if="item.user.photo" :src="item.user.photo" alt="">
+                                                <div v-else class="not-avatar ml-15px">
+                                                    <span>{{item.user.name.slice(0,1).toUpperCase()}}</span>
+                                                </div>
                                             </div>
                                         </template>
 

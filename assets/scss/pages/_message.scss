@@ -223,6 +223,18 @@
             height: 525px;
             overflow: auto;
             padding: 0 16px;
+            .not-avatar{
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                font-weight: bold;
+                color: $main-color;
+                align-items: center;
+                border: 2px solid $main-color;
+                font-size: 11px;
+            }
             .dateMessage {
                 font-size: 12px;
                 text-align: center;
