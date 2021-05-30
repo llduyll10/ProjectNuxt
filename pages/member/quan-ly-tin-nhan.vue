@@ -81,7 +81,7 @@
                                                         <br/>
                                                         <template v-if="item.attachments">
                                                             <template v-for="(file,idx) in item.attachments">
-                                                                <div :key="idx+101" class="mt-5px">
+                                                                <div :key="idx+101" class="mt-5px cursor-pointer" @click="downloadFile(file)">
                                                                     <span  v-html="returnTypeFile(spliceURLFile(file,'--'))"></span>
                                                                     <span class="f-11">{{spliceURLFile(file,'--')}}</span>
                                                                 </div>
@@ -97,7 +97,7 @@
                                                         <br />
                                                         <template v-if="item.attachments">
                                                             <template v-for="(file,idx) in item.attachments">
-                                                                 <div :key="idx+11" class="mt-5px">
+                                                                 <div :key="idx+11" class="mt-5px cursor-pointer"  @click="downloadFile(file)">
                                                                     <span  v-html="returnTypeFile(spliceURLFile(file,'--'))"></span>
                                                                     <span class="f-11">{{spliceURLFile(file,'--')}}</span>
                                                                 </div>
@@ -114,10 +114,26 @@
 
                                     </div>
                                 </div>
-                                <form @submit.prevent="sendMessage" class="wrapFill d-flex">
+                                <form @submit.prevent="sendMessage" class="wrapFill d-flex" :class="arrFile.length ? 'hidePlace' : ''">
                                     <input v-model="objMessage.message" type="text" placeholder="Soạn tin nhắn...">
                                     <img src="@/assets/svg/happy.svg" alt="">
-                                    <img src="@/assets/svg/file.svg" alt="">
+                                    <!-- <img src="@/assets/svg/file.svg" alt=""> -->
+                                    <InputFile :accept="accepFile" @input="getFile" :isChat="true" :multiple="true" :label="'Thêm tài liệu'"/>
+                                    <div  v-if="arrFile.length">
+                                        <div  class="listFile">
+                                            <template v-for="(item,idx) in arrFile">
+                                                    <p :key="idx" class="f-11 text-main  mb-5px">
+                                                        <span v-html="returnTypeFile(item.name)"></span>
+                                                        {{item.name}}
+                                                        <span class="cursor-pointer ml-5px" @click="clearFile(item)">
+                                                            <i class="fas fa-times text-red"></i>
+                                                        </span>
+                                                    </p>
+
+                                            </template>
+                                        </div>
+
+                                    </div>
                                     <button  class="sending" type="submit">Gửi tin nhắn</button>
                                 </form>
                             </div>
@@ -143,9 +159,11 @@ export default {
                 category:[],
                 attachments:[]
             },
+            accepFile:["png", "jpg", "tiff", "pdf", "xls", "doc", "ppt", "zip", "rar"],
             currentRoom:null,
             listMess:null,
-            listChatDetail:null
+            listChatDetail:null,
+            arrFile:[]
         }
     },
     mounted(){
@@ -175,23 +193,30 @@ export default {
                     console.log(err)
                 })
         },
-        sendMessage(){
-            var obj = {...this.objMessage,room:this.currentRoom._id}
-            this.$post(`member/message`,obj)
-                .then(res =>{
-                    console.log('up mess',res)
-                    this.objMessage.message = null
-                    this.getListMess()
-                    this.getDetailMess(this.currentRoom)
-                })
-                .catch(err => {
-                    console.log(err)
-                })
+        async sendMessage(){
+            try{
+                var arrFile = this.arrFile.length ? await this.uploadFile(this.arrFile) : []
+                var obj = {...this.objMessage,room:this.currentRoom._id,attachments:arrFile}
+                let res = await this.$post(`member/message`,obj)
+                this.objMessage.message = null
+                this.arrFile = []
+                this.getListMess()
+                this.getDetailMess(this.currentRoom)
+            }
+            catch(err){
+                console.log(err)
+            }
         },
         findUserChat(arr){
             var res = arr.filter(item => item._id != this.$auth.user._id)
             return res[0]
-        }
+        },
+        getFile(file){
+            this.arrFile = this.arrFile.concat(file)
+        },
+        clearFile(file){
+            this.arrFile = this.arrFile.filter(item => item.name !== file.name)
+        },
     }
 }
 </script>

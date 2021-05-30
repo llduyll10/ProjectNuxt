@@ -1,11 +1,16 @@
 <template>
     <div>
-        <input type="file" ref="file" class="inputfile" @change="onFileChange" :multiple="multiple" />
-        <label @click="$refs.file.click()">
-            <img class="mr-4px h-13px mb-2px" src="@/assets/svg/icon-upload.svg" alt=""/>
-            {{label}}
+        <input :class="isChat ? 'w-40' : ''" type="file" ref="file" class="inputfile" @change="onFileChange" :multiple="multiple" />
+        <label @click="$refs.file.click()" :class="isChat ? 'bg-white' : '' ">
+            <template v-if="isChat">
+                <img src="@/assets/svg/file.svg" alt="">
+            </template>
+            <template v-else>
+                <img class="mr-4px h-13px mb-2px" src="@/assets/svg/icon-upload.svg" alt=""/>
+                {{label}}
+            </template>
         </label>
-       <span class="text-main f-11">
+       <span v-if="!isChat" class="text-main f-11">
            <template v-for="(item,idx) in accept">
                {{item}} <span :key="idx" v-if="(idx+1) < accept.length">,</span>
            </template>
@@ -15,7 +20,7 @@
 </template>
 <script>
 export default {
-    props:['accept','multiple','label'],
+    props:['accept','multiple','label','isChat'],
     created() {},
     mounted() {},
     data() {

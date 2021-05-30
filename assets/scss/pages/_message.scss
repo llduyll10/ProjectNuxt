@@ -288,10 +288,19 @@
             border: 0.75px solid #B7B5B5;
             border-radius: 5px;
             margin: 14px 81px 0px 65px;
-            height: 60px;
+            max-height: 60px;
             padding: 22px;
             justify-content: space-between;
             align-items: center;
+            position: relative;
+            overflow-y: scroll;
+            &.hidePlace{
+                input{
+                    &::placeholder{
+                        color: transparent !important;
+                    }
+                }
+            }
             input {
                 border: none;
                 width: 63%;
@@ -299,6 +308,12 @@
                     color: #ADABAB;
                     font-size: 13px;
                 }
+            }
+            .listFile{
+                position: absolute;
+                top: 37px;
+                left: 20px;
+                display: block;
             }
             .sending {
                 font-size: 13px;
