@@ -107,10 +107,14 @@
 
         <div class="text-center">
             <img src="@/assets/svg/CheckboxBig.svg" />
-            <p v-if="$auth.loggedIn" class="f-19 main-black fw-600">Bạn đã gửi chào giá cho
+            <p v-if="$auth.loggedIn && $auth.user.canAuction" class="f-19 main-black fw-600">Bạn đã gửi chào giá cho
                 <span class="text-main">{{quoteName}}</span></p>
-            <p v-else class="f-19 main-black fw-600">
+            <p v-if="!$auth.loggedIn" class="f-19 main-black fw-600">
                 Vui lòng đăng nhập để chào giá
+            </p>
+
+            <p v-if="$auth.loggedIn && !$auth.user.canAuction" class="f-19 main-black fw-600">
+                Vui lòng hoàn thành hồ sơ và xác thực tài khoản
             </p>
         </div>
     </div>
@@ -135,7 +139,8 @@ export default {
     },
     methods:{
         getQuote(){
-            this.$get(`member/auction/project/${this.id}`)
+            if(this.$auth.user.canAuction){
+                this.$get(`member/auction/project/${this.id}`)
                 .then(res =>{
                     if(res.data.status){
                         if(res.data.auction){
@@ -153,6 +158,10 @@ export default {
                 .catch(err => {
                     console.log(err)
                 })
+            }else{
+                this.isShowForm = false;
+            }
+            
         },
         async createQuote(status){
             this.loader()
