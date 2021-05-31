@@ -2,7 +2,10 @@
     <div>
         <div class="w-100 flex-align-center p-22px">
             <div class="userAvatarMenu mr-13px">
-                <img width="40px" :src="$auth.user.photo" />
+                <img v-if="$auth.user.photo" width="40px" :src="$auth.user.photo" />
+                <div v-else class="not-avatar">
+                     {{$auth.user.name.slice(0,1).toUpperCase()}}
+                </div>
             </div>
 
             <div class="d-flex flex-column f-13 f-bold">

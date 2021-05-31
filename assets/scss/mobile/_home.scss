@@ -1,0 +1,16 @@
+@media only screen and (max-width: 375px){
+    #homepage {
+        .banner{
+            .cover-img {
+                .content-banner{
+                    text-align: left !important;
+                    p {
+                        &:first-child{
+                            font-size: 22px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
