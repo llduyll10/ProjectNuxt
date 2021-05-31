@@ -63,8 +63,14 @@
                            <b-dropdown-text class="verify">
                             <span class="f-16">{{$auth.user.name}}</span>
                             <br>
-                            <img src="@/assets/img/check.png" alt="">
-                            <span class="f-13">Đã xác thực</span>
+                            <template v-if="$auth.user.isVerified" >
+                              <img src="@/assets/img/check.png" alt="">
+                              <span class="f-13">Đã xác thực</span>
+                            </template>
+                            <template v-else>
+                              <i class="fas fa-times text-red"></i>
+                              <span class="f-13 text-red">Chưa xác thực</span>
+                            </template>
                           </b-dropdown-text>
                           <b-dropdown-text class="title pt-16px">
                              <span class="f-13">Tài khoản</span>
