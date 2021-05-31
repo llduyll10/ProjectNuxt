@@ -53,26 +53,23 @@ module.exports = {
 
         },
         checkStatusDueDate(value){
-            var TODAY = this.$moment()
-            var DUEDATE  = this.$moment(value)
-            if(TODAY.format('DD/MM/YYYY') > DUEDATE.format('DD/MM/YYYY')){
+            var TODAY = this.$moment().startOf('day');
+            var DUEDATE  = this.$moment(value).startOf('day');
+            if(TODAY > DUEDATE){
                 return true
             }
             return false
         },
         checkDueDate(value){
-            var TODAY = this.$moment()
-            var DUEDATE  = this.$moment(value)
-            if(TODAY.format('DD/MM/YYYY') == DUEDATE.format('DD/MM/YYYY')){
+            var TODAY = this.$moment().startOf('day');
+            var DUEDATE  = this.$moment(value).startOf('day');
+            if(TODAY === DUEDATE){
                 return '1 ngày'
             }
             if(TODAY > DUEDATE){
                 return 'Hết hạn'
             }
-            var find = DUEDATE.from(TODAY,true).toString().indexOf('gio')
-            if(find == -1 ){
-                return '1 ngày'
-            }
+            
             return DUEDATE.from(TODAY,true)
         },
         formatNamePrice(value){
