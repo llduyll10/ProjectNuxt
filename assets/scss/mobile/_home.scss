@@ -1,0 +1,48 @@
+@media only screen and (max-width: 375px){
+    #homepage {
+        .banner{
+            .cover-img {
+                .img-slider{
+                    padding: 50px 20px 30px 20px;
+                    height: 420px !important;
+                    align-items: flex-start;
+                    .content-banner{
+                        text-align: left !important;
+                        p {
+                            &:first-child{
+                                font-size: 22px !important;
+                                margin-bottom: 30px !important;
+                            }
+                            &:nth-child(2){
+                                font-size: 18px !important;
+                                margin-bottom: 55px !important;
+                            }
+                        }
+                        .group-btn-banner{
+                            display: block !important;
+                            .btn-project{
+                                height: 40px;
+                                text-align: center;
+                                font-size: 17px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                &:first-child{
+                                    margin-right:  0 !important;
+                                    margin-bottom: 20px !important;
+                                }
+                                &.quote{
+                                    background-color:#E78F1C !important;
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+            .slick-dots{
+                bottom: 25px !important;
+            }
+        }
+    }
+}
