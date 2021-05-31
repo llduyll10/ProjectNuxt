@@ -65,7 +65,7 @@
                                         <div class="date ml-20px f-12">Đăng ngày  <span>{{$moment(currentRoom.createdDate).format('DD/MM/YYYY')}}</span></div>
                                     </div>
                                 </div>
-                                <div class="message mt-25px" v-if="listChatDetail">
+                                <div class="message mt-25px" v-if="listChatDetail" :class="arrFile.length ? 'fixHeight' :''">
                                     <div v-for="(item , i ) in listChatDetail" :key="i+20">
                                         <div class="dateMessage">{{$moment(item.createdDate).format('DD/MM/YYYY, hh:mm A')}}</div>
                                         <!-- It me -->
@@ -114,28 +114,29 @@
 
                                     </div>
                                 </div>
-                                <form @submit.prevent="sendMessage" class="wrapFill d-flex" :class="arrFile.length ? 'hidePlace' : ''">
+                                <form @submit.prevent="sendMessage" class="wrapFill d-flex">
                                     <input v-model="objMessage.message" type="text" placeholder="Soạn tin nhắn...">
                                     <img src="@/assets/svg/happy.svg" alt="">
                                     <!-- <img src="@/assets/svg/file.svg" alt=""> -->
                                     <InputFile :accept="accepFile" @input="getFile" :isChat="true" :multiple="true" :label="'Thêm tài liệu'"/>
-                                    <div  v-if="arrFile.length">
-                                        <div  class="listFile">
-                                            <template v-for="(item,idx) in arrFile">
-                                                    <p :key="idx" class="f-11 text-main  mb-5px">
-                                                        <span v-html="returnTypeFile(item.name)"></span>
-                                                        {{item.name}}
-                                                        <span class="cursor-pointer ml-5px" @click="clearFile(item)">
-                                                            <i class="fas fa-times text-red"></i>
-                                                        </span>
-                                                    </p>
 
-                                            </template>
-                                        </div>
-
-                                    </div>
                                     <button  class="sending" type="submit">Gửi tin nhắn</button>
                                 </form>
+                                <div  v-if="arrFile.length">
+                                    <div  class="listFile">
+                                        <template v-for="(item,idx) in arrFile">
+                                                <p :key="idx" class="f-11 text-main mr-10px item-file">
+                                                    <span class="f-11" v-html="returnTypeFile(item.name)"></span>
+                                                    {{item.name}}
+                                                    <span class="cursor-pointer ml-5px" @click="clearFile(item)">
+                                                        <i class="fas fa-times text-red"></i>
+                                                    </span>
+                                                </p>
+
+                                        </template>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
                     </div>
