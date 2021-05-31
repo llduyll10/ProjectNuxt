@@ -64,7 +64,7 @@
                     padding: 0 10px;
                     span {
                         color: $main-color;
-                        font-weight: 700;
+                        font-weight: 600;
                     }
                     &:last-child {
                         border: none;
@@ -72,7 +72,7 @@
                 }
                 .active {
                     color: $main-color;
-                    font-weight: 700;
+                    font-weight: 600;
                 }
             }
         }
@@ -121,12 +121,12 @@
                         position: relative;
                         top: -3px;
                         .name {
-                            font-weight: 700;
+                            font-weight: 600;
                             color: $main-color;
                             display: none;
                         }
                         .company {
-                            font-weight: 700;
+                            font-weight: 600;
                         }
                         .time {
                             font-weight: 500;
@@ -317,7 +317,7 @@
                 padding: 0 18px;
                 border-radius: 5px;
                 color: #fff;
-                font-weight: 700;
+                font-weight: 600;
                 position: relative;
                 top: -1px;
                 border: 0;

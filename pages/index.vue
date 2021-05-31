@@ -87,7 +87,7 @@
     <section class="describe pt-50px pb-50px mt-40px">
       <div class="content-describe container-fluid">
         <div class="row">
-          <div class="col-md-5 col-sm-12 describe-left pr-0">
+          <div class="col-md-6 col-sm-12 describe-left pr-0">
             <p class="slogan">
               <span>Kết nối</span> bạn với nhà thầu <span>uy tín</span> và
               <span>chuyên nghiệp</span> nhất
@@ -159,9 +159,7 @@
               <span>ĐĂNG DỰ ÁN NGAY</span>
             </div>
           </div>
-          <div class="col-md-1">
-
-          </div>
+          
           <div class="col-md-6 col-sm-12 describe-right">
             <div class="row">
               <div class="col-12 mb-50px">
