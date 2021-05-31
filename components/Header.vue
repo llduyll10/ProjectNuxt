@@ -68,8 +68,8 @@
                               <span class="f-13">Đã xác thực</span>
                             </template>
                             <template v-else>
-                              <i class="fas fa-times text-red"></i>
-                              <span class="f-13 text-red">Chưa xác thực</span>
+                              <i class="fas fa-times text-danger f-12"></i>
+                              <span class="f-13 text-danger">Chưa xác thực</span>
                             </template>
                           </b-dropdown-text>
                           <b-dropdown-text class="title pt-16px">
