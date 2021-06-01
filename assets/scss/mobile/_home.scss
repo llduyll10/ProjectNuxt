@@ -44,5 +44,19 @@
                 bottom: 25px !important;
             }
         }
+        .category{
+            padding-top: 25px !important;
+            .category-title{
+                margin-bottom: 15px !important;
+                p{
+                    font-size: 20px !important;
+                    margin-bottom: 10px ;
+                }
+                .line{
+                    width: 20%;
+                }
+            }
+
+        }
     }
 }
