@@ -3,13 +3,13 @@
         padding: 36px 60px 90px 60px;
         .title{
             color: $main-color;
-            font-weight: bold;
+            font-weight: 600;
         }
         .description{
             color: $main-black;
             margin-bottom: 0;
             span{
-                font-weight: bold;
+                font-weight: 600;
                 color: $main-black;
                 &:first-child{
                     color: $main-color;
@@ -39,7 +39,7 @@
                 label{
                     font-size: 13px;
                     color: $main-black;
-                    font-weight: bold;
+                    font-weight: 600;
                 }
                 .btn-upload{
                     cursor: pointer;

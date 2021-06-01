@@ -105,7 +105,7 @@
                     border-radius: 50%;
                     display: flex;
                     justify-content: center;
-                    font-weight: bold;
+                    font-weight: 600;
                     color: $main-color;
                     align-items: center;
                     border: 2px solid $main-color;
@@ -209,7 +209,7 @@
             .title {
                 font-size: 20px;
                 color: #E78F1C;
-                font-weight: bold;
+                font-weight: 600;
             }
             .wrapDate {
                 display: flex;
@@ -232,7 +232,7 @@
                 border-radius: 50%;
                 display: flex;
                 justify-content: center;
-                font-weight: bold;
+                font-weight: 600;
                 color: $main-color;
                 align-items: center;
                 border: 2px solid $main-color;

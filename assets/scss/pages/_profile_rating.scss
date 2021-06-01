@@ -8,7 +8,7 @@
             justify-content: space-between;
             .title{
                 font-size: 16px;
-                font-weight: bold;
+                font-weight: 600;
                 color: $main-black;
             }
         }
@@ -32,7 +32,7 @@
                     p{
                         text-align: center;
                         color: white;
-                        font-weight: bold;
+                        font-weight: 600;
                         margin-bottom: 0;
                     }
                 }
@@ -44,7 +44,7 @@
                     margin-bottom: 0;
                     color: $main-black;
                     font-size: 13px;
-                    font-weight: bold;
+                    font-weight: 600;
                     &.price{
                         color: $main-color;
                     }
