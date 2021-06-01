@@ -47,7 +47,7 @@
         .category{
             padding-top: 25px !important;
             .category-title{
-                margin-bottom: 15px !important;
+                margin-bottom: 25px !important;
                 p{
                     font-size: 20px !important;
                     margin-bottom: 10px ;
@@ -64,10 +64,9 @@
 
         }
         .describe{
-            margin-top: 25px !important;
+            margin-top: 0 !important;
             padding-top: 0 !important;
-            padding-bottom: 0 !important;
-            background-color: #fff;
+            padding-bottom: 50px !important;
             .content-describe{
                 .slogan{
                     display: none;
@@ -81,7 +80,7 @@
                     order: 2;
                     margin-bottom: 0 !important;
                     .block-content{
-                        margin-top:25px !important;
+                        margin-top:35px !important;
                         .block-title{
                             p{
                                 font-size: 15px !important;
@@ -96,11 +95,13 @@
                         width: 100%;
                         font-size: 14px !important;
                         height: 30px !important;
+                        width: 95%;
                     }
                 }
                 .describe-right{
+                    padding-top: 35px !important;
                     .col-12{
-                        margin-bottom: 25px !important;
+                        margin-bottom: 35px !important;
                         &:last-child{
                             margin-bottom: 0 !important;
                         }
@@ -109,10 +110,10 @@
             }
         }
         #special-product{
-            margin-top: 80px !important;
+            margin-top: 35px !important;
             padding-bottom: 0 !important;
             .title{
-                margin-bottom: 20px !important;
+                margin-bottom: 10px !important;
                 p{
                     font-size: 20px !important;
                     margin-bottom: 10px;
@@ -127,13 +128,13 @@
                 }
             }
             .seemore{
-                margin-top: 25px !important;
+                margin-top: 35px !important;
             }
         }
         #company{
             margin-top: 25px ;
             .linepage{
-                display: none;
+                margin-bottom: 35px !important;
             }
             .title{
                 font-size: 20px !important;
@@ -148,8 +149,7 @@
         }
         #market{
             margin-top: 0 !important;
-            padding-top: 25px !important;
-            padding-bottom: 25px !important;
+            padding: 35px 0 !important;
             .title{
                 font-size: 20px !important;
                 margin-bottom: 10px;
@@ -173,7 +173,7 @@
         }
         #block1{
             .text{
-                margin-top: 25px !important;
+                margin-top: 35px !important;
                 margin-left: 25px !important;
                 font-size: 19px;
                 font-weight: normal;
@@ -191,7 +191,7 @@
             }
         }
         #block2{
-            padding: 25px 0 !important;
+            padding: 35px 0 !important;
             .boxinfo{
                 .top{
                     img{
