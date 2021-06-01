@@ -147,7 +147,48 @@
             }
         }
         #market{
-            margin-top: 25px !important;
+            margin-top: 0 !important;
+            padding-top: 25px !important;
+            padding-bottom: 25px !important;
+            .title{
+                font-size: 20px !important;
+                margin-bottom: 10px;
+            }
+            .line{
+                width: 20%;
+            }
+            .nav{
+                margin-top: 25px !important;
+            }
+            .mb{
+                margin-bottom: 16px !important;
+                &:last-child{
+                    margin-bottom: 0 !important;
+                }
+            }
+            .seemore{
+                margin-top: 25px !important;
+                margin-bottom: 0 !important;
+            }
+        }
+        #block1{
+            .text{
+                margin-top: 25px !important;
+                margin-left: 25px !important;
+                font-size: 19px;
+                font-weight: normal;
+                padding-right: 0;
+            }
+            .join{
+                margin-left: 25px;
+                font-size: 13px;
+                font-weight: normal;
+                color: #F2F2F2;
+            }
+            .img-designer{
+                justify-content: flex-end;
+                margin-top: -100px;
+            }
         }
     }
 }
