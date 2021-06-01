@@ -1,0 +1,65 @@
+@media only screen and (max-width: 375px){
+    #footer{
+        padding-top: 25px !important;
+        .links{
+            margin-bottom: 0 ;
+            padding-bottom: 0 !important;
+            &.infor-com{
+                padding-bottom: 25px !important;
+            }
+            .link{
+                img{
+                    margin-bottom: 0 !important;
+                }
+            }
+            .title{
+                padding-bottom: 5px  !important;
+                padding-top: 25px !important;
+                .link{
+                    margin-left: 0;
+
+                }
+            }
+        }
+        .line{
+        }
+        .network{
+            padding: 0 !important;
+            .net-1{
+                .icon{
+                    width: 20px;
+                    height: 20px;
+                    margin-right: 10px !important;
+                    margin-left: 0 !important;
+                }
+            }
+            .net-3{
+                display: none;
+            }
+        }
+        .introduce{
+            .in-top{
+                .icon-payment{
+                    display: none;
+                }
+            }
+            .in-center{
+                .big1,.big2{
+                    width: 30px;
+                    height: 30px;
+                    margin-bottom: 10px;
+                }
+                .in3{
+                    justify-content: space-between !important;
+                    .big3{
+                        height: 60px;
+                    }
+                    .icon-payment{
+                        display: block;
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

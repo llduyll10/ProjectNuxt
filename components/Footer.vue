@@ -2,9 +2,19 @@
     <footer id="footer" class="pt-60px">
         <div class="container-fluid">
             <div class="row links">
-                <div class="col-lg-3 col-md-3 link ">
+                <div class="col-lg-3 link ">
                     <img class="mb-12px" src="@/assets/img/Econslogobluewhite.png" alt="">
-                    <div class="wrap mt-10px">
+                </div>
+            </div>
+            <div class="row links infor-com">
+                 <div class="col-lg-3 col-md-3 col-6 link">
+                    <div class="title">
+                        <!-- <img class="user-icon" src="@/assets/svg/f1.svg"> -->
+                        <div class="link f-14">
+                           Công ty
+                        </div>
+                    </div>
+                    <div class="wrap">
                         <div class="content f-13">
                             Về chúng tôi
                         </div>
@@ -25,14 +35,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-3 link">
+                <div class="col-lg-3 col-md-3 col-6 link">
                     <div class="title">
-                        <img class="user-icon" src="@/assets/svg/f1.svg">
+                        <!-- <img class="user-icon" src="@/assets/svg/f1.svg"> -->
                         <div class="link f-14">
                             HẠNG MỤC
                         </div>
                     </div>
-                    <div class="wrap mt-15px">
+                    <div class="wrap">
                         <div class="content f-13">
                             Thi công xây dựng
                         </div>
@@ -56,14 +66,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-3 link">
+                <div class="col-lg-3 col-md-3 col-6 link">
                     <div class="title">
-                        <img class="user-icon" src="@/assets/svg/f2.svg">
+                        <!-- <img class="user-icon" src="@/assets/svg/f2.svg"> -->
                         <div class="link f-14">
                             Hướng dẫn sử dụng
                         </div>
                     </div>
-                    <div class="wrap mt-15px">
+                    <div class="wrap">
                         <div class="content f-13">
                             Hướng dẫn xác thực tài khoản
                         </div>
@@ -87,14 +97,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-3 link">
+                <div class="col-lg-3 col-md-3 col-6 link">
                     <div class="title">
-                        <img class="user-icon" src="@/assets/svg/f3.svg">
+                        <!-- <img class="user-icon" src="@/assets/svg/f3.svg"> -->
                         <div class="link f-14">
                             Đăng kí chào giá
                         </div>
                     </div>
-                    <div class="wrap mt-15px">
+                    <div class="wrap">
                         <div class="content f-13">
                             Hướng dẫn tạo hồ sơ
                         </div>
@@ -123,18 +133,19 @@
             <div class="line"></div>
 
             <div class="row network">
-                <div class="col-lg-3 net-1">
+                <div class="col-lg-3 col-6 net-1">
                     <img src="@/assets/svg/icon-user.svg" class="icon" alt="">
                     <div class="phone">
                         1-800-1234-567
                     </div>
                 </div>
-                <div class="col-lg-3 net-2">
+                <div class="col-lg-3 col-6 net-2">
                     <div class="contact">
                         <!-- <img src="@/assets/svg/icon-face.svg" class="icon" alt=""> -->
-                        <img src="@/assets/svg/icon-p.svg" alt="">
+                        <img src="@/assets/svg/icon-fb.svg" alt="">
                         <img src="@/assets/svg/icon-likedin.svg" alt="">
                         <img src="@/assets/svg/icon-google.svg" alt="">
+                        <img src="@/assets/svg/icon-p.svg" alt="">
                         <img src="@/assets/svg/icon-youtobe.svg" alt="">
                     </div>
                 </div>
@@ -154,7 +165,7 @@
                     <div class="name">
                         CÔNG TY CỔ PHẦN EPOINT
                     </div>
-                    <div class="icon">
+                    <div class="icon icon-payment">
                         <img src="@/assets/svg/Card.svg" alt="">
                         <img src="@/assets/svg/visa.svg" alt="">
                         <img src="@/assets/svg/pay.svg" alt="">
@@ -183,6 +194,11 @@
                             </div>
                     </div>
                     <div class="col-lg-6 in3 d-flex justify-content-end">
+                        <div class="icon icon-payment">
+                            <img src="@/assets/svg/Card.svg" alt="">
+                            <img src="@/assets/svg/visa.svg" alt="">
+                            <img src="@/assets/svg/pay.svg" alt="">
+                        </div>
                         <img class="big3" src="@/assets/svg/big3.svg" alt="">
                     </div>
                 </div>
