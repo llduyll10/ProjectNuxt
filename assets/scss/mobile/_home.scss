@@ -79,6 +79,7 @@
                 }
                 .describe-left{
                     order: 2;
+                    margin-bottom: 0 !important;
                     .block-content{
                         margin-top:25px !important;
                         .block-title{
@@ -105,6 +106,43 @@
                         }
                     }
                 }
+            }
+        }
+        #special-product{
+            margin-top: 80px !important;
+            padding-bottom: 0 !important;
+            .title{
+                margin-bottom: 20px !important;
+                p{
+                    font-size: 20px !important;
+                    margin-bottom: 10px;
+                }
+                .line{
+                    width: 20%;
+                }
+            }
+            .list-item{
+                .card-item{
+                    padding-bottom: 0 !important;
+                }
+            }
+            .seemore{
+                margin-top: 25px !important;
+            }
+        }
+        #company{
+            margin-top: 25px ;
+            .linepage{
+                display: none;
+            }
+            .title{
+                font-size: 20px !important;
+            }
+            .line{
+                width: 20%;
+            }
+            .all{
+                margin-top: 25px !important;
             }
         }
     }
