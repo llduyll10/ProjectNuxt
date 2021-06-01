@@ -19,7 +19,7 @@
                 border-radius: 50%;
                 display: flex;
                 justify-content: center;
-                font-weight: bold;
+                font-weight: 600;
                 color: $main-color;
                 align-items: center;
                 border: 2px solid $main-color;
@@ -53,7 +53,7 @@
                 background: $main-color;
                 border-radius: 5px;
                 font-size: 12px;
-                font-weight: bold;
+                font-weight: 600;
                 padding: 0;
                 color: $text-white;
                 &.logoutBtn {
@@ -81,7 +81,7 @@
                 }
                 &.activeTab > div {
                     color: $main-color;
-                    font-weight: bold;
+                    font-weight: 600;
                     height: 20px;
                     border-bottom: 1px solid $main-color;
                 }
@@ -91,7 +91,7 @@
             display: flex;
             text-align: center;
             font-size: 12px;
-            font-weight: bold;
+            font-weight: 600;
             .customer{
                 cursor: pointer;
                 color: #F2F2F2;
@@ -122,7 +122,7 @@
         }
         .fieldLabel {
             width: 180px;
-            font-weight: bold;
+            font-weight: 600;
             font-size: 13px;
             margin-right: 20px;
             span.info {
@@ -249,7 +249,7 @@ button.btn-main {
     background: $main-color;
     border-radius: 5px;
     font-size: 12px;
-    font-weight: bold;
+    font-weight: 600;
     padding: 0 8px;
     color: $text-white;
     img {
@@ -262,6 +262,6 @@ button.btn-main {
     &.btn-lg {
         height: 40px;
         font-size: 16px;
-        font-weight: bold;
+        font-weight: 600;
     }
 }

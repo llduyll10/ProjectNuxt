@@ -90,7 +90,7 @@
     .category {
         .category-title {
             text-align: center;
-            font-weight: bold;
+            font-weight: 600;
             line-height: 31px;
             color: $main-color;
             .line {
@@ -127,7 +127,7 @@
                         justify-content: center;
                         p {
                             margin-bottom: 0;
-                            font-weight: bold;
+                            font-weight: 600;
                         }
                         img {
                             width: 24px;
@@ -178,7 +178,7 @@
                             margin-left: 15px;
                             font-size: 19px;
                             color: $main-color;
-                            font-weight: bold;
+                            font-weight: 600;
                         }
                     }
                     .content {
@@ -187,7 +187,7 @@
                             font-size: 15px;
                             color: $main-black;
                             span {
-                                font-weight: bold;
+                                font-weight: 600;
                                 color: $main-black;
                             }
                         }
@@ -195,7 +195,7 @@
                 }
                 .btn-registration {
                     cursor: pointer;
-                    font-weight: bold;
+                    font-weight: 600;
                     width: 200px;
                     height: 34px;
                     padding-top: 5px;
@@ -223,7 +223,7 @@
         }
         .title {
             text-align: center;
-            font-weight: bold;
+            font-weight: 600;
             line-height: 31px;
             color: $main-color;
             .line {
