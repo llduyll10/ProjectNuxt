@@ -2,7 +2,7 @@
     background: rgba(1, 25, 67, 0.87);
     height: auto;
     .links {
-        padding-bottom: 33px;
+        padding-bottom: 30px;
         .link {
             .content {
                 font-style: normal;
@@ -44,6 +44,8 @@
             .icon {
                 margin: 0 12px 0 2px;
                 line-height: 46px;
+                width: 16px;
+                height: 20px;
             }
             .phone {
                 color: #F2C94C;
@@ -68,7 +70,7 @@
         }
     }
     .introduce {
-        padding: 54px 0 22px;
+        padding: 40px 0 40px;
         .in-top {
             display: flex;
             justify-content: space-between;
@@ -130,14 +132,25 @@
                 display: flex;
                 padding: 0 20px;
                 text-align: center;
-                border-right: 1px solid #ADABAB;
                 height: 14px;
+                position: relative;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    right: -3px;
+                    top: 2px;
+                    width: 1px;
+                    height: 14px;
+                    background-color:  rgba(130, 130, 130, 0.5);
+                }
                 &:first-child{
-                    padding-left: 0 !important;
+                    padding-left: 25px !important;
                 }
             }
             li:last-child {
-                border: none;
+                &::after{
+                    width: 0px;
+                }
             }
         }
     }
