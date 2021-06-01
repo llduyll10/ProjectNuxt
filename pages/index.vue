@@ -172,7 +172,7 @@
                 <img class="pl-15px" src="@/assets/img/describe-1.png" />
               </div>
               <div class="col-12">
-                <img class="pl-15px" src="@/assets/img/describe-2.png" />
+                <img class="pl-15px mobile" src="@/assets/img/describe-2.png" />
               </div>
             </div>
           </div>
