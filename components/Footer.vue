@@ -206,11 +206,11 @@
             <div class="list mt-60px pb-25px">
                 <ul class="list-item">
                     <li>Điều khoản sử dụng</li>
-                    <li>Điều khoản thanh toán</li>
+                    <li class="mobile">Điều khoản thanh toán</li>
                     <li>Điều khoản khách hàng</li>
-                    <li>Điều khoản chào giá</li>
+                    <li class="mobile">Điều khoản chào giá</li>
                     <li>Điều khoản thanh toán</li>
-                    <li>Chính sách bảo mật</li>
+                    <li class="mobile">Chính sách bảo mật</li>
                     <li>Quy chế hoạt động</li>
                 </ul>
             </div>
