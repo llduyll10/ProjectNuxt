@@ -190,5 +190,24 @@
                 margin-top: -100px;
             }
         }
+        #block2{
+            padding: 25px 0 !important;
+            .boxinfo{
+                .top{
+                    img{
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                    }
+                }
+                .bot{
+                    padding: 15px !important;
+                    font-size: 12px !important;
+                    p{
+                        margin-bottom: 0 ;
+                    }
+                }
+            }
+        }
     }
 }
