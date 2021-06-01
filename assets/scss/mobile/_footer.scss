@@ -77,6 +77,9 @@
                     &::after {
                         right: 0 !important;
                     }
+                    &:first-child{
+                        padding-left: 0 !important;
+                    }
                     &:last-child{
                         &::after{
                             left: 172px !important;

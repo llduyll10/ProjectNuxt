@@ -4,10 +4,14 @@
     .links {
         padding-bottom: 30px;
         .link {
+            img{
+                height: 41px;
+                width: auto;
+            }
             .content {
                 font-style: normal;
                 font-weight: 500;
-                line-height: 29px;
+                line-height: 33px;
                 letter-spacing: 0em;
                 text-align: left;
                 color: #ADABAB;
