@@ -287,6 +287,11 @@
                         p {
                             color: $main-color;
                             font-weight: 600;
+                            display: inline-block;
+                            width: 100%;
+                            white-space: nowrap;
+                            overflow: hidden !important;
+                            text-overflow: ellipsis;
                         }
                         .group-infor {
                             justify-content: space-between;
