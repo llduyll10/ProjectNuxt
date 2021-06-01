@@ -159,9 +159,15 @@
               <span>ĐĂNG DỰ ÁN NGAY</span>
             </div>
           </div>
-          
+
           <div class="col-md-6 col-sm-12 describe-right">
             <div class="row">
+              <div class="col-12">
+                <p class="slogan slogan-mobile">
+                  <span>Kết nối</span> bạn với nhà thầu <span>uy tín</span> và
+                  <span>chuyên nghiệp</span> nhất
+                </p>
+              </div>
               <div class="col-12 mb-50px">
                 <img class="pl-15px" src="@/assets/img/describe-1.png" />
               </div>

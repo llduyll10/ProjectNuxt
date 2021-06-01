@@ -56,7 +56,56 @@
                     width: 20%;
                 }
             }
+            .caterogry-list{
+                .cat-item{
+                    margin-top: 15px !important;
+                }
+            }
 
+        }
+        .describe{
+            margin-top: 25px !important;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+            background-color: #fff;
+            .content-describe{
+                .slogan{
+                    display: none;
+                    font-size: 20px ;
+                    &.slogan-mobile{
+                        display: block;
+                        padding-left: 15px;
+                    }
+                }
+                .describe-left{
+                    order: 2;
+                    .block-content{
+                        margin-top:25px !important;
+                        .block-title{
+                            p{
+                                font-size: 15px !important;
+                            }
+                        }
+                        .content{
+                            font-size: 14px !important;
+                        }
+                    }
+                    .btn-registration{
+                        margin-top: 25px !important;
+                        width: 100%;
+                        font-size: 14px !important;
+                        height: 30px !important;
+                    }
+                }
+                .describe-right{
+                    .col-12{
+                        margin-bottom: 25px !important;
+                        &:last-child{
+                            margin-bottom: 0 !important;
+                        }
+                    }
+                }
+            }
         }
     }
 }

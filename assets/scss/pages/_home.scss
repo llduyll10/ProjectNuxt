@@ -154,16 +154,19 @@
         height: auto;
         width: 100%;
         .content-describe {
-            .describe-left {
-                .slogan {
-                    font-size: 30px;
-                    font-weight: 400;
-                    color: $main-color;
-                    margin-bottom: 0;
-                    span {
-                        font-weight: 600;
-                    }
+            .slogan {
+                font-size: 30px;
+                font-weight: 400;
+                color: $main-color;
+                margin-bottom: 0;
+                span {
+                    font-weight: 600;
                 }
+                &.slogan-mobile{
+                    display: none;
+                }
+            }
+            .describe-left {
                 .block-content {
                     .block-title {
                         img {
