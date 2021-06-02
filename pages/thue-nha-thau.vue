@@ -116,13 +116,13 @@
                                                         </div>
                                                         <div class="icon">
                                                             <img src="@/assets/svg/icon-location.svg" alt="">
-                                                            <span class="name f-11">{{item.province}}</span>
+                                                            <span class="name f-11 text-main">{{item.province}}</span>
                                                         </div>
                                                     </div>
                                                     <div class="description f-13">{{item.introduce}}</div>
                                                     <div class="group">
                                                         <template v-if="item.category">
-                                                            <template v-for="cate in mapCategory(item.category)">
+                                                            <template v-for="cate in mapCategory(item.category.slice(0,3))">
                                                                 <span
                                                                     :key="cate.id"
                                                                     class="px-8px badge py-5px text-12 custom-bage mr-8px mb-8px"
