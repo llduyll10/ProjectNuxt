@@ -64,7 +64,7 @@
 
             <div class="editRow mb-15px">
                 <div class="fieldLabel">
-                    Giới thiệu về năng lực<span class="dot">*</span>
+                    Giới thiệu về năng lực
                 </div>
                 <div class="fieldInput">
                     <div class="form-group mb-0">

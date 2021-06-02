@@ -24,6 +24,9 @@
                 align-items: baseline;
                 line-height: 25px;
                 font-weight: 600;
+                &:hover{
+                    color: $main-color;
+                }
                 img {
                     position: relative;
                     top: 1px;
