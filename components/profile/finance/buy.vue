@@ -88,8 +88,8 @@
                 <div class="paymentItem">
                     <div class="flex-center flex-column">
                         <div class="payIcon">
-                            <img v-if="item.icon === 'card'" src="@/assets/img/mastercard.png" alt="">
-                            <img v-if="item.icon === 'vn_card'" src="@/assets/img/visa.png" alt="">
+                            <img v-if="item.icon === 'card' || item.icon === 'vn_card' " src="@/assets/img/mastercard.png" alt="">
+                            <img v-if="item.icon === 'card' || item.icon === 'vn_card' " src="@/assets/img/visa.png" alt="">
 
                             <img v-if="item.icon === 'zalo'" src="@/assets/svg/icon-zalopay.svg" alt="">
 
