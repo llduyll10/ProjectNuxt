@@ -11,7 +11,10 @@
 
         <div class="mb-15px">
             <div class="tokenPacksWrap">
-                <div @click="activePackage(i)" class="tokenItem cursor-pointer" :class="item.should ? 'shouldBuy' : ''" v-for="(item, i) in tokenPacks" :key="i">
+                <div @click="activePackage(i)"
+                        class="tokenItem cursor-pointer"
+                        :class="[item.should ? 'shouldBuy' : '', activeCombo == i ? 'activeCombo' : ''  ]"
+                        v-for="(item, i) in tokenPacks" :key="i">
                     <div class="tokenItemTop">
                         <div v-if="item.should" class="shouldInfo">
                             Gói nên mua
@@ -32,8 +35,8 @@
                             <span v-if="item.save">Tiết kiệm {{item.save}}%</span>
                         </div>
                         <div class="buyBtn">
-                            <button :disabled="item.should" type="button" class="btn btn-main">
-                                Mua ngay
+                            <button :disabled="activeCombo == i" type="button" class="btn btn-main">
+                                {{activeCombo == i ? 'Đang chọn' : 'Mua ngay'}}
                             </button>
                         </div>
                     </div>
@@ -168,7 +171,8 @@ export default {
                 text: 'Thanh toán qua MOMO',
                 subText: ''
             }],
-            objSelect:{}
+            objSelect:{},
+            activeCombo:null
         }
     },
     mounted(){
@@ -188,8 +192,9 @@ export default {
                 })
         },
         activePackage(idx){
-            this.tokenPacks.forEach(pack => pack.should = false)
-            this.tokenPacks[idx].should = true
+            // this.tokenPacks.forEach(pack => pack.should = false)
+            // this.tokenPacks[idx].should = true
+            this.activeCombo = idx
             this.objSelect = {
                 coin: this.tokenPacks[idx].coin,
                 price: this.tokenPacks[idx].price

@@ -8,6 +8,13 @@
         text-align: center;
         background: transparent;
         margin-right: 10px;
+        &.activeCombo{
+            .tokenItemTop{
+                .tokenVal,.priceVal{
+                    background-color: $main-color  !important;
+                }
+            }
+        }
         .tokenItemTop {
             border-radius: 5px 5px 0px 0px;
             .shouldInfo {
