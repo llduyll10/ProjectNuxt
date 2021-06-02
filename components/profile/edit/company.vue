@@ -62,7 +62,7 @@
                 </div>
             </div>
 
-            <div class="editRow mb-15px">
+            <div class="editRow mb-25px">
                 <div class="fieldLabel">
                     Giới thiệu về năng lực
                 </div>
