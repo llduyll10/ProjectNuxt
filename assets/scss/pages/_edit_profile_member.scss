@@ -54,7 +54,7 @@
                 background: $main-color;
                 border-radius: 5px;
                 font-size: 12px;
-                font-weight: 600;
+                font-weight: 500;
                 padding: 0;
                 color: $text-white;
                 &.logoutBtn {
@@ -93,7 +93,7 @@
             display: flex;
             text-align: center;
             font-size: 12px;
-            font-weight: 600;
+            font-weight: 500;
             .customer{
                 cursor: pointer;
                 color: #F2F2F2;
@@ -252,7 +252,7 @@ button.btn-main {
     background: $main-color;
     border-radius: 5px;
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 500;
     padding: 0 8px;
     color: $text-white;
     img {
