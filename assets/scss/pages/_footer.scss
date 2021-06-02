@@ -45,6 +45,7 @@
         .net-1 {
             display: flex;
             align-items: center;
+            padding-right: 0;
             .icon {
                 margin: 0 12px 0 2px;
                 line-height: 46px;
@@ -132,9 +133,9 @@
                 line-height: 17px;
                 color: #ADABAB;
                 font-weight: 500;
-                font-size: 13px;
+                font-size: 12px;
                 display: flex;
-                padding: 0 20px;
+                padding: 0 15px;
                 text-align: center;
                 height: 14px;
                 position: relative;
