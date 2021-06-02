@@ -16,6 +16,7 @@
                             :value="objWorking.accountType"
                             v-model="objWorking.accountType"
                             placeholder="Loại tài khoản"
+                            :clearable=false
                         />
                     </div>
                 </div>
@@ -23,7 +24,7 @@
 
             <div class="editRow mb-15px">
                 <div class="fieldLabel">
-                     Lĩnh vực hoạt động <span class="dot">*</span>
+                     Lĩnh vực hoạt động
                      <br/>
                      <span class="info">(Chọn tối đa 5)</span>
                 </div>
@@ -38,6 +39,7 @@
                             v-model="objWorking.category"
                             :multiple="true"
                             placeholder="Lĩnh vực hoạt động"
+                            :clearable=false
                         />
                     </div>
                 </div>
@@ -45,7 +47,7 @@
 
             <div class="editRow mb-15px">
                 <div class="fieldLabel">
-                    Giới thiệu về công ty/cá nhân<span class="dot">*</span>
+                    Giới thiệu về công ty/cá nhân
                 </div>
                 <div class="fieldInput">
                     <div class="form-group mb-0">

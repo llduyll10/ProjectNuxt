@@ -10,7 +10,7 @@
                 {{label}}
             </template>
         </label>
-       <span v-if="!isChat" class="text-main f-11">
+       <span v-if="!isChat" class="text-main f-11 font-italic">
            <template v-for="(item,idx) in accept">
                {{item}} <span :key="idx" v-if="(idx+1) < accept.length">,</span>
            </template>

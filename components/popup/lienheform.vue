@@ -15,6 +15,7 @@
                         class="pl-0 pr-0 col-md-9 col-sm-12"
                         :options="options"
                         :disable-branch-nodes="true"
+                        :clearable=false
                         :value="objResearch.category"
                         v-model="objResearch.category"
                         :multiple="true"

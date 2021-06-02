@@ -35,7 +35,9 @@
           </div>
         </div>
 
-        <div class="editRow mb-15px form-group row">
+        <div class="editRow  form-group row"
+            :class="(objProject.photos && objProject.photos.length || arrBase64.length) ? 'mb-15px' :'mb-25px'"
+        >
           <div class="fieldLabel fw-600 f-13 col-md-3 col-sm-12">Mô tả chi tiết<span style="color:red">*</span></div>
           <div class="fieldInput col-md-9 col-sm-12">
             <div class="form-group mb-0">
@@ -49,7 +51,7 @@
             </div>
           </div>
         </div>
-        <div v-if="objProject.photos && objProject.photos.length || arrBase64.length" class="editRow mb-15px form-group row">
+        <div v-if="objProject.photos && objProject.photos.length || arrBase64.length" class="editRow mb-10px form-group row">
           <div class="fieldLabel fw-600 f-13 col-md-3 col-sm-12">Hình ảnh dự án<span style="color:red">*</span></div>
           <div class="fieldInput col-md-9 col-sm-12">
               <div class="row pl-15px">

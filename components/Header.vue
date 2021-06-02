@@ -311,6 +311,7 @@
                     :options="optionsType"
                     :value="objUser.accountType"
                     v-model="objUser.accountType"
+                    :clearable=false
                     placeholder="Loại tài khoản"
                     required
                 />

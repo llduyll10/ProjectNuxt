@@ -90,6 +90,7 @@
                                         :value="objProject.address"
                                         v-model="objProject.address"
                                         placeholder="Tỉnh thành"
+                                        :clearable=false
                                 />
                                 <div class="button" @click="searchProject()">Tìm kiếm</div>
                             </div>

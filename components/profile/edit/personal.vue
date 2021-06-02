@@ -134,6 +134,7 @@
                             :value="objInfor.province"
                             v-model="objInfor.province"
                             placeholder="Tỉnh thành"
+                            :clearable=false
                         />
                     </div>
                 </div>

@@ -125,6 +125,7 @@
                                         :value="objProject.address"
                                         v-model="objProject.address"
                                         placeholder="Tỉnh thành"
+                                        :clearable=false
                                 />
                                 <treeselect
                                         class="search-center range-time"
@@ -132,6 +133,7 @@
                                         :value="objProject.rangeDate"
                                         v-model="objProject.rangeDate"
                                         placeholder="Thời gian"
+                                        :clearable=false
                                 />
                                 <div class="button" @click="searchProject()">Tìm kiếm</div>
                             </div>

@@ -23,6 +23,7 @@
                                 :multiple="true"
                                 required
                                 placeholder="Chọn dịch vụ"
+                                :clearable=false
                             />
 
                         </div>
@@ -108,6 +109,7 @@
                                 v-model="objProject.address"
                                 placeholder="Tỉnh thành"
                                 required
+                                :clearable=false
                             />
                         </div>
                         <div class="form-group row align-items-center">
