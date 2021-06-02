@@ -12,7 +12,9 @@
             <div class="cover-bage d-flex mb-15px">
                 <template v-for="(item) in listCategory">
                     <h5 :key="item.id" class="mb-0px">
-                        <span class="badge badge-secondary f-12 px-10px py-5px">
+                        <span class="badge badge-secondary f-12 px-10px py-5px"
+                             :class="getClassBageCategory(mapValueFromCategory(item.id))"
+                        >
                             {{item.label}}
                         </span>
                     </h5>
