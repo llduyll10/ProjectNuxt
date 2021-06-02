@@ -166,7 +166,7 @@
                                                         </div>
                                                         <div class="icon">
                                                             <img src="@/assets/svg/icon-location.svg" alt="">
-                                                            <span class="name f-11">{{item.address}}</span>
+                                                            <span class="name f-11 text-main">{{item.address}}</span>
                                                         </div>
                                                     </div>
                                                     <div class="description padding-right f-13">{{item.description}}</div>
