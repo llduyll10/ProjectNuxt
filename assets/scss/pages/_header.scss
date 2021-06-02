@@ -25,6 +25,7 @@
       cursor: pointer;
       height: 25px;
       position: relative;
+
      &::after {
          content: '';
          position: absolute;
@@ -55,6 +56,9 @@
           font-weight: 600;
           line-height: 17px;
           color: rgba(0, 0, 0, 0.84);
+          &:hover{
+            color: $main-color !important;
+        }
       }
       a{
           padding: 0;
@@ -67,7 +71,7 @@
       height: 30px;
       padding: 2px 15px 0 16px;
       text-align: center;
-      background: #198ac6;
+      background: #209cd7;
       color: #f2f2f2;
       border-radius: 5px;
       outline: none;
@@ -186,7 +190,7 @@
                         border-left: 1px solid rgba(130, 130, 130, 0.5);
                         color: rgba(0, 0, 0, 0.84);
                         span{
-                            color: #198AC6;;
+                            color: #209cd7;;
                         }
                     }
                 }
