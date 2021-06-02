@@ -149,7 +149,7 @@
                                                     </div>
                                                     <div class="st f-13">(<span>4</span> đánh giá)</div>
                                                 </div>
-                                                <div class="contact"  v-if="$auth.user && $auth.user._id != item._id">
+                                            <div class="contact"  v-if="$auth.user && $auth.user._id != item._id">
                                                     <button class="phone cursor-pointer" @click="openLienHe(item)">
                                                         <img class="pb-3px" src="@/assets/svg/phone.svg" alt="">
                                                         <span>Liên hệ trực tiếp</span>

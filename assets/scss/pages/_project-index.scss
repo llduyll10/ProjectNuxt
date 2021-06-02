@@ -262,7 +262,8 @@
                 background: #209cd7;
                 border-radius: 5px;
                 color: #fff;
-                font-size: 13px;
+                font-size: 12px;
+                font-weight: 500;
                 line-height: 21px;
                 text-align: center;
             }
@@ -314,7 +315,6 @@
                             }
                             .icon {
                                 display: flex;
-                                line-height: 15px;
                                 align-items: baseline;
                                 .name {
                                     font-weight: 500;
@@ -420,6 +420,7 @@
                     }
                 }
                 .rate {
+                    width: 180px;
                     .star {
                         display: flex;
                         align-items: center;
