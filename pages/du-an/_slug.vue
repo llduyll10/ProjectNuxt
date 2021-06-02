@@ -103,54 +103,54 @@
                 Thông tin dự án
               </h3>
               <hr class="hr my-15px" />
-              <div class="box d-flex pb-8px">
+              <div class="box d-flex pb-12px">
                 <div class="text-12 col-6 px-0 color-grey">
                   ID dự án
                 </div>
-                <div class="text-13 main-color col-6 px-0 fw-600">
+                <div class="text-13 main-color col-6 px-0 pl-30px fw-600">
                   {{detailProject.number}}
                 </div>
               </div>
-              <div class="box d-flex py-8px">
+              <div class="box d-flex py-12px">
                 <div class="text-12 col-6 px-0 color-grey">
                   Ngân sách
                 </div>
-                <div v-if="detailProject.budget" class="text-13 col-6 px-0 main-black">
+                <div v-if="detailProject.budget" class="text-13 col-6 px-0 pl-30px main-black">
                   {{formatNamePrice(detailProject.budget)}}
                 </div>
               </div>
-              <div class="box d-flex py-8px">
+              <div class="box d-flex py-12px">
                 <div class="text-12 col-6 px-0 color-grey">
                   Ngày đăng
                 </div>
-                <div v-if="detailProject.createdDate" class="text-13 col-6 px-0 main-black">
+                <div v-if="detailProject.createdDate" class="text-13 col-6 px-0 pl-30px main-black">
                   {{checkIsToday(detailProject.createdDate)}}
                 </div>
               </div>
-              <div class="box d-flex py-8px">
+              <div class="box d-flex py-12px">
                 <div class="text-12 col-6 px-0 color-grey">
                   Hạn chót chào giá
                 </div>
                 <div v-if="detailProject.dueDate"
-                    class="text-13 main-color px-0 fw-600"
+                    class="text-13 main-color px-0 pl-30px fw-600"
                     :class="checkStatusDueDate(detailProject.dueDate) ? 'text-red' :'' "
                   >
                   {{checkDueDate(detailProject.dueDate)}}
                 </div>
               </div>
-              <div class="box d-flex py-8px">
+              <div class="box d-flex py-12px">
                 <div class="text-12 col-6 px-0 color-grey">
                   Địa điểm
                 </div>
-                <div class="text-13 px-0 main-black">
+                <div class="text-13 px-0 pl-30px main-black">
                   {{detailProject.address}}
                 </div>
               </div>
-              <div class="box d-flex py-8px border-0">
+              <div class="box d-flex py-12px border-0">
                 <div class="text-12 col-6 px-0 color-grey">
                   Phí chào giá
                 </div>
-                <div class="text-13 main-color px-0 fw-600">
+                <div class="text-13 main-color px-0 pl-30px fw-600">
                   3 Tokens
                 </div>
               </div>
