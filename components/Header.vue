@@ -16,7 +16,7 @@
           <b-navbar-nav>
                <template v-for="(item, index) in objMenu">
                     <b-nav-item :to="'/'+item.link" :key="index" class="sub-menu px-36px">
-                        <span  class="f-13">{{item.name}}</span>
+                        <span>{{item.name}}</span>
                     </b-nav-item>
                 </template>
           </b-navbar-nav>
@@ -52,7 +52,7 @@
                               </span>
                               <div class="height"></div>
                               <div class="cover-infor">
-                                <p class="f-13">
+                                <p class="f-12">
                                   <span class="text-main">{{$auth.user.coin || 0}}</span>
                                   <span class="text-black">Tokens</span>
                                   <i class="fas fa-caret-down ml-5px f-16 text-black"></i>
@@ -105,12 +105,12 @@
                 <template v-else>
                   <template v-for="(item, index) in objBtn">
                       <b-nav-item :key="index" class="sub-menu menu-right px-20px mt-10px d-none d-lg-block" @click="item.methods">
-                          <span class="f-13" >{{item.name}}</span>
+                          <span class="f-12" >{{item.name}}</span>
                       </b-nav-item>
                   </template>
                   <b-nav-item class="cover-btn d-none d-lg-block" @click="openModalLogin">
                     <div  class="btn-findjob" >
-                         <span class="f-13">Đăng Việc</span>
+                         <span class="f-12 fw-500">Đăng Việc</span>
                     </div>
                   </b-nav-item>
                  </template>
@@ -126,20 +126,20 @@
     <div v-if="$auth.loggedIn" class="navbar-login">
       <div class="container-fluid">
         <div class="cover-navbar-login">
-          <p class="f-13 mr-30px">
+          <p class="f-12 mr-30px fw-500">
           <b-link :to="'/member/quan-ly-du-an?tab=1'" class="text-white">
             <img src="@/assets/img/my-project.png" alt="">
             Dự Án Của Tôi
           </b-link>
           </p>
-          <p class="f-13 mr-30px">
+          <p class="f-12 mr-30px fw-500">
             <b-link :to="'/member/quan-ly-tin-nhan'" class="text-white">
               <img class="icon-email" src="@/assets/img/email.png" alt="">
               Hộp Thư <span>(1)</span>
             </b-link>
           </p>
           <b-link class="btn-findjob" :to="'/member/dang-viec'">
-            <span class="f-13 fw-600">Đăng Việc</span>
+            <span class="f-12 fw-500">Đăng Việc</span>
           </b-link>
         </div>
       </div>

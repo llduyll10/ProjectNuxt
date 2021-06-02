@@ -25,12 +25,13 @@
       cursor: pointer;
       height: 25px;
       position: relative;
+      font-size: 12px !important;
 
      &::after {
          content: '';
          position: absolute;
          right: 0;
-         top: 5px;
+         top: 2px;
          width: 1px;
          height: 14px;
          background-color:  rgba(130, 130, 130, 0.5);
