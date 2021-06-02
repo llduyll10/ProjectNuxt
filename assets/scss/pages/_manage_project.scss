@@ -78,22 +78,41 @@
                         padding-top: 10px;
                         padding-bottom: 10px;
                         position: relative;
-                        padding-left: 30px;
                         width: 170px;
+                        text-align: center;
+                        padding-left: 0 !important;
                         &::after{
                             content: '';
                             position: absolute;
-                            right: 5px;
+                            right: 0;
                             top: 12px;
                             width: 1px;
                             height: 16px;
                             background-color:  rgba(130, 130, 130, 0.5);
                         }
+                        &:first-child{
+                            padding-left: 10px !important;
+                        }
                         &:last-child{
                             width: auto;
+                            text-align: left;
+                            padding-left: 30px !important;
                             &::after{
                                 width: 0;
                             }
+                        }
+                    }
+                }
+            }
+            tbody{
+                tr{
+                    td{
+                        text-align: center;
+                        &:first-child{
+                            padding-left: 0;
+                        }
+                        &:last-child{
+                            text-align: left;
                         }
                     }
                 }
