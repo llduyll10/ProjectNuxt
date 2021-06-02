@@ -138,7 +138,7 @@
                             <div class="line"></div>
                             <!-- list off member -->
                             <div class="center mb-20px" v-for="(item, idx) in listProject" :key="idx">
-                                <div class="boxinfo">
+                                <div class="boxinfo ">
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12 col-sm-12">
                                             <div class="introduce">
@@ -148,7 +148,7 @@
                                                     }"
                                                 >
                                                 </div>
-                                                <div class="content nopadding">
+                                                <div class="content nopadding rent">
                                                     <div class="title d-flex">
                                                         <div class="d-flex title-icon">
                                                             <img width="20px" height="20px"

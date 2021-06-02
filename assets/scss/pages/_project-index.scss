@@ -283,6 +283,9 @@
                         flex: 1;
                         padding-right: 50px;
                         max-width: 530px;
+                        &.rent{
+                            max-width: 100% !important;
+                        }
                         .title {
                             line-height: 24px;
                             display: flex;
