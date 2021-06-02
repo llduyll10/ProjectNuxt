@@ -67,6 +67,38 @@
         }
     }
     .table-custom{
+        &.table-history{
+            thead{
+                background: rgba(229, 229, 229, 0.8);
+                tr{
+                    th{
+                        color: $main-black;
+                        font-size: 13px;
+                        font-weight: 600;
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                        position: relative;
+                        padding-left: 30px;
+                        width: 170px;
+                        &::after{
+                            content: '';
+                            position: absolute;
+                            right: 5px;
+                            top: 12px;
+                            width: 1px;
+                            height: 16px;
+                            background-color:  rgba(130, 130, 130, 0.5);
+                        }
+                        &:last-child{
+                            width: auto;
+                            &::after{
+                                width: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
         thead{
             background: rgba(229, 229, 229, 0.8);
             tr{
@@ -76,6 +108,8 @@
                     font-weight: 600;
                     padding-top: 10px;
                     padding-bottom: 10px;
+                    position: relative;
+                    padding-left: 30px;
                     &:first-child{
                         padding-left: 37px;
                     }

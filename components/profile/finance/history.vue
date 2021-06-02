@@ -29,21 +29,21 @@
             <span class="text-red f-bold f-14">Tháng {{objSearch.month}}/{{objSearch.year}}</span>
         </div>
 
-        <table class="table table-custom">
+        <table class="table table-custom table-history">
             <thead>
                 <tr>
-                    <th scope="col">Mã số hoá đơn</th>
-                    <th scope="col">Ngày giao dịch</th>
-                    <th scope="col">Số tiền giao dịch</th>
-                    <th scope="col">Nội dung giao dịch</th>
+                    <th scope="col text-center" >Mã số hoá đơn</th>
+                    <th scope="col text-center pl-30px" >Ngày giao dịch</th>
+                    <th scope="col text-center" >Số tiền giao dịch</th>
+                    <th scope="col ">Nội dung giao dịch</th>
                 </tr>
             </thead>
             <tbody>
                 <tr class="f-12 text-gray" v-for="(item,idx) in listHistory" :key="idx">
-                    <td class="text-main">{{item.number}}</td>
-                    <td>{{$moment(item.createdDate).format('DD/MM/YYYY')}}</td>
-                    <td>{{formatVnd(item.price)}} VNĐ</td>
-                    <td>
+                    <td class="text-main text-center">{{item.number}}</td>
+                    <td class="text-center">{{$moment(item.createdDate).format('DD/MM/YYYY')}}</td>
+                    <td class="text-center">{{formatVnd(item.price)}} VNĐ</td>
+                    <td class="pl-35px">
                         Nạp tiền mua Token
                     </td>
                 </tr>
