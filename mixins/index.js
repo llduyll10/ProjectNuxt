@@ -69,7 +69,7 @@ module.exports = {
             if(TODAY > DUEDATE){
                 return 'Hết hạn'
             }
-            
+
             return DUEDATE.from(TODAY,true)
         },
         formatNamePrice(value){
@@ -125,7 +125,8 @@ module.exports = {
             }
         },
         spliceURLFile(url,symbol){
-            return url.split(symbol).pop()
+            var link =  url.split(symbol).pop()
+            return link.slice(-20)
         },
         _toBase64(file) {
             return new Promise((resolve, reject) => {
