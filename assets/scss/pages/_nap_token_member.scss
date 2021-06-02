@@ -2,12 +2,12 @@
     .tokenPacksWrap {
         display: flex;
         align-items: center;
-        justify-content: space-around;
     }
     .tokenItem {
         min-width: 138px;
         text-align: center;
         background: transparent;
+        margin-right: 10px;
         .tokenItemTop {
             border-radius: 5px 5px 0px 0px;
             .shouldInfo {
