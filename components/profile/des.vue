@@ -92,7 +92,7 @@
                 <template v-for="(item,idx) in profile.filesCert">
                     <div @click="downloadFile(item)" :key="idx" class="item cursor-pointer">
                         <span v-html="returnTypeFile(spliceURLFile(item,'--'))"></span>
-                        {{spliceURLFile(item,'--')}}
+                        <span>{{spliceURLFile(item,'--')}}</span>
                     </div>
                 </template>
             </div>
