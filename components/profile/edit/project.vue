@@ -1,5 +1,5 @@
 <template>
-     <div class="createEditComponent">
+     <div class="createEditComponent" :class="isEdit ? '': 'wrapperForm' ">
 
       <form @submit.prevent="createProject">
         <div class="editRow mb-15px form-group row">
