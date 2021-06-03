@@ -2,6 +2,9 @@
     .editRow {
         display: flex;
         align-items: center;
+        .fieldLabel{
+            padding-left: 0;
+        }
         .fieldInput{
             padding: 0;
         }
