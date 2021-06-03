@@ -107,13 +107,13 @@
 
         <div class="w-100 my-40px">
           <div class="row">
-            <div class="col-6">
+            <div class="col-6 pl-0">
               <button type="submit" class="btn btn-main w-100 btn-lg">
                 <span v-if="objProject._id">CẬP NHẬT DỰ ÁN</span>
                 <span v-else>THÊM DỰ ÁN</span>
               </button>
             </div>
-            <div class="col-6">
+            <div class="col-6 pr-0">
               <button @click="cancelPopup()" type="button" class="btn btn-main w-100 btn-lg bg-red">
                 HUỶ BỎ
               </button>
