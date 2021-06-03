@@ -218,10 +218,15 @@
 }
 
 #modal-show-villa {
-
+    .modal-body {
+        padding-bottom: 0;
+    }
     .formCore {
+        .content{
+            padding-bottom: 20px;
+        }
         .form-group {
-            padding: 15px 0;
+            padding: 0 15px ;
             margin-bottom: 0;
             .service {
                 color: $main-black;
@@ -261,7 +266,10 @@
             }
         }
         .line-bot {
+            width: 100%;
+            height: 1px;
             border-bottom: 1px dashed #F2F2F2;
+            margin: 15px 0;
         }
     }
 }

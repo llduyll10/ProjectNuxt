@@ -5,29 +5,31 @@
           <div class="content">
             <form  class="mt-2px">
 
-              <div class="form-group row line-bot">
-                  <div class="service col-md-12 col-sm-12 f-20">{{itemShow.name}}</div>
+              <div class="form-group row ">
+                  <div class="service col-md-12 col-sm-12 f-20 pl-0">{{itemShow.name}}</div>
+                  <div class="line-bot col-12"></div>
               </div>
 
-              <div class="form-group row line-bot">
-                    <label class="f-13 col-md-3 col-sm-12 f-bold">
-                      Dịch vụ yêu cầu
+              <div class="form-group row ">
+                  <label class="f-13 col-md-3 col-sm-12 f-bold pl-0">
+                    Dịch vụ yêu cầu
                   </label>
                   <div class="service col-md-9 col-sm-12">
                     <template v-for="(item) in mapCategory(itemShow.category)">
-                <span
-                  :key="item.id"
-                  class="px-8px badge py-2px text-12 custom-bage mr-8px mb-8px"
-                  :class="getClassBageCategory(mapValueFromCategory(item.id))"
-                >
-                  {{item.label}}
-                </span
-                >
-              </template>
+                      <span
+                        :key="item.id"
+                        class="px-8px badge py-2px text-12 custom-bage mr-8px mb-8px"
+                        :class="getClassBageCategory(mapValueFromCategory(item.id))"
+                      >
+                        {{item.label}}
+                      </span
+                      >
+                  </template>
+                  </div>
+                  <div class="line-bot col-12"></div>
               </div>
-              </div>
-              <div class="form-group row line-bot">
-                    <label class="f-13 col-md-3 col-sm-12 d-flex flex-align-center f-bold">
+              <div class="form-group row ">
+                    <label class="f-13 col-md-3 col-sm-12 d-flex flex-align-center f-bold pl-0">
                       Chi tiết dự án
                     </label>
                     <div class="col-md-9 col-sm-12 ">
@@ -35,9 +37,10 @@
                         {{itemShow.description}}
                     </div>
                   </div>
+                  <div class="line-bot col-12 mb-20px"></div>
               </div>
               <div class="form-group row">
-                  <label class="f-13  col-md-3 col-sm-12 mt-1 mb-5px f-bold">
+                  <label class="f-13  col-md-3 col-sm-12 mt-1 mb-5px f-bold pl-0">
                      Hình ảnh dự án
                   </label>
                   <div class="col-md-9 col-sm-12 mt-1 pr-0px">
@@ -70,11 +73,11 @@ export default {
     },
     data(){
         return{
-            
+
         }
     },
     mounted(){
-       
+
     },
     methods:{
         show() {
