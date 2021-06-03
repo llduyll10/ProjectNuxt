@@ -5,7 +5,7 @@
       <div class="wrapBanner hosoWrap"></div>
       <div class="container-fluid">
         <div class="row noidungWrap">
-          <div class="col-9">
+          <div class="leftCol">
             <!-- nội dung bài viết -->
             <div
               class="left inner-content-section px-36px pt-25px pb-50px mb-20px"
@@ -94,7 +94,7 @@
           <!--  Col Left -->
 
           <!--Col right -->
-          <div class="col-3 right">
+          <div class="rightCol">
             <!-- Thông tin dự án -->
             <div
               class="left inner-content-section py-25px  mb-20px thongTinDuAnWrapper main-black"

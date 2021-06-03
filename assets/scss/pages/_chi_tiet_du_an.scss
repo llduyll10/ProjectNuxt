@@ -3,6 +3,18 @@
     min-height: 600px;
     position: relative;
     display: flex;
+
+    .leftCol {
+      flex: 1;
+      padding-right: 10px;
+      padding-left: 15px;
+    }
+
+    .rightCol {
+      width: 309px;
+      padding-right: 15px;
+      padding-left: 10px;
+    }
     .line{
       height: 3px;
       width: 20%;
