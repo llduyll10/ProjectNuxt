@@ -22,20 +22,21 @@
         height: 40px;
     }
     .sub-menu{
-      cursor: pointer;
-      height: 25px;
-      position: relative;
-      font-size: 12px !important;
+        padding-top: 5px;
+        cursor: pointer;
+        height: 25px;
+        position: relative;
+        font-size: 12px !important;
 
-     &::after {
-         content: '';
-         position: absolute;
-         right: 0;
-         top: 2px;
-         width: 1px;
-         height: 14px;
-         background-color:  rgba(130, 130, 130, 0.5);
-     }
+        &::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 2px;
+            width: 1px;
+            height: 14px;
+            background-color:  rgba(130, 130, 130, 0.5);
+        }
       &.menu-right{
         &:nth-child(2){
             padding-right: 10px !important;
