@@ -23,6 +23,12 @@ img.hover:hover {
     opacity: .86;
 }
 
+.dropdown-item.active, .dropdown-item:active {
+    color: #fff !important;
+    text-decoration: none;
+    background-color: #209cd7 !important;
+}
+
 input,
 textarea {
     &::placeholder {
