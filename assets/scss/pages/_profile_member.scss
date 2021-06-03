@@ -6,14 +6,16 @@
         display: flex;
 
         .col-left {
-            width: 220px;
-            padding: 20px;
+            width: 235px;
+            padding: 25px;
+            padding-right: 0;
             min-height: 600px;
         }
 
         .col-right {
             flex: 1;
             padding: 20px;
+            padding-right: 25px;
             min-height: 600px;
         }
     }

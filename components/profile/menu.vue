@@ -9,12 +9,14 @@
             </div>
 
             <div class="d-flex flex-column f-13 f-bold">
-                <div class="mb-7px">
-                    {{$auth.user.name}}
+                <div class="mb-4px text-gray">
+                    {{$auth.user.name}} | <span class="text-main"> {{$auth.user.coin || 0}}</span> Tokens
                 </div>
 
                 <div class="flex-align-center">
-                    <div class="f-bold"><span class="text-main"> {{$auth.user.coin || 0}}</span> Tokens</div>
+                    <div class="f-bold text-main">
+                        {{$auth.user.email}}
+                    </div>
                 </div>
             </div>
         </div>
