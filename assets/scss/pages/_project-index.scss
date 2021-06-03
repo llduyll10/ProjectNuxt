@@ -300,6 +300,7 @@
                             align-items: center;
                             .title-icon {
                                 align-items: baseline;
+                                margin-top: -5px;
                                 img {
                                     position: relative;
                                     top: 3px;
@@ -316,6 +317,7 @@
                             .icon {
                                 display: flex;
                                 align-items: baseline;
+                                padding-top: 5px;
                                 .name {
                                     font-weight: 500;
                                 }
