@@ -126,15 +126,15 @@
     <div v-if="$auth.loggedIn" class="navbar-login">
       <div class="container-fluid">
         <div class="cover-navbar-login">
-          <p class="f-12 mr-30px fw-500">
+          <p class="f-12 mr-30px fw-500 mt-2px">
           <b-link :to="'/member/quan-ly-du-an?tab=1'" class="text-white">
-            <img src="@/assets/img/my-project.png" alt="">
+            <img src="@/assets/svg/icon-myproject.svg" alt="">
             Dự Án Của Tôi
           </b-link>
           </p>
           <p class="f-12 mr-30px fw-500">
             <b-link :to="'/member/quan-ly-tin-nhan'" class="text-white">
-              <img class="icon-email" src="@/assets/img/email.png" alt="">
+              <img class="icon-email" src="@/assets/svg/icon-mymail.svg" alt="">
               Hộp Thư <span>(1)</span>
             </b-link>
           </p>
