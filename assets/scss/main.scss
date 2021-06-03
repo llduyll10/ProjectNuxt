@@ -23,6 +23,24 @@ img.hover:hover {
     opacity: .86;
 }
 
+.vue-treeselect__list {
+    line-height: 29px;
+}
+
+.vue-treeselect {
+    .vue-treeselect__option--highlight, .vue-treeselect__option--selected {
+        background-color: #209cd7 !important;
+        .vue-treeselect__label-container {
+            label.vue-treeselect__label {
+                color: white  !important;
+            }
+        }
+        
+    }
+}
+
+
+
 .dropdown-item.active, .dropdown-item:active {
     color: #fff !important;
     text-decoration: none;
