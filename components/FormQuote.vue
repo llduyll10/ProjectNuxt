@@ -6,7 +6,7 @@
                     Chi phí ước tính
                     <span style="color:red">*</span>
                 </label>
-                <div class="col-md-9 col-sm-12">
+                <div class="input-group col-md-9 col-sm-12">
                     <currency-input
                         type="text"
                         class="form-control"
@@ -14,6 +14,9 @@
                         placeholder="200,000,000"
                         v-model="objForm.price"
                     />
+                    <div class="input-group-append">
+                        <span class="input-group-text f-12">VND</span>
+                    </div>
                     <p class="mb-0 mt-5px f-12 main-black">
                     Phí hoa hồng nếu trúng thầu -
                     <span class="main-color fw-600">500</span> <span class="fw-600">Tokens</span>
@@ -161,7 +164,7 @@ export default {
             }else{
                 this.isShowForm = false;
             }
-            
+
         },
         async createQuote(status){
             this.loader()

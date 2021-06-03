@@ -117,13 +117,19 @@
                                 Ngân sách dự trù
                                 <span style="color:red">*</span>
                             </label>
-                            <currency-input
-                                type="text"
-                                class="form-control col-md-9 col-sm-12"
-                                required
-                                placeholder="200,000,000"
-                                v-model="objProject.budget"
-                            />
+                            <div class="input-group col-md-9 col-sm-12 px-0">
+                                <currency-input
+                                    type="text"
+                                    class="form-control"
+                                    required
+                                    placeholder="200,000,000"
+                                    v-model="objProject.budget"
+                                />
+                                <div class="input-group-append">
+                                    <span class="input-group-text f-12">VND</span>
+                                </div>
+                            </div>
+
                         </div>
                         <div class="form-group row align-items-center">
                              <label class="f-13 col-md-3 col-sm-12 ">
