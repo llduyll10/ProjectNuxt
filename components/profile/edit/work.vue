@@ -39,9 +39,15 @@
       Thêm dự án
     </div>
     <ProfileEditProject ref="addProject" v-if="!detailProject" @parentEvent="hideModal" />
-    <Modal ref="modalEditProject" id="modal-create-update-project" @close="hideModal" :title="'Chỉnh sửa dự án'">
+    <Modal ref="modalEditProject" id="modal-create-update-project" @close="hideModal" :title="''">
       <template v-slot:content>
-        <ProfileEditProject ref="editProject" :project="detailProject" v-if="detailProject"  @parentEvent="hideModal" />
+        <ProfileEditProject
+            v-if="detailProject"
+            ref="editProject"
+            :project="detailProject"
+            @parentEvent="hideModal"
+            :isEdit="true"
+        />
       </template>
     </Modal>
   </div>

@@ -3,18 +3,20 @@
 
       <form @submit.prevent="createProject">
         <div class="editRow mb-15px form-group row">
-          <div class="fieldLabel fw-600 f-13 col-md-3 col-sm-12">Tên dự án<span style="color:red">*</span></div>
+          <div v-if="!isEdit" class="fieldLabel fw-600 f-13 col-md-3 col-sm-12">Tên dự án<span style="color:red">*</span></div>
           <div class="fieldInput col-md-9 col-sm-12">
             <div class="form-group mb-0">
               <input
                 type="text"
                 class="form-control"
+                :class="isEdit ? 'title' :''"
                 required
                 placeholder="Tên dự án bạn đã thực hiện"
                 v-model="objProject.name"
               />
             </div>
           </div>
+          <div  v-if="isEdit" class="line"></div>
         </div>
 
         <div class="editRow mb-15px form-group row">
@@ -33,6 +35,7 @@
             />
             </div>
           </div>
+          <div  v-if="isEdit" class="line mt-15px"></div>
         </div>
 
         <div class="editRow  form-group row"
@@ -50,6 +53,7 @@
               />
             </div>
           </div>
+          <div  v-if="isEdit" class="line mt-15px"></div>
         </div>
         <div v-if="objProject.photos && objProject.photos.length || arrBase64.length" class="editRow mb-10px form-group row">
           <div class="fieldLabel fw-600 f-13 col-md-3 col-sm-12">Hình ảnh dự án<span style="color:red">*</span></div>
@@ -65,7 +69,7 @@
                                       'background-image': 'url(' + `${item}` + ')',
                                   }"
                               >
-                              <i @click="clearOldFile(item)" class="fas fa-times text-red"></i>
+                              <i @click="clearOldFile(item)" class="fas fa-times"></i>
                               </div>
                         </div>
                     </template>
@@ -80,7 +84,7 @@
                                       'background-image': 'url(' + `${item.base64}` + ')',
                                   }"
                               >
-                              <i @click="clearFile(item)" class="fas fa-times text-red"></i>
+                              <i @click="clearFile(item)" class="fas fa-times"></i>
                             </div>
 
                         </div>
@@ -89,6 +93,8 @@
 
               </div>
           </div>
+          <div  v-if="isEdit" class="line mt-15px mb-10px"></div>
+
         </div>
         <div class="editRow mb-15px form-group row">
           <div class="fieldLabel fw-600 f-13 col-md-3 col-sm-12">
@@ -121,7 +127,7 @@
 import DemoHouse from '@/assets/img/demo-house.png'
 import InputFile from '@/components/InputFile'
 export default {
-    props:['project'],
+    props:['project','isEdit'],
     components:{
       InputFile
     },
