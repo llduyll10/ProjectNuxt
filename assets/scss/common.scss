@@ -177,6 +177,8 @@ b, strong {
 		left: 50%;
 		transform: translateX(-50%);
 		content:"";
+        background-size: 90%;
+        background-position: center;
 	}
 	&.icon-pdf{
 		&:before{
@@ -189,8 +191,8 @@ b, strong {
 	}
     &.icon-img{
 		&:before{
-			content:"";
-			background-image:url('@/assets/svg/icon-jpg-new.svg');
+			content:" ";
+			background-image:url('@/assets/svg/icon-img.png');
             background-repeat: no-repeat;
 			width: 24px;
 			height: 24px;
