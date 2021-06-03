@@ -1,4 +1,7 @@
 .createEditComponent{
+    &.wrapperForm{
+        padding: 0 15px;
+    }
     .editRow {
         display: flex;
         align-items: center;
