@@ -230,11 +230,12 @@ export default {
                                 {...this.objProject,status,photos:arrFileImg,attachment:arrFile});
                 if(status==='ACTIVE'){
                     this.objProject = this.restForm();
+                    this.$router.replace(`/du-an/${res.data.project.slug}`)
                 }
                 if(status==='DRAFT'){
                     this.objProject._id = res.data.project._id;
                 }
-                this.$notify({ group: 'all', text: res.data.msg,  type: 'dark'})
+                this.$notify({ group: 'all', text: 'Tạo dự án thành công',  type: 'dark'})
                 this.loader(0)
             }
             catch(err){
