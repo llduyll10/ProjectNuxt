@@ -1,7 +1,18 @@
 <template>
   <div>
     <Nuxt />
-    <notifications group="all" position="bottom center"/>
+    <notifications group="all" position="bottom center">
+        <template slot="body" slot-scope="props">
+          <div class="custom-noti">
+              <div class="text-noti" v-html="props.item.text">
+              </div>
+              <a class="btn-close" @click="props.close">
+               OK
+              </a>
+
+          </div>
+        </template>
+    </notifications>
   </div>
 </template>
 <script>

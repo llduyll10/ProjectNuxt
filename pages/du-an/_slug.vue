@@ -238,14 +238,14 @@ export default {
     };
   },
   mounted() {
-   
+
     this.$nextTick(() => {
       this.getDetailProject()
     })
   },
   methods: {
     test() {
-      this.$notify({ group: 'all', text: 'Heyy !!!',  type: 'dark'})
+      this.$notify({ group: 'all', text: 'Cập nhật thành công',  type: 'dark',  speed: 100,  duration: 100000,})
     },
     getDetailProject(){
       this.loader()
@@ -258,7 +258,7 @@ export default {
           if(this.detailProject._id){
             return this.$get(`public/auction/project/${this.detailProject._id}`)
           }
-           
+
           this.loader(0)
         })
         .then(res2 => {
