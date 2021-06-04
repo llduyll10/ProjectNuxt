@@ -28,7 +28,7 @@
                 :disable-branch-nodes="true"
                 :value="objProject.category"
                 v-model="objProject.category"
-                :multiple="true"
+                :multiple="false"
                 :clearable="false"
                 placeholder="Chọn dịch vụ"
                 required
@@ -135,7 +135,7 @@ export default {
         return{
             demoHouse:DemoHouse,
             objProject:{},
-            optionsCategory: this.getCategory(),
+            optionsCategory: this.getCategoryParent(),
             accepFile:["png", "jpeg", "jpg", "tiff"],
             tempFile:null,
             arrFile:[],

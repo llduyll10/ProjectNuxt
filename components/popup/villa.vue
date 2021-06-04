@@ -15,16 +15,9 @@
                     Dịch vụ yêu cầu
                   </label>
                   <div class="service col-md-9 col-sm-12">
-                    <template v-for="(item) in mapCategory(itemShow.category)">
-                      <span
-                        :key="item.id"
-                        class="px-8px badge py-2px text-12 custom-bage mr-8px mb-8px"
-                        :class="getClassBageCategory(mapValueFromCategory(item.id))"
-                      >
-                        {{item.label}}
-                      </span
-                      >
-                  </template>
+                    <div class="content-villa">
+                        {{itemShow.category}}
+                    </div>
                   </div>
                   <div class="line-bot col-12"></div>
               </div>

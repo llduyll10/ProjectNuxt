@@ -186,6 +186,13 @@ module.exports = {
                 { label: '4 tuần', id: 28 },
             ]
         },
+        getCategoryParent(){
+            return[
+                { label: 'Thi công xây dựng', id: 'Thi công xây dựng' },
+                { label: 'Trang trí nội thất', id: 'Trang trí nội thất' },
+                { label: 'Thiết kế', id:'Thiết kế' },
+            ]
+        },
         getCategory() {
             return [
                 {
