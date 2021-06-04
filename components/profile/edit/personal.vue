@@ -201,7 +201,7 @@ export default {
                 this.$auth.fetchUser()
                 this.avataBase64 = null;
                 this.loader(0)
-                this.$notify({ group: 'all', text: 'Cập nhật thành công',  type: 'dark'})
+                this.$notify({ group: 'all', text: res.data.msg,  type: 'dark'})
             }
             catch(err){
                 this.loader(0)

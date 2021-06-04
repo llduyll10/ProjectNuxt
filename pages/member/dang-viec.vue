@@ -234,6 +234,7 @@ export default {
                 if(status==='DRAFT'){
                     this.objProject._id = res.data.project._id;
                 }
+                this.$notify({ group: 'all', text: res.data.msg,  type: 'dark'})
                 this.loader(0)
             }
             catch(err){
