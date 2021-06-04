@@ -42,7 +42,7 @@
     <!-- Start Categories  -->
     <section class="category pt-40px ">
       <div class="category-title mb-40px">
-        <p class="f-24">HẠNG MỤC DỰ ÁN</p>
+        <p class="f-24">Hạng Mục Dự Án</p>
         <div class="line"></div>
       </div>
       <div class="container-fluid caterogry-list">
@@ -186,7 +186,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-12 title mb-40px">
-            <p class="f-24">DỰ ÁN NỔI BẬT</p>
+            <p class="f-24">Dự Án Nổi Bật</p>
             <div class="line"></div>
           </div>
         </div>

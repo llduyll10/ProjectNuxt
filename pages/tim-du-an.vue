@@ -77,7 +77,7 @@
                             </div>
                         </div>
                         <div class="box-title">
-                            <p class="title f-16">TIN TỨC & THỊ TRƯỜNG</p>
+                            <p class="title f-16">Tin Tức & Thị Trường</p>
                             <div class="line"></div>
                         </div>
                         <div class="row">
