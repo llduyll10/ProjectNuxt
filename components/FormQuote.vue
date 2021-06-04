@@ -142,7 +142,7 @@ export default {
     },
     methods:{
         getQuote(){
-            if(this.$auth.user.canAuction){
+            if(this.$auth && this.$auth.user && this.$auth.user.canAuction){
                 this.$get(`member/auction/project/${this.id}`)
                 .then(res =>{
                     if(res.data.status){

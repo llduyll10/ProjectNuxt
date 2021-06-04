@@ -32,7 +32,8 @@ module.exports = {
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [
         { src: '~plugins/v-calendar.js', ssr: false },
-        { src: '~/plugins/base-services.js' }
+        { src: '~/plugins/base-services.js' },
+        { src: '~/plugins/notifications.js', ssr: false }
     ],
 
     router: {

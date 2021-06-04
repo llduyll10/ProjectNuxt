@@ -11,6 +11,7 @@
               class="left inner-content-section px-36px pt-25px pb-50px mb-20px"
             >
               <h2 class="main-color f-20 fw-600 mb-15px"
+              @click="test()"
                   :class="getClassCategory(mapImgFromCategory(rawCategory))"
               >
                 {{detailProject.name}}
@@ -237,11 +238,15 @@ export default {
     };
   },
   mounted() {
+   
     this.$nextTick(() => {
       this.getDetailProject()
     })
   },
   methods: {
+    test() {
+      this.$notify({ group: 'all', text: 'Heyy !!!',  type: 'success'})
+    },
     getDetailProject(){
       this.loader()
       this.$get(`public/projects/${this.slug}`)
@@ -253,6 +258,7 @@ export default {
           if(this.detailProject._id){
             return this.$get(`public/auction/project/${this.detailProject._id}`)
           }
+           
           this.loader(0)
         })
         .then(res2 => {

@@ -1,6 +1,7 @@
 <template>
   <div>
     <Nuxt />
+    <notifications group="all" position="bottom center"/>
   </div>
 </template>
 <script>
