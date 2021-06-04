@@ -26,8 +26,15 @@
                     <span class="f-11">{{profile.accountType}}</span>
                 </div>
                 <div class="location">
-                    <img width="15px" height="15px" src="@/assets/svg/icon-verify-company.svg" alt="">
-                    <span class="f-11">Đã xác thực</span>
+                    <template v-if="profile && profile.isVerified">
+                        <img width="15px" height="15px" src="@/assets/svg/icon-verify-company.svg" alt="">
+                        <span class="f-11">Đã xác thực</span>
+                    </template>
+                    <template v-else>
+                        <i class="fas fa-times text-danger f-12"></i>
+                        <span class="f-11 text-danger">Chưa xác thực</span>
+                    </template>
+
                 </div>
             </div>
         </div>

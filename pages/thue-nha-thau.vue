@@ -136,7 +136,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-3 col-md-12 col-sm-12">
+                                        <div class="col-lg-3 col-md-12 col-sm-12 pl-0">
                                             <div class="rate">
                                                 <div class="star">
                                                     <div class="d-flex">
