@@ -159,7 +159,12 @@ export default {
               this.objProject = {};
               this.cancelPopup()
               this.loader(0)
-              this.$notify({ group: 'all', text: res.data.msg,  type: 'dark'})
+              if(this.isEdit){
+                this.$notify({ group: 'all', text: 'Cập nhật thành công',  type: 'dark'})
+              }
+              else{
+                this.$notify({ group: 'all', text: 'Tạo dự án thành công',  type: 'dark'})
+              }
             }
             catch(err){
               console.log(err);
