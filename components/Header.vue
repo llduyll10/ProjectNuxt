@@ -5,7 +5,7 @@
       <b-navbar toggleable="lg" class="p-0" >
         <b-navbar-brand :to="'/'">
           <template>
-            <img src="@/assets/img/black-logo.png" alt="Logo" class="logo" />
+            <img src="@/assets/svg/logo-page.svg" alt="Logo" class="logo" />
           </template>
         </b-navbar-brand>
 
