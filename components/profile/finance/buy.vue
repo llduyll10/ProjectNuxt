@@ -185,6 +185,7 @@ export default {
                 .then(res => {
                    this.$auth.fetchUser()
                    this.loader(0)
+                   this.$notify({ group: 'all', text: 'Thanh toán thành công',  type: 'dark'})
                 })
                 .catch(err => {
                     this.loader(0)
