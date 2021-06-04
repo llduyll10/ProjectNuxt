@@ -132,3 +132,18 @@ textarea {
 // Mobile
 @import './mobile/home';
 @import './mobile/footer';
+
+
+.vue-notification {
+    // styling
+    margin: 0 5px 5px;
+    padding: 10px;
+    font-size: 14px;
+    color: #fff;
+    
+
+    &.dark {
+        background: #161616;
+        border-left-color: #0a0a0a;
+    }
+  }

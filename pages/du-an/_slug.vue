@@ -245,7 +245,7 @@ export default {
   },
   methods: {
     test() {
-      this.$notify({ group: 'all', text: 'Heyy !!!',  type: 'success'})
+      this.$notify({ group: 'all', text: 'Heyy !!!',  type: 'dark'})
     },
     getDetailProject(){
       this.loader()
