@@ -3,7 +3,7 @@
 
     <div class="container-fluid">
       <b-navbar toggleable="lg" class="p-0" >
-        <b-navbar-brand :to="'/'">
+        <b-navbar-brand :to="'/'" class="pb-13px">
           <template>
             <img src="@/assets/svg/logo-page.svg" alt="Logo" class="logo" />
           </template>
