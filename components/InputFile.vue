@@ -15,7 +15,7 @@
                {{item}} <span :key="idx" v-if="(idx+1) < accept.length">,</span>
            </template>
        </span>
-        <b-alert v-if="showAlert" sm show variant="danger">Sai định dạng</b-alert>
+        <small v-if="showAlert" class="text-danger d-block">Sai định dạng</small>
     </div>
 </template>
 <script>
