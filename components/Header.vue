@@ -443,7 +443,7 @@ export default {
           this.$auth.setUser(data.user);
           this.$auth.setUserToken(data.token, data.token);
           this.hideModalLogin()
-          this.$notify({ group: 'all', text: data.msg,  type: 'dark'})
+          this.$notify({ group: 'all', text:'Đăng nhập thành công',  type: 'dark'})
         }else{
 
         }
