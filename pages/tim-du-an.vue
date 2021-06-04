@@ -116,7 +116,7 @@
                                 <div class="search-top short-input">
                                     <input type="text"
                                         v-model="objProject.s" class="f-12"
-                                        placeholder="Tìm kiếm đơn vị thi công/thiết kế"
+                                        placeholder="Tìm kiếm  dự án"
                                     >
                                 </div>
                                 <treeselect
