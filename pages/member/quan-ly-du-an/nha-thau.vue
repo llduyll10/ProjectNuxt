@@ -10,7 +10,7 @@
                                 <ProfileMenu activeMenu="2" />
                             </div>
                             <div class="flex-1 profileInfoWrap">
-                                <ProfileManage />
+                                <ProfileManage  />
                             </div>
                         </div>
                     </div>
