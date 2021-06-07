@@ -9,11 +9,11 @@
             </div>
             <div class="typeOfView ml-auto">
                 <div @click="$router.push('/member/quan-ly-du-an/khach-hang?tab=1')"
-                    class="customer"
+                    class="customer active"
                 >
                     <span>Khách hàng</span>
                 </div>
-                <div @click="$router.push('/member/quan-ly-du-an/nha-thau?tab=1')" class="contractors active">
+                <div @click="$router.push('/member/quan-ly-du-an/nha-thau?tab=1')" class="contractors ">
                     <span>Nhà thầu</span>
                 </div>
             </div>
@@ -21,13 +21,13 @@
 
 
 
-        <ProfileContractorQuotes  v-if="activeTab === '1'" />
+        <ProfileCustomerQuotes  v-if="activeTab === '1'" />
 
-        <ProfileContractorNegotiate  v-if="activeTab === '2'" />
+        <ProfileCustomerNegotiate  v-if="activeTab === '2'" />
 
-        <ProfileContractorDeploy  v-if="activeTab === '3'" />
+        <ProfileCustomerDeploy  v-if="activeTab === '3'" />
 
-        <ProfileContractorComplete  v-if="activeTab === '4'" />
+        <ProfileCustomerComplete  v-if="activeTab === '4'" />
 
     </div>
 
@@ -39,7 +39,7 @@ export default {
         return{
             tabs: [{
                 id: '1',
-                text: 'Đang chào giá'
+                text: 'Đang nhận chào giá'
             }, {
                 id: '2',
                 text: 'Đang thương lượng'

@@ -56,7 +56,7 @@ export default {
             }, {
                 id: '2',
                 text: 'Quản lý dự án',
-                url: '/member/quan-ly-du-an?tab=1'
+                url: '/member/quan-ly-du-an/khach-hang?tab=1'
             }, {
                 id: '3',
                 text: 'Quản lý tài chính',

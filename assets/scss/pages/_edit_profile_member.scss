@@ -95,23 +95,33 @@
             font-size: 12px;
             font-weight: 500;
             .customer{
-                cursor: pointer;
-                color: #F2F2F2;
-                background: $main-color;
-                padding: 7px 15px 0 15px;
-                border-top-left-radius: 8px;
-                border-bottom-left-radius: 8px;
-                width: 102px;
-            }
-            .contractors{
+                @extend .flex-center;
+                padding: 5px 0;
                 cursor: pointer;
                 color: $main-black;
                 background-color: white;
-                padding: 6px 15px;
+                border-top-left-radius: 8px;
+                border-bottom-left-radius: 8px;
+                width: 102px;
+                border: 0.5px solid #828282;
+                border-right: 0;
+            }
+            .contractors{
+                @extend .flex-center;
+                padding: 5px 0;
+                cursor: pointer;
+                color: $main-black;
+                background-color: white;
                 border: 0.5px solid #828282;
                 border-top-right-radius: 8px;
                 border-bottom-right-radius: 8px;
                 width: 100px;
+                border-left: 0;
+            }
+            .active{
+                background: $main-color;
+                color: #F2F2F2;
+                border: 0;
             }
         }
     }
@@ -147,7 +157,7 @@
         }
         .uploadReview {
             height: 110px;
-            width: 110px;
+            width: 125px;
             border-radius: 5px;
         }
     }
