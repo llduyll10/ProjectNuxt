@@ -12,7 +12,7 @@
                         placeholder="Tra theo năm"
                         :clearable=false
                 />
-                <div class="btn-search">
+                <div class="btn-search" @click="handleSearch">
                     Tìm kiếm
                 </div>
             </div>
@@ -82,13 +82,11 @@ export default {
             this.loader()
             this.$get('/member/projects')
                 .then(res => {
-                    console.log(res)
                     this.listProject = res.data
                     this.listShow = res.data
                     this.loader(0)
                 })
                 .catch(err => {
-                    console.log(err)
                     this.loader(0)
                 })
         },
@@ -112,6 +110,18 @@ export default {
             }
             else{
                 this.listShow = arrTemp
+            }
+        },
+        handleSearch(){
+            var arrTemp = JSON.parse(JSON.stringify(this.listProject))
+            if(this.searchText){
+                var arrSearchTextTmp = arrTemp.filter(item => {
+                    return this.searchText.toLowerCase().split(' ').every(v => item.name.toLowerCase().includes(v))
+                })
+                this.filterList(arrSearchTextTmp)
+            }
+            else{
+                this.filterList(this.listProject)
             }
         }
     }
