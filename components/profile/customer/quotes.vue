@@ -33,7 +33,7 @@
                         {{item.name}}
                     </td>
                     <td class="customer text-center f-12 pl-0">
-                        <span class="text-main">{{item.auctionCount}}</span> chào giá
+                        <span class="text-main font-weight-bold">{{item.auctionCount}}</span> chào giá
                     </td>
                     <td class="price text-center pl-0">{{$moment(item.dueDate).format('DD/MM/YYYY')}}</td>
                     <td class="status text-center">
@@ -79,7 +79,7 @@ export default {
     },
     methods:{
         getListQuote(){
-            this.loader()
+            // this.loader()
             this.$get('/member/projects')
                 .then(res => {
                     this.listProject = res.data
