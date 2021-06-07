@@ -21,7 +21,7 @@
             </div>
         </div>
 
-        <table class="table table-custom">
+        <table class="table table-custom" v-if="listProject">
             <thead>
                 <tr>
                     <th scope="col">Tên dự án</th>
@@ -30,13 +30,22 @@
                     <th scope="col">Trạng thái</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr v-for="(idx) in 4" :key="idx">
-                    <td class="name" :class="idx==1 ? 'active': '' ">Tìm đơn vị trang trí nội thất căn hộ Hà Đô Centrosa</td>
-                    <td class="customer text-center f-12"> <span class="text-main">5</span> chào giá</td>
-                    <td class="price text-center">{{$moment().format('DD/MM/YYYY')}}</td>
+            <tbody >
+                <tr v-for="(item,idx) in listProject" :key="idx">
+                    <td class="name" :class="getClassCategory(mapImgFromCategory(item.category))">
+                        {{item.name}}
+                    </td>
+                    <td class="customer text-center f-12">
+                        <span class="text-main">{{item.auctionCount}}</span> chào giá
+                    </td>
+                    <td class="price text-center">{{$moment(item.dueDate).format('DD/MM/YYYY')}}</td>
                     <td class="status text-center">
-                        <span class="f-12">Đang nhận hồ sơ</span>
+                        <template v-if="checkStatusDueDate(item.dueDate)">
+                            <span class="f-12">Hết hạn nhận hồ sơ</span>
+                        </template>
+                        <template v-else>
+                            <span class="f-12">Đang nhận hồ sơ</span>
+                        </template>
                     </td>
                 </tr>
             </tbody>
@@ -45,6 +54,25 @@
 </template>
 <script>
 export default {
-    props:['title']
+    data(){
+        return{
+            listProject:null
+        }
+    },
+    mounted(){
+        this.getListQuote()
+    },
+    methods:{
+        getListQuote(){
+            this.$get('/member/projects')
+                .then(res => {
+                    console.log(res)
+                    this.listProject = res.data
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+        }
+    }
 }
 </script>
