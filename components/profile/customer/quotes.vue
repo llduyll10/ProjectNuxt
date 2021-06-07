@@ -4,24 +4,21 @@
             <h1 class="title">Dự án đang nhận chào giá</h1>
              <div class="group-function d-flex">
                 <input class="input-search form-control" placeholder="Tìm kiếm dự án" />
-                <b-dropdown class="dropdown-all"  variant="link" toggle-class="text-decoration-none" no-caret>
-                    <template #button-content>
-                    <div class="title-dropdown">
-                        <span>Tất cả dự án</span>
-                        <i class="fas fa-caret-down ml-13px f-16"></i>
-                    </div>
-                    </template>
-                    <b-dropdown-item :to="'/member/chinh-sua-ho-so?tab=1'" class="f-12">Hồ sơ cá nhân </b-dropdown-item>
-                    <b-dropdown-item :to="'/member/chinh-sua-ho-so?tab=2'" class="f-12">Hồ sơ làm việc</b-dropdown-item>
-                    <b-dropdown-item :to="'/member/chinh-sua-ho-so?tab=4'" class="f-12">Xác thực thông tin</b-dropdown-item>
-                </b-dropdown>
+                <treeselect
+                        class="option-search"
+                        :options="optionSearch"
+                        :value="objSearch.type"
+                        v-model="objSearch.type"
+                        placeholder="Tra theo năm"
+                        :clearable=false
+                />
                 <div class="btn-search">
                     Tìm kiếm
                 </div>
             </div>
         </div>
 
-        <table class="table table-custom" v-if="listProject">
+        <table class="table table-custom" v-if="listShow">
             <thead>
                 <tr>
                     <th scope="col">Tên dự án</th>
@@ -30,15 +27,15 @@
                     <th scope="col">Trạng thái</th>
                 </tr>
             </thead>
-            <tbody >
-                <tr v-for="(item,idx) in listProject" :key="idx">
+            <tbody  v-if="listShow" >
+                <tr v-for="(item,idx) in listShow" :key="idx">
                     <td class="name" :class="getClassCategory(mapImgFromCategory(item.category))">
                         {{item.name}}
                     </td>
-                    <td class="customer text-center f-12">
+                    <td class="customer text-center f-12 pl-0">
                         <span class="text-main">{{item.auctionCount}}</span> chào giá
                     </td>
-                    <td class="price text-center">{{$moment(item.dueDate).format('DD/MM/YYYY')}}</td>
+                    <td class="price text-center pl-0">{{$moment(item.dueDate).format('DD/MM/YYYY')}}</td>
                     <td class="status text-center">
                         <template v-if="checkStatusDueDate(item.dueDate)">
                             <span class="f-12">Hết hạn nhận hồ sơ</span>
@@ -56,7 +53,25 @@
 export default {
     data(){
         return{
-            listProject:null
+            listProject:null,
+            listShow:null,
+            optionSearch:[
+                { id: 1, label: 'Tất cả dự án' },
+                { id: 2, label: 'Đang nhận hồ sơ' },
+                { id: 3, label: 'Đã hết hạn' },
+            ],
+            objSearch:{
+                type:1
+            },
+            count:100
+        }
+    },
+    watch:{
+        objSearch:{
+            deep:true,
+            handler(){
+               this.filterList(JSON.parse(JSON.stringify(this.listProject)))
+            }
         }
     },
     mounted(){
@@ -64,14 +79,30 @@ export default {
     },
     methods:{
         getListQuote(){
+            this.loader()
             this.$get('/member/projects')
                 .then(res => {
                     console.log(res)
                     this.listProject = res.data
+                    this.listShow = res.data
+                    this.loader(0)
                 })
                 .catch(err => {
                     console.log(err)
+                    this.loader(0)
                 })
+        },
+        filterList(list){
+            if(this.objSearch.type == 1){
+                this.listShow = list
+            }
+            else if(this.objSearch.type == 2){
+                this.listShow = list.filter(item => !this.checkStatusDueDate(item.dueDate))
+            }
+            else{
+                this.listShow = list.filter(item => this.checkStatusDueDate(item.dueDate))
+            }
+
         }
     }
 }

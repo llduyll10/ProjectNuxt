@@ -25,6 +25,23 @@
                     background-repeat: no-repeat;
                 }
             }
+            .option-search{
+                margin-right:15px ;
+                .vue-treeselect__control{
+                    width: 150px;
+                    height: 30px;
+                    border-radius: 8px;
+                    border: 0.75px solid #B7B5B5;
+                    .vue-treeselect__single-value{
+                        line-height: 28px;
+                        font-size: 12px;
+                    }
+                    .vue-treeselect__placeholder{
+                        margin-top: -2px;
+                        font-size: 12px;
+                    }
+                }
+            }
             .dropdown-all{
                 margin-right:15px ;
                 .dropdown-toggle{
@@ -149,9 +166,7 @@
             .name{
                 font-size: 13px;
                 color: $main-color;
-                &.active{
-                    color: #E78F1C;
-                }
+                min-width: 200px;
             }
             .price{
                 font-size: 12px;
