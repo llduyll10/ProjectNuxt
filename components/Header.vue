@@ -212,7 +212,7 @@
           <form @submit.prevent="loginPre" >
             <div class="form-group mb-25px mt-30px">
               <label class="f-13 mb-8px"
-                >Email hoặc Số điện thoại
+                >Email hoặc số điện thoại
                 <span style="color:red">*</span></label
               >
               <input
