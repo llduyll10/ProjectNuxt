@@ -67,7 +67,7 @@
                 <FormQuote @callGetList="getDetailProject" :quoteName="detailProject.name"  :id="detailProject._id"  />
               </template>
             </div>
-            
+
             <!--  Form chào giá -->
 
             <div
@@ -228,8 +228,8 @@
               class="inner-content-section px-36px pt-25px pb-50px mb-20px"
             >
 
-              <h3 class="h5 main-black f-16 fw-600">
-                Danh sách chào giá (<span class="main-color">{{arrQuoteCompany && arrQuoteCompany.length}}</span> chào giá)
+              <h3 class="h5 main-black  ">
+                <span class="fw-600 f-14">Danh sách chào giá (<span class="main-color">{{arrQuoteCompany && arrQuoteCompany.length}}</span> chào giá)</span>  - <span class="f-14">Chọn tối đa <span class="text-main">3</span> công ty để khảo sát/gặp mặt trực tiếp và nhận báo giá chính xác nhất cho công trình của bạn</span>
               </h3>
               <hr class="hr" />
 
