@@ -38,7 +38,7 @@
                   </label>
                   <div class="col-md-9 col-sm-12 mt-1 pr-0px">
                       <div class="row image">
-                        <template v-for="(item , idx) in itemShow.photos">
+                        <template v-for="(item , idx) in 6">
                             <div class="col-6 img" :key="idx">
                                 <div class="imgVilla"
                                 :style="{

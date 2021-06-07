@@ -163,7 +163,7 @@
                 <div class="btn-register" @click="openModalLogin">
                     <span class="f-13">Đăng Nhập</span>
                 </div>
-                <div class="btn-register signin" @click="openModalLogin">
+                <div class="btn-register signin" @click="openModalRegister">
                   <span class="f-13">Đăng Ký</span>
               </div>
               </div>
@@ -207,11 +207,11 @@
         <!-- End confirm OTP -->
         <div class="modal-login" v-else>
           <div class="text-center w-100">
-            <img src="@/assets/img/black-logo.png" style="height:52px" />
+            <img src="@/assets/svg/black-logo.svg"/>
           </div>
           <form @submit.prevent="loginPre" >
-            <div class="form-group mb-3 mt-5">
-              <label class="f-13"
+            <div class="form-group mb-25px mt-30px">
+              <label class="f-13 mb-8px"
                 >Email hoặc Số điện thoại
                 <span style="color:red">*</span></label
               >
@@ -228,19 +228,19 @@
             </div>
             <small class="text-danger" v-if="error">{{error}}</small>
           </form>
-          <div class="mt-4 w-100 option">
+          <div class="w-100 option mt-30px">
             <hr />
             <div class="child w-100 text-center">
               <span class="f-13">Hoặc</span>
             </div>
           </div>
-          <div class="w-100 text-center mt-4">
+          <div class="w-100 text-center mt-30px">
             <button class="btn btn-theme theme-gg">
               Đăng nhập với google
               <img src="@/assets/img/gg.png" />
             </button>
           </div>
-          <div class="w-100 text-center mt-4">
+          <div class="w-100 text-center mt-15px">
             <button class="btn btn-theme theme-fb">
               Đăng nhập với facebook
               <img src="@/assets/img/fb.png" style="width:28px" />
@@ -257,11 +257,11 @@
     <Modal ref="modalRegister" id="modal-custom-form-login">
       <template v-slot:content>
         <div class="modal-login">
-          <div class="w-100">
-            <h5>TẠO TÀI KHOẢN</h5>
+          <div class="text-center w-100">
+            <img src="@/assets/svg/black-logo.svg"/>
           </div>
           <form @submit.prevent="createUser">
-            <div class="form-group">
+            <div class="form-group mb-25px mt-30px">
               <label class="f-13" for="exampleInputEmail1"
                 >Họ và tên
                 <span style="color:red">*</span></label
@@ -317,22 +317,22 @@
                 />
             </div>
             <div class="w-100 text-center">
-              <button type="submit" class="btn btn-theme theme-blue">Đăng ký</button>
+              <button type="submit" class="btn btn-theme theme-blue mt-16px">Đăng ký</button>
             </div>
           </form>
-          <div class="mt-4 w-100 option">
+          <div class="mt-30px w-100 option">
             <hr />
             <div class="child w-100 text-center">
               <span class="f-13">Hoặc</span>
             </div>
           </div>
-          <div class="w-100 text-center mt-4">
+          <div class="w-100 text-center mt-30px">
             <button class="btn btn-theme theme-gg">
               Đăng nhập với google
               <img src="@/assets/img/gg.png" />
             </button>
           </div>
-          <div class="w-100 text-center mt-4">
+          <div class="w-100 text-center mt-15px">
             <button class="btn btn-theme theme-fb">
               Đăng nhập với facebook
               <img src="@/assets/img/fb.png" style="width:28px" />

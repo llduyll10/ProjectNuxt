@@ -1,6 +1,6 @@
 #modal-custom-form-login {
     .modal-md {
-        width: 380px;
+        width: 410px;
     }
     .modal-header {
         border-bottom: 0 !important;
@@ -222,11 +222,11 @@
         padding-bottom: 0;
     }
     .formCore {
-        .content{
+        .content {
             padding-bottom: 20px;
         }
         .form-group {
-            padding: 0 15px ;
+            padding: 0 15px;
             margin-bottom: 0;
             .service {
                 color: $main-black;
@@ -275,7 +275,7 @@
 }
 
 #modal-create-update-project {
-    .modal-header{
+    .modal-header {
         border-bottom: 0;
         padding-bottom: 0;
     }
