@@ -3,7 +3,7 @@
         <div class="wrap">
             <h1 class="title">Dự án đang nhận chào giá</h1>
              <div class="group-function d-flex">
-                <input v-model="searchText" @ class="input-search form-control" placeholder="Tìm kiếm dự án" />
+                <input v-model="searchText" @change="handleSearchText()" class="input-search form-control" placeholder="Tìm kiếm dự án" />
                 <treeselect
                         class="option-search"
                         :options="optionSearch"
@@ -73,9 +73,6 @@ export default {
                this.filterList(JSON.parse(JSON.stringify(this.listProject)))
             }
         },
-        searchText(){
-            this.handleSearchText()
-        }
     },
     mounted(){
         this.getListQuote()
