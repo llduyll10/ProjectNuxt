@@ -1,6 +1,7 @@
 <template>
   <div>
     <Nuxt />
+    <client-only>
     <notifications group="all" position="bottom center">
         <template slot="body" slot-scope="props">
           <div class="custom-noti">
@@ -13,6 +14,7 @@
           </div>
         </template>
     </notifications>
+    </client-only>
   </div>
 </template>
 <script>
