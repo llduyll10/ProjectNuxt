@@ -3,7 +3,7 @@
         <div class="wrap">
             <h1 class="title">Dự án đang nhận chào giá</h1>
              <div class="group-function d-flex">
-                <input class="input-search form-control" placeholder="Tìm kiếm dự án" />
+                <input v-model="searchText" @ class="input-search form-control" placeholder="Tìm kiếm dự án" />
                 <treeselect
                         class="option-search"
                         :options="optionSearch"
@@ -61,9 +61,9 @@ export default {
                 { id: 3, label: 'Đã hết hạn' },
             ],
             objSearch:{
-                type:1
+                type:1,
             },
-            count:100
+            searchText:''
         }
     },
     watch:{
@@ -72,6 +72,9 @@ export default {
             handler(){
                this.filterList(JSON.parse(JSON.stringify(this.listProject)))
             }
+        },
+        searchText(){
+            this.handleSearchText()
         }
     },
     mounted(){
@@ -102,7 +105,17 @@ export default {
             else{
                 this.listShow = list.filter(item => this.checkStatusDueDate(item.dueDate))
             }
-
+        },
+        handleSearchText(){
+            var arrTemp = JSON.parse(JSON.stringify(this.listProject))
+            if(this.searchText){
+                this.listShow = arrTemp.filter(item => {
+                    return this.searchText.toLowerCase().split(' ').every(v => item.name.toLowerCase().includes(v))
+                })
+            }
+            else{
+                this.listShow = arrTemp
+            }
         }
     }
 }
