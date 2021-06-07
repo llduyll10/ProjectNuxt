@@ -29,7 +29,7 @@
             <span class="text-red f-bold f-14">Tháng {{objSearch.month}}/{{objSearch.year}}</span>
         </div>
 
-        <table class="table table-custom table-history">
+        <table class="table table-history">
             <thead>
                 <tr>
                     <th scope="col" >Mã số hoá đơn</th>
