@@ -39,7 +39,7 @@ export default {
         return{
             tabs: [{
                 id: '1',
-                text: 'Đang chào giá'
+                text: 'Đang nhận chào giá'
             }, {
                 id: '2',
                 text: 'Đang thương lượng'
