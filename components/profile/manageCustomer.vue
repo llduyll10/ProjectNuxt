@@ -21,13 +21,13 @@
 
 
 
-        <ProfileProgressQuotes  v-if="activeTab === '1'" />
+        <ProfileCustomerQuotes  v-if="activeTab === '1'" />
 
-        <ProfileProgressNegotiate  v-if="activeTab === '2'" />
+        <ProfileCustomerNegotiate  v-if="activeTab === '2'" />
 
-        <ProfileProgressDeploy  v-if="activeTab === '3'" />
+        <ProfileCustomerDeploy  v-if="activeTab === '3'" />
 
-        <ProfileProgressComplete  v-if="activeTab === '4'" />
+        <ProfileCustomerComplete  v-if="activeTab === '4'" />
 
     </div>
 

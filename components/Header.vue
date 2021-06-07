@@ -127,7 +127,7 @@
       <div class="container-fluid">
         <div class="cover-navbar-login">
           <p class="f-12 mr-30px fw-500 ">
-          <b-link :to="'/member/quan-ly-du-an?tab=1'" class="text-white">
+          <b-link :to="'/member/quan-ly-du-an/khach-hang?tab=1'" class="text-white">
             <img src="@/assets/svg/icon-myproject.svg" alt="">
             Dự Án Của Tôi
           </b-link>
