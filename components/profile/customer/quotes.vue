@@ -32,14 +32,29 @@
                     <td class="name" :class="getClassCategory(mapImgFromCategory(item.category))">
                         {{item.name}}
                     </td>
-                    <td class="customer text-center f-12 pl-0">
+                    <td class="customer  f-12">
                         <span class="text-main font-weight-bold">{{item.auctionCount}}</span> chào giá
                     </td>
-                    <td class="price text-center pl-0">{{$moment(item.dueDate).format('DD/MM/YYYY')}}</td>
-                    <td class="status text-center">
+                    <td class="price ">{{$moment(item.dueDate).format('DD/MM/YYYY')}}</td>
+                    <td class="status ">
                         <template v-if="checkStatusDueDate(item.dueDate)">
-                            <span class="f-12">Hết hạn nhận hồ sơ</span>
+                                <b-dropdown id="dropdown-duedate" variant="link" toggle-class="text-decoration-none" class="custom-infor pb-5px" no-caret>
+                                    <template #button-content>
+                                        <div class="d-flex">
+                                            <div class="cover-infor">
+                                                <p class="f-12">
+                                                <span class="f-12 text-danger">Hết hạn nhận hồ sơ</span>
+                                                <i class="fas fa-caret-down ml-5px f-16 text-danger"></i>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </template>
+                                     <b-dropdown-item class="f-12">
+                                        Đăng lại hồ sơ
+                                     </b-dropdown-item>
+                            </b-dropdown>
                         </template>
+                        <!-- Not due date -->
                         <template v-else>
                             <span class="f-12">Đang nhận hồ sơ</span>
                         </template>
@@ -59,6 +74,9 @@ export default {
                 { id: 1, label: 'Tất cả dự án' },
                 { id: 2, label: 'Đang nhận hồ sơ' },
                 { id: 3, label: 'Đã hết hạn' },
+            ],
+            optionOverDue:[
+                {id:1,label:'Đăng lại dự án'}
             ],
             objSearch:{
                 type:1,
