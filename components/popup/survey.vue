@@ -122,7 +122,8 @@ export default {
     data(){
         return{
             objResearch:{
-                agree:false
+                agree:false,
+                date:new Date().getTime(),
             },
             objInfor:null,
             arrFile:[],
@@ -163,7 +164,6 @@ export default {
         },
         getInforPerchant(infor){
             this.objInfor = infor
-            console.log('ingo',infor)
         },
         getFile(file){
             this.arrFile = this.arrFile.concat(file)
