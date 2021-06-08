@@ -20,6 +20,7 @@
             @extend .flex-center;
             span{
                 font-size: 35px;
+                margin-top: -5px;
             }
         }
     }
@@ -68,6 +69,9 @@
         border: 2px solid $main-color;
         color: $main-color;
         @extend .flex-center;
-        font-size: 35px;
+        span{
+            font-size: 35px;
+            margin-top: -5px;
+        }
     }
 }
