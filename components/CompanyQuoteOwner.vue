@@ -5,7 +5,9 @@
                 <div class="d-flex content-left">
                     <div>
                         <img v-if="company.auctionBy && company.auctionBy.photo" :src="company.auctionBy.photo" width="70" />
-                        <div v-else class="cover-img" style="width:70px;height:75px"></div>
+                        <div v-else class="cover-img" >
+                           <span> {{company.auctionBy.company.slice(0,1).toUpperCase() || company.auctionBy.name.slice(0,1).toUpperCase()}}</span>
+                        </div>
                     </div>
                     <div class="ml-1 ml-16px" style="width:100%">
                         <div class="mb-0 f-14 fw-600 main-black d-flex justify-content-between">
