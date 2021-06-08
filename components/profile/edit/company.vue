@@ -24,7 +24,7 @@
 
             <div class="editRow mb-15px">
                 <div class="fieldLabel">
-                     Lĩnh vực hoạt động
+                     Lĩnh vực hoạt động<span class="dot">*</span>
                      <br/>
                      <span class="info">(Chọn tối đa 5)</span>
                 </div>

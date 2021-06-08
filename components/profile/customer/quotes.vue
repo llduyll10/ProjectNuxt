@@ -29,7 +29,10 @@
             </thead>
             <tbody  v-if="listShow" >
                 <tr v-for="(item,idx) in listShow" :key="idx">
-                    <td class="name" :class="getClassCategory(mapImgFromCategory(item.category))">
+                    <td class="name cursor-pointer"
+                        :class="getClassCategory(mapImgFromCategory(item.category))"
+                        @click="$router.push(`/du-an/${item.slug}`)"
+                    >
                         {{item.name}}
                     </td>
                     <td class="customer  f-12">
