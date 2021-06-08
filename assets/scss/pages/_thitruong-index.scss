@@ -81,6 +81,9 @@
                     margin-bottom: 20px;
                 }
                 .box-img {
+                    img {
+                        width: 100%;
+                    }
                     .sub-img {
                         font-style: italic;
                         text-align: center;
@@ -287,6 +290,15 @@
                         .sub {}
                     }
                     &:first-child {}
+                }
+                .detail {
+                    padding-right: 0 !important;
+                    .slogan {}
+                    .sub-info {}
+                    .box-img {
+                        img {}
+                        .sub-img {}
+                    }
                 }
             }
             .right {
