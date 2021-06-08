@@ -11,6 +11,14 @@
             height: 100%;
             background-color: #F2F2F2;;
         }
+        .cover-img{
+            width: 75px;
+            height: 75px;
+            border: 2px solid $main-color;
+            border-radius: 50%;
+            color: $main-color;
+            @extend .flex-center;
+        }
     }
     .content-right{
         padding-left: 50px;
@@ -47,5 +55,15 @@
                 }
             }
         }
+    }
+}
+.infor-company{
+    .cover-img{
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+        border: 2px solid $main-color;
+        color: $main-color;
+        @extend .flex-center;
     }
 }

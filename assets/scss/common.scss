@@ -211,3 +211,15 @@ strong {
         }
     }
 }
+.input-group{
+    .form-control{
+        border-right: 0;
+    }
+    .input-group-append{
+        .custom-time{
+            background-color: transparent;
+            border-left: 0;
+        }
+    }
+
+}

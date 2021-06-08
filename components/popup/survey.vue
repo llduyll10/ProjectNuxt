@@ -1,20 +1,13 @@
 <template>
-    <Modal ref="modalLienForm" id="modal-cotact-form-submit">
+    <Modal ref="popupSurvey" id="modal-survey">
       <template v-slot:content>
         <div class="modal-contact formCore" v-if="objInfor">
           <div class="content">
-            <p class="title f-20" :class="isService ? '' : 'hide-border' ">
-                Gửi tin nhắn cho
-                <span v-if="isService">{{objInfor.auctionBy.company || objInfor.auctionBy.name}}</span>
-                <span v-else>Công ty cổ phần Epoint</span>
-            </p>
-            <p v-if="!isService" class="f-13 description pl-60px">Vui lòng điền vào thông tin dưới đây. Bạn sẽ tốn
-                <span>3 Tokens</span> khi gửi tin nhắn cho
-                <span v-if="isService">{{objInfor.auctionBy.company || objInfor.auctionBy.name}}</span>
-                <span v-else>Công ty cổ phần Epoint</span>
+            <p class="title f-20" >
+                CHỌN <span>{{objInfor.auctionBy.company || objInfor.auctionBy.name}}</span> KHẢO SÁT VÀ CẬP NHẬT GIÁ CẢ
             </p>
             <form @submit.prevent="sendMessage()" class="group-content mt-20px">
-                <div v-if="isService" class="form-group row">
+                <div class="form-group row">
                      <label class="f-13 col-md-3 col-sm-12 ">
                         Tên dự án
                     </label>
@@ -23,23 +16,6 @@
                     >
                         {{title}}
                     </span>
-                </div>
-                <div v-else class="form-group row">
-                        <label class="f-13 col-md-3 col-sm-12 ">
-                        Dịch vụ yêu cầu
-                        <span style="color:red">*</span>
-                        </label>
-                        <treeselect
-                            class="pl-0 pr-0 col-md-9 col-sm-12"
-                            :options="options"
-                            :disable-branch-nodes="true"
-                            :clearable=false
-                            :value="objResearch.category"
-                            v-model="objResearch.category"
-                            :multiple="true"
-                            required
-                            placeholder="Chọn dịch vụ"
-                        />
                 </div>
                 <div class="form-group row">
                         <label class="f-13 col-md-3 col-sm-12 ">
@@ -51,6 +27,45 @@
                             v-model="objResearch.message"
                         >
                         </textarea>
+                </div>
+                 <div class="form-group row">
+                        <label class="f-13 col-md-3 col-sm-12 ">
+                            Địa điểm khảo sát
+                            <span style="color:red">*</span>
+                        </label>
+                        <input type="text"
+                            class="form-control col-md-9 col-sm-12"
+                            v-model="objResearch.address"
+                            placeholder="Nhập địa chỉ công trình"
+                            required
+                        >
+                </div>
+                 <div class="form-group row">
+                        <label class="f-13 col-md-3 col-sm-12 ">
+                            Thời gian khảo sát
+                            <span style="color:red">*</span>
+                        </label>
+                        <div class="d-flex">
+                            <v-date-picker
+                                v-model="objResearch.date"
+                                :masks="{input: 'DD/MM/YYYY'}"
+                                :model-config="{type: 'number',}
+                            ">
+                                <template v-slot="{ inputValue, inputEvents }">
+                                    <div class="input-group custom-input-calendar">
+                                        <input type="text"
+                                                class="form-control"
+                                                :value="inputValue"
+                                                v-on="inputEvents"
+                                                required>
+                                        <div class="input-group-append">
+                                            <span class="input-group-text custom-time"><i class="fas fa-calendar-day"></i></span>
+                                        </div>
+                                    </div>
+                                </template>
+                            </v-date-picker>
+                            <input type="time" v-model="objResearch.time" class="ml-20px form-control">
+                        </div>
                 </div>
                 <div class="form-group row">
                     <label class="f-13  col-md-3 col-sm-12 mt-1">
@@ -90,7 +105,7 @@
                     </div>
                     <div v-else class="col-md-12">
                         <button type="submit" class="btn-now">
-                            GỬI TIN NHẮN
+                            CHỌN VÀ GỬI YÊU CẦU KHẢO SÁT
                         </button>
                     </div>
                 </div>
@@ -107,7 +122,8 @@ export default {
     data(){
         return{
             objResearch:{
-                agree:false
+                agree:false,
+                date:new Date().getTime(),
             },
             objInfor:null,
             arrFile:[],
@@ -130,7 +146,7 @@ export default {
                             to: this.isService ? this.objInfor.auctionBy._id : this.objInfor._id,
                             title: this.isService ? (this.objInfor.auctionBy.company ? this.objInfor.auctionBy.company : this.objInfor.auctionBy.name) : (this.objInfor.company ? this.objInfor.company : this.objInfor.name)
                         }
-                let res = await this.$post(`/member/rooms`,obj)
+                // let res = await this.$post(`/member/rooms`,obj)
                 this.loader(0)
                 this.resetForm()
                 this.hide()
@@ -148,7 +164,6 @@ export default {
         },
         getInforPerchant(infor){
             this.objInfor = infor
-            console.log('ingo',infor)
         },
         getFile(file){
             this.arrFile = this.arrFile.concat(file)
@@ -157,10 +172,10 @@ export default {
             this.arrFile = this.arrFile.filter(item => item.name !== file.name)
         },
         show() {
-            this.$refs.modalLienForm.showModal();
+            this.$refs.popupSurvey.showModal();
         },
         hide(){
-            this.$refs.modalLienForm.hideModal()
+            this.$refs.popupSurvey.hideModal()
         },
     }
 }
