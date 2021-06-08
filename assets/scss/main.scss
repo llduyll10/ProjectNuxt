@@ -28,14 +28,14 @@ img.hover:hover {
 }
 
 .vue-treeselect {
-    .vue-treeselect__option--highlight, .vue-treeselect__option--selected {
+    .vue-treeselect__option--highlight,
+    .vue-treeselect__option--selected {
         background-color: #209cd7 !important;
         .vue-treeselect__label-container {
             label.vue-treeselect__label {
-                color: white  !important;
+                color: white !important;
             }
         }
-
     }
 }
 
@@ -43,9 +43,8 @@ textarea {
     font-size: 12px !important;
 }
 
-
-
-.dropdown-item.active, .dropdown-item:active {
+.dropdown-item.active,
+.dropdown-item:active {
     color: #fff !important;
     text-decoration: none;
     background-color: #209cd7 !important;
@@ -77,7 +76,6 @@ textarea {
     font-weight: 400 !important;
 }
 
-
 @media (min-width: 1100px) {
     .container-fluid {
         max-width: 1100px !important;
@@ -85,14 +83,13 @@ textarea {
     }
 }
 
-
 @media (max-width: 760px) {
     .container-fluid {
         width: calc(100% - 40px);
     }
 }
 
-@media only screen and (max-width: 375px){
+@media only screen and (max-width: 375px) {
     .container-fluid {
         width: 100%;
     }
@@ -129,9 +126,6 @@ textarea {
 @import './pages/thitruong-index';
 @import './pages/bannerInfo';
 @import './pages/message';
-
-// Mobile
+@import "./pages/banner_details"; // Mobile
 @import './mobile/home';
 @import './mobile/footer';
-
-
