@@ -5,10 +5,15 @@
         <div class="row">
           <div class="col-12">
             <div class="info">
-              <div class="title f-20">ĐĂNG KÍ NHẬN THÔNG TIN</div>
-              <div class="sub f-13 mt-2">
-                Đăng ký nhận thông tin mới nhất về thị trường xây dựng và những
-                mẫu thiết kế đẹp và chất qua email của bạn hàng tuần
+              <div class="top d-flex">
+                <img src="@/assets/svg/receiveInfo.svg" alt="" />
+                <div class="right ml-35px">
+                  <div class="title f-24">ĐĂNG KÍ NHẬN THÔNG TIN</div>
+                  <div class="sub f-14 mt-2">
+                    Đăng ký nhận thông tin mới nhất về thị trường xây dựng và
+                    những mẫu thiết kế đẹp và chất qua email của bạn hàng tuần
+                  </div>
+                </div>
               </div>
               <div class="search">
                 <input type="text" placeholder="Đăng kí Email" />

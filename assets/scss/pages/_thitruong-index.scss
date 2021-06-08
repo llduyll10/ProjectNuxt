@@ -221,7 +221,7 @@
         max-width: 630px;
         margin: 0 auto;
         .info {
-            text-align: center;
+            text-align: left;
             padding: 0 28px;
             .title {
                 font-weight: 600;
@@ -260,6 +260,7 @@
                     background-color: $main-color;
                     border-radius: 5px;
                     padding-top: 4px;
+                    text-align: center;
                 }
             }
         }
