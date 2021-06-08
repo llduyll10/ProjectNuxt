@@ -222,6 +222,8 @@
           </div>
           <!--  Col right -->
 
+
+           <template v-if="detailProject && detailProject.createBy && (detailProject.createBy._id === $auth.user._id)">
           <!-- new row for owner auction -->
           <div class="col-12">
              <div
@@ -246,6 +248,7 @@
 
           </div>
           </div>
+           </template>
         </div>
       </div>
     </section>
