@@ -3,10 +3,10 @@
       <template v-slot:content>
         <div class="modal-contact formCore" v-if="objInfor">
           <div class="content">
-            <p class="title f-20 mb-10px" >
+            <p class="title f-20" >
                 CHỌN <span>{{objInfor.auctionBy.company || objInfor.auctionBy.name}}</span> KHẢO SÁT VÀ CẬP NHẬT GIÁ CẢ
             </p>
-            <form @submit.prevent="sendMessage()" class="group-content mt-36px">
+            <form @submit.prevent="sendMessage()" class="group-content mt-20px">
                 <div class="form-group row">
                      <label class="f-13 col-md-3 col-sm-12 ">
                         Tên dự án

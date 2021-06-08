@@ -3,17 +3,17 @@
       <template v-slot:content>
         <div class="modal-contact formCore" v-if="objInfor">
           <div class="content">
-            <p class="title f-20 mb-10px" >
+            <p class="title f-20" :class="isService ? '' : 'hide-border' ">
                 Gửi tin nhắn cho
                 <span v-if="isService">{{objInfor.auctionBy.company || objInfor.auctionBy.name}}</span>
                 <span v-else>Công ty cổ phần Epoint</span>
             </p>
-            <p  class="f-13 description">Vui lòng điền vào thông tin dưới đây. Bạn sẽ tốn
+            <p v-if="!isService" class="f-13 description pl-60px">Vui lòng điền vào thông tin dưới đây. Bạn sẽ tốn
                 <span>3 Tokens</span> khi gửi tin nhắn cho
                 <span v-if="isService">{{objInfor.auctionBy.company || objInfor.auctionBy.name}}</span>
                 <span v-else>Công ty cổ phần Epoint</span>
             </p>
-            <form @submit.prevent="sendMessage()" class="group-content mt-36px">
+            <form @submit.prevent="sendMessage()" class="group-content mt-20px">
                 <div v-if="isService" class="form-group row">
                      <label class="f-13 col-md-3 col-sm-12 ">
                         Tên dự án
