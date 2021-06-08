@@ -53,6 +53,7 @@
             <!--  nội dung bài viết -->
 
             <!-- Form chào giá -->
+            <template v-if="detailProject && detailProject.createBy && (detailProject.createBy._id !== $auth.user._id)">
             <div
               class="left inner-content-section px-36px pt-25px pb-50px mb-20px"
               v-if="!checkStatusDueDate(detailProject.dueDate)"
@@ -66,10 +67,10 @@
                 <FormQuote @callGetList="getDetailProject" :quoteName="detailProject.name"  :id="detailProject._id"  />
               </template>
             </div>
+
             <!--  Form chào giá -->
 
             <div
-
               class="left inner-content-section px-36px pt-25px pb-50px mb-20px"
             >
 
@@ -80,7 +81,7 @@
 
                 <template v-if="arrQuoteCompany && arrQuoteCompany.length" >
                   <template v-for="item in arrQuoteCompany">
-                    <CompanyQuote :key="item._id" :company="item" />
+                    <CompanyQuote :key="item._id" :company="item"  />
                   </template>
                 </template>
 
@@ -90,6 +91,8 @@
 
 
             </div>
+
+            </template>
           </div>
           <!--  Col Left -->
 
@@ -158,7 +161,7 @@
             <!-- Thông tin dự án -->
 
             <!-- Thông tin khách hàng -->
-            <template>
+            <template v-if="detailProject && detailProject.createBy && (detailProject.createBy._id !== $auth.user._id)">
             <div
               class="left inner-content-section  pt-20px pb-20px  thongTinDuAnWrapper main-black"
             >
@@ -169,7 +172,7 @@
             <!-- Thông tin khách hàng -->
 
             <!-- Dự án tương tự -->
-            <div v-if="detailProject && detailProject._id"
+            <div v-if="detailProject && detailProject._id && detailProject.createBy && (detailProject.createBy._id !== $auth.user._id)"
                 class="text-center"
             >
               <h3 class=" fw-600 f-16 main-color mb-5px pt-20px" >DỰ ÁN TƯƠNG TỰ</h3>
@@ -218,6 +221,31 @@
             <!-- Dự án tương tự -->
           </div>
           <!--  Col right -->
+
+          <!-- new row for owner auction -->
+          <div class="col-12">
+             <div
+              class="inner-content-section px-36px pt-25px pb-50px mb-20px"
+            >
+
+              <h3 class="h5 main-black  ">
+                <span class="fw-600 f-16">Danh sách chào giá (<span class="main-color">{{arrQuoteCompany && arrQuoteCompany.length}}</span> chào giá)</span>  - <span class="f-14">Chọn tối đa <span class="text-main">3</span> công ty để khảo sát/gặp mặt trực tiếp và nhận báo giá chính xác nhất cho công trình của bạn</span>
+              </h3>
+              <hr class="hr" />
+
+              <template v-if="arrQuoteCompany && arrQuoteCompany.length" >
+                <template v-for="item in arrQuoteCompany">
+                  <CompanyQuoteOwner :key="item._id" :company="item" :title="detailProject.name" :rawCategory="rawCategory" />
+                </template>
+              </template>
+
+              <div v-else>
+                <p class="text-danger"><b>Chưa có chào giá</b></p>
+              </div>
+
+
+          </div>
+          </div>
         </div>
       </div>
     </section>

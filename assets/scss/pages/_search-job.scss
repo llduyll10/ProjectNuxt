@@ -17,6 +17,14 @@
             }
         }
         .group-content{
+            .name-project{
+                font-size: 16px;
+                font-weight: 600;
+                width: 100%;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
             .form-group{
                 margin-bottom: 25px;
                 input, textarea{

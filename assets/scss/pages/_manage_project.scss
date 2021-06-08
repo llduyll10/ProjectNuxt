@@ -26,9 +26,9 @@
                 }
             }
             .option-search{
-                margin-right:15px ;
+                margin-right:15px;
+                width: 150px;
                 .vue-treeselect__control{
-                    width: 150px;
                     height: 30px;
                     border-radius: 8px;
                     border: 0.75px solid #B7B5B5;
@@ -83,58 +83,7 @@
             }
         }
     }
-    .table-custom{
-        &.table-history{
-            thead{
-                background: rgba(229, 229, 229, 0.8);
-                tr{
-                    th{
-                        color: $main-black;
-                        font-size: 13px;
-                        font-weight: 600;
-                        padding-top: 10px;
-                        padding-bottom: 10px;
-                        position: relative;
-                        width: 170px;
-                        text-align: center;
-                        padding-left: 0 !important;
-                        &::after{
-                            content: '';
-                            position: absolute;
-                            right: 0;
-                            top: 12px;
-                            width: 1px;
-                            height: 16px;
-                            background-color:  rgba(130, 130, 130, 0.5);
-                        }
-                        &:first-child{
-                            padding-left: 10px !important;
-                        }
-                        &:last-child{
-                            width: auto;
-                            text-align: left;
-                            padding-left: 30px !important;
-                            &::after{
-                                width: 0;
-                            }
-                        }
-                    }
-                }
-            }
-            tbody{
-                tr{
-                    td{
-                        text-align: center;
-                        &:first-child{
-                            padding-left: 0;
-                        }
-                        &:last-child{
-                            text-align: left;
-                        }
-                    }
-                }
-            }
-        }
+    .table-history{
         thead{
             background: rgba(229, 229, 229, 0.8);
             tr{
@@ -145,9 +94,61 @@
                     padding-top: 10px;
                     padding-bottom: 10px;
                     position: relative;
-                    padding-left: 30px;
+                    width: 170px;
+                    text-align: center;
+                    padding-left: 0 !important;
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        right: 0;
+                        top: 12px;
+                        width: 1px;
+                        height: 16px;
+                        background-color:  rgba(130, 130, 130, 0.5);
+                    }
+                    &:first-child{
+                        padding-left: 10px !important;
+                    }
+                    &:last-child{
+                        width: auto;
+                        text-align: left;
+                        padding-left: 30px !important;
+                        &::after{
+                            width: 0;
+                        }
+                    }
+                }
+            }
+        }
+        tbody{
+            tr{
+                td{
+                    text-align: center;
+                    &:first-child{
+                        padding-left: 0;
+                    }
+                    &:last-child{
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+    .table-custom{
+        thead{
+            background: rgba(229, 229, 229, 0.8);
+            tr{
+                th{
+                    color: $main-black;
+                    font-size: 13px;
+                    font-weight: 600;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    position: relative;
+                    text-align: center;
                     &:first-child{
                         padding-left: 37px;
+                        text-align: left;
                     }
                 }
             }
@@ -157,9 +158,13 @@
                 td{
                     padding-top: 10px;
                     padding-bottom: 16px;
+                    width: 20%;
+                    text-align: center;
                     &:first-child{
                         padding-left: 37px;
                         max-width: 220px;
+                        text-align: left;
+                        width: 40%;
                     }
                 }
             }
@@ -167,22 +172,35 @@
                 font-size: 13px;
                 color: $main-color;
                 min-width: 200px;
+                font-weight: 500;
             }
             .price{
                 font-size: 12px;
                 color: $main-black;
             }
             .status{
-                padding-top: 8px;
-                padding-left: 0;
-                .dropdown-all{
-                    .dropdown-toggle{
-                        padding-top: 0;
-                        .title-dropdown{
-                            font-size: 12px;
-                            color: $main-color;
-                        }
-                    }
+                padding-top: 6px;
+            }
+            #dropdown-duedate{
+                .dropdown-toggle{
+                    padding-top: 3px;
+                }
+                .dropdown-menu{
+                    top: -20px !important;
+                }
+            }
+            .btn-send{
+                @extend .flex-center;
+                cursor: pointer;
+                font-size: 12px;
+                font-weight: 500;
+                background-color: $main-color;
+                color: white;
+                border-radius: 5px;
+                padding: 5px 0;
+                margin-top: 5px;
+                img{
+                    margin-right: 5px;
                 }
             }
         }

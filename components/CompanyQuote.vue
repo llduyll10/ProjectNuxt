@@ -2,9 +2,12 @@
     <div>
     <div class="d-flex flex-wrap ">
         <div class="col-12 d-flex pb-20px  px-0 justify-content-between">
-            <div class="col-7 d-flex align-items-center">
+            <div class="col-9 d-flex align-items-center">
                 <div>
-                <img :src="company.auctionBy.photo" width="70" height="75" />
+                
+                <img v-if="company.auctionBy && company.auctionBy.photo" :src="company.auctionBy.photo" width="70" height="75" />
+
+                <div v-else class="cover-img" style="width:70px;height:75px"></div>
                 </div>
                 <div class="ml-1 ml-16px">
                 <p class="mb-0 f-14 fw-600 main-black">{{company.auctionBy.company}}</p>

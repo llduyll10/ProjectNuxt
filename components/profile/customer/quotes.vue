@@ -3,7 +3,7 @@
         <div class="wrap">
             <h1 class="title">Dự án đang nhận chào giá</h1>
              <div class="group-function d-flex">
-                <input class="input-search form-control" placeholder="Tìm kiếm dự án" />
+                <input v-model="searchText" @change="handleSearchText()" class="input-search form-control" placeholder="Tìm kiếm dự án" />
                 <treeselect
                         class="option-search"
                         :options="optionSearch"
@@ -12,7 +12,7 @@
                         placeholder="Tra theo năm"
                         :clearable=false
                 />
-                <div class="btn-search">
+                <div class="btn-search" @click="handleSearch">
                     Tìm kiếm
                 </div>
             </div>
@@ -29,17 +29,35 @@
             </thead>
             <tbody  v-if="listShow" >
                 <tr v-for="(item,idx) in listShow" :key="idx">
-                    <td class="name" :class="getClassCategory(mapImgFromCategory(item.category))">
+                    <td class="name cursor-pointer"
+                        :class="getClassCategory(mapImgFromCategory(item.category))"
+                        @click="$router.push(`/du-an/${item.slug}`)"
+                    >
                         {{item.name}}
                     </td>
-                    <td class="customer text-center f-12 pl-0">
-                        <span class="text-main">{{item.auctionCount}}</span> chào giá
+                    <td class="customer  f-12">
+                        <span class="text-main font-weight-bold">{{item.auctionCount}}</span> chào giá
                     </td>
-                    <td class="price text-center pl-0">{{$moment(item.dueDate).format('DD/MM/YYYY')}}</td>
-                    <td class="status text-center">
+                    <td class="price ">{{$moment(item.dueDate).format('DD/MM/YYYY')}}</td>
+                    <td class="status ">
                         <template v-if="checkStatusDueDate(item.dueDate)">
-                            <span class="f-12">Hết hạn nhận hồ sơ</span>
+                                <b-dropdown id="dropdown-duedate" variant="link" toggle-class="text-decoration-none" class="custom-infor pb-5px" no-caret>
+                                    <template #button-content>
+                                        <div class="d-flex">
+                                            <div class="cover-infor">
+                                                <p class="f-12">
+                                                <span class="f-12 text-danger">Hết hạn nhận hồ sơ</span>
+                                                <i class="fas fa-caret-down ml-5px f-16 text-danger"></i>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </template>
+                                     <b-dropdown-item class="f-12">
+                                        Đăng lại hồ sơ
+                                     </b-dropdown-item>
+                            </b-dropdown>
                         </template>
+                        <!-- Not due date -->
                         <template v-else>
                             <span class="f-12">Đang nhận hồ sơ</span>
                         </template>
@@ -60,10 +78,13 @@ export default {
                 { id: 2, label: 'Đang nhận hồ sơ' },
                 { id: 3, label: 'Đã hết hạn' },
             ],
+            optionOverDue:[
+                {id:1,label:'Đăng lại dự án'}
+            ],
             objSearch:{
-                type:1
+                type:1,
             },
-            count:100
+            searchText:''
         }
     },
     watch:{
@@ -72,7 +93,7 @@ export default {
             handler(){
                this.filterList(JSON.parse(JSON.stringify(this.listProject)))
             }
-        }
+        },
     },
     mounted(){
         this.getListQuote()
@@ -82,13 +103,11 @@ export default {
             this.loader()
             this.$get('/member/projects')
                 .then(res => {
-                    console.log(res)
                     this.listProject = res.data
                     this.listShow = res.data
                     this.loader(0)
                 })
                 .catch(err => {
-                    console.log(err)
                     this.loader(0)
                 })
         },
@@ -102,7 +121,29 @@ export default {
             else{
                 this.listShow = list.filter(item => this.checkStatusDueDate(item.dueDate))
             }
-
+        },
+        handleSearchText(){
+            var arrTemp = JSON.parse(JSON.stringify(this.listProject))
+            if(this.searchText){
+                this.listShow = arrTemp.filter(item => {
+                    return this.searchText.toLowerCase().split(' ').every(v => item.name.toLowerCase().includes(v))
+                })
+            }
+            else{
+                this.listShow = arrTemp
+            }
+        },
+        handleSearch(){
+            var arrTemp = JSON.parse(JSON.stringify(this.listProject))
+            if(this.searchText){
+                var arrSearchTextTmp = arrTemp.filter(item => {
+                    return this.searchText.toLowerCase().split(' ').every(v => item.name.toLowerCase().includes(v))
+                })
+                this.filterList(arrSearchTextTmp)
+            }
+            else{
+                this.filterList(this.listProject)
+            }
         }
     }
 }
