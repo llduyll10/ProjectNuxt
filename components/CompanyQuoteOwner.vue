@@ -9,13 +9,13 @@
                     </div>
                     <div class="ml-1 ml-16px" style="width:100%">
                         <div class="mb-0 f-14 fw-600 main-black d-flex justify-content-between">
-                            <p>{{company.auctionBy.company || company.auctionBy.name}}</p>
+                            <p class="mb-0">{{company.auctionBy.company || company.auctionBy.name}}</p>
                             <div>
                                 <img src="@/assets/svg/icon-location.svg" />
                                 <span class="main-color text-11">{{company.auctionBy.province}}</span>
                             </div>
                         </div>
-                        <div class="d-inline-flex main-black py-11px">
+                        <div class="d-inline-flex main-black pt-11px pb-20px">
                             <div
                             class="badge badge-warning d-inline-flex align-items-center text-white py-3px text-10 mr-1"
                             >
