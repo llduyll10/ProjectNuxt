@@ -52,7 +52,7 @@
                                 :model-config="{type: 'number',}
                             ">
                                 <template v-slot="{ inputValue, inputEvents }">
-                                    <div class="input-group mb-3 custom-input-calendar">
+                                    <div class="input-group custom-input-calendar">
                                         <input type="text"
                                                 class="form-control"
                                                 :value="inputValue"
