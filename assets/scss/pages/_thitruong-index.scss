@@ -68,6 +68,24 @@
                     padding-top: 0;
                 }
             }
+            .detail {
+                padding-right: 30px;
+                .slogan {
+                    font-weight: 700;
+                    color: $main-color;
+                    line-height: 41px;
+                }
+                .sub-info {
+                    line-height: 30px;
+                    margin-bottom: 20px;
+                }
+                .box-img {
+                    .sub-img {
+                        font-style: italic;
+                        text-align: center;
+                    }
+                }
+            }
         }
         .right {
             .register {
@@ -138,7 +156,6 @@
                             align-items: center;
                             justify-content: center;
                         }
-
                     }
                 }
                 .sub-title {
