@@ -158,7 +158,8 @@
 #modal-show-villa,
 #modal-cotact-form-submit,
 #modal-change-phone-form-submit,
-#modal-change-tax-form-submit {
+#modal-change-tax-form-submit,
+#modal-survey {
     .modal-body {
         padding-top: 0!important;
         padding: 0 60px;
@@ -308,7 +309,8 @@
     #modal-cotact-form-submit,
     #modal-change-phone-form-submit,
     #modal-change-tax-form-submit,
-    #modal-show-villa {
+    #modal-show-villa,
+    #modal-survey {
         .modal-md {
             width: auto !important;
         }
@@ -318,7 +320,8 @@
     #modal-cotact-form-submit,
     #modal-change-phone-form-submit,
     #modal-change-tax-form-submit,
-    #modal-show-villa {
+    #modal-show-villa,
+    #modal-survey {
         .modal-body {
             padding: 1rem !important;
             height: auto;
@@ -343,3 +346,4 @@
 #modal-show-villa {
     padding-left: 0px !important;
 }
+

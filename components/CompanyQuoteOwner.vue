@@ -56,7 +56,7 @@
                         <img src="@/assets/svg/email.svg" alt="">
                         <span>Gửi tin nhắn</span>
                     </div>
-                    <div class="btn-send cup">
+                    <div class="btn-send cup" @click="openPopupSurvey()">
                         <img src="@/assets/svg/icon-cup.svg" alt="">
                         <span>Hẹn khảo sát</span>
                     </div>
@@ -66,6 +66,7 @@
         </div>
         <hr class="hr" />
         <PopupLienheform ref="LienHeFormPop" :isService="true" :title="title" :rawCategory="rawCategory" />
+        <PopupSurvey ref="surveyPopup" :title="title" :rawCategory="rawCategory" />
     </div>
 </template>
 <script>
@@ -77,6 +78,10 @@ export default {
         openLienHeMail(){
             this.$refs.LienHeFormPop.show();
             this.$refs.LienHeFormPop.getInforPerchant(this.company);
+        },
+        openPopupSurvey(){
+            this.$refs.surveyPopup.show();
+            this.$refs.surveyPopup.getInforPerchant(this.company);
         }
     }
 }
