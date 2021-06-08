@@ -52,7 +52,7 @@
             <div class="col-md-6 col-sm-12 content-right">
                 <div class="describe ">{{company.description}}</div>
                 <div class="group-btn">
-                    <div class="btn-send">
+                    <div class="btn-send" @click="openLienHeMail()">
                         <img src="@/assets/svg/email.svg" alt="">
                         <span>Gửi tin nhắn</span>
                     </div>
@@ -65,15 +65,19 @@
 
         </div>
         <hr class="hr" />
+        <PopupLienheform ref="LienHeFormPop" :isService="true" :title="title" :rawCategory="rawCategory" />
     </div>
 </template>
 <script>
 export default {
-    props:['company'],
+    props:['company','title','rawCategory'],
     mounted(){
     },
     methods:{
-
+        openLienHeMail(){
+            this.$refs.LienHeFormPop.show();
+            this.$refs.LienHeFormPop.getInforPerchant(this.company);
+        }
     }
 }
 </script>

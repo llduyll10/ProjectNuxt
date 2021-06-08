@@ -81,7 +81,7 @@
 
                 <template v-if="arrQuoteCompany && arrQuoteCompany.length" >
                   <template v-for="item in arrQuoteCompany">
-                    <CompanyQuote :key="item._id" :company="item" />
+                    <CompanyQuote :key="item._id" :company="item"  />
                   </template>
                 </template>
 
@@ -235,7 +235,7 @@
 
               <template v-if="arrQuoteCompany && arrQuoteCompany.length" >
                 <template v-for="item in arrQuoteCompany">
-                  <CompanyQuoteOwner :key="item._id" :company="item" />
+                  <CompanyQuoteOwner :key="item._id" :company="item" :title="detailProject.name" :rawCategory="rawCategory" />
                 </template>
               </template>
 
