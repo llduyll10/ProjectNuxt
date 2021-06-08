@@ -59,7 +59,7 @@
                                                 v-on="inputEvents"
                                                 required>
                                         <div class="input-group-append">
-                                            <span class="input-group-text"><i class="fas fa-calendar-day"></i></span>
+                                            <span class="input-group-text custom-time"><i class="fas fa-calendar-day"></i></span>
                                         </div>
                                     </div>
                                 </template>
