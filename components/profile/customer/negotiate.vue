@@ -42,7 +42,7 @@
                     </td>
                     <td class="price ">{{formatVnd(item.budget)}} VND</td>
                     <td class="status ">
-                        <template>
+                        <template v-if="true">
                                 <b-dropdown id="dropdown-duedate" variant="link" toggle-class="text-decoration-none" class="custom-infor pb-5px" no-caret>
                                     <template #button-content>
                                         <div class="d-flex">
@@ -59,7 +59,12 @@
                                      </b-dropdown-item>
                             </b-dropdown>
                         </template>
-
+                        <template v-else>
+                            <div class="btn-send">
+                                <img src="@/assets/svg/email.svg" alt="">
+                                <span>Gửi tin nhắn</span>
+                            </div>
+                        </template>
                     </td>
                 </tr>
             </tbody>
