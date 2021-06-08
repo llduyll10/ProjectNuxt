@@ -39,8 +39,9 @@
                         color: $main-black;
                     }
                     .general {
-                        margin-top: 10px;
+                        margin-top: 7px;
                         display: flex;
+                        align-items: baseline;
                         .see {
                             color: $main-color;
                         }
@@ -66,6 +67,24 @@
                 }
                 &:first-child {
                     padding-top: 0;
+                }
+            }
+            .detail {
+                padding-right: 30px;
+                .slogan {
+                    font-weight: 700;
+                    color: $main-color;
+                    line-height: 41px;
+                }
+                .sub-info {
+                    line-height: 30px;
+                    margin-bottom: 20px;
+                }
+                .box-img {
+                    .sub-img {
+                        font-style: italic;
+                        text-align: center;
+                    }
                 }
             }
         }
@@ -138,7 +157,6 @@
                             align-items: center;
                             justify-content: center;
                         }
-
                     }
                 }
                 .sub-title {
@@ -204,7 +222,7 @@
         max-width: 630px;
         margin: 0 auto;
         .info {
-            text-align: center;
+            text-align: left;
             padding: 0 28px;
             .title {
                 font-weight: 600;
@@ -243,6 +261,7 @@
                     background-color: $main-color;
                     border-radius: 5px;
                     padding-top: 4px;
+                    text-align: center;
                 }
             }
         }
