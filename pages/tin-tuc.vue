@@ -24,21 +24,23 @@
                                                         }"
                                                     >
                                                     </div>
-                                                    <div class="content">
-                                                        <div class="name f-16">
-                                                            Bỏ túi ngay bí quyết trang trí phòng khách hiện đại với Phố Xinh 
-                                                        </div>
-                                                        <div class="general">
-                                                            <div class="see f-13">
-                                                                Thị Trường 
+                                                        <div class="content">
+                                                            <NuxtLink to="/chi-tiet">
+                                                            <div class="name f-16">
+                                                                Bỏ túi ngay bí quyết trang trí phòng khách hiện đại với Phố Xinh 
                                                             </div>
-                                                            <ul class="list">
-                                                                <li>20/04/2021</li>
-                                                                <li>Bùi Kim Long</li>
-                                                            </ul>
+                                                            </NuxtLink>
+                                                            <div class="general">
+                                                                <div class="see f-13">
+                                                                    Thị Trường 
+                                                                </div>
+                                                                <ul class="list">
+                                                                    <li>20/04/2021</li>
+                                                                    <li>Bùi Kim Long</li>
+                                                                </ul>
+                                                            </div>
+                                                                <div class="sub f-13">Econs được thành lập và phát triển suốt 8 năm qua theo mô hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội thất...Econs được thành lập và phát triển suốt 8 năm</div>
                                                         </div>
-                                                            <div class="sub f-13">Econs được thành lập và phát triển suốt 8 năm qua theo mô hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội thất...Econs được thành lập và phát triển suốt 8 năm</div>
-                                                    </div>
                                                 </div>
                                                 <!-- end list info -->
                                             </div>
