@@ -100,7 +100,7 @@ export default {
     },
     methods:{
         getListQuote(){
-            // this.loader()
+            this.loader()
             this.$get('/member/projects')
                 .then(res => {
                     this.listProject = res.data

@@ -229,7 +229,7 @@
             >
 
               <h3 class="h5 main-black  ">
-                <span class="fw-600 f-14">Danh sách chào giá (<span class="main-color">{{arrQuoteCompany && arrQuoteCompany.length}}</span> chào giá)</span>  - <span class="f-14">Chọn tối đa <span class="text-main">3</span> công ty để khảo sát/gặp mặt trực tiếp và nhận báo giá chính xác nhất cho công trình của bạn</span>
+                <span class="fw-600 f-16">Danh sách chào giá (<span class="main-color">{{arrQuoteCompany && arrQuoteCompany.length}}</span> chào giá)</span>  - <span class="f-14">Chọn tối đa <span class="text-main">3</span> công ty để khảo sát/gặp mặt trực tiếp và nhận báo giá chính xác nhất cho công trình của bạn</span>
               </h3>
               <hr class="hr" />
 

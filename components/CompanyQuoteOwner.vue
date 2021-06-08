@@ -4,7 +4,7 @@
             <div class="col-md-6 col-sm-12   px-0 ">
                 <div class="d-flex content-left">
                     <div>
-                        <img v-if="company.auctionBy && company.auctionBy.photo" :src="company.auctionBy.photo" width="70" height="75" />
+                        <img v-if="company.auctionBy && company.auctionBy.photo" :src="company.auctionBy.photo" width="70" />
                         <div v-else class="cover-img" style="width:70px;height:75px"></div>
                     </div>
                     <div class="ml-1 ml-16px" style="width:100%">
