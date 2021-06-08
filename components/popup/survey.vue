@@ -105,7 +105,7 @@
                     </div>
                     <div v-else class="col-md-12">
                         <button type="submit" class="btn-now">
-                            GỬI TIN NHẮN
+                            CHỌN VÀ GỬI YÊU CẦU KHẢO SÁT
                         </button>
                     </div>
                 </div>
