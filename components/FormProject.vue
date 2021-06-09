@@ -182,6 +182,7 @@
 
 <script>
 export default {
+    props:['objInfor'],
     data(){
         return{
             objProject:this.restForm(),
@@ -198,6 +199,9 @@ export default {
     },
     mounted(){
         this.getProjectDraft()
+        if(this.objInfor){
+            this.objProject = this.objInfor
+        }
     },
     methods:{
         restForm(){
