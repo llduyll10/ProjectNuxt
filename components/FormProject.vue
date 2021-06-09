@@ -1,6 +1,6 @@
 <template>
     <div>
-    <p class="title f-20 mb-10px">Thông tin dự án</p>
+    <p class="title f-20 mb-10px">{{isModal ? 'Chỉnh sửa dự án' : 'Thông tin dự án'}}</p>
     <p class="f-13 description">Vui lòng điền vào thông tin dưới đây. Bạn sẽ nhận được <span>8-10</span>  chào giá tạm tính từ những công ty xây dựng/đơn vị thiết kế uy tín trong khu vực. Bạn thoà sức <span>
         yêu cầu tư vấn</span>  và <span>chọn lựa</span> đơn vị phù hợp nhất cho dự án</p>
     <form @submit.prevent="createJob()" ref="fromProject" class="group-content mt-36px">
