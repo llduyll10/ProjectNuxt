@@ -170,9 +170,13 @@
                 </button>
             </div>
             <div class="col-md-6 col-sm-12 pr-0 cutom-sm">
-                <button @click="createJobDraft('DRAFT')" type="button" class="btn-now save">
+                <button v-if="isModal" @click="callParent" type="button" class="btn-now delete">
+                    HUỶ BỎ
+                </button>
+                <button v-else @click="createJobDraft('DRAFT')" type="button" class="btn-now save">
                     LƯU BẢN NHÁP
                 </button>
+
             </div>
         </div>
     </form>
@@ -258,6 +262,9 @@ export default {
                 console.log('getProjectDraft',err)
             })
 
+        },
+        callParent(){
+            this.$emit('hideModal')
         },
         getFile(file){
             this.arrFile = this.arrFile.concat(file)
