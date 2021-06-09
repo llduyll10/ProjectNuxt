@@ -8,7 +8,7 @@
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 5px;
         .top {
-            padding: 26px 48px 17px;
+            padding: 26px 38px 17px;
             border-bottom: 1px solid rgba(242, 242, 242, 1);
             ul {
                 margin: 0;
@@ -27,45 +27,11 @@
                     &:last-child {
                         border: none;
                     }
-                }
-            }
-        }
-        .center {
-            line-height: 26px;
-            color: $main-black;
-            padding: 38px 48px 0;
-            .box-title {
-                text-align: center;
-                .img-text {
-                    margin-top: 12px;
-                }
-            }
-            .box-center {
-                margin-top: 38px;
-                .text {
-                    font-size: 13px;
-                    span {
-                        color: $main-color;
-                        font-weight: 700;
+                    &:first-child {
+                        a {
+                            margin-left: 0;
+                        }
                     }
-                }
-                .heading {
-                    font-weight: 700;
-                    span {
-                        color: $main-color;
-                    }
-                }
-                ul {
-                    font-size: 13px;
-                    margin-left: 0;
-                    list-style-position: inside;
-                    span {
-                        font-weight: 600;
-                    }
-                }
-                .heading-end {
-                    font-size: 15px;
-                    font-weight: 600;
                 }
             }
         }

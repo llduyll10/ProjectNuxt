@@ -1,0 +1,16 @@
+#homeAid {
+    .homAidQuestion.center {
+        color: $main-black;
+        padding: 38px 38px 0;
+        .box-title {
+            justify-content: center;
+            .img-text {
+                margin-top: 12px;
+            }
+            .title {
+                font-weight: 700;
+                line-height: 50px;
+            }
+        }
+    }
+}

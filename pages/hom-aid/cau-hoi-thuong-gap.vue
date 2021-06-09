@@ -10,8 +10,15 @@
                             <div class="top">
                                 <HomeAidNav />
                             </div>
-                            <div class="center">
-                                day la cau hoi thuong gap
+                            <div class="center homAidQuestion">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="box-title d-flex">
+                                            <img src="@/assets/svg/homquestion.svg" alt="">
+                                            <div class="title f-30 ml-5px">Câu hỏi thường gặp</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

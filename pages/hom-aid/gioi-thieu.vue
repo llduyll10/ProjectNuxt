@@ -10,7 +10,7 @@
                             <div class="top">
                                 <HomeAidNav />
                             </div>
-                            <div class="center">
+                            <div class="center homeAidIntro">
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="box-title">
