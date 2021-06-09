@@ -41,6 +41,13 @@
                                             </div>
                                             <div class="heading-end f-15 mt-24px">Đội Ngũ <span class="home">Hom</span><span class="aid">Aid</span></div>
                                         </div>
+                                        <div class="bottom d-flex">
+                                            <div class="button-group d-flex">
+                                                <div class="post f-20 mr-25px">ĐĂNG DỰ ÁN NGAY</div>
+                                                <div class="report f-20">ĐĂNG KÝ BÁO GIÁ</div>
+                                            </div>
+                                            <img src="@/assets/svg/introHomeAidimg.svg" class="mt-50px" alt="">
+                                        </div>
                                     </div>
                                 </div>
                             </div>

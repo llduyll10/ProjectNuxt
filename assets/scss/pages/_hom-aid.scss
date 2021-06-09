@@ -69,6 +69,30 @@
                 }
             }
         }
+        .bottom {
+            .button-group {
+                .post,
+                .report {
+                    width: 310px;
+                    height: 50px;
+                    font-weight: 600;
+                    color: #f2f2f2;
+                    text-align: center;
+                    line-height: 45px;
+                    border-radius: 5px;
+                }
+                .post {
+                    background-color: $main-color;
+                }
+                .report {
+                    background-color: #E78F1C;
+                }
+            }
+            img {
+                position: relative;
+                top: -155px;
+            }
+        }
     }
     span.aid {
         color: #294f81 !important;
