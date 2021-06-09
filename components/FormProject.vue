@@ -48,24 +48,42 @@
         </div>
         <!-- File Img -->
         <div class="form-group row align-items-center">
-                <label class="f-13  col-md-3 col-sm-12 ">
+            <label class="f-13  col-md-3 col-sm-12 ">
                 Hình ảnh đính kèm
             </label>
             <div class="col-md-9 col-sm-12 pl-0">
                 <InputFile ref="test" :accept="acceptImg" @input="getFileImg" :multiple="true" :label="'Thêm hình ảnh'" />
-                <div class="row" v-if="arrBase64.length">
-                    <template v-for="(item,idx) in arrBase64">
-                        <div class="col-sm-4 pr-0" :key="idx">
-                            <div
-                                class="itemComponent"
-                                :style="{
-                                    'background-image': 'url(' + `${item.base64}` + ')',
-                                }"
-                            >
-                            <i @click="clearFileImg(item)" class="fas fa-times text-red"></i>
+                <div class="row" >
+                    <!-- OLD FILE -->
+                    <template v-if="objProject.photos">
+                        <template v-for="(item,idx) in objProject.photos">
+                            <div class="col-sm-4 pr-0" :key="idx+1">
+                                <div
+                                    class="itemComponent"
+                                    :style="{
+                                        'background-image': 'url(' + `${item}` + ')',
+                                    }"
+                                >
+                                <i @click="clearFileImgOld(item)" class="fas fa-times text-red"></i>
+                                </div>
                             </div>
+                        </template>
+                    </template>
+                    <!-- NEW FILE -->
+                    <template v-if="arrBase64.length" >
+                        <template v-for="(item,idx) in arrBase64">
+                            <div class="col-sm-4 pr-0" :key="idx">
+                                <div
+                                    class="itemComponent"
+                                    :style="{
+                                        'background-image': 'url(' + `${item.base64}` + ')',
+                                    }"
+                                >
+                                <i @click="clearFileImg(item)" class="fas fa-times text-red"></i>
+                                </div>
 
-                        </div>
+                            </div>
+                        </template>
                     </template>
                 </div>
             </div>
@@ -79,16 +97,31 @@
                 <InputFile ref="akjklak" :accept="acceptFile" key="file" @input="getFile" :multiple="true" :label="'Thêm tài liệu'" />
             </div>
 
-            <div class="col-md-3" v-if="arrFile.length"></div>
-            <div class="col-md-9 pl-0" v-if="arrFile.length">
-                <template v-for="(item,idx) in arrFile">
-                    <p :key="idx" class="f-11 text-main ">
-                        <span v-html="returnTypeFile(isModal ? item : item.name)"></span>
-                        {{spliceURLFile(isModal ? item :item.name, '--')}}
-                        <span class="cursor-pointer ml-5px" @click="clearFile(item)">
-                            <i class="fas fa-times text-red"></i>
-                        </span>
-                    </p>
+            <div class="col-md-3"></div>
+            <div class="col-md-9 pl-0" >
+                <!-- Attachment Old -->
+                <template v-if="objProject.attachment" >
+                    <template v-for="(item,idx) in objProject.attachment">
+                        <p :key="idx" class="f-11 text-main ">
+                            <span v-html="returnTypeFile(item)"></span>
+                            {{spliceURLFile(item,'--')}}
+                            <span class="cursor-pointer ml-5px" @click="clearFileOld(item)">
+                                <i class="fas fa-times text-red"></i>
+                            </span>
+                        </p>
+                    </template>
+                </template>
+                <!-- Attachment New -->
+                <template v-if="arrFile.length" >
+                    <template v-for="(item,idx) in arrFile">
+                        <p :key="idx" class="f-11 text-main ">
+                            <span v-html="returnTypeFile(item.name)"></span>
+                            {{item.name}}
+                            <span class="cursor-pointer ml-5px" @click="clearFile(item)">
+                                <i class="fas fa-times text-red"></i>
+                            </span>
+                        </p>
+                    </template>
                 </template>
             </div>
         </div>
@@ -202,23 +235,16 @@ export default {
         }
     },
     mounted(){
-        this.getProjectDraft()
-        if(this.objInfor){
-            this.objProject = this.objInfor
-
-            if(this.objInfor.photos){
-                this.objInfor.photos.forEach(item=>{
-                    this.arrBase64.push({base64:item,name:item})
-                })
-            }
-            if(this.objInfor.attachment){
-                this.objInfor.attachment.forEach(item=>{
-                    this.arrFile.push(item)
-                })
-            }
-
-            console.log('this.objProject',this.objInfor)
+        if(!this.isModal){
+            this.getProjectDraft()
         }
+        else{
+            if(this.objInfor){
+                this.objProject = this.objInfor
+                console.log('this.objProject',this.objProject)
+            }
+        }
+
     },
     methods:{
         restForm(){
@@ -244,8 +270,14 @@ export default {
             var status = this.currentStatus;
             this.loader()
             try{
-                var arrFileImg = this.arrFileImg.length ? await this.uploadFile(this.arrFileImg) : []
-                var arrFile = this.arrFile.length ? await this.uploadFile(this.arrFile) : []
+                // Img
+                var fileImgOld = this.objProject.photos || []
+                var fileImgNew = this.arrFileImg.length ? await this.uploadFile(this.arrFileImg) : []
+                var arrFileImg = fileImgOld.concat(fileImgNew)
+                // File
+                var fileOld = this.objProject.attachment || []
+                var fileNew = this.arrFile.length ? await this.uploadFile(this.arrFile) : []
+                var arrFile = fileOld.concat(fileNew)
 
                 let res = await this.$post('member/projects',
                                 {...this.objProject,status,photos:arrFileImg,attachment:arrFile});
@@ -287,6 +319,9 @@ export default {
         clearFile(file){
             this.arrFile = this.arrFile.filter(item => item.name !== file.name)
         },
+        clearFileOld(file){
+            this.objProject.attachment = this.objProject.attachment.filter(item => item !== file)
+        },
         async getFileImg(arrFile){
             this.arrFileImg = this.arrFileImg.concat(arrFile)
             var arrBase64 = []
@@ -295,20 +330,14 @@ export default {
                 arrBase64.push({base64,name:item.name})
             })
             this.arrBase64 = arrBase64
-            if(this.isModal){
-                if(this.objInfor.photos){
-                    this.objInfor.photos.forEach(item=>{
-                        this.arrBase64.push({base64:item,name:item})
-                        this.arrFileImg.push({base64:item,name:item})
-                    })
-                }
-            }
-
         },
         clearFileImg(file){
           this.arrBase64 = this.arrBase64.filter(item => item.base64 !== file.base64)
           this.arrFileImg = this.arrFileImg.filter(item => item.name !== file.name)
         },
+        clearFileImgOld(file){
+          this.objProject.photos = this.objProject.photos.filter(item => item !== file)
+        }
     }
 }
 </script>
