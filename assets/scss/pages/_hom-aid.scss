@@ -21,8 +21,8 @@
                         text-decoration: none;
                         font-weight: 600;
                         font-size: 14px;
-                        color: $main-black;
                         margin: 0 12px;
+                        color: $main-black;
                     }
                     &:last-child {
                         border: none;
@@ -30,5 +30,36 @@
                 }
             }
         }
+        .center {
+            color: $main-black;
+            padding: 38px 48px;
+            .box-title {
+                text-align: center;
+                .img-text {
+                    margin-top: 12px;
+                }
+            }
+            .box-center {
+                margin-top: 38px;
+                .text {
+                    font-size: 13px;
+                    line-height: 26px;
+                    span {
+                        color: $main-color;
+                        font-weight: 700;
+                    }
+                }
+                .heading {
+                    font-size: 17px;
+                    font-weight: 700;
+                    span {
+                        color: $main-color;
+                    }
+                }
+            }
+        }
+    }
+    .aid {
+        color: #294f81 !important;
     }
 }
