@@ -114,7 +114,6 @@ module.exports = {
 
         },
         returnTypeFile(url){
-            console.log('url')
             if(url){
                 var type = url.split('.').pop()
                 var imgType = ["png","jpg","gif","jpeg"]

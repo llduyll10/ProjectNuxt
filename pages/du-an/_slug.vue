@@ -33,8 +33,6 @@
                 <div @click="openModalInfor" class="d-flex group-edit" v-if="detailProject && detailProject.createBy && (detailProject.createBy._id === $auth.user._id)">
                   <img src="@/assets/svg/icon-edit-file.svg" />
                   <span>Chỉnh sửa</span>
-                  <div class="height"></div>
-                  <span>Xoá bỏ</span>
                 </div>
               </div>
 
