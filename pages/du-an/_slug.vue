@@ -16,17 +16,26 @@
                 {{detailProject.name}}
               </h2>
 
-              <div>
-              <template v-for="(item) in arrNameCategory">
-                <span
-                  :key="item.id"
-                  class="px-8px badge py-2px text-12 custom-bage mr-8px mb-8px"
-                  :class="getClassBageCategory(mapValueFromCategory(item.id))"
-                >
-                  {{item.label}}
-                </span
-                >
-              </template>
+              <div class="d-flex cover-bage-edit">
+                <div>
+                  <template v-for="(item) in arrNameCategory">
+                    <span
+                      :key="item.id"
+                      class="px-8px badge py-2px text-12 custom-bage mr-8px mb-8px"
+                      :class="getClassBageCategory(mapValueFromCategory(item.id))"
+                    >
+                      {{item.label}}
+                    </span
+                    >
+                  </template>
+                </div>
+
+                <div @click="openModalInfor" class="d-flex group-edit" v-if="detailProject && detailProject.createBy && (detailProject.createBy._id === $auth.user._id)">
+                  <img src="@/assets/svg/icon-edit-file.svg" />
+                  <span>Chỉnh sửa</span>
+                  <div class="height"></div>
+                  <span>Xoá bỏ</span>
+                </div>
               </div>
 
               <hr class="hr my-10px"/>
@@ -222,6 +231,8 @@
           </div>
           <!--  Col right -->
 
+
+           <template v-if="detailProject && detailProject.createBy && (detailProject.createBy._id === $auth.user._id)">
           <!-- new row for owner auction -->
           <div class="col-12">
              <div
@@ -246,10 +257,12 @@
 
           </div>
           </div>
+           </template>
         </div>
       </div>
     </section>
     <Footer />
+    <PopupInforProject ref="popupInfor" @callGetDetail="getDetailProject" />
   </div>
 </template>
 
@@ -294,6 +307,10 @@ export default {
           this.loader(0)
         })
     },
+    openModalInfor(){
+      this.$refs.popupInfor.getInfor(this.detailProject)
+      this.$refs.popupInfor.show()
+    }
   },
 };
 </script>

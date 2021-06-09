@@ -73,30 +73,32 @@ module.exports = {
             return DUEDATE.from(TODAY,true)
         },
         formatNamePrice(value){
-            var arr = value.toString().split('')
-            if(arr.length > 9){
-                var end = arr.length - 9
-                var temp = arr.splice(0,end)
-                var rs = temp.join('')
+            if(value){
+                var arr = value.toString().split('') || ''
+                if(arr.length > 9){
+                    var end = arr.length - 9
+                    var temp = arr.splice(0,end)
+                    var rs = temp.join('')
 
-                // Check unit
-                var unit = arr.shift()
-                if(Number(unit)> 0){
-                    return `${rs},${unit} Tỷ`
+                    // Check unit
+                    var unit = arr.shift()
+                    if(Number(unit)> 0){
+                        return `${rs},${unit} Tỷ`
+                    }
+                    return `${rs} Tỷ`
                 }
-                return `${rs} Tỷ`
-            }
-            else if(arr.length>6 && arr.length <= 9){
-                var end = arr.length - 6
-                var temp = arr.splice(0,end)
-                var rs = temp.join('')
+                else if(arr.length>6 && arr.length <= 9){
+                    var end = arr.length - 6
+                    var temp = arr.splice(0,end)
+                    var rs = temp.join('')
 
-                //Check unit
-                var unit = arr.shift()
-                if(Number(unit)> 0){
-                    return `${rs},${unit} Triệu`
+                    //Check unit
+                    var unit = arr.shift()
+                    if(Number(unit)> 0){
+                        return `${rs},${unit} Triệu`
+                    }
+                    return `${rs} Triệu`
                 }
-                return `${rs} Triệu`
             }
         },
         isMobile: function () {
@@ -112,16 +114,19 @@ module.exports = {
 
         },
         returnTypeFile(url){
-            var type = url.split('.').pop()
-            var imgType = ["png","jpg","gif","jpeg"]
-            if(imgType.includes(type)){
-                return `<i class="icon icon-img f-16 mr-10px ml-10px"></i>`
-            }
-            else if(type=='pdf'){
-                return `<i class="icon icon-pdf f-16 mr-10px ml-10px"></i>`
-            }
-            else{
-                return `<i class="icon icon-file f-16 mr-20px ml-10px"></i>`
+            console.log('url')
+            if(url){
+                var type = url.split('.').pop()
+                var imgType = ["png","jpg","gif","jpeg"]
+                if(imgType.includes(type)){
+                    return `<i class="icon icon-img f-16 mr-10px ml-10px"></i>`
+                }
+                else if(type=='pdf'){
+                    return `<i class="icon icon-pdf f-16 mr-10px ml-10px"></i>`
+                }
+                else{
+                    return `<i class="icon icon-file f-16 mr-20px ml-10px"></i>`
+                }
             }
         },
         spliceURLFile(url,symbol){
