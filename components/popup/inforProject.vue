@@ -3,7 +3,7 @@
         <template v-slot:content>
             <div class="formCore">
                 <div class="content">
-                    <FormProject :objInfor="objInfor" :isModal="true" @hideModal="hide" />
+                    <FormProject :objInfor="objInfor" :isModal="true" @hideModal="hide" @callGetDetail="getDetailProject" />
                 </div>
             </div>
         </template>
@@ -29,6 +29,9 @@ export default {
         hide(){
             this.$refs.inforProject.hideModal()
         },
+        getDetailProject(){
+            this.$emit('callGetDetail')
+        }
     }
 }
 </script>

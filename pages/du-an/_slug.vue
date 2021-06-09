@@ -262,7 +262,7 @@
       </div>
     </section>
     <Footer />
-    <PopupInforProject ref="popupInfor" />
+    <PopupInforProject ref="popupInfor" @callGetDetail="getDetailProject" />
   </div>
 </template>
 

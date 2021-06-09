@@ -205,6 +205,19 @@ export default {
         this.getProjectDraft()
         if(this.objInfor){
             this.objProject = this.objInfor
+
+            if(this.objInfor.photos){
+                this.objInfor.photos.forEach(item=>{
+                    this.arrBase64.push({base64:item,name:item})
+                })
+            }
+            if(this.objInfor.attachment){
+                this.objInfor.attachment.forEach(item=>{
+                    this.arrFile.push(item)
+                })
+            }
+
+            console.log('this.objProject',this.objInfor)
         }
     },
     methods:{
@@ -243,7 +256,9 @@ export default {
                 if(status==='DRAFT'){
                     this.objProject._id = res.data.project._id;
                 }
-
+                if(this.isModal){
+                    this.$emit('callGetDetail')
+                }
                 this.$notify({ group: 'all', text: this.isModal ? 'Cập nhật dự án thành công' : 'Tạo dự án thành công',  type: 'dark'})
                 this.loader(0)
             }
@@ -273,13 +288,22 @@ export default {
             this.arrFile = this.arrFile.filter(item => item.name !== file.name)
         },
         async getFileImg(arrFile){
-          this.arrFileImg = this.arrFileImg.concat(arrFile)
-          var arrBase64 = []
-          this.arrFileImg.forEach( async item => {
-            var base64 = await this._toBase64(item);
-            arrBase64.push({base64,name:item.name})
-          })
-          this.arrBase64 = arrBase64
+            this.arrFileImg = this.arrFileImg.concat(arrFile)
+            var arrBase64 = []
+            this.arrFileImg.forEach( async item => {
+                var base64 = await this._toBase64(item);
+                arrBase64.push({base64,name:item.name})
+            })
+            this.arrBase64 = arrBase64
+            if(this.isModal){
+                if(this.objInfor.photos){
+                    this.objInfor.photos.forEach(item=>{
+                        this.arrBase64.push({base64:item,name:item})
+                        this.arrFileImg.push({base64:item,name:item})
+                    })
+                }
+            }
+
         },
         clearFileImg(file){
           this.arrBase64 = this.arrBase64.filter(item => item.base64 !== file.base64)
