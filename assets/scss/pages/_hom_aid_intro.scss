@@ -38,4 +38,100 @@
             }
         }
     }
+    .bottom {
+        align-items: center;
+        position: relative;
+        top: -40px;
+        .button {
+            align-items: center;
+            .post,
+            .report {
+                width: 310px;
+                height: 50px;
+                font-weight: 600;
+                color: #f2f2f2;
+                text-align: center;
+                line-height: 45px;
+                border-radius: 5px;
+            }
+            .post {
+                background-color: $main-color;
+            }
+            .report {
+                background-color: #E78F1C;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #homeAid {
+        .homeAidIntro.center {
+            .box-title {
+                .img-text {}
+            }
+            .box-center {
+                .text {
+                    span {}
+                }
+                .heading {
+                    span {}
+                }
+                ul {
+                    span {}
+                }
+                .heading-end {}
+            }
+        }
+        .bottom {
+            .button {
+                margin-top: 30px;
+                flex-direction: column !important;
+                .post {
+                    margin-bottom: 20px;
+                    margin-right: 0px !important;
+                }
+                .report {}
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #homeAid {
+        .homeAidIntro.center {
+            .box-title {
+                .img-text {}
+            }
+            .box-center {
+                .text {
+                    span {}
+                }
+                .heading {
+                    span {}
+                }
+                ul {
+                    span {}
+                }
+                .heading-end {}
+            }
+        }
+        .bottom {
+            justify-content: flex-start;
+            flex-direction: column !important;
+            margin-top: 50px !important;
+            .button {
+                .post {}
+                .report {}
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 555px) {
+    #homeAid {
+        .img-text {
+            width: 100%;
+        }
+    }
 }

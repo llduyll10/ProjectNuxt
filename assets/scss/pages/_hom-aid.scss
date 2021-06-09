@@ -35,32 +35,34 @@
                 }
             }
         }
-        .bottom {
-            align-items: center;
-            position: relative;
-            top: -40px;
-            .post,
-            .report {
-                width: 310px;
-                height: 50px;
-                font-weight: 600;
-                color: #f2f2f2;
-                text-align: center;
-                line-height: 45px;
-                border-radius: 5px;
-            }
-            .post {
-                background-color: $main-color;
-            }
-            .report {
-                background-color: #E78F1C;
-            }
-        }
     }
     span.aid {
         color: #294f81 !important;
     }
     span.home {
         color: $main-color !important;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    #homeAid {
+        .box {
+            .top {
+                ul {
+                    flex-wrap: wrap !important;
+                    display: flex !important;
+                    justify-content: unset !important;
+                    li {
+                        a {}
+                        &:last-child {}
+                        &:first-child {
+                            a {}
+                        }
+                    }
+                }
+            }
+        }
+        span.aid {}
+        span.home {}
     }
 }

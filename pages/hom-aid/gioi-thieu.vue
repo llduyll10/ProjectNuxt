@@ -1,8 +1,8 @@
 <template>
     <div >
         <Header />
-        <BannerInfo />
-        <section id="homeAid" class="pt-45px pb-50px">
+        <BannerHomeAid />
+        <section id="homeAid" class="pt-40px pb-50px">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
@@ -42,8 +42,10 @@
                                             <div class="heading-end f-15 mt-24px">Đội Ngũ <span class="home">Hom</span><span class="aid">Aid</span></div>
                                         </div>
                                         <div class="bottom d-flex">
-                                                <div class="post f-20 mr-25px">ĐĂNG DỰ ÁN NGAY</div>
-                                                <div class="report f-20">ĐĂNG KÝ BÁO GIÁ</div>
+                                                <div class="button d-flex">
+                                                    <div class="post f-20 mr-25px">ĐĂNG DỰ ÁN NGAY</div>
+                                                    <div class="report f-20">ĐĂNG KÝ BÁO GIÁ</div>
+                                                </div>
                                             <img src="@/assets/svg/introHomeAidimg.svg"  alt="">
                                         </div>
                                     </div>

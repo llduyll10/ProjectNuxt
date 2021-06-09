@@ -2,7 +2,7 @@
     <div >
         <Header />
         <BannerInfo />
-        <section id="homeAid" class="pt-45px pb-50px">
+        <section id="homeAid" class="pt-40px pb-50px">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
