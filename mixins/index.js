@@ -114,16 +114,19 @@ module.exports = {
 
         },
         returnTypeFile(url){
-            var type = url.split('.').pop()
-            var imgType = ["png","jpg","gif","jpeg"]
-            if(imgType.includes(type)){
-                return `<i class="icon icon-img f-16 mr-10px ml-10px"></i>`
-            }
-            else if(type=='pdf'){
-                return `<i class="icon icon-pdf f-16 mr-10px ml-10px"></i>`
-            }
-            else{
-                return `<i class="icon icon-file f-16 mr-20px ml-10px"></i>`
+            console.log('url')
+            if(url){
+                var type = url.split('.').pop()
+                var imgType = ["png","jpg","gif","jpeg"]
+                if(imgType.includes(type)){
+                    return `<i class="icon icon-img f-16 mr-10px ml-10px"></i>`
+                }
+                else if(type=='pdf'){
+                    return `<i class="icon icon-pdf f-16 mr-10px ml-10px"></i>`
+                }
+                else{
+                    return `<i class="icon icon-file f-16 mr-20px ml-10px"></i>`
+                }
             }
         },
         spliceURLFile(url,symbol){
