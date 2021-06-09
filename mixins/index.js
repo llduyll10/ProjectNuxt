@@ -73,30 +73,32 @@ module.exports = {
             return DUEDATE.from(TODAY,true)
         },
         formatNamePrice(value){
-            var arr = value.toString().split('')
-            if(arr.length > 9){
-                var end = arr.length - 9
-                var temp = arr.splice(0,end)
-                var rs = temp.join('')
+            if(value){
+                var arr = value.toString().split('') || ''
+                if(arr.length > 9){
+                    var end = arr.length - 9
+                    var temp = arr.splice(0,end)
+                    var rs = temp.join('')
 
-                // Check unit
-                var unit = arr.shift()
-                if(Number(unit)> 0){
-                    return `${rs},${unit} Tỷ`
+                    // Check unit
+                    var unit = arr.shift()
+                    if(Number(unit)> 0){
+                        return `${rs},${unit} Tỷ`
+                    }
+                    return `${rs} Tỷ`
                 }
-                return `${rs} Tỷ`
-            }
-            else if(arr.length>6 && arr.length <= 9){
-                var end = arr.length - 6
-                var temp = arr.splice(0,end)
-                var rs = temp.join('')
+                else if(arr.length>6 && arr.length <= 9){
+                    var end = arr.length - 6
+                    var temp = arr.splice(0,end)
+                    var rs = temp.join('')
 
-                //Check unit
-                var unit = arr.shift()
-                if(Number(unit)> 0){
-                    return `${rs},${unit} Triệu`
+                    //Check unit
+                    var unit = arr.shift()
+                    if(Number(unit)> 0){
+                        return `${rs},${unit} Triệu`
+                    }
+                    return `${rs} Triệu`
                 }
-                return `${rs} Triệu`
             }
         },
         isMobile: function () {
