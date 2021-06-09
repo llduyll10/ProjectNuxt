@@ -166,7 +166,7 @@
             <button type="submit" class="d-none" ref="btnClick"></button>
             <div class="col-md-6 col-sm-12">
                 <button @click="createJobActive('ACTIVE')" type="button" class="btn-now">
-                ĐĂNG NGAY
+                    {{isModal ? 'CẬP NHẬT THÔNG TIN' : 'ĐĂNG NGAY'}}
                 </button>
             </div>
             <div class="col-md-6 col-sm-12 pr-0 cutom-sm">
@@ -182,7 +182,7 @@
 
 <script>
 export default {
-    props:['objInfor'],
+    props:['objInfor','isModal'],
     data(){
         return{
             objProject:this.restForm(),
@@ -232,14 +232,15 @@ export default {
 
                 let res = await this.$post('member/projects',
                                 {...this.objProject,status,photos:arrFileImg,attachment:arrFile});
-                if(status==='ACTIVE'){
+                if(status==='ACTIVE' && !this.isModal){
                     this.objProject = this.restForm();
                     this.$router.replace(`/du-an/${res.data.project.slug}`)
                 }
                 if(status==='DRAFT'){
                     this.objProject._id = res.data.project._id;
                 }
-                this.$notify({ group: 'all', text: 'Tạo dự án thành công',  type: 'dark'})
+
+                this.$notify({ group: 'all', text: this.isModal ? 'Cập nhật dự án thành công' : 'Tạo dự án thành công',  type: 'dark'})
                 this.loader(0)
             }
             catch(err){

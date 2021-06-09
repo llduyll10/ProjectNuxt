@@ -3,7 +3,7 @@
         <template v-slot:content>
             <div class="formCore">
                 <div class="content">
-                    <FormProject :objInfor="objInfor" />
+                    <FormProject :objInfor="objInfor" :isModal="true" />
                 </div>
             </div>
         </template>
