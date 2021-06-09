@@ -33,7 +33,7 @@
         .center {
             line-height: 26px;
             color: $main-black;
-            padding: 38px 48px;
+            padding: 38px 48px 0;
             .box-title {
                 text-align: center;
                 .img-text {
@@ -70,7 +70,9 @@
             }
         }
         .bottom {
-            margin-top: 50px;
+            align-items: center;
+            position: relative;
+            top: -40px;
             .post,
             .report {
                 width: 310px;
@@ -86,10 +88,6 @@
             }
             .report {
                 background-color: #E78F1C;
-            }
-            img {
-                position: relative;
-                top: -155px;
             }
         }
     }

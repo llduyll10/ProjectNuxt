@@ -44,7 +44,7 @@
                                         <div class="bottom d-flex">
                                                 <div class="post f-20 mr-25px">ĐĂNG DỰ ÁN NGAY</div>
                                                 <div class="report f-20">ĐĂNG KÝ BÁO GIÁ</div>
-                                            <img src="@/assets/svg/introHomeAidimg.svg" class="mt-50px" alt="">
+                                            <img src="@/assets/svg/introHomeAidimg.svg"  alt="">
                                         </div>
                                     </div>
                                 </div>
