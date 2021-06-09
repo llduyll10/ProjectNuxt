@@ -17,21 +17,17 @@
                                 <span class="main-color text-11">{{company.auctionBy.province}}</span>
                             </div>
                         </div>
-                        <div class="d-inline-flex main-black pt-11px pb-20px">
-                            <div
-                            class="badge badge-warning d-inline-flex align-items-center text-white py-3px text-10 mr-1"
-                            >
-                            5.0
+                        <div class="d-inline-flex main-black pt-10px pb-10px">
+                            <div class="star-rate mr-1">
+                                5.0
                             </div>
                             <template v-for="(item, idx) in 4">
-                            <div :key="idx+10">
-                                <i
-                                class="fas fa-star mr-1px f-13 main-yellow"
-                                ></i>
-                            </div>
+                                <div :key="idx+10" class="group-star">
+                                    <i class="fas fa-star mr-1px f-13 main-yellow"></i>
+                                </div>
                             </template>
-                            <span class="evaluate f-12 mb-0 mt-5px ml-4px">
-                            (<span class="main-yellow">4</span> đánh giá)
+                            <span class="evaluate f-12 mb-0  ml-4px">
+                                (<span class="main-yellow">4</span> đánh giá)
                             </span>
                         </div>
                         <div class="text-11 color-grey">

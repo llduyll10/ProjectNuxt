@@ -12,8 +12,8 @@
             background-color: #F2F2F2;;
         }
         .cover-img{
-            width: 70px;
-            height: 70px;
+            width: 75px;
+            height: 75px;
             border: 2px solid $main-color;
             border-radius: 50%;
             color: $main-color;
@@ -60,6 +60,20 @@
             }
         }
     }
+    .star-rate{
+        width: 20px;
+        height: 15px;
+        color: white;
+        background-color: #F2C94C;
+        font-size: 10px;
+        @extend .flex-center;
+    }
+    .group-star{
+        margin-top: -5px;
+    }
+    .evaluate{
+        margin-top: -1px;
+    }
 }
 .infor-company{
     .cover-img{
@@ -73,5 +87,19 @@
             font-size: 35px;
             margin-top: -5px;
         }
+    }
+    .star-rate{
+        width: 20px;
+        height: 15px;
+        color: white;
+        background-color: #F2C94C;
+        font-size: 10px;
+        @extend .flex-center;
+    }
+    .group-star{
+        margin-top: -5px;
+    }
+    .evaluate{
+        margin-top: -1px;
     }
 }
