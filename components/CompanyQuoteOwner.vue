@@ -59,7 +59,7 @@
                             <span>Ngày khảo sát - </span><span class="text-red">{{$moment(company.survey[0].date).format('DD/MM/YYYY')}} </span>
                         </div>
                         <div class="time">
-                            <span>Giờ - </span><span class="text-red">{{company.survey[0].time}} </span>
+                            <span>Giờ - </span><span class="text-red">{{checkShowTypeTime(company.survey[0].time)}} </span>
                         </div>
                     </div>
                     <div class="group-btn">
@@ -116,6 +116,15 @@ export default {
         },
         getActiveCompany(){
             this.$emit('getDetailAgain')
+        },
+        checkShowTypeTime(time){
+            var hour = time.toString().split(':')
+            if(Number(hour[0]) <= 12){
+                return `${time} AM`
+            }
+            else{
+                return `${time} PM`
+            }
         }
     }
 }
