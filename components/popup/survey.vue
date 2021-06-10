@@ -3,7 +3,10 @@
       <template v-slot:content>
         <div class="modal-contact formCore" v-if="objInfor">
           <div class="content">
-            <p class="title f-20" >
+            <p v-if="isCancel" class="title f-19 isCancel" >
+                Huỷ yêu cầu <span class="text-main">{{objInfor.auctionBy.company || objInfor.auctionBy.name}}</span> khảo sát hiện trạng và gửi báo giá cuối cùng
+            </p>
+            <p v-else class="title f-20" >
                 CHỌN <span>{{objInfor.auctionBy.company || objInfor.auctionBy.name}}</span> KHẢO SÁT VÀ CẬP NHẬT GIÁ CẢ
             </p>
             <form @submit.prevent="sendMessage()" class="group-content mt-20px">
@@ -25,6 +28,7 @@
                         <textarea required id="customPlaceholder" class="form-control col-md-9 col-sm-12" rows="5"
                             :placeholder="placeholder"
                             v-model="objResearch.message"
+                            :readonly="isCancel"
                         >
                         </textarea>
                 </div>
@@ -38,6 +42,7 @@
                             v-model="objResearch.address"
                             placeholder="Nhập địa chỉ công trình"
                             required
+                            :readonly="isCancel"
                         >
                 </div>
                  <div class="form-group row">
@@ -57,14 +62,15 @@
                                                 class="form-control"
                                                 :value="inputValue"
                                                 v-on="inputEvents"
+                                                :readonly="isCancel"
                                                 required>
                                         <div class="input-group-append">
-                                            <span class="input-group-text custom-time"><i class="fas fa-calendar-day"></i></span>
+                                            <span :class="isCancel ? 'disabled' : ''" class="input-group-text custom-time"><i class="fas fa-calendar-day"></i></span>
                                         </div>
                                     </div>
                                 </template>
                             </v-date-picker>
-                            <input type="time" v-model="objResearch.time" class="ml-20px form-control">
+                            <input type="time" v-model="objResearch.time" :readonly="isCancel" class="ml-20px form-control">
                         </div>
                 </div>
                 <div class="form-group row">
@@ -72,8 +78,8 @@
                         Tài liệu đính kèm
                     </label>
                     <div class="col-md-9 col-sm-12 pl-0">
-                        <InputFile :accept="accepFile" @input="getFile" :multiple="true" :label="'Thêm tài liệu'"/>
-                            <!-- file -->
+                        <InputFile v-if="!isCancel" :accept="accepFile" @input="getFile" :multiple="true" :label="'Thêm tài liệu'"/>
+                            <!-- new file file -->
                             <div class="col-md-3" v-if="arrFile.length"></div>
                             <div class="col-md-9 pl-0" v-if="arrFile.length">
                                 <template v-for="(item,idx) in arrFile">
@@ -83,6 +89,16 @@
                                         <span class="cursor-pointer ml-5px" @click="clearFile(item)">
                                             <i class="fas fa-times text-red"></i>
                                         </span>
+                                    </p>
+                                </template>
+                            </div>
+                            <!-- old file -->
+                            <div class="col-md-3" v-if="isCancel && objInfor.survey[0].attachments"></div>
+                            <div class="col-md-9 pl-0" v-if="isCancel && objInfor.survey[0].attachments">
+                                <template v-for="(item,idx) in objInfor.survey[0].attachments">
+                                    <p :key="idx" class="f-11 text-main ">
+                                        <span v-html="returnTypeFile(item)"></span>
+                                         {{spliceURLFile(item,'--')}}
                                     </p>
                                 </template>
                             </div>
@@ -104,8 +120,8 @@
                         </button>
                     </div>
                     <div v-else class="col-md-12">
-                        <button type="submit" class="btn-now">
-                            CHỌN VÀ GỬI YÊU CẦU KHẢO SÁT
+                        <button type="submit" class="btn-now" :class="isCancel ? 'delete' : ''">
+                            {{isCancel ? `HUỶ YÊU CẦU KHẢO SÁT` :`CHỌN VÀ GỬI YÊU CẦU KHẢO SÁT`}}
                         </button>
                     </div>
                 </div>
@@ -130,7 +146,8 @@ export default {
             accepFile:["png", "jpg", "jpeg" , "tiff", "pdf", "xls", "doc", "ppt", "zip", "rar"],
             options: this.getCategory(),
             date: new Date(),
-            placeholder:'1. Mô tả chi tiết về dự án xây dựng hoặc yêu cầu thiết kế của bạn\n2. Vui lòng đính kèm sổ đỏ, bản vẽ, thiết kế hoặc hình ảnh minh hoạ để nhận được tư vấn/dự toán tốt nhất.\n3. Yêu cầu năng lực của đơn vị báo giá hoặc những yêu cầu khác'
+            placeholder:'1. Mô tả chi tiết về dự án xây dựng hoặc yêu cầu thiết kế của bạn\n2. Vui lòng đính kèm sổ đỏ, bản vẽ, thiết kế hoặc hình ảnh minh hoạ để nhận được tư vấn/dự toán tốt nhất.\n3. Yêu cầu năng lực của đơn vị báo giá hoặc những yêu cầu khác',
+            isCancel:false
         }
     },
     mounted(){
@@ -146,15 +163,18 @@ export default {
                             project: this.detailProject._id,
                             auction: this.objInfor._id
                         }
-                let res = await this.$post('member/survey',obj)
-                console.log('obj',obj)
-                console.log('objInfor',this.objInfor)
-                 console.log('detailProject',this.detailProject)
-                console.log('res',res)
-                this.loader(0)
-                this.resetForm()
-                this.hide()
+                if(this.isCancel){
+                    let res = await this.$post(`member/survey/cancel`,obj)
+                    this.$notify({ group: 'all', text:`Bạn đã huỷ yêu cầu khảo sát với ${this.objInfor.auctionBy.company || this.objInfor.auctionBy.name}`,  type: 'dark'})
+                }
+                else{
+                    let res = await this.$post('member/survey',obj)
+
+                }
                 this.$emit('activeCompany', true)
+                this.resetForm()
+                this.loader(0)
+                this.hide()
             }
             catch(err){
                 console.log(err)
@@ -169,6 +189,12 @@ export default {
         },
         getInforPerchant(infor){
             this.objInfor = infor
+        },
+        setCancelPopup(status){
+            this.isCancel = status
+            if(status){
+                this.objResearch = this.objInfor.survey[0]
+            }
         },
         getFile(file){
             this.arrFile = this.arrFile.concat(file)

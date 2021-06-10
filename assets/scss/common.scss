@@ -219,6 +219,9 @@ strong {
         .custom-time{
             background-color: transparent;
             border-left: 0;
+            &.disabled{
+                background-color: #e9ecef;;
+            }
         }
     }
 

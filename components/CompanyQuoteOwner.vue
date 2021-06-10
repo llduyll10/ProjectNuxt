@@ -63,7 +63,7 @@
                         </div>
                     </div>
                     <div class="group-btn">
-                        <div class="btn-send cancel" @click="openLienHeMail()">
+                        <div class="btn-send cancel" @click="openPopupSurvey('CANCEL')">
                             <img src="@/assets/svg/icon-cancel.svg" alt="">
                             <span>Huỷ khảo sát</span>
                         </div>
@@ -110,9 +110,15 @@ export default {
             this.$refs.LienHeFormPop.show();
             this.$refs.LienHeFormPop.getInforPerchant(this.company);
         },
-        openPopupSurvey(){
+        openPopupSurvey(status){
             this.$refs.surveyPopup.show();
             this.$refs.surveyPopup.getInforPerchant(this.company);
+            if(status == 'CANCEL'){
+                this.$refs.surveyPopup.setCancelPopup(true)
+            }
+            else{
+                this.$refs.surveyPopup.setCancelPopup(false)
+            }
         },
         getActiveCompany(){
             this.$emit('getDetailAgain')
