@@ -65,3 +65,69 @@
         }
     }
 }
+
+@media screen and (max-width:991px) {
+    .homAidContact.center {
+        .left {
+            img {}
+            .content {
+                .name {}
+                .address,
+                .email,
+                .hotline {
+                    .title {}
+                }
+                .email.sub {}
+            }
+        }
+        .form {
+            margin-top: 30px !important;
+            .heading {
+                .text {}
+            }
+            label,
+            p {}
+            textarea {
+                &::placeholder {}
+            }
+            .send {}
+        }
+    }
+}
+
+@media screen and (max-width:555px) {
+    .homAidContact.center {
+        .left {
+            img {}
+            .content {
+                .name {}
+                .address,
+                .email,
+                .hotline {
+                    line-height: 32px !important;
+                    .title {}
+                }
+                .email.sub {}
+            }
+        }
+        .form {
+            .heading {
+                flex-direction: column !important;
+                align-items: center !important;
+                .text {}
+                img {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+            label,
+            p {}
+            textarea {
+                &::placeholder {}
+            }
+            .send {
+                width: 100% !important;
+            }
+        }
+    }
+}

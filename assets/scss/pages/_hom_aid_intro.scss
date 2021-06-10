@@ -133,5 +133,19 @@
         .img-text {
             width: 100%;
         }
+        .bottom {
+            .button {
+                width: 100%;
+                .post {
+                    width: 100% !important;
+                }
+                .report {
+                    width: 100% !important;
+                }
+            }
+            img {
+                width: 100% !important;
+            }
+        }
     }
 }
