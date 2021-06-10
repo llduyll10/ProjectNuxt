@@ -66,6 +66,28 @@
     }
 
     .editProfileInfoWrap {
+        .group-verfiry{
+            position: relative;
+            .verify{
+                background-color: white !important;
+            }
+            .group-verify{
+                position: absolute;
+                top: 4px;
+                right: 10px;
+                span{
+                    font-size: 13px;
+                    color: $main-color;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        .checkVerify{
+            font-size: 13px;
+            font-weight: 600;
+            color: $main-color !important;
+        }
         .tabsWrap {
             height: 60px;
             padding: 22px 37px;
@@ -245,6 +267,7 @@
                 align-items: flex-start !important;
                 .fieldInput, .fieldLabel {
                     width: 100% !important;
+
                 }
             }
         }
