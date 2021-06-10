@@ -1,4 +1,46 @@
 .company-quote-owner{
+    padding: 25px 36px;
+    padding-bottom: 0;
+    &.active{
+        background-color: #EBF5FA;
+        .content-left{
+            &::after{
+                background-color:$main-color;;
+            }
+        }
+        .describe{
+            height: 25px !important;
+            span{
+                font-size: 16px;
+                color: $main-color;
+                font-weight: 600;
+            }
+            img{
+                width: 20px;
+                height: 20px;
+                margin-right: 5px;
+            }
+        }
+        .date-time{
+            display: flex;
+            font-size: 13px;
+            color: $main-black;
+            font-weight: 500;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            .text-red{
+                font-weight: 600;
+            }
+            .date{
+                margin-right: 20px;
+            }
+
+        }
+    }
+    .cover{
+        border-bottom: 1.5px solid #F2F2F2;
+        padding-bottom: 25px;
+    }
     .content-left{
         position: relative;
         padding-right: 50px;
@@ -56,6 +98,9 @@
                 &.cup{
                     background-color:$main-color;
                     margin-left: 10px;
+                }
+                &.cancel{
+                    background-color:#D80000;
                 }
             }
         }

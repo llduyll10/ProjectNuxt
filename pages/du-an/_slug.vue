@@ -234,17 +234,17 @@
           <!-- new row for owner auction -->
           <div class="col-12">
              <div
-              class="inner-content-section px-36px pt-25px pb-50px mb-20px"
+              class="inner-content-section  pt-25px pb-50px mb-20px"
             >
 
-              <h3 class="h5 main-black  ">
+              <h3 class="h5 main-black  px-36px">
                 <span class="fw-600 f-16">Danh sách chào giá (<span class="main-color">{{arrQuoteCompany && arrQuoteCompany.length}}</span> chào giá)</span>  - <span class="f-14">Chọn tối đa <span class="text-main">3</span> công ty để khảo sát/gặp mặt trực tiếp và nhận báo giá chính xác nhất cho công trình của bạn</span>
               </h3>
-              <hr class="hr" />
+              <hr class="hr mb-0" />
 
               <template v-if="arrQuoteCompany && arrQuoteCompany.length" >
                 <template v-for="item in arrQuoteCompany">
-                  <CompanyQuoteOwner :key="item._id" :company="item" :title="detailProject.name" :rawCategory="rawCategory" />
+                  <CompanyQuoteOwner :key="item._id" :company="item" :detailProject="detailProject" :rawCategory="rawCategory" @getDetailAgain="getDetailProject" />
                 </template>
               </template>
 
@@ -272,7 +272,8 @@ export default {
       detailProject:{},
       arrNameCategory:[],
       rawCategory:[],
-      arrQuoteCompany:null
+      arrQuoteCompany:null,
+      activeCompany:null
     };
   },
   mounted() {
@@ -308,7 +309,7 @@ export default {
     openModalInfor(){
       this.$refs.popupInfor.getInfor(this.detailProject)
       this.$refs.popupInfor.show()
-    }
+    },
   },
 };
 </script>
