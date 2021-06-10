@@ -127,7 +127,7 @@
 </template>
 <script>
 export default {
-    props:['id','quoteName'],
+    props:['id','quoteName',"detailProject"],
     data(){
         return{
             place: `1. Mô tả chi tiết về dự án xây dựng hoặc yêu cầu thiết kế của bạn \n2. Vui lòng đính kèm sổ đỏ, bản vẽ, thiết kế hoặc hình ảnh minh hoạ để nhận được tư vấn/dự toán tốt nhất. \n3. Yêu cầu năng lực của đơn vị báo giá hoặc những yêu cầu khác`,
@@ -176,7 +176,8 @@ export default {
                             ...this.objForm,
                             day: Number(this.objForm.day),
                             attachments:arrFile,
-                            status:status
+                            status:status,
+                            projectOwner:detailProject.createBy._id
                         }
                 let res = await this.$post(`member/auction/project/${this.id}`,obj)
                 this.resetForm()

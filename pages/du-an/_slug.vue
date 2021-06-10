@@ -71,7 +71,7 @@
               </h3>
               <hr class="hr" />
               <template v-if="detailProject && detailProject._id">
-                <FormQuote @callGetList="getDetailProject" :quoteName="detailProject.name"  :id="detailProject._id"  />
+                <FormQuote @callGetList="getDetailProject" :quoteName="detailProject.name"  :id="detailProject._id" :detailProject="detailProject" />
               </template>
             </div>
 
