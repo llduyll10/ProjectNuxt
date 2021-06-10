@@ -30,37 +30,37 @@
             <tbody  v-if="listShow" >
                 <tr v-for="(item,idx) in listShow" :key="idx">
                     <td class="name cursor-pointer"
-                        :class="getClassCategory(mapImgFromCategory(item.category))"
-                        @click="$router.push(`/du-an/${item.slug}`)"
+                        :class="item.project ? getClassCategory(mapImgFromCategory(item.project.category)) : '' "
+                        @click="$router.push(`/du-an/${item.project.slug}`)"
                     >
-                        {{item.name}}
+                        {{item.project ? item.project.name : ''}}
                     </td>
                     <td class="customer  f-12">
                         <span class="text-main font-weight-bold">{{item.auctionCount}}</span> chào giá
                     </td>
-                    <td class="price ">{{$moment(item.dueDate).format('DD/MM/YYYY')}}</td>
+                    <td class="price ">{{formatVnd(item.price)}} VND</td>
                     <td class="status ">
-                        <template v-if="checkStatusDueDate(item.dueDate)">
+                        <template >
                                 <b-dropdown id="dropdown-duedate" variant="link" toggle-class="text-decoration-none" class="custom-infor pb-5px" no-caret>
                                     <template #button-content>
                                         <div class="d-flex">
                                             <div class="cover-infor">
                                                 <p class="f-12">
-                                                <span class="f-12 text-danger">Hết hạn nhận hồ sơ</span>
-                                                <i class="fas fa-caret-down ml-5px f-16 text-danger"></i>
+                                                <span class="f-12 text-main">Đã gửi chào giá</span>
+                                                <i class="fas fa-caret-down ml-5px f-16 text-main"></i>
                                                 </p>
                                             </div>
                                         </div>
                                     </template>
-                                     <b-dropdown-item class="f-12">
-                                        Đăng lại hồ sơ
-                                     </b-dropdown-item>
+                                    <b-dropdown-item class="f-12">
+                                    Huỷ chào giá
+                                    </b-dropdown-item>
                             </b-dropdown>
                         </template>
                         <!-- Not due date -->
-                        <template v-else>
+                        <!-- <template v-else>
                             <span class="f-12">Đang nhận hồ sơ</span>
-                        </template>
+                        </template> -->
                     </td>
                 </tr>
             </tbody>
@@ -101,10 +101,10 @@ export default {
     methods:{
         getListQuote(){
             this.loader()
-            this.$get('/member/projects')
+            this.$get('/member/my-auction/')
                 .then(res => {
                     this.listProject = res.data
-                    this.listShow = res.data
+                    this.listShow = res.data.filter(item => item.survey.length == 0)
                     this.loader(0)
                 })
                 .catch(err => {

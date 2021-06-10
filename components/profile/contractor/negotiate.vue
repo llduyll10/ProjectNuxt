@@ -30,19 +30,19 @@
             <tbody  v-if="listShow" >
                 <tr v-for="(item,idx) in listShow" :key="idx">
                     <td class="name cursor-pointer"
-                        :class="getClassCategory(mapImgFromCategory(item.category))"
-                        @click="$router.push(`/du-an/${item.slug}`)"
+                        :class="item.project ? getClassCategory(mapImgFromCategory(item.project.category)) : ''"
+                        @click="$router.push(`/du-an/${item.project.slug}`)"
                     >
-                        {{item.name}}
+                        {{item.project ? item.project.name : ''}}
                     </td>
                     <td class="customer  f-12">
                         <span class="text-main">
                             Công ty cổ phần Epoint
                         </span>
                     </td>
-                    <td class="price ">{{formatVnd(item.budget)}} VND</td>
+                    <td class="price ">{{formatVnd(item.price)}} VND</td>
                     <td class="status ">
-                        <template v-if="true">
+                        <template v-if="false">
                                 <b-dropdown id="dropdown-duedate" variant="link" toggle-class="text-decoration-none" class="custom-infor pb-5px" no-caret>
                                     <template #button-content>
                                         <div class="d-flex">
@@ -55,7 +55,7 @@
                                         </div>
                                     </template>
                                      <b-dropdown-item class="f-12">
-                                        Huỷ yêu cầu khảo sát
+                                        Huỷ  khảo sát
                                      </b-dropdown-item>
                             </b-dropdown>
                         </template>
@@ -105,7 +105,7 @@ export default {
     methods:{
         getListQuote(){
             this.loader()
-            this.$get('/member/projects')
+            this.$get('/member/my-auction/')
                 .then(res => {
                     this.listProject = res.data
                     this.listShow = res.data
