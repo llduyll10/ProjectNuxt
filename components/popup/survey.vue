@@ -51,25 +51,39 @@
                             <span style="color:red">*</span>
                         </label>
                         <div class="d-flex">
-                            <v-date-picker
-                                v-model="objResearch.date"
-                                :masks="{input: 'DD/MM/YYYY'}"
-                                :model-config="{type: 'number',}
-                            ">
-                                <template v-slot="{ inputValue, inputEvents }">
-                                    <div class="input-group custom-input-calendar">
-                                        <input type="text"
-                                                class="form-control"
-                                                :value="inputValue"
-                                                v-on="inputEvents"
-                                                :readonly="isCancel"
-                                                required>
-                                        <div class="input-group-append">
-                                            <span :class="isCancel ? 'disabled' : ''" class="input-group-text custom-time"><i class="fas fa-calendar-day"></i></span>
-                                        </div>
+                            <template v-if="isCancel">
+                                <div class="input-group custom-input-calendar" style="min-width:170px">
+                                    <input type="text"
+                                            class="form-control"
+                                            :value="$moment(objResearch.date).format('DD/MM/YYYY')"
+                                            readonly
+                                            required>
+                                    <div class="input-group-append">
+                                        <span :class="isCancel ? 'disabled' : ''" class="input-group-text custom-time"><i class="fas fa-calendar-day"></i></span>
                                     </div>
-                                </template>
-                            </v-date-picker>
+                                </div>
+                            </template>
+                            <template v-else>
+                                <v-date-picker
+                                    v-model="objResearch.date"
+                                    :masks="{input: 'DD/MM/YYYY'}"
+                                    :model-config="{type: 'number',}"
+                                    >
+                                    <template v-slot="{ inputValue, inputEvents }">
+                                        <div class="input-group custom-input-calendar">
+                                            <input type="text"
+                                                    class="form-control"
+                                                    :value="inputValue"
+                                                    v-on="inputEvents"
+                                                    :readonly="isCancel"
+                                                    required>
+                                            <div class="input-group-append">
+                                                <span :class="isCancel ? 'disabled' : ''" class="input-group-text custom-time"><i class="fas fa-calendar-day"></i></span>
+                                            </div>
+                                        </div>
+                                    </template>
+                                </v-date-picker>
+                            </template>
                             <input type="time" v-model="objResearch.time" :readonly="isCancel" class="ml-20px form-control">
                         </div>
                 </div>
