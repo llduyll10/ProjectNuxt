@@ -108,7 +108,7 @@ export default {
             this.$get('/member/my-auction/')
                 .then(res => {
                     this.listProject = res.data
-                    this.listShow = res.data
+                    this.listShow = res.data.filter(item => item.survey.length > 0)
                     this.loader(0)
                 })
                 .catch(err => {

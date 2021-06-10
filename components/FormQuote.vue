@@ -177,7 +177,7 @@ export default {
                             day: Number(this.objForm.day),
                             attachments:arrFile,
                             status:status,
-                            projectOwner:detailProject.createBy._id
+                            projectOwner:this.detailProject.createBy._id
                         }
                 let res = await this.$post(`member/auction/project/${this.id}`,obj)
                 this.resetForm()
