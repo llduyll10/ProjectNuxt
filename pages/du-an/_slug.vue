@@ -249,7 +249,7 @@
               </template>
 
               <div v-else>
-                <p class="text-danger"><b>Chưa có chào giá</b></p>
+                <p class="text-danger pl-36px"><b>Chưa có chào giá</b></p>
               </div>
 
 
