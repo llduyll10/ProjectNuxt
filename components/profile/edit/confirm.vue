@@ -22,7 +22,7 @@
                             :disabled="$auth.user.verified"
                             placeholder="Số điện thoại"
                         />
-                        <div class="group-verify">
+                        <div v-if="$auth.user.verified" class="group-verify">
                             <img  src="@/assets/svg/icon-check-blue.svg" alt="">
                             <span> Đã xác thực</span>
                         </div>
