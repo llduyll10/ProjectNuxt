@@ -12,15 +12,20 @@
                     Xác thực số điện thoại<span class="dot">*</span>
                 </div>
                 <div class="fieldInput flex-align-center">
-                    <div class="form-group mb-0 flex-1 mr-15px">
+                    <div class="form-group mb-0 flex-1 mr-15px" :class="$auth.user.verified ? 'group-verfiry' : ''">
                         <input
                             type="text"
                             class="form-control"
+                            :class="$auth.user.verified ? 'verify' : '' "
                             required
                             v-model="phone"
                             :disabled="$auth.user.verified"
                             placeholder="Số điện thoại"
                         />
+                        <div class="group-verify">
+                            <img  src="@/assets/svg/icon-check-blue.svg" alt="">
+                            <span> Đã xác thực</span>
+                        </div>
                     </div>
 
                     <div>
@@ -63,8 +68,12 @@
 
                 </div>
                 <div v-else>
-                    <small class="text-danger">
-                        {{$auth.user.verifiedPaperStatus == 'Pending' ? 'Đang xác thực' : 'Đã xác thực'}}
+                    <small v-if="$auth.user.verifiedPaperStatus == 'Active'" class="checkVerify">
+                        <img  src="@/assets/svg/icon-check-blue.svg" alt="">
+                        Đã xác thực
+                    </small>
+                    <small v-else class="text-danger fw-600">
+                        Đang xác thực
                     </small>
                     <div v-if="arrFileUser && arrFileUser.length">
                         <template v-for="(item,idx) in arrFileUser">
