@@ -14,7 +14,7 @@
                     <span class="col-md-9 col-sm-12 pl-0 name-project"
                         :class="getClassCategory(mapImgFromCategory(rawCategory))"
                     >
-                        {{title}}
+                        {{detailProject.name}}
                     </span>
                 </div>
                 <div class="form-group row">
@@ -118,7 +118,7 @@
 
 <script>
 export default {
-    props:['isService','title','rawCategory'],
+    props:['isService','detailProject','rawCategory'],
     data(){
         return{
             objResearch:{
@@ -143,13 +143,18 @@ export default {
                 var obj = {
                             ...this.objResearch,
                             attachments:arrFile,
-                            to: this.isService ? this.objInfor.auctionBy._id : this.objInfor._id,
-                            title: this.isService ? (this.objInfor.auctionBy.company ? this.objInfor.auctionBy.company : this.objInfor.auctionBy.name) : (this.objInfor.company ? this.objInfor.company : this.objInfor.name)
+                            project: this.detailProject._id,
+                            auction: this.objInfor._id
                         }
-                // let res = await this.$post(`/member/rooms`,obj)
+                let res = await this.$post('member/survey',obj)
+                console.log('obj',obj)
+                console.log('objInfor',this.objInfor)
+                 console.log('detailProject',this.detailProject)
+                console.log('res',res)
                 this.loader(0)
                 this.resetForm()
                 this.hide()
+                this.$emit('activeCompany', true)
             }
             catch(err){
                 console.log(err)
