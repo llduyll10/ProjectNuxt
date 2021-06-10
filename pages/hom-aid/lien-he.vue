@@ -14,35 +14,41 @@
                                 <div class="row">
                                     <div class="col-lg-5">
                                         <div class="left">
-                                            <img src="@/assets/svg/homeaidcontact.svg" alt="">
-                                            <div class="content">
-                                                <div class="name f-20">
-                                                    Công Ty Cổ Phần Epoint
+                                            <div class="row">
+                                                <div class="col-lg-12 col-md-6">
+                                                    <img src="@/assets/svg/homeaidcontact.svg" alt="">
                                                 </div>
-                                                <div class="address">
-                                                    <div class="row">
-                                                        <div class="col-4">
-                                                            <div class="title">Địa chỉ:</div>
+                                                <div class="col-lg-12 col-md-6">
+                                                    <div class="content">
+                                                        <div class="name f-20">
+                                                            Công Ty Cổ Phần Epoint
                                                         </div>
-                                                        <div class="col-8">
-                                                            <div class="sub">Đường 2C, khu CIQ4 P. Phú Mỹ, Q.7, Tp. Hồ Chí Minh</div>
+                                                        <div class="address">
+                                                            <div class="row">
+                                                                <div class="col-4">
+                                                                    <div class="title">Địa chỉ:</div>
+                                                                </div>
+                                                                <div class="col-8">
+                                                                    <div class="sub">Đường 2C, khu CIQ4 P. Phú Mỹ, Q.7, Tp. Hồ Chí Minh</div>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                                <div class="hotline row">
-                                                    <div class="col-4">
-                                                        <div class="title">Hotline:</div>
-                                                    </div>
-                                                    <div class="col-8">
-                                                        <div class="sub">1 900 12345</div>
-                                                    </div>
-                                                </div>
-                                                <div class="email row">
-                                                     <div class="col-4">
-                                                        <div class="title">Email:</div>
-                                                    </div>
-                                                    <div class="col-8">
-                                                        <div class="sub email">Support@homaid.vn</div>
+                                                        <div class="hotline row">
+                                                            <div class="col-4">
+                                                                <div class="title">Hotline:</div>
+                                                            </div>
+                                                            <div class="col-8">
+                                                                <div class="sub">1 900 12345</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="email row">
+                                                            <div class="col-4">
+                                                                <div class="title">Email:</div>
+                                                            </div>
+                                                            <div class="col-8">
+                                                                <div class="sub email">Support@homaid.vn</div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
