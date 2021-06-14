@@ -290,6 +290,7 @@ export default {
                 }
                 if(this.isModal){
                     this.$emit('callGetDetail')
+                    this.$emit('hideModal')
                 }
                 this.$notify({ group: 'all', text: this.isModal ? 'Cập nhật dự án thành công' : 'Tạo dự án thành công',  type: 'dark'})
                 this.loader(0)
