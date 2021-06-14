@@ -13,13 +13,13 @@
                                         <div class="button">Tìm kiếm</div>
                                     </div>
                                     <div class="general d-flex">
-                                        <div @click="typeRoom = 1" class="item cursor-pointer f-13" :class="typeRoom == 1 ? 'active' : ''" >
+                                        <div @click="setTypeRoom(1)" class="item cursor-pointer f-13" :class="typeRoom == 1 ? 'active' : ''" >
                                             Tất cả tin nhắn
                                         </div>
-                                        <div @click="typeRoom = 2" class="item cursor-pointer f-13" :class="typeRoom == 2 ? 'active' : '' " >
+                                        <div @click="setTypeRoom(2)" class="item cursor-pointer f-13" :class="typeRoom == 2 ? 'active' : '' " >
                                             Tin chưa đọc (<span>2</span>)
                                         </div>
-                                        <div @click="typeRoom = 3" class="item cursor-pointer f-13" :class="typeRoom == 3 ? 'active' : ''" >
+                                        <div @click="setTypeRoom(3)" class="item cursor-pointer f-13" :class="typeRoom == 3 ? 'active' : ''" >
                                             Hỗ trợ (<span>2</span>)
                                         </div>
                                     </div>
@@ -142,8 +142,46 @@
                                 </div>
                             </template>
                             <template v-else>
-                                <div class="contentWrap">
-                                    <p>dbc</p>
+                                <div v-if="currentRoom" class="contentWrap">
+                                    <!-- top -->
+                                    <div  class="contentTop d-flex">
+                                        <div  class="title">{{currentRoom.title}}</div>
+                                        <div class="wrapDate">
+                                            <img src="@/assets/svg/point-black.svg" alt="">
+                                            <div class="date ml-20px f-12">Đăng ngày  <span>{{$moment(currentRoom.createdDate).format('DD/MM/YYYY')}}</span></div>
+                                        </div>
+                                    </div>
+                                    <!-- middle -->
+                                    <div class="message isSuuport mt-25px" v-if="listChatDetail">
+                                        <span class="f-13 main-black">Chào bạn,</span> <br>
+                                        <span class="f-13 main-black">
+                                            Khách hàng <span class="f-13 text-main">Phạm Yên</span> vừa cập nhật thông tin dự án <span class="f-13 text-main font-weight-bold"> Tìm đơn vị trang trí nội thất căn hộ Hà Đô Centrosa.</span>
+                                        </span>
+                                        <div class="btn-project">
+                                            <span>Xem dự án</span>
+                                        </div>
+                                        <span class="f-13 main-black">Chân thành cám ơn, </span> <br>
+                                        <span class="f-13 main-black"> Đội ngũ <span class="text-main">HomAid</span>,</span>
+                                    </div>
+                                    <!-- bottom -->
+                                    <div class="content-bottom">
+                                        <div class="cover-bttom">
+                                            <div class="group-icon">
+                                                <img src="@/assets/svg/icon-fb-black.svg" />
+                                                <img src="@/assets/svg/icon-linked-black.svg" />
+                                                <img src="@/assets/svg/icon-gg-black.svg" />
+                                                <img src="@/assets/svg/icon-pinterest-black.svg" />
+                                                <img src="@/assets/svg/icon-youtube-black.svg" />
+                                            </div>
+                                            <p class="coppyright">Copyright © 2017 Epoint. All rights reserved.</p>
+
+                                            <div class="group-address">
+                                                <p class="font-weight-bold">Địa chỉ văn phòng</p>
+                                                <p>873 Huỳnh Tấn Phát, Q.7, TPHCM</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
                                 </div>
                             </template>
                         </div>
@@ -178,9 +216,11 @@ export default {
     },
     mounted(){
         this.getListMess()
-
     },
     methods:{
+        setTypeRoom(type){
+            this.typeRoom = type
+        },
         getListMess(){
             this.loader()
             this.$get('member/rooms')

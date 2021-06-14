@@ -1,5 +1,6 @@
 #managerMessage {
     color: $main-black;
+
     .boxMessage {
         border-radius: 5px;
         background-color: #fff;
@@ -201,6 +202,18 @@
         width: 810px;
         box-sizing: border-box;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        .btn-project{
+            cursor: pointer;
+            width: 135px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: 500;
+            padding: 5px 15px;
+            margin: 25px 0;
+            color: #F2F2F2;
+            background-color:$main-color;
+            @extend .flex-center;
+        }
         .contentTop {
             padding: 16px 26px;
             border-bottom: 1px solid #F2F2F2;
@@ -219,10 +232,44 @@
                 }
             }
         }
+        .content-bottom{
+            @extend .flex-center;
+            height: 175px;
+            background: #F4F4F4;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            .cover-bttom{
+                .group-icon{
+                    text-align: center;
+                    img{
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+                .coppyright{
+                    text-align: center;
+                    font-size: 12px;
+                    color: $main-black;
+                    margin-bottom: 12px;
+                    margin-top: 10px;
+                }
+                .group-address{
+                    text-align: center;
+                    p{
+                        margin-bottom: 0;
+                        font-size: 12px;
+                        color: $main-black;
+                    }
+                }
+            }
+        }
         .message {
             height: 500px;
             overflow: auto;
             padding: 0 16px;
+            &.isSuuport{
+                height: 437px;
+            }
             &.fixHeight{
                 height: 470px !important;
             }
@@ -263,6 +310,7 @@
                     height: 35px;
                     margin-right: 15px;
                 }
+
             }
             .receive {
                 margin-bottom: 20px;
@@ -335,6 +383,7 @@
                 margin-bottom: 10px;
             }
         }
+
     }
 }
 
