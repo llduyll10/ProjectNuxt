@@ -42,33 +42,36 @@
                     </td>
                     <td class="price ">{{formatVnd(item.price)}} VND</td>
                     <td class="status ">
-                        <template v-if="false">
-                                <b-dropdown id="dropdown-duedate" variant="link" toggle-class="text-decoration-none" class="custom-infor pb-5px" no-caret>
-                                    <template #button-content>
-                                        <div class="d-flex">
-                                            <div class="cover-infor">
-                                                <p class="f-12">
-                                                <span class="f-12 text-main">Xem yêu cầu khảo sát</span>
-                                                <i class="fas fa-caret-down ml-5px f-16 text-main"></i>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </template>
-                                     <b-dropdown-item class="f-12">
-                                        Huỷ  khảo sát
-                                     </b-dropdown-item>
-                            </b-dropdown>
-                        </template>
-                        <template v-else>
-                            <div class="btn-send">
+                        <template v-if="true">
+                            <div class="btn-send" @click="openModalViewSurvey(item)">
                                 <img src="@/assets/svg/email.svg" alt="">
                                 <span>Xem yêu cầu khảo sát</span>
                             </div>
+
+                        </template>
+                        <template v-else>
+                            <b-dropdown id="dropdown-duedate" variant="link" toggle-class="text-decoration-none" class="custom-infor pb-5px" no-caret>
+                                <template #button-content>
+                                    <div class="d-flex">
+                                        <div class="cover-infor">
+                                            <p class="f-12">
+                                            <span class="f-12 text-main">Khảo sát 10:00 - 20/4/2021</span>
+                                            <i class="fas fa-caret-down ml-5px f-16 text-main"></i>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </template>
+                                    <b-dropdown-item class="f-12">
+                                    Huỷ  khảo sát
+                                    </b-dropdown-item>
+                            </b-dropdown>
                         </template>
                     </td>
+
                 </tr>
             </tbody>
         </table>
+        <PopupViewSurvey v-if="activeCompany" ref="popupViewSurvey" :objProject="activeCompany" :detailProject="activeCompany.project" :rawCategory="activeCompany.project.category" />
     </div>
 </template>
 <script>
@@ -77,6 +80,7 @@ export default {
         return{
             listProject:null,
             listShow:null,
+            activeCompany:null,
             optionSearch:[
                 { id: 1, label: 'Tất cả dự án' },
                 { id: 2, label: 'Đang nhận hồ sơ' },
@@ -109,6 +113,7 @@ export default {
                 .then(res => {
                     this.listProject = res.data
                     this.listShow = res.data.filter(item => item.survey.length > 0)
+                    this.activeCompany  = this.listShow[0]
                     this.loader(0)
                 })
                 .catch(err => {
@@ -148,6 +153,12 @@ export default {
             else{
                 this.filterList(this.listProject)
             }
+        },
+        openModalViewSurvey(company){
+            this.activeCompany = company
+
+            this.$refs.popupViewSurvey.show()
+            this.$refs.popupViewSurvey.getInforPerchant(this.activeCompany.projectOwner)
         }
     }
 }
