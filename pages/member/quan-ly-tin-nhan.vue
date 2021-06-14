@@ -58,6 +58,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- Type room chat -->
                             <template v-if="typeRoom == 1 || typeRoom == 2">
                                 <div v-if="currentRoom" class="contentWrap">
                                     <div  class="contentTop d-flex">
@@ -141,18 +142,19 @@
                                     </div>
                                 </div>
                             </template>
+                            <!-- Type room support -->
                             <template v-else>
                                 <div v-if="currentRoom" class="contentWrap">
                                     <!-- top -->
                                     <div  class="contentTop d-flex">
-                                        <div  class="title">{{currentRoom.title}}</div>
+                                        <div  class="title titleSupport">Phạm Yên vừa cập nhật thông tin dự án <span class="text-main"> Tìm đơn vị trang trí nội thất căn hộ Hà Đô Centrosa </span></div>
                                         <div class="wrapDate">
                                             <img src="@/assets/svg/point-black.svg" alt="">
                                             <div class="date ml-20px f-12">Đăng ngày  <span>{{$moment(currentRoom.createdDate).format('DD/MM/YYYY')}}</span></div>
                                         </div>
                                     </div>
                                     <!-- middle -->
-                                    <div class="message isSuuport mt-25px" v-if="listChatDetail">
+                                    <div class="message isSuuport mt-25px px-25px" v-if="listChatDetail">
                                         <span class="f-13 main-black">Chào bạn,</span> <br>
                                         <span class="f-13 main-black">
                                             Khách hàng <span class="f-13 text-main">Phạm Yên</span> vừa cập nhật thông tin dự án <span class="f-13 text-main font-weight-bold"> Tìm đơn vị trang trí nội thất căn hộ Hà Đô Centrosa.</span>
