@@ -117,9 +117,9 @@ export default {
             this.$post('user/verify/paper',obj)
                 .then(res => {
                     if(res.data.status){
-                         this.$auth.fetchUser();
-                         this.arrFileUser = this.$auth.user.verifiedPaper
+                        this.arrFileUser = this.$auth.user.verifiedPaper
                     }
+                   this.$auth.fetchUser();
                 })
                 .catch(err => {
                     console.log(err)
