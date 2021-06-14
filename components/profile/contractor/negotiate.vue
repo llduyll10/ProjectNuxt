@@ -42,7 +42,7 @@
                     </td>
                     <td class="price ">{{formatVnd(item.price)}} VND</td>
                     <td class="status ">
-                        <template v-if="true">
+                        <template v-if="!item.step">
                             <div class="btn-send" @click="openModalViewSurvey(item)">
                                 <img src="@/assets/svg/email.svg" alt="">
                                 <span>Xem yêu cầu khảo sát</span>
@@ -55,7 +55,7 @@
                                     <div class="d-flex">
                                         <div class="cover-infor">
                                             <p class="f-12">
-                                            <span class="f-12 text-main">Khảo sát 10:00 - 20/4/2021</span>
+                                            <span class="f-12 text-main">Khảo sát {{item.survey[0].time}} - {{$moment(item.survey[0].date).format('DD/MM/YYYY')}}</span>
                                             <i class="fas fa-caret-down ml-5px f-16 text-main"></i>
                                             </p>
                                         </div>
