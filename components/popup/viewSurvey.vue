@@ -118,10 +118,11 @@
                         </button>
                     </div>
                     <div v-else class="col-md-12 d-flex">
-                        <button type="submit" class="btn-now mr-15px" >
+                        <button type="submit" class="d-none" ref="btnClick"></button>
+                        <button type="button" @click="sendSurvey()" class="btn-now mr-15px" >
                            XÁC NHẬN KHẢO SÁT
                         </button>
-                        <button type="submit" class="btn-now delete"  >
+                        <button type="button" @click="sendSurvey()" class="btn-now delete"  >
                             TỪ CHỐI YÊU CẦU KHẢO SÁT
                         </button>
                     </div>
@@ -177,6 +178,9 @@ export default {
                 this.loader(0)
             }
 
+        },
+        sendSurvey(){
+            this.$refs.btnClick.click()
         },
         resetForm(){
             this.objResearch = {}
