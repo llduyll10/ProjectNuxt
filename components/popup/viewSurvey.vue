@@ -75,9 +75,6 @@
                                     <p :key="idx" class="f-11 text-main ">
                                         <span v-html="returnTypeFile(item.name)"></span>
                                         {{item.name}}
-                                        <span class="cursor-pointer ml-5px" @click="clearFile(item)">
-                                            <i class="fas fa-times text-red"></i>
-                                        </span>
                                     </p>
                                 </template>
                             </div>
@@ -95,7 +92,7 @@
                 </div>
                 <div class="form-group  group-checkbox">
                     <b-form-checkbox
-                        v-model="objResearch.agreeSurvey"
+                        v-model="objResearch.agree"
                         name="checkbox-agree-survey"
                         required
                         >
@@ -104,7 +101,7 @@
                 </div>
                 <div class="form-group  group-checkbox">
                     <b-form-checkbox
-                        v-model="objResearch.agree"
+                        v-model="objResearch.agreeSurvey"
                         name="checkbox-agree"
                         required
                         >
@@ -141,6 +138,7 @@ export default {
         return{
             objResearch:{
                 agree:false,
+                agreeSurvey:false,
                 date:new Date().getTime(),
             },
             objInfor:null,
@@ -189,13 +187,6 @@ export default {
         },
         getInforPerchant(infor){
             this.objInfor = infor
-        },
-
-        getFile(file){
-            this.arrFile = this.arrFile.concat(file)
-        },
-        clearFile(file){
-            this.arrFile = this.arrFile.filter(item => item.name !== file.name)
         },
         show() {
             this.$refs.popupSurvey.showModal();
