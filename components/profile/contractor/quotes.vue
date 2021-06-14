@@ -36,7 +36,7 @@
                         {{item.project ? item.project.name : ''}}
                     </td>
                     <td class="customer  f-12">
-                        <span class="text-main font-weight-bold">{{item.auctionCount}}</span> chào giá
+                        <span class="text-main font-weight-bold">{{item.projectOwner.name}}</span>
                     </td>
                     <td class="price ">{{formatVnd(item.price)}} VND</td>
                     <td class="status ">
@@ -104,7 +104,7 @@ export default {
             this.$get('/member/my-auction/')
                 .then(res => {
                     this.listProject = res.data
-                    this.listShow = res.data.filter(item => item.survey.length == 0)
+                    this.listShow = res.data.filter(item =>item.survey.length == 0)
                     this.loader(0)
                 })
                 .catch(err => {

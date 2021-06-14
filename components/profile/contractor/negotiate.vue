@@ -37,7 +37,7 @@
                     </td>
                     <td class="customer  f-12">
                         <span class="text-main">
-                            Công ty cổ phần Epoint
+                            {{item.projectOwner.name}}
                         </span>
                     </td>
                     <td class="price ">{{formatVnd(item.price)}} VND</td>
@@ -48,7 +48,7 @@
                                         <div class="d-flex">
                                             <div class="cover-infor">
                                                 <p class="f-12">
-                                                <span class="f-12 text-main">Khảo sát</span>
+                                                <span class="f-12 text-main">Xem yêu cầu khảo sát</span>
                                                 <i class="fas fa-caret-down ml-5px f-16 text-main"></i>
                                                 </p>
                                             </div>
@@ -62,7 +62,7 @@
                         <template v-else>
                             <div class="btn-send">
                                 <img src="@/assets/svg/email.svg" alt="">
-                                <span>Xem thương lượng</span>
+                                <span>Xem yêu cầu khảo sát</span>
                             </div>
                         </template>
                     </td>
