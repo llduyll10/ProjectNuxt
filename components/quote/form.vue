@@ -1,5 +1,16 @@
 <template>
     <div v-if="isShowForm">
+        <h3 class="h5 main-black f-14 fw-700">
+            <template v-if="isUpdateQuote">
+                Cập nhật chào giá cho dự án
+            </template>
+            <template v-else>
+                Gửi chào giá cho dự án - Bạn sẽ tốn
+                <span class="main-color"><span class="f-20">3</span> Tokens</span> khi tham gia chào giá
+            </template>
+
+        </h3>
+        <hr class="hr" />
         <form @submit.prevent="createQuote('ACTIVE')" class="group-content">
             <div class="form-group row mb-25px align-items-center">
                 <label class="f-13 col-md-3 col-sm-12 fw-600">
@@ -27,7 +38,8 @@
             </div>
             <div class="form-group row mb-25px align-items-center">
                 <label class="f-13 col-md-3 col-sm-12 fw-600">
-                    Kinh nghiệm, Năng lực và giải pháp đề xuất
+                    {{isUpdateQuote ? 'Giải pháp đề xuất và lý do tại sao báo giá lại cao/thấp hơn giá ước lượng ban đầu' : 'Kinh nghiệm, Năng lực và giải pháp đề xuất'}}
+
                     <span style="color:red">*</span>
                 </label>
                 <div class="col-md-9 col-sm-12">
@@ -41,7 +53,7 @@
                 </div>
             </div>
             <div class="form-group row mb-25px align-items-center">
-                <label class="f-13 col-md-3 col-sm-12 fw-600">
+                <label class="f-13 col-md-3 col-sm-12 fw-600 mb-0">
                     Thời gian thi công dự trù
                     <span style="color:red">*</span>
                 </label>
@@ -54,6 +66,22 @@
                     </div>
                 </div>
             </div>
+
+            <template v-if="isUpdateQuote">
+                <template v-for="(item,idx) in objForm.payments">
+                    <div :key="idx" class="form-group row mb-25px align-items-center">
+                        <label class="f-13 col-md-3 col-sm-12 fw-600">
+                            Thanh toán đợt {{item.key}}
+                            <span style="color:red">*</span>
+                        </label>
+                        <div class=" col-md-9 col-sm-12 d-flex">
+                            <input v-model="item.value" type="text" class="form-control" style="width:200px" />
+                            <span @click="addPayment(item)" class="ml-10px mt-7px text-main f-12 cursor-pointer">Thêm đề nghị thanh toán</span>
+                        </div>
+                    </div>
+                </template>
+            </template>
+
             <div class="form-group row mb-25px align-items-center">
                 <label class="f-13 col-md-3 col-sm-12 fw-600">
                     Tài liệu đính kèm
@@ -92,7 +120,7 @@
                         type="submit"
                         class=" btn btn-primary main-bg-color radius-5 w-100  text-16 fw-700"
                     >
-                        GỬI CHÀO GIÁ NGAY
+                        {{isUpdateQuote ? 'CẬP NHẬT BÁO GIÁ' :'GỬI CHÀO GIÁ NGAY'}}
                     </button>
                 </div>
                 <div class="col-md-6 col-sm-12">
@@ -137,7 +165,7 @@ export default {
             accepFile:["png", "jpg", "tiff", "pdf", "xls", "doc", "ppt", "zip", "rar"],
             arrFile:[],
             isShowForm:false,
-            isUpdateQuote:false
+            isUpdateQuote:false,
         }
     },
     mounted(){
@@ -155,13 +183,13 @@ export default {
                                 this.isShowForm = true;
                             }else{
                                 if(res.data.auction.step === 2 && res.data.auction.survey.length && res.data.auction.statusUpdate == 'DRAFT'){
-                                    this.objForm = {...res.data.auction,payments:res.data.auction.payments || [{key:1,value:0}]};
+                                    this.objForm = {...res.data.auction,payments: res.data.auction.payments.length ? res.data.auction.payments : [{key:1,value:0}]};
                                     this.isShowForm = true;
                                     this.isUpdateQuote = true;
                                 }else{
                                     this.isShowForm = false;
                                 }
-                                
+
                             }
                         }else{
                             this.isShowForm = true;
@@ -177,7 +205,7 @@ export default {
 
         },
         async createQuote(status){
-            this.loader()
+            // this.loader()
             try{
                 var arrFile = this.arrFile.length ? await this.uploadFile(this.arrFile) : []
                 var obj = {
@@ -215,6 +243,11 @@ export default {
         clearFile(file){
             this.arrFile = this.arrFile.filter(item => item.name !== file.name)
         },
+        addPayment(){
+            var length = this.objForm.payments.length
+            var obj = {key:length+1,value:0}
+            this.objForm.payments.push(obj)
+        }
     }
 
 }

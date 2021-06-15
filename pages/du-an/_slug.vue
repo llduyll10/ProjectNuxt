@@ -65,11 +65,7 @@
               class="left inner-content-section px-36px pt-25px pb-50px mb-20px"
               v-if="!checkStatusDueDate(detailProject.dueDate)"
             >
-              <h3 class="h5 main-black f-14 fw-700">
-                Gửi chào giá cho dự án - Bạn sẽ tốn
-                <span class="main-color"><span class="f-20">3</span> Tokens</span> khi tham gia chào giá
-              </h3>
-              <hr class="hr" />
+
               <template v-if="detailProject && detailProject._id">
                 <QuoteForm @callGetList="getDetailProject" :quoteName="detailProject.name"  :id="detailProject._id" :detailProject="detailProject" />
               </template>
