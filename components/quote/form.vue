@@ -155,7 +155,7 @@ export default {
                                 this.isShowForm = true;
                             }else{
                                 if(res.data.auction.step === 2 && res.data.auction.survey.length && res.data.auction.statusUpdate == 'DRAFT'){
-                                    this.objForm = {...res.data.auction,payments:res.data.auction.payments || []};
+                                    this.objForm = {...res.data.auction,payments:res.data.auction.payments || [{key:1,value:0}]};
                                     this.isShowForm = true;
                                     this.isUpdateQuote = true;
                                 }else{
@@ -186,7 +186,7 @@ export default {
                             attachments:arrFile,
                             projectOwner:this.detailProject.createBy._id
                         }
-
+                console.log(obj);
                 var url = `member/auction/project/${this.id}`;
                 if(this.isUpdateQuote){
                     obj.statusUpdate = status;
