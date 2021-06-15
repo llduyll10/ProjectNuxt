@@ -50,28 +50,57 @@
             <div class="col-md-6 col-sm-12 content-right">
                 <!-- ACTIVE -->
                 <template v-if="company && company.survey.length">
-                    <div class="describe  d-flex">
-                        <img src="@/assets/svg/icon-sand-lock.svg" alt="">
-                        <span>Chưa xác nhận</span>
-                    </div>
-                    <div class="date-time ">
-                        <div class="date">
-                            <span>Ngày khảo sát - </span><span class="text-red">{{$moment(company.survey[0].date).format('DD/MM/YYYY')}} </span>
+                    <template v-if="!company.step">
+                        <div class="describe  d-flex">
+                            <img src="@/assets/svg/icon-sand-lock.svg" alt="">
+                            <span>Chưa xác nhận</span>
                         </div>
-                        <div class="time">
-                            <span>Giờ - </span><span class="text-red">{{company.survey[0].time}} </span>
+                        <div class="date-time ">
+                            <div class="date">
+                                <span>Ngày khảo sát - </span><span class="text-red">{{$moment(company.survey[0].date).format('DD/MM/YYYY')}} </span>
+                            </div>
+                            <div class="time">
+                                <span>Giờ - </span><span class="text-red">{{company.survey[0].time}} </span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="group-btn">
-                        <div class="btn-send cancel" @click="openPopupSurvey('CANCEL')">
-                            <img src="@/assets/svg/icon-cancel.svg" alt="">
-                            <span>Huỷ khảo sát</span>
+                        <div class="group-btn">
+                            <div class="btn-send cancel" @click="openPopupSurvey('CANCEL')">
+                                <img src="@/assets/svg/icon-cancel.svg" alt="">
+                                <span>Huỷ khảo sát</span>
+                            </div>
+                            <div class="btn-send cup" @click="openPopupSurvey()">
+                                <img src="@/assets/svg/icon-user-light.svg" alt="">
+                                <span>Thông tin liên hệ</span>
+                            </div>
                         </div>
-                        <div class="btn-send cup" @click="openPopupSurvey()">
-                            <img src="@/assets/svg/icon-user-light.svg" alt="">
-                            <span>Thông tin liên hệ</span>
+                    </template>
+                    <!-- Step == 2; isSurvey -->
+                    <template v-else>
+                        <div class="describe  d-flex">
+                            <img  src="@/assets/svg/icon-check-blue.svg" alt="">
+                            <span>Đã xác nhận</span>
                         </div>
-                    </div>
+                        <div class="date-time ">
+                            <div class="date">
+                                <span>Ngày khảo sát - </span><span class="text-red">{{$moment(company.survey[0].date).format('DD/MM/YYYY')}} </span>
+                            </div>
+                            <div class="time">
+                                <span>Giờ - </span><span class="text-red">{{company.survey[0].time}} </span>
+                            </div>
+                        </div>
+                        <div class="group-btn">
+                            <div class="btn-send" @click="openPopupSurvey('CANCEL')">
+                                <img src="@/assets/svg/icon-cancel.svg" alt="">
+                                <span>Gửi tin nhắn</span>
+                            </div>
+                            <div class="btn-send cup" @click="openPopupSurvey()">
+                                <img src="@/assets/svg/icon-user-light.svg" alt="">
+                                <span>Thông tin liên hệ</span>
+                            </div>
+                        </div>
+                    </template>
+
+
                 </template>
                 <!-- NOT ACTIVE -->
                 <template v-else>
@@ -81,7 +110,7 @@
                             <img src="@/assets/svg/email.svg" alt="">
                             <span>Gửi tin nhắn</span>
                         </div>
-                        <div class="btn-send cup" @click="openPopupSurvey()">
+                        <div v-if="!company.isDestroy" class="btn-send cup" @click="openPopupSurvey()">
                             <img src="@/assets/svg/icon-cup.svg" alt="">
                             <span>Hẹn khảo sát</span>
                         </div>

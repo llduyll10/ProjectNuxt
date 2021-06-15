@@ -61,7 +61,7 @@
                                         </div>
                                     </div>
                                 </template>
-                                    <b-dropdown-item class="f-12">
+                                    <b-dropdown-item class="f-12" @click="cancelSurvey()">
                                     Huỷ  khảo sát
                                     </b-dropdown-item>
                             </b-dropdown>
@@ -71,7 +71,7 @@
                 </tr>
             </tbody>
         </table>
-        <PopupViewSurvey v-if="activeCompany" ref="popupViewSurvey" :objProject="activeCompany" :detailProject="activeCompany.project" :rawCategory="activeCompany.project.category" />
+        <PopupViewSurvey v-if="activeCompany" ref="popupViewSurvey" :objProject="activeCompany" :detailProject="activeCompany.project" :rawCategory="activeCompany.project.category" @getListParent="getListQuote" />
     </div>
 </template>
 <script>
@@ -118,6 +118,22 @@ export default {
                 })
                 .catch(err => {
                     this.loader(0)
+                })
+        },
+        cancelSurvey(){
+            var obj = {
+                    ...this.activeCompany.survey[0],
+                    project: this.activeCompany.project._id,
+                    auction: this.activeCompany._id
+                }
+            console.log('obj',obj)
+            this.$post('member/survey/cancel',obj)
+                .then(res => {
+                    console.log('post',res)
+                    this.getListQuote()
+                })
+                .catch(err => {
+                    console.log('err',err)
                 })
         },
         filterList(list){

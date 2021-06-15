@@ -116,10 +116,10 @@
                     </div>
                     <div v-else class="col-md-12 d-flex">
                         <button type="submit" class="d-none" ref="btnClick"></button>
-                        <button type="button" @click="sendSurvey()" class="btn-now mr-15px" >
+                        <button type="button" @click="sendSurvey('CONFIRM')" class="btn-now mr-15px" >
                            XÁC NHẬN KHẢO SÁT
                         </button>
-                        <button type="button" @click="sendSurvey()" class="btn-now delete"  >
+                        <button type="button" @click="sendSurvey('CANCEL')" class="btn-now delete"  >
                             TỪ CHỐI YÊU CẦU KHẢO SÁT
                         </button>
                     </div>
@@ -146,6 +146,7 @@ export default {
             accepFile:["png", "jpg", "jpeg" , "tiff", "pdf", "xls", "doc", "ppt", "zip", "rar"],
             options: this.getCategory(),
             date: new Date(),
+            statusConfirm:'',
             placeholder:'1. Mô tả chi tiết về dự án xây dựng hoặc yêu cầu thiết kế của bạn\n2. Vui lòng đính kèm sổ đỏ, bản vẽ, thiết kế hoặc hình ảnh minh hoạ để nhận được tư vấn/dự toán tốt nhất.\n3. Yêu cầu năng lực của đơn vị báo giá hoặc những yêu cầu khác',
         }
     },
@@ -157,17 +158,22 @@ export default {
     methods:{
         async sendMessage(){
             try{
-                this.loader()
+                // this.loader()
                 var arrFile = this.arrFile.length ? await this.uploadFile(this.arrFile) : []
                 var obj = {
                             ...this.objResearch,
                             attachments:arrFile,
                             project: this.detailProject._id,
-                            auction: this.objInfor._id
+                            auction: this.objProject._id
                         }
-                console.log('obj',obj)
-                this.$emit('activeCompany', true)
-                this.resetForm()
+                if(this.statusConfirm == 'CONFIRM'){
+                    let res = await this.$post('member/survey/confirmed',obj)
+                    this.$emit('getListParent')
+                }
+                else{
+                    let res = await this.$post('member/survey/destroy',obj)
+                    this.$emit('getListParent')
+                }
                 this.loader(0)
                 this.hide()
             }
@@ -177,13 +183,9 @@ export default {
             }
 
         },
-        sendSurvey(){
+        sendSurvey(status){
+            this.statusConfirm = status
             this.$refs.btnClick.click()
-        },
-        resetForm(){
-            this.objResearch = {}
-            this.arrFile = []
-            this.objInfor = null
         },
         getInforPerchant(infor){
             this.objInfor = infor
