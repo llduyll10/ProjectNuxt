@@ -130,6 +130,7 @@
                 </div>
             </template>
         </Modal>
+        <PopupSurveyContact   ref="surveyContact" :objConfirm="objConfirm"    />
     </div>
 </template>
 
@@ -149,6 +150,7 @@ export default {
             options: this.getCategory(),
             date: new Date(),
             statusConfirm:'',
+            objConfirm:null,
             placeholder:'1. Mô tả chi tiết về dự án xây dựng hoặc yêu cầu thiết kế của bạn\n2. Vui lòng đính kèm sổ đỏ, bản vẽ, thiết kế hoặc hình ảnh minh hoạ để nhận được tư vấn/dự toán tốt nhất.\n3. Yêu cầu năng lực của đơn vị báo giá hoặc những yêu cầu khác',
         }
     },
@@ -171,7 +173,8 @@ export default {
                 if(this.statusConfirm == 'CONFIRM'){
                     let res = await this.$post('member/survey/confirmed',obj)
                     this.$emit('getListParent')
-                    this.$emit('showSurveyContact')
+                    this.objConfirm = res.data.auction.projectOwner
+                    this.showSurveyContact()
                 }
                 else{
                     let res = await this.$post('member/survey/destroy',obj)
@@ -199,6 +202,12 @@ export default {
         hide(){
             this.$refs.popupSurvey.hideModal()
         },
+        showSurveyContact(){
+            this.$refs.surveyContact.show()
+        },
+        hideSurveyContact(){
+            this.$refs.surveyContact.hide()
+        }
 
     }
 }
