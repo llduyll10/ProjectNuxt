@@ -310,7 +310,7 @@ export default {
             listChatDetail:null,
             arrFile:[],
             typeRoom:1, //1,2: chat; 3:support,
-            typeSupport:4
+            typeSupport:8
         }
     },
     mounted(){
