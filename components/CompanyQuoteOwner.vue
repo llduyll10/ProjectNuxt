@@ -77,7 +77,7 @@
                     <!-- Step == 2; isSurvey -->
                     <template v-else>
                         <div class="describe  d-flex">
-                            <img  src="@/assets/svg/icon-check-blue.svg" alt="">
+                            <img  class="icon-check" src="@/assets/svg/icon-check-blue.svg" alt="" >
                             <span>Đã xác nhận</span>
                         </div>
                         <div class="date-time ">
@@ -90,7 +90,7 @@
                         </div>
                         <div class="group-btn">
                             <div class="btn-send" @click="openPopupSurvey('CANCEL')">
-                                <img src="@/assets/svg/icon-cancel.svg" alt="">
+                                <img src="@/assets/svg/email.svg" alt="">
                                 <span>Gửi tin nhắn</span>
                             </div>
                             <div class="btn-send cup" @click="openPopupSurvey()">
