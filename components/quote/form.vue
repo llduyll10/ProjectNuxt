@@ -136,7 +136,8 @@ export default {
             },
             accepFile:["png", "jpg", "tiff", "pdf", "xls", "doc", "ppt", "zip", "rar"],
             arrFile:[],
-            isShowForm:false
+            isShowForm:false,
+            isUpdateQuote:false
         }
     },
     mounted(){
@@ -153,7 +154,14 @@ export default {
                                 this.objForm = {...res.data.auction}
                                 this.isShowForm = true;
                             }else{
-                                this.isShowForm = false;
+                                if(res.data.auction.step === 2 && res.data.auction.survey.length && res.data.auction.statusUpdate == 'DRAFT'){
+                                    this.objForm = {...res.data.auction,payments:res.data.auction.payments || []};
+                                    this.isShowForm = true;
+                                    this.isUpdateQuote = true;
+                                }else{
+                                    this.isShowForm = false;
+                                }
+                                
                             }
                         }else{
                             this.isShowForm = true;
@@ -176,10 +184,16 @@ export default {
                             ...this.objForm,
                             day: Number(this.objForm.day),
                             attachments:arrFile,
-                            status:status,
                             projectOwner:this.detailProject.createBy._id
                         }
-                let res = await this.$post(`member/auction/project/${this.id}`,obj)
+
+                var url = `member/auction/project/${this.id}`;
+                if(this.isUpdateQuote){
+                    obj.statusUpdate = status;
+                }else{
+                    obj.status = status;
+                }
+                let res = await this.$post(url,obj)
                 this.resetForm()
                 this.getQuote()
                 this.loader(0)
