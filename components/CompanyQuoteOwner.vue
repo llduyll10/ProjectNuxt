@@ -111,7 +111,7 @@
                             <span>Gửi tin nhắn</span>
                         </div>
                         <div v-if="!company.isDestroy" class="btn-send cup" @click="openPopupSurvey()">
-                            <img src="@/assets/svg/icon-cup.svg" alt="">
+                            <img src="@/assets/svg/icon-survey.svg" alt="" style="margin-top:-2px">
                             <span>Hẹn khảo sát</span>
                         </div>
                     </div>
