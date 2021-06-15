@@ -56,6 +56,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="line"></div>
                                 </div>
                             </div>
                             <!-- Type room chat -->
