@@ -89,7 +89,7 @@
                             </div>
                         </div>
                         <div class="group-btn">
-                            <div class="btn-send" @click="openPopupSurvey('CANCEL')">
+                            <div class="btn-send" @click="openLienHeMail()">
                                 <img src="@/assets/svg/email.svg" alt="">
                                 <span>Gửi tin nhắn</span>
                             </div>
