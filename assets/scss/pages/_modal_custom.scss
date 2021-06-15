@@ -160,6 +160,7 @@
 #modal-change-phone-form-submit,
 #modal-change-tax-form-submit,
 #modal-survey,
+#modal-survey-contact,
 #modal-infor-project {
     .modal-body {
         padding-top: 0!important;
@@ -328,6 +329,50 @@
         }
     }
 }
+#modal-survey-contact{
+    .modal-body{
+        padding: 0;
+        .content{
+            margin-bottom:50px ;
+            .title{
+                color: $main-black !important;
+                padding-left: 60px;
+                padding-right: 60px;
+                padding-bottom: 20px;
+                border-bottom: 1.5px solid #F2F2F2;
+            }
+            .group-infor{
+                padding-left: 60px;
+                padding-bottom: 20px;
+                border-bottom: 1.5px solid #F2F2F2;
+                .key{
+                    font-size: 13px;
+                    font-weight: 600;
+                    color: $main-black;
+                }
+                .value{
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: $main-color;
+                }
+            }
+            .footer{
+                padding: 0 60px;
+                margin-top: 25px;
+                .btn-confirm{
+                    @extend .flex-center;
+                    cursor: pointer;
+                    font-size: 15px;
+                    font-weight: 500;
+                    color: white;
+                    background-color: $main-color;
+                    padding: 10px 0;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+}
 
 @media screen and (max-width:992px) {
     #modal-custom-form-login,
@@ -337,7 +382,7 @@
     #modal-change-phone-form-submit,
     #modal-change-tax-form-submit,
     #modal-show-villa,
-    #modal-survey {
+    #modal-survey, #modal-survey-contact {
         .modal-md {
             width: auto !important;
         }
@@ -348,7 +393,7 @@
     #modal-change-phone-form-submit,
     #modal-change-tax-form-submit,
     #modal-show-villa,
-    #modal-survey {
+    #modal-survey,#modal-survey-contact {
         .modal-body {
             padding: 1rem !important;
             height: auto;

@@ -71,7 +71,16 @@
                 </tr>
             </tbody>
         </table>
-        <PopupViewSurvey v-if="activeCompany" ref="popupViewSurvey" :objProject="activeCompany" :detailProject="activeCompany.project" :rawCategory="activeCompany.project.category" @getListParent="getListQuote" />
+        <PopupViewSurvey v-if="activeCompany"
+                        ref="popupViewSurvey"
+                        :objProject="activeCompany"
+                        :detailProject="activeCompany.project"
+                        :rawCategory="activeCompany.project.category"
+                        @getListParent="getListQuote"
+                        @showSurveyContact="showSurveyContact"
+        />
+        <PopupSurveyContact v-if="activeCompany"  ref="surveyContact" :objProject="activeCompany"   />
+
     </div>
 </template>
 <script>
@@ -175,6 +184,12 @@ export default {
 
             this.$refs.popupViewSurvey.show()
             this.$refs.popupViewSurvey.getInforPerchant(this.activeCompany.projectOwner)
+        },
+        showSurveyContact(){
+            this.$refs.surveyContact.show()
+        },
+        hideSurveyContact(){
+            this.$refs.surveyContact.hide()
         }
     }
 }
