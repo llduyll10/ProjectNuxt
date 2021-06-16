@@ -3,7 +3,7 @@
       <template v-slot:content>
         <div class="modal-contact formCore" v-if="objCompany">
           <div class="content">
-            <p class="title f-14" >
+            <p class="title f-14 fw-600" >
                 Chọn Công ty cổ phần <span class="text-main">{{objCompany.auctionBy.company}}</span> làm đơn vị thi công và yêu cầu thương lượng
             </p>
             <form @submit.prevent="submitForm()">
@@ -13,7 +13,7 @@
                             <span class="key">Tên dự án:</span>
                         </div>
                         <div class="col-md-9">
-                            <span class="f-16" :class="getClassCategory(mapImgFromCategory(rawCategory))">
+                            <span class="f-16 fw-600" :class="getClassCategory(mapImgFromCategory(rawCategory))">
                                 {{detailProject.name}}
                             </span>
                         </div>
@@ -26,7 +26,7 @@
                         <div class="col-md-9">
                             <textarea v-model="objCompany.message"
                                     required id="customPlaceholder"
-                                    class="form-control"
+                                    class="form-control fw-600"
                                     rows="5"
                             >
                             </textarea>
@@ -38,7 +38,7 @@
                             <span class="key">Đơn giá dự thầu</span>
                         </div>
                         <div class="col-md-3">
-                            <span class="f-13 text-main">{{formatNamePrice(objCompany.price)}}</span>
+                            <span class="f-13 text-main fw-600">{{formatNamePrice(objCompany.price)}}</span>
                         </div>
                         <div class="col-md-3">
                             <span class="key">Đơn giá thương lượng</span><span class="text-red">*</span>
@@ -47,7 +47,7 @@
                             <div class="input-group" >
                                 <currency-input
                                     type="text"
-                                    class="form-control"
+                                    class="form-control fw-600"
                                     required
                                     placeholder="200,000,000"
                                     v-model="objCompany.surveyValue"
@@ -63,7 +63,7 @@
                             <span class="key">Tiến độ thi công</span>
                         </div>
                         <div class="col-md-3">
-                            <span class="f-13 text-main">{{objCompany.day}} ngày</span>
+                            <span class="f-13 text-main fw-600">{{objCompany.day}} ngày</span>
                         </div>
                         <div class="col-md-3">
                             <span class="key">Tiến độ mong muốn</span><span class="text-red">*</span>
@@ -90,7 +90,7 @@
                                     <span class="key">Thanh toán đợt {{idx+1}}</span>
                                 </div>
                                 <div class="col-md-3">
-                                    <span class="f-13 text-main">{{item.value}}</span>
+                                    <span class="f-13 text-main fw-600">{{item.value}}</span>
                                 </div>
                                 <div class="col-md-3">
                                     <span class="key">Thanh toán đợt {{idx+1}}</span><span class="text-red">*</span>

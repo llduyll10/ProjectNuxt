@@ -82,11 +82,13 @@
                             <span>Đang thương lượng</span>
                         </div>
 
-                        <div class="d-flex" :class="seemore ? 'showContent' : 'hideContent' ">
+                        <div class="d-flex" :class="seemore ? '' : 'showContent' ">
                             <span class="description" >
-                                {{company.description}}
+                                <!-- {{company.description}} -->
+                                Econs được thành lập và phát triển suốt 8 năm qua theo mô hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội thất
+                                Econs được thành lập và phát triển suốt 8 năm qua theo mô hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội thất
                             </span>
-                            <span  class="ml-5px text-main f-13 mt-3px" @click="seeMore">Xem thêm</span>
+                            <span v-if="seemore" style="min-width:70px" class=" text-main f-13 mt-2px cursor-pointer" @click="seeMore">Xem thêm</span>
                         </div>
 
 
@@ -165,7 +167,7 @@ export default {
     data(){
         return{
             isActive:false,
-            seemore:false
+            seemore:true
         }
     },
     mounted(){
