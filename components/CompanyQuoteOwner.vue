@@ -50,6 +50,7 @@
             <div class="col-md-6 col-sm-12 content-right">
                 <!-- ACTIVE -->
                 <template v-if="company && company.survey.length">
+
                     <template v-if="!company.step">
                         <div class="describe  d-flex">
                             <img src="@/assets/svg/icon-sand-lock.svg" alt="">
@@ -71,6 +72,39 @@
                             <div class="btn-send cup" @click="openPopupSurvey()">
                                 <img src="@/assets/svg/icon-user-light.svg" alt="">
                                 <span>Thông tin liên hệ</span>
+                            </div>
+                        </div>
+                    </template>
+                    <!-- IS NEGOTIATE -->
+                    <template v-else-if="company.statusUpdate == 'ACTIVE' ">
+                        <div class="describe  d-flex">
+                            <img src="@/assets/svg/icon-sand-lock.svg" alt="">
+                            <span>Đang thương lượng</span>
+                        </div>
+
+                        <div class="d-flex" :class="seemore ? 'showContent' : 'hideContent' ">
+                            <span class="description" >
+                                {{company.description}}
+                            </span>
+                            <span  class="ml-5px text-main f-13 mt-3px" @click="seeMore">Xem thêm</span>
+                        </div>
+
+
+                        <div class="list-payment">
+                            <ul>
+                                <li v-for="(pay,idx) in company.payments" :key="idx">
+                                    <span>Thanh toán đợt {{idx+1}}</span> - <span class="text-main">20% sau khi đổ bê tông tầng 1</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="group-btn">
+                            <div class="btn-send cup mr-10px ml-0" @click="openPopupSurvey('CANCEL')">
+                                <img src="@/assets/svg/icon-user-light.svg" alt="">
+                                <span>Cập nhật</span>
+                            </div>
+                            <div class="btn-send cancel " @click="openPopupSurvey()">
+                                <img src="@/assets/svg/icon-cancel.svg" alt="">
+                                <span>Huỷ thương lượng</span>
                             </div>
                         </div>
                     </template>
@@ -129,7 +163,8 @@ export default {
     props:['company','detailProject','rawCategory'],
     data(){
         return{
-            isActive:false
+            isActive:false,
+            seemore:false
         }
     },
     mounted(){
@@ -160,6 +195,9 @@ export default {
             else{
                 return `${time} PM`
             }
+        },
+        seeMore(){
+            this.seemore = !this.seemore
         }
     }
 }
