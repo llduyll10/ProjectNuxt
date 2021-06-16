@@ -93,16 +93,17 @@
             color: $main-black;
             text-overflow: ellipsis;
             overflow: hidden;
-            height: 25px;
-        }
-        .hideContent {
-            overflow: hidden;
-            line-height: 25px;
+            white-space: nowrap;
             height: 25px;
         }
         .showContent {
             line-height: 25px;
-            height: auto;
+            .description{
+                height: auto !important;
+                overflow: unset;
+                text-overflow: unset;
+                white-space: unset;
+            }
         }
         .list-payment{
             margin-left: 20px;
