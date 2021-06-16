@@ -1,7 +1,7 @@
 <template>
     <div>
         <input :class="isChat ? 'w-40' : ''" type="file" ref="file" class="inputfile" @change="onFileChange" :multiple="multiple" />
-        <label @click="$refs.file.click()" :class="isChat ? 'bg-white' : '' ">
+        <label @click="$refs.file.click()" :class="isChat ? 'bg-white mb-0' : '' ">
             <template v-if="isChat">
                 <img src="@/assets/svg/file.svg" alt="">
             </template>
