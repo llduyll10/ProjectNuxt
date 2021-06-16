@@ -75,17 +75,14 @@
                             <span style="color:red">*</span>
                         </label>
                         <div class=" col-md-9 col-sm-12 d-flex">
-                            <div class="input-group" style="width:200px">
-                                <currency-input
+                            <div  style="width:200px">
+                                <input
                                     type="text"
                                     class="form-control"
                                     required
                                     placeholder="200,000,000"
                                     v-model="item.value"
                                 />
-                                <div class="input-group-append">
-                                    <span class="input-group-text f-12">VND</span>
-                                </div>
                             </div>
 
                             <template v-if="objForm.payments.length == 1">
@@ -229,7 +226,7 @@ export default {
 
         },
         async createQuote(status){
-            // this.loader()
+            this.loader()
             try{
                 var arrFile = this.arrFile.length ? await this.uploadFile(this.arrFile) : []
                 var obj = {

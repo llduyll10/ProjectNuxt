@@ -93,7 +93,7 @@
                         <div class="list-payment">
                             <ul>
                                 <li v-for="(pay,idx) in company.payments" :key="idx">
-                                    <span>Thanh toán đợt {{idx+1}}</span> - <span class="text-main">20% sau khi đổ bê tông tầng 1</span>
+                                    <span>Thanh toán đợt {{idx+1}}</span> - <span class="text-main">{{pay.value}}</span>
                                 </li>
                             </ul>
                         </div>

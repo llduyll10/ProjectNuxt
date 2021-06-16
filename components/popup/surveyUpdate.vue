@@ -90,24 +90,19 @@
                                     <span class="key">Thanh toán đợt {{idx+1}}</span>
                                 </div>
                                 <div class="col-md-3">
-                                    <span class="f-13 text-main">{{formatNamePrice(item.value)}}</span>
+                                    <span class="f-13 text-main">{{item.value}}</span>
                                 </div>
                                 <div class="col-md-3">
                                     <span class="key">Thanh toán đợt {{idx+1}}</span><span class="text-red">*</span>
                                 </div>
                                 <div class="col-md-3 ">
-                                    <div class="input-group" >
-                                        <currency-input
-                                            type="text"
-                                            class="form-control"
-                                            required
-                                            placeholder="200,000,000"
-                                            v-model="item.value"
-                                        />
-                                        <div class="input-group-append">
-                                            <span class="input-group-text f-12">VND</span>
-                                        </div>
-                                    </div>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        required
+                                        placeholder="200,000,000"
+                                        v-model="item.value"
+                                    />
                                 </div>
                             </div>
                         </template>
