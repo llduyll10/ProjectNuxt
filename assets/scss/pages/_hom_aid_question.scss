@@ -12,25 +12,58 @@
                 line-height: 50px;
             }
         }
-        .box-tab {
-            padding: 40px 0;
+        #box-tab {
+            padding: 40px 0 24px;
             .nav {
+                border-bottom: none;
                 .nav-item {
-                    height: 30px;
+                    box-sizing: border-box;
+                    height: 30px !important;
                     .nav-link {
+                        border-radius: 0 !important;
                         font-size: 14px !important;
                         color: $main-black !important;
-                        padding: 2px 40px 4px;
-                        border: 1px solid #f2f2f2;
-                        border-left: none;
+                        padding: 2px 40px 4px !important;
+                        border: 1px solid #f2f2f2 !important;
+                        border-left: none !important;
                     }
                     &:first-child {
-                        border-left: 1px solid #f2f2f2;
+                        border-left: 1px solid #f2f2f2 !important;
                     }
                     .nav-link.active {
+                        margin-right: 0 !important;
                         background-color: $main-color;
+                        border: 1px solid $main-color !important;
                         color: #fff !important;
                     }
+                }
+            }
+        }
+        .accordion {
+            min-height: 600px;
+            color: $main-black !important;
+            font-size: 12px;
+            .wrap {
+                border-bottom: 1.5px solid #f2f2f2 !important;
+                .titledown {
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 10px 0;
+                    .text {
+                        line-height: 26px !important;
+                        font-size: 13px;
+                        font-weight: 400;
+                        span {
+                            color: $main-color;
+                            font-weight: 600;
+                        }
+                    }
+                }
+                .collapse {
+                    font-weight: 400;
+                }
+                &.show {
+                    padding-bottom: 30px !important;
                 }
             }
         }

@@ -19,19 +19,70 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <div class="box-tab">
-                                            <ul class="nav">
-                                                <li class="nav-item">
-                                                    <a class="nav-link active" href="#">Thông tin chung</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="#">Khách hàng</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="#">Nhà thầu</a>
-                                                </li>
-                                            </ul>
+                                        <div id="box-tab">
+                                            <b-tabs content-class="mt-3">
+                                                <b-tab title="First" active>
+                                                    
+                                                </b-tab>
+                                                <b-tab title="Second"><p>I'm the second tab</p></b-tab>
+                                                <b-tab title="Very, very long title"><p>I'm the tab with the very, very long title</p></b-tab>
+                                            </b-tabs>
                                         </div>
+                                    <template>
+                                        <div class="accordion" role="tablist">
+                                            <div no-body class="wrap">
+                                                <div role="tab">
+                                                    <div v-b-toggle.accordion-1>
+                                                        <div class="titledown d-flex">
+                                                            <div class="text">
+                                                                <span>HomAid</span> kết nối bạn thông qua mô hình đấu thầu trực tuyến 
+                                                            </div>
+                                                            <img src="@/assets/svg/accordiondown.svg" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <b-collapse id="accordion-1"  accordion="my-accordion" role="tabpanel">
+                                                    <div>
+                                                    <div>{{ text }}</div>
+                                                    </div>
+                                                </b-collapse>
+                                            </div>
+                                            <div no-body class="wrap">
+                                                <div role="tab">
+                                                    <div v-b-toggle.accordion-2>
+                                                        <div class="titledown d-flex">
+                                                            <div class="text">
+                                                                <span>HomAid</span> kết nối bạn thông qua mô hình đấu thầu trực tuyến 
+                                                            </div>
+                                                            <img src="@/assets/svg/accordiondown.svg" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <b-collapse id="accordion-2"  accordion="my-accordion" role="tabpanel">
+                                                    <div>
+                                                    <div>{{ text }}</div>
+                                                    </div>
+                                                </b-collapse>
+                                            </div>
+                                            <div no-body class="wrap">
+                                                <div role="tab">
+                                                    <div v-b-toggle.accordion-3>
+                                                        <div class="titledown d-flex">
+                                                            <div class="text">
+                                                                <span>HomAid</span> kết nối bạn thông qua mô hình đấu thầu trực tuyến 
+                                                            </div>
+                                                            <img src="@/assets/svg/accordiondown.svg" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <b-collapse id="accordion-3"  accordion="my-accordion" role="tabpanel">
+                                                    <div>
+                                                    <div>{{ text }}</div>
+                                                    </div>
+                                                </b-collapse>
+                                            </div>
+                                        </div>
+                                        </template>
                                     </div>
                                 </div>
                             </div>
@@ -51,7 +102,9 @@
 export default {
     data(){
         return{
-            
+            text: `
+          Nếu bạn xây nhà lần đầu tiên và đang do dự không biết bắt đầu từ đâu, hãy đăng yêu cầu trên nền tảng của chúng tôi và nhận ngay tư vấn giải pháp và kinh phí dự trù từ các đơn vị thi công chuyên nghiệp đã được sàng lọc cẩn thận từ đội ngũ HomAid. Nếu như bạn là đơn vị thi công, công ty nội thất hay kiến trúc sư tự do, hãy đăng ký, hoàn thiện hồ sơ năng lực và kết nối ngay với nhiều khách hàng tiềm năng. 
+        `
         }
     },
     mounted(){
