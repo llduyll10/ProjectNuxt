@@ -3,7 +3,7 @@
       <template v-slot:content>
         <div class="modal-contact formCore" v-if="objCompany">
           <div class="content">
-            <p class="title f-14" >
+            <p class="title f-14 fw-600" >
                 Chọn Công ty cổ phần <span class="text-main">{{objCompany.auctionBy.company}}</span> làm đơn vị thi công và yêu cầu thương lượng
             </p>
             <form @submit.prevent="submitForm()">
