@@ -1,7 +1,7 @@
 #homeAid {
     .homAidQuestion.center {
         color: $main-black;
-        padding: 38px 38px 0;
+        padding: 35px 38px 0;
         .box-title {
             justify-content: center;
             .img-text {
@@ -10,6 +10,28 @@
             .title {
                 font-weight: 700;
                 line-height: 50px;
+            }
+        }
+        .box-tab {
+            padding: 40px 0;
+            .nav {
+                .nav-item {
+                    height: 30px;
+                    .nav-link {
+                        font-size: 14px !important;
+                        color: $main-black !important;
+                        padding: 2px 40px 4px;
+                        border: 1px solid #f2f2f2;
+                        border-left: none;
+                    }
+                    &:first-child {
+                        border-left: 1px solid #f2f2f2;
+                    }
+                    .nav-link.active {
+                        background-color: $main-color;
+                        color: #fff !important;
+                    }
+                }
             }
         }
     }
