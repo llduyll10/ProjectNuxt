@@ -98,11 +98,11 @@
                             </ul>
                         </div>
                         <div class="group-btn">
-                            <div class="btn-send cup mr-10px ml-0" @click="openPopupSurvey('CANCEL')">
+                            <div class="btn-send cup mr-10px ml-0" @click="openSurveyUpdate()">
                                 <img src="@/assets/svg/icon-user-light.svg" alt="">
                                 <span>Cập nhật</span>
                             </div>
-                            <div class="btn-send cancel " @click="openPopupSurvey()">
+                            <div class="btn-send cancel ">
                                 <img src="@/assets/svg/icon-cancel.svg" alt="">
                                 <span>Huỷ thương lượng</span>
                             </div>
@@ -156,6 +156,7 @@
 
         <PopupLienheform ref="LienHeFormPop" :isService="true" :title="detailProject.name" :rawCategory="rawCategory" />
         <PopupSurvey ref="surveyPopup" :detailProject="detailProject" :rawCategory="rawCategory"  @activeCompany="getActiveCompany" />
+        <PopupSurveyUpdate ref="surveyUpdate" v-if="company"  :objCompany="company" :detailProject="detailProject" :rawCategory="rawCategory" />
     </div>
 </template>
 <script>
@@ -198,6 +199,9 @@ export default {
         },
         seeMore(){
             this.seemore = !this.seemore
+        },
+        openSurveyUpdate(){
+            this.$refs.surveyUpdate.show()
         }
     }
 }
