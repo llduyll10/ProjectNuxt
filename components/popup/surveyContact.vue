@@ -7,7 +7,7 @@
                 Bạn đã xác nhận yêu cầu khảo sát của khách hàng <span class="text-main">{{objConfirm.name}}</span>. Nếu có thay đổi về thời gian và địa điểm, vui lòng liên hệ trực tiếp với khách.
             </p>
             <div class="group-infor">
-                <div class="row">
+                <div class="row mb-15px">
                     <div class="col-md-3">
                         <span class="key">Họ Tên:</span>
                     </div>
@@ -15,7 +15,7 @@
                         <span class="value text-red">{{objConfirm.name}}</span>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row mb-15px">
                     <div class="col-md-3">
                         <span class="key">Số điện thoại:</span>
                     </div>
