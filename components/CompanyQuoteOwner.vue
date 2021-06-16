@@ -84,9 +84,10 @@
 
                         <div class="d-flex" :class="seemore ? 'showContent' : 'hideContent' ">
                             <span class="description" >
-                                {{company.description}}
+                                <!-- {{company.description}} -->
+                                Econs được thành lập và phát triển suốt 8 năm qua theo mô hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội thất
                             </span>
-                            <span  class="ml-5px text-main f-13 mt-3px" @click="seeMore">Xem thêm</span>
+                            <span style="min-width:70px" class="ml-5px text-main f-13 mt-3px" @click="seeMore">Xem thêm</span>
                         </div>
 
 
