@@ -71,12 +71,36 @@
                 <template v-for="(item,idx) in objForm.payments">
                     <div :key="idx" class="form-group row mb-25px align-items-center">
                         <label class="f-13 col-md-3 col-sm-12 fw-600">
-                            Thanh toán đợt {{item.key}}
+                            Thanh toán đợt {{idx+1}}
                             <span style="color:red">*</span>
                         </label>
                         <div class=" col-md-9 col-sm-12 d-flex">
-                            <input v-model="item.value" type="text" class="form-control" style="width:200px" />
-                            <span @click="addPayment(item)" class="ml-10px mt-7px text-main f-12 cursor-pointer">Thêm đề nghị thanh toán</span>
+                            <div class="input-group" style="width:200px">
+                                <currency-input
+                                    type="text"
+                                    class="form-control"
+                                    required
+                                    placeholder="200,000,000"
+                                    v-model="item.value"
+                                />
+                                <div class="input-group-append">
+                                    <span class="input-group-text f-12">VND</span>
+                                </div>
+                            </div>
+
+                            <template v-if="objForm.payments.length == 1">
+                                <span @click="addPayment(item)" class="ml-10px mt-7px text-main f-12 cursor-pointer">Thêm đề nghị thanh toán</span>
+                            </template>
+                            <template v-else>
+                                <template v-if="idx+1 == objForm.payments.length">
+                                    <span @click="addPayment(item)" class="ml-10px mt-7px text-main f-12 cursor-pointer">Thêm đề nghị thanh toán</span>
+                                </template>
+                                <template v-else>
+                                    <span @click="clearPayment(item)" class="text-red mt-3px ml-5px cursor-pointer">
+                                        <i class="fas fa-times"></i>
+                                    </span>
+                                </template>
+                            </template>
                         </div>
                     </div>
                 </template>
@@ -222,6 +246,7 @@ export default {
                     obj.status = status;
                 }
                 let res = await this.$post(url,obj)
+                console.log('res',res)
                 this.resetForm()
                 this.getQuote()
                 this.loader(0)
@@ -245,8 +270,12 @@ export default {
         },
         addPayment(){
             var length = this.objForm.payments.length
-            var obj = {key:length+1,value:0}
+            var obj = {key:length,value:0}
             this.objForm.payments.push(obj)
+        },
+        clearPayment(item){
+            if(this.objForm.payments.length == 1) return
+            this.objForm.payments = this.objForm.payments.filter(pay => pay.key != item.key)
         }
     }
 
