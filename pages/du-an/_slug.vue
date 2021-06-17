@@ -30,7 +30,7 @@
                   </template>
                 </div>
 
-                <div @click="openModalInfor" class="d-flex group-edit" v-if="detailProject && detailProject.createBy && (detailProject.createBy._id === $auth.user._id)">
+                <div @click="openModalInfor" class="d-flex group-edit" v-if="detailProject && detailProject.createBy && (detailProject.createBy._id === currentUser._id)">
                   <img src="@/assets/svg/icon-edit-file.svg" />
                   <span>Chỉnh sửa</span>
                 </div>
@@ -60,7 +60,7 @@
             <!--  nội dung bài viết -->
 
             <!-- Form chào giá -->
-            <template v-if="detailProject && detailProject.createBy && (detailProject.createBy._id !== $auth.user._id)">
+            <template v-if="detailProject && detailProject.createBy && (detailProject.createBy._id !== currentUser._id)">
             <div
               class="left inner-content-section px-36px pt-25px pb-50px mb-20px"
               v-if="!checkStatusDueDate(detailProject.dueDate)"
@@ -164,7 +164,7 @@
             <!-- Thông tin dự án -->
 
             <!-- Thông tin khách hàng -->
-            <template v-if="detailProject && detailProject.createBy && (detailProject.createBy._id !== $auth.user._id)">
+            <template v-if="detailProject && detailProject.createBy && (detailProject.createBy._id !== currentUser._id)">
             <div
               class="left inner-content-section  pt-20px pb-20px  thongTinDuAnWrapper main-black"
             >
@@ -175,7 +175,7 @@
             <!-- Thông tin khách hàng -->
 
             <!-- Dự án tương tự -->
-            <div v-if="detailProject && detailProject._id && detailProject.createBy && (detailProject.createBy._id !== $auth.user._id)"
+            <div v-if="detailProject && detailProject._id && detailProject.createBy && (detailProject.createBy._id !== currentUser._id)"
                 class="text-center"
             >
               <h3 class=" fw-600 f-16 main-color mb-5px pt-20px" >DỰ ÁN TƯƠNG TỰ</h3>
@@ -226,7 +226,7 @@
           <!--  Col right -->
 
 
-           <template v-if="detailProject && detailProject.createBy && (detailProject.createBy._id === $auth.user._id)">
+           <template v-if="detailProject && detailProject.createBy && (detailProject.createBy._id === currentUser._id)">
           <!-- new row for owner auction -->
           <div class="col-12">
              <div
@@ -269,7 +269,8 @@ export default {
       arrNameCategory:[],
       rawCategory:[],
       arrQuoteCompany:null,
-      activeCompany:null
+      activeCompany:null,
+      currentUser: this.$auth.user || {}
     };
   },
   mounted() {
