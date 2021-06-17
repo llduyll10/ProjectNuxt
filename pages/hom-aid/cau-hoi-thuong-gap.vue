@@ -21,7 +21,7 @@
                                     <div class="col-12">
                                         <div id="box-tab">
                                             <b-tabs content-class="wrap-content mt-25px">
-                                                <b-tab title="First" active>
+                                                <b-tab title="Thông tin chung" active>
                                                      <template>
                                                         <div class="accordion" role="tablist">
                                                             <div no-body class="wrap">
@@ -36,7 +36,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <b-collapse id="accordion-1"  accordion="my-accordion" role="tabpanel">
-                                                                    <div class="body-content pb-24px pt-6px">
+                                                                    <div class="body-content">
                                                                     <div>{{ text }}</div>
                                                                     </div >
                                                                 </b-collapse>
@@ -53,7 +53,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <b-collapse appear id="accordion-2"  accordion="my-accordion" role="tabpanel">
-                                                                    <div class="body-content pb-24px pt-6px">
+                                                                    <div class="body-content">
                                                                     <div>{{ text }}</div>
                                                                     </div>
                                                                 </b-collapse>
@@ -78,8 +78,8 @@
                                                         </div>
                                                     </template>
                                                 </b-tab>
-                                                <b-tab title="Second"><p>I'm the second tab</p></b-tab>
-                                                <b-tab title="Very, very long title"><p>I'm the tab with the very, very long title</p></b-tab>
+                                                <b-tab title="Khách hàng"><p>I'm the second tab</p></b-tab>
+                                                <b-tab title="Nhà thầu"><p>I'm the tab with the very, very long title</p></b-tab>
                                             </b-tabs>
                                         </div>
                                    
