@@ -58,11 +58,19 @@
                             font-weight: 600;
                         }
                     }
+                    .iconDown {
+                        border-width: 9px 7px;
+                        border-style: solid;
+                        border-color: #494747 transparent transparent transparent;
+                        position: relative;
+                        top: 5px;
+                        right: 20px;
+                    }
                 }
                 .body-content {
                     font-weight: 400;
                     line-height: 26px;
-                    padding: 4px 0 24px;
+                    padding: 4px 50px 24px 0;
                 }
             }
         }
