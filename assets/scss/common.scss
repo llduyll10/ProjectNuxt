@@ -169,6 +169,10 @@ strong {
         font-size: 13px;
     }
 }
+.vue-treeselect--disabled .vue-treeselect__control{
+    background-color: #e9ecef !important;
+    opacity: 1;
+}
 
 .icon {
     height: 40px;
