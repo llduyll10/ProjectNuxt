@@ -416,6 +416,9 @@
                     border-radius: 5px;
                     width: 100%;
                     border-color: transparent;
+                    &.cancel{
+                        background-color: #D80027;
+                    }
                 }
             }
         }

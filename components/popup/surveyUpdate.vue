@@ -3,8 +3,11 @@
       <template v-slot:content>
         <div class="modal-contact formCore" v-if="objCompany">
           <div class="content">
-            <p class="title f-14 fw-600" >
-                Chọn Công ty cổ phần <span class="text-main">{{objCompany.auctionBy.company}}</span> làm đơn vị thi công và yêu cầu thương lượng
+            <p v-if="isCompany" class="title f-14 fw-600" >
+                Khách hàng <span class="text-main">{{objCompany.projectOwner.name}}</span> đã gửi yêu cầu thương lượng giá/tiến độ với bạn. Bạn sẽ tốn <span class="text-main">500 Tokens</span>  khi xác nhận đồng ý và bắt đầu công trình
+            </p>
+            <p v-else class="title f-14 fw-600" >
+                Chọn <span class="text-main">{{objCompany.auctionBy.company}}</span> làm đơn vị thi công và yêu cầu thương lượng
             </p>
             <form @submit.prevent="submitForm()">
                 <div class="group-infor">
@@ -21,15 +24,28 @@
 
                     <div class="row mb-15px mr-60px">
                         <div class="col-md-3">
-                            <span class="key">Soạn tin nhắn</span><span class="text-red">*</span>
+                            <span v-if="isCompany" class="key">Tin nhắn của khách <span class="text-red">*</span></span>
+                            <span v-else class="key">Soạn tin nhắn <span class="text-red">*</span> </span>
                         </div>
                         <div class="col-md-9">
-                            <textarea v-model="objSurvey.message"
-                                    required id="customPlaceholder"
-                                    class="form-control fw-600"
-                                    rows="5"
-                            >
-                            </textarea>
+                            <template v-if="isCompany">
+                                <textarea v-model="objCompany.deal[0].message"
+                                        required id="customPlaceholder"
+                                        class="form-control fw-600"
+                                        rows="5"
+                                        readonly
+                                >
+                                </textarea>
+                            </template>
+                            <template v-else>
+                                <textarea v-model="objSurvey.message"
+                                        required id="customPlaceholder"
+                                        class="form-control fw-600"
+                                        rows="5"
+                                >
+                                </textarea>
+                            </template>
+
                         </div>
                     </div>
 
@@ -44,7 +60,21 @@
                             <span class="key">Đơn giá thương lượng</span><span class="text-red">*</span>
                         </div>
                         <div class="col-md-3 ">
-                            <div class="input-group" >
+                            <div v-if="isCompany" class="input-group" >
+                                <currency-input
+                                    type="text"
+                                    class="form-control fw-600"
+                                    required
+                                    placeholder="200,000,000"
+                                    v-model="objCompany.deal[0].price"
+                                    readonly
+                                />
+                                <div class="input-group-append">
+                                    <span class="input-group-text f-12">VND</span>
+                                </div>
+                            </div>
+
+                            <div v-else class="input-group" >
                                 <currency-input
                                     type="text"
                                     class="form-control fw-600"
@@ -70,7 +100,20 @@
                             <span class="key">Tiến độ mong muốn</span><span class="text-red">*</span>
                         </div>
                         <div class="col-md-3 ">
-                            <div class="input-group" >
+                            <div v-if="isCompany" class="input-group" >
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    required
+                                    v-model="objCompany.deal[0].day"
+                                    readonly
+                                />
+                                <div class="input-group-append">
+                                    <span class="input-group-text f-12">Ngày</span>
+                                </div>
+                            </div>
+
+                            <div v-else class="input-group" >
                                 <input
                                     type="text"
                                     class="form-control"
@@ -84,7 +127,32 @@
                         </div>
                     </div>
 
-                    <template v-if="objCompany.payments.length">
+                     <template v-if="isCompany">
+                        <template v-for="(item,idx) in objCompany.deal[0].payments">
+                            <div class="row mb-15px mr-60px" :key="idx+200">
+                                <div class="col-md-3">
+                                    <span class="key">Thanh toán đợt {{idx+1}}</span>
+                                </div>
+                                <div class="col-md-3">
+                                    <span class="f-13 text-main fw-600">{{item.value}}</span>
+                                </div>
+                                <div class="col-md-3" >
+                                    <span class="key">Thanh toán đợt {{idx+1}}</span><span class="text-red">*</span>
+                                </div>
+                                <div class="col-md-3">
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        required
+                                        v-model="item.value"
+                                        readonly
+                                    />
+                                </div>
+                            </div>
+                        </template>
+                    </template>
+
+                    <template v-else>
                         <template v-for="(item,idx) in objCompany.payments">
                             <div class="row mb-15px mr-60px" :key="idx+100">
                                 <div class="col-md-3">
@@ -108,12 +176,25 @@
                         </template>
                     </template>
 
+
+
                     <div class="row mb-15px mr-60px">
                         <div class="col-md-3">
                             <span class="key">Yêu cầu báo cáo</span><span class="text-red">*</span>
                         </div>
                         <div class="col-md-9">
                             <treeselect
+                                    v-if="isCompany"
+                                    class="option-search"
+                                    :options="optionSearch"
+                                    :value="objCompany.deal[0].report"
+                                    v-model="objCompany.deal[0].report"
+                                    placeholder=""
+                                    :clearable=false
+                                    disabled
+                            />
+                            <treeselect
+                                    v-else
                                     class="option-search"
                                     :options="optionSearch"
                                     :value="objSurvey.report"
@@ -128,12 +209,20 @@
                         <div class="f-13  col-md-3 col-sm-12 ">
                             <span class="key">Tài liêu đính kèm:</span>
                         </div>
-                        <div class="col-md-9 ">
+                        <div v-if="!isCompany" class="col-md-9 ">
                             <InputFile ref="akjklak" :accept="acceptFile" key="file" @input="getFile" :multiple="true" :label="'Thêm tài liệu'" />
                         </div>
 
-                        <div class="col-md-3"></div>
+                        <div v-if="!isCompany" class="col-md-3"></div>
                         <div class="col-md-9 " >
+                             <template v-if="isCompany &&  objCompany && objCompany.deal[0].attachments">
+                                <template v-for="(item,idx) in objCompany.deal[0].attachments">
+                                     <p :key="idx" class="f-11 text-main ">
+                                        <span v-html="returnTypeFile(item)"></span>
+                                         {{spliceURLFile(item,'--')}}
+                                    </p>
+                                </template>
+                            </template>
                             <!-- Attachment New -->
                             <template v-if="arrFile.length" >
                                 <template v-for="(item,idx) in arrFile">
@@ -145,6 +234,23 @@
                                         </span>
                                     </p>
                                 </template>
+                            </template>
+                        </div>
+                    </div>
+
+                    <div v-if="isCompany" class="row mb-15px mr-60px">
+                        <div class="col-md-3">
+                            <span  class="key">Phản hồi của bạn<span class="text-red">*</span></span>
+                        </div>
+                        <div class="col-md-9">
+                            <template >
+                                <textarea v-model="objSurvey.feedback"
+                                        required
+                                        id="customPlaceholder"
+                                        class="form-control fw-600"
+                                        rows="5"
+                                >
+                                </textarea>
                             </template>
                         </div>
                     </div>
@@ -162,10 +268,24 @@
                     </div>
 
                 </div>
-                <div class="footer">
-                    <button type="submit" class="btn-confirm">
-                        <span>GỬI YÊU CẦU THƯƠNG LƯỢNG</span>
-                    </button>
+                <div class="footer" >
+                    <template v-if="isCompany">
+                        <div class="d-flex">
+                            <button ref="btnConfirm" type="submit" class="d-none"></button>
+                            <button type="button" @click="confirmSurvey('ACCEPT')" class="btn-confirm mr-15px">
+                                <span>ĐỒNG Ý VÀ BẮT ĐẦU DỰ ÁN</span>
+                            </button>
+                            <button type="button" @click="confirmSurvey('CANCEL')" class="btn-confirm cancel">
+                                <span>TỪ CHỐI YÊU CẦU THƯƠNG LƯỢNG</span>
+                            </button>
+                        </div>
+                    </template>
+                    <template v-else>
+                        <button type="submit" class="btn-confirm">
+                            <span>GỬI YÊU CẦU THƯƠNG LƯỢNG</span>
+                        </button>
+                    </template>
+
                 </div>
             </form>
           </div>
@@ -175,7 +295,7 @@
 </template>
 <script>
 export default {
-    props:['objCompany','detailProject','rawCategory'],
+    props:['objCompany','detailProject','rawCategory','isCompany'],
     data(){
         return{
             optionSearch:[
@@ -189,7 +309,8 @@ export default {
                 message:'',
                 report:1,
                 agree:false
-            }
+            },
+            statusCallAPI:''
         }
     },
     mounted(){
@@ -197,7 +318,7 @@ export default {
     methods:{
         async submitForm(){
             try{
-                this.loader()
+                // this.loader()
                 var arrFile = this.arrFile.length ? await this.uploadFile(this.arrFile) : []
 
                 var arrPayment = []
@@ -213,12 +334,30 @@ export default {
                     payments:arrPayment,
                     attachments:arrFile
                 }
+                console.log('cancel',obj)
+                console.log('statusCallAPI',this.statusCallAPI)
+                let url = ''
+                if(this.statusCallAPI == 'ACCEPT'){
+                    url = 'member/auction/deal/confirmed'
+                }
+                else if(this.statusCallAPI == 'CANCEL'){
+                    url = 'member/auction/deal/cancel'
+                }
+                else{
+                    url = 'member/auction/deal'
+                }
 
-                let res = await this.$post('member/auction/deal',obj)
+
+                let res = await this.$post(url,obj)
                 console.log(res)
                 this.hide()
-                // call api gaaing
-                this.$emit('activeCompany')
+                if(this.statusCallAPI == 'ACCEPT' || this.statusCallAPI == 'CANCEL')
+                {
+                    this.$emit('getListParent')
+                }
+                else{
+                    this.$emit('activeCompany')
+                }
             }
             catch(err){
                 this.loader(0)
@@ -227,6 +366,10 @@ export default {
 
 
 
+        },
+        confirmSurvey(status){
+            this.statusCallAPI = status
+            this.$refs.btnConfirm.click()
         },
         show() {
             console.log('objProject',this.objCompany)

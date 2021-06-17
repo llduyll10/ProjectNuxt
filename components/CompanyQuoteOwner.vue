@@ -77,16 +77,23 @@
                     </template>
                     <!-- IS NEGOTIATE -->
                     <template v-else-if="company.statusUpdate == 'ACTIVE' ">
-                        <div class="describe  d-flex">
-                            <img src="@/assets/svg/icon-sand-lock.svg" alt="">
-                            <span>Đang thương lượng</span>
-                        </div>
+                        <template v-if="company.step == 3 && company.deal.length && company.deal[0].status == 'CANCEL' ">
+                            <div class="describe  d-flex">
+                                <i class="fas fa-times text-red f-16 mt-5px mr-5px"></i>
+                                <span class="text-red">Nhà thầu từ chối thương lượng</span>
+                            </div>
+                        </template>
+                        <template v-else >
+                            <div class="describe  d-flex">
+                                <img src="@/assets/svg/icon-sand-lock.svg" alt="">
+                                <span>Đang thương lượng</span>
+                            </div>
+                        </template>
 
                         <div class="d-flex" :class="seemore ? '' : 'showContent' ">
                             <span class="description" >
                                 {{company.description}}
                             </span>
-                            <span v-if="seemore" style="min-width:70px" class="ml-3px mt-3px text-main f-13  cursor-pointer" @click="seeMore">Xem thêm</span>
                         </div>
 
                         <div v-if="company.attachments">
@@ -173,7 +180,6 @@ export default {
     data(){
         return{
             isActive:false,
-            seemore:true
         }
     },
     mounted(){
@@ -204,9 +210,6 @@ export default {
             else{
                 return `${time} PM`
             }
-        },
-        seeMore(){
-            this.seemore = !this.seemore
         },
         openSurveyUpdate(){
             this.$refs.surveyUpdate.show()
