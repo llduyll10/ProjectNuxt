@@ -180,7 +180,6 @@ export default {
     data(){
         return{
             isActive:false,
-            seemore:true
         }
     },
     mounted(){
@@ -211,9 +210,6 @@ export default {
             else{
                 return `${time} PM`
             }
-        },
-        seeMore(){
-            this.seemore = !this.seemore
         },
         openSurveyUpdate(){
             this.$refs.surveyUpdate.show()
