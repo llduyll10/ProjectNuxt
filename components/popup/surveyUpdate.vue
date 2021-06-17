@@ -176,7 +176,7 @@
                 </div>
                 <div class="footer">
                     <button type="submit" class="btn-confirm">
-                        <span>HOÀN TẤT</span>
+                        <span>GỬI YÊU CẦU THƯƠNG LƯỢNG</span>
                     </button>
                 </div>
             </form>
