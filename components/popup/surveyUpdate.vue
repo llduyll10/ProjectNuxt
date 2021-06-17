@@ -161,7 +161,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group group-checkbox">
+                    <div class="form-group group-checkbox mb-0">
                         <b-form-checkbox
                             v-model="objCompany.agree"
                             :checked="objCompany.agree"
