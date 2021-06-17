@@ -24,7 +24,7 @@
                             <span class="key">Soạn tin nhắn</span><span class="text-red">*</span>
                         </div>
                         <div class="col-md-9">
-                            <textarea v-model="objCompany.message"
+                            <textarea v-model="objSurvey.message"
                                     required id="customPlaceholder"
                                     class="form-control fw-600"
                                     rows="5"
@@ -50,7 +50,7 @@
                                     class="form-control fw-600"
                                     required
                                     placeholder="200,000,000"
-                                    v-model="objCompany.surveyValue"
+                                    v-model="objSurvey.price"
                                 />
                                 <div class="input-group-append">
                                     <span class="input-group-text f-12">VND</span>
@@ -58,6 +58,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="row mb-15px mr-60px">
                         <div class="col-md-3">
                             <span class="key">Tiến độ thi công</span>
@@ -74,7 +75,7 @@
                                     type="text"
                                     class="form-control"
                                     required
-                                    v-model="objCompany.day"
+                                    v-model="objSurvey.day"
                                 />
                                 <div class="input-group-append">
                                     <span class="input-group-text f-12">Ngày</span>
@@ -92,16 +93,15 @@
                                 <div class="col-md-3">
                                     <span class="f-13 text-main fw-600">{{item.value}}</span>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3" >
                                     <span class="key">Thanh toán đợt {{idx+1}}</span><span class="text-red">*</span>
                                 </div>
-                                <div class="col-md-3 ">
+                                <div class="col-md-3">
                                     <input
                                         type="text"
                                         class="form-control"
                                         required
-                                        placeholder="200,000,000"
-                                        v-model="item.value"
+                                        v-model="item.newValue"
                                     />
                                 </div>
                             </div>
@@ -116,8 +116,8 @@
                             <treeselect
                                     class="option-search"
                                     :options="optionSearch"
-                                    :value="objCompany.requireReport"
-                                    v-model="objCompany.requireReport"
+                                    :value="objSurvey.report"
+                                    v-model="objSurvey.report"
                                     placeholder=""
                                     :clearable=false
                             />
@@ -134,18 +134,6 @@
 
                         <div class="col-md-3"></div>
                         <div class="col-md-9 " >
-                            <!-- Attachment Old -->
-                            <template v-if="objCompany.attachments" >
-                                <template v-for="(item,idx) in objCompany.attachments">
-                                    <p :key="idx + 20" class="f-11 text-main ">
-                                        <span v-html="returnTypeFile(item)"></span>
-                                        {{spliceURLFile(item,'--')}}
-                                        <span class="cursor-pointer ml-5px" @click="clearFileOld(item)">
-                                            <i class="fas fa-times text-red"></i>
-                                        </span>
-                                    </p>
-                                </template>
-                            </template>
                             <!-- Attachment New -->
                             <template v-if="arrFile.length" >
                                 <template v-for="(item,idx) in arrFile">
@@ -163,8 +151,8 @@
 
                     <div class="form-group group-checkbox mb-0">
                         <b-form-checkbox
-                            v-model="objCompany.agree"
-                            :checked="objCompany.agree"
+                            v-model="objSurvey.agree"
+                            :checked="objSurvey.agree"
                             name="checkbox-agree"
                             required
                             class="f-13"
@@ -197,12 +185,32 @@ export default {
             ],
             acceptFile:["png", "jpg", "jpeg", "tiff", "pdf", "xls", "doc", "ppt", "zip", "rar"],
             arrFile:[],
+            objSurvey:{
+                message:'',
+                agree:false
+            }
         }
     },
+    mounted(){
+    },
     methods:{
-        submitForm(){
-            var obj = {...this.objCompany}
-            console.log('obj',obj)
+        async submitForm(){
+            var arrFile = this.arrFile.length ? await this.uploadFile(this.arrFile) : []
+
+            var arrPayment = []
+            this.objCompany.payments.forEach(item => {
+                var obj = {key:item.key, value: item.newValue}
+                arrPayment.push(obj)
+            })
+
+            var obj = {
+                ...this.objSurvey,
+                project:this.objCompany.project,
+                auction:this.objCompany.auctionBy._id,
+                payments:arrPayment,
+                attachments:arrFile
+            }
+            console.log(obj)
         },
         show() {
             console.log('objProject',this.objCompany)
@@ -215,9 +223,6 @@ export default {
         },
         clearFile(file){
             this.arrFile = this.arrFile.filter(item => item.name !== file.name)
-        },
-        clearFileOld(file){
-            this.objCompany.attachments = this.objCompany.attachments.filter(item => item !== file)
         },
         getFile(file){
             this.arrFile = this.arrFile.concat(file)

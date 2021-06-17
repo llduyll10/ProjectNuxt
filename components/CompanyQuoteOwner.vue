@@ -84,13 +84,19 @@
 
                         <div class="d-flex" :class="seemore ? '' : 'showContent' ">
                             <span class="description" >
-                                <!-- {{company.description}} -->
-                                Econs được thành lập và phát triển suốt 8 năm qua theo mô hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội thất
-                                Econs được thành lập và phát triển suốt 8 năm qua theo mô hình dịch vụ trọn gói trong lĩnh vực thiết kế và hoàn thiện nội thất
+                                {{company.description}}
                             </span>
                             <span v-if="seemore" style="min-width:70px" class=" text-main f-13 mt-2px cursor-pointer" @click="seeMore">Xem thêm</span>
                         </div>
 
+                        <div v-if="company.attachments">
+                            <template v-for="(item,idx) in company.attachments">
+                                <p :key="idx" class="f-11 text-main ">
+                                    <span v-html="returnTypeFile(item)" class="mr-5px"></span>
+                                    {{spliceURLFile(item,'--')}}
+                                </p>
+                            </template>
+                        </div>
 
                         <div class="list-payment">
                             <ul>
