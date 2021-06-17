@@ -31,7 +31,7 @@
                                                                             <div class="text">
                                                                                 <span>HomAid</span> kết nối bạn thông qua mô hình đấu thầu trực tuyến 
                                                                             </div>
-                                                                            <img src="@/assets/svg/accordiondown.svg" alt="">
+                                                                            <span class="iconDown"></span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -84,6 +84,7 @@ export default {
     methods:{
         
     }
+    
 }
 </script>
 
