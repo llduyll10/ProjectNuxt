@@ -24,9 +24,9 @@
                                                 <b-tab title="Thông tin chung" active>
                                                      <template>
                                                         <div class="accordion" role="tablist">
-                                                            <div no-body class="wrap">
+                                                            <div no-body class="wrap" v-for="(item , i) in list" :key="i">
                                                                 <div role="tab">
-                                                                    <div v-b-toggle.accordion-1>
+                                                                    <div v-b-toggle="item.button">
                                                                         <div class="titledown d-flex">
                                                                             <div class="text">
                                                                                 <span>HomAid</span> kết nối bạn thông qua mô hình đấu thầu trực tuyến 
@@ -35,44 +35,10 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <b-collapse id="accordion-1"  accordion="my-accordion" role="tabpanel">
+                                                                <b-collapse :id="item.collapseid"  accordion="my-accordion" role="tabpanel">
                                                                     <div class="body-content">
                                                                     <div>{{ text }}</div>
                                                                     </div >
-                                                                </b-collapse>
-                                                            </div>
-                                                            <div no-body class="wrap">
-                                                                <div role="tab">
-                                                                    <div v-b-toggle.accordion-2>
-                                                                        <div class="titledown d-flex">
-                                                                            <div class="text">
-                                                                                <span>HomAid</span> kết nối bạn thông qua mô hình đấu thầu trực tuyến 
-                                                                            </div>
-                                                                            <img src="@/assets/svg/accordiondown.svg" alt="">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <b-collapse appear id="accordion-2"  accordion="my-accordion" role="tabpanel">
-                                                                    <div class="body-content">
-                                                                    <div>{{ text }}</div>
-                                                                    </div>
-                                                                </b-collapse>
-                                                            </div>
-                                                            <div no-body class="wrap">
-                                                                <div role="tab">
-                                                                    <div v-b-toggle.accordion-3>
-                                                                        <div class="titledown d-flex">
-                                                                            <div class="text">
-                                                                                <span>HomAid</span> kết nối bạn thông qua mô hình đấu thầu trực tuyến 
-                                                                            </div>
-                                                                            <img src="@/assets/svg/accordiondown.svg" alt="">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <b-collapse id="accordion-3"  accordion="my-accordion" role="tabpanel">
-                                                                    <div class="body-content">
-                                                                    <div>{{ text }}</div>
-                                                                    </div>
                                                                 </b-collapse>
                                                             </div>
                                                         </div>
@@ -104,7 +70,12 @@ export default {
         return{
             text: `
           Nếu bạn xây nhà lần đầu tiên và đang do dự không biết bắt đầu từ đâu, hãy đăng yêu cầu trên nền tảng của chúng tôi và nhận ngay tư vấn giải pháp và kinh phí dự trù từ các đơn vị thi công chuyên nghiệp đã được sàng lọc cẩn thận từ đội ngũ HomAid. Nếu như bạn là đơn vị thi công, công ty nội thất hay kiến trúc sư tự do, hãy đăng ký, hoàn thiện hồ sơ năng lực và kết nối ngay với nhiều khách hàng tiềm năng. 
-        `
+        `,
+            list : [
+                {button: "accordion-3" , collapseid : "accordion-3"},
+                {button: "accordion-2" , collapseid : "accordion-2"},
+                {button: "accordion-1" , collapseid : "accordion-1"}
+            ]
         }
     },
     mounted(){
