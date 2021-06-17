@@ -94,7 +94,6 @@
                             <span class="description" >
                                 {{company.description}}
                             </span>
-                            <span v-if="seemore" style="min-width:70px" class="ml-3px mt-3px text-main f-13  cursor-pointer" @click="seeMore">Xem thêm</span>
                         </div>
 
                         <div v-if="company.attachments">
