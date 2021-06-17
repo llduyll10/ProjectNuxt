@@ -20,69 +20,69 @@
                                     </div>
                                     <div class="col-12">
                                         <div id="box-tab">
-                                            <b-tabs content-class="mt-3">
-                                                <b-tab title="First" active>
-                                                    
+                                            <b-tabs content-class="wrap-content mt-25px">
+                                                <b-tab title="Thông tin chung" active>
+                                                     <template>
+                                                        <div class="accordion" role="tablist">
+                                                            <div no-body class="wrap">
+                                                                <div role="tab">
+                                                                    <div v-b-toggle.accordion-1>
+                                                                        <div class="titledown d-flex">
+                                                                            <div class="text">
+                                                                                <span>HomAid</span> kết nối bạn thông qua mô hình đấu thầu trực tuyến 
+                                                                            </div>
+                                                                            <img src="@/assets/svg/accordiondown.svg" alt="">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <b-collapse id="accordion-1"  accordion="my-accordion" role="tabpanel">
+                                                                    <div class="body-content">
+                                                                    <div>{{ text }}</div>
+                                                                    </div >
+                                                                </b-collapse>
+                                                            </div>
+                                                            <div no-body class="wrap">
+                                                                <div role="tab">
+                                                                    <div v-b-toggle.accordion-2>
+                                                                        <div class="titledown d-flex">
+                                                                            <div class="text">
+                                                                                <span>HomAid</span> kết nối bạn thông qua mô hình đấu thầu trực tuyến 
+                                                                            </div>
+                                                                            <img src="@/assets/svg/accordiondown.svg" alt="">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <b-collapse appear id="accordion-2"  accordion="my-accordion" role="tabpanel">
+                                                                    <div class="body-content">
+                                                                    <div>{{ text }}</div>
+                                                                    </div>
+                                                                </b-collapse>
+                                                            </div>
+                                                            <div no-body class="wrap">
+                                                                <div role="tab">
+                                                                    <div v-b-toggle.accordion-3>
+                                                                        <div class="titledown d-flex">
+                                                                            <div class="text">
+                                                                                <span>HomAid</span> kết nối bạn thông qua mô hình đấu thầu trực tuyến 
+                                                                            </div>
+                                                                            <img src="@/assets/svg/accordiondown.svg" alt="">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <b-collapse id="accordion-3"  accordion="my-accordion" role="tabpanel">
+                                                                    <div class="body-content">
+                                                                    <div>{{ text }}</div>
+                                                                    </div>
+                                                                </b-collapse>
+                                                            </div>
+                                                        </div>
+                                                    </template>
                                                 </b-tab>
-                                                <b-tab title="Second"><p>I'm the second tab</p></b-tab>
-                                                <b-tab title="Very, very long title"><p>I'm the tab with the very, very long title</p></b-tab>
+                                                <b-tab title="Khách hàng"><p>I'm the second tab</p></b-tab>
+                                                <b-tab title="Nhà thầu"><p>I'm the tab with the very, very long title</p></b-tab>
                                             </b-tabs>
                                         </div>
-                                    <template>
-                                        <div class="accordion" role="tablist">
-                                            <div no-body class="wrap">
-                                                <div role="tab">
-                                                    <div v-b-toggle.accordion-1>
-                                                        <div class="titledown d-flex">
-                                                            <div class="text">
-                                                                <span>HomAid</span> kết nối bạn thông qua mô hình đấu thầu trực tuyến 
-                                                            </div>
-                                                            <img src="@/assets/svg/accordiondown.svg" alt="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <b-collapse id="accordion-1"  accordion="my-accordion" role="tabpanel">
-                                                    <div>
-                                                    <div>{{ text }}</div>
-                                                    </div>
-                                                </b-collapse>
-                                            </div>
-                                            <div no-body class="wrap">
-                                                <div role="tab">
-                                                    <div v-b-toggle.accordion-2>
-                                                        <div class="titledown d-flex">
-                                                            <div class="text">
-                                                                <span>HomAid</span> kết nối bạn thông qua mô hình đấu thầu trực tuyến 
-                                                            </div>
-                                                            <img src="@/assets/svg/accordiondown.svg" alt="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <b-collapse id="accordion-2"  accordion="my-accordion" role="tabpanel">
-                                                    <div>
-                                                    <div>{{ text }}</div>
-                                                    </div>
-                                                </b-collapse>
-                                            </div>
-                                            <div no-body class="wrap">
-                                                <div role="tab">
-                                                    <div v-b-toggle.accordion-3>
-                                                        <div class="titledown d-flex">
-                                                            <div class="text">
-                                                                <span>HomAid</span> kết nối bạn thông qua mô hình đấu thầu trực tuyến 
-                                                            </div>
-                                                            <img src="@/assets/svg/accordiondown.svg" alt="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <b-collapse id="accordion-3"  accordion="my-accordion" role="tabpanel">
-                                                    <div>
-                                                    <div>{{ text }}</div>
-                                                    </div>
-                                                </b-collapse>
-                                            </div>
-                                        </div>
-                                        </template>
+                                   
                                     </div>
                                 </div>
                             </div>

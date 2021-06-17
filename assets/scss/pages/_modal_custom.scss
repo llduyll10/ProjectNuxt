@@ -390,7 +390,6 @@
             }
             .group-infor{
                 padding-left: 60px;
-                padding-bottom: 20px;
                 .key{
                     font-size: 13px;
                     font-weight: 600;
@@ -405,7 +404,7 @@
             }
             .footer{
                 padding: 0 60px;
-                margin-top: 25px;
+                margin-top: 30px;
                 .btn-confirm{
                     @extend .flex-center;
                     cursor: pointer;
