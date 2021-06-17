@@ -164,7 +164,7 @@
 
         <PopupLienheform ref="LienHeFormPop" :isService="true" :title="detailProject.name" :rawCategory="rawCategory" />
         <PopupSurvey ref="surveyPopup" :detailProject="detailProject" :rawCategory="rawCategory"  @activeCompany="getActiveCompany" />
-        <PopupSurveyUpdate ref="surveyUpdate" v-if="company"  :objCompany="company" :detailProject="detailProject" :rawCategory="rawCategory" />
+        <PopupSurveyUpdate ref="surveyUpdate" v-if="company"  :objCompany="company" :detailProject="detailProject" :rawCategory="rawCategory" @activeCompany="getActiveCompany" />
     </div>
 </template>
 <script>

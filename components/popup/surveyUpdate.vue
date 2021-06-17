@@ -179,14 +179,15 @@ export default {
     data(){
         return{
             optionSearch:[
-                { id: 1, label: '2 lần 1 tuần' },
-                { id: 2, label: '2 lần 1 tuần' },
-                { id: 3, label: '2 lần 1 tuần' },
+                { id: 1, label: '1 tuần 1 lần' },
+                { id: 2, label: '2 tuần 1 lần' },
+                { id: 4, label: '1 tháng 1 lần' },
             ],
             acceptFile:["png", "jpg", "jpeg", "tiff", "pdf", "xls", "doc", "ppt", "zip", "rar"],
             arrFile:[],
             objSurvey:{
                 message:'',
+                report:1,
                 agree:false
             }
         }
@@ -195,22 +196,37 @@ export default {
     },
     methods:{
         async submitForm(){
-            var arrFile = this.arrFile.length ? await this.uploadFile(this.arrFile) : []
+            try{
+                this.loader()
+                var arrFile = this.arrFile.length ? await this.uploadFile(this.arrFile) : []
 
-            var arrPayment = []
-            this.objCompany.payments.forEach(item => {
-                var obj = {key:item.key, value: item.newValue}
-                arrPayment.push(obj)
-            })
+                var arrPayment = []
+                this.objCompany.payments.forEach(item => {
+                    var obj = {key:item.key, value: item.newValue}
+                    arrPayment.push(obj)
+                })
 
-            var obj = {
-                ...this.objSurvey,
-                project:this.objCompany.project,
-                auction:this.objCompany.auctionBy._id,
-                payments:arrPayment,
-                attachments:arrFile
+                var obj = {
+                    ...this.objSurvey,
+                    project:this.objCompany.survey[0].project,
+                    auction:this.objCompany.survey[0].auction,
+                    payments:arrPayment,
+                    attachments:arrFile
+                }
+
+                let res = await this.$post('member/auction/deal',obj)
+                console.log(res)
+                this.hide()
+                // call api gaaing
+                this.$emit('activeCompany')
             }
-            console.log(obj)
+            catch(err){
+                this.loader(0)
+                console.log(err)
+            }
+
+
+
         },
         show() {
             console.log('objProject',this.objCompany)
