@@ -52,18 +52,17 @@
                     .text {
                         line-height: 26px !important;
                         font-size: 13px;
-                        font-weight: 400;
+                        font-weight: 500;
                         span {
                             color: $main-color;
                             font-weight: 600;
                         }
                     }
                 }
-                .collapse {
+                .body-content {
                     font-weight: 400;
-                }
-                &.show {
-                    padding-bottom: 30px !important;
+                    line-height: 26px;
+                    padding: 4px 0 24px;
                 }
             }
         }
