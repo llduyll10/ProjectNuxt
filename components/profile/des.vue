@@ -46,7 +46,7 @@
                 <p class="title">Giới thiệu</p>
                 <template v-if="$auth.loggedIn">
                     <nuxt-link
-                        v-if="$auth.user._id == profile._id"
+                        v-if="$auth.user && $auth.user._id == profile._id"
                         class="group-function"
                         :prefetch="false"
                         to="/member/chinh-sua-ho-so?tab=2"

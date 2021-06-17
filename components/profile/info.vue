@@ -23,7 +23,7 @@
 
         <!-- Login -->
         <template v-if="$auth.loggedIn">
-            <nuxt-link v-if="$auth.user._id == profile._id"
+            <nuxt-link v-if="$auth.user && $auth.user._id == profile._id"
                 :prefetch="false"
                 class="btn-contact"
                 to="/member/chinh-sua-ho-so?tab=1"

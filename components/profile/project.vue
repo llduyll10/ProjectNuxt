@@ -4,7 +4,7 @@
             <div class="group-title">
                 <p class="title">Dự án đã thực hiện</p>
                 <template v-if="$auth.loggedIn">
-                    <nuxt-link  v-if="$auth.user._id == profile._id"
+                    <nuxt-link  v-if="$auth.user &&  $auth.user._id == profile._id"
                                 class="group-function"
                                 to="/member/chinh-sua-ho-so?tab=3"
                     >
