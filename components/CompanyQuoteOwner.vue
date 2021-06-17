@@ -79,7 +79,7 @@
                     <template v-else-if="company.statusUpdate == 'ACTIVE' ">
                         <template v-if="company.step == 3 && company.deal.length && company.deal[0].status == 'CANCEL' ">
                             <div class="describe  d-flex">
-                                <img src="@/assets/svg/icon-cancel.svg" alt="">
+                                <i class="fas fa-times text-red f-16 mt-5px mr-5px"></i>
                                 <span class="text-red">Nhà thầu từ chối thương lượng</span>
                             </div>
                         </template>
