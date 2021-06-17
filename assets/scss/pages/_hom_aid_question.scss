@@ -59,11 +59,10 @@
                         }
                     }
                 }
-                .collapse {
+                .body-content {
                     font-weight: 400;
-                    .body-content {
-                        line-height: 26px !important;
-                    }
+                    line-height: 26px;
+                    padding: 6px 0 24px;
                 }
             }
         }

@@ -70,7 +70,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <b-collapse id="accordion-3"  accordion="my-accordion" role="tabpanel">
-                                                                    <div class="body-content pb-24px pt-6px">
+                                                                    <div class="body-content">
                                                                     <div>{{ text }}</div>
                                                                     </div>
                                                                 </b-collapse>
