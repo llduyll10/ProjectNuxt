@@ -43,12 +43,15 @@
                     <td class="price ">{{formatVnd(item.price)}} VND</td>
                     <td class="status ">
                         <template v-if="!item.step">
-                            <div class="btn-send" @click="openModalViewSurvey(item)">
-                                <img src="@/assets/svg/email.svg" alt="">
-                                <span>Xem yêu cầu khảo sát</span>
-                            </div>
-
+                            <span class="f-12 text-main">Xem yêu cầu khảo sát</span>
                         </template>
+
+                        <template v-else-if="item.step == 3 && item.deal.length">
+                            <span class="f-12 text-main cursor-pointer" @click="openModalUpdateSurvey(item)">
+                                Xem yêu cầu thương lượng
+                            </span>
+                        </template>
+
                         <template v-else>
                             <b-dropdown id="dropdown-duedate" variant="link" toggle-class="text-decoration-none" class="custom-infor pb-5px" no-caret>
                                 <template #button-content>
@@ -76,6 +79,14 @@
                         :objProject="activeCompany"
                         :detailProject="activeCompany.project"
                         :rawCategory="activeCompany.project.category"
+                        @getListParent="getListQuote"
+        />
+        <PopupSurveyUpdate ref="surveyUpdate"
+                        v-if="activeCompany"
+                        :objCompany="activeCompany"
+                        :detailProject="activeCompany.project"
+                        :rawCategory="activeCompany.project.category"
+                        :isCompany=true
                         @getListParent="getListQuote"
         />
 
@@ -184,6 +195,10 @@ export default {
             this.$refs.popupViewSurvey.show()
             this.$refs.popupViewSurvey.getInforPerchant(this.activeCompany.projectOwner)
         },
+        openModalUpdateSurvey(company){
+            this.activeCompany = company
+            this.$refs.surveyUpdate.show()
+        }
 
     }
 }

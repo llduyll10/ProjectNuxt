@@ -77,10 +77,18 @@
                     </template>
                     <!-- IS NEGOTIATE -->
                     <template v-else-if="company.statusUpdate == 'ACTIVE' ">
-                        <div class="describe  d-flex">
-                            <img src="@/assets/svg/icon-sand-lock.svg" alt="">
-                            <span>Đang thương lượng</span>
-                        </div>
+                        <template v-if="company.step == 3 && company.deal.length && company.deal[0].status == 'CANCEL' ">
+                            <div class="describe  d-flex">
+                                <img src="@/assets/svg/icon-cancel.svg" alt="">
+                                <span class="text-red">Nhà thầu từ chối thương lượng</span>
+                            </div>
+                        </template>
+                        <template v-else >
+                            <div class="describe  d-flex">
+                                <img src="@/assets/svg/icon-sand-lock.svg" alt="">
+                                <span>Đang thương lượng</span>
+                            </div>
+                        </template>
 
                         <div class="d-flex" :class="seemore ? '' : 'showContent' ">
                             <span class="description" >
