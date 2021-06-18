@@ -28,7 +28,7 @@
                             <span v-else class="key">Soạn tin nhắn <span class="text-red">*</span> </span>
                         </div>
                         <div class="col-md-9">
-                            <template v-if="isCompany">
+                            <template v-if="isCompany && objCompany.deal[0]">
                                 <textarea v-model="objCompany.deal[0].message"
                                         required id="customPlaceholder"
                                         class="form-control fw-600"
@@ -60,7 +60,7 @@
                             <span class="key">Đơn giá thương lượng</span><span class="text-red">*</span>
                         </div>
                         <div class="col-md-3 ">
-                            <div v-if="isCompany" class="input-group" >
+                            <div v-if="isCompany && objCompany.deal[0]" class="input-group" >
                                 <currency-input
                                     type="text"
                                     class="form-control fw-600"
@@ -100,7 +100,7 @@
                             <span class="key">Tiến độ mong muốn</span><span class="text-red">*</span>
                         </div>
                         <div class="col-md-3 ">
-                            <div v-if="isCompany" class="input-group" >
+                            <div v-if="isCompany && objCompany.deal[0]" class="input-group" >
                                 <input
                                     type="text"
                                     class="form-control"
@@ -127,7 +127,7 @@
                         </div>
                     </div>
 
-                     <template v-if="isCompany">
+                     <template v-if="isCompany && objCompany.deal[0]">
                         <template v-for="(item,idx) in objCompany.deal[0].payments">
                             <div class="row mb-15px mr-60px" :key="idx+200">
                                 <div class="col-md-3">
@@ -184,7 +184,7 @@
                         </div>
                         <div class="col-md-9">
                             <treeselect
-                                    v-if="isCompany"
+                                    v-if="isCompany && objCompany.deal[0]"
                                     class="option-search"
                                     :options="optionSearch"
                                     :value="objCompany.deal[0].report"
@@ -215,7 +215,7 @@
 
                         <div v-if="!isCompany" class="col-md-3"></div>
                         <div class="col-md-9 " >
-                             <template v-if="isCompany &&  objCompany && objCompany.deal[0].attachments">
+                             <template v-if="isCompany &&  objCompany.deal[0] && objCompany.deal[0].attachments">
                                 <template v-for="(item,idx) in objCompany.deal[0].attachments">
                                      <p :key="idx" class="f-11 text-main ">
                                         <span v-html="returnTypeFile(item)"></span>

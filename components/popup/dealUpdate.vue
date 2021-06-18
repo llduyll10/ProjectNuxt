@@ -1,7 +1,7 @@
 <template>
     <Modal ref="popupSurveyUpdate" id="modal-deal-update">
       <template v-slot:content>
-        <div class="modal-contact formCore" v-if="objCompany">
+        <div class="modal-contact formCore" v-if="objCompany && objCompany.deal[0]">
           <div class="content">
             <p  class="title f-14 fw-600" >
                 <span class="text-main">{{objCompany.auctionBy.company}}</span> đã từ chối yêu cầu thương lượng của bạn
@@ -88,7 +88,7 @@
                         </div>
                     </div>
 
-                    <template >
+                    <template v-if="objCompany.payments.length">
                         <template v-for="(item,idx) in objCompany.payments">
                             <div class="row mb-15px mr-60px" :key="idx+100">
                                 <div class="col-md-3">
@@ -232,7 +232,7 @@ export default {
         }
     },
     mounted(){
-        if(this.objCompany){
+        if(this.objCompany &&  this.objCompany.deal[0] && this.objCompany.deal[0].payments.length){
             this.objCompany.deal[0].payments.forEach(item1 => {
                 this.objCompany.payments.forEach(item2 => {
                     item2.valueDeal = item1.value
