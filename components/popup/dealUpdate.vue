@@ -253,7 +253,7 @@ export default {
                 })
                 let url = ''
                 if(this.statusCallAPI == 'ACCEPT'){
-                    url = 'member/survey/destroy'
+                    url = 'member/auction/deal/destroy'
                     var obj = {
                         project:this.objCompany.survey[0].project,
                         auction:this.objCompany.survey[0].auction,

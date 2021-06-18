@@ -30,17 +30,17 @@
             <tbody  v-if="listShow" >
                 <tr v-for="(item,idx) in listShow" :key="idx">
                     <td class="name cursor-pointer"
-                        :class="getClassCategory(mapImgFromCategory(item.category))"
-                        @click="$router.push(`/du-an/${item.slug}`)"
+                        :class="getClassCategory(mapImgFromCategory(item.project.category))"
+                        @click="$router.push(`/du-an/${item.project.slug}`)"
                     >
-                        {{item.name}}
+                        {{item.project.name}}
                     </td>
                     <td class="customer  f-12">
                         <span class="text-main">
-                            Công ty cổ phần Epoint
+                            {{item.auctionBy.name}}
                         </span>
                     </td>
-                    <td class="price ">{{formatVnd(item.budget)}} VND</td>
+                    <td class="price ">{{formatVnd(item.project.budget)}} VND</td>
                     <td class="status ">
                         <template v-if="true">
                                 <b-dropdown id="dropdown-duedate" variant="link" toggle-class="text-decoration-none" class="custom-infor pb-5px" no-caret>
@@ -105,7 +105,7 @@ export default {
     methods:{
         getListQuote(){
             this.loader()
-            this.$get('/member/projects')
+            this.$get('/member/owner-project-auction/')
                 .then(res => {
                     this.listProject = res.data
                     this.listShow = res.data

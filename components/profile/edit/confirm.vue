@@ -75,8 +75,8 @@
                     <small v-else class="text-danger fw-600">
                         Đang xác thực
                     </small>
-                    <div v-if="arrFileUser && arrFileUser.length">
-                        <template v-for="(item,idx) in arrFileUser">
+                    <div v-if="$auth.user.verifiedPaper && $auth.user.verifiedPaper.length">
+                        <template v-for="(item,idx) in $auth.user.verifiedPaper">
                             <p :key="idx" class="f-11 text-main  mb-0 mt-8px">
                                 <span v-html="returnTypeFile(item)"></span>
                                 {{spliceURLFile(item,'--')}}
@@ -99,7 +99,6 @@ export default {
             phone: this.$auth.user.phone,
             acceptFile:["png", "jpg", "jpeg" ,"tiff", "pdf", "xls", "doc", "ppt", "zip", "rar"],
             arrFile:[],
-            arrFileUser:this.$auth.user.verifiedPaper
         }
     },
     mounted(){
@@ -116,9 +115,7 @@ export default {
             }
             this.$post('user/verify/paper',obj)
                 .then(res => {
-                    if(res.data.status){
-                        this.arrFileUser = this.$auth.user.verifiedPaper
-                    }
+
                    this.$auth.fetchUser();
                 })
                 .catch(err => {
