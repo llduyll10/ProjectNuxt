@@ -43,7 +43,7 @@
                     <td class="price ">{{formatVnd(item.price)}} VND</td>
                     <td class="status ">
                         <template v-if="!item.step">
-                            <span class="f-12 text-main">Xem yêu cầu khảo sát</span>
+                            <span @click="openModalViewSurvey(item)" class="f-12 text-main cursor-pointer">Xem yêu cầu khảo sát</span>
                         </template>
 
                         <template v-else-if="item.step == 3 && item.deal.length">
