@@ -4,7 +4,7 @@
         <div class="modal-contact formCore" v-if="objConfirm">
           <div class="content">
             <p class="title f-14" >
-                Bạn đã yêu cầu <span class="text-main">{{objConfirm.auctionBy.company}}</span> khảo sát và cập nhật báo giá. Nếu có thay đổi về thời gian và địa điểm, vui lòng liên hệ trực tiếp với công ty.
+                Thông tin liên hệ <span class="text-main" >{{objConfirm.auctionBy.company}}</span>
             </p>
             <div class="group-infor">
                 <div class="row mb-15px">

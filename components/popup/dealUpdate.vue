@@ -248,7 +248,7 @@ export default {
 
                 var arrPayment = []
                 this.objCompany.payments.forEach(item => {
-                    var obj = {key:item.key, value: item.newValue}
+                    var obj = {key:item.key, value: item.valueDeal}
                     arrPayment.push(obj)
                 })
                 let url = ''
@@ -261,7 +261,7 @@ export default {
                 }
                 else{
                     var obj = {
-                        ...this.objSurvey,
+                        ...this.objCompany.deal[0],
                         project:this.objCompany.survey[0].project,
                         auction:this.objCompany.survey[0].auction,
                         payments:arrPayment,
@@ -269,7 +269,7 @@ export default {
                     }
                     url = 'member/auction/deal/update'
                 }
-
+                console.log('obj',obj)
                 let res = await this.$post(url,obj)
                 console.log(res)
                 this.hide()

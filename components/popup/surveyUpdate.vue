@@ -334,8 +334,6 @@ export default {
                     payments:arrPayment,
                     attachments:arrFile
                 }
-                console.log('cancel',obj)
-                console.log('statusCallAPI',this.statusCallAPI)
                 let url = ''
                 if(this.statusCallAPI == 'ACCEPT'){
                     url = 'member/auction/deal/confirmed'

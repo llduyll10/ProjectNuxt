@@ -43,21 +43,37 @@
                     <td class="price ">{{formatVnd(item.project.budget)}} VND</td>
                     <td class="status ">
                         <template v-if="item.step == 1 || item.step == 2">
-                                <b-dropdown id="dropdown-duedate" variant="link" toggle-class="text-decoration-none" class="custom-infor pb-5px" no-caret>
+                                <b-dropdown v-if="item.statusUpdate == 'ACTIVE' " id="dropdown-duedate" variant="link" toggle-class="text-decoration-none" class="custom-infor pb-5px" no-caret>
                                     <template #button-content>
                                         <div class="d-flex">
                                             <div class="cover-infor">
                                                 <p class="f-12">
-                                                <span class="f-12 text-main">Khảo sát {{item.survey[0].time}}, {{$moment(item.survey[0].date).format('DD/MM/YYYY')}} </span>
+                                                <span class="f-12 text-main">Đang thương lượng </span>
                                                 <i class="fas fa-caret-down ml-5px f-16 text-main"></i>
                                                 </p>
                                             </div>
                                         </div>
                                     </template>
-                                     <b-dropdown-item class="f-12" @click="destroySurvey(item.survey[0])">
-                                        Huỷ yêu cầu khảo sát
-                                     </b-dropdown-item>
-                            </b-dropdown>
+                                    <b-dropdown-item class="f-12">
+                                        Huỷ thương lượng
+                                    </b-dropdown-item>
+                                </b-dropdown>
+
+                                <b-dropdown v-else  id="dropdown-duedate" variant="link" toggle-class="text-decoration-none" class="custom-infor pb-5px" no-caret>
+                                        <template #button-content>
+                                            <div class="d-flex">
+                                                <div class="cover-infor">
+                                                    <p class="f-12">
+                                                    <span class="f-12 text-main">Khảo sát {{item.survey[0].time}}, {{$moment(item.survey[0].date).format('DD/MM/YYYY')}} </span>
+                                                    <i class="fas fa-caret-down ml-5px f-16 text-main"></i>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </template>
+                                        <b-dropdown-item class="f-12" @click="destroySurvey(item.survey[0])">
+                                            Huỷ yêu cầu khảo sát
+                                        </b-dropdown-item>
+                                </b-dropdown>
                         </template>
                         <template v-else>
                             <div class="btn-send">
