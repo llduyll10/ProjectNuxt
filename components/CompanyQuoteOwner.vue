@@ -90,7 +90,7 @@
                             </div>
                         </template>
 
-                        <div class="d-flex" :class="seemore ? '' : 'showContent' ">
+                        <div class="d-flex" >
                             <span class="description" >
                                 {{company.description}}
                             </span>
@@ -113,10 +113,20 @@
                             </ul>
                         </div>
                         <div class="group-btn">
-                            <div class="btn-send cup mr-10px ml-0" @click="openSurveyUpdate()">
-                                <img src="@/assets/svg/icon-user-light.svg" alt="">
-                                <span>Cập nhật</span>
-                            </div>
+
+                            <template v-if="company.step == 3 && company.deal.length && company.deal[0].status == 'CANCEL' ">
+                                <div @click="openDeal()" class="btn-send cup mr-10px ml-0" >
+                                    <img  src="@/assets/svg/email.svg" alt="">
+                                    <span>Xem tin nhắn</span>
+                                </div>
+                            </template>
+                            <template v-else >
+                                <div @click="openSurveyUpdate()" class="btn-send cup mr-10px ml-0">
+                                    <img  src="@/assets/svg/icon-user-light.svg" alt="">
+                                    <span>Cập nhật</span>
+                                </div>
+                            </template>
+
                             <div class="btn-send cancel ">
                                 <img src="@/assets/svg/icon-cancel.svg" alt="">
                                 <span>Huỷ thương lượng</span>
@@ -172,6 +182,7 @@
         <PopupLienheform ref="LienHeFormPop" :isService="true" :title="detailProject.name" :rawCategory="rawCategory" />
         <PopupSurvey ref="surveyPopup" :detailProject="detailProject" :rawCategory="rawCategory"  @activeCompany="getActiveCompany" />
         <PopupSurveyUpdate ref="surveyUpdate" v-if="company"  :objCompany="company" :detailProject="detailProject" :rawCategory="rawCategory" @activeCompany="getActiveCompany" />
+        <PopupDealUpdate ref="dealUpdate" v-if="company"  :objCompany="company" :detailProject="detailProject" :rawCategory="rawCategory" @activeCompany="getActiveCompany" />
     </div>
 </template>
 <script>
@@ -213,6 +224,9 @@ export default {
         },
         openSurveyUpdate(){
             this.$refs.surveyUpdate.show()
+        },
+        openDeal(){
+            this.$refs.dealUpdate.show()
         }
     }
 }
