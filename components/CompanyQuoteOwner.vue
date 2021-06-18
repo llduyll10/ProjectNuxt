@@ -51,7 +51,7 @@
                 <!-- ACTIVE -->
                 <template v-if="company && company.survey.length">
 
-                    <template v-if="!company.step">
+                    <template v-if="company.step == 1">
                         <div class="describe  d-flex">
                             <img src="@/assets/svg/icon-sand-lock.svg" alt="">
                             <span>Chưa xác nhận</span>

@@ -190,11 +190,13 @@
                 padding-top: 6px;
             }
             #dropdown-duedate{
+                max-height: 25px;
                 .dropdown-toggle{
                     padding-top: 3px;
                 }
                 .dropdown-menu{
-                    top: -20px !important;
+                    top: 10px !important;
+                    left: 10px !important;
                 }
             }
             .btn-send{
