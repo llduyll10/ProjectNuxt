@@ -69,7 +69,7 @@
                                 <img src="@/assets/svg/icon-cancel.svg" alt="">
                                 <span>Huỷ khảo sát</span>
                             </div>
-                            <div class="btn-send cup" @click="openPopupSurvey()">
+                            <div class="btn-send cup" @click="openCustomerContact()">
                                 <img src="@/assets/svg/icon-user-light.svg" alt="">
                                 <span>Thông tin liên hệ</span>
                             </div>
@@ -152,7 +152,7 @@
                                 <img src="@/assets/svg/email.svg" alt="">
                                 <span>Gửi tin nhắn</span>
                             </div>
-                            <div class="btn-send cup" @click="openPopupSurvey()">
+                            <div class="btn-send cup" @click="openCustomerContact()">
                                 <img src="@/assets/svg/icon-user-light.svg" alt="">
                                 <span>Thông tin liên hệ</span>
                             </div>
@@ -183,6 +183,7 @@
         <PopupSurvey ref="surveyPopup" :detailProject="detailProject" :rawCategory="rawCategory"  @activeCompany="getActiveCompany" />
         <PopupSurveyUpdate ref="surveyUpdate" v-if="company"  :objCompany="company" :detailProject="detailProject" :rawCategory="rawCategory" @activeCompany="getActiveCompany" />
         <PopupDealUpdate ref="dealUpdate" v-if="company"  :objCompany="company" :detailProject="detailProject" :rawCategory="rawCategory" @activeCompany="getActiveCompany" />
+        <PopupSurveyCustomerContact ref="customerContact" v-if="company" :objConfirm="company" />
     </div>
 </template>
 <script>
@@ -227,6 +228,9 @@ export default {
         },
         openDeal(){
             this.$refs.dealUpdate.show()
+        },
+        openCustomerContact(){
+            this.$refs.customerContact.show()
         }
     }
 }

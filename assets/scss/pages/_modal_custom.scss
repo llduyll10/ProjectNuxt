@@ -161,6 +161,7 @@
 #modal-change-tax-form-submit,
 #modal-survey,
 #modal-survey-contact,
+#modal-survey-customer-contact,
 #modal-survey-update,
 #modal-deal-update,
 #modal-infor-project {
@@ -331,7 +332,7 @@
         }
     }
 }
-#modal-survey-contact{
+#modal-survey-contact,#modal-survey-customer-contact{
     .modal-body{
         padding: 0;
         .content{
@@ -437,7 +438,7 @@
     #modal-change-phone-form-submit,
     #modal-change-tax-form-submit,
     #modal-show-villa,
-    #modal-survey, #modal-survey-contact,#modal-survey-update, #modal-deal-update {
+    #modal-survey, #modal-survey-contact,#modal-survey-customer-contact,#modal-survey-update, #modal-deal-update {
         .modal-md {
             width: auto !important;
         }
@@ -448,7 +449,7 @@
     #modal-change-phone-form-submit,
     #modal-change-tax-form-submit,
     #modal-show-villa,
-    #modal-survey,#modal-survey-contact,#modal-survey-update, #modal-deal-update {
+    #modal-survey,#modal-survey-contact,#modal-survey-customer-contact,#modal-survey-update, #modal-deal-update {
         .modal-body {
             padding: 1rem !important;
             height: auto;
