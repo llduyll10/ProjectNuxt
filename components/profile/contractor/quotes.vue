@@ -52,7 +52,7 @@
                                             </div>
                                         </div>
                                     </template>
-                                    <b-dropdown-item class="f-12">
+                                    <b-dropdown-item class="f-12" @click="destroySurvey(item)">
                                     Huỷ chào giá
                                     </b-dropdown-item>
                             </b-dropdown>
@@ -105,6 +105,18 @@ export default {
                 .then(res => {
                     this.listProject = res.data
                     this.listShow = res.data.filter(item =>item.survey.length == 0)
+                    this.loader(0)
+                })
+                .catch(err => {
+                    this.loader(0)
+                })
+        },
+        destroySurvey(survey){
+            console.log('survey',survey)
+            this.loader()
+            this.$post('member/auction/delete', {project:survey.project._id})
+                .then(res => {
+                    this.getListQuote()
                     this.loader(0)
                 })
                 .catch(err => {
