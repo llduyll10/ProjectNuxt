@@ -118,7 +118,7 @@ export default {
         destroySurvey(survey){
             this.loader()
             var obj = {...survey}
-            this.$post('member/survey/destroy',obj)
+            this.$post('member/survey/cancel',obj)
                 .then(res => {
                     console.log(res)
                     this.getListQuote()
