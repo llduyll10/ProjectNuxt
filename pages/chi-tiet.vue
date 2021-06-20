@@ -18,7 +18,6 @@
                                                 Ngay từ khi ra mắt, Vega City Nha Trang là "điểm sáng" của thị trường bất động sản nghỉ dưỡng bởi mô hình nghỉ dưỡng khép kín, cùng định hướng phát triển kinh tế đêm độc đáo, hứa hẹn đem đến một "thiên đường" giải trí, nghệ thuật sôi động bậc nhất, một kinh đô ánh sáng và lễ hội tưng bừng suốt 4 mùa. Do đó, những căn shophouse tại đây luôn có sức hút mạnh mẽ đối với các nhà đầu tư sành sỏi bởi tiềm năng du lịch và khai thác thương mại bất tận.
                                             </div>
                                             <div class="box-img mb-12px">
-                                                <img src="@/assets/svg/detailimage.svg" alt="">
                                                 <div class="sub-img f-14 mt-12px">
                                                     Tầm view kép mang lại giá trị độc tôn cho Vip 18 shophouse Vega City Nha Trang.
                                                 </div>
