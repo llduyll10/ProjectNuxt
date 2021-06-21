@@ -18,7 +18,7 @@
             </div>
         </div>
 
-        <table class="table table-custom table-deploy" v-if="listShow">
+        <!-- <table class="table table-custom table-deploy" v-if="listShow">
             <thead>
                 <tr>
                     <th scope="col">Tên dự án</th>
@@ -46,7 +46,7 @@
                     <td class="price ">{{$moment(item.dueDate).format('DD/MM/YYYY')}}</td>
                 </tr>
             </tbody>
-        </table>
+        </table> -->
     </div>
 </template>
 <script>
@@ -69,25 +69,25 @@ export default {
             searchText:''
         }
     },
-    watch:{
-        objSearch:{
-            deep:true,
-            handler(){
-               this.filterList(JSON.parse(JSON.stringify(this.listProject)))
-            }
-        },
-    },
     mounted(){
         this.getListQuote()
     },
     methods:{
         getListQuote(){
-            this.loader()
-            this.$get('/member/projects')
+            // this.loader()
+            console.log('test api')
+            this.$get('member/my-auction/')
                 .then(res => {
                     this.listProject = res.data
-                    this.listShow = res.data
-                    this.loader(0)
+                    var arrTmp = []
+                    this.listProject.forEach(item => {
+                        if(item.deal && item.deal[0].status == 'OK'){
+                            arrTmp.push(item)
+                        }
+                    })
+
+                    console.log('listShow',arrTmp)
+                    // this.loader(0)
                 })
                 .catch(err => {
                     this.loader(0)
