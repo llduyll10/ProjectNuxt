@@ -1,5 +1,5 @@
 <template>
-    <div class="company-quote-owner" :class="company && (company.survey.length && company.step != 3) ? 'active' : 'border-0' " >
+    <div class="company-quote-owner" :class="company && (company.survey.length) ? 'active' : 'border-0' " >
         <div class="row cover">
             <div class="col-md-6 col-sm-12   pr-0 ">
                 <div class="d-flex content-left">
@@ -76,7 +76,7 @@
                         </div>
                     </template>
                     <!-- IS NEGOTIATE -->
-                    <template v-else-if="company.statusUpdate == 'ACTIVE' ">
+                    <template v-else-if="company.statusUpdate == 'ACTIVE'  ">
                         <template v-if="company.step == 3 && company.deal.length && company.deal[0].status == 'CANCEL' ">
                             <div class="describe  d-flex">
                                 <i class="fas fa-times text-red f-16 mt-5px mr-5px"></i>
@@ -96,11 +96,11 @@
 
                         <div class="d-flex" >
                             <span class="description" >
-                                {{company.deal[0].message}}
+                                {{ company.deal.length &&  company.deal[0].message}}
                             </span>
                         </div>
 
-                        <div v-if="company.deal[0].attachments">
+                        <div v-if="company.deal.length &&  company.deal[0].attachments">
                             <template v-for="(item,idx) in company.deal[0].attachments">
                                 <p :key="idx" class="f-11 text-main ">
                                     <span v-html="returnTypeFile(item)" class="mr-5px"></span>
@@ -108,8 +108,8 @@
                                 </p>
                             </template>
                         </div>
-                        <div class="list-payment">
-                            <ul>
+                        <div  class="list-payment">
+                            <ul v-if="company.deal.length">
                                 <li v-for="(pay,idx) in company.deal[0].payments" :key="idx">
                                     <span>Thanh toán đợt {{idx+1}}</span> - <span class="text-main">{{pay.value}}</span>
                                 </li>
@@ -117,13 +117,13 @@
                         </div>
                         <div class="group-btn">
 
-                            <template v-if="company.step == 3 && company.deal.length && company.deal[0].status == 'CANCEL' ">
+                            <template v-if="  company.step == 3 && company.deal.length && company.deal[0].status == 'CANCEL' ">
                                 <div @click="openDeal()" class="btn-send cup mr-10px ml-0" >
                                     <img  src="@/assets/svg/email.svg" alt="">
                                     <span>Xem tin nhắn</span>
                                 </div>
                             </template>
-                            <template v-else-if="company.step == 3 && company.deal.length && company.deal[0].status == 'OK' ">
+                            <template v-else-if=" company.step == 3 && company.deal.length && company.deal[0].status == 'OK' ">
                                 <div @click="openLienHeMail()" class="btn-send  mr-10px ml-0" >
                                     <img  src="@/assets/svg/email.svg" alt="">
                                     <span>Gửi tin nhắn</span>

@@ -54,8 +54,8 @@
                 <span>Xem yêu cầu khảo sát</span>
             </div>
         </div>
-        <div v-if="$auth && $auth.user  && $auth.user._id == company.auctionBy._id && company.step == 2" class="cover-btn">
-            <div  class="btn-send cup mr-10px ml-0" >
+        <div v-if="$auth && $auth.user  && $auth.user._id == company.auctionBy._id && company.statusUpdate == 'ACTIVE' && company.step == 3" class="cover-btn">
+            <div @click="viewSurveyUpdate()"  class="btn-send cup mr-10px ml-0" >
                 <img  src="@/assets/svg/email.svg" alt="">
                 <span>Xem yêu cầu thương lượng</span>
             </div>
@@ -68,7 +68,15 @@
                         :detailProject="detailProject"
                         :rawCategory="rawCategory"
                         @getListParent="getListQuote"
-        />
+    />
+    <PopupSurveyUpdate ref="surveyUpdate"
+                        v-if="company"
+                        :objCompany="company"
+                        :detailProject="detailProject"
+                        :rawCategory="rawCategory"
+                        :isCompany=true
+                        @getListParent="getListQuote"
+    />
     </div>
 </template>
 <script>
@@ -80,6 +88,9 @@ export default {
         viewSurvey(){
             this.$refs.popupViewSurvey.show()
             this.$refs.popupViewSurvey.getInforPerchant(this.detailProject.createBy)
+        },
+        viewSurveyUpdate(){
+            this.$refs.surveyUpdate.show()
         },
         getListQuote(){
             this.$emit('getDetailAgain')

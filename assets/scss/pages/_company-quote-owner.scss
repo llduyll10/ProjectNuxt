@@ -7,7 +7,7 @@
             padding-bottom: 0;
         }
     }
-    &.active{
+    &.active, .border-0{
         background-color: #EBF5FA;
         .content-right{
             &::before{
@@ -92,6 +92,11 @@
             overflow: hidden;
             line-height: 25px;
             margin-top: -5px;
+            img{
+                width: 20px;
+                height: 20px;
+                margin-right: 5px;
+            }
         }
         .description{
             font-size: 13px;
