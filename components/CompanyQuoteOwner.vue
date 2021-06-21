@@ -33,13 +33,13 @@
                         <div class="text-11 color-grey">
                             <span>Chi phí ước tính -
                                 <span class="fw-600 main-color text-13">
-                                    {{formatNamePrice(company.price)}}
+                                    {{formatNamePrice(company.step=== 3 ? company.deal[0].price: company.price)}}
                                 </span>
                             </span>
                             <span class="px-11px"> | </span>
                             <span>Thời gian thi công -
                                 <span class="fw-600 main-color text-13">
-                                    {{company.day}} ngày
+                                    {{(company.step=== 3 ? company.deal[0].day : company.day}} ngày
                                 </span>
                             </span>
                         </div>
