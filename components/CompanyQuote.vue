@@ -79,7 +79,7 @@ export default {
     methods:{
         viewSurvey(){
             this.$refs.popupViewSurvey.show()
-            this.$refs.popupViewSurvey.getInforPerchant(this.company)
+            this.$refs.popupViewSurvey.getInforPerchant(this.detailProject.createBy)
         },
         getListQuote(){
             this.$emit('getDetailAgain')
