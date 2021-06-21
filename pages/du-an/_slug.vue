@@ -84,7 +84,7 @@
 
                 <template v-if="arrQuoteCompany && arrQuoteCompany.length" >
                   <template v-for="item in arrQuoteCompany">
-                    <CompanyQuote :key="item._id" :company="item"  />
+                    <CompanyQuote :key="item._id" :company="item" :detailProject="detailProject" :rawCategory="rawCategory" @getDetailAgain="getDetailProject"  />
                   </template>
                 </template>
 
@@ -234,7 +234,7 @@
 
 
           <template v-if="detailProject && detailProject.createBy && (detailProject.createBy._id === currentUser._id)">
-         
+
         <!-- co 1 deal dc chap nhan -->
         <div class="col-12" v-if="quoteCompleteDeal">
 

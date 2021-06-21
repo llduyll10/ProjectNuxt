@@ -198,6 +198,7 @@ export default {
         },
         show() {
             this.$refs.popupSurvey.showModal();
+            console.log('this.company',this.company)
         },
         hide(){
             this.$refs.popupSurvey.hideModal()

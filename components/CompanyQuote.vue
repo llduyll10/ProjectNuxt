@@ -1,6 +1,6 @@
 <template>
     <div>
-    <div class="d-flex flex-wrap ">
+    <div class="d-flex flex-wrap company-quote">
         <div class="infor-company col-12 d-flex pb-20px  px-0 justify-content-between">
             <div class="col-9 d-flex align-items-center">
                 <div>
@@ -48,18 +48,42 @@
         <div class="col-12">
             <div class="main-black text-13 break-line">{{company.description}}</div>
         </div>
-
+        <div v-if="$auth && $auth.user  && $auth.user._id == company.auctionBy._id && company.step == 1" class="cover-btn">
+            <div @click="viewSurvey()"  class="btn-send cup mr-10px ml-0" >
+                <img  src="@/assets/svg/email.svg" alt="">
+                <span>Xem yêu cầu khảo sát</span>
+            </div>
+        </div>
+        <div v-if="$auth && $auth.user  && $auth.user._id == company.auctionBy._id && company.step == 2" class="cover-btn">
+            <div  class="btn-send cup mr-10px ml-0" >
+                <img  src="@/assets/svg/email.svg" alt="">
+                <span>Xem yêu cầu thương lượng</span>
+            </div>
+        </div>
     </div>
     <hr class="hr" />
+     <PopupViewSurvey v-if="company"
+                        ref="popupViewSurvey"
+                        :objProject="company"
+                        :detailProject="detailProject"
+                        :rawCategory="rawCategory"
+                        @getListParent="getListQuote"
+        />
     </div>
 </template>
 <script>
 export default {
-    props:['company'],
+    props:['company','rawCategory','detailProject'],
     mounted(){
     },
     methods:{
-
+        viewSurvey(){
+            this.$refs.popupViewSurvey.show()
+            this.$refs.popupViewSurvey.getInforPerchant(this.company)
+        },
+        getListQuote(){
+            this.$emit('getDetailAgain')
+        }
     }
 }
 </script>
