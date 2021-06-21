@@ -1,5 +1,5 @@
 <template>
-    <div class="company-quote-owner" :class="company && company.survey.length ? 'active' : '' " >
+    <div class="company-quote-owner" :class="company && (company.survey.length && company.step != 3) ? 'active' : 'border-0' " >
         <div class="row cover">
             <div class="col-md-6 col-sm-12   pr-0 ">
                 <div class="d-flex content-left">
@@ -83,6 +83,10 @@
                                 <span class="text-red">Nhà thầu từ chối thương lượng</span>
                             </div>
                         </template>
+                         <template v-if="company.step == 3 && company.deal.length && company.deal[0].status == 'OK' ">
+                            <div class="describe  d-none">
+                            </div>
+                        </template>
                         <template v-else >
                             <div class="describe  d-flex">
                                 <img src="@/assets/svg/icon-sand-lock.svg" alt="">
@@ -119,6 +123,12 @@
                                     <span>Xem tin nhắn</span>
                                 </div>
                             </template>
+                            <template v-else-if="company.step == 3 && company.deal.length && company.deal[0].status == 'OK' ">
+                                <div @click="openLienHeMail()" class="btn-send  mr-10px ml-0" >
+                                    <img  src="@/assets/svg/email.svg" alt="">
+                                    <span>Gửi tin nhắn</span>
+                                </div>
+                            </template>
                             <template v-else >
                                 <div @click="openSurveyUpdate()" class="btn-send cup mr-10px ml-0">
                                     <img  src="@/assets/svg/icon-user-light.svg" alt="">
@@ -126,7 +136,14 @@
                                 </div>
                             </template>
 
-                            <div class="btn-send cancel ">
+                            <template v-if="company.step == 3 && company.deal.length && company.deal[0].status == 'OK' ">
+                                <div @click="openLienHeMail()" class="btn-send cancel  mr-10px ml-0" >
+                                    <img  src="@/assets/svg/icon-final-project.svg" alt="">
+                                    <span>Kết thúc dự án</span>
+                                </div>
+                            </template>
+
+                            <div v-else class="btn-send cancel ">
                                 <img src="@/assets/svg/icon-cancel.svg" alt="">
                                 <span>Huỷ thương lượng</span>
                             </div>
@@ -177,6 +194,10 @@
             </div>
 
         </div>
+        <!-- Show Detail payment -->
+        <template v-if="company.step == 3 && company.deal.length && company.deal[0].status == 'OK' ">
+            <DetailPayment :auction="company" />
+        </template>
 
         <PopupLienheform ref="LienHeFormPop" :isService="true" :title="detailProject.name" :rawCategory="rawCategory" />
         <PopupSurvey ref="surveyPopup" :detailProject="detailProject" :rawCategory="rawCategory"  @activeCompany="getActiveCompany" />

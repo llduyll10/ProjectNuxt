@@ -1,0 +1,25 @@
+.detail-payment-component{
+    .group-payment {
+        .item{
+            padding: 15px 0;
+            border-top: 1.5px solid #F2F2F2;
+            border-bottom: 1.5px solid #F2F2F2;
+            font-size: 13px;
+            color: $main-black;
+        }
+    }
+    .group-progress{
+        .item{
+            padding: 15px 0;
+            border-top: 1.5px solid #F2F2F2;
+            border-bottom: 1.5px solid #F2F2F2;
+            font-size: 13px;
+            color: $main-black;
+            .group-star{
+                display: flex;
+                margin-top: 0;
+                margin-left: 5px;
+            }
+        }
+    }
+}

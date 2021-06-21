@@ -1,6 +1,12 @@
 .company-quote-owner{
     padding: 25px 36px;
     padding-bottom: 0;
+    &.border-0{
+        .cover{
+            border-bottom:0;
+            padding-bottom: 0;
+        }
+    }
     &.active{
         background-color: #EBF5FA;
         .content-right{
