@@ -39,7 +39,7 @@
                             <span class="px-11px"> | </span>
                             <span>Thời gian thi công -
                                 <span class="fw-600 main-color text-13">
-                                    {{(company.step=== 3 ? company.deal[0].day : company.day}} ngày
+                                    {{company.step=== 3 ? company.deal[0].day : company.day}} ngày
                                 </span>
                             </span>
                         </div>
