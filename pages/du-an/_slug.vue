@@ -295,7 +295,8 @@ export default {
           this.loader(0)
         })
         .then(res2 => {
-            this.arrQuoteCompany = res2.data
+            this.arrQuoteCompany = res2.data.auctions
+
             this.loader(0)
         })
         .catch(err =>{
