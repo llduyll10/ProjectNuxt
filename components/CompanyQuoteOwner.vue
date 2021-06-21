@@ -83,7 +83,7 @@
                                 <span class="text-red">Nhà thầu từ chối thương lượng</span>
                             </div>
                         </template>
-                         <template v-if="company.step == 3 && company.deal.length && company.deal[0].status == 'OK' ">
+                         <template v-else-if="company.step == 3 && company.deal.length && company.deal[0].status == 'OK' ">
                             <div class="describe  d-none">
                             </div>
                         </template>
@@ -94,9 +94,9 @@
                             </div>
                         </template>
 
-                        <div class="d-flex" >
+                        <div class="d-flex" v-if="company.deal.length">
                             <span class="description" >
-                                {{ company.deal.length &&  company.deal[0].message}}
+                                {{ company.deal[0].message}}
                             </span>
                         </div>
 

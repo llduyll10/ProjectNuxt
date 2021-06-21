@@ -18,7 +18,7 @@
             </div>
         </div>
 
-        <table class="table table-custom" v-if="listShow">
+        <table class="table table-custom" >
             <thead>
                 <tr>
                     <th scope="col">Tên dự án</th>
@@ -131,7 +131,7 @@ export default {
             this.$get('/member/my-auction/')
                 .then(res => {
                     this.listProject = res.data
-                    this.listShow = res.data.filter(item => item.survey.length > 0)
+                    this.listShow = res.data.filter(item => (item.survey.length > 0 && ((item.deal && item.deal[0].status != 'OK' ) || item.deal.length ==0 )  ) )
                     this.activeCompany  = this.listShow[0]
                     this.loader(0)
                 })

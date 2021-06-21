@@ -54,7 +54,8 @@
                 <span>Xem yêu cầu khảo sát</span>
             </div>
         </div>
-        <div v-if="$auth && $auth.user  && $auth.user._id == company.auctionBy._id && company.statusUpdate == 'ACTIVE' && company.step == 3" class="cover-btn">
+        <div v-if="$auth && $auth.user  && $auth.user._id == company.auctionBy._id && company.statusUpdate == 'ACTIVE' && company.step == 3 && company.deal.length && company.deal[0].status != 'CANCEL'
+        " class="cover-btn">
             <div @click="viewSurveyUpdate()"  class="btn-send cup mr-10px ml-0" >
                 <img  src="@/assets/svg/email.svg" alt="">
                 <span>Xem yêu cầu thương lượng</span>
