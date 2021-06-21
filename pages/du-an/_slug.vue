@@ -226,9 +226,36 @@
           <!--  Col right -->
 
 
-           <template v-if="detailProject && detailProject.createBy && (detailProject.createBy._id === currentUser._id)">
+
+
+
+
           <!-- new row for owner auction -->
-          <div class="col-12">
+
+
+          <template v-if="detailProject && detailProject.createBy && (detailProject.createBy._id === currentUser._id)">
+         
+        <!-- co 1 deal dc chap nhan -->
+        <div class="col-12" v-if="quoteCompleteDeal">
+
+           <div
+              class="inner-content-section  pt-25px pb-50px mb-20px"
+            >
+
+            <h3 class="h5 main-black  px-36px">
+                <span class="fw-600 f-16">Đơn vị thi công</span>
+              </h3>
+              <hr class="hr mb-0" />
+
+              <CompanyQuoteOwner :key="quoteCompleteDeal._id" :company="quoteCompleteDeal" :detailProject="detailProject" :rawCategory="rawCategory" @getDetailAgain="getDetailProject" />
+
+
+           </div>
+
+        </div>
+
+         <!-- chua cho deal nao chap nhan -->
+          <div class="col-12" v-else>
              <div
               class="inner-content-section  pt-25px pb-50px mb-20px"
             >
@@ -247,11 +274,17 @@
               <div v-else>
                 <p class="text-danger pl-36px"><b>Chưa có chào giá</b></p>
               </div>
-
-
           </div>
           </div>
-           </template>
+
+
+
+          </template>
+
+
+
+
+
         </div>
       </div>
     </section>
@@ -270,7 +303,8 @@ export default {
       rawCategory:[],
       arrQuoteCompany:null,
       activeCompany:null,
-      currentUser: this.$auth.user || {}
+      currentUser: this.$auth.user || {},
+      quoteCompleteDeal:null
     };
   },
   mounted() {
@@ -296,7 +330,7 @@ export default {
         })
         .then(res2 => {
             this.arrQuoteCompany = res2.data.auctions
-
+            this.quoteCompleteDeal = res2.data.auctionDeal;
             this.loader(0)
         })
         .catch(err =>{
