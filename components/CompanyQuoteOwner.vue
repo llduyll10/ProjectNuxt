@@ -92,22 +92,21 @@
 
                         <div class="d-flex" >
                             <span class="description" >
-                                {{company.description}}
+                                {{company.deal[0].message}}
                             </span>
                         </div>
 
-                        <div v-if="company.attachments">
-                            <template v-for="(item,idx) in company.attachments">
+                        <div v-if="company.deal[0].attachments">
+                            <template v-for="(item,idx) in company.deal[0].attachments">
                                 <p :key="idx" class="f-11 text-main ">
                                     <span v-html="returnTypeFile(item)" class="mr-5px"></span>
                                     {{spliceURLFile(item,'--')}}
                                 </p>
                             </template>
                         </div>
-
                         <div class="list-payment">
                             <ul>
-                                <li v-for="(pay,idx) in company.payments" :key="idx">
+                                <li v-for="(pay,idx) in company.deal[0].payments" :key="idx">
                                     <span>Thanh toán đợt {{idx+1}}</span> - <span class="text-main">{{pay.value}}</span>
                                 </li>
                             </ul>
