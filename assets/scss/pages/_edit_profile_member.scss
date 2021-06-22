@@ -286,7 +286,10 @@ button.btn-main {
     border-radius: 5px;
     font-size: 12px;
     font-weight: 500;
-    padding: 0 8px;
+    line-height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: $text-white;
     img {
         margin-top: -3px;

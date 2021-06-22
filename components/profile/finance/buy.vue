@@ -107,7 +107,7 @@
                     </div>
                     <div class="payBtn">
                         <button @click="objSelect.method = item.icon" type="submit" class="btn btn-main">
-                            Thanh toán
+                            <span>Thanh toán</span>
                         </button>
                     </div>
                 </div>
