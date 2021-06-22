@@ -17,8 +17,13 @@
                                     @click="getItemSearch({id:1},4)"
                                     :class="activeParent == 1 ? 'fw-600 text-main' :'' "
                                 >
-                                    <img src="@/assets/svg/homeproject.svg" alt="">
-                                    <span>{{objCategory[0].label}}</span>
+                                   <template v-if="activeParent == 1">
+                                        <img src="@/assets/svg/icon-house-blue.svg" alt="">
+                                    </template>
+                                    <template v-else>
+                                        <img src="@/assets/svg/homeproject.svg" alt="">
+                                    </template>
+                                    <span class="build">{{objCategory[0].label}}</span>
                                 </div>
                                 <div class="list-item f-13">
                                     <ul>
@@ -36,18 +41,23 @@
                             <div class="list">
                                 <div class="d-flex item-title f-14 cursor-pointer"
                                     @click="getItemSearch({id:2},4)"
-                                    :class="activeParent == 2 ? 'fw-600 text-main' :'' "
+                                    :class="activeParent == 2 ? 'fw-600 colorOrange' :'' "
                                 >
-                                    <img src="@/assets/svg/sofa.svg" alt="">
-                                     <span>{{objCategory[1].label}}</span>
+                                    <template v-if="activeParent == 2">
+                                        <img src="@/assets/svg/icon-decord-orange.svg" alt="">
+                                    </template>
+                                    <template v-else>
+                                        <img src="@/assets/svg/sofa.svg" alt="">
+                                    </template>
+                                     <span class="decord">{{objCategory[1].label}}</span>
                                 </div>
                                 <div class="list-item f-13">
                                     <ul>
                                         <li @click="getItemSearch(item,1)"
                                             v-for="(item) in objCategory[1].children"
                                             :key="item.id"
-                                            :class="item.active ? 'fw-600 text-main' :'' "
-                                            class="cursor-pointer"
+                                            :class="item.active ? 'fw-600 colorOrange' :'' "
+                                            class="cursor-pointer decord"
                                         >
                                             {{item.label}}
                                         </li>
@@ -57,18 +67,23 @@
                             <div class="list">
                                 <div class="d-flex item-title f-14 cursor-pointer"
                                     @click="getItemSearch({id:3},4)"
-                                    :class="activeParent == 3 ? 'fw-600 text-main' :'' "
+                                    :class="activeParent == 3 ? 'fw-600 colorGreen' :'' "
                                 >
-                                    <img src="@/assets/svg/pen.svg" alt="">
-                                    <span>{{objCategory[2].label}}</span>
+                                    <template v-if="activeParent == 3">
+                                        <img src="@/assets/svg/icon-pen-green.svg" alt="">
+                                    </template>
+                                    <template v-else>
+                                        <img src="@/assets/svg/pen.svg" alt="">
+                                    </template>
+                                    <span class="desgin">{{objCategory[2].label}}</span>
                                 </div>
                                 <div class="list-item f-13">
                                     <ul>
                                          <li @click="getItemSearch(item,2)"
                                             v-for="(item) in objCategory[2].children"
                                             :key="item.id"
-                                            :class="item.active ? 'fw-600 text-main' :'' "
-                                            class="cursor-pointer"
+                                            :class="item.active ? 'fw-600 colorGreen' :'' "
+                                            class="cursor-pointer desgin"
                                         >
                                             {{item.label}}
                                         </li>
