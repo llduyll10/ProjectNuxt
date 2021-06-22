@@ -76,15 +76,16 @@
                         </div>
                     </template>
                     <!-- IS NEGOTIATE -->
-                    <template v-else-if="company.statusUpdate == 'ACTIVE'  ">
-                        <template v-if="company.step == 3 && company.deal.length && company.deal[0].status == 'CANCEL' ">
+
+                    <template v-else-if="company.step===3">
+                        <template v-if="company.deal.length && company.deal[0].status == 'CANCEL' ">
                             <div class="describe  d-flex">
                                 <i class="fas fa-times text-red f-16 mt-5px mr-5px"></i>
                                 <span class="text-red">Nhà thầu từ chối thương lượng</span>
                             </div>
                         </template>
-                         <template v-else-if="company.step == 3 && company.deal.length && company.deal[0].status == 'OK' ">
-                            <div class="describe  d-none">
+                         <template v-else-if="company.deal.length && company.deal[0].status == 'OK' ">
+                            <div class="describe d-none">
                             </div>
                         </template>
                         <template v-else >
@@ -115,9 +116,10 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="group-btn">
 
-                            <template v-if="  company.step == 3 && company.deal.length && company.deal[0].status == 'CANCEL' ">
+
+                        <div class="group-btn">
+                            <template v-if=" company.step == 3 && company.deal.length && company.deal[0].status == 'CANCEL' ">
                                 <div @click="openDeal()" class="btn-send cup mr-10px ml-0" >
                                     <img  src="@/assets/svg/email.svg" alt="">
                                     <span>Xem tin nhắn</span>
@@ -148,6 +150,71 @@
                                 <span>Huỷ thương lượng</span>
                             </div>
                         </div>
+                    
+                    </template>
+                
+                    <!-- QUOTE UPDATE -->
+                    <template v-else-if="company.step===2">
+
+                        <template v-if="company.statusUpdate == 'ACTIVE'">
+                            <img class="icon-check" src="@/assets/svg/icon-check-blue.svg">
+                            <span>Báo giá cập nhật</span>
+
+
+                             <div class="d-flex">
+                                <span class="description" >
+                                    {{ company.description}}
+                                </span>
+                            </div>
+
+                            <div v-if="company.attachments">
+                                <template v-for="(item,idx) in company.attachments">
+                                    <p :key="idx" class="f-11 text-main ">
+                                        <span v-html="returnTypeFile(item)" class="mr-5px"></span>
+                                        {{spliceURLFile(item,'--')}}
+                                    </p>
+                                </template>
+                            </div>
+
+                             <div v-if="company.payments" class="list-payment">
+                                <ul>
+                                    <li v-for="(pay,idx) in company.payments" :key="idx">
+                                        <span>Thanh toán đợt {{idx+1}}</span> - <span class="text-main">{{pay.value}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="group-btn">
+                               <div @click="openLienHeMail()" class="btn-send  mr-10px ml-0" >
+                                    <img  src="@/assets/svg/email.svg" alt="">
+                                    <span>Gửi tin nhắn</span>
+                                </div>
+                                <div @click="openSurveyUpdate()" class="btn-send cup mr-10px ml-0">
+                                    <img  src="@/assets/svg/icon-user-light.svg" alt="">
+                                    <span>Thương lượng</span>
+                                </div>
+                            </div>
+                            
+                        </template> 
+
+
+                        <template v-else>
+                            <div class="d-flex">
+                                <span class="description" >
+                                    {{ company.description}}
+                                </span>
+                            </div>
+
+                            <div v-if="company.attachments">
+                                <template v-for="(item,idx) in company.attachments">
+                                    <p :key="idx" class="f-11 text-main ">
+                                        <span v-html="returnTypeFile(item)" class="mr-5px"></span>
+                                        {{spliceURLFile(item,'--')}}
+                                    </p>
+                                </template>
+                            </div>
+                        </template>   
+                        
                     </template>
                     <!-- Step == 2; isSurvey -->
                     <template v-else>
