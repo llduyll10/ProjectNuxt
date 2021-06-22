@@ -42,8 +42,9 @@
                     </td>
                     <td class="price ">{{formatVnd(item.project.budget)}} VND</td>
                     <td class="status ">
-                        <template v-if="item.step == 1 || item.step == 2">
-                                <b-dropdown v-if="item.statusUpdate == 'ACTIVE' " id="dropdown-duedate" variant="link" toggle-class="text-decoration-none" class="custom-infor pb-5px" no-caret>
+                        <template v-if="item.step == 1 || item.step == 2 || item.step == 3">
+
+                                <b-dropdown v-if="item.step == 3" id="dropdown-duedate" variant="link" toggle-class="text-decoration-none" class="custom-infor pb-5px" no-caret>
                                     <template #button-content>
                                         <div class="d-flex">
                                             <div class="cover-infor">
@@ -54,7 +55,7 @@
                                             </div>
                                         </div>
                                     </template>
-                                    <b-dropdown-item class="f-12">
+                                    <b-dropdown-item class="f-12" v-if="item.deal.length">
                                         Huỷ thương lượng
                                     </b-dropdown-item>
                                 </b-dropdown>
