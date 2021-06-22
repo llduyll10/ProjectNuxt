@@ -340,10 +340,14 @@
         }
     }
     .btn-theme {
-        padding: 7px 0.75rem 10px !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 30px;
         font-weight: 700;
-        font-size: 15px;
+        font-size: 14px;
         width: 100%;
+        text-transform: capitalize;
         &.theme-blue {
             background-color: #209cd7;
             color: white;
@@ -360,7 +364,6 @@
         }
         img {
             width: 35px;
-            margin-top: -3px;
         }
     }
     .option {
