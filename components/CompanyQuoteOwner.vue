@@ -145,21 +145,22 @@
                                 </div>
                             </template>
 
-                            <div v-else class="btn-send cancel ">
+                            <div v-else class="btn-send cancel " @click="destroyDeal(company)">
                                 <img src="@/assets/svg/icon-cancel.svg" alt="">
                                 <span>Huỷ thương lượng</span>
                             </div>
                         </div>
-                    
+
                     </template>
-                
+
                     <!-- QUOTE UPDATE -->
                     <template v-else-if="company.step===2">
 
                         <template v-if="company.statusUpdate == 'ACTIVE'">
-                            <img class="icon-check" src="@/assets/svg/icon-check-blue.svg">
-                            <span>Báo giá cập nhật</span>
-
+                            <div class="describe  d-flex">
+                                <img class="icon-check" src="@/assets/svg/icon-check-blue.svg">
+                                <span>Báo giá cập nhật</span>
+                             </div>
 
                              <div class="d-flex">
                                 <span class="description" >
@@ -194,8 +195,8 @@
                                     <span>Thương lượng</span>
                                 </div>
                             </div>
-                            
-                        </template> 
+
+                        </template>
 
 
                         <template v-else>
@@ -213,8 +214,8 @@
                                     </p>
                                 </template>
                             </div>
-                        </template>   
-                        
+                        </template>
+
                     </template>
                     <!-- Step == 2; isSurvey -->
                     <template v-else>
@@ -297,6 +298,21 @@ export default {
             else{
                 this.$refs.surveyPopup.setCancelPopup(false)
             }
+        },
+        destroyDeal(item){
+            this.loader()
+            var obj = {
+                project:item.deal[0].project,
+                auction:item.deal[0].auction
+            }
+            this.$post('member/auction/deal/destroy',obj)
+                .then(res =>{
+                    this.getActiveCompany()
+                    this.loader(0)
+                })
+                .catch(err => {
+                    this.loader(0)
+                })
         },
         getActiveCompany(){
             this.$emit('getDetailAgain')

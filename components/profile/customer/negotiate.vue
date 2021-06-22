@@ -55,7 +55,7 @@
                                             </div>
                                         </div>
                                     </template>
-                                    <b-dropdown-item class="f-12" v-if="item.deal.length">
+                                    <b-dropdown-item @click="destroyDeal(item)" class="f-12" v-if="item.deal.length">
                                         Huỷ thương lượng
                                     </b-dropdown-item>
                                 </b-dropdown>
@@ -122,7 +122,7 @@ export default {
     methods:{
         getListQuote(){
             this.loader()
-            this.$get('/member/owner-project-auction/')
+            this.$get('member/owner-project-auction/')
                 .then(res => {
                     this.listProject = res.data
                     this.listShow = res.data
@@ -144,6 +144,21 @@ export default {
                 .catch(err => {
                     this.loader(0)
                     console.log(err)
+                })
+        },
+        destroyDeal(item){
+            this.loader()
+            var obj = {
+                project:item.deal[0].project,
+                auction:item.deal[0].auction
+            }
+            this.$post('member/auction/deal/destroy',obj)
+                .then(res =>{
+                    this.getListQuote()
+                    this.loader(0)
+                })
+                .catch(err => {
+                    this.loader(0)
                 })
         },
         filterList(list){
