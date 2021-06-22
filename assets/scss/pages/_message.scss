@@ -50,9 +50,8 @@
                     border-radius: 5px;
                     color: #fff;
                     font-size: 13px;
-                    line-height: 25px;
-                    text-align: center;
-                    display: inline;
+                    line-height: 26px;
+                    @extend .flex-center;
                 }
             }
             .general {
