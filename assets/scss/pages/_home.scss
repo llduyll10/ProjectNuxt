@@ -54,7 +54,11 @@
                             cursor: pointer;
                             box-sizing: border-box;
                             background-color: $main-color;
-                            padding: 10px 30px;
+                            line-height: 40px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            padding: 0 30px;
                             color: #F2F2F2;
                             font-size: 15px;
                             font-weight: 500;
