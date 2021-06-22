@@ -258,14 +258,14 @@
             }
             .button {
                 cursor: pointer;
-                padding: 4px 20px;
+                padding: 0 20px;
                 background: #209cd7;
                 border-radius: 5px;
                 color: #fff;
                 font-size: 12px;
                 font-weight: 500;
-                line-height: 21px;
-                text-align: center;
+                line-height: 30px;
+                @extend .flex-center;
             }
         }
         .center {
@@ -468,9 +468,10 @@
                             width: 100%;
                             height: 30px;
                             border-radius: 5px;
-                            text-align: center;
                             background-color: $main-color;
                             border: 0 !important;
+                            line-height: 26px;
+                            @extend .flex-center;
                             span {
                                 line-height: 30px;
                                 font-size: 12px;
@@ -479,6 +480,9 @@
                             }
                             &:disabled{
                                 cursor:not-allowed;
+                            }
+                            img{
+                                margin-right: 4px;
                             }
                         }
                         .email {
