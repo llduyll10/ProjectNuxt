@@ -19,14 +19,26 @@
             color: $main-color;
         }
         .list {
+            .build{
+                &:hover{
+                    color: $main-color !important;
+                }
+            }
+            .decord{
+                &:hover{
+                    color: #E78F1C !important;
+                }
+            }
+            .desgin{
+                &:hover{
+                    color: #77AD1F !important;
+                }
+            }
             .item-title {
                 padding: 10px 16px 3px;
                 align-items: baseline;
                 line-height: 25px;
                 font-weight: 600;
-                &:hover{
-                    color: $main-color;
-                }
                 img {
                     position: relative;
                     top: 1px;
@@ -46,6 +58,7 @@
                         &:hover{
                             color: $main-color;
                         }
+
                     }
                 }
             }
