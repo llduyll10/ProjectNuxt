@@ -106,7 +106,6 @@
             <div class="form-group row mb-25px align-items-center">
                 <label class="f-13 col-md-3 col-sm-12 fw-600">
                     Tài liệu đính kèm
-                    <span style="color:red">*</span>
                 </label>
                 <div class="col-md-9 col-sm-12">
                     <InputFile :accept="accepFile" @input="getFile" :multiple="true" :label="'Thêm tài liệu'"/>
