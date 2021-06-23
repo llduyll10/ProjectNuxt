@@ -21,7 +21,7 @@
                 </template>
           </b-navbar-nav>
 
-          <!-- Right aligned nav items -->
+        <!-- Right aligned nav items -->
 
         </b-collapse>
 
@@ -31,7 +31,36 @@
                 <!-- IS LOGIN -->
                 <template v-if="$auth.loggedIn">
                   <div class="isLogin mt-7px mb-7px">
-                    <img class="mt-15px" src="@/assets/svg/bell.svg" />
+                    <!-- NOTIFY Dropdown -->
+                    <b-dropdown id="dropdown-notify" variant="link" toggle-class="text-decoration-none" class="custom-infor " no-caret>
+                      <template #button-content>
+                        <div class="">
+                          <img class="" src="@/assets/svg/bell.svg" />
+                        </div>
+                      </template>
+                      <b-dropdown-text class="header-title">
+                          <span>Vừa cập nhập</span>
+                      </b-dropdown-text>
+                      <!-- List notify -->
+                      <template v-for="(item, idx) in 10">
+                        <b-dropdown-item :key="idx"  class="item-notify">
+                          <div class="group-item">
+                            <img src="@/assets/svg/icon-notify.svg" alt="">
+                            <div class="group-content">
+                              <p class="mb-5px text-main fw-600">Cần xây nhà phố 3 lầu </p>
+                              <p class="mb-5px description"> Cần tìm đơn vị xây xây thô nhà phố 3 lầuCần tìm đơn vị xây xây thô nhà phố 3 lầu.</p>
+                              <p class="text-main">
+                                <span class="line">1 Tỷ</span>
+                                <span class="line">Hôm qua</span>
+                                <span class="ml-5px">TP.HCM</span>
+                              </p>
+                            </div>
+                          </div>
+                        </b-dropdown-item>
+                      </template>
+                    </b-dropdown>
+
+                    <!-- Infor Dropdown -->
                     <div class="group-infor">
                       <template v-if="$auth.user.photo">
                         <img class="mt-5px border" :src="$auth.user.photo" />
