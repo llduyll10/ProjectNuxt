@@ -79,7 +79,7 @@ export default {
         this.listProject = res.data
         this.listTemp = JSON.parse(JSON.stringify(this.listProject))
         this.listShow = this.listTemp.splice(0,6)
-        if(this.listProject < 6){
+        if(this.listProject.length < 6){
           this.showSeemore = false
         }
         else{
