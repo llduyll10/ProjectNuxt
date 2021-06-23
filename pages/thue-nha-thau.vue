@@ -140,7 +140,7 @@
                                                             <template v-for="cate in mapCategory(item.category.slice(0,3))">
                                                                 <span
                                                                     :key="cate.id"
-                                                                    class="px-8px badge py-5px text-12 custom-bage mr-8px mb-8px"
+                                                                    class="px-8px badge py-5px f-11 custom-bage mr-8px mb-8px"
                                                                     :class="getClassBageCategory(mapValueFromCategory(cate.id))"
                                                                 >
                                                                     {{cate.label}}

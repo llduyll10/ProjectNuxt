@@ -21,7 +21,7 @@
                   <template v-for="(item) in arrNameCategory">
                     <span
                       :key="item.id"
-                      class="px-8px badge py-2px text-12 custom-bage mr-8px mb-8px"
+                      class="px-8px badge py-2px f-11 custom-bage mr-8px mb-8px"
                       :class="getClassBageCategory(mapValueFromCategory(item.id))"
                     >
                       {{item.label}}
