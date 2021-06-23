@@ -180,7 +180,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group group-checkbox mb-0">
+                    <div class="form-group group-checkbox mb-0 d-flex">
                         <b-form-checkbox
                             v-model="objSurvey.agree"
                             :checked="objSurvey.agree"
@@ -188,8 +188,8 @@
                             required
                             class="f-13"
                             >
-                            Tôi đồng ý với <span class="text-main">điều khoản</span> của Econs <span style="color:red">*</span>
                         </b-form-checkbox>
+                         <span class="f-12 main-black mt-2px ml-5px">Tôi đồng ý với <span class="main-color">điều khoản</span> của Econs <span style="color:red">*</span></span>
                     </div>
 
                 </div>

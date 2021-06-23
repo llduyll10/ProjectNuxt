@@ -124,14 +124,14 @@
                     </div>
                 </div>
             </div>
-            <div class="form-group mb-50px group-checkbox">
+            <div class="form-group mb-50px group-checkbox d-flex">
                 <b-form-checkbox
                     v-model="objForm.agree"
                     name="checkbox-agree"
                     required
                     >
-                    Tôi đồng ý với <span class="main-color">điều khoản</span> của Econs <span style="color:red">*</span>
                 </b-form-checkbox>
+                <span class="f-12 main-black mt-2px ml-5px">Tôi đồng ý với <span class="main-color">điều khoản</span> của Econs <span style="color:red">*</span></span>
             </div>
             <div class="group-btn">
                 <div class="d-flex mt-25px justify-content-xl-around row">

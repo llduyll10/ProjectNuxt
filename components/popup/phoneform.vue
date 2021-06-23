@@ -17,7 +17,7 @@
                   <input v-model="codeObj.code4" @keypress="isNumber($event)" type="text" class="form-control verifyOTP" required maxlength="1">
                 </div>
 
-                 
+
               </div>
               <div v-else class="form-group row">
                     <label class="f-13 col-md-3 col-sm-12 mt-8px">
@@ -25,16 +25,16 @@
                       <span style="color:red">*</span>
                   </label>
                   <input required v-model="activePhone" class="form-control col-md-9 col-sm-12" placeholder="Nhập số điện thoại cần xác thực">
-                
+
               </div>
-                <div class="form-group mb-40px group-checkbox">
+                <div class="form-group mb-40px group-checkbox d-flex">
                     <b-form-checkbox
                         v-model="agree"
                         name="checkbox-agree"
                         required
                         >
-                        Tôi đồng ý với <span>điều khoản</span> của Econs <span style="color:red">*</span>
                     </b-form-checkbox>
+                     <span class="f-12 main-black mt-2px ml-5px">Tôi đồng ý với <span class="main-color">điều khoản</span> của Econs <span style="color:red">*</span></span>
                 </div>
                 <div class="group-btn row">
 
@@ -45,7 +45,7 @@
                         <small class="text-danger" v-if="msg">{{msg}}</small>
                     </div>
 
-                    
+
                 </div>
             </form>
           </div>
