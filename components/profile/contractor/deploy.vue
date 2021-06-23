@@ -43,7 +43,7 @@
                     </td>
                     <td class="price ">{{formatVnd(item.deal[0].price)}} VND</td>
                     <td class="price">
-                      {{formatVnd(item.deal[0].day)}} VND
+                      {{formatVnd(item.deal[0].day)}} ngày
                     </td>
                     <td class="price ">-</td>
                 </tr>
