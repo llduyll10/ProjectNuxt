@@ -30,14 +30,14 @@
         <div class="w-100 d-flex flex-column profileActions mt-15px">
             <div class="btnWrap">
                 <button @click="$router.push('/member/quan-ly-tai-chinh?tab=1')" type="button" class="btn">
-                    <img class="btn-icon" src="@/assets/svg/credit.svg">
+                    <img class="btn-icon mr-5px" src="@/assets/svg/credit.svg">
                     Nạp thêm Token
                 </button>
             </div>
 
             <div class="btnWrap">
                 <button @click="logout" type="button" class="btn logoutBtn">
-                    <img class="btn-icon" src="@/assets/svg/logout.svg">
+                    <img class="btn-icon mr-5px" src="@/assets/svg/logout.svg">
                     Đăng xuất
                 </button>
             </div>
