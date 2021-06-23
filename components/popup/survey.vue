@@ -65,6 +65,7 @@
                             </template>
                             <template v-else>
                                 <v-date-picker
+                                    ref="calendar"
                                     v-model="objResearch.date"
                                     :masks="{input: 'DD/MM/YYYY'}"
                                     :model-config="{type: 'number',}"
@@ -77,7 +78,7 @@
                                                     v-on="inputEvents"
                                                     :readonly="isCancel"
                                                     required>
-                                            <div class="input-group-append">
+                                            <div class="input-group-append" @click="triggerCalendar()">
                                                 <span :class="isCancel ? 'disabled' : ''" class="input-group-text custom-time"><i class="fas fa-calendar-day"></i></span>
                                             </div>
                                         </div>
@@ -167,6 +168,9 @@ export default {
     mounted(){
     },
     methods:{
+        triggerCalendar(){
+            this.$refs.calendar.showPopover()
+        },
         async sendMessage(){
             try{
                 this.loader()

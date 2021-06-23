@@ -166,6 +166,7 @@
                 <span style="color:red">*</span>
             </label>
             <v-date-picker
+                    ref="calendar"
                     v-model="objProject.dueDate"
                     :masks="{input: 'DD/MM/YYYY'}"
                     :model-config="{type: 'number',}
@@ -176,8 +177,9 @@
                                 class="form-control"
                                 :value="inputValue"
                                 v-on="inputEvents"
+
                                 required>
-                        <div class="input-group-append">
+                        <div class="input-group-append cursor-pointer" @click="triggerCalendar()">
                             <span class="input-group-text custom-time"><i class="fas fa-calendar-day"></i></span>
                         </div>
                     </div>
@@ -247,6 +249,9 @@ export default {
 
     },
     methods:{
+        triggerCalendar(){
+            this.$refs.calendar.showPopover()
+        },
         restForm(){
             this.arrFileImg=[],
             this.arrBase64=[],
