@@ -243,6 +243,10 @@
                     .dropdown-item {
                         font-weight: 500;
                         color: $main-black;
+                        &:hover{
+                            color: $main-color;
+                            background-color: #fff;
+                        }
                     }
                 }
                 button {
