@@ -47,7 +47,7 @@
                           <div class="group-item">
                             <img src="@/assets/svg/icon-notify.svg" alt="">
                             <div class="group-content">
-                              <p class="mb-5px text-main fw-600">Cần xây nhà phố 3 lầu </p>
+                              <p class="mb-5px text-main fw-600 description" >Cần xây nhà phố 3 lầu </p>
                               <p class="mb-5px description"> Cần tìm đơn vị xây xây thô nhà phố 3 lầuCần tìm đơn vị xây xây thô nhà phố 3 lầu.</p>
                               <p class="text-main">
                                 <span class="line">1 Tỷ</span>
