@@ -185,15 +185,16 @@
                   class="d-flex flex-column w-100 item-related mb-20px"
                   :key="idx + 100"
                 >
-                  <div class="position-relative ">
-                    <img
-                      class="w-100"
-                      src="@/assets/img/du-an-tuong-tu-demo.png"
-                    />
+                  <div class="position-relative group-item">
                     <span
                       class="mt-20px end-0 position-absolute bg-yellow-8 text-light text-12 pl-30px pr-16px py-5px line-height-15 fw-600"
-                      >NỘI THẤT</span
-                    >
+                      >NỘI THẤT</span>
+                    <div class="area">
+                      <span>
+                        <img src="@/assets/svg/area.svg" />
+                        Quận 7, TP. Hồ Chí Minh
+                      </span>
+                    </div>
                   </div>
                   <div class="bg-white px-15px py-18px">
                     <h3 class="text-14 main-color fw-600 mb-25px">
