@@ -77,8 +77,8 @@
                     </small>
                     <div v-if="$auth.user.verifiedPaper && $auth.user.verifiedPaper.length">
                         <template v-for="(item,idx) in $auth.user.verifiedPaper">
-                            <p :key="idx" class="f-11 text-main  mb-0 mt-8px">
-                                <span v-html="returnTypeFile(item)"></span>
+                            <p :key="idx" class="f-11 cursor-pointer text-main  mb-0 mt-8px" @click="downloadFile(item)">
+                                <span v-html="returnTypeFile(item)" class="mr-5px"></span>
                                 {{spliceURLFile(item,'--')}}
                             </p>
                         </template>
