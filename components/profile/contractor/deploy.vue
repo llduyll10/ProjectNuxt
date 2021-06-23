@@ -43,9 +43,9 @@
                     </td>
                     <td class="price ">{{formatVnd(item.deal[0].price)}} VND</td>
                     <td class="price">
-                      {{formatVnd(item.deal[0].price)}} VND
+                      {{formatVnd(item.deal[0].day)}} VND
                     </td>
-                    <td class="price ">{{formatVnd(item.deal[0].price)}} VND</td>
+                    <td class="price ">-</td>
                 </tr>
             </tbody>
         </table>
