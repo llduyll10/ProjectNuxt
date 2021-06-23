@@ -75,7 +75,7 @@
               <div class="item-detail d-flex">
                 <img src="@/assets/img/icon-pen.png" />
                 <p>
-                  THIẾT KẾ 2D/3D
+                KIẾN TRÚC
                 </p>
               </div>
             </div>

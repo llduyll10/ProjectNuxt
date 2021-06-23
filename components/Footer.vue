@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <div class="row links">
                 <div class="col-lg-3 link ">
-                    <img  src="@/assets/img/logo-page-white.png" alt="">
+                    <img  src="@/assets/svg/logo-white.svg" alt="">
                 </div>
             </div>
             <div class="row links infor-com">
