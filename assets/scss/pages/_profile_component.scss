@@ -64,7 +64,9 @@
     .btn-contact{
         cursor: pointer;
         line-height: 30px;
-        @extend .flex-center;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
         background: #209cd7;
         color: #f2f2f2;
         border-radius: 5px;

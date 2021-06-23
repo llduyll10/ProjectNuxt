@@ -34,8 +34,10 @@
             <template v-if="$auth.loggedIn">
                 <p class="mb-0 f-13 mb-15px">Bạn sẽ tốn <span class="text-main fw-600">3 Tokens</span> khi liên hệ trực tiếp với khách đăng tin</p>
                 <div @click="openLienHe" class="btn-contact d-block mb-0 cursor-pointer">
-                    <img src="@/assets/svg/icon-phone.svg" />
-                    <span>Liên hệ trực tiếp</span>
+                    <span>
+                        <img src="@/assets/svg/icon-phone.svg" class="mb-3px" />
+                        Liên hệ trực tiếp
+                    </span>
                 </div>
             </template>
         </section>
