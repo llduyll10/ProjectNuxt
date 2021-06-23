@@ -166,12 +166,16 @@
                                                 </div>
                                             <div class="contact"  v-if="$auth.user && $auth.user._id != item._id">
                                                     <button class="phone cursor-pointer" @click="openLienHe(item)">
-                                                        <img class="pb-3px" src="@/assets/svg/phone.svg" alt="">
-                                                        <span>Liên hệ trực tiếp</span>
+                                                        <span>
+                                                            <img class="pb-3px" src="@/assets/svg/phone.svg" alt="">
+                                                            Liên hệ trực tiếp
+                                                        </span>
                                                     </button>
                                                     <button class="email cursor-pointer" @click="openLienHeMail(item)">
-                                                        <img src="@/assets/svg/email.svg" alt="">
-                                                        <span>Gửi tin nhắn</span>
+                                                        <span>
+                                                            <img class="mb-3px" src="@/assets/svg/email.svg" alt="">
+                                                            Gửi tin nhắn
+                                                        </span>
                                                     </button>
                                                 </div>
                                             </div>

@@ -28,17 +28,23 @@
                 class="btn-contact"
                 to="/member/chinh-sua-ho-so?tab=1"
             >
-                <img src="@/assets/svg/icon-user-light.svg" />
-                <span>Cập nhật hồ sơ</span>
+                <span>
+                    <img src="@/assets/svg/icon-user-light.svg" class="mb-5px" />
+                    Cập nhật hồ sơ
+                </span>
             </nuxt-link>
             <template v-else>
                 <button @click="openLienHe" class="btn-contact cursor-pointer">
-                    <img src="@/assets/svg/icon-phone.svg" />
-                    <span>Liên hệ trực tiếp</span>
+                    <span>
+                        <img  src="@/assets/svg/icon-phone.svg" class="mb-3px" />
+                        Liên hệ trực tiếp
+                    </span>
                 </button>
                 <button @click="openLienHeMail" class="btn-contact email">
-                    <img src="@/assets/svg/icon-email.svg" />
-                    <span>Gửi tin nhắn</span>
+                    <span>
+                        <img  src="@/assets/svg/icon-email.svg" class="mb-5px"/>
+                        Gửi tin nhắn
+                    </span>
                 </button>
             </template>
         </template>

@@ -133,7 +133,7 @@
                             </template>
                             <template v-else >
                                 <div @click="openSurveyUpdate('UPDATE')" class="btn-send cup mr-10px ml-0">
-                                    <img  src="@/assets/svg/icon-user-light.svg" alt="">
+                                    <img  src="@/assets/svg/icon-user-light.svg" alt="" class="mb-2px" >
                                     <span>Cập nhật</span>
                                 </div>
                             </template>
