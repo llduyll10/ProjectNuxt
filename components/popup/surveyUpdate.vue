@@ -28,12 +28,12 @@
                             <span v-else class="key">Soạn tin nhắn <span class="text-red">*</span> </span>
                         </div>
                         <div class="col-md-9">
-                            <template v-if="isCompany && objCompany.deal[0]">
+                            <template v-if="(isCompany && objCompany.deal[0]) || surveryUpdate">
                                 <textarea v-model="objCompany.deal[0].message"
                                         required id="customPlaceholder"
                                         class="form-control fw-600"
                                         rows="5"
-                                        readonly
+                                        :readonly=!surveryUpdate
                                 >
                                 </textarea>
                             </template>
@@ -60,14 +60,14 @@
                             <span class="key">Đơn giá thương lượng</span><span class="text-red">*</span>
                         </div>
                         <div class="col-md-3 ">
-                            <div v-if="isCompany && objCompany.deal[0]" class="input-group" >
+                            <div v-if="(isCompany && objCompany.deal[0]) || surveryUpdate" class="input-group" >
                                 <currency-input
                                     type="text"
                                     class="form-control fw-600"
                                     required
                                     placeholder="200,000,000"
                                     v-model="objCompany.deal[0].price"
-                                    readonly
+                                    :readonly=!surveryUpdate
                                 />
                                 <div class="input-group-append">
                                     <span class="input-group-text f-12">VND</span>
@@ -100,13 +100,13 @@
                             <span class="key">Tiến độ mong muốn</span><span class="text-red">*</span>
                         </div>
                         <div class="col-md-3 ">
-                            <div v-if="isCompany && objCompany.deal[0]" class="input-group" >
+                            <div v-if="(isCompany && objCompany.deal[0]) || surveryUpdate" class="input-group" >
                                 <input
                                     type="text"
                                     class="form-control"
                                     required
                                     v-model="objCompany.deal[0].day"
-                                    readonly
+                                    :readonly=!surveryUpdate
                                 />
                                 <div class="input-group-append">
                                     <span class="input-group-text f-12">Ngày</span>
@@ -127,56 +127,79 @@
                         </div>
                     </div>
 
-                     <template v-if="isCompany && objCompany.deal[0]">
-                        <template v-for="(item,idx) in objCompany.deal[0].payments">
-                            <div class="row mb-15px mr-60px" :key="idx+200">
-                                <div class="col-md-3">
-                                    <span class="key">Thanh toán đợt {{idx+1}}</span>
-                                </div>
-                                <div class="col-md-3">
-                                    <span class="f-13 text-main fw-600">{{item.value}}</span>
-                                </div>
-                                <div class="col-md-3" >
-                                    <span class="key">Thanh toán đợt {{idx+1}}</span><span class="text-red">*</span>
-                                </div>
-                                <div class="col-md-3">
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        required
-                                        v-model="item.value"
-                                        readonly
-                                    />
-                                </div>
+                    <!-- Company Or Update Survey -->
+                    <template v-if="(isCompany && objCompany.deal[0]) || (surveryUpdate && objCompany.deal[0])">
+                        <div class="row mb-15px mr-60px" >
+                            <div class="col-6" v-if="objCompany.payments">
+                                <template v-for="(item,idx) in objCompany.payments">
+                                    <div class="row mb-15px" :key="idx">
+                                        <div class="col-6">
+                                            <span class="key">Thanh toán đợt {{idx+1}}</span>
+                                        </div>
+                                        <div class="col-6">
+                                            <span class="f-13 text-main fw-600">{{item.value}}</span>
+                                        </div>
+                                    </div>
+
+                                </template>
                             </div>
-                        </template>
+
+                            <div class="col-6" v-if="objCompany.deal[0] &&  objCompany.deal[0].payments">
+                                <template v-for="(item,idx) in objCompany.deal[0].payments">
+                                    <div class="row mb-15px" :key="idx+10">
+                                        <div  class="col-6">
+                                            <span class="key">Thanh toán đợt {{idx+1}}</span><span class="text-red">*</span>
+                                        </div>
+                                        <div class="col-6">
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                required
+                                                v-model="item.value"
+                                                :readonly=!surveryUpdate
+                                            />
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
                     </template>
 
                     <template v-else>
-                        <template v-for="(item,idx) in objCompany.payments">
-                            <div class="row mb-15px mr-60px" :key="idx+100">
-                                <div class="col-md-3">
-                                    <span class="key">Thanh toán đợt {{idx+1}}</span>
-                                </div>
-                                <div class="col-md-3">
-                                    <span class="f-13 text-main fw-600">{{item.value}}</span>
-                                </div>
-                                <div class="col-md-3" >
-                                    <span class="key">Thanh toán đợt {{idx+1}}</span><span class="text-red">*</span>
-                                </div>
-                                <div class="col-md-3">
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        required
-                                        v-model="item.newValue"
-                                    />
-                                </div>
+                        <div class="row mb-15px mr-60px" >
+                            <div class="col-6" v-if="objCompany.payments">
+                                <template v-for="(item,idx) in objCompany.payments">
+                                    <div class="row mb-15px" :key="idx">
+                                        <div class="col-6">
+                                            <span class="key">Thanh toán đợt {{idx+1}}</span>
+                                        </div>
+                                        <div class="col-6">
+                                            <span class="f-13 text-main fw-600">{{item.value}}</span>
+                                        </div>
+                                    </div>
+
+                                </template>
                             </div>
-                        </template>
+
+                            <div class="col-6" >
+                                <template v-for="(item,idx) in objCompany.payments">
+                                    <div class="row mb-15px" :key="idx+10">
+                                        <div  class="col-6">
+                                            <span class="key">Thanh toán đợt {{idx+1}}</span><span class="text-red">*</span>
+                                        </div>
+                                        <div class="col-6">
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                required
+                                                v-model="item.newValue"
+                                            />
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
                     </template>
-
-
 
                     <div class="row mb-15px mr-60px">
                         <div class="col-md-3">
@@ -215,11 +238,14 @@
 
                         <div v-if="!isCompany" class="col-md-3"></div>
                         <div class="col-md-9 " >
-                             <template v-if="isCompany &&  objCompany.deal[0] && objCompany.deal[0].attachments">
+                             <template v-if="(isCompany &&  objCompany.deal[0] && objCompany.deal[0].attachments) || surveryUpdate">
                                 <template v-for="(item,idx) in objCompany.deal[0].attachments">
                                      <p :key="idx" class="f-11 text-main ">
                                         <span v-html="returnTypeFile(item)"></span>
                                          {{spliceURLFile(item,'--')}}
+                                        <span v-if="surveryUpdate" class="cursor-pointer ml-5px" @click="clearFileOld(item)">
+                                            <i class="fas fa-times text-red"></i>
+                                        </span>
                                     </p>
                                 </template>
                             </template>
@@ -295,7 +321,7 @@
 </template>
 <script>
 export default {
-    props:['objCompany','detailProject','rawCategory','isCompany'],
+    props:['objCompany','detailProject','rawCategory','isCompany', 'surveryUpdate'],
     data(){
         return{
             optionSearch:[
@@ -319,21 +345,41 @@ export default {
         async submitForm(){
             try{
                 // this.loader()
-                var arrFile = this.arrFile.length ? await this.uploadFile(this.arrFile) : []
+
 
                 var arrPayment = []
-                this.objCompany.payments.forEach(item => {
-                    var obj = {key:item.key, value: item.newValue}
-                    arrPayment.push(obj)
-                })
 
-                var obj = {
+                if(this.surveryUpdate){
+                    var fileNew = this.arrFile.length ? await this.uploadFile(this.arrFile) : []
+                    var fileOld = this.objCompany.deal[0].attachments || []
+                    var arrFile = fileOld.concat(fileNew)
+                    this.objCompany.deal[0].payments.forEach(item => {
+                        var obj = {key:item.key, value: item.value}
+                        arrPayment.push(obj)
+                    })
+                    var obj = {
+                    ...this.objCompany.deal[0],
+                    project:this.objCompany.survey[0].project,
+                    auction:this.objCompany.survey[0].auction,
+                    payments:arrPayment,
+                    attachments:arrFile
+                }
+                }
+                else{
+                    this.objCompany.payments.forEach(item => {
+                        var obj = {key:item.key, value: item.newValue}
+                        arrPayment.push(obj)
+                    })
+                    var arrFile = this.arrFile.length ? await this.uploadFile(this.arrFile) : []
+                    var obj = {
                     ...this.objSurvey,
                     project:this.objCompany.survey[0].project,
                     auction:this.objCompany.survey[0].auction,
                     payments:arrPayment,
                     attachments:arrFile
                 }
+                }
+
                 let url = ''
                 if(this.statusCallAPI == 'ACCEPT'){
                     url = 'member/auction/deal/confirmed'
@@ -349,6 +395,7 @@ export default {
                 let res = await this.$post(url,obj)
                 console.log(res)
                 this.hide()
+                this.arrFile = []
                 if(this.statusCallAPI == 'ACCEPT' || this.statusCallAPI == 'CANCEL')
                 {
                     this.$emit('getListParent')
@@ -380,6 +427,9 @@ export default {
         },
         clearFile(file){
             this.arrFile = this.arrFile.filter(item => item.name !== file.name)
+        },
+         clearFileOld(file){
+            this.objCompany.deal[0].attachments = this.objCompany.deal[0].attachments.filter(item => item !== file)
         },
         getFile(file){
             this.arrFile = this.arrFile.concat(file)

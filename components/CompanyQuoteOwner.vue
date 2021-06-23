@@ -132,7 +132,7 @@
                                 </div>
                             </template>
                             <template v-else >
-                                <div @click="openSurveyUpdate()" class="btn-send cup mr-10px ml-0">
+                                <div @click="openSurveyUpdate('UPDATE')" class="btn-send cup mr-10px ml-0">
                                     <img  src="@/assets/svg/icon-user-light.svg" alt="">
                                     <span>Cập nhật</span>
                                 </div>
@@ -269,7 +269,7 @@
 
         <PopupLienheform ref="LienHeFormPop" :isService="true" :title="detailProject.name" :rawCategory="rawCategory" />
         <PopupSurvey ref="surveyPopup" :detailProject="detailProject" :rawCategory="rawCategory"  @activeCompany="getActiveCompany" />
-        <PopupSurveyUpdate ref="surveyUpdate" v-if="company"  :objCompany="company" :detailProject="detailProject" :rawCategory="rawCategory" @activeCompany="getActiveCompany" />
+        <PopupSurveyUpdate ref="surveyUpdate" v-if="company" :surveryUpdate="surveryUpdate"  :objCompany="company" :detailProject="detailProject" :rawCategory="rawCategory" @activeCompany="getActiveCompany" />
         <PopupDealUpdate ref="dealUpdate" v-if="company"  :objCompany="company" :detailProject="detailProject" :rawCategory="rawCategory" @activeCompany="getActiveCompany" />
         <PopupSurveyCustomerContact ref="customerContact" v-if="company" :objConfirm="company" />
     </div>
@@ -280,6 +280,7 @@ export default {
     data(){
         return{
             isActive:false,
+            surveryUpdate:false
         }
     },
     mounted(){
@@ -326,7 +327,10 @@ export default {
                 return `${time} PM`
             }
         },
-        openSurveyUpdate(){
+        openSurveyUpdate(status){
+            if(status == 'UPDATE'){
+                this.surveryUpdate = true
+            }
             this.$refs.surveyUpdate.show()
         },
         openDeal(){
