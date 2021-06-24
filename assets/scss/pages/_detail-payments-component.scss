@@ -1,4 +1,11 @@
 .detail-payment-component{
+    #dropdown-payment{
+        .dropdown-toggle {
+            padding: 0;
+            color: $main-color;
+            margin-top: -5px;
+        }
+    }
     .group-payment {
         .item{
             padding: 15px 0;
