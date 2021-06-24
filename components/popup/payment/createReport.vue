@@ -7,7 +7,7 @@
                 TẠO BÁO CÁO TIẾN ĐỘ THI CÔNG
             </p>
             <form action="" @submit.prevent="getForm()">
-                <div class="group-infor pr-60px">
+                <div class="group-infor no-border pr-60px">
                     <div class="row mb-15px">
                         <div class="col-md-3">
                             <span class="key">Tên dự án</span>
