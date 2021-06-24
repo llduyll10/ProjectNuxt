@@ -61,6 +61,8 @@
                             type="text"
                             class="form-control"
                             placeholder="Mã số thuế"
+                            @keypress="isNumber($event)"
+                            maxlength="10"
                             v-model="objInfor.taxCode"
                         />
                     </div>
