@@ -39,6 +39,18 @@
                         </div>
                         <div class="col-md-9">
                             <InputFile  :accept="acceptFile" key="file" @input="getFile" :multiple="true" :label="'Thêm hình ảnh'" />
+                            <div class="col-md-3" v-if="arrFile.length"></div>
+                            <div class="col-md-9 pl-0" v-if="arrFile.length">
+                                <template v-for="(item,idx) in arrFile">
+                                    <p :key="idx" class="f-11 text-main ">
+                                        <span class="mr-5px" v-html="returnTypeFile(item.name)"></span>
+                                        {{item.name}}
+                                        <span class="cursor-pointer ml-5px" @click="clearFile(item)">
+                                            <i class="fas fa-times text-red"></i>
+                                        </span>
+                                    </p>
+                                </template>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -77,6 +89,9 @@ export default {
         },
         getFile(file){
             this.arrFile = this.arrFile.concat(file)
+        },
+        clearFile(file){
+            this.arrFile = this.arrFile.filter(item => item.name !== file.name)
         },
         show() {
             this.$refs.modalCreateReport.showModal();
