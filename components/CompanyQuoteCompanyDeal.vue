@@ -79,11 +79,6 @@
                         <span>Gửi tin nhắn</span>
                     </div>
 
-
-                    <div class="btn-primary" >
-                        <img src="@/assets/svg/icon-cancel.svg" alt="">
-                        <span>Xem danh gia</span>
-                    </div>
                 </div>
 
 
