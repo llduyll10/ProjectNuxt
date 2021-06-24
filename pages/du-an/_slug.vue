@@ -59,21 +59,25 @@
             </div>
             <!--  nội dung bài viết -->
 
-            <!-- Form chào giá -->
-            <template v-if="detailProject && detailProject.createBy && (detailProject.createBy._id !== currentUser._id)">
+            <template v-if="detailProject && detailProject.createBy &&  (detailProject.createBy._id !== currentUser._id )
+            ">
+            <template v-if="!quoteCompleteDeal">
+              <!-- Form chào giá -->
+              <div
+                class="left inner-content-section px-36px pt-25px pb-50px mb-20px"
+                v-if="!checkStatusDueDate(detailProject.dueDate)"
+              >
+
+                <template v-if="detailProject && detailProject._id">
+                  <QuoteForm @callGetList="getDetailProject" :quoteName="detailProject.name"  :id="detailProject._id" :detailProject="detailProject" />
+                </template>
+              </div>
+
+              <!--  Form chào giá -->
+            </template>
+
             <div
-              class="left inner-content-section px-36px pt-25px pb-50px mb-20px"
-              v-if="!checkStatusDueDate(detailProject.dueDate)"
-            >
-
-              <template v-if="detailProject && detailProject._id">
-                <QuoteForm @callGetList="getDetailProject" :quoteName="detailProject.name"  :id="detailProject._id" :detailProject="detailProject" />
-              </template>
-            </div>
-
-            <!--  Form chào giá -->
-
-            <div
+              v-if="quoteCompleteDeal && quoteCompleteDeal.auctionBy._id !== $auth.user._id"
               class="left inner-content-section px-36px pt-25px pb-50px mb-20px"
             >
 
@@ -163,65 +167,72 @@
             </div>
             <!-- Thông tin dự án -->
 
-            <!-- Thông tin khách hàng -->
-            <template v-if="detailProject && detailProject.createBy && (detailProject.createBy._id !== currentUser._id)">
-            <div
-              class="left inner-content-section  pt-20px pb-20px  thongTinDuAnWrapper main-black"
-            >
-              <!-- Hard some css display none for re-using profile component -->
-              <Customer v-if="detailProject.createBy" :user="detailProject.createBy" class="profile" />
-            </div>
-            </template>
-            <!-- Thông tin khách hàng -->
 
-            <!-- Dự án tương tự -->
-            <div v-if="detailProject && detailProject._id && detailProject.createBy && (detailProject.createBy._id !== currentUser._id)"
-                class="text-center"
-            >
-              <h3 class=" fw-600 f-16 main-color mb-5px pt-20px" >DỰ ÁN TƯƠNG TỰ</h3>
-              <div class="line mb-15px"></div>
-              <template v-for="(item, idx) in 3">
+
+
+
+            <template v-if="!quoteCompleteDeal">
+            <!-- Thông tin khách hàng -->
+              <template v-if="detailProject && detailProject.createBy && (detailProject.createBy._id !== currentUser._id)">
                 <div
-                  class="d-flex flex-column w-100 item-related mb-20px"
-                  :key="idx + 100"
+                  class="left inner-content-section  pt-20px pb-20px  thongTinDuAnWrapper main-black"
                 >
-                  <div class="position-relative group-item">
-                    <span
-                      class="mt-20px end-0 position-absolute bg-yellow-8 text-light text-12 pl-30px pr-16px py-5px line-height-15 fw-600"
-                      >NỘI THẤT</span>
-                    <div class="area">
-                      <span>
-                        <img src="@/assets/svg/area.svg" />
-                        Quận 7, TP. Hồ Chí Minh
-                      </span>
-                    </div>
-                  </div>
-                  <div class="bg-white px-15px py-18px">
-                    <h3 class="text-14 main-color fw-600 mb-25px">
-                      Tìm đơn vị thi công nội thất chung cư Hà Đô Centrosa
-                      (60m2/2pn)
-                    </h3>
-                    <div class="d-flex justify-content-between">
-                      <span class="text-12">
-                        <img src="@/assets/svg/human.svg" />
-                        Bùi Kim Long
-                      </span>
-                      <span class="text-12">
-                        Ngân sách -
-                        <span class="text-13 main-color fw-600">300 Triệu</span>
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="d-flex blue-bg-color justify-content-between text-white border-5 px-15px text-12 py-1"
-                  >
-                    <span>01/04/2021</span>
-                    <span><span class="main-yellow">4</span> Chào Giá</span>
-                  </div>
+                  <!-- Hard some css display none for re-using profile component -->
+                  <Customer v-if="detailProject.createBy" :user="detailProject.createBy" class="profile" />
                 </div>
               </template>
-              <p class="f-12 main-color mb-0 text-right">Xem thêm dự án <i class="fas fa-caret-down ml-5px f-14"></i></p>
-            </div>
+              <!-- Thông tin khách hàng -->
+
+              <!-- Dự án tương tự -->
+              <div v-if="detailProject && detailProject._id && detailProject.createBy && (detailProject.createBy._id !== currentUser._id)"
+                  class="text-center"
+              >
+                <h3 class=" fw-600 f-16 main-color mb-5px pt-20px" >DỰ ÁN TƯƠNG TỰ</h3>
+                <div class="line mb-15px"></div>
+                <template v-for="(item, idx) in 3">
+                  <div
+                    class="d-flex flex-column w-100 item-related mb-20px"
+                    :key="idx + 100"
+                  >
+                    <div class="position-relative group-item">
+                      <span
+                        class="mt-20px end-0 position-absolute bg-yellow-8 text-light text-12 pl-30px pr-16px py-5px line-height-15 fw-600"
+                        >NỘI THẤT</span>
+                      <div class="area">
+                        <span>
+                          <img src="@/assets/svg/area.svg" />
+                          Quận 7, TP. Hồ Chí Minh
+                        </span>
+                      </div>
+                    </div>
+                    <div class="bg-white px-15px py-18px">
+                      <h3 class="text-14 main-color fw-600 mb-25px">
+                        Tìm đơn vị thi công nội thất chung cư Hà Đô Centrosa
+                        (60m2/2pn)
+                      </h3>
+                      <div class="d-flex justify-content-between">
+                        <span class="text-12">
+                          <img src="@/assets/svg/human.svg" />
+                          Bùi Kim Long
+                        </span>
+                        <span class="text-12">
+                          Ngân sách -
+                          <span class="text-13 main-color fw-600">300 Triệu</span>
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex blue-bg-color justify-content-between text-white border-5 px-15px text-12 py-1"
+                    >
+                      <span>01/04/2021</span>
+                      <span><span class="main-yellow">4</span> Chào Giá</span>
+                    </div>
+                  </div>
+                </template>
+                <p class="f-12 main-color mb-0 text-right">Xem thêm dự án <i class="fas fa-caret-down ml-5px f-14"></i></p>
+              </div>
+
+            </template>
             <!-- Dự án tương tự -->
           </div>
           <!--  Col right -->
@@ -236,50 +247,67 @@
 
           <template v-if="detailProject && detailProject.createBy && (detailProject.createBy._id === currentUser._id)">
 
-        <!-- co 1 deal dc chap nhan -->
-        <div class="col-12" v-if="quoteCompleteDeal">
+              <!-- co 1 deal dc chap nhan -->
+              <div class="col-12" v-if="quoteCompleteDeal">
 
-           <div
-              class="inner-content-section  pt-25px pb-50px mb-20px"
-            >
+                <div
+                    class="inner-content-section  pt-25px pb-50px mb-20px"
+                  >
 
-            <h3 class="h5 main-black  px-36px">
-                <span class="fw-600 f-16">Đơn vị thi công</span>
-              </h3>
-              <hr class="hr mb-0" />
+                  <h3 class="h5 main-black  px-36px">
+                      <span class="fw-600 f-16">Đơn vị thi công</span>
+                    </h3>
+                    <hr class="hr mb-0" />
 
-              <CompanyQuoteOwner :key="quoteCompleteDeal._id" :company="quoteCompleteDeal" :detailProject="detailProject" :rawCategory="rawCategory" @getDetailAgain="getDetailProject" />
+                    <CompanyQuoteOwner :key="quoteCompleteDeal._id" :company="quoteCompleteDeal" :detailProject="detailProject" :rawCategory="rawCategory" @getDetailAgain="getDetailProject" />
 
 
-           </div>
+                </div>
 
-        </div>
-
-         <!-- chua cho deal nao chap nhan -->
-          <div class="col-12" v-else>
-             <div
-              class="inner-content-section  pt-25px pb-50px mb-20px"
-            >
-
-              <h3 class="h5 main-black  px-36px">
-                <span class="fw-600 f-16">Danh sách chào giá (<span class="main-color">{{arrQuoteCompany && arrQuoteCompany.length}}</span> chào giá)</span>  - <span class="f-14">Chọn tối đa <span class="text-main">3</span> công ty để khảo sát/gặp mặt trực tiếp và nhận báo giá chính xác nhất cho công trình của bạn</span>
-              </h3>
-              <hr class="hr mb-0" />
-
-              <template v-if="arrQuoteCompany && arrQuoteCompany.length" >
-                <template v-for="item in arrQuoteCompany">
-                  <CompanyQuoteOwner :key="item._id" :company="item" :detailProject="detailProject" :rawCategory="rawCategory" @getDetailAgain="getDetailProject" />
-                </template>
-              </template>
-
-              <div v-else>
-                <p class="text-danger pl-36px"><b>Chưa có chào giá</b></p>
               </div>
-          </div>
-          </div>
+
+              <!-- chua cho deal nao chap nhan -->
+              <div class="col-12" v-else>
+                  <div
+                  class="inner-content-section  pt-25px pb-50px mb-20px"
+                >
+
+                  <h3 class="h5 main-black  px-36px">
+                    <span class="fw-600 f-16">Danh sách chào giá (<span class="main-color">{{arrQuoteCompany && arrQuoteCompany.length}}</span> chào giá)</span>  - <span class="f-14">Chọn tối đa <span class="text-main">3</span> công ty để khảo sát/gặp mặt trực tiếp và nhận báo giá chính xác nhất cho công trình của bạn</span>
+                  </h3>
+                  <hr class="hr mb-0" />
+
+                  <template v-if="arrQuoteCompany && arrQuoteCompany.length" >
+                    <template v-for="item in arrQuoteCompany">
+                      <CompanyQuoteOwner :key="item._id" :company="item" :detailProject="detailProject" :rawCategory="rawCategory" @getDetailAgain="getDetailProject" />
+                    </template>
+                  </template>
+
+                  <div v-else>
+                    <p class="text-danger pl-36px"><b>Chưa có chào giá</b></p>
+                  </div>
+              </div>
+              </div>
+
+          </template>
+          <template v-else>
+            <div  class="col-12" v-if="quoteCompleteDeal && quoteCompleteDeal.auctionBy._id == $auth.user._id">
+
+                <div
+                    class="inner-content-section  pt-25px pb-50px mb-20px"
+                  >
+
+                  <h3 class="h5 main-black  px-36px">
+                      <span class="fw-600 f-16">Đơn vị thi công</span>
+                    </h3>
+                    <hr class="hr mb-0" />
+
+                    <CompanyQuoteOwner :key="quoteCompleteDeal._id" :company="quoteCompleteDeal" :detailProject="detailProject" :rawCategory="rawCategory" @getDetailAgain="getDetailProject" />
 
 
+                </div>
 
+              </div>
           </template>
 
 
