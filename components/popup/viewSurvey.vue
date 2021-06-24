@@ -106,7 +106,6 @@
                                     name="checkbox-agree"
                                     required
                                     >
-                                    Tôi đồng ý khảo sát hiện trạng và sẽ <span class="text-red"> cập nhật báo giá trong vòng 24 giờ </span> sau khi khảo sát <span style="color:red">*</span>
                                 </b-form-checkbox>
                                 <span class="f-12 main-black mt-2px ml-5px">Tôi đồng ý khảo sát hiện trạng và sẽ  <span class="text-red"> cập nhật báo giá trong vòng 24 giờ </span> sau khi khảo sát <span style="color:red">*</span></span>
                             </div>
