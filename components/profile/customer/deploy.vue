@@ -18,7 +18,7 @@
             </div>
         </div>
 
-        <table class="table table-custom table-deploy" v-if="listShow">
+        <table class="table table-custom table-deploy" >
             <thead>
                 <tr>
                     <th scope="col">Tên dự án</th>
@@ -31,19 +31,19 @@
             <tbody  v-if="listShow" >
                 <tr v-for="(item,idx) in listShow" :key="idx">
                     <td class="name cursor-pointer"
-                        :class="getClassCategory(mapImgFromCategory(item.category))"
-                        @click="$router.push(`/du-an/${item.slug}`)"
+                        :class="getClassCategory(mapImgFromCategory(item.project.category))"
+                        @click="$router.push(`/du-an/${item.project.slug}`)"
                     >
-                        {{item.name}}
+                        {{item.project.name}}
                     </td>
                     <td class="customer  f-12">
-                        <span class="text-main font-weight-bold">{{item.auctionCount}}</span> chào giá
+                        <span class="text-main font-weight-bold">{{item.auctionBy.name}}</span>
                     </td>
-                    <td class="price ">{{$moment(item.dueDate).format('DD/MM/YYYY')}}</td>
+                    <td class="price ">{{formatVnd(item.deal[0].price)}} VND</td>
                     <td class="price">
-                       {{$moment(item.dueDate).format('DD/MM/YYYY')}}
+                       {{item.deal[0].day}} ngày
                     </td>
-                    <td class="price ">{{$moment(item.dueDate).format('DD/MM/YYYY')}}</td>
+                    <td class="price ">-</td>
                 </tr>
             </tbody>
         </table>
@@ -83,8 +83,9 @@ export default {
     methods:{
         getListQuote(){
             this.loader()
-            this.$get('/member/projects')
+            this.$get('/member/owner-project-auction/progress')
                 .then(res => {
+                    console.log('res',res)
                     this.listProject = res.data
                     this.listShow = res.data
                     this.loader(0)
