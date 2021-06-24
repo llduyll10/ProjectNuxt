@@ -1,5 +1,5 @@
 <template>
-    <div class="company-quote-owner" :class="company && (company.survey.length) ? 'active' : 'border-0' " >
+    <div class="company-quote-owner" :class="[company && (company.survey.length) ? 'active' : 'border-0', bgWhite ? 'bg-white' : '' ]" >
         <div class="row cover">
             <div class="col-md-6 col-sm-12   pr-0 ">
                 <div class="d-flex content-left">
@@ -73,7 +73,7 @@
 
 
                 <div class="group-btn">
-                    
+
                     <div class="btn-send  mr-10px ml-0" >
                         <img  src="@/assets/svg/email.svg" alt="">
                         <span>Gửi tin nhắn</span>
@@ -86,7 +86,7 @@
                     </div>
                 </div>
 
-            
+
             </div>
 
         </div>
@@ -97,7 +97,7 @@
 </template>
 <script>
 export default {
-    props:['company','detailProject','rawCategory'],
+    props:['company','detailProject','rawCategory','bgWhite'],
     data(){
         return{
         }
@@ -105,7 +105,7 @@ export default {
     mounted(){
     },
     methods:{
-        
+
     }
 }
 </script>

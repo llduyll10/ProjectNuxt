@@ -259,7 +259,7 @@
                     </h3>
                     <hr class="hr mb-0" />
 
-                    <CompanyQuoteOwner :key="quoteCompleteDeal._id" :company="quoteCompleteDeal" :detailProject="detailProject" :rawCategory="rawCategory" @getDetailAgain="getDetailProject" />
+                    <CompanyQuoteOwner :key="quoteCompleteDeal._id" :company="quoteCompleteDeal" :detailProject="detailProject" :rawCategory="rawCategory" @getDetailAgain="getDetailProject" :bgWhite="true" />
 
 
                 </div>
@@ -304,7 +304,7 @@
                     </h3>
                     <hr class="hr mb-0" />
 
-                    <CompanyQuoteCompanyDeal :key="quoteCompleteDeal._id" :company="quoteCompleteDeal" :detailProject="detailProject" :rawCategory="rawCategory" @getDetailAgain="getDetailProject" />
+                    <CompanyQuoteCompanyDeal :key="quoteCompleteDeal._id" :company="quoteCompleteDeal" :detailProject="detailProject" :rawCategory="rawCategory" @getDetailAgain="getDetailProject" :bgWhite="true" />
 
                 </div>
 
