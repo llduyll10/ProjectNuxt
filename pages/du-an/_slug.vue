@@ -171,7 +171,7 @@
 
 
 
-            <template v-if="!quoteCompleteDeal">
+            <template v-if="!quoteCompleteDeal || ($auth.user && quoteCompleteDeal && quoteCompleteDeal.auctionBy._id !==$auth.user._id) ">
             <!-- Thông tin khách hàng -->
               <template v-if="detailProject && detailProject.createBy && (detailProject.createBy._id !== currentUser._id)">
                 <div
@@ -244,7 +244,7 @@
 
           <!-- new row for owner auction -->
 
-
+          <!-- gianh cho chu du an -->
           <template v-if="detailProject && detailProject.createBy && (detailProject.createBy._id === currentUser._id)">
 
               <!-- co 1 deal dc chap nhan -->
@@ -290,8 +290,10 @@
               </div>
 
           </template>
+
+          <!-- gianh cho cong ty dang thi cong -->
           <template v-else>
-            <div  class="col-12" v-if="quoteCompleteDeal && quoteCompleteDeal.auctionBy._id == $auth.user._id">
+            <div class="col-12" v-if="quoteCompleteDeal && quoteCompleteDeal.auctionBy._id == $auth.user._id && quoteCompleteDeal.deal[0].status ==='OK'">
 
                 <div
                     class="inner-content-section  pt-25px pb-50px mb-20px"
@@ -302,8 +304,7 @@
                     </h3>
                     <hr class="hr mb-0" />
 
-                    <CompanyQuoteOwner :key="quoteCompleteDeal._id" :company="quoteCompleteDeal" :detailProject="detailProject" :rawCategory="rawCategory" @getDetailAgain="getDetailProject" />
-
+                    <CompanyQuoteCompanyDeal :key="quoteCompleteDeal._id" :company="quoteCompleteDeal" :detailProject="detailProject" :rawCategory="rawCategory" @getDetailAgain="getDetailProject" />
 
                 </div>
 
