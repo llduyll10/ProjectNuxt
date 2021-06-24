@@ -21,7 +21,7 @@
                             <span class="key">Nhân viên yêu cầu</span> <span class="text-red">*</span>
                         </div>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" v-model="objPayment.nameStaff" />
+                            <input type="text" required class="form-control" v-model="objPayment.nameStaff" />
                         </div>
                     </div>
                     <div class="row mb-15px">
@@ -29,7 +29,7 @@
                             <span class="key">Giá trị thanh toán</span><span class="text-red">*</span>
                         </div>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" v-model="objPayment.price">
+                            <input type="text" required class="form-control" v-model="objPayment.price">
                         </div>
                     </div>
                     <div class="row mb-15px">
@@ -37,7 +37,7 @@
                             <span class="key">Ghi chú thanh toán</span><span class="text-red">*</span>
                         </div>
                         <div class="col-md-9">
-                            <textarea type="text" class="form-control" rows="5" v-model="objPayment.note"></textarea>
+                            <textarea type="text" required class="form-control" rows="5" v-model="objPayment.note"></textarea>
                         </div>
                     </div>
                     <div class="row mb-15px">
@@ -45,7 +45,7 @@
                             <span class="key">Tên ngân hàng</span><span class="text-red">*</span>
                         </div>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" v-model="objPayment.nameBank" />
+                            <input type="text" required class="form-control" v-model="objPayment.nameBank" />
                         </div>
                     </div>
                     <div class="row mb-15px">
@@ -53,7 +53,7 @@
                             <span class="key">Tên chủ tài khoản</span><span class="text-red">*</span>
                         </div>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" v-model="objPayment.nameAccountBank" />
+                            <input type="text" required class="form-control" v-model="objPayment.nameAccountBank" />
                         </div>
                     </div>
                     <div class="row">
@@ -61,7 +61,7 @@
                             <span class="key">Số tài khoản</span><span class="text-red">*</span>
                         </div>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" v-model="objPayment.accountNumber" />
+                            <input type="text" required class="form-control" v-model="objPayment.accountNumber" />
                         </div>
                     </div>
                 </div>
