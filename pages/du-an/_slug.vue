@@ -50,7 +50,7 @@
                         <p :key="idx+1" class="f-11 mb-0 text-main cursor-pointer mr-15px"
                           @click="downloadFile(item)"
                         >
-                            <span v-html="returnTypeFile(spliceURLFile(item,'--'))"></span>
+                            <span v-html="returnTypeFile(spliceURLFile(item,'--'))" class="mr-5px"></span>
                             {{spliceURLFile(item,'--')}}
                         </p>
                     </template>

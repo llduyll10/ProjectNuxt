@@ -86,7 +86,7 @@
                                                             <template v-if="item.attachments">
                                                                 <template v-for="(file,idx) in item.attachments">
                                                                     <div :key="idx+101" class="mt-5px cursor-pointer" @click="downloadFile(file)">
-                                                                        <span  v-html="returnTypeFile(spliceURLFile(file,'--'))"></span>
+                                                                        <span  v-html="returnTypeFile(spliceURLFile(file,'--'))" class="mr-5px"></span>
                                                                         <span class="f-11">{{spliceURLFile(file,'--')}}</span>
                                                                     </div>
                                                                 </template>
@@ -102,7 +102,7 @@
                                                             <template v-if="item.attachments">
                                                                 <template v-for="(file,idx) in item.attachments">
                                                                     <div :key="idx+11" class="mt-5px cursor-pointer"  @click="downloadFile(file)">
-                                                                        <span  v-html="returnTypeFile(spliceURLFile(file,'--'))"></span>
+                                                                        <span  v-html="returnTypeFile(spliceURLFile(file,'--'))" class="mr-5px"></span>
                                                                         <span class="f-11">{{spliceURLFile(file,'--')}}</span>
                                                                     </div>
                                                                 </template>
@@ -130,7 +130,7 @@
                                         <div  class="listFile">
                                             <template v-for="(item,idx) in arrFile">
                                                     <p :key="idx" class="f-11 text-main mr-10px item-file">
-                                                        <span class="f-11" v-html="returnTypeFile(item.name)"></span>
+                                                        <span class="f-11 mr-5px" v-html="returnTypeFile(item.name)"></span>
                                                         {{item.name}}
                                                         <span class="cursor-pointer ml-5px" @click="clearFile(item)">
                                                             <i class="fas fa-times text-red"></i>

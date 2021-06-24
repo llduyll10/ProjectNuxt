@@ -51,7 +51,7 @@
                             <div class="col-md-9 pl-0" v-if="arrFile.length">
                                 <template v-for="(item,idx) in arrFile">
                                     <p :key="idx" class="f-11 text-main ">
-                                        <span v-html="returnTypeFile(item.name)"></span>
+                                        <span v-html="returnTypeFile(item.name)" class="mr-5px"></span>
                                         {{item.name}}
                                         <span class="cursor-pointer ml-5px" @click="clearFile(item)">
                                             <i class="fas fa-times text-red"></i>
