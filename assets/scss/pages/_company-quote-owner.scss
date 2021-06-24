@@ -7,6 +7,16 @@
             padding-bottom: 0;
         }
     }
+    &.bg-white{
+        .cover{
+            border-bottom: 0;
+        }
+        .content-right{
+            &::before{
+                background-color: #F2F2F2 !important;
+            }
+        }
+    }
     &.active, .border-0{
         background-color: #EBF5FA;
         .content-right{
