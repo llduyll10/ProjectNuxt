@@ -174,6 +174,26 @@
       .footer {
         background: #209cd7;
       }
+      .title{
+        text-align: left;
+        font-size: 14px;
+        line-height: 25px;
+        height: 50px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+      .type-product{
+        height: 28px;
+        opacity: 0.89;
+        @extend .flex-center;
+        width: 108px;
+      }
+      .date-time{
+        height: 32px;
+        padding-top: 7px;
+      }
     }
     .end-0 {
       right: 0;

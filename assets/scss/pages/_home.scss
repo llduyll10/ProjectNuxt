@@ -266,11 +266,14 @@
                             right: 0;
                             top: 22px;
                             padding: 6px 22px;
-                            background: rgba(25, 138, 198, 0.89);
+                            background: $main-color;
                             border-radius: 5px 0px 0px 5px;
                             font-size: 12px;
-                            line-height: 15px;
-                            color: #F2F2F2;
+                            line-height: 28px;
+                            opacity: 0.89;
+                            span{
+                                color: #F2F2F2;
+                            }
                         }
                         .location {
                             position: absolute;

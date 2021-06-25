@@ -212,9 +212,9 @@
                       'background-color':'#f2f2f2'
                       }">
                       <div class="type-product" :class="getClassBageCategory(mapImgFromCategory(item.category ))">
-                        <span v-if="mapImgFromCategory(item.category) == 1">Thi công xây dựng</span>
-                        <span v-if="mapImgFromCategory(item.category) == 2">Trang trí nội thất</span>
-                        <span v-if="mapImgFromCategory(item.category) == 3">Thiết kế</span>
+                        <span v-if="mapImgFromCategory(item.category) == 1">XÂY DỰNG</span>
+                        <span v-if="mapImgFromCategory(item.category) == 2">NỘI THẤT</span>
+                        <span v-if="mapImgFromCategory(item.category) == 3">THIẾT KẾ</span>
                       </div>
                       <div class="location">
                         <img src="@/assets/svg/area.svg" />

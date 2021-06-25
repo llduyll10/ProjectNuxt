@@ -196,7 +196,7 @@
                   >
                     <div class="position-relative group-item">
                       <span
-                        class="mt-20px end-0 position-absolute bg-yellow-8 text-light text-12 pl-30px pr-16px py-5px line-height-15 fw-600"
+                        class="mt-20px type-product end-0 position-absolute bg-yellow-8 text-light text-12    line-height-15 fw-600"
                         >NỘI THẤT</span>
                       <div class="area">
                         <span>
@@ -206,7 +206,7 @@
                       </div>
                     </div>
                     <div class="bg-white px-15px py-18px">
-                      <h3 class="text-14 main-color fw-600 mb-25px">
+                      <h3 class="title text-14 main-color fw-600 mb-25px ">
                         Tìm đơn vị thi công nội thất chung cư Hà Đô Centrosa
                         (60m2/2pn)
                       </h3>
@@ -222,10 +222,10 @@
                       </div>
                     </div>
                     <div
-                      class="d-flex blue-bg-color justify-content-between text-white border-5 px-15px text-12 py-1"
+                      class="d-flex date-time blue-bg-color justify-content-between text-white border-5 px-15px text-12"
                     >
-                      <span>01/04/2021</span>
-                      <span><span class="main-yellow">4</span> Chào Giá</span>
+                      <span class="f-12">01/04/2021</span>
+                      <span class="f-14"><span class="main-yellow">4</span> Chào Giá</span>
                     </div>
                   </div>
                 </template>
