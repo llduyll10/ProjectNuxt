@@ -205,7 +205,7 @@
                         </span>
                       </div>
                     </div>
-                    <div class="bg-white px-15px py-18px">
+                    <div class="bg-white px-15px py-15px">
                       <h3 class="title text-14 main-color fw-600 mb-25px ">
                         Tìm đơn vị thi công nội thất chung cư Hà Đô Centrosa
                         (60m2/2pn)
