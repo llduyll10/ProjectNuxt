@@ -240,7 +240,7 @@
                     </div>
                     <!-- Content 3 -->
                     <div class="audiance d-flex">
-                      <p class="f-12">{{$moment(item.createdDate).format('DD/MM/YYYY')}}</p>
+                      <p class="f-12 mt-3px">{{$moment(item.createdDate).format('DD/MM/YYYY')}}</p>
                       <p class="f-12">
                         <span class="f-14">{{item.auctionCount}}</span>
                         Chào Giá
