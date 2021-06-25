@@ -24,6 +24,14 @@
                             <input type="text" required class="form-control" v-model="objPayment.nameStaff" />
                         </div>
                     </div>
+                    <div class="row mb-15px">
+                        <div class="col-md-3">
+                            <span class="key">Thời gian</span> <span class="text-red">*</span>
+                        </div>
+                        <div class="col-md-9">
+                            <input type="text" required class="form-control" v-model="objPayment.time" />
+                        </div>
+                    </div>
 
                     <div class="row mb-25px">
                         <div class="col-md-3">
