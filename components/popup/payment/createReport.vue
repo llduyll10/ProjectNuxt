@@ -25,7 +25,7 @@
                         </div>
                     </div>
 
-                    <div class="row mb-15px">
+                    <div class="row mb-25px">
                         <div class="col-md-3">
                             <span class="key">Nhật ký công việc</span><span class="text-red">*</span>
                         </div>

@@ -353,6 +353,7 @@
                 border-bottom: 1.5px solid #F2F2F2;
                 &.no-border{
                     border-bottom: 0;
+                    padding-bottom: 0px !important;
                 }
                 .key{
                     font-size: 13px;
