@@ -178,8 +178,8 @@ module.exports = {
         },
         getTypeAccountSignup() {
             return [
-                { label: 'Đăng ký nhận việc', id: 'Công Ty Xây Dựng' },
-                { label: 'Đăng ký khách hàng', id: 'Khách hàng' },
+                { label: 'Tài khoản nhận việc', id: 'Công Ty Xây Dựng' },
+                { label: 'Tài khoản khách hàng', id: 'Khách hàng' },
             ]
         },
         getDateFilter() {

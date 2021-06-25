@@ -289,8 +289,11 @@
           <div class="text-center w-100">
             <img src="@/assets/svg/black-logo.svg"/>
           </div>
+          <div class="text-left w-100 mt-35px">
+            <span class="text-main fw-600 f-18" >ĐĂNG KÝ TÀI KHOẢN</span>
+          </div>
           <form @submit.prevent="createUser">
-            <div class="form-group mb-25px mt-30px">
+            <div class="form-group mb-25px mt-20px">
               <label class="f-13" for="exampleInputEmail1"
                 >Họ và tên
                 <span style="color:red">*</span></label
@@ -330,7 +333,7 @@
                 v-model="objUser.email"
               />
             </div>
-            <div class="form-group">
+            <div class="form-group mb-25px">
               <label class="f-13"
                 >Tài khoản đăng ký
                 <span style="color:red">*</span></label
