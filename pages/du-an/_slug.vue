@@ -211,21 +211,29 @@
                         (60m2/2pn)
                       </h3>
                       <div class="d-flex justify-content-between">
-                        <span class="text-12">
-                          <img src="@/assets/svg/human.svg" />
-                          Bùi Kim Long
-                        </span>
-                        <span class="text-12">
-                          Ngân sách -
-                          <span class="main-color fw-600">300 Triệu</span>
-                        </span>
+                        <div class="left">
+                          <span class="text-12">
+                            <img src="@/assets/svg/human.svg" class="mb-3px" />
+                            Bùi Kim Long
+                          </span>
+                        </div>
+                        <div class="right">
+                            <span class="f-12">
+                            Ngân sách -
+                            <span class="main-color fw-600 f-14">300 Triệu</span>
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div
                       class="d-flex date-time blue-bg-color justify-content-between text-white border-5 px-15px text-12"
                     >
-                      <span class="f-12">01/04/2021</span>
-                      <span class="f-14"><span class="main-yellow">4</span> Chào Giá</span>
+                      <div class="left">
+                        <span class="f-12">01/04/2021</span>
+                      </div>
+                      <div class="right">
+                        <span class="main-yellow f-14">4</span><span class="f-12"> Chào Giá</span>
+                      </div>
                     </div>
                   </div>
                 </template>
