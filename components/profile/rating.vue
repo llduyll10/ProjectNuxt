@@ -37,11 +37,11 @@
                             <img src="@/assets/svg/icon-location.svg" />
                             <span class="f-11">Hồ Chí Minh</span>
                         </div>
-                        <div class="height"></div>
+                        <!-- <div class="height"></div>
                         <div class="datetime">
                             <img src="@/assets/svg/icon-calendar-red.svg" alt="">
                             <span class="f-11">01/04/2021</span>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

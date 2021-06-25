@@ -53,8 +53,8 @@
                     >
                         <img src="@/assets/svg/icon-edit-file.svg" />
                         <span>Chỉnh sửa</span>
-                        <div class="height"></div>
-                        <span>Xoá bỏ</span>
+                        <!-- <div class="height"></div>
+                        <span>Xoá bỏ</span> -->
                     </nuxt-link>
                 </template>
             </div>
