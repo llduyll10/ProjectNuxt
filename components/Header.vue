@@ -226,7 +226,7 @@
               <input v-on:keyup="nextCode($event)" @keypress="isNumber($event)" v-model="codeObj.code2" type="text" class="form-control verifyOTP" required maxlength="1">
               <input v-on:keyup="nextCode($event)" @keypress="isNumber($event)" v-model="codeObj.code3" type="text" class="form-control verifyOTP" required maxlength="1">
               <input v-model="codeObj.code4" @keypress="isNumber($event)" type="text" class="form-control verifyOTP" required maxlength="1">
-              <div class="w-100 text-center mt-16px">
+              <div class="coverBtnOtp text-center mt-16px ">
                 <button @click="login" class="btn btn-theme theme-blue">XÁC NHẬN</button>
               </div>
             </div>
