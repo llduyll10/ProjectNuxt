@@ -349,8 +349,9 @@
                             font-weight: 400;
                             font-size: 14px;
                             span {
-                                font-size: 14px;
-                                color: #F2C94C;
+                                &:first-child{
+                                    color: #F2C94C;
+                                }
                             }
                         }
                     }
