@@ -28,7 +28,8 @@
         cursor: pointer;
         height: 25px;
         position: relative;
-        font-size: 12px !important;
+        font-size: 13px !important;
+        font-weight: 700;
         &::after {
             content: '';
             position: absolute;

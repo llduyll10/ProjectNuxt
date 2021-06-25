@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
-                    <p class="title f-24">Tin Tức & Thị Trường</p>
+                    <p class="title f-24">TIN TỨC & THỊ TRƯỜNG</p>
                     <div class="line"></div>
                 </div>
             </div>

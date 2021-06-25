@@ -4,7 +4,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
-                    <p class="title f-24">Đơn Vị Tiêu Biểu</p>
+                    <p class="title f-24">ĐƠN VỊ TIÊU BIỂU</p>
                     <div class="line"></div>
                 </div>
             </div>

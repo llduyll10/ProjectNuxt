@@ -57,7 +57,7 @@
                 <div class="footer d-flex">
                     <button ref="btnSubmitReport" class="d-none" type="submit"></button>
                     <div @click="triggerForm('CREATE')" class="btn-confirm flex-1">
-                        <span>TẠO YÊU CẦU THANH TOÁN</span>
+                        <span>TẠO BÁO CÁO THI CÔNG</span>
                     </div>
                     <div @click="triggerForm('DRAFT')" class="btn-confirm update flex-1 ml-25px" >
                         <span>LƯU BẢN NHÁP</span>

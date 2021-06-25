@@ -42,7 +42,7 @@
     <!-- Start Categories  -->
     <section class="category pt-40px ">
       <div class="category-title mb-40px">
-        <p class="f-24">Hạng Mục Dự Án</p>
+        <p class="f-24">HẠNG MỤC DỰ ÁN</p>
         <div class="line"></div>
       </div>
       <div class="container-fluid caterogry-list">
@@ -75,7 +75,7 @@
               <div class="item-detail d-flex">
                 <img src="@/assets/img/icon-pen.png" />
                 <p>
-                KIẾN TRÚC
+                THIẾT KẾ KIẾN TRÚC
                 </p>
               </div>
             </div>
@@ -186,7 +186,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-12 title mb-40px">
-            <p class="f-24">Dự Án Nổi Bật</p>
+            <p class="f-24">DỰ ÁN NỔI BẬT</p>
             <div class="line"></div>
           </div>
         </div>
