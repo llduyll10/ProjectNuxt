@@ -200,16 +200,18 @@
                 }
                 .btn-registration {
                     cursor: pointer;
-                    font-weight: 500;
-                    font-size: 15px;
-                    width: 200px;
-                    height: 34px;
-                    padding-top: 5px;
-                    text-align: center;
-                    background: #209cd7;
+                    box-sizing: border-box;
+                    background-color: #209cd7;
+                    line-height: 40px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 0 30px;
                     color: #F2F2F2;
+                    font-size: 15px;
+                    font-weight: 500;
                     border-radius: 5px;
-                    outline: none;
+                    width: 206px;
                 }
             }
             .describe-right {
@@ -293,11 +295,13 @@
                         p {
                             color: $main-color;
                             font-weight: 600;
-                            display: inline-block;
-                            width: 100%;
-                            white-space: nowrap;
-                            overflow: hidden !important;
-                            text-overflow: ellipsis;
+                            font-size: 14px;
+                            line-height: 25px;
+                            height: 50px;
+                            overflow: hidden;
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            -webkit-line-clamp: 2;
                         }
                         .group-infor {
                             justify-content: space-between;
