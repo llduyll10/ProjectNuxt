@@ -269,10 +269,12 @@
                             background: $main-color;
                             border-radius: 5px 0px 0px 5px;
                             font-size: 12px;
-                            line-height: 28px;
+                            line-height: 17px;
+                            height: 28px;
                             opacity: 0.89;
                             span{
                                 color: #F2F2F2;
+                                font-weight: 600;
                             }
                         }
                         .location {
@@ -294,7 +296,7 @@
                         }
                     }
                     .item-infor {
-                        padding: 20px 17px;
+                        padding: 15px 17px 20px 17px;
                         p {
                             color: $main-color;
                             font-weight: 600;

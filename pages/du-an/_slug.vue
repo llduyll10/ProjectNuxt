@@ -217,7 +217,7 @@
                         </span>
                         <span class="text-12">
                           Ngân sách -
-                          <span class="text-13 main-color fw-600">300 Triệu</span>
+                          <span class="main-color fw-600">300 Triệu</span>
                         </span>
                       </div>
                     </div>

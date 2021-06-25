@@ -234,15 +234,15 @@
                           <span>{{item.createBy.name}} </span>
                         </div>
                         <div class="right">
-                          <span> Ngân sách</span> - <span>{{formatNamePrice(item.budget)}}</span>
+                          <span class="f-12"> Ngân sách - </span> <span class="f-14">{{formatNamePrice(item.budget)}}</span>
                         </div>
                       </div>
                     </div>
                     <!-- Content 3 -->
                     <div class="audiance d-flex">
                       <p class="f-12">{{$moment(item.createdDate).format('DD/MM/YYYY')}}</p>
-                      <p>
-                        <span>{{item.auctionCount}}</span>
+                      <p class="f-12">
+                        <span class="f-14">{{item.auctionCount}}</span>
                         Chào Giá
                       </p>
                     </div>
