@@ -48,7 +48,7 @@
         <div class="col-12">
             <div class="main-black text-13 break-line">{{company.description}}</div>
         </div>
-        <div v-if="$auth && $auth.user  && $auth.user._id == company.auctionBy._id && company.step == 1" class="cover-btn">
+        <div v-if="$auth && $auth.user  && $auth.user._id == company.auctionBy._id && company.step == 0 && company.survey.length" class="cover-btn">
             <div @click="viewSurvey()"  class="btn-send cup mr-10px ml-0" >
                 <img  src="@/assets/svg/email.svg" alt="">
                 <span>Xem yêu cầu khảo sát</span>
