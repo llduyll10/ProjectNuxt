@@ -47,45 +47,42 @@
             ></textarea>
         </div>
         <!-- File Img -->
+
+
         <div class="form-group row align-items-center">
-            <label class="f-13  col-md-3 col-sm-12 ">
+                <label class="f-13  col-md-3 col-sm-12 ">
                 Hình ảnh đính kèm
             </label>
-            <div class="col-md-9 col-sm-12 pl-0">
-                <InputFile ref="test" :accept="acceptImg" @input="getFileImg" :multiple="true" :label="'Thêm hình ảnh'" />
-                <div class="row" >
-                    <!-- OLD FILE -->
-                    <template v-if="objProject.photos">
-                        <template v-for="(item,idx) in objProject.photos">
-                            <div class="col-sm-4 pr-0" :key="idx+1">
-                                <div
-                                    class="itemComponent"
-                                    :style="{
-                                        'background-image': 'url(' + `${item}` + ')',
-                                    }"
-                                >
-                                <i @click="clearFileImgOld(item)" class="fas fa-times text-red"></i>
-                                </div>
-                            </div>
-                        </template>
-                    </template>
-                    <!-- NEW FILE -->
-                    <template v-if="arrBase64.length" >
-                        <template v-for="(item,idx) in arrBase64">
-                            <div class="col-sm-4 pr-0" :key="idx">
-                                <div
-                                    class="itemComponent"
-                                    :style="{
-                                        'background-image': 'url(' + `${item.base64}` + ')',
-                                    }"
-                                >
-                                <i @click="clearFileImg(item)" class="fas fa-times text-red"></i>
-                                </div>
+            <div class="col-md-9 pl-0">
+                <InputFile ref="akjklak" :accept="acceptFile" key="file" @input="getFileImg" :multiple="true":label="'Thêm hình ảnh'" />
+            </div>
 
-                            </div>
-                        </template>
+            <div class="col-md-3"></div>
+            <div class="col-md-9 pl-0" >
+                <!-- Attachment Old -->
+                <template v-if="objProject.attachment" >
+                    <template v-for="(item,idx) in objProject.photos">
+                        <p :key="idx" class="f-11 text-main ">
+                            <span v-html="returnTypeFile(item,'--')" class="mr-5px"></span>
+                            {{spliceURLFile(item,'--')}}
+                            <span class="cursor-pointer ml-5px" @click="clearFileImgOld(item)">
+                                <i class="fas fa-times text-red"></i>
+                            </span>
+                        </p>
                     </template>
-                </div>
+                </template>
+                <!-- Attachment New -->
+                <template v-if="arrBase64.length" >
+                    <template v-for="(item,idx) in arrBase64">
+                        <p :key="idx" class="f-11 text-main ">
+                            <span v-html="returnTypeFile(item.name)" class="mr-5px"></span>
+                            {{item.name}}
+                            <span class="cursor-pointer ml-5px" @click="clearFileImg(item)">
+                                <i class="fas fa-times text-red"></i>
+                            </span>
+                        </p>
+                    </template>
+                </template>
             </div>
         </div>
 

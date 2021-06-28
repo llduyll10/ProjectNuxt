@@ -114,7 +114,7 @@ export default {
             accepFile:["png", "jpg", "jpeg" , "tiff", "pdf", "xls", "doc", "ppt", "zip", "rar"],
             options: this.getCategory(),
             date: new Date(),
-            placeholder:'Xin chào, mình có xem qua hồ sơ năng lực và tư vấn của công ty. Mình quyết định chọn công ty khảo sát hiện trạng công trình và làm việc kỹ hơn về giải pháp thi công để nhận được báo giá cuối cùng vá giải pháp chính xác nhất cho công trình'
+            placeholder:'Xin chào, mình có xem qua hồ sơ năng lực của công ty. Mình cần công ty tư vấn hỗ trợ xây dựng nhà phố 1 trệt 4 lầu tại Gò Vấp Diện tích đất: 5x20 Ngân sách dự trù: 3 tỷ Mong nhận được phản hồi sớm từ công ty'
         }
     },
     mounted(){
