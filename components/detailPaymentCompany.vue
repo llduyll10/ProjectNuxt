@@ -8,8 +8,10 @@
                 <span v-if="arrRequiredPayment.length && activeRow == idx" style="width:20%" class="item text-center fw-600 text-main" @click="openModalRequired()">
                     Đề nghị thanh toán_Đợt {{idx+1}}
                 </span>
-                <span v-else style="width:20%" class="item text-center fw-600 text-main" @click="openModalRequired(idx)">
-                     Tạo yêu cầu thanh toán
+                <span   v-else style="width:20%"
+                        class="item text-center cursor-pointer fw-600 text-main"
+                        @click="openModalRequired(idx)">
+                    Tạo yêu cầu thanh toán
                 </span>
 
                 <span style="width:20%" class="item text-center fw-600 text-main" @click="openModalReport()">200.000.000 VNĐ </span>
