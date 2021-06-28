@@ -49,7 +49,7 @@
         <!-- File Img -->
 
 
-        <div class="form-group row align-items-center">
+        <div class="form-group row align-items-center mb-10px">
                 <label class="f-13  col-md-3 col-sm-12 ">
                 Hình ảnh đính kèm
             </label>
