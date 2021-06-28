@@ -52,6 +52,12 @@
                             </span>
                         </template>
 
+                         <template v-else-if="item.step == 2 && !item.deal.length">
+                            <span class="f-12 text-main cursor-pointer">
+                                Đã cập nhật báo giá
+                            </span>
+                        </template>
+
                         <template v-else>
                             <b-dropdown id="dropdown-duedate" variant="link" toggle-class="text-decoration-none" class="custom-infor pb-5px" no-caret>
                                 <template #button-content>

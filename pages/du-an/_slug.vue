@@ -77,7 +77,7 @@
             </template>
 
             <div
-              v-if="!quoteCompleteDeal || (quoteCompleteDeal && quoteCompleteDeal.auctionBy._id !== $auth.user._id)"
+              v-if="!quoteCompleteDeal || (quoteCompleteDeal && quoteCompleteDeal.deal[0].status !=='OK') || (quoteCompleteDeal && quoteCompleteDeal.auctionBy._id !== $auth.user._id)"
               class="left inner-content-section px-36px pt-25px pb-50px mb-20px"
             >
 
@@ -171,7 +171,7 @@
 
 
 
-            <template v-if="!quoteCompleteDeal || ($auth.user && quoteCompleteDeal && quoteCompleteDeal.auctionBy._id !==$auth.user._id) ">
+            <template v-if="!quoteCompleteDeal || (quoteCompleteDeal && quoteCompleteDeal.deal[0].status !=='OK') || ($auth.user && quoteCompleteDeal && quoteCompleteDeal.auctionBy._id !==$auth.user._id) ">
             <!-- Thông tin khách hàng -->
               <template v-if="detailProject && detailProject.createBy && (detailProject.createBy._id !== currentUser._id)">
                 <div
