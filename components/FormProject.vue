@@ -50,16 +50,15 @@
 
 
         <div class="form-group row align-items-center mb-10px">
-                <label class="f-13  col-md-3 col-sm-12 ">
+            <label class="f-13  col-md-3 col-sm-12 ">
                 Hình ảnh đính kèm
             </label>
             <div class="col-md-9 pl-0">
-                <InputFile ref="akjklak" :accept="acceptFile" key="file" @input="getFileImg" :multiple="true":label="'Thêm hình ảnh'" />
+                <InputFile ref="akjklak" :accept="acceptFile" key="file" @input="getFileImg" :multiple="true" :label="'Thêm hình ảnh'" />
             </div>
 
             <div class="col-md-3"></div>
             <div class="col-md-9 pl-0" >
-                <!-- Attachment Old -->
                 <template v-if="objProject.attachment" >
                     <template v-for="(item,idx) in objProject.photos">
                         <p :key="idx" class="f-11 text-main ">
@@ -71,7 +70,6 @@
                         </p>
                     </template>
                 </template>
-                <!-- Attachment New -->
                 <template v-if="arrBase64.length" >
                     <template v-for="(item,idx) in arrBase64">
                         <p :key="idx" class="f-11 text-main ">
