@@ -85,7 +85,7 @@
     </div>
 
     <div class="mb-24px">
-        <div class="fieldLabel">3. Phương thức thanh toán <span class="dot">*</span></div>
+        <div class="fieldLabel d-flex">3. Phương thức thanh toán <span class="dot">*</span></div>
         <div class="row mt-20px">
             <div class="col-12 col-md-3" v-for="(item, i) in payWays" :key="i">
                 <div class="paymentItem">
