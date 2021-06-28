@@ -316,6 +316,7 @@
                 required
                 placeholder="Nhập số điện thoại của bạn"
                 v-model="objUser.phone"
+                maxlength="11"
                 pattern="(84|0[3|5|7|8|9])+([0-9]{8})\b"
               />
             </div>
