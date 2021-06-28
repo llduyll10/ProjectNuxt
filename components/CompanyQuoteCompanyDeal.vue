@@ -86,7 +86,7 @@
 
         </div>
         <!-- Show Detail payment -->
-        <DetailPaymentCompany :auction="company" />
+        <DetailPaymentCompany :auction="company" :detailProject="detailProject" />
 
     </div>
 </template>

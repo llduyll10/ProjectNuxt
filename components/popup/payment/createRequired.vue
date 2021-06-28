@@ -13,7 +13,9 @@
                             <span class="key">Tên dự án</span>
                         </div>
                         <div class="col-md-9">
-                            <span class="value text-red">{{objPayment.name}}</span>
+                            <span class="value" :class="getClassCategory(mapImgFromCategory(project.category))">
+                                {{project.name}}
+                            </span>
                         </div>
                     </div>
                     <div class="row mb-15px">
@@ -34,7 +36,7 @@
                                     type="text"
                                     class="form-control"
                                     required
-                                    v-model="objPayment.budpriceget"
+                                    v-model="objPayment.price"
                                 />
                                 <div class="input-group-append">
                                     <span class="input-group-text f-12">VND</span>
@@ -93,7 +95,7 @@
 </template>
 <script>
 export default {
-    props:[''],
+    props:['project'],
     data(){
         return{
             objPayment:{}

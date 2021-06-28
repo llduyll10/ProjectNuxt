@@ -13,7 +13,9 @@
                             <span class="key">Tên dự án</span>
                         </div>
                         <div class="col-md-9">
-                            <span class="value text-red">{{objPayment.name}}</span>
+                            <span class="value text-red"  :class="getClassCategory(mapImgFromCategory(project.category))">
+                                {{project.name}}
+                            </span>
                         </div>
                     </div>
                     <div class="row mb-15px">
@@ -80,7 +82,7 @@
 </template>
 <script>
 export default {
-    props:[''],
+    props:['project'],
     data(){
         return{
             acceptFile:['png','jpg','jpeg','tiff'],
