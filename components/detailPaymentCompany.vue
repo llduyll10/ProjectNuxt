@@ -5,15 +5,23 @@
             <div v-for="(item,idx) in auction.deal[0].payments" :key="idx" class="d-flex">
                 <span style="width:15%" class="item">Thanh toán đợt {{idx+1}}</span>
                 <span style="width:25%" class="item text-center fw-600" >20% sau khi ký hợp đồng</span>
-                <span style="width:20%" class="item text-center fw-600 text-main">Đề nghị thanh toán_Đợt 1</span>
+                <span v-if="arrRequiredPayment.length && activeRow == idx" style="width:20%" class="item text-center fw-600 text-main" @click="openModalRequired()">
+                    Đề nghị thanh toán_Đợt {{idx+1}}
+                </span>
+                <span v-else style="width:20%" class="item text-center fw-600 text-main" @click="openModalRequired(idx)">
+                     Tạo yêu cầu thanh toán
+                </span>
+
                 <span style="width:20%" class="item text-center fw-600 text-main" @click="openModalReport()">200.000.000 VNĐ </span>
-                <span v-if="statusPayment == 1" style="width:20%" class="item fw-600 text-main" @click="openModalRequired()">
+
+                <span v-if="arrRequiredPayment.length && activeRow == idx" style="width:20%" class="item fw-600 text-main" >
                     <img  src="@/assets/svg/icon-check-blue.svg" alt=""> Đã thanh toán
                 </span>
-                <span v-else-if="statusPayment == 2" style="width:20%" class="item fw-600 text-red">
+                <span v-else style="width:20%" class="item fw-600 text-red">
                     <img src="@/assets/svg/icon-cancel-red.svg" alt=""> Chưa thanh toán
                 </span>
-                <span v-else style="width:20%" class="item fw-600 text-main">
+
+                <!-- <span v-else style="width:20%" class="item fw-600 text-main">
                     <b-dropdown id="dropdown-payment"  variant="link" toggle-class="text-decoration-none" class="custom-infor" no-caret>
                         <template #button-content>
                             <img src="@/assets/svg/icon-sand-lock.svg" alt=""> Yêu cầu xác nhận
@@ -26,7 +34,7 @@
                         </b-dropdown-item>
                 </b-dropdown>
 
-                </span>
+                </span> -->
             </div>
         </div>
         <div class="group-progress">
@@ -44,7 +52,10 @@
             </div>
         </div>
         <!-- Popup payment -->
-        <PopupPaymentCreateRequired ref="createRequired" />
+        <PopupPaymentCreateRequired
+            ref="createRequired"
+            @requiredPayment="getObjRequiredPayment"
+        />
         <PopupPaymentCreateReport ref="createReport" />
     </div>
 </template>
@@ -53,12 +64,19 @@ export default {
     props:['auction'],
     data(){
         return{
-            statusPayment:1
+            statusPayment:1,
+            activeRow:null,
+            arrRequiredPayment:[]
         }
     },
     methods:{
-        openModalRequired(){
+        getObjRequiredPayment(obj){
+            console.log('getObjRequiredPayment',obj)
+            this.arrRequiredPayment.push(obj)
+        },
+        openModalRequired(activeRow){
             this.$refs.createRequired.show()
+            this.activeRow = activeRow
         },
         openModalReport(){
             this.$refs.createReport.show()

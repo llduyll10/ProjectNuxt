@@ -6,7 +6,7 @@
             <p class="title f-20 fw-600" >
                 TẠO YÊU CẦU THANH TOÁN ĐỢT 1
             </p>
-            <form action="" @submit.prevent="getForm()">
+            <form action="" @submit.prevent="sendRequirePayment()">
                 <div class="group-infor no-border pr-60px">
                     <div class="row mb-15px">
                         <div class="col-md-3">
@@ -29,7 +29,17 @@
                             <span class="key">Giá trị thanh toán</span><span class="text-red">*</span>
                         </div>
                         <div class="col-md-9">
-                            <input type="text" required class="form-control" v-model="objPayment.price">
+                            <div class="input-group ">
+                                <currency-input
+                                    type="text"
+                                    class="form-control"
+                                    required
+                                    v-model="objPayment.budpriceget"
+                                />
+                                <div class="input-group-append">
+                                    <span class="input-group-text f-12">VND</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="row mb-15px">
@@ -61,7 +71,7 @@
                             <span class="key">Số tài khoản</span><span class="text-red">*</span>
                         </div>
                         <div class="col-md-9">
-                            <input type="text" required class="form-control" v-model="objPayment.accountNumber" />
+                            <input type="text" required class="form-control" @keypress="isNumber($event)" v-model="objPayment.accountNumber" />
                         </div>
                     </div>
                 </div>
@@ -90,8 +100,10 @@ export default {
         }
     },
     methods:{
-        getForm(){
-            console.log('getForm',this.objPayment)
+        sendRequirePayment(){
+            console.log('sendRequirePayment',this.objPayment)
+            this.$emit('requiredPayment',this.objPayment)
+            this.hide()
         },
         triggerForm(status){
             this.$refs.btnSubmit.click()
