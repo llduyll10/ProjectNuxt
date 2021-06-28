@@ -202,7 +202,7 @@ export default {
                                 this.objForm = {...res.data.auction}
                                 this.isShowForm = true;
                             }else{
-                                if(res.data.auction.step === 2 && res.data.auction.survey.length && res.data.auction.statusUpdate == 'DRAFT'){
+                                if(res.data.auction.step === 1 && res.data.auction.survey.length && res.data.auction.statusUpdate == 'DRAFT'){
                                     this.objForm = {...res.data.auction,payments: res.data.auction.payments.length ? res.data.auction.payments : [{key:1,value:0}]};
                                     this.isShowForm = true;
                                     this.isUpdateQuote = true;
@@ -238,6 +238,7 @@ export default {
                 var url = `member/auction/project/${this.id}`;
                 if(this.isUpdateQuote){
                     obj.statusUpdate = status;
+                    obj.step = 2;
                 }else{
                     obj.status = status;
                 }
