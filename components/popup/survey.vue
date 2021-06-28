@@ -6,8 +6,8 @@
             <p v-if="isCancel" class="title f-19 isCancel" >
                 Huỷ yêu cầu <span class="text-main">{{objInfor.auctionBy.company || objInfor.auctionBy.name}}</span> khảo sát hiện trạng và gửi báo giá cuối cùng
             </p>
-            <p v-else class="title f-20" >
-                CHỌN <span>{{objInfor.auctionBy.company || objInfor.auctionBy.name}}</span> KHẢO SÁT VÀ CẬP NHẬT GIÁ CẢ
+            <p v-else class="title f-20 main-black" >
+                CHỌN <span class="text-main">{{objInfor.auctionBy.company || objInfor.auctionBy.name}}</span> KHẢO SÁT VÀ CẬP NHẬT GIÁ CẢ
             </p>
             <form @submit.prevent="sendMessage()" class="group-content mt-20px">
                 <div class="form-group row">
