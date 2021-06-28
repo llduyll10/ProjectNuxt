@@ -182,6 +182,7 @@ export default {
                 }
                 this.loader(0)
                 this.hide()
+                window.location.reload()
             }
             catch(err){
                 console.log(err)
