@@ -6,8 +6,8 @@
             <p v-if="isCancel" class="title f-19 isCancel" >
                 Huỷ yêu cầu <span class="text-main">{{objInfor.auctionBy.company || objInfor.auctionBy.name}}</span> khảo sát hiện trạng và gửi báo giá cuối cùng
             </p>
-            <p v-else class="title f-20" >
-                CHỌN <span>{{objInfor.auctionBy.company || objInfor.auctionBy.name}}</span> KHẢO SÁT VÀ CẬP NHẬT GIÁ CẢ
+            <p v-else class="title f-20 main-black" >
+                CHỌN <span class="text-main">{{objInfor.auctionBy.company || objInfor.auctionBy.name}}</span> KHẢO SÁT VÀ CẬP NHẬT GIÁ CẢ
             </p>
             <form @submit.prevent="sendMessage()" class="group-content mt-20px">
                 <div class="form-group row">
@@ -161,7 +161,7 @@ export default {
             accepFile:["png", "jpg", "jpeg" , "tiff", "pdf", "xls", "doc", "ppt", "zip", "rar"],
             options: this.getCategory(),
             date: new Date(),
-            placeholder:'1. Mô tả chi tiết về dự án xây dựng hoặc yêu cầu thiết kế của bạn\n2. Vui lòng đính kèm sổ đỏ, bản vẽ, thiết kế hoặc hình ảnh minh hoạ để nhận được tư vấn/dự toán tốt nhất.\n3. Yêu cầu năng lực của đơn vị báo giá hoặc những yêu cầu khác',
+            placeholder:'Xin chào, mình có xem qua hồ sơ năng lực và tư vấn của công ty. Mình quyết định chọn công ty khảo sát hiện trạng công trình và làm việc kỹ hơn về giải pháp thi công để nhận được báo giá cuối cùng vá giải pháp chính xác nhất cho công trình',
             isCancel:false
         }
     },
