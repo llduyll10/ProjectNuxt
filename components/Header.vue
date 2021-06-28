@@ -350,6 +350,7 @@
             <div class="w-100 text-center">
               <button type="submit" class="btn btn-theme theme-blue mt-16px">Đăng ký</button>
             </div>
+            <small class="text-danger" v-if="error">{{error}}</small>
           </form>
           <div class="mt-30px w-100 option">
             <hr />
@@ -418,11 +419,14 @@ export default {
       this.$auth.logout();
     },
     async createUser(){
+      this.error = null;
       try{
         let res =  await this.$post('signup', this.objUser)
         if(res.data.status === true){
           this.hideModalRegister()
           this.openModalLogin()
+        }else{
+            this.error = res.data.msg;
         }
       }
       catch(err){
