@@ -107,6 +107,9 @@ export default {
             this.$emit('requiredPayment',this.objPayment)
             this.hide()
         },
+        updateObjectRequired(obj){
+            this.objPayment = {...obj}
+        },
         triggerForm(status){
             this.$refs.btnSubmit.click()
         },

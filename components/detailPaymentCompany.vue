@@ -7,9 +7,9 @@
                 <span style="width:25%" class="item text-center fw-600" >{{item.value}}</span>
 
                 <span v-if="arrRequiredPayment.length && idx == arrRequiredPayment[idx].paymentId"
-                        style="width:20%"
+                        style="width:20%;text-decoration:underline;"
                         class="item text-center text-underline fw-600 text-main"
-                        @click="openModalRequired()">
+                        @click="openModalRequiredUpdate(arrRequiredPayment[idx])">
                     Đề nghị thanh toán_Đợt {{idx+1}}
                 </span>
                 <span   v-else style="width:20%"
@@ -23,7 +23,13 @@
                         v-if="arrRequiredPayment.length && idx == arrRequiredPayment[idx].paymentId"
                         @click="openModalReport()">
                     {{formatVnd(arrRequiredPayment[idx].price)}} VND
+                </span>
+
+                <span   v-else style="width:20%" class="item text-center fw-600 text-main"
+                        @click="openModalReport()">
+                    -
                  </span>
+
                 <template v-if="arrRequiredPayment.length">
                     <span v-if="arrRequiredPayment.length && idx == arrRequiredPayment[idx].paymentId" style="width:20%" class="item fw-600 text-main" >
                         <img  src="@/assets/svg/icon-check-blue.svg" alt=""> Đã thanh toán
@@ -93,7 +99,7 @@ export default {
         getObjRequiredPayment(obj){
             var objRequired = {
                 ...obj,
-                paymentId: this.activeRow,
+                paymentId: objRequired ? objRequired.paymentId : this.activeRow,
                 project:this.auction.deal[0].project,
                 auction:this.auction.deal[0].auction,
             }
@@ -125,6 +131,10 @@ export default {
         openModalRequired(activeRow){
             this.$refs.createRequired.show()
             this.activeRow = activeRow
+        },
+        openModalRequiredUpdate(objRequired){
+            this.$refs.createRequired.updateObjectRequired(objRequired)
+            this.$refs.createRequired.show()
         },
         openModalReport(){
             this.$refs.createReport.show()
