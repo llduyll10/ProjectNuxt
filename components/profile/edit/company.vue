@@ -56,7 +56,6 @@
                             placeholder="Giới thiệu về công ty/tổ chức của bạn. Nếu là Freelancer, mô tả về quá trình làm việc của bạn"
                             rows="12"
                             v-model="objWorking.introduce"
-                            required
                         />
                     </div>
                 </div>
@@ -73,7 +72,6 @@
                             class="form-control"
                             placeholder="Mô tả năng lực của bạn/công ty bạn và tại sao chủ đầu tư nên chọn bạn"
                             v-model="objWorking.ability"
-                            required
                         />
                     </div>
                 </div>
