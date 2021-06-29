@@ -37,6 +37,7 @@ package:
     - store/**
     - mixins/**
     - plugins/**
+    - node_modules/**
 
   include:
     # ensures that the build output gets packaged
