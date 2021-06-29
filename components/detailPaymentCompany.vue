@@ -6,10 +6,10 @@
                 <span style="width:15%" class="item">Thanh toán đợt {{idx+1}}</span>
                 <span style="width:25%" class="item text-center fw-600" >{{item.value}}</span>
 
-                <span v-if="arrRequiredPayment.length && idx == arrRequiredPayment[idx].paymentId"
+                <span v-if="arrRequiredPayment && item.paymentAuction"
                         style="width:20%;text-decoration:underline;"
-                        class="item text-center text-underline fw-600 text-main"
-                        @click="openModalRequiredUpdate(arrRequiredPayment[idx])">
+                        class="item text-center text-underline fw-600 text-main cursor-pointer"
+                        @click="openModalRequiredUpdate(item.paymentAuction)">
                     Đề nghị thanh toán_Đợt {{idx+1}}
                 </span>
                 <span   v-else style="width:20%"
@@ -20,9 +20,9 @@
 
 
                 <span   style="width:20%" class="item text-center fw-600 text-main"
-                        v-if="arrRequiredPayment.length && idx == arrRequiredPayment[idx].paymentId"
+                        v-if="arrRequiredPayment && item.paymentAuction"
                         @click="openModalReport()">
-                    {{formatVnd(arrRequiredPayment[idx].price)}} VND
+                    {{formatVnd(item.paymentAuction.price)}} VND
                 </span>
 
                 <span   v-else style="width:20%" class="item text-center fw-600 text-main"
@@ -30,8 +30,8 @@
                     -
                  </span>
 
-                <template v-if="arrRequiredPayment.length">
-                    <span v-if="arrRequiredPayment.length && idx == arrRequiredPayment[idx].paymentId" style="width:20%" class="item fw-600 text-main" >
+                <template v-if="arrRequiredPayment && item.paymentAuction">
+                    <span v-if="item.paymentAuction" style="width:20%" class="item fw-600 text-main" >
                         <img  src="@/assets/svg/icon-check-blue.svg" alt=""> Đã thanh toán
                     </span>
                     <span v-else style="width:20%" class="item fw-600 text-red">
@@ -123,10 +123,23 @@ export default {
                 .then(res => {
                     console.log('payments-by-auction',res)
                     this.arrRequiredPayment = res.data
+                    this.mapAuction()
                 })
                 .catch(err => {
                     console.log(err)
                 })
+        },
+        mapAuction(){
+            var arrTmp1 = JSON.parse(JSON.stringify(this.auction.deal[0].payments)) || []
+            var arrTmp2 = JSON.parse(JSON.stringify(this.arrRequiredPayment)) || []
+            arrTmp1.forEach((item1,index) => {
+                arrTmp2.forEach(item2 => {
+                    if(index == item2.paymentId){
+                        item1.paymentAuction = item2
+                    }
+                })
+            })
+            this.auction.deal[0].payments = arrTmp1
         },
         openModalRequired(activeRow){
             this.$refs.createRequired.show()
