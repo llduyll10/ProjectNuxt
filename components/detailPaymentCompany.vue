@@ -38,6 +38,9 @@
                         <img src="@/assets/svg/icon-cancel-red.svg" alt="" class="mb-2px"> Chưa thanh toán
                     </span>
                 </template>
+                <template v-else>
+                    <span style="width:20%" class="item"></span>
+                </template>
                 <!-- <span v-else style="width:20%" class="item fw-600 text-main">
                     <b-dropdown id="dropdown-payment"  variant="link" toggle-class="text-decoration-none" class="custom-infor" no-caret>
                         <template #button-content>
