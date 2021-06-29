@@ -9,7 +9,7 @@
                 <span v-if="arrRequiredPayment && item.paymentAuction"
                         style="width:20%;text-decoration:underline;"
                         class="item text-center text-underline fw-600 text-main cursor-pointer"
-                        @click="openModalRequiredUpdate(item.paymentAuction)">
+                        @click="openModalRequiredUpdate(item.paymentAuction,idx)">
                     Đề nghị thanh toán_Đợt {{idx+1}}
                 </span>
                 <span   v-else style="width:20%"
@@ -25,17 +25,17 @@
                     {{formatVnd(item.paymentAuction.price)}} VND
                 </span>
 
-                <span   v-else style="width:20%" class="item text-center fw-600 text-main"
+                <span   v-else style="width:40%" class="item"
                         @click="openModalReport()">
-                    -
+
                  </span>
 
-                <template v-if="arrRequiredPayment && item.paymentAuction">
-                    <span v-if="item.paymentAuction" style="width:20%" class="item fw-600 text-main" >
+                <template v-if="arrRequiredPayment && item.paymentAuction && item.paymentAuction.status != 'DRAFT' ">
+                    <!-- <span v-if="item.paymentAuction" style="width:20%" class="item fw-600 text-main" >
                         <img  src="@/assets/svg/icon-check-blue.svg" alt=""> Đã thanh toán
-                    </span>
-                    <span v-else style="width:20%" class="item fw-600 text-red">
-                        <img src="@/assets/svg/icon-cancel-red.svg" alt=""> Chưa thanh toán
+                    </span> -->
+                    <span v-if="item.paymentAuction.status == 'PENDING' " style="width:20%" class="item fw-600 text-red">
+                        <img src="@/assets/svg/icon-cancel-red.svg" alt="" class="mb-2px"> Chưa thanh toán
                     </span>
                 </template>
                 <!-- <span v-else style="width:20%" class="item fw-600 text-main">
@@ -54,6 +54,10 @@
                 </span> -->
             </div>
         </div>
+
+
+
+
         <div class="group-progress">
             <p class="fw-600 f-16 mt-25px mb-16px">Báo cáo tiến độ</p>
             <div v-for="(item,idx) in auction.deal[0].payments" :key="idx" class="d-flex">
@@ -73,6 +77,7 @@
             ref="createRequired"
             @requiredPayment="getObjRequiredPayment"
             :project="detailProject"
+            :activeRow="activeRow"
         />
         <PopupPaymentCreateReport
             ref="createReport"
@@ -86,7 +91,7 @@ export default {
     data(){
         return{
             statusPayment:1,
-            activeRow:null,
+            activeRow:0,
             arrRequiredPayment:[],
         }
     },
@@ -107,6 +112,15 @@ export default {
             this.$post('member/payments',objRequired)
                 .then(res => {
                     console.log('payments',res)
+                    var objNext = {
+                        project:this.auction.deal[0].project,
+                        auction:this.auction.deal[0].auction,
+                    }
+                    return  this.$post('member/payments-by-auction',objNext)
+                })
+                .then(res2 => {
+                    this.arrRequiredPayment = res2.data
+                    this.mapAuction()
                     this.loader(0)
                 })
                 .catch(err => {
@@ -143,9 +157,12 @@ export default {
         },
         openModalRequired(activeRow){
             this.$refs.createRequired.show()
+            this.$refs.createRequired.updateObjectRequired({})
             this.activeRow = activeRow
         },
-        openModalRequiredUpdate(objRequired){
+        openModalRequiredUpdate(objRequired,activeRow){
+            //Update row
+            this.activeRow = activeRow
             this.$refs.createRequired.updateObjectRequired(objRequired)
             this.$refs.createRequired.show()
         },
