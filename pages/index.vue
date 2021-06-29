@@ -293,7 +293,6 @@ export default {
     getHighProject(){
       this.$get('public/projects-top-6')
           .then(res => {
-            console.log('res highlight',res)
             this.listTop = res.data
           })
           .catch(err =>{

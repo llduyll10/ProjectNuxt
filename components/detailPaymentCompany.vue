@@ -37,6 +37,9 @@
                     <span v-else-if="item.paymentAuction.status == 'PENDING' " style="width:20%" class="item fw-600 text-red">
                         <img src="@/assets/svg/icon-cancel-red.svg" alt="" class="mb-2px"> Chưa thanh toán
                     </span>
+                    <span v-else-if="item.paymentAuction.status == 'CANCEL' " style="width:20%" class="item fw-600 text-red">
+                        <img src="@/assets/svg/icon-cancel-red.svg" alt="" class="mb-2px"> Từ chối thanh toán
+                    </span>
                 </template>
                 <template v-else>
                     <span style="width:20%" class="item"></span>
@@ -114,7 +117,6 @@ export default {
             this.loader()
             this.$post('member/payments',objRequired)
                 .then(res => {
-                    console.log('payments',res)
                     var objNext = {
                         project:this.auction.deal[0].project,
                         auction:this.auction.deal[0].auction,
@@ -138,7 +140,6 @@ export default {
             }
             this.$post('member/payments-by-auction',obj)
                 .then(res => {
-                    console.log('payments-by-auction',res)
                     this.arrRequiredPayment = res.data
                     this.mapAuction()
                 })

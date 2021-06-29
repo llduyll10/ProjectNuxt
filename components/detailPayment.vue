@@ -1,5 +1,5 @@
 <template>
-    <div class="detail-payment-component" v-if="auction">
+    <div class="detail-payment-component" v-if="auction" >
         <div class="group-payment">
             <p class="fw-600 f-16 mb-16px">Thanh toán</p>
             <div v-for="(item,idx) in auction.deal[0].payments" :key="idx" class="d-flex">
@@ -13,7 +13,7 @@
                     Đề nghị thanh toán_Đợt {{idx+1}}
                 </span>
                 <span   v-else style="width:20%"
-                        class="item text-center cursor-pointer main-black f-12"
+                        class="item text-center cursor-pointer main-black"
                         >
                     Chưa có đề nghị thanh toán
                 </span>
@@ -25,18 +25,19 @@
                     {{formatVnd(item.paymentAuction.price)}} VND
                 </span>
 
-                <span   v-else style="width:40%" class="item"
+                <span   v-else style="width:20%" class="item"
                         @click="openModalReport()">
 
                  </span>
 
-                <template v-if="arrRequiredPayment && item.paymentAuction && item.paymentAuction.status != 'DRAFT' ">
+                <template v-if="arrRequiredPayment && item.paymentAuction && item.paymentAuction.status != 'DRAFT' && item.paymentAuction.status != 'CANCEL'">
                     <span v-if="item.paymentAuction.status == 'DONE'" style="width:20%" class="item fw-600 text-main" >
                         <img  src="@/assets/svg/icon-check-blue.svg" alt=""> Đã thanh toán
                     </span>
                     <span v-else-if="item.paymentAuction.status == 'PENDING' " style="width:20%" class="item fw-600 text-red">
                         <img src="@/assets/svg/icon-cancel-red.svg" alt="" class="mb-2px"> Chưa thanh toán
                     </span>
+
                 </template>
                 <template v-else>
                     <span style="width:20%" class="item"></span>
@@ -115,7 +116,6 @@ export default {
             this.loader()
             this.$post('member/payments',objRequired)
                 .then(res => {
-                    console.log('payments',res)
                     var objNext = {
                         project:this.auction.deal[0].project,
                         auction:this.auction.deal[0].auction,
@@ -125,10 +125,10 @@ export default {
                 .then(res2 => {
                     this.arrRequiredPayment = res2.data
                     this.mapAuction()
+                    window.location.reload()
                     this.loader(0)
                 })
                 .catch(err => {
-                    console.log(err)
                     this.loader(0)
                 })
         },
@@ -139,7 +139,6 @@ export default {
             }
             this.$post('member/payments-by-auction',obj)
                 .then(res => {
-                    console.log('payments-by-auction',res)
                     this.arrRequiredPayment = res.data
                     this.mapAuction()
                 })
@@ -149,10 +148,10 @@ export default {
         },
         mapAuction(){
             var arrTmp1 = JSON.parse(JSON.stringify(this.auction.deal[0].payments)) || []
-            var arrTmp2 = JSON.parse(JSON.stringify(this.arrRequiredPayment)) || []
+            var arrTmp2 = this.arrRequiredPayment
             arrTmp1.forEach((item1,index) => {
                 arrTmp2.forEach(item2 => {
-                    if(index == item2.paymentId){
+                    if(index == item2.paymentId && item2.status != 'DRAFT' && item2.status != 'CANCEL' ){
                         item1.paymentAuction = item2
                     }
                 })
