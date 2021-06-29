@@ -31,10 +31,10 @@
                  </span>
 
                 <template v-if="arrRequiredPayment && item.paymentAuction && item.paymentAuction.status != 'DRAFT' ">
-                    <!-- <span v-if="item.paymentAuction" style="width:20%" class="item fw-600 text-main" >
+                    <span v-if="item.paymentAuction.status == 'DONE'" style="width:20%" class="item fw-600 text-main" >
                         <img  src="@/assets/svg/icon-check-blue.svg" alt=""> Đã thanh toán
-                    </span> -->
-                    <span v-if="item.paymentAuction.status == 'PENDING' " style="width:20%" class="item fw-600 text-red">
+                    </span>
+                    <span v-else-if="item.paymentAuction.status == 'PENDING' " style="width:20%" class="item fw-600 text-red">
                         <img src="@/assets/svg/icon-cancel-red.svg" alt="" class="mb-2px"> Chưa thanh toán
                     </span>
                 </template>

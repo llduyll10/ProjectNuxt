@@ -74,7 +74,7 @@
                                 <span>Thông tin liên hệ</span>
                             </div>
                         </div>
-                       
+
                     </template>
 
 
@@ -245,7 +245,7 @@
                         </template>
 
                     </template>
-        
+
 
                 </template>
                 <!-- NOT ACTIVE -->
@@ -267,7 +267,7 @@
         </div>
         <!-- Show Detail payment -->
         <template v-if="company.step == 3 && company.deal.length && company.deal[0].status == 'OK' ">
-            <DetailPayment :auction="company" />
+            <DetailPayment :auction="company" :detailProject="detailProject" />
         </template>
 
         <PopupLienheform ref="LienHeFormPop" :isService="true" :title="detailProject.name" :rawCategory="rawCategory" />
