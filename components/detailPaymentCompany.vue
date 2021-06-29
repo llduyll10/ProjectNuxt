@@ -5,18 +5,33 @@
             <div v-for="(item,idx) in auction.deal[0].payments" :key="idx" class="d-flex">
                 <span style="width:15%" class="item">Thanh toán đợt {{idx+1}}</span>
                 <span style="width:25%" class="item text-center fw-600" >{{item.value}}</span>
-                <span v-if="arrRequiredPayment.length && activeRow == idx" style="width:20%" class="item text-center fw-600 text-main" @click="openModalRequired()">
+
+                <span v-if="arrRequiredPayment && item.paymentAuction"
+                        style="width:20%;text-decoration:underline;"
+                        class="item text-center text-underline fw-600 text-main cursor-pointer"
+                        @click="openModalRequiredUpdate(item.paymentAuction)">
                     Đề nghị thanh toán_Đợt {{idx+1}}
                 </span>
                 <span   v-else style="width:20%"
-                        class="item text-center cursor-pointer fw-600 text-main"
+                        class="item text-center cursor-pointer  text-main"
                         @click="openModalRequired(idx)">
                     Tạo yêu cầu thanh toán
                 </span>
 
-                <span style="width:20%" class="item text-center fw-600 text-main" @click="openModalReport()">200.000.000 VNĐ </span>
-                <template v-if="arrRequiredPayment.length">
-                    <span v-if="arrRequiredPayment.length && activeRow == idx" style="width:20%" class="item fw-600 text-main" >
+
+                <span   style="width:20%" class="item text-center fw-600 text-main"
+                        v-if="arrRequiredPayment && item.paymentAuction"
+                        @click="openModalReport()">
+                    {{formatVnd(item.paymentAuction.price)}} VND
+                </span>
+
+                <span   v-else style="width:20%" class="item text-center fw-600 text-main"
+                        @click="openModalReport()">
+                    -
+                 </span>
+
+                <template v-if="arrRequiredPayment && item.paymentAuction">
+                    <span v-if="item.paymentAuction" style="width:20%" class="item fw-600 text-main" >
                         <img  src="@/assets/svg/icon-check-blue.svg" alt=""> Đã thanh toán
                     </span>
                     <span v-else style="width:20%" class="item fw-600 text-red">
@@ -72,27 +87,67 @@ export default {
         return{
             statusPayment:1,
             activeRow:null,
-            arrRequiredPayment:[]
+            arrRequiredPayment:[],
         }
     },
     mounted(){
         console.log('auction',this.auction)
         console.log('detailProject',this.detailProject)
+        this.getPaymentByAuction()
     },
     methods:{
         getObjRequiredPayment(obj){
             var objRequired = {
                 ...obj,
-                paymentId: this.activeRow,
+                paymentId: objRequired ? objRequired.paymentId : this.activeRow,
                 project:this.auction.deal[0].project,
                 auction:this.auction.deal[0].auction,
             }
-            console.log('objRequired',objRequired)
-            this.arrRequiredPayment.push(objRequired)
+            this.loader()
+            this.$post('member/payments',objRequired)
+                .then(res => {
+                    console.log('payments',res)
+                    this.loader(0)
+                })
+                .catch(err => {
+                    console.log(err)
+                    this.loader(0)
+                })
+        },
+        getPaymentByAuction(){
+            var obj = {
+                project:this.auction.deal[0].project,
+                auction:this.auction.deal[0].auction,
+            }
+            this.$post('member/payments-by-auction',obj)
+                .then(res => {
+                    console.log('payments-by-auction',res)
+                    this.arrRequiredPayment = res.data
+                    this.mapAuction()
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+        },
+        mapAuction(){
+            var arrTmp1 = JSON.parse(JSON.stringify(this.auction.deal[0].payments)) || []
+            var arrTmp2 = JSON.parse(JSON.stringify(this.arrRequiredPayment)) || []
+            arrTmp1.forEach((item1,index) => {
+                arrTmp2.forEach(item2 => {
+                    if(index == item2.paymentId){
+                        item1.paymentAuction = item2
+                    }
+                })
+            })
+            this.auction.deal[0].payments = arrTmp1
         },
         openModalRequired(activeRow){
             this.$refs.createRequired.show()
             this.activeRow = activeRow
+        },
+        openModalRequiredUpdate(objRequired){
+            this.$refs.createRequired.updateObjectRequired(objRequired)
+            this.$refs.createRequired.show()
         },
         openModalReport(){
             this.$refs.createReport.show()
