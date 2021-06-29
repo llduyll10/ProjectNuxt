@@ -25,11 +25,18 @@ functions:
       - http: ANY /{proxy+}
 
 package:
+  individually: true
   exclude:
     - pages
     - components
     - layout
     - pages
+    - assets
+    - node_modules
+    - static
+    - store
+    - mixins
+    - plugins
 
   include:
     # ensures that the build output gets packaged
