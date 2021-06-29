@@ -25,6 +25,19 @@ functions:
       - http: ANY /{proxy+}
 
 package:
+  individually: true
+  exclude:
+    - pages/**
+    - components/**
+    - layouts/**
+    - pages/**
+    - assets/**
+    - middleware/**
+    - static/**
+    - store/**
+    - mixins/**
+    - plugins/**
+
   include:
     # ensures that the build output gets packaged
     - .nuxt/**

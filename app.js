@@ -11,6 +11,7 @@ const nuxt = new Nuxt({
   dev: false,
   _start: true
 })
+
 // Provide Assets
 app.use('/_nuxt', express.static(path.join(__dirname, '.nuxt', 'dist')));
 
