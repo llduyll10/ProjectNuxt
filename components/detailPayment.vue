@@ -124,8 +124,9 @@ export default {
                 })
                 .then(res2 => {
                     this.arrRequiredPayment = res2.data
+                    this.auction.deal[0].payments.forEach(item => delete item.paymentAuction)
                     this.mapAuction()
-                    window.location.reload()
+
                     this.loader(0)
                 })
                 .catch(err => {
@@ -147,6 +148,8 @@ export default {
                 })
         },
         mapAuction(){
+            console.log('arrRequiredPayment',this.arrRequiredPayment)
+            console.log('this.auction.deal[0].payments',this.auction.deal[0].payments)
             var arrTmp1 = JSON.parse(JSON.stringify(this.auction.deal[0].payments)) || []
             var arrTmp2 = this.arrRequiredPayment
             arrTmp1.forEach((item1,index) => {

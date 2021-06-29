@@ -125,6 +125,7 @@ export default {
                 })
                 .then(res2 => {
                     this.arrRequiredPayment = res2.data
+                    this.auction.deal[0].payments.forEach(item => delete item.paymentAuction)
                     this.mapAuction()
                     this.loader(0)
                 })
