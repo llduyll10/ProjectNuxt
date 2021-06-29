@@ -25,6 +25,12 @@ functions:
       - http: ANY /{proxy+}
 
 package:
+  exclude:
+    - pages
+    - components
+    - layout
+    - pages
+
   include:
     # ensures that the build output gets packaged
     - .nuxt/**
