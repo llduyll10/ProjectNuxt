@@ -29,10 +29,10 @@ package:
   exclude:
     - pages/**
     - components/**
-    - layout/**
+    - layouts/**
     - pages/**
     - assets/**
-    - node_modules/**
+    - middleware/**
     - static/**
     - store/**
     - mixins/**
