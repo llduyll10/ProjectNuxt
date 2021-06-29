@@ -86,7 +86,7 @@
 
         </div>
         <!-- Show Detail payment -->
-        <DetailPaymentCompany :auction="company" :detailProject="detailProject" />
+        <DetailPaymentCompany :auction="company" :detailProject="detailProject"  @getPageAgain="getPageAgain" />
 
     </div>
 </template>
@@ -100,7 +100,9 @@ export default {
     mounted(){
     },
     methods:{
-
+        getPageAgain(){
+            this.$emit('getDetailAgain')
+        }
     }
 }
 </script>

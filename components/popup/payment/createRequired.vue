@@ -4,7 +4,7 @@
         <div class="modal-contact formCore" >
           <div class="content">
             <p class="title f-20 fw-600" >
-                TẠO YÊU CẦU THANH TOÁN ĐỢT 1
+                TẠO YÊU CẦU THANH TOÁN ĐỢT {{activeRow+1}}
             </p>
             <form action="" @submit.prevent="sendRequirePayment()">
                 <div class="group-infor no-border pr-60px">
@@ -77,7 +77,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="footer d-flex">
+                <div class="footer d-flex" v-if="objPayment && objPayment.status != 'DONE' ">
                     <button ref="btnSubmit" class="d-none" type="submit"></button>
                     <div @click="triggerForm('CREATE')" class="btn-confirm flex-1">
                         <span>TẠO YÊU CẦU THANH TOÁN</span>
@@ -95,7 +95,7 @@
 </template>
 <script>
 export default {
-    props:['project'],
+    props:['project','activeRow'],
     data(){
         return{
             objPayment:{}
@@ -111,6 +111,12 @@ export default {
             this.objPayment = {...obj}
         },
         triggerForm(status){
+            if(status == 'DRAFT'){
+                this.objPayment.status = 'DRAFT'
+            }
+            else{
+                this.objPayment.status = 'PENDING'
+            }
             this.$refs.btnSubmit.click()
         },
         show() {
@@ -119,7 +125,7 @@ export default {
         hide(){
             this.$refs.createRequired.hideModal()
         },
-    }
+    },
 
 }
 </script>
