@@ -42,6 +42,10 @@ package:
   include:
     # ensures that the build output gets packaged
     - .nuxt/**
+    - node_modules/aws-serverless-express/**
+    - node_modules/express/**
+    - node_modules/nuxt/**
+
 
 plugins:
   - serverless-offline
