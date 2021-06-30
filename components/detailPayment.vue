@@ -109,6 +109,7 @@ export default {
                 paymentId: objRequired ? objRequired.paymentId : this.activeRow,
                 project:this.auction.deal[0].project,
                 auction:this.auction.deal[0].auction,
+                ownerProject:this.detailProject._id
             }
             this.loader()
             this.$post('member/payments',objRequired)

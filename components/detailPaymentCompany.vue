@@ -1,7 +1,7 @@
 <template>
     <div class="detail-payment-component" v-if="auction">
         <div class="group-payment">
-            <p class="fw-600 f-16 mb-16px">Thanh toán</p>
+            <p class="fw-600 f-16 mb-16px">Thanh toán <pre>{{detailProject}}</pre> </p>
             <div v-for="(item,idx) in auction.deal[0].payments" :key="idx" class="d-flex">
                 <span style="width:15%" class="item">Thanh toán đợt {{idx+1}}</span>
                 <span style="width:25%" class="item text-center fw-600" >{{item.value}}</span>
@@ -65,7 +65,7 @@
             <p class="fw-600 f-16 mt-25px mb-16px">Báo cáo tiến độ</p>
             <div v-for="(item,idx) in auction.deal[0].payments" :key="idx" class="d-flex">
                 <span style="width:15%" class="item">{{idx+1}}. Tuần {{idx+1}}</span>
-                <span style="width:25%" class="item text-center fw-600" @click="openModalReport(idx)">Tiến độ thi công tuần thứ {{idx+1}}</span>
+                <span style="width:25%" class="item text-center fw-600 cursor-pointer" @click="openModalReport(idx)">Tiến độ thi công tuần thứ {{idx+1}}</span>
                 <span style="width:60%" class="item d-flex">
                     Đánh giá:
                     <div  class="group-star">
@@ -110,6 +110,7 @@ export default {
                 paymentId: objRequired ? objRequired.paymentId : this.activeRow,
                 project:this.auction.deal[0].project,
                 auction:this.auction.deal[0].auction,
+                ownerProject:this.detailProject._id
             }
             this.loader()
             this.$post('member/payments',objRequired)

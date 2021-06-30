@@ -2,136 +2,136 @@
   {
     "name": "chi-tiet",
     "path": "/chi-tiet",
-    "component": "/Users/alex/econs-frontend/pages/chi-tiet.vue",
+    "component": "/Users/duynnd/Documents/Leader/pages/chi-tiet.vue",
     "chunkName": "pages/chi-tiet",
-    "_name": "_beff5eb6"
+    "_name": "_13f4226c"
   },
   {
     "name": "hom-aid",
     "path": "/hom-aid",
-    "component": "/Users/alex/econs-frontend/pages/hom-aid.vue",
+    "component": "/Users/duynnd/Documents/Leader/pages/hom-aid.vue",
     "chunkName": "pages/hom-aid",
     "children": [
       {
         "name": "hom-aid-cau-hoi-thuong-gap",
         "path": "cau-hoi-thuong-gap",
-        "component": "/Users/alex/econs-frontend/pages/hom-aid/cau-hoi-thuong-gap.vue",
+        "component": "/Users/duynnd/Documents/Leader/pages/hom-aid/cau-hoi-thuong-gap.vue",
         "chunkName": "pages/hom-aid/cau-hoi-thuong-gap",
-        "_name": "_37870ec3"
+        "_name": "_650ac66c"
       },
       {
         "name": "hom-aid-co-hoi-nghe-nghiep",
         "path": "co-hoi-nghe-nghiep",
-        "component": "/Users/alex/econs-frontend/pages/hom-aid/co-hoi-nghe-nghiep.vue",
+        "component": "/Users/duynnd/Documents/Leader/pages/hom-aid/co-hoi-nghe-nghiep.vue",
         "chunkName": "pages/hom-aid/co-hoi-nghe-nghiep",
-        "_name": "_bb43957c"
+        "_name": "_3851c349"
       },
       {
         "name": "hom-aid-gioi-thieu",
         "path": "gioi-thieu",
-        "component": "/Users/alex/econs-frontend/pages/hom-aid/gioi-thieu.vue",
+        "component": "/Users/duynnd/Documents/Leader/pages/hom-aid/gioi-thieu.vue",
         "chunkName": "pages/hom-aid/gioi-thieu",
-        "_name": "_62650ae6"
+        "_name": "_5462e026"
       },
       {
         "name": "hom-aid-lien-he",
         "path": "lien-he",
-        "component": "/Users/alex/econs-frontend/pages/hom-aid/lien-he.vue",
+        "component": "/Users/duynnd/Documents/Leader/pages/hom-aid/lien-he.vue",
         "chunkName": "pages/hom-aid/lien-he",
-        "_name": "_29d542e2"
+        "_name": "_14ae333b"
       },
       {
         "name": "hom-aid-tin-tuc-va-thi-truong",
         "path": "tin-tuc-va-thi-truong",
-        "component": "/Users/alex/econs-frontend/pages/hom-aid/tin-tuc-va-thi-truong.vue",
+        "component": "/Users/duynnd/Documents/Leader/pages/hom-aid/tin-tuc-va-thi-truong.vue",
         "chunkName": "pages/hom-aid/tin-tuc-va-thi-truong",
-        "_name": "_5a92186a"
+        "_name": "_5c4ef903"
       }
     ],
-    "_name": "_c7468fa6"
+    "_name": "_d057dcf4"
   },
   {
     "name": "thue-nha-thau",
     "path": "/thue-nha-thau",
-    "component": "/Users/alex/econs-frontend/pages/thue-nha-thau.vue",
+    "component": "/Users/duynnd/Documents/Leader/pages/thue-nha-thau.vue",
     "chunkName": "pages/thue-nha-thau",
-    "_name": "_5fa2f522"
+    "_name": "_f5ec8ff0"
   },
   {
     "name": "tim-du-an",
     "path": "/tim-du-an",
-    "component": "/Users/alex/econs-frontend/pages/tim-du-an.vue",
+    "component": "/Users/duynnd/Documents/Leader/pages/tim-du-an.vue",
     "chunkName": "pages/tim-du-an",
-    "_name": "_e7362228"
+    "_name": "_f12953f6"
   },
   {
     "name": "tin-tuc",
     "path": "/tin-tuc",
-    "component": "/Users/alex/econs-frontend/pages/tin-tuc.vue",
+    "component": "/Users/duynnd/Documents/Leader/pages/tin-tuc.vue",
     "chunkName": "pages/tin-tuc",
-    "_name": "_73235746"
+    "_name": "_6e9ab09f"
   },
   {
     "name": "member-chinh-sua-ho-so",
     "path": "/member/chinh-sua-ho-so",
-    "component": "/Users/alex/econs-frontend/pages/member/chinh-sua-ho-so.vue",
+    "component": "/Users/duynnd/Documents/Leader/pages/member/chinh-sua-ho-so.vue",
     "chunkName": "pages/member/chinh-sua-ho-so",
-    "_name": "_fb3c1b30"
+    "_name": "_6be39bef"
   },
   {
     "name": "member-dang-viec",
     "path": "/member/dang-viec",
-    "component": "/Users/alex/econs-frontend/pages/member/dang-viec.vue",
+    "component": "/Users/duynnd/Documents/Leader/pages/member/dang-viec.vue",
     "chunkName": "pages/member/dang-viec",
-    "_name": "_3ca1820b"
+    "_name": "_a632c65c"
   },
   {
     "name": "member-quan-ly-tai-chinh",
     "path": "/member/quan-ly-tai-chinh",
-    "component": "/Users/alex/econs-frontend/pages/member/quan-ly-tai-chinh.vue",
+    "component": "/Users/duynnd/Documents/Leader/pages/member/quan-ly-tai-chinh.vue",
     "chunkName": "pages/member/quan-ly-tai-chinh",
-    "_name": "_5631e3a8"
+    "_name": "_64a471f3"
   },
   {
     "name": "member-quan-ly-tin-nhan",
     "path": "/member/quan-ly-tin-nhan",
-    "component": "/Users/alex/econs-frontend/pages/member/quan-ly-tin-nhan.vue",
+    "component": "/Users/duynnd/Documents/Leader/pages/member/quan-ly-tin-nhan.vue",
     "chunkName": "pages/member/quan-ly-tin-nhan",
-    "_name": "_162e422c"
+    "_name": "_5ce1c985"
   },
   {
     "name": "member-quan-ly-du-an-khach-hang",
     "path": "/member/quan-ly-du-an/khach-hang",
-    "component": "/Users/alex/econs-frontend/pages/member/quan-ly-du-an/khach-hang.vue",
+    "component": "/Users/duynnd/Documents/Leader/pages/member/quan-ly-du-an/khach-hang.vue",
     "chunkName": "pages/member/quan-ly-du-an/khach-hang",
-    "_name": "_aaf055a6"
+    "_name": "_308ef386"
   },
   {
     "name": "member-quan-ly-du-an-nha-thau",
     "path": "/member/quan-ly-du-an/nha-thau",
-    "component": "/Users/alex/econs-frontend/pages/member/quan-ly-du-an/nha-thau.vue",
+    "component": "/Users/duynnd/Documents/Leader/pages/member/quan-ly-du-an/nha-thau.vue",
     "chunkName": "pages/member/quan-ly-du-an/nha-thau",
-    "_name": "_39612505"
+    "_name": "_3b1e059e"
   },
   {
     "name": "du-an-slug",
     "path": "/du-an/:slug?",
-    "component": "/Users/alex/econs-frontend/pages/du-an/_slug.vue",
+    "component": "/Users/duynnd/Documents/Leader/pages/du-an/_slug.vue",
     "chunkName": "pages/du-an/_slug",
-    "_name": "_455cd25c"
+    "_name": "_cf345196"
   },
   {
     "name": "ho-so-slug",
     "path": "/ho-so/:slug?",
-    "component": "/Users/alex/econs-frontend/pages/ho-so/_slug.vue",
+    "component": "/Users/duynnd/Documents/Leader/pages/ho-so/_slug.vue",
     "chunkName": "pages/ho-so/_slug",
-    "_name": "_fe0bd5d6"
+    "_name": "_57f9cc24"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/Users/alex/econs-frontend/pages/index.vue",
+    "component": "/Users/duynnd/Documents/Leader/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_2cc8934a"
+    "_name": "_28c86ee3"
   }
 ]
