@@ -4,7 +4,7 @@
             <p class="fw-600 f-16 mb-16px">Thanh toán</p>
             <div v-for="(item,idx) in auction.deal[0].payments" :key="idx" class="d-flex">
                 <span style="width:15%" class="item">Thanh toán đợt {{idx+1}}</span>
-                <span style="width:25%" class="item text-center fw-600" >{{item.value}}</span>
+                <span style="width:25%" class="item text-left fw-600" >{{item.value}}</span>
 
                 <span v-if="arrRequiredPayment && item.paymentAuction"
                         style="width:20%;text-decoration:underline;"
