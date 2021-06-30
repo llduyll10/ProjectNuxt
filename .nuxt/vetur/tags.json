@@ -1,0 +1,212 @@
+{
+  "BannerDetails": {
+    "description": "Auto imported from components/BannerDetails.vue"
+  },
+  "BannerHomeAid": {
+    "description": "Auto imported from components/BannerHomeAid.vue"
+  },
+  "BannerInfo": {
+    "description": "Auto imported from components/BannerInfo.vue"
+  },
+  "Block1": {
+    "description": "Auto imported from components/Block1.vue"
+  },
+  "Block2": {
+    "description": "Auto imported from components/Block2.vue"
+  },
+  "Carousel": {
+    "description": "Auto imported from components/Carousel.vue"
+  },
+  "Company": {
+    "description": "Auto imported from components/Company.vue"
+  },
+  "CompanyQuote": {
+    "description": "Auto imported from components/CompanyQuote.vue"
+  },
+  "CompanyQuoteCompanyDeal": {
+    "description": "Auto imported from components/CompanyQuoteCompanyDeal.vue"
+  },
+  "CompanyQuoteOwner": {
+    "description": "Auto imported from components/CompanyQuoteOwner.vue"
+  },
+  "Customer": {
+    "description": "Auto imported from components/Customer.vue"
+  },
+  "Footer": {
+    "description": "Auto imported from components/Footer.vue"
+  },
+  "FormProject": {
+    "description": "Auto imported from components/FormProject.vue"
+  },
+  "Header": {
+    "description": "Auto imported from components/Header.vue"
+  },
+  "HomeAidNav": {
+    "description": "Auto imported from components/HomeAidNav.vue"
+  },
+  "InputFile": {
+    "description": "Auto imported from components/InputFile.vue"
+  },
+  "Loading": {
+    "description": "Auto imported from components/Loading.vue"
+  },
+  "Market": {
+    "description": "Auto imported from components/Market.vue"
+  },
+  "Modal": {
+    "description": "Auto imported from components/Modal.vue"
+  },
+  "NewSiderbar": {
+    "description": "Auto imported from components/NewSiderbar.vue"
+  },
+  "Pagination": {
+    "description": "Auto imported from components/Pagination.vue"
+  },
+  "ReceiveInfo": {
+    "description": "Auto imported from components/ReceiveInfo.vue"
+  },
+  "DetailPayment": {
+    "description": "Auto imported from components/detailPayment.vue"
+  },
+  "DetailPaymentCompany": {
+    "description": "Auto imported from components/detailPaymentCompany.vue"
+  },
+  "PopupAddBankAccount": {
+    "description": "Auto imported from components/popup/addBankAccount.vue"
+  },
+  "PopupBankTransferSelect": {
+    "description": "Auto imported from components/popup/bankTransferSelect.vue"
+  },
+  "PopupDealUpdate": {
+    "description": "Auto imported from components/popup/dealUpdate.vue"
+  },
+  "PopupInforProject": {
+    "description": "Auto imported from components/popup/inforProject.vue"
+  },
+  "PopupLienhe": {
+    "description": "Auto imported from components/popup/lienhe.vue"
+  },
+  "PopupLienheform": {
+    "description": "Auto imported from components/popup/lienheform.vue"
+  },
+  "PopupPhoneform": {
+    "description": "Auto imported from components/popup/phoneform.vue"
+  },
+  "PopupSurvey": {
+    "description": "Auto imported from components/popup/survey.vue"
+  },
+  "PopupSurveyContact": {
+    "description": "Auto imported from components/popup/surveyContact.vue"
+  },
+  "PopupSurveyCustomerContact": {
+    "description": "Auto imported from components/popup/surveyCustomerContact.vue"
+  },
+  "PopupSurveyUpdate": {
+    "description": "Auto imported from components/popup/surveyUpdate.vue"
+  },
+  "PopupViewSurvey": {
+    "description": "Auto imported from components/popup/viewSurvey.vue"
+  },
+  "PopupVilla": {
+    "description": "Auto imported from components/popup/villa.vue"
+  },
+  "ProfileAccount": {
+    "description": "Auto imported from components/profile/account.vue"
+  },
+  "ProfileDes": {
+    "description": "Auto imported from components/profile/des.vue"
+  },
+  "ProfileInfo": {
+    "description": "Auto imported from components/profile/info.vue"
+  },
+  "ProfileManage": {
+    "description": "Auto imported from components/profile/manage.vue"
+  },
+  "ProfileManageCustomer": {
+    "description": "Auto imported from components/profile/manageCustomer.vue"
+  },
+  "ProfileMenu": {
+    "description": "Auto imported from components/profile/menu.vue"
+  },
+  "ProfileProject": {
+    "description": "Auto imported from components/profile/project.vue"
+  },
+  "ProfileRating": {
+    "description": "Auto imported from components/profile/rating.vue"
+  },
+  "QuoteForm": {
+    "description": "Auto imported from components/quote/form.vue"
+  },
+  "PopupPaymentCreateReport": {
+    "description": "Auto imported from components/popup/payment/createReport.vue"
+  },
+  "PopupPaymentCreateRequired": {
+    "description": "Auto imported from components/popup/payment/createRequired.vue"
+  },
+  "PopupPaymentCustomerCreateReport": {
+    "description": "Auto imported from components/popup/paymentCustomer/createReport.vue"
+  },
+  "PopupPaymentCustomerCreateRequired": {
+    "description": "Auto imported from components/popup/paymentCustomer/createRequired.vue"
+  },
+  "ProfileContractorComplete": {
+    "description": "Auto imported from components/profile/contractor/complete.vue"
+  },
+  "ProfileContractorContent": {
+    "description": "Auto imported from components/profile/contractor/content.vue"
+  },
+  "ProfileContractorDeploy": {
+    "description": "Auto imported from components/profile/contractor/deploy.vue"
+  },
+  "ProfileContractorNegotiate": {
+    "description": "Auto imported from components/profile/contractor/negotiate.vue"
+  },
+  "ProfileContractorQuotes": {
+    "description": "Auto imported from components/profile/contractor/quotes.vue"
+  },
+  "ProfileCustomerComplete": {
+    "description": "Auto imported from components/profile/customer/complete.vue"
+  },
+  "ProfileCustomerContent": {
+    "description": "Auto imported from components/profile/customer/content.vue"
+  },
+  "ProfileCustomerDeploy": {
+    "description": "Auto imported from components/profile/customer/deploy.vue"
+  },
+  "ProfileCustomerNegotiate": {
+    "description": "Auto imported from components/profile/customer/negotiate.vue"
+  },
+  "ProfileCustomerQuotes": {
+    "description": "Auto imported from components/profile/customer/quotes.vue"
+  },
+  "ProfileEditCompany": {
+    "description": "Auto imported from components/profile/edit/company.vue"
+  },
+  "ProfileEditConfirm": {
+    "description": "Auto imported from components/profile/edit/confirm.vue"
+  },
+  "ProfileEditPersonal": {
+    "description": "Auto imported from components/profile/edit/personal.vue"
+  },
+  "ProfileEditProject": {
+    "description": "Auto imported from components/profile/edit/project.vue"
+  },
+  "ProfileEditWork": {
+    "description": "Auto imported from components/profile/edit/work.vue"
+  },
+  "ProfileFinanceBankAccount": {
+    "description": "Auto imported from components/profile/finance/bankAccount.vue"
+  },
+  "ProfileFinanceBuy": {
+    "description": "Auto imported from components/profile/finance/buy.vue"
+  },
+  "ProfileFinanceHistory": {
+    "description": "Auto imported from components/profile/finance/history.vue"
+  },
+  "ProfileFinanceManage": {
+    "description": "Auto imported from components/profile/finance/manage.vue"
+  },
+  "ProfileFinanceRequest": {
+    "description": "Auto imported from components/profile/finance/request.vue"
+  }
+}
