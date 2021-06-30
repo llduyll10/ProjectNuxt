@@ -101,8 +101,6 @@ export default {
         }
     },
     mounted(){
-        console.log('auction',this.auction)
-        console.log('detailProject',this.detailProject)
         this.getPaymentByAuction()
     },
     methods:{
@@ -148,8 +146,6 @@ export default {
                 })
         },
         mapAuction(){
-            console.log('arrRequiredPayment',this.arrRequiredPayment)
-            console.log('this.auction.deal[0].payments',this.auction.deal[0].payments)
             var arrTmp1 = JSON.parse(JSON.stringify(this.auction.deal[0].payments)) || []
             var arrTmp2 = this.arrRequiredPayment
             arrTmp1.forEach((item1,index) => {

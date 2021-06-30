@@ -102,8 +102,6 @@ export default {
         }
     },
     mounted(){
-        console.log('auction',this.auction)
-        console.log('detailProject',this.detailProject)
         this.getPaymentByAuction()
     },
     methods:{
@@ -130,7 +128,6 @@ export default {
                     this.loader(0)
                 })
                 .catch(err => {
-                    console.log(err)
                     this.loader(0)
                 })
         },
