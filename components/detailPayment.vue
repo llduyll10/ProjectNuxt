@@ -82,7 +82,7 @@
                    Chưa cập nhật
                 </span>
 
-                <span style="width:60%" class="item d-flex">
+                <span style="width:60%" class="item d-flex" v-if="arrReport.length && item.reportAuction">
                     Đánh giá:
                     <div  class="group-star">
                         <i v-for="(item, idx) in 5" :key="idx+10" class="fas fa-star mr-1px f-13 main-yellow"></i>
