@@ -167,9 +167,9 @@
                             </template>
 
                             <template v-if="company.step == 3 && company.deal.length && company.deal[0].status == 'OK' ">
-                                <div  class="btn-send cancel  mr-10px ml-0" >
+                                <div @click="openEndProject()" class="btn-send cancel  mr-10px ml-0" >
                                     <img  src="@/assets/svg/icon-final-project.svg" alt="">
-                                    <span>Kết thúc dự án</span>
+                                    <span>Kết thúc dự án </span>
                                 </div>
                             </template>
 
@@ -275,6 +275,7 @@
         <PopupSurveyUpdate ref="surveyUpdate" v-if="company" :surveryUpdate="surveryUpdate"  :objCompany="company" :detailProject="detailProject" :rawCategory="rawCategory" @activeCompany="getActiveCompany" />
         <PopupDealUpdate ref="dealUpdate" v-if="company"  :objCompany="company" :detailProject="detailProject" :rawCategory="rawCategory" @activeCompany="getActiveCompany" />
         <PopupSurveyCustomerContact ref="customerContact" v-if="company" :objConfirm="company" />
+        <PopupPaymentCustomerEndProject ref="endProject" v-if="company"  :project="detailProject" :auction="company" />
     </div>
 </template>
 <script>
@@ -335,6 +336,10 @@ export default {
                 this.surveryUpdate = true
             }
             this.$refs.surveyUpdate.show()
+        },
+        openEndProject(){
+            console.log('endProject')
+            this.$refs.endProject.show()
         },
         openDeal(){
             this.$refs.dealUpdate.show()
