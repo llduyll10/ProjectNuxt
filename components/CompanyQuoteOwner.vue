@@ -167,7 +167,7 @@
                             </template>
 
                             <template v-if="company.step == 3 && company.deal.length && company.deal[0].status == 'OK' ">
-                                <div @click="openLienHeMail()" class="btn-send cancel  mr-10px ml-0" >
+                                <div  class="btn-send cancel  mr-10px ml-0" >
                                     <img  src="@/assets/svg/icon-final-project.svg" alt="">
                                     <span>Kết thúc dự án</span>
                                 </div>

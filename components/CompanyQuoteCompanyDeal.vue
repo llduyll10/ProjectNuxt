@@ -74,9 +74,9 @@
 
                 <div class="group-btn">
 
-                    <div class="btn-send  mr-10px ml-0" >
+                    <div @click="openLienHeMail()" class="btn-send  mr-10px ml-0" >
                         <img  src="@/assets/svg/email.svg" alt="">
-                        <span>Gửi tin nhắn</span>
+                        <span>Gửi tin nhắn1 </span>
                     </div>
 
                 </div>
@@ -87,6 +87,7 @@
         </div>
         <!-- Show Detail payment -->
         <DetailPaymentCompany :auction="company" :detailProject="detailProject"  @getPageAgain="getPageAgain" />
+        <PopupLienheform ref="LienHeFormPop" :isService="true" :title="detailProject.name" :rawCategory="rawCategory" />
 
     </div>
 </template>
@@ -102,6 +103,10 @@ export default {
     methods:{
         getPageAgain(){
             this.$emit('getDetailAgain')
+        },
+        openLienHeMail(){
+            this.$refs.LienHeFormPop.show();
+            this.$refs.LienHeFormPop.getInforPerchant(this.company);
         }
     }
 }
