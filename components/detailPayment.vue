@@ -84,9 +84,9 @@
 
                 <span style="width:60%" class="item d-flex" v-if="arrReport.length && item.reportAuction">
                     Đánh giá:
-                    <div  class="group-star">
-                        <i v-for="(item, idx) in 5" :key="idx+10" class="fas fa-star mr-1px f-13 main-yellow"></i>
-                    </div>
+                    <Rating  :rating="item.reportAuction.rating ? item.reportAuction.rating : 0"
+                            @rating="getRating"
+                            :report="item.reportAuction" />
                 </span>
 
             </div>
@@ -114,7 +114,7 @@ export default {
             statusPayment:1,
             activeRow:0,
             arrRequiredPayment:[],
-            arrReport:[]
+            arrReport:[],
         }
     },
     mounted(){
@@ -192,7 +192,7 @@ export default {
                     console.log(err)
                 })
         },
-         mapReport(){
+        mapReport(){
             var arrTmp1 = JSON.parse(JSON.stringify(this.auction.deal[0].payments)) || []
             var arrTmp2 = JSON.parse(JSON.stringify(this.arrReport)) || []
             arrTmp1.forEach((item1,index) => {
@@ -204,6 +204,27 @@ export default {
             })
             this.auction.deal[0].payments = arrTmp1
             console.log('mapReport',this.auction.deal[0].payments)
+        },
+        //Rating
+        getRating(objRating){
+            // this.loader()
+            var obj = {
+                rating:objRating.rating+1,
+                _id:objRating._id,
+                project:objRating.project,
+                auction:objRating.auction
+            }
+            this.$post('member/reports-rating',obj)
+                .then(res => {
+                    console.log('rating api',res)
+                    this.getReportByAuction()
+                    this.loader(0)
+                })
+                .catch(err => {
+                    console.log(err)
+                    this.loader(0)
+                })
+
         },
         openModalRequired(activeRow){
             this.$refs.customerCreateRequired.show()

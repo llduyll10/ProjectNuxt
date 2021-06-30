@@ -79,9 +79,9 @@
 
                 <span v-if="arrReport.length && item.reportAuction && item.reportAuction.status !== 'DRAFT' " style="width:60%" class="item d-flex">
                     Khách hàng đánh giá:
-                    <div  class="group-star">
-                        <i v-for="(item, idx) in 5" :key="idx+10" class="fas fa-star mr-1px f-13 main-yellow"></i>
-                    </div>
+                    <Rating :rating="item.reportAuction.rating ? item.reportAuction.rating : 0"
+                            :noClick="true"
+                     />
                 </span>
 
             </div>
