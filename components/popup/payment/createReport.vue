@@ -4,7 +4,7 @@
         <div class="modal-contact formCore" >
           <div class="content">
             <p class="title f-20 fw-600" >
-                TẠO BÁO CÁO TIẾN ĐỘ THI CÔNG {{activeReport}}
+                TẠO BÁO CÁO TIẾN ĐỘ THI CÔNG
             </p>
             <form action="" @submit.prevent="getForm()">
                 <div class="group-infor no-border pr-60px">
@@ -23,7 +23,7 @@
                             <span class="key">Nhân viên báo cáo</span> <span class="text-red">*</span>
                         </div>
                         <div class="col-md-9">
-                            <input type="text" required class="form-control" v-model="objPayment.nameStaff" />
+                            <input type="text" required class="form-control" v-model="objReport.nameStaff" />
                         </div>
                     </div>
                     <div class="row mb-15px">
@@ -31,7 +31,7 @@
                             <span class="key">Thời gian</span> <span class="text-red">*</span>
                         </div>
                         <div class="col-md-9">
-                            <input type="text" required class="form-control" v-model="objPayment.time" />
+                            <input type="text" required class="form-control" v-model="objReport.time" />
                         </div>
                     </div>
 
@@ -40,7 +40,7 @@
                             <span class="key">Nhật ký công việc</span><span class="text-red">*</span>
                         </div>
                         <div class="col-md-9">
-                            <textarea type="text" required class="form-control" rows="5" v-model="objPayment.note"></textarea>
+                            <textarea type="text" required class="form-control" rows="5" v-model="objReport.note"></textarea>
                         </div>
                     </div>
                     <div class="row">
@@ -49,6 +49,7 @@
                         </div>
                         <div class="col-md-9">
                             <InputFile  :accept="acceptFile" key="file" @input="getFile" :multiple="true" :label="'Thêm hình ảnh'" />
+                            <!-- File new -->
                             <div class="col-md-3" v-if="arrFile.length"></div>
                             <div class="col-md-9 pl-0" v-if="arrFile.length">
                                 <template v-for="(item,idx) in arrFile">
@@ -56,6 +57,19 @@
                                         <span class="mr-5px" v-html="returnTypeFile(item.name)"></span>
                                         {{item.name}}
                                         <span class="cursor-pointer ml-5px" @click="clearFile(item)">
+                                            <i class="fas fa-times text-red"></i>
+                                        </span>
+                                    </p>
+                                </template>
+                            </div>
+                            <!-- file old -->
+                            <div class="col-md-3" v-if="objReport.attachment && objReport.attachment.length"></div>
+                            <div class="col-md-9 pl-0" v-if="objReport.attachment && objReport.attachment.length">
+                                <template v-for="(item,idx) in objReport.attachment">
+                                    <p :key="idx" class="f-11 text-main ">
+                                        <span class="mr-5px" v-html="returnTypeFile(spliceURLFile(item,'--'))"></span>
+                                        {{spliceURLFile(item,'--')}}
+                                        <span class="cursor-pointer ml-5px" @click="clearFileOld(item)">
                                             <i class="fas fa-times text-red"></i>
                                         </span>
                                     </p>
@@ -86,28 +100,34 @@ export default {
     data(){
         return{
             acceptFile:['png','jpg','jpeg','tiff'],
-            objPayment:{
+            objReport:{
             },
             arrFile:[],
         }
     },
     watch:{
         activeReport(){
-            this.objPayment.time = 'Tuần ' + Number(this.activeReport)
+            this.objReport.time = 'Tuần ' + Number(this.activeReport)
         }
     },
     methods:{
         async getForm(){
-            var arrFile = this.arrFile.length ? await this.uploadFile(this.arrFile) : []
+            var fileNew = this.arrFile.length ? await this.uploadFile(this.arrFile) : []
+            var fileOld = this.objReport.attachment || []
+            var arrFile = fileOld.concat(fileNew)
             var obj = {
-                ...this.objPayment,
+                ...this.objReport,
                 reportId: this.activeReport-1,
                 attachment:arrFile
             }
-            console.log('getForm',obj)
+            this.$emit('createReport',obj)
+            this.hide()
+        },
+        updaetObjectReport(obj){
+            this.objReport = obj
         },
         triggerForm(status){
-            this.objPayment.status = status
+            this.objReport.status = status
             this.$refs.btnSubmitReport.click()
         },
         getFile(file){
@@ -116,11 +136,15 @@ export default {
         clearFile(file){
             this.arrFile = this.arrFile.filter(item => item.name !== file.name)
         },
+        clearFileOld(file){
+            this.objReport.attachment = this.objReport.attachment.filter(item => item !== file)
+        },
         show() {
             this.$refs.modalCreateReport.showModal();
         },
         hide(){
             this.$refs.modalCreateReport.hideModal()
+            this.arrFile = []
         },
     }
 

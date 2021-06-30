@@ -8,7 +8,7 @@
 
                 <span v-if="arrRequiredPayment && item.paymentAuction"
                         style="width:20%;text-decoration:underline;"
-                        class="item text-center text-underline fw-600 text-main cursor-pointer"
+                        class="item text-center  fw-600 text-main cursor-pointer"
                         @click="openModalRequiredUpdate(item.paymentAuction,idx)">
                     Đề nghị thanh toán_Đợt {{idx+1}}
                 </span>
@@ -65,9 +65,20 @@
             <p class="fw-600 f-16 mt-25px mb-16px">Báo cáo tiến độ</p>
             <div v-for="(item,idx) in auction.deal[0].payments" :key="idx" class="d-flex">
                 <span style="width:15%" class="item">{{idx+1}}. Tuần {{idx+1}}</span>
-                <span style="width:25%" class="item text-center fw-600 cursor-pointer" @click="openModalReport(idx)">Tiến độ thi công tuần thứ {{idx+1}}</span>
-                <span style="width:60%" class="item d-flex">
-                    Đánh giá:
+
+                <span
+                        v-if="arrReport.length && item.reportAuction"
+                        style="width:25%;text-decoration:underline"
+                        class="item text-center fw-600 cursor-pointer text-main  "
+                        @click="openModalUpdateReport(item.reportAuction,idx)">
+                    Tiến độ thi công tuần thứ {{idx+1}}
+                </span>
+                 <span  v-else style="width:25%" class="item text-center fw-500 cursor-pointer text-main" @click="openModalReport(idx)">
+                    Báo cáo tiến độ
+                </span>
+
+                <span v-if="arrReport.length && item.reportAuction" style="width:60%" class="item d-flex">
+                    Khách hàng đánh giá:
                     <div  class="group-star">
                         <i v-for="(item, idx) in 5" :key="idx+10" class="fas fa-star mr-1px f-13 main-yellow"></i>
                     </div>
@@ -86,6 +97,7 @@
             ref="createReport"
             :project="detailProject"
             :activeReport="activeReport"
+            @createReport="getCreateReport"
         />
     </div>
 </template>
@@ -98,10 +110,12 @@ export default {
             activeRow:0,
             activeReport:0,
             arrRequiredPayment:[],
+            arrReport:[]
         }
     },
     mounted(){
         this.getPaymentByAuction()
+        this.getReportByAuction()
     },
     methods:{
         getObjRequiredPayment(obj){
@@ -110,7 +124,7 @@ export default {
                 paymentId: objRequired ? objRequired.paymentId : this.activeRow,
                 project:this.auction.deal[0].project,
                 auction:this.auction.deal[0].auction,
-                ownerProject:this.detailProject._id
+                ownerProject:this.detailProject.createBy._id
             }
             this.loader()
             this.$post('member/payments',objRequired)
@@ -157,6 +171,73 @@ export default {
             })
             this.auction.deal[0].payments = arrTmp1
         },
+        // Report
+        getCreateReport(obj){
+            this.loader()
+            var objReport = {
+                ...obj,
+                project:this.auction.deal[0].project,
+                auction:this.auction.deal[0].auction,
+                ownerProject:this.detailProject.createBy._id
+            }
+            this.$post('member/reports',objReport)
+                .then(res => {
+                    console.log('reports',res)
+                    var objNext = {
+                        project:this.auction.deal[0].project,
+                        auction:this.auction.deal[0].auction,
+                    }
+                    return  this.$post('member/reports-by-auction',objNext)
+                })
+                .then(res2=>{
+                    this.arrReport = res2.data
+                    this.auction.deal[0].payments.forEach(item => delete item.reportAuction)
+                    this.mapReport()
+                    this.loader(0)
+                })
+                .catch(err => {
+                    console.log(err)
+                    this.loader(0)
+                })
+        },
+        getReportByAuction(){
+            var obj = {
+                project:this.auction.deal[0].project,
+                auction:this.auction.deal[0].auction,
+            }
+            this.$post('member/reports-by-auction',obj)
+                .then(res => {
+                    console.log('getReportByAuction',res)
+                    this.arrReport = res.data
+                    this.mapReport()
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+        },
+         mapReport(){
+            var arrTmp1 = JSON.parse(JSON.stringify(this.auction.deal[0].payments)) || []
+            var arrTmp2 = JSON.parse(JSON.stringify(this.arrReport)) || []
+            arrTmp1.forEach((item1,index) => {
+                arrTmp2.forEach(item2 => {
+                    if(index == item2.reportId){
+                        item1.reportAuction = item2
+                    }
+                })
+            })
+            this.auction.deal[0].payments = arrTmp1
+            console.log('mapReport',this.auction.deal[0].payments)
+        },
+        openModalReport(idxRow){
+            this.activeReport = idxRow+1
+            this.$refs.createReport.updaetObjectReport({})
+            this.$refs.createReport.show()
+        },
+        openModalUpdateReport(objReport,index){
+            this.activeReport = index+1
+            this.$refs.createReport.updaetObjectReport(objReport)
+            this.$refs.createReport.show()
+        },
         openModalRequired(activeRow){
             this.$refs.createRequired.show()
             this.$refs.createRequired.updateObjectRequired({})
@@ -168,10 +249,7 @@ export default {
             this.$refs.createRequired.updateObjectRequired(objRequired)
             this.$refs.createRequired.show()
         },
-        openModalReport(idxRow){
-            this.activeReport = idxRow+1
-            this.$refs.createReport.show()
-        },
+
         hideModal(){
             this.$refs.createRequired.hide()
         }
