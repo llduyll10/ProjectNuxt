@@ -69,7 +69,7 @@
                 <span
                     v-if="arrReport.length && item.reportAuction"
                     style="width:25%;text-decoration:underline"
-                    class="item text-center fw-600 text-main cursor-pointer"
+                    class="item text-left fw-600 text-main cursor-pointer"
                     @click="openModalReport(item.reportAuction)"
                 >
                     Tiến độ thi công tuần thứ {{idx+1}}
@@ -77,7 +77,7 @@
                 <span
                     v-else
                     style="width:25%"
-                    class="item text-center fw-500 text-red"
+                    class="item text-left fw-500 text-red"
                 >
                    Chưa cập nhật
                 </span>
