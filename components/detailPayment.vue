@@ -65,7 +65,23 @@
             <p class="fw-600 f-16 mt-25px mb-16px">Báo cáo tiến độ</p>
             <div v-for="(item,idx) in auction.deal[0].payments" :key="idx" class="d-flex">
                 <span style="width:15%" class="item">{{idx+1}}. Tuần {{idx+1}}</span>
-                <span style="width:25%" class="item text-center fw-600" @click="openModalReport()">Tiến độ thi công tuần thứ {{idx+1}}</span>
+
+                <span
+                    v-if="arrReport.length && item.reportAuction"
+                    style="width:25%;text-decoration:underline"
+                    class="item text-center fw-600 text-main cursor-pointer"
+                    @click="openModalReport(item.reportAuction)"
+                >
+                    Tiến độ thi công tuần thứ {{idx+1}}
+                </span>
+                <span
+                    v-else
+                    style="width:25%"
+                    class="item text-center fw-500 text-red"
+                >
+                   Chưa cập nhật
+                </span>
+
                 <span style="width:60%" class="item d-flex">
                     Đánh giá:
                     <div  class="group-star">
@@ -86,6 +102,7 @@
         <PopupPaymentCustomerCreateReport
             ref="customerCreateReport"
             :project="detailProject"
+            :auction="auction"
         />
     </div>
 </template>
@@ -97,10 +114,12 @@ export default {
             statusPayment:1,
             activeRow:0,
             arrRequiredPayment:[],
+            arrReport:[]
         }
     },
     mounted(){
         this.getPaymentByAuction()
+        this.getReportByAuction()
     },
     methods:{
         getObjRequiredPayment(obj){
@@ -157,6 +176,35 @@ export default {
             })
             this.auction.deal[0].payments = arrTmp1
         },
+        //Report
+        getReportByAuction(){
+            var obj = {
+                project:this.auction.deal[0].project,
+                auction:this.auction.deal[0].auction,
+            }
+            this.$post('member/reports-by-auction',obj)
+                .then(res => {
+                    console.log('getReportByAuction',res)
+                    this.arrReport = res.data
+                    this.mapReport()
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+        },
+         mapReport(){
+            var arrTmp1 = JSON.parse(JSON.stringify(this.auction.deal[0].payments)) || []
+            var arrTmp2 = JSON.parse(JSON.stringify(this.arrReport)) || []
+            arrTmp1.forEach((item1,index) => {
+                arrTmp2.forEach(item2 => {
+                    if(index == item2.reportId && item2.status != 'DRAFT'){
+                        item1.reportAuction = item2
+                    }
+                })
+            })
+            this.auction.deal[0].payments = arrTmp1
+            console.log('mapReport',this.auction.deal[0].payments)
+        },
         openModalRequired(activeRow){
             this.$refs.customerCreateRequired.show()
             this.$refs.customerCreateRequired.updateObjectRequired({})
@@ -168,7 +216,8 @@ export default {
             this.$refs.customerCreateRequired.updateObjectRequired(objRequired)
             this.$refs.customerCreateRequired.show()
         },
-        openModalReport(){
+        openModalReport(report){
+            this.$refs.customerCreateReport.updateReport(report)
             this.$refs.customerCreateReport.show()
         },
         hideModal(){

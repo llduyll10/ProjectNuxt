@@ -51,29 +51,48 @@
                             <InputFile  :accept="acceptFile" key="file" @input="getFile" :multiple="true" :label="'Thêm hình ảnh'" />
                             <!-- File new -->
                             <div class="col-md-3" v-if="arrFile.length"></div>
-                            <div class="col-md-9 pl-0" v-if="arrFile.length">
-                                <template v-for="(item,idx) in arrFile">
-                                    <p :key="idx" class="f-11 text-main ">
-                                        <span class="mr-5px" v-html="returnTypeFile(item.name)"></span>
-                                        {{item.name}}
-                                        <span class="cursor-pointer ml-5px" @click="clearFile(item)">
-                                            <i class="fas fa-times text-red"></i>
-                                        </span>
-                                    </p>
-                                </template>
+                            <div  v-if="arrFile.length">
+
+                                <div class="row cover-img">
+                                    <template  v-if="arrBase64.length">
+                                        <template v-for="(item,idx) in arrBase64">
+                                            <div class="col-6 img" :key="idx+50">
+                                                <div
+                                                    class=" item-img"
+                                                    :style="{
+                                                        'background-image': 'url(' + `${item.base64}` + ')',
+                                                    }"
+                                                >
+                                                    <span class="cursor-pointer ml-5px" @click="clearFile(item)">
+                                                        <i class="fas fa-times text-red"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </template>
+                                    </template>
+                                </div>
                             </div>
                             <!-- file old -->
                             <div class="col-md-3" v-if="objReport.attachment && objReport.attachment.length"></div>
-                            <div class="col-md-9 pl-0" v-if="objReport.attachment && objReport.attachment.length">
-                                <template v-for="(item,idx) in objReport.attachment">
-                                    <p :key="idx" class="f-11 text-main ">
-                                        <span class="mr-5px" v-html="returnTypeFile(spliceURLFile(item,'--'))"></span>
-                                        {{spliceURLFile(item,'--')}}
-                                        <span class="cursor-pointer ml-5px" @click="clearFileOld(item)">
-                                            <i class="fas fa-times text-red"></i>
-                                        </span>
-                                    </p>
-                                </template>
+                            <div  v-if="objReport.attachment && objReport.attachment.length">
+                                <div class="row cover-img">
+                                    <template  v-if="objReport.attachment && objReport.attachment.length">
+                                        <template v-for="(item,idx) in objReport.attachment">
+                                            <div class="col-6 img" :key="idx+100">
+                                                <div
+                                                    class=" item-img"
+                                                    :style="{
+                                                        'background-image': 'url(' + `${item}` + ')',
+                                                    }"
+                                                >
+                                                    <span class="cursor-pointer ml-5px" @click="clearFileOld(item)">
+                                                        <i class="fas fa-times text-red"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </template>
+                                    </template>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -103,6 +122,7 @@ export default {
             objReport:{
             },
             arrFile:[],
+            arrBase64:[]
         }
     },
     watch:{
@@ -130,11 +150,18 @@ export default {
             this.objReport.status = status
             this.$refs.btnSubmitReport.click()
         },
-        getFile(file){
-            this.arrFile = this.arrFile.concat(file)
+        async getFile(arrFile){
+          this.arrFile = this.arrFile.concat(arrFile)
+          var arrBase64 = []
+          this.arrFile.forEach( async item => {
+            var base64 = await this._toBase64(item);
+            arrBase64.push({base64,name:item.name})
+          })
+          this.arrBase64 = arrBase64
         },
         clearFile(file){
-            this.arrFile = this.arrFile.filter(item => item.name !== file.name)
+          this.arrBase64 = this.arrBase64.filter(item => item.base64 !== file.base64)
+          this.arrFile = this.arrFile.filter(item => item.name !== file.name)
         },
         clearFileOld(file){
             this.objReport.attachment = this.objReport.attachment.filter(item => item !== file)
@@ -145,6 +172,7 @@ export default {
         hide(){
             this.$refs.modalCreateReport.hideModal()
             this.arrFile = []
+            this.arrBase64 = []
         },
     }
 

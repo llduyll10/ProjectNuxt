@@ -33,7 +33,30 @@
         }
     }
 }
-
+#modal-payment-report{
+    .cover-img{
+        margin-left: -7px;
+        margin-right: -9px;
+    }
+    .img{
+        padding: 0 8px;
+    }
+    .item-img{
+        height: 180px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        padding: 0;
+        position: relative;
+        span{
+            position: absolute;
+            right: 10px;
+            top: 5px;
+        }
+    }
+}
 #modal-custom-form-contact,
 #modal-select-bank {
     .modal-body {
