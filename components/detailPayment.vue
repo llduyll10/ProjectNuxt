@@ -21,12 +21,11 @@
 
                 <span   style="width:20%" class="item text-center fw-600 text-main"
                         v-if="arrRequiredPayment && item.paymentAuction"
-                        @click="openModalReport()">
+                >
                     {{formatVnd(item.paymentAuction.price)}} VND
                 </span>
 
-                <span   v-else style="width:20%" class="item"
-                        @click="openModalReport()">
+                <span   v-else style="width:20%" class="item">
 
                  </span>
 
@@ -34,8 +33,8 @@
                     <span v-if="item.paymentAuction.status == 'DONE'" style="width:20%" class="item fw-600 text-main" >
                         <img  src="@/assets/svg/icon-check-blue.svg" alt=""> Đã thanh toán
                     </span>
-                    <span v-else-if="item.paymentAuction.status == 'PENDING' " style="width:20%" class="item fw-600 text-red">
-                        <img src="@/assets/svg/icon-cancel-red.svg" alt="" class="mb-2px"> Chưa thanh toán
+                    <span v-else-if="item.paymentAuction.status == 'PENDING' " style="width:20%" class="item fw-500 text-main">
+                        <img src="@/assets/svg/icon-sand-lock.svg" alt="" class="mb-2px"> Chờ xác nhận
                     </span>
 
                 </template>
@@ -66,7 +65,7 @@
             <p class="fw-600 f-16 mt-25px mb-16px">Báo cáo tiến độ</p>
             <div v-for="(item,idx) in auction.deal[0].payments" :key="idx" class="d-flex">
                 <span style="width:15%" class="item">{{idx+1}}. Tuần {{idx+1}}</span>
-                <span style="width:25%" class="item text-center fw-600" >Tiến độ thi công tuần thứ {{idx+1}}</span>
+                <span style="width:25%" class="item text-center fw-600" @click="openModalReport()">Tiến độ thi công tuần thứ {{idx+1}}</span>
                 <span style="width:60%" class="item d-flex">
                     Đánh giá:
                     <div  class="group-star">

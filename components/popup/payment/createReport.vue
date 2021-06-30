@@ -4,7 +4,7 @@
         <div class="modal-contact formCore" >
           <div class="content">
             <p class="title f-20 fw-600" >
-                TẠO BÁO CÁO TIẾN ĐỘ THI CÔNG
+                TẠO BÁO CÁO TIẾN ĐỘ THI CÔNG {{activeReport}}
             </p>
             <form action="" @submit.prevent="getForm()">
                 <div class="group-infor no-border pr-60px">
@@ -66,7 +66,7 @@
                 </div>
                 <div class="footer d-flex">
                     <button ref="btnSubmitReport" class="d-none" type="submit"></button>
-                    <div @click="triggerForm('CREATE')" class="btn-confirm flex-1">
+                    <div @click="triggerForm('OK')" class="btn-confirm flex-1">
                         <span>TẠO BÁO CÁO THI CÔNG</span>
                     </div>
                     <div @click="triggerForm('DRAFT')" class="btn-confirm update flex-1 ml-25px" >
@@ -82,19 +82,32 @@
 </template>
 <script>
 export default {
-    props:['project'],
+    props:['project','activeReport'],
     data(){
         return{
             acceptFile:['png','jpg','jpeg','tiff'],
-            objPayment:{},
-            arrFile:[]
+            objPayment:{
+            },
+            arrFile:[],
+        }
+    },
+    watch:{
+        activeReport(){
+            this.objPayment.time = 'Tuần ' + Number(this.activeReport)
         }
     },
     methods:{
-        getForm(){
-            console.log('getForm',this.objPayment)
+        async getForm(){
+            var arrFile = this.arrFile.length ? await this.uploadFile(this.arrFile) : []
+            var obj = {
+                ...this.objPayment,
+                reportId: this.activeReport-1,
+                attachment:arrFile
+            }
+            console.log('getForm',obj)
         },
         triggerForm(status){
+            this.objPayment.status = status
             this.$refs.btnSubmitReport.click()
         },
         getFile(file){

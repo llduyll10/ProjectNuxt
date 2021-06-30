@@ -21,14 +21,11 @@
 
                 <span   style="width:20%" class="item text-center fw-600 text-main"
                         v-if="arrRequiredPayment && item.paymentAuction"
-                        @click="openModalReport()">
+                        >
                     {{formatVnd(item.paymentAuction.price)}} VND
                 </span>
 
-                <span   v-else style="width:40%" class="item"
-                        @click="openModalReport()">
-
-                 </span>
+                <span   v-else style="width:40%" class="item"></span>
 
                 <template v-if="arrRequiredPayment && item.paymentAuction && item.paymentAuction.status != 'DRAFT' ">
                     <span v-if="item.paymentAuction.status == 'DONE'" style="width:20%" class="item fw-600 text-main" >
@@ -68,7 +65,7 @@
             <p class="fw-600 f-16 mt-25px mb-16px">Báo cáo tiến độ</p>
             <div v-for="(item,idx) in auction.deal[0].payments" :key="idx" class="d-flex">
                 <span style="width:15%" class="item">{{idx+1}}. Tuần {{idx+1}}</span>
-                <span style="width:25%" class="item text-center fw-600" >Tiến độ thi công tuần thứ {{idx+1}}</span>
+                <span style="width:25%" class="item text-center fw-600" @click="openModalReport(idx)">Tiến độ thi công tuần thứ {{idx+1}}</span>
                 <span style="width:60%" class="item d-flex">
                     Đánh giá:
                     <div  class="group-star">
@@ -88,6 +85,7 @@
         <PopupPaymentCreateReport
             ref="createReport"
             :project="detailProject"
+            :activeReport="activeReport"
         />
     </div>
 </template>
@@ -98,6 +96,7 @@ export default {
         return{
             statusPayment:1,
             activeRow:0,
+            activeReport:0,
             arrRequiredPayment:[],
         }
     },
@@ -168,7 +167,8 @@ export default {
             this.$refs.createRequired.updateObjectRequired(objRequired)
             this.$refs.createRequired.show()
         },
-        openModalReport(){
+        openModalReport(idxRow){
+            this.activeReport = idxRow+1
             this.$refs.createReport.show()
         },
         hideModal(){
