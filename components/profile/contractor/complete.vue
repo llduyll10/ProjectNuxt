@@ -18,32 +18,34 @@
             </div>
         </div>
 
-        <table class="table table-custom table-deploy" v-if="listShow">
+        <table class="table table-custom table-deploy">
             <thead>
                 <tr>
                     <th scope="col">Tên dự án</th>
-                    <th scope="col">Nhà thầu/Thiết kế</th>
+                    <th scope="col">Khách hàng</th>
                     <th scope="col">Giá trị dự án</th>
                     <th scope="col">Tiến độ</th>
                     <th scope="col">Thanh toán</th>
                 </tr>
             </thead>
-            <tbody  v-if="listShow" >
+            <tbody  v-if=" listShow && listShow.length" >
                 <tr v-for="(item,idx) in listShow" :key="idx">
                     <td class="name cursor-pointer"
-                        :class="getClassCategory(mapImgFromCategory(item.category))"
-                        @click="$router.push(`/du-an/${item.slug}`)"
+                        :class="getClassCategory(mapImgFromCategory(item.project.category))"
+                        @click="$router.push(`/du-an/${item.project.slug}`)"
                     >
-                        {{item.name}}
+                         {{item.project ? item.project.name : ''}}
                     </td>
                     <td class="customer  f-12">
-                        <span class="text-main font-weight-bold">{{item.auctionCount}}</span> chào giá
+                         <span class="text-main">
+                            {{item.projectOwner.name}}
+                        </span>
                     </td>
-                    <td class="price ">{{$moment(item.dueDate).format('DD/MM/YYYY')}}</td>
+                    <td class="price ">{{formatVnd(item.deal[0].price)}} VND</td>
                     <td class="price">
-                       {{$moment(item.dueDate).format('DD/MM/YYYY')}}
+                      {{formatVnd(item.deal[0].day)}} ngày
                     </td>
-                    <td class="price ">{{$moment(item.dueDate).format('DD/MM/YYYY')}}</td>
+                    <td class="price ">-</td>
                 </tr>
             </tbody>
         </table>
@@ -69,24 +71,24 @@ export default {
             searchText:''
         }
     },
-    watch:{
-        objSearch:{
-            deep:true,
-            handler(){
-               this.filterList(JSON.parse(JSON.stringify(this.listProject)))
-            }
-        },
-    },
     mounted(){
         this.getListQuote()
     },
     methods:{
         getListQuote(){
             this.loader()
-            this.$get('/member/projects')
+            console.log('test api')
+            this.$get('member/my-auction/')
                 .then(res => {
                     this.listProject = res.data
-                    this.listShow = res.data
+                    var arrTmp = []
+                    this.listProject.forEach(item => {
+                        if(item.deal.length && item.deal[0].status == 'OK' && item.isFinish){
+                            arrTmp.push(item)
+                        }
+                    })
+                    this.listShow = arrTmp
+                    console.log('listShow',this.listShow)
                     this.loader(0)
                 })
                 .catch(err => {

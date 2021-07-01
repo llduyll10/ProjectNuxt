@@ -83,7 +83,7 @@ export default {
                     this.listProject = res.data
                     var arrTmp = []
                     this.listProject.forEach(item => {
-                        if(item.deal.length && item.deal[0].status == 'OK'){
+                        if(item.deal.length && item.deal[0].status == 'OK' && !item.isFinish){
                             arrTmp.push(item)
                         }
                     })
