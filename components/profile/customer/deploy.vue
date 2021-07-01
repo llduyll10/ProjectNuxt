@@ -88,6 +88,7 @@ export default {
                     console.log('res',res)
                     this.listProject = res.data
                     this.listShow = res.data
+                    this.listShow = this.listShow.filter(item => !item.isFinish)
                     this.loader(0)
                 })
                 .catch(err => {
