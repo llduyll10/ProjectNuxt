@@ -64,13 +64,23 @@ export default {
     },
     methods:{
         endProject(){
+            this.loader()
             var obj = {
                 ...this.objProject,
                 auction: this.auction.deal[0].auction,
                 project:this.auction.deal[0].project,
+                auctionBy:this.auction.auctionBy._id,
                 rating:this.numberRate
             }
-            console.log('objProject',obj)
+            this.$post('member/auction/deal/finish',obj)
+                .then(res => {
+                    this.$emit('getDetailAgain')
+                    this.hide()
+                    this.loader(0)
+                })
+                .catch(err => {
+                    this.loader(0)
+                })
         },
         getRating(rate){
             this.numberRate = Number(rate.rating + 1)

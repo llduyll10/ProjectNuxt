@@ -166,17 +166,20 @@
                                 </div>
                             </template>
 
-                            <template v-if="company.step == 3 && company.deal.length && company.deal[0].status == 'OK' ">
-                                <div @click="openEndProject()" class="btn-send cancel  mr-10px ml-0" >
-                                    <img  src="@/assets/svg/icon-final-project.svg" alt="">
-                                    <span>Kết thúc dự án </span>
+                            <!-- Finish project -->
+                            <template v-if="!company.isFinish">
+                                <template v-if="company.step == 3 && company.deal.length && company.deal[0].status == 'OK'  ">
+                                    <div @click="openEndProject()" class="btn-send cancel  mr-10px ml-0" >
+                                        <img  src="@/assets/svg/icon-final-project.svg" alt="">
+                                        <span>Kết thúc dự án </span>
+                                    </div>
+                                </template>
+
+                                <div v-else class="btn-send cancel " @click="destroyDeal(company)">
+                                    <img src="@/assets/svg/icon-cancel.svg" alt="">
+                                    <span>Huỷ thương lượng</span>
                                 </div>
                             </template>
-
-                            <div v-else class="btn-send cancel " @click="destroyDeal(company)">
-                                <img src="@/assets/svg/icon-cancel.svg" alt="">
-                                <span>Huỷ thương lượng</span>
-                            </div>
                         </div>
 
                     </template>
@@ -275,7 +278,13 @@
         <PopupSurveyUpdate ref="surveyUpdate" v-if="company" :surveryUpdate="surveryUpdate"  :objCompany="company" :detailProject="detailProject" :rawCategory="rawCategory" @activeCompany="getActiveCompany" />
         <PopupDealUpdate ref="dealUpdate" v-if="company"  :objCompany="company" :detailProject="detailProject" :rawCategory="rawCategory" @activeCompany="getActiveCompany" />
         <PopupSurveyCustomerContact ref="customerContact" v-if="company" :objConfirm="company" />
-        <PopupPaymentCustomerEndProject ref="endProject" v-if="company"  :project="detailProject" :auction="company" />
+
+        <PopupPaymentCustomerEndProject
+            ref="endProject"
+            v-if="company"
+            :project="detailProject"
+            @getDetailAgain="getActiveCompany"
+            :auction="company" />
     </div>
 </template>
 <script>
