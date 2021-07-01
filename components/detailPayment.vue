@@ -8,12 +8,12 @@
 
                 <span v-if="arrRequiredPayment && item.paymentAuction"
                         style="width:20%;text-decoration:underline;"
-                        class="item text-center text-underline fw-600 text-main cursor-pointer"
+                        class="item text-left text-underline fw-600 text-main cursor-pointer"
                         @click="openModalRequiredUpdate(item.paymentAuction,idx)">
                     Đề nghị thanh toán_Đợt {{idx+1}}
                 </span>
                 <span   v-else style="width:20%"
-                        class="item text-center cursor-pointer main-black"
+                        class="item text-left cursor-pointer main-black"
                         >
                     Chưa có đề nghị thanh toán
                 </span>
