@@ -62,6 +62,9 @@
   "Pagination": {
     "description": "Auto imported from components/Pagination.vue"
   },
+  "Rating": {
+    "description": "Auto imported from components/Rating.vue"
+  },
   "ReceiveInfo": {
     "description": "Auto imported from components/ReceiveInfo.vue"
   },
@@ -70,33 +73,6 @@
   },
   "DetailPaymentCompany": {
     "description": "Auto imported from components/detailPaymentCompany.vue"
-  },
-  "QuoteForm": {
-    "description": "Auto imported from components/quote/form.vue"
-  },
-  "ProfileAccount": {
-    "description": "Auto imported from components/profile/account.vue"
-  },
-  "ProfileDes": {
-    "description": "Auto imported from components/profile/des.vue"
-  },
-  "ProfileInfo": {
-    "description": "Auto imported from components/profile/info.vue"
-  },
-  "ProfileManage": {
-    "description": "Auto imported from components/profile/manage.vue"
-  },
-  "ProfileManageCustomer": {
-    "description": "Auto imported from components/profile/manageCustomer.vue"
-  },
-  "ProfileMenu": {
-    "description": "Auto imported from components/profile/menu.vue"
-  },
-  "ProfileProject": {
-    "description": "Auto imported from components/profile/project.vue"
-  },
-  "ProfileRating": {
-    "description": "Auto imported from components/profile/rating.vue"
   },
   "PopupAddBankAccount": {
     "description": "Auto imported from components/popup/addBankAccount.vue"
@@ -136,6 +112,48 @@
   },
   "PopupVilla": {
     "description": "Auto imported from components/popup/villa.vue"
+  },
+  "ProfileAccount": {
+    "description": "Auto imported from components/profile/account.vue"
+  },
+  "ProfileDes": {
+    "description": "Auto imported from components/profile/des.vue"
+  },
+  "ProfileInfo": {
+    "description": "Auto imported from components/profile/info.vue"
+  },
+  "ProfileManage": {
+    "description": "Auto imported from components/profile/manage.vue"
+  },
+  "ProfileManageCustomer": {
+    "description": "Auto imported from components/profile/manageCustomer.vue"
+  },
+  "ProfileMenu": {
+    "description": "Auto imported from components/profile/menu.vue"
+  },
+  "ProfileProject": {
+    "description": "Auto imported from components/profile/project.vue"
+  },
+  "ProfileRating": {
+    "description": "Auto imported from components/profile/rating.vue"
+  },
+  "QuoteForm": {
+    "description": "Auto imported from components/quote/form.vue"
+  },
+  "PopupPaymentCreateReport": {
+    "description": "Auto imported from components/popup/payment/createReport.vue"
+  },
+  "PopupPaymentCreateRequired": {
+    "description": "Auto imported from components/popup/payment/createRequired.vue"
+  },
+  "PopupPaymentCustomerCreateReport": {
+    "description": "Auto imported from components/popup/paymentCustomer/createReport.vue"
+  },
+  "PopupPaymentCustomerCreateRequired": {
+    "description": "Auto imported from components/popup/paymentCustomer/createRequired.vue"
+  },
+  "PopupPaymentCustomerEndProject": {
+    "description": "Auto imported from components/popup/paymentCustomer/endProject.vue"
   },
   "ProfileContractorComplete": {
     "description": "Auto imported from components/profile/contractor/complete.vue"
@@ -196,17 +214,5 @@
   },
   "ProfileFinanceRequest": {
     "description": "Auto imported from components/profile/finance/request.vue"
-  },
-  "PopupPaymentCreateReport": {
-    "description": "Auto imported from components/popup/payment/createReport.vue"
-  },
-  "PopupPaymentCreateRequired": {
-    "description": "Auto imported from components/popup/payment/createRequired.vue"
-  },
-  "PopupPaymentCustomerCreateReport": {
-    "description": "Auto imported from components/popup/paymentCustomer/createReport.vue"
-  },
-  "PopupPaymentCustomerCreateRequired": {
-    "description": "Auto imported from components/popup/paymentCustomer/createRequired.vue"
   }
 }
