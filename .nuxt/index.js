@@ -13,14 +13,14 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_747e7c76 from 'nuxt_plugin_plugin_747e7c76' // Source: ./components/plugin.js (mode: 'all')
-import nuxt_plugin_bootstrapvue_064bff8a from 'nuxt_plugin_bootstrapvue_064bff8a' // Source: ./bootstrap-vue.js (mode: 'all')
-import nuxt_plugin_moment_3d55709d from 'nuxt_plugin_moment_3d55709d' // Source: ./moment.js (mode: 'all')
-import nuxt_plugin_axios_2acbac5b from 'nuxt_plugin_axios_2acbac5b' // Source: ./axios.js (mode: 'all')
+import nuxt_plugin_plugin_557ba6fe from 'nuxt_plugin_plugin_557ba6fe' // Source: ./components/plugin.js (mode: 'all')
+import nuxt_plugin_bootstrapvue_0f972d7a from 'nuxt_plugin_bootstrapvue_0f972d7a' // Source: ./bootstrap-vue.js (mode: 'all')
+import nuxt_plugin_moment_41559504 from 'nuxt_plugin_moment_41559504' // Source: ./moment.js (mode: 'all')
+import nuxt_plugin_axios_80dc41d8 from 'nuxt_plugin_axios_80dc41d8' // Source: ./axios.js (mode: 'all')
 import nuxt_plugin_vcalendar_5419a6aa from 'nuxt_plugin_vcalendar_5419a6aa' // Source: ../plugins/v-calendar.js (mode: 'client')
 import nuxt_plugin_baseservices_d99d895a from 'nuxt_plugin_baseservices_d99d895a' // Source: ../plugins/base-services.js (mode: 'all')
 import nuxt_plugin_notifications_15a88b85 from 'nuxt_plugin_notifications_15a88b85' // Source: ../plugins/notifications.js (mode: 'client')
-import nuxt_plugin_auth_37d8f516 from 'nuxt_plugin_auth_37d8f516' // Source: ./auth.js (mode: 'all')
+import nuxt_plugin_auth_b260d0c8 from 'nuxt_plugin_auth_b260d0c8' // Source: ./auth.js (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -217,20 +217,20 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_747e7c76 === 'function') {
-    await nuxt_plugin_plugin_747e7c76(app.context, inject)
+  if (typeof nuxt_plugin_plugin_557ba6fe === 'function') {
+    await nuxt_plugin_plugin_557ba6fe(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_bootstrapvue_064bff8a === 'function') {
-    await nuxt_plugin_bootstrapvue_064bff8a(app.context, inject)
+  if (typeof nuxt_plugin_bootstrapvue_0f972d7a === 'function') {
+    await nuxt_plugin_bootstrapvue_0f972d7a(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_moment_3d55709d === 'function') {
-    await nuxt_plugin_moment_3d55709d(app.context, inject)
+  if (typeof nuxt_plugin_moment_41559504 === 'function') {
+    await nuxt_plugin_moment_41559504(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_axios_2acbac5b === 'function') {
-    await nuxt_plugin_axios_2acbac5b(app.context, inject)
+  if (typeof nuxt_plugin_axios_80dc41d8 === 'function') {
+    await nuxt_plugin_axios_80dc41d8(app.context, inject)
   }
 
   if (process.client && typeof nuxt_plugin_vcalendar_5419a6aa === 'function') {
@@ -245,8 +245,8 @@ async function createApp(ssrContext, config = {}) {
     await nuxt_plugin_notifications_15a88b85(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_auth_37d8f516 === 'function') {
-    await nuxt_plugin_auth_37d8f516(app.context, inject)
+  if (typeof nuxt_plugin_auth_b260d0c8 === 'function') {
+    await nuxt_plugin_auth_b260d0c8(app.context, inject)
   }
 
   // Lock enablePreview in context

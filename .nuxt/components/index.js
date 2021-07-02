@@ -21,18 +21,10 @@ export { default as Market } from '../../components/Market.vue'
 export { default as Modal } from '../../components/Modal.vue'
 export { default as NewSiderbar } from '../../components/NewSiderbar.vue'
 export { default as Pagination } from '../../components/Pagination.vue'
+export { default as Rating } from '../../components/Rating.vue'
 export { default as ReceiveInfo } from '../../components/ReceiveInfo.vue'
 export { default as DetailPayment } from '../../components/detailPayment.vue'
 export { default as DetailPaymentCompany } from '../../components/detailPaymentCompany.vue'
-export { default as QuoteForm } from '../../components/quote/form.vue'
-export { default as ProfileAccount } from '../../components/profile/account.vue'
-export { default as ProfileDes } from '../../components/profile/des.vue'
-export { default as ProfileInfo } from '../../components/profile/info.vue'
-export { default as ProfileManage } from '../../components/profile/manage.vue'
-export { default as ProfileManageCustomer } from '../../components/profile/manageCustomer.vue'
-export { default as ProfileMenu } from '../../components/profile/menu.vue'
-export { default as ProfileProject } from '../../components/profile/project.vue'
-export { default as ProfileRating } from '../../components/profile/rating.vue'
 export { default as PopupAddBankAccount } from '../../components/popup/addBankAccount.vue'
 export { default as PopupBankTransferSelect } from '../../components/popup/bankTransferSelect.vue'
 export { default as PopupDealUpdate } from '../../components/popup/dealUpdate.vue'
@@ -46,6 +38,20 @@ export { default as PopupSurveyCustomerContact } from '../../components/popup/su
 export { default as PopupSurveyUpdate } from '../../components/popup/surveyUpdate.vue'
 export { default as PopupViewSurvey } from '../../components/popup/viewSurvey.vue'
 export { default as PopupVilla } from '../../components/popup/villa.vue'
+export { default as ProfileAccount } from '../../components/profile/account.vue'
+export { default as ProfileDes } from '../../components/profile/des.vue'
+export { default as ProfileInfo } from '../../components/profile/info.vue'
+export { default as ProfileManage } from '../../components/profile/manage.vue'
+export { default as ProfileManageCustomer } from '../../components/profile/manageCustomer.vue'
+export { default as ProfileMenu } from '../../components/profile/menu.vue'
+export { default as ProfileProject } from '../../components/profile/project.vue'
+export { default as ProfileRating } from '../../components/profile/rating.vue'
+export { default as QuoteForm } from '../../components/quote/form.vue'
+export { default as PopupPaymentCreateReport } from '../../components/popup/payment/createReport.vue'
+export { default as PopupPaymentCreateRequired } from '../../components/popup/payment/createRequired.vue'
+export { default as PopupPaymentCustomerCreateReport } from '../../components/popup/paymentCustomer/createReport.vue'
+export { default as PopupPaymentCustomerCreateRequired } from '../../components/popup/paymentCustomer/createRequired.vue'
+export { default as PopupPaymentCustomerEndProject } from '../../components/popup/paymentCustomer/endProject.vue'
 export { default as ProfileContractorComplete } from '../../components/profile/contractor/complete.vue'
 export { default as ProfileContractorContent } from '../../components/profile/contractor/content.vue'
 export { default as ProfileContractorDeploy } from '../../components/profile/contractor/deploy.vue'
@@ -66,10 +72,6 @@ export { default as ProfileFinanceBuy } from '../../components/profile/finance/b
 export { default as ProfileFinanceHistory } from '../../components/profile/finance/history.vue'
 export { default as ProfileFinanceManage } from '../../components/profile/finance/manage.vue'
 export { default as ProfileFinanceRequest } from '../../components/profile/finance/request.vue'
-export { default as PopupPaymentCreateReport } from '../../components/popup/payment/createReport.vue'
-export { default as PopupPaymentCreateRequired } from '../../components/popup/payment/createRequired.vue'
-export { default as PopupPaymentCustomerCreateReport } from '../../components/popup/paymentCustomer/createReport.vue'
-export { default as PopupPaymentCustomerCreateRequired } from '../../components/popup/paymentCustomer/createRequired.vue'
 
 export const LazyBannerDetails = import('../../components/BannerDetails.vue' /* webpackChunkName: "components/banner-details" */).then(c => wrapFunctional(c.default || c))
 export const LazyBannerHomeAid = import('../../components/BannerHomeAid.vue' /* webpackChunkName: "components/banner-home-aid" */).then(c => wrapFunctional(c.default || c))
@@ -92,18 +94,10 @@ export const LazyMarket = import('../../components/Market.vue' /* webpackChunkNa
 export const LazyModal = import('../../components/Modal.vue' /* webpackChunkName: "components/modal" */).then(c => wrapFunctional(c.default || c))
 export const LazyNewSiderbar = import('../../components/NewSiderbar.vue' /* webpackChunkName: "components/new-siderbar" */).then(c => wrapFunctional(c.default || c))
 export const LazyPagination = import('../../components/Pagination.vue' /* webpackChunkName: "components/pagination" */).then(c => wrapFunctional(c.default || c))
+export const LazyRating = import('../../components/Rating.vue' /* webpackChunkName: "components/rating" */).then(c => wrapFunctional(c.default || c))
 export const LazyReceiveInfo = import('../../components/ReceiveInfo.vue' /* webpackChunkName: "components/receive-info" */).then(c => wrapFunctional(c.default || c))
 export const LazyDetailPayment = import('../../components/detailPayment.vue' /* webpackChunkName: "components/detail-payment" */).then(c => wrapFunctional(c.default || c))
 export const LazyDetailPaymentCompany = import('../../components/detailPaymentCompany.vue' /* webpackChunkName: "components/detail-payment-company" */).then(c => wrapFunctional(c.default || c))
-export const LazyQuoteForm = import('../../components/quote/form.vue' /* webpackChunkName: "components/quote-form" */).then(c => wrapFunctional(c.default || c))
-export const LazyProfileAccount = import('../../components/profile/account.vue' /* webpackChunkName: "components/profile-account" */).then(c => wrapFunctional(c.default || c))
-export const LazyProfileDes = import('../../components/profile/des.vue' /* webpackChunkName: "components/profile-des" */).then(c => wrapFunctional(c.default || c))
-export const LazyProfileInfo = import('../../components/profile/info.vue' /* webpackChunkName: "components/profile-info" */).then(c => wrapFunctional(c.default || c))
-export const LazyProfileManage = import('../../components/profile/manage.vue' /* webpackChunkName: "components/profile-manage" */).then(c => wrapFunctional(c.default || c))
-export const LazyProfileManageCustomer = import('../../components/profile/manageCustomer.vue' /* webpackChunkName: "components/profile-manage-customer" */).then(c => wrapFunctional(c.default || c))
-export const LazyProfileMenu = import('../../components/profile/menu.vue' /* webpackChunkName: "components/profile-menu" */).then(c => wrapFunctional(c.default || c))
-export const LazyProfileProject = import('../../components/profile/project.vue' /* webpackChunkName: "components/profile-project" */).then(c => wrapFunctional(c.default || c))
-export const LazyProfileRating = import('../../components/profile/rating.vue' /* webpackChunkName: "components/profile-rating" */).then(c => wrapFunctional(c.default || c))
 export const LazyPopupAddBankAccount = import('../../components/popup/addBankAccount.vue' /* webpackChunkName: "components/popup-add-bank-account" */).then(c => wrapFunctional(c.default || c))
 export const LazyPopupBankTransferSelect = import('../../components/popup/bankTransferSelect.vue' /* webpackChunkName: "components/popup-bank-transfer-select" */).then(c => wrapFunctional(c.default || c))
 export const LazyPopupDealUpdate = import('../../components/popup/dealUpdate.vue' /* webpackChunkName: "components/popup-deal-update" */).then(c => wrapFunctional(c.default || c))
@@ -117,6 +111,20 @@ export const LazyPopupSurveyCustomerContact = import('../../components/popup/sur
 export const LazyPopupSurveyUpdate = import('../../components/popup/surveyUpdate.vue' /* webpackChunkName: "components/popup-survey-update" */).then(c => wrapFunctional(c.default || c))
 export const LazyPopupViewSurvey = import('../../components/popup/viewSurvey.vue' /* webpackChunkName: "components/popup-view-survey" */).then(c => wrapFunctional(c.default || c))
 export const LazyPopupVilla = import('../../components/popup/villa.vue' /* webpackChunkName: "components/popup-villa" */).then(c => wrapFunctional(c.default || c))
+export const LazyProfileAccount = import('../../components/profile/account.vue' /* webpackChunkName: "components/profile-account" */).then(c => wrapFunctional(c.default || c))
+export const LazyProfileDes = import('../../components/profile/des.vue' /* webpackChunkName: "components/profile-des" */).then(c => wrapFunctional(c.default || c))
+export const LazyProfileInfo = import('../../components/profile/info.vue' /* webpackChunkName: "components/profile-info" */).then(c => wrapFunctional(c.default || c))
+export const LazyProfileManage = import('../../components/profile/manage.vue' /* webpackChunkName: "components/profile-manage" */).then(c => wrapFunctional(c.default || c))
+export const LazyProfileManageCustomer = import('../../components/profile/manageCustomer.vue' /* webpackChunkName: "components/profile-manage-customer" */).then(c => wrapFunctional(c.default || c))
+export const LazyProfileMenu = import('../../components/profile/menu.vue' /* webpackChunkName: "components/profile-menu" */).then(c => wrapFunctional(c.default || c))
+export const LazyProfileProject = import('../../components/profile/project.vue' /* webpackChunkName: "components/profile-project" */).then(c => wrapFunctional(c.default || c))
+export const LazyProfileRating = import('../../components/profile/rating.vue' /* webpackChunkName: "components/profile-rating" */).then(c => wrapFunctional(c.default || c))
+export const LazyQuoteForm = import('../../components/quote/form.vue' /* webpackChunkName: "components/quote-form" */).then(c => wrapFunctional(c.default || c))
+export const LazyPopupPaymentCreateReport = import('../../components/popup/payment/createReport.vue' /* webpackChunkName: "components/popup-payment-create-report" */).then(c => wrapFunctional(c.default || c))
+export const LazyPopupPaymentCreateRequired = import('../../components/popup/payment/createRequired.vue' /* webpackChunkName: "components/popup-payment-create-required" */).then(c => wrapFunctional(c.default || c))
+export const LazyPopupPaymentCustomerCreateReport = import('../../components/popup/paymentCustomer/createReport.vue' /* webpackChunkName: "components/popup-payment-customer-create-report" */).then(c => wrapFunctional(c.default || c))
+export const LazyPopupPaymentCustomerCreateRequired = import('../../components/popup/paymentCustomer/createRequired.vue' /* webpackChunkName: "components/popup-payment-customer-create-required" */).then(c => wrapFunctional(c.default || c))
+export const LazyPopupPaymentCustomerEndProject = import('../../components/popup/paymentCustomer/endProject.vue' /* webpackChunkName: "components/popup-payment-customer-end-project" */).then(c => wrapFunctional(c.default || c))
 export const LazyProfileContractorComplete = import('../../components/profile/contractor/complete.vue' /* webpackChunkName: "components/profile-contractor-complete" */).then(c => wrapFunctional(c.default || c))
 export const LazyProfileContractorContent = import('../../components/profile/contractor/content.vue' /* webpackChunkName: "components/profile-contractor-content" */).then(c => wrapFunctional(c.default || c))
 export const LazyProfileContractorDeploy = import('../../components/profile/contractor/deploy.vue' /* webpackChunkName: "components/profile-contractor-deploy" */).then(c => wrapFunctional(c.default || c))
@@ -137,7 +145,3 @@ export const LazyProfileFinanceBuy = import('../../components/profile/finance/bu
 export const LazyProfileFinanceHistory = import('../../components/profile/finance/history.vue' /* webpackChunkName: "components/profile-finance-history" */).then(c => wrapFunctional(c.default || c))
 export const LazyProfileFinanceManage = import('../../components/profile/finance/manage.vue' /* webpackChunkName: "components/profile-finance-manage" */).then(c => wrapFunctional(c.default || c))
 export const LazyProfileFinanceRequest = import('../../components/profile/finance/request.vue' /* webpackChunkName: "components/profile-finance-request" */).then(c => wrapFunctional(c.default || c))
-export const LazyPopupPaymentCreateReport = import('../../components/popup/payment/createReport.vue' /* webpackChunkName: "components/popup-payment-create-report" */).then(c => wrapFunctional(c.default || c))
-export const LazyPopupPaymentCreateRequired = import('../../components/popup/payment/createRequired.vue' /* webpackChunkName: "components/popup-payment-create-required" */).then(c => wrapFunctional(c.default || c))
-export const LazyPopupPaymentCustomerCreateReport = import('../../components/popup/paymentCustomer/createReport.vue' /* webpackChunkName: "components/popup-payment-customer-create-report" */).then(c => wrapFunctional(c.default || c))
-export const LazyPopupPaymentCustomerCreateRequired = import('../../components/popup/paymentCustomer/createRequired.vue' /* webpackChunkName: "components/popup-payment-customer-create-required" */).then(c => wrapFunctional(c.default || c))
