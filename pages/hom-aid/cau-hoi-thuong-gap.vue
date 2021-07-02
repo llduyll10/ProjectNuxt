@@ -18,7 +18,7 @@
                                             <div v-b-toggle="item.button">
                                                 <div class="titledown d-flex">
                                                     <div class="text">
-                                                        <span>HomAid</span> kết nối bạn thông qua mô hình đấu thầu trực tuyến 
+                                                       <span>Q</span> <span>HomAid</span>cung cấp dịch vụ gì?
                                                     </div>
                                                     <span class="iconDown"></span>
                                                 </div>
@@ -26,21 +26,26 @@
                                         </div>
                                         <b-collapse :id="item.collapseid"  accordion="my-accordion" role="tabpanel">
                                             <div class="body-content">
-                                            <div>{{ text }}</div>
+                                            <div>
+                                                <span class="text-main">A.</span>
+                                                {{ text }}
+                                            </div>
                                             </div >
                                         </b-collapse>
                                     </div>
                                 </div>
                             </template>
                         </b-tab>
-                        <b-tab title="Khách hàng"><p>I'm the second tab</p></b-tab>
-                        <b-tab title="Nhà thầu"><p>I'm the tab with the very, very long title</p></b-tab>
+                        <b-tab title="Chào giá"><p>I'm the second tab</p></b-tab>
+                        <b-tab title="Hợp đồng"><p>I'm the tab with the very, very long title</p></b-tab>
+                        <b-tab title="Thi công"><p>I'm the tab with the very, very long title</p></b-tab>
+                        <b-tab title="Sau thi công"><p>I'm the tab with the very, very long title</p></b-tab>
                     </b-tabs>
                 </div>
-            
+
             </div>
         </div>
-    </div>             
+    </div>
 </template>
 
 
@@ -49,7 +54,7 @@ export default {
     data(){
         return{
             text: `
-          Nếu bạn xây nhà lần đầu tiên và đang do dự không biết bắt đầu từ đâu, hãy đăng yêu cầu trên nền tảng của chúng tôi và nhận ngay tư vấn giải pháp và kinh phí dự trù từ các đơn vị thi công chuyên nghiệp đã được sàng lọc cẩn thận từ đội ngũ HomAid. Nếu như bạn là đơn vị thi công, công ty nội thất hay kiến trúc sư tự do, hãy đăng ký, hoàn thiện hồ sơ năng lực và kết nối ngay với nhiều khách hàng tiềm năng. 
+         HomAid Là nền tảng dịch vụ đấu thầu trực tuyến giúp cho khách hàng có nhu cầu về xây dựng kết nối với những đơn vị thi công/thiết kế phù hợp đã được kiểm chứng về năng lực. Ngoài ra, HomAids cung cấp những công cụ hỗ trợ khách hàng và đơn vị thi công liên quan đến vấn đề tư vấn/báo giá/tiến độ/thanh toán nhằm quản lý dự án hiệu quả nhất.
         `,
             list : [
                 {button: "accordion-3" , collapseid : "accordion-3"},
@@ -62,9 +67,9 @@ export default {
 
     },
     methods:{
-        
+
     }
-    
+
 }
 </script>
 
